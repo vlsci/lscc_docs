@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,37 +13,37 @@
         
     <url>
      <loc>/tutorials/python_overview/python_overview/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/using_git/Using_Git/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/hpc/hpc/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/tutorials/unix/robinson-unix-link/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <loc>/tutorials/unix/unix/</loc>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/gvl_launch/gvl_launch/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/galaxy_101/galaxy_101/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -55,13 +55,13 @@
         
     <url>
      <loc>/tutorials/genomespace/genomespace/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/docker/docker/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -71,7 +71,7 @@
         
     <url>
      <loc>/tutorials/variant_calling_galaxy_1/variant_calling_galaxy_1/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -89,13 +89,13 @@
         
     <url>
      <loc>/tutorials/rna_seq_dge_advanced/rna_seq_advanced_tutorial/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/rna_seq_exp_design/rna_seq_experimental_design/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -107,13 +107,13 @@
         
     <url>
      <loc>/tutorials/assembly/spades/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/pacbio/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -133,13 +133,13 @@
         
     <url>
      <loc>/tutorials/molecular_dynamics_101/molecular_dynamics_101/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorials/molecular_dynamics_201/molecular_dynamics_201/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -149,7 +149,7 @@
         
     <url>
      <loc>/tutorials/assembly/assembly-protocol/</loc>
-     <lastmod>2018-05-30</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
