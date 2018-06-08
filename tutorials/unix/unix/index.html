@@ -330,6 +330,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
+    Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduction" title="Introduction" class="md-nav__link">
     Introduction
   </a>
@@ -1456,6 +1477,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
+    Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduction" title="Introduction" class="md-nav__link">
     Introduction
   </a>
@@ -2018,8 +2060,30 @@
 
 <h1 id="introduction-to-unix">Introduction to Unix</h1>
 <p>A hands-on workshop covering the basics of the Unix/Linux command line interface.</p>
+<h2 id="overview">Overview</h2>
+<p>Knowledge of the Unix operating system is fundamental to being
+productive on HPC systems. This workshop will introduce you to the
+fundamental Unix concepts by way of a series of hands-on exercises.</p>
+<p>The workshop is facilitated by experienced Unix users who will be able
+to guide you through the exercises and offer assistance where needed.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>At the end of the course, you will be able to:</p>
+<ul>
+<li>Log into a Unix machine remotely</li>
+<li>Organise your files into directories</li>
+<li>Change file permissions to improve security and safety</li>
+<li>Create and edit files with a text editor</li>
+<li>Copy files between directories</li>
+<li>Use command line programs to manipulate files</li>
+<li>Automate your workflow using shell scripts</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>The workshop is intended for beginners with no prior experience in Unix.</li>
+<li>Attendees are required to bring their own laptop computers.</li>
+</ul>
 <h2 id="introduction">Introduction</h2>
-<p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the Unix concepts. 
+<p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the Unix concepts.
 The <a href="../slides.html">slides</a> are available if you would like.  Additionally the following reference material is available for later
 use.</p>
 <p><details>
@@ -2036,7 +2100,7 @@ use.</p>
 <li><strong>Science Software</strong>: Lots of Scientific software is designed to run in a Unix environment</li>
 </ul>
 <h3 id="user-interface">User interface</h3>
-<p>The Unix interface is a text-based command driven one; often known as a Command Line Interface (CLI).  This means 
+<p>The Unix interface is a text-based command driven one; often known as a Command Line Interface (CLI).  This means
 that you control it by issuing (i.e. typing) commands at the command prompt.  Consequently, the Mouse does not perform
 any function in the unix environment.</p>
 <p><img src="../media/unix-screen.png" title="Unix Screen" alt="Unix Screen" width="500px" /></p>
@@ -2050,7 +2114,7 @@ command from you, the user.</p>
 <li><strong>Username</strong>: the username that you are logged in as</li>
 <li><strong>Hostname</strong>: the name of the computer that your are connected to</li>
 <li><strong>Current working directory</strong>: the current position within the file system that your are working.  More to follow</li>
-<li><strong>Prompt</strong>: this is simply a sign to the user that the computer is ready to accept the next command </li>
+<li><strong>Prompt</strong>: this is simply a sign to the user that the computer is ready to accept the next command</li>
 </ul>
 <p>From this point forward in this document, the command prompt will be simply represented as a '$' rather than
 the full command prompt as shown above.  When copying and pasting commands you should NOT copy the '$' sign.</p>
@@ -2065,13 +2129,13 @@ the full command prompt as shown above.  When copying and pasting commands you s
 <li><strong>Long flag</strong>: same as flag except they are generally two dashes (--) followed by a word (or two)</li>
 <li><strong>Option</strong>: set the value of a configurable option.  They are a flag (or long flag) followed by a value</li>
 <li><strong>Anonymous options</strong>: these are one or more options that are specified in the required order</li>
-<li><strong>Quoted value</strong>: if you need to specify a space (or tab) in an option then you will need to use double (") or 
-  single (') quotes on each side of the value. </li>
+<li><strong>Quoted value</strong>: if you need to specify a space (or tab) in an option then you will need to use double (") or
+  single (') quotes on each side of the value.</li>
 </ul>
 <h3 id="file-system">File system</h3>
 <p>The file-system of a unix computer can be thought of as an up-side-down tree.  The topmost directory has a special name
-called 'root'; it contains all files and directories that are on the computer system.  It is represented by a single 
-slash (/).  The figure below shows an example file system with directories (black outline boxes) and files (grey dashed 
+called 'root'; it contains all files and directories that are on the computer system.  It is represented by a single
+slash (/).  The figure below shows an example file system with directories (black outline boxes) and files (grey dashed
 boxes).</p>
 <p><img src="../media/file-system.png" title="File system" alt="File system" width="400px" /></p>
 <p>At the top level we have one file (settings) and one directory (home).  Inside the home directory we have two directories
@@ -2087,8 +2151,8 @@ character and follow all the parent directories above the file/directory.</p>
 <p><strong>Absolute file name</strong>: <em>/home/user2</em>  </p>
 <p><strong>Note</strong>: the final slash is not needed (but generally doesn't hurt if it is present).</p>
 <h4 id="current-working-directory">Current working directory</h4>
-<p>The <em>current working directory</em> is the current location within the file system that you are currently using. 
-When you first login to a unix computer it will begin with the current working directory set to your home directory, that 
+<p>The <em>current working directory</em> is the current location within the file system that you are currently using.
+When you first login to a unix computer it will begin with the current working directory set to your home directory, that
 is, a place that is unique to you and generally nobody else will have access to it.</p>
 <p><img src="../media/unix-cwd.png" title="Current working directory" alt="Current working directory" width="500px" /></p>
 <p>Remember from earlier that the current working directory is shown in the command prompt.</p>
@@ -2105,8 +2169,8 @@ name is that relative file names do NOT begin with a slash.</p>
 <li><em>~</em> (Tilde): is a short cut to your home directory</li>
 <li><em>.</em> (dot): is a short cut for the current directory</li>
 <li><em>..</em> (2x dot): means the parent (or one directory up) from current directory</li>
-<li><em>...</em> (3x dot): does not mean anything (a gotcha for new users).  If you want 2 directories up then chain two 
-double dot's  e.g. <em>../..</em> </li>
+<li><em>...</em> (3x dot): does not mean anything (a gotcha for new users).  If you want 2 directories up then chain two
+double dot's  e.g. <em>../..</em></li>
 </ul>
 <p><strong>Note</strong>: the special file names above can be used within absolute and relative file name and used multiple times.</p>
 <p><img src="../media/file-system-muscle2.png" title="File system" alt="File system" width="400px" /></p>
@@ -2116,12 +2180,12 @@ double dot's  e.g. <em>../..</em> </li>
 <h2 id="topic-1-remote-log-in">Topic 1: Remote log in</h2>
 <p>In this topic we will learn how to connect to a <em>Unix</em> computer via a program called <em>ssh</em> and run a few basic commands.</p>
 <h3 id="connecting-to-a-unix-computer">Connecting to a Unix computer</h3>
-<p>To begin this workshop you will need to connect to an HPC.  Today we will use <em>barcoo</em>. 
+<p>To begin this workshop you will need to connect to an HPC.  Today we will use <em>barcoo</em>.
 The computer called <em>barcoo.vlsci.org.au</em> is the one that coordinates all the HPC's tasks.</p>
 <p><strong>Server details</strong>:</p>
 <ul>
 <li><strong>host</strong>: barcoo.vlsci.org.au</li>
-<li><strong>port</strong>: 22 </li>
+<li><strong>port</strong>: 22</li>
 <li><strong>username</strong>: (provided at workshop)</li>
 <li><strong>password</strong>: (provided at workshop)</li>
 </ul>
@@ -2169,13 +2233,13 @@ present you with a Unix prompt. If you get this far then you are ready to start 
 the remote computer.</p>
 <p><img src="../../../includes/media/putty2.png" title="Putty login screen" alt="Putty login screen" width="400px" /></p>
 <p></details></p>
-<p><strong>Note</strong>: for security reasons ssh will not display any characters when you enter your password. This 
-can be confusing because it appears as if your typing is not recognised by the computer. Don’t be 
+<p><strong>Note</strong>: for security reasons ssh will not display any characters when you enter your password. This
+can be confusing because it appears as if your typing is not recognised by the computer. Don’t be
 alarmed; type your password in and press return at the end.</p>
-<p>barcoo is a high performance computer for Melbourne Bioinformatics users.  Logging in connects your local computer 
-(e.g. laptop) to barcoo, and allows you to type commands into the Unix prompt which are run on 
+<p>barcoo is a high performance computer for Melbourne Bioinformatics users.  Logging in connects your local computer
+(e.g. laptop) to barcoo, and allows you to type commands into the Unix prompt which are run on
 the HPC, and have the results displayed on your local screen.</p>
-<p>You will be allocated a training account on barcoo for the duration of the workshop. Your 
+<p>You will be allocated a training account on barcoo for the duration of the workshop. Your
 username and password will be supplied at the start of the workshop.</p>
 <p>Log out of barcoo, and log back in again (to make sure you can repeat the process).</p>
 <p>All the remaining parts assume that you are logged into barcoo over ssh.</p>
@@ -2195,17 +2259,17 @@ username and password will be supplied at the start of the workshop.</p>
 <li><strong>who</strong>: displays a list of the users who are currently using this Unix computer.</li>
 <li><strong>whoami</strong>: displays your username (i.e. they person currently logged in).</li>
 <li><strong>date</strong>: displays the current date and time.</li>
-<li><strong>cal</strong>: displays a calendar on the terminal.  It can be configured to display more than just 
+<li><strong>cal</strong>: displays a calendar on the terminal.  It can be configured to display more than just
 the current month.</li>
 <li><strong>hostname</strong>: displays the name of the computer we are logged in to.</li>
 <li><strong>/vlsci/TRAINING/shared/Intro_to_Unix/hi</strong>: displays the text "Hello World"</li>
 </ul>
 <p></details></p>
 <h2 id="topic-2-exploring-your-home-directory">Topic 2: Exploring your home directory</h2>
-<p>In this topic we will learn how to "look" at the filesystem and further expand our repertoire of Unix commands. </p>
+<p>In this topic we will learn how to "look" at the filesystem and further expand our repertoire of Unix commands.</p>
 <p><strong>Duration</strong>: 20 minutes. <!-- See "The shell and the command line" and "The file system" section of the workshop notes. --></p>
 <p><strong>Relevant commands</strong>: <em>ls</em>, <em>pwd</em>, <em>echo</em>, <em>man</em></p>
-<p>Your home directory contains your own private working space.  Your <em>current working directory</em> is automatically set 
+<p>Your home directory contains your own private working space.  Your <em>current working directory</em> is automatically set
 to your <em>home</em> directory when you log into a Unix computer.</p>
 <h4 id="21-use-the-ls-command-to-list-the-files-in-your-home-directory-how-many-files-are-there">2.1) Use the <em>ls</em> command to list the files in your <em>home</em> directory.  How many files are there?</h4>
 <p><details>
@@ -2218,7 +2282,7 @@ to your <em>home</em> directory when you log into a Unix computer.</p>
 exp01  file01  muscle.fq
 </code></pre>
 
-<p>When running the <em>ls</em> command with no options it will list files in your current working directory.  The place 
+<p>When running the <em>ls</em> command with no options it will list files in your current working directory.  The place
 where you start when you first login is your <em>HOME</em> directory.</p>
 <p><strong>Answer</strong>: 3 (exp01, file01 and muscle.fq)</p>
 <p></details></p>
@@ -2236,8 +2300,8 @@ where you start when you first login is your <em>HOME</em> directory.</p>
 <p><details>
   <summary>Answer</summary></p>
 <p><strong>Answer 1</strong>: <em>--all</em> (or <em>-a</em>) flag</p>
-<p>Now you should see several files in your home directory whose names all begin with a dot. All these files are 
-created automatically for your user account. They are mostly configuration options for various programs including 
+<p>Now you should see several files in your home directory whose names all begin with a dot. All these files are
+created automatically for your user account. They are mostly configuration options for various programs including
 the shell. It is safe to ignore them for the moment.</p>
 <pre><code class="sh">$ ls --all
 .              .bash_logout    exp01    .lesshst
@@ -2261,7 +2325,7 @@ for the current directory and <em>..</em> a shortcut for the directory above the
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>You can find out the full path name of the current working directory with the <em>pwd</em> command. Your home directory 
+<p>You can find out the full path name of the current working directory with the <em>pwd</em> command. Your home directory
 will look something like this:</p>
 <pre><code class="sh">$ pwd
 /home/trainingXX
@@ -2354,7 +2418,7 @@ drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
 </code></pre>
 
 <p>The <em>..</em> refers to the parent directory.</p>
-<p><strong>Method 2</strong>: using $HOME.  This works no matter what our <em>CWD</em> is set to. </p>
+<p><strong>Method 2</strong>: using $HOME.  This works no matter what our <em>CWD</em> is set to.</p>
 <p>You could list the permissions of all files and directories in the parent directory of your home:</p>
 <pre><code class="sh">$ ls -l $HOME/..
 ...
@@ -2372,7 +2436,7 @@ drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
 </code></pre>
 
 <p>All 3 of the methods above mean the same thing.</p>
-<p>You will see a list of files and directories in the parent directory of your home directory. One of them will 
+<p>You will see a list of files and directories in the parent directory of your home directory. One of them will
 be the name of your home directory, something like <em>trainXX</em>.  Where <em>XX</em> is replaced by a two digit string.</p>
 <p><strong>Altername</strong>: using the <em>-a</em> flag and looking at the <em>.</em> (dot) special file.</p>
 <pre><code class="sh">$ ls -la
@@ -2388,20 +2452,20 @@ drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 .
 <li><strong>Everyone else</strong>: No access</li>
 </ul>
 <p><strong>Discussion on Permissions</strong>:</p>
-<p>The permission string is <em>"drwxr-x---"</em>. The <em>d</em> means it is a directory. The <em>rwx</em> means that the owner of the directory 
-(your user account) can <em>read</em>, <em>write</em> and <em>execute</em> the directory. Execute permissions on a directory means that you 
-can <em>cd</em> into the directory. The <em>r-x</em> means that anyone in the same user group as <em>training</em> can read or execute the 
+<p>The permission string is <em>"drwxr-x---"</em>. The <em>d</em> means it is a directory. The <em>rwx</em> means that the owner of the directory
+(your user account) can <em>read</em>, <em>write</em> and <em>execute</em> the directory. Execute permissions on a directory means that you
+can <em>cd</em> into the directory. The <em>r-x</em> means that anyone in the same user group as <em>training</em> can read or execute the
 directory. The <em>---</em> means that nobody else (other users on the system) can do anything with the directory.</p>
 <p></details></p>
 <hr />
 <div class="info">
 <p><b><em>man</em> is for manual</b>: and it will be your best friend!</p>
-<p>Manual pages include a lot of detail about a command and its available flags/options.  It should be your first (or second) 
+<p>Manual pages include a lot of detail about a command and its available flags/options.  It should be your first (or second)
 port of call when you are trying to work out what a command or option does.</p>
 <p>You can scroll <em>up</em> and <em>down</em> in the man page using the <em>arrow</em> keys.</p>
-<p>You can search in the man page using the forward 
-slash followed by the search text followed by the <em>ENTER</em> key. e.g. 
-type <em>/hello</em> and press <em>ENTER</em> to search for the word <em>hello</em>.  Press <em>n</em> key to find next 
+<p>You can search in the man page using the forward
+slash followed by the search text followed by the <em>ENTER</em> key. e.g.
+type <em>/hello</em> and press <em>ENTER</em> to search for the word <em>hello</em>.  Press <em>n</em> key to find next
 occurance of <em>hello</em> etc.</p>
 <p>You can <em>quit</em> the man page by pressing <em>q</em>.</p>
 </div>
@@ -2476,7 +2540,7 @@ data                 lib64       opt      srv
 dev                  lost+found  proc     sys
 </code></pre>
 
-<p>Here we see that <em>ls</em> can take a filepath as its argument, which allows you to list the contents of directories 
+<p>Here we see that <em>ls</em> can take a filepath as its argument, which allows you to list the contents of directories
 other than your current working directory.</p>
 <p></details></p>
 <hr />
@@ -2487,13 +2551,13 @@ other than your current working directory.</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>The <em>cd</em> command changes the value of your current working directory. To change to the root directory use the 
+<p>The <em>cd</em> command changes the value of your current working directory. To change to the root directory use the
 following command:</p>
 <pre><code class="sh">$ cd /
 </code></pre>
 
 <p><strong>Answer</strong>: Yes, it now says the CWD is <em>/</em> instead of <em>~</em>.</p>
-<p>Some people imagine that changing the working directory is akin to moving your focus within the file system. 
+<p>Some people imagine that changing the working directory is akin to moving your focus within the file system.
 So people often say "move to", "go to" or "charge directory to" when they want to change the working directory.</p>
 <p>The root directory is special in Unix. It is the topmost directory in the whole file system.</p>
 <p></details></p>
@@ -2511,7 +2575,7 @@ such command.  However, it will get grumpy if something went wrong by way of an 
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>Assuming you have changed to the root directory then this can be achieved with <em>ls</em>, or <em>ls -a</em> (for all files) or 
+<p>Assuming you have changed to the root directory then this can be achieved with <em>ls</em>, or <em>ls -a</em> (for all files) or
 <em>ls -la</em> for a long listing of all files.</p>
 <p>If you are not currently in the root directory then you can list its contents by passing it as an argument to ls:</p>
 <pre><code class="sh">$ ls
@@ -2537,7 +2601,7 @@ is buried in <em>man cd</em> however <em>cd</em> doesn't have its own manpage so
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>Use the <em>cd</em> command to change your working directory to your home directory. There are a number of ways to refer 
+<p>Use the <em>cd</em> command to change your working directory to your home directory. There are a number of ways to refer
 to your home directory:</p>
 <pre><code class="sh">cd $HOME
 </code></pre>
@@ -2546,7 +2610,7 @@ to your home directory:</p>
 <pre><code class="sh">cd ~
 </code></pre>
 
-<p>The simplest way to change your current working directory to your home directory is to run the <em>cd</em> command with 
+<p>The simplest way to change your current working directory to your home directory is to run the <em>cd</em> command with
 no arguments:</p>
 <p><strong>Answer</strong>: the simplest for is cd with NO options.</p>
 <pre><code class="sh">cd
@@ -2600,9 +2664,9 @@ Bourne-Again shell script text executable
 </code></pre>
 
 <p><strong>Answer</strong>: Bourne-Again shell script text executable</p>
-<p>The "Bourne-Again shell" is more commonly known as BASH. The <em>file</em> command is telling us that sleepy 
+<p>The "Bourne-Again shell" is more commonly known as BASH. The <em>file</em> command is telling us that sleepy
 is (probably) a shell script written in the language of BASH.</p>
-<p>The file command uses various heuristics to guess the "type" of a file. If you want to know how it works 
+<p>The file command uses various heuristics to guess the "type" of a file. If you want to know how it works
 then read the Unix manual page like so:</p>
 <pre><code class="sh">man file
 </code></pre>
@@ -2618,12 +2682,12 @@ then read the Unix manual page like so:</p>
   <summary>Answer</summary></p>
 <p>Use the file command again. If you are in the same directory as <em>hi</em> then:</p>
 <pre><code class="sh">$ file hi
-ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 
+ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux
 2.6.9, not stripped
 </code></pre>
 
-<p><strong>Answer</strong>: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux </p>
-<p>This rather complicated output is roughly saying that the file called <em>hi</em> contains a binary executable 
+<p><strong>Answer</strong>: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux</p>
+<p>This rather complicated output is roughly saying that the file called <em>hi</em> contains a binary executable
 program (raw instructions that the computer can execute directly).</p>
 <p></details></p>
 <hr />
@@ -2635,18 +2699,18 @@ program (raw instructions that the computer can execute directly).</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>You can find the permissions of <em>sleepy</em> using the <em>ls</em> command with the <em>-l</em> flag. If you are in the same 
+<p>You can find the permissions of <em>sleepy</em> using the <em>ls</em> command with the <em>-l</em> flag. If you are in the same
 directory as <em>sleepy</em> then:</p>
 <pre><code class="sh">$ ls -l sleepy
 -rw-r--r-- 1 arobinson common 183 Feb  9 16:36 sleepy
 </code></pre>
 
-<p><strong>Answer</strong>: The Answer is dependent on the computer you are connected too however will follow something like above. 
-We can see that this particular instance of sleepy is owned by the user arobinson, and is part of the common 
-user group. It is 183 bytes in size, and was last modified on the 9th of February at 4:36pm. The file is 
-readable to everyone, and write-able only to arobinson.  The digit '1' between the file permission string and 
-the owner indicates that there is one link to the file. The Unix file system allows files to be referred to 
-by multiple "links". When you create a file it is referred to by one link, but you may add others later. For 
+<p><strong>Answer</strong>: The Answer is dependent on the computer you are connected too however will follow something like above.
+We can see that this particular instance of sleepy is owned by the user arobinson, and is part of the common
+user group. It is 183 bytes in size, and was last modified on the 9th of February at 4:36pm. The file is
+readable to everyone, and write-able only to arobinson.  The digit '1' between the file permission string and
+the owner indicates that there is one link to the file. The Unix file system allows files to be referred to
+by multiple "links". When you create a file it is referred to by one link, but you may add others later. For
 future reference: links are created with the <em>ln</em> command.</p>
 <p></details></p>
 <hr />
@@ -2712,16 +2776,16 @@ DESCRIPTION
        Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
 </code></pre>
 
-<p>which means <em>cp</em> expects zero or more flags, a SOURCE file followed by a DEST file or directory </p>
+<p>which means <em>cp</em> expects zero or more flags, a SOURCE file followed by a DEST file or directory</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>Use the <em>cp</em> command to copy files. </p>
-<div class="info"><b>Wildcards</b>: You could copy them one-by-one, but that would be tedious, so use 
+<p>Use the <em>cp</em> command to copy files.</p>
+<div class="info"><b>Wildcards</b>: You could copy them one-by-one, but that would be tedious, so use
 the <em>*</em> wildcard to specify that you want to copy all the files.
 </div>
 
-<p>There are a number of ways you could do this depending on how you specify the source and destination 
+<p>There are a number of ways you could do this depending on how you specify the source and destination
 paths to <em>cp</em>. You only need to perform one of these ways, but we show multiple ones for your reference.</p>
 <p><strong>Answer 1</strong>: From your home directory:</p>
 <pre><code class="sh">$ cp /vlsci/TRAINING/shared/Intro_to_Unix/Intro_to_Unix/* test
@@ -2732,7 +2796,7 @@ paths to <em>cp</em>. You only need to perform one of these ways, but we show mu
 $ cp /vlsci/TRAINING/shared/Intro_to_Unix/* .
 </code></pre>
 
-<p>In the example above the '<em>.</em>' (dot) character refers to the current working directory. It should be 
+<p>In the example above the '<em>.</em>' (dot) character refers to the current working directory. It should be
 the test subdirectory of your home directory.</p>
 <p><strong>Answer 3</strong>: Change to the \end{UNIX_TRAINING_FILES_PATH} directory and then copy:</p>
 <pre><code class="sh">cd /vlsci/TRAINING/shared/Intro_to_Unix/
@@ -2742,7 +2806,7 @@ cp * ~/test
 <p>Remember that ~ is a shortcut reference to your home directory.</p>
 <p></details></p>
 <hr />
-<p><strong>Note</strong>: This exercise assumes that the copy command from the previous exercise was successful. </p>
+<p><strong>Note</strong>: This exercise assumes that the copy command from the previous exercise was successful.</p>
 <h4 id="43-check-that-the-file-size-of-expectationstxt-is-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to">4.3) Check that the file size of <em>expectations.txt</em> is the same in both the directory that you copied it from and the directory that you copied it to.</h4>
 <p><details>
   <summary>Hint</summary></p>
@@ -2755,23 +2819,23 @@ cp * ~/test
 <p><details>
   <summary>Answer</summary></p>
 <p>Use <em>ls -l</em> to check the size of files.</p>
-<p>You could do this in many ways depending on the value of your working directory. We just show one possible 
+<p>You could do this in many ways depending on the value of your working directory. We just show one possible
 way for each file:</p>
 <pre><code class="sh">$ ls -l /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
 
 $ ls -l ~/test/expectations.txt
 </code></pre>
 
-<p>From the output of the above commands you should be able to see the size of each file and check that they 
-are the same. </p>
+<p>From the output of the above commands you should be able to see the size of each file and check that they
+are the same.</p>
 <p><strong>Answer</strong>: They should each be <em>1033773</em> bytes</p>
-<p><strong>Alternate</strong>: Sometimes it is useful to get file sizes reported in more "human friendly" units than bytes. If this is 
+<p><strong>Alternate</strong>: Sometimes it is useful to get file sizes reported in more "human friendly" units than bytes. If this is
 true then try the <em>-h</em> option for ls:</p>
 <pre><code class="sh">$ ls -lh /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
 -rw-r--r-- 1 arobinson common 1010K Mar 26  2012 /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
 </code></pre>
 
-<p>In this case the size is reported in kilobytes as <em>1010K</em>. Larger files are reported in megabytes, gigabytes 
+<p>In this case the size is reported in kilobytes as <em>1010K</em>. Larger files are reported in megabytes, gigabytes
 etcetera.</p>
 <p></details></p>
 <hr />
@@ -2831,14 +2895,14 @@ $ wc -c expectations.txt
 <p></details></p>
 <p><details>
   <summary>Additional Hint</summary></p>
-<p><em>^O</em> means hold the <em>Control</em> (or CTRL) key while pressing the <em>o</em>.  Dispite what it displays, you need to type 
+<p><em>^O</em> means hold the <em>Control</em> (or CTRL) key while pressing the <em>o</em>.  Dispite what it displays, you need to type
 the lower-case letter that follows the <em>^</em> character.</p>
 <p>WriteOut is another name for Save.</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
 <p>Take some time to play around with the <em>nano</em> text editor.</p>
-<p><em>Nano</em> is a very simple text editor which is easy to use but limited in features. More powerful 
+<p><em>Nano</em> is a very simple text editor which is easy to use but limited in features. More powerful
 editors exist such as <em>vim</em> and <em>emacs</em>, however they take a substantial amount of time to learn.</p>
 <p></details></p>
 <hr />
@@ -2854,7 +2918,7 @@ editors exist such as <em>vim</em> and <em>emacs</em>, however they take a subst
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>Use <em>diff</em> to check that the two files are different after you have made the change to the copy of 
+<p>Use <em>diff</em> to check that the two files are different after you have made the change to the copy of
 <em>expectations.txt</em> in your <em>~/test</em> directory.</p>
 <pre><code class="sh">diff ~/test/expectations.txt \
 /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
@@ -2925,10 +2989,10 @@ hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>You could use the <em>rm</em> command to remove each file individually, and then use the <em>rmdir</em> command 
-to remove the directory. Note that <em>rmdir</em> will only remove directories that are empty (i.e. do not 
+<p>You could use the <em>rm</em> command to remove each file individually, and then use the <em>rmdir</em> command
+to remove the directory. Note that <em>rmdir</em> will only remove directories that are empty (i.e. do not
 contain files or subdirectories).</p>
-<p>A faster way is to pass the <em>-r</em> (for recursive) flag to <em>rm</em> to remove all the files and the 
+<p>A faster way is to pass the <em>-r</em> (for recursive) flag to <em>rm</em> to remove all the files and the
 directory in one go:</p>
 <p><strong>Logical Answer</strong>:</p>
 <pre><code class="sh">cd ~
@@ -2941,8 +3005,8 @@ rmdir test
 rm -r test
 </code></pre>
 
-<div class="error"><b>Warning</b>: Be very careful with <em>rm -r</em>, it will remove all files 
-and all subdirectories underneath the specified directory. This could be catastrophic if you do it 
+<div class="error"><b>Warning</b>: Be very careful with <em>rm -r</em>, it will remove all files
+and all subdirectories underneath the specified directory. This could be catastrophic if you do it
 in the wrong location! Now is a good moment to pause and think about file backup strategies.</div>
 
 <p></details></p>
@@ -2978,7 +3042,7 @@ int main(void) {
 }
 </code></pre>
 
-<p><em>hello.c</em> contains the source code of a C program. The compiled executable version of this code 
+<p><em>hello.c</em> contains the source code of a C program. The compiled executable version of this code
 is in the file called <em>hi</em>, which you can run like so:</p>
 <pre><code class="sh">$ ./hi
 Hello World
@@ -3066,7 +3130,7 @@ SYNOPSIS
 ... AND MUCH MUCH MORE ...
 </code></pre>
 
-<p>If you want to know how many lines are in the output of the above command you can "pipe" it 
+<p>If you want to know how many lines are in the output of the above command you can "pipe" it
 into the <em>wc -l</em> command:</p>
 <pre><code class="sh">$ grep Ahab moby.txt | wc -l
 491
@@ -3134,7 +3198,7 @@ $ ls -l sample_1.fastq
 -rw-r--r-- 1 training01 training 90849644 Jun 14 20:03 sample_1.fastq
 </code></pre>
 
-<p>You will see that when it was compressed it is <em>26997595</em> bytes in size, making it about <em>0.3</em> times the size of the 
+<p>You will see that when it was compressed it is <em>26997595</em> bytes in size, making it about <em>0.3</em> times the size of the
 original file.</p>
 <p><strong>Note</strong>: in the above section the lines starting with <em>#</em> are comments so don't need to be copied but if you
 do then they wont do anything.</p>
@@ -3161,18 +3225,18 @@ the power of Unix.  I say <em>start</em> because this is only the "tip of the ic
 </code></pre>
 
 <p><strong>Answer</strong>: There are <em>3000000</em> lines in the file representing <em>750000</em> reads.</p>
-<p>If you want to do simple arithmetic at the command line then you can use the "basic calculator" 
+<p>If you want to do simple arithmetic at the command line then you can use the "basic calculator"
 called <em>bc</em>:</p>
 <pre><code class="sh">$ echo &quot;3000000 / 4&quot; | bc
 750000
 </code></pre>
 
-<div class="info"><b>Note</b>: that the vertical bar character "|" is the Unix pipe (and is often 
-called the "pipe symbol"). It is used for connecting the output of one command into the input of 
+<div class="info"><b>Note</b>: that the vertical bar character "|" is the Unix pipe (and is often
+called the "pipe symbol"). It is used for connecting the output of one command into the input of
 another command. We'll see more examples soon.</div>
 
-<p><em>bc</em> is suitable for small calculations, but it becomes cumbersome for more complex examples. If 
-you want to do more sophisticated calculations then we recommend to use a more general purpose 
+<p><em>bc</em> is suitable for small calculations, but it becomes cumbersome for more complex examples. If
+you want to do more sophisticated calculations then we recommend to use a more general purpose
 programming language (such as Python etcetera).</p>
 <p></details></p>
 <hr />
@@ -3189,7 +3253,7 @@ programming language (such as Python etcetera).</p>
 </code></pre>
 
 <p><strong>Answer</strong>: <em>1119</em></p>
-<p>If you are unsure about the possibility of upper and lower case characters then consider using 
+<p>If you are unsure about the possibility of upper and lower case characters then consider using
 the <em>-i</em> (ignore case option for grep).</p>
 <p></details></p>
 <hr />
@@ -3205,7 +3269,7 @@ the <em>-i</em> (ignore case option for grep).</p>
 <p><details>
   <summary>Answer</summary></p>
 <p>You can use the <em>-n</em> flag to grep to make it prefix each line with a line number:</p>
-<p><strong>Answer 1</strong>: </p>
+<p><strong>Answer 1</strong>:</p>
 <pre><code class="sh">$ grep -n GATTACA sample_1.fastq
 5078:AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
 7170:AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
@@ -3213,7 +3277,7 @@ the <em>-i</em> (ignore case option for grep).</p>
 ... AND MUCH MUCH MORE ...
 </code></pre>
 
-<p><strong>Answer 2</strong>: Or you can use the <em>nl</em> command to number each line of sample_1.fastq and then search for <em>GATTACA</em> 
+<p><strong>Answer 2</strong>: Or you can use the <em>nl</em> command to number each line of sample_1.fastq and then search for <em>GATTACA</em>
 in the numbered lines:</p>
 <pre><code class="sh">$ nl sample_1.fastq | grep GATTACA
   5078  AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
@@ -3223,7 +3287,7 @@ in the numbered lines:</p>
 </code></pre>
 
 <p><strong>Just the line numbers</strong>:</p>
-<p>If you just want to see the line numbers then you can "pipe" the output of the above command into 
+<p>If you just want to see the line numbers then you can "pipe" the output of the above command into
 <em>cut -f 1</em>:</p>
 <pre><code class="sh">$ nl sample_1.fastq | grep GATTACA | cut -f 1
   5078
@@ -3262,19 +3326,19 @@ in the numbered lines:</p>
 ... AND MUCH MUCH MORE ...
 </code></pre>
 
-<p>There are a lot of lines in that file so this command might take a while to print all its output. 
-If you get tired of looking at the output you can kill the command with <em>control-c</em> (hold the 
+<p>There are a lot of lines in that file so this command might take a while to print all its output.
+If you get tired of looking at the output you can kill the command with <em>control-c</em> (hold the
 <em>control</em> key down and simultaneously press the "<em>c</em>" character).</p>
 <p></details></p>
 <hr />
 <h4 id="55-redirect-the-output-of-the-previous-command-to-a-file-called-sample_1fastqnl">5.5) Redirect the output of the previous command to a file called <em>sample_1.fastq.nl</em>.</h4>
-<p>Check the first <em>20</em> lines of <em>sample_1.fastq.nl</em> with the <em>head</em> command. Use the <em>less</em> command to 
-interactively view the contents of <em>sample_1.fastq.nl</em> (use the arrow keys to navigate up and down, 
-<em>q</em> to quit and '<em>/</em>' to search). Use the search facility in less to find occurrences of 
+<p>Check the first <em>20</em> lines of <em>sample_1.fastq.nl</em> with the <em>head</em> command. Use the <em>less</em> command to
+interactively view the contents of <em>sample_1.fastq.nl</em> (use the arrow keys to navigate up and down,
+<em>q</em> to quit and '<em>/</em>' to search). Use the search facility in less to find occurrences of
 <em>GATTACA</em>.</p>
 <p><details>
   <summary>Hint</summary></p>
-<p>Ok that one was tough, <em>&gt; FILENAME</em> is how you do it if you didn't break out an internet search for 
+<p>Ok that one was tough, <em>&gt; FILENAME</em> is how you do it if you didn't break out an internet search for
 "redirect the output in Unix"</p>
 <p></details></p>
 <p><details>
@@ -3282,10 +3346,10 @@ interactively view the contents of <em>sample_1.fastq.nl</em> (use the arrow key
 <pre><code class="sh">$ nl sample_1.fastq &gt; sample_1.fastq.nl
 </code></pre>
 
-<p>The greater-than sign "<em>&gt;</em>" is the file redirection operator. It causes the standard output of the 
+<p>The greater-than sign "<em>&gt;</em>" is the file redirection operator. It causes the standard output of the
 command on the left-hand-side to be written to the file on the right-hand-side.</p>
-<p>You should notice that the above command is much faster than printing the output to the screen. 
-This is because writing to disk can be performed much more quickly than rendering the output on 
+<p>You should notice that the above command is much faster than printing the output to the screen.
+This is because writing to disk can be performed much more quickly than rendering the output on
 a terminal.</p>
 <p>To check that the first 20 lines of the file look reasonable you can use the <em>head</em> command like so:</p>
 <pre><code class="sh">$ head -20 sample_1.fastq.nl
@@ -3300,8 +3364,8 @@ a terminal.</p>
 ...
 </code></pre>
 
-<p>The <em>less</em> command allows you to interactively view a file. The arrow keys move the page up and 
-down. You can search using the '<em>/</em>' followed by the search term. You can quit by pressing "<em>q</em>". Note 
+<p>The <em>less</em> command allows you to interactively view a file. The arrow keys move the page up and
+down. You can search using the '<em>/</em>' followed by the search term. You can quit by pressing "<em>q</em>". Note
 that the <em>less</em> command is used by default to display man pages.</p>
 <pre><code class="sh">$ less sample_1.fastq.nl
 </code></pre>
@@ -3316,9 +3380,9 @@ that the <em>less</em> command is used by default to display man pages.</p>
   <summary>Answer</summary></p>
 <p>The <em>'-'</em> (dash) character has a special meaning when used in place of a file; it means use the standard
 input instead of a real file.  Note: while it is fairly common in most Unix programs, not all will support it.</p>
-<p>The <em>paste</em> command is useful for merging multiple files together line-by-line, such that the <em>Nth</em> 
-line from each file is joined together into one line in the output, separated by default with a 
-<em>tab</em> character. In the above example we give paste 4 copies of the contents of <em>sample_1.fastq</em>, 
+<p>The <em>paste</em> command is useful for merging multiple files together line-by-line, such that the <em>Nth</em>
+line from each file is joined together into one line in the output, separated by default with a
+<em>tab</em> character. In the above example we give paste 4 copies of the contents of <em>sample_1.fastq</em>,
 which causes it to join consecutive groups of 4 lines from the file into one line of output.</p>
 <p></details></p>
 <hr />
@@ -3334,8 +3398,8 @@ which causes it to join consecutive groups of 4 lines from the file into one lin
 <p><details>
   <summary>Answer</summary></p>
 <p><strong>Answer</strong>: No, in the second instance we get 4 copies of each line.</p>
-<p><strong>Why</strong>: In the first command <em>paste</em> will use the input file (standard input) 4 times since the <em>cat</em> 
-command will only give one copy of the file to <em>paste</em>, where as, in the second command <em>paste</em> will open 
+<p><strong>Why</strong>: In the first command <em>paste</em> will use the input file (standard input) 4 times since the <em>cat</em>
+command will only give one copy of the file to <em>paste</em>, where as, in the second command <em>paste</em> will open
 the file 4 times.  Note: this is quite confusing and is not necessory to remember; its just an interesting
 side point.</p>
 <p></details></p>
@@ -3365,8 +3429,8 @@ side point.</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>The file sample_1.tsv is in column format. The cut command can be used to select certain columns 
-from the file. The DNA sequences appear in column 2, we select that column using the -f 2 flag 
+<p>The file sample_1.tsv is in column format. The cut command can be used to select certain columns
+from the file. The DNA sequences appear in column 2, we select that column using the -f 2 flag
 (the f stands for "field").</p>
 <pre><code class="sh">cut -f 2 sample_1.tsv &gt; sample_1.dna.txt
 </code></pre>
@@ -3384,14 +3448,14 @@ from the file. The DNA sequences appear in column 2, we select that column using
 <pre><code class="sh">$ sort sample_1.dna.txt &gt; sample_1.dna.sorted.txt
 </code></pre>
 
-<p>Running <em>head</em> on the output file reveals that there are duplicate DNA sequences in the input FASTQ 
+<p>Running <em>head</em> on the output file reveals that there are duplicate DNA sequences in the input FASTQ
 file.</p>
 <p></details></p>
 <hr />
 <h4 id="511-use-the-uniq-command-to-remove-duplicate-consecutive-lines-from-sample_1dnasortedtxt-redirect-the-result-to-sample_1dnauniqtxt-compare-the-number-of-lines-in-sample1_dnatxt-to-the-number-of-lines-in-sample_1dnauniqtxt">5.11) Use the <em>uniq</em> command to remove duplicate consecutive lines from <em>sample_1.dna.sorted.txt</em>, redirect the result to <em>sample_1.dna.uniq.txt</em>. Compare the number of lines in sample1_dna.txt to the number of lines in <em>sample_1.dna.uniq.txt</em>.</h4>
 <p><details>
   <summary>Hint</summary></p>
-<p>I am pretty sure you have already used <em>man</em> (or just guessed how to use <em>uniq</em>).  You're also a gun at 
+<p>I am pretty sure you have already used <em>man</em> (or just guessed how to use <em>uniq</em>).  You're also a gun at
 redirection now.</p>
 <p></details></p>
 <p><details>
@@ -3406,7 +3470,7 @@ $ wc -l sample_1.dna.uniq.txt
 614490
 </code></pre>
 
-<p>View the contents of <em>sample_1.dna.uniq.txt</em> to check that the duplicate DNA sequences have been 
+<p>View the contents of <em>sample_1.dna.uniq.txt</em> to check that the duplicate DNA sequences have been
 removed.</p>
 <p></details></p>
 <hr />
@@ -3438,7 +3502,7 @@ removed.</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>Finally we can 'pipe' all the pieces together into a sophisticated pipeline which starts with a 
+<p>Finally we can 'pipe' all the pieces together into a sophisticated pipeline which starts with a
 FASTQ file and ends with a list of duplicated DNA sequences:</p>
 <p><strong>Answer</strong>:</p>
 <pre><code class="sh">$ cat sample_1.fastq | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
@@ -3451,25 +3515,25 @@ FASTQ file and ends with a list of duplicated DNA sequences:</p>
 <h4 id="514-advanced-write-a-shell-script-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq">5.14) (Advanced) Write a shell script which will print the number of duplicated DNA sequences in sample_1.fastq.</h4>
 <p><details>
   <summary>Hint</summary></p>
-<p>Check out the <em>sleepy</em> file (with <em>cat</em> or <em>nano</em>); there is a bit of magic on the first line that you will need. </p>
+<p>Check out the <em>sleepy</em> file (with <em>cat</em> or <em>nano</em>); there is a bit of magic on the first line that you will need.</p>
 <p>You also need to tell bash that this file can be executed (check out <em>chmod</em> command).</p>
 <p></details></p>
 <p><details>
   <summary>Answer</summary></p>
-<p>Put the answer to <em>5.13</em> into a file called <em>sample_1_dups.sh</em> (or whatever you want). Use <em>nano</em> to 
-create the file. </p>
+<p>Put the answer to <em>5.13</em> into a file called <em>sample_1_dups.sh</em> (or whatever you want). Use <em>nano</em> to
+create the file.</p>
 <p><strong>Answer</strong>: the contents of the file will look like this:</p>
 <pre><code class="sh">#!/bin/bash
 
 cat sample_1.fastq | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
 </code></pre>
 
-<div class="info"><b>Note</b>: the first line has special meaning.  If it starts with '<em>#!</em>' (Hash 
-then exclamation mark) then it tells bash this file is a script that can be interpreted.  The command 
+<div class="info"><b>Note</b>: the first line has special meaning.  If it starts with '<em>#!</em>' (Hash
+then exclamation mark) then it tells bash this file is a script that can be interpreted.  The command
 (including full path) used to intepret the script is placed right after the magic code.</div>
 
 <p>Give everyone execute permissions on the file with chmod:</p>
-<pre><code class="sh">$ chmod +x sample_1_dups.sh 
+<pre><code class="sh">$ chmod +x sample_1_dups.sh
 </code></pre>
 
 <p>You can run the script like so:</p>
@@ -3482,12 +3546,12 @@ then exclamation mark) then it tells bash this file is a script that can be inte
 <h4 id="515-advanced-modify-your-shell-script-so-that-it-accepts-the-name-of-the-input-fastq-file-as-a-command-line-parameter">5.15) (Advanced) Modify your shell script so that it accepts the name of the input FASTQ file as a command line parameter.</h4>
 <p><details>
   <summary>Hint</summary></p>
-<p>Shell scripts can refer to command line arguments by their position using special variables called 
-<em>$0</em>, <em>$1</em>, <em>$2</em> and so on. </p>
+<p>Shell scripts can refer to command line arguments by their position using special variables called
+<em>$0</em>, <em>$1</em>, <em>$2</em> and so on.</p>
 <p></details></p>
 <p><details>
   <summary>Additional Hint</summary></p>
-<p><em>$0</em> refers to the name of the script as it was called on the command line. 
+<p><em>$0</em> refers to the name of the script as it was called on the command line.
 <em>$1</em> refers to the first command line argument, and so on.</p>
 <p></details></p>
 <p><details>
@@ -3506,11 +3570,11 @@ cat $1 | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
 <pre><code class="sh">$ ./fastq_dups.sh sample_1.fastq
 </code></pre>
 
-<p>In the above example the script takes <em>sample_1.fastq</em> as input and prints the number of duplicated 
+<p>In the above example the script takes <em>sample_1.fastq</em> as input and prints the number of duplicated
 sequences as output.</p>
 <p><strong>A better Answer</strong>:</p>
-<p>Ideally we would write our shell script to be more robust. At the moment it just assumes there 
-will be at least one command line argument. However, it would be better to check and produce an 
+<p>Ideally we would write our shell script to be more robust. At the moment it just assumes there
+will be at least one command line argument. However, it would be better to check and produce an
 error message if insufficient arguments were given:</p>
 <pre><code class="sh">#!/bin/bash
 if [ $# -eq 1 ]; then
@@ -3526,17 +3590,17 @@ fi
 <p>The '<em>fi</em>' line means: this marks the end of the current <em>if</em> or <em>else</em> section.</p>
 <p>The '<em>[ $# -eq 1 ]</em>' part is the condition:</p>
 <ul>
-<li><em>$#</em>: is a special shell variable that indicates how many command line arguments were given. </li>
+<li><em>$#</em>: is a special shell variable that indicates how many command line arguments were given.</li>
 <li><em>-eq</em>: checks if the numbers on either side of it are equal.</li>
 <li><em>1</em>: is a number one</li>
 </ul>
 <div class="warning"><b>Spaces in conditions</b>:
-Bash is VERY picky about the spaces within the conditions; if you get it wrong it will just behave strangely 
+Bash is VERY picky about the spaces within the conditions; if you get it wrong it will just behave strangely
 (without warning).  You MUST put a space near the share brackets and between each part of the condition!</div>
 
 <p>So in words our script is saying "if user provided 1 filename, then count the duplicates, otherwise print an error".</p>
 <div class="info"><b>Exit-status</b>:
-It is a Unix standard that when the user provides incorrect commandline arguments we print a usage message 
+It is a Unix standard that when the user provides incorrect commandline arguments we print a usage message
 and return a *non-zero* exit status.  The *exit status* is a standard way for other programs to know if
 our program ran correctly; 0 means everything went as expected, any other number is an error.  If you don't
 provide an *exit ..* line then it automatically returns a 0 for you.</div>
@@ -3556,9 +3620,9 @@ done
 
 <p>There's a lot going on in this script.</p>
 <p>The <em>$@</em> is a sequence of all command line arguments.</p>
-<p>The '<em>for ...; do</em>' (a.k.a. for loop) iterates over that sequence one argument at a time, assigning the current argument in 
+<p>The '<em>for ...; do</em>' (a.k.a. for loop) iterates over that sequence one argument at a time, assigning the current argument in
 the sequence to the variable called <em>file</em>.</p>
-<p>The <em>$(...)</em> allow us to capture the output of another command (in-place of the <em>...</em>).  In this 
+<p>The <em>$(...)</em> allow us to capture the output of another command (in-place of the <em>...</em>).  In this
 case we capture the output of the pipeline and save it to the variable called <em>dups</em>.</p>
 <p>If you had multiple FASTQ files available you could run the script like so:</p>
 <pre><code class="sh">./fastq_dups.sh sample_1.fastq sample_2.fastq sample_3.fastq
@@ -3572,11 +3636,11 @@ sample_3.fastq YYYYY
 
 <p></details></p>
 <h2 id="finished">Finished</h2>
-<p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it 
+<p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it
 was a lot to take in.</p>
-<p>From here you should be comfortable around the Unix command line and ready to take on the HPC 
+<p>From here you should be comfortable around the Unix command line and ready to take on the HPC
 Workshop.</p>
-<p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this 
+<p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this
 workshop for later reference.</p>
 <p>Thank you for your attendance, please don't forget to complete the training survey and give it
 back to the workshop facilitators.</p>

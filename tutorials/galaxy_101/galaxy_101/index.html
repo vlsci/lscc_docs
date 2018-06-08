@@ -354,8 +354,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#background" title="Background" class="md-nav__link">
-    Background
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
@@ -363,6 +363,20 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
     Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
   </a>
   
 </li>
@@ -1021,8 +1035,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#background" title="Background" class="md-nav__link">
-    Background
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
@@ -1030,6 +1044,20 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
     Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
   </a>
   
 </li>
@@ -1162,6 +1190,23 @@
 
 <h1 id="introduction-to-galaxy">Introduction to Galaxy</h1>
 <p>Written and maintained by <a href="mailto:simon.gladman@unimelb.edu.au">Simon Gladman</a> - Melbourne Bioinformatics (formerly VLSCI)</p>
+<h2 id="overview">Overview</h2>
+<p>This beginners tutorial will introduce Galaxy's interface, tool use, histories, and get new users of the Genomics Virtual Laboratory up and running. You can follow this tutorial with the <a href="../../galaxy-workflows/galaxy-workflows/">Galaxy Workflows</a> tutorial to learn about workflows.</p>
+<p>Galaxy is an open source, web-based platform for accessible, reproducible, and transparent computational biomedical research. It allows users without programming experience to easily specify parameters and run individual tools as well as larger workflows. It also captures run information so that any user can repeat and understand a complete computational analysis. Finally, it allows users to share and publish analyses via the web.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>At the end of the course, you will be able to:</p>
+<ul>
+<li>login to a Galaxy server.</li>
+<li>upload data to a Galaxy server from:</li>
+<li>A file on your local computer</li>
+<li>A file on a remote datastore with an accessible URL.</li>
+<li>use tools in Galaxy by:</li>
+<li>Accessing the tool via the tool menu</li>
+<li>Using the tool interface to run the particular tool</li>
+<li>Viewing/accessing the tool output.</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>This is a hands-on workshop and attendees should bring their own laptops.</p>
 <h2 id="background">Background</h2>
 <p>Galaxy is a web based analysis and workflow platform designed for biologists to analyse their own data. It comes with most of the popular bioinformatics tools already installed and ready for use. There are many Galaxy servers around the world and some are tailored with specific toolsets and reference data for analysis of human genomics, microbial genomics, proteomics etc.</p>
 <p>There are some introductory slides available <a href="https://docs.google.com/presentation/d/1dzHagGkswjH7MOZ7OACVXGU-riBs33K3J5lWpnCpPhs/pub?start=false&amp;loop=false&amp;slide=id.g537781ff1_2_18">here</a>.</p>
@@ -1175,30 +1220,13 @@
 <li>Using to use some common tools</li>
 </ul>
 <hr />
-<h2 id="learning-objectives">Learning Objectives</h2>
-<p>At the end of this tutorial you should:</p>
-<ol>
-<li>Be able to register on and login to a Galaxy server.</li>
-<li>Be able to upload data to a Galaxy server from:<ul>
-<li>A file on your local computer</li>
-<li>A file on a remote datastore with an accessible URL.</li>
-</ul>
-</li>
-<li>Be able use tools in Galaxy by:<ul>
-<li>Accessing the tool via the tool menu</li>
-<li>Using the tool interface to run the particular tool</li>
-<li>Viewing/accessing the tool output.</li>
-</ul>
-</li>
-</ol>
-<hr />
 <h2 id="section-1-preparation">Section 1: Preparation.</h2>
 <p>The purpose of this section is to get you to log in to the server.</p>
 <ol>
 <li>
-<p>Open your browser. We recommend Firefox or Chrome (please don't use Internet Explorer or Safari). </p>
+<p>Open your browser. We recommend Firefox or Chrome (please don't use Internet Explorer or Safari).</p>
 <ul>
-<li>Go to the <a href="https://galaxy-mel.genome.edu.au/galaxy/">Galaxy-Mel</a> server. </li>
+<li>Go to the <a href="https://galaxy-mel.genome.edu.au/galaxy/">Galaxy-Mel</a> server.</li>
 <li>Alternatively, you can use a different Galaxy server - a list of available servers is <a href="https://galaxyproject.org/galaxy-services/">here</a>.</li>
 </ul>
 </li>
@@ -1382,7 +1410,7 @@
 <li>"Fasta file": MRSA252.fna</li>
 <li>Click <strong>Execute</strong></li>
 </ul>
-<p>A new file called <em>barrnap on data 3</em> will be produced. It is a gff3 file. (This stands for genome feature format - version 3. It is a file format for describing features contained by a DNA sequence.) Change its name to something more appropriate (click on the <img src="../media/Galaxy-edit.png" width=20 /> icon.) </p>
+<p>A new file called <em>barrnap on data 3</em> will be produced. It is a gff3 file. (This stands for genome feature format - version 3. It is a file format for describing features contained by a DNA sequence.) Change its name to something more appropriate (click on the <img src="../media/Galaxy-edit.png" width=20 /> icon.)</p>
 <p>Now let's say you only want the lines of the file for the 23S rRNA annotations. We can do this using a Filter tool.</p>
 <p><strong>2. Filter the annotations to get the 23S RNAs</strong></p>
 <ul>

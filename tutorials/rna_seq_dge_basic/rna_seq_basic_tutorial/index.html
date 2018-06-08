@@ -557,6 +557,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-data" title="The data" class="md-nav__link">
     The data
   </a>
@@ -1011,6 +1018,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-data" title="The data" class="md-nav__link">
     The data
   </a>
@@ -1157,7 +1171,7 @@ contain sequencing and alignment errors that make analysis more difficult.</p>
 <li>use a number of different methods to find differentially expressed genes</li>
 <li>understand the importance of replicates for differential expression analysis</li>
 </ul>
-<p>This tutorial does not cover the following steps that might do in a real
+<p>This tutorial does not cover the following steps that we might do in a real
 RNA-seq DGE analysis:  </p>
 <ul>
 <li>QC (quality control) of the raw sequence data</li>
@@ -1166,22 +1180,24 @@ RNA-seq DGE analysis:  </p>
 </ul>
 <p>These steps have been omitted because the data we use in this tutorial is
 synthetic and has no quality issues, unlike real data.</p>
-<hr />
 <h2 id="learning-objectives">Learning Objectives</h2>
-<p>At the end of this tutorial you should:</p>
+<p>At the end of this tutorial you will be able to:</p>
 <ul>
-<li>Be familiar with basic workflow of alignment, quantification, and testing,
+<li>understand the basic workflow of alignment, quantification, and testing,
    for RNA-seq differential expression analysis</li>
-<li>Be able to process raw RNA sequence data into a list of differentially
+<li>process raw RNA sequence data into a list of differentially
    expressed genes</li>
-<li>Be aware of how the relationship between the number of biological replicates
+<li>understand the relationship between the number of biological replicates
    in an experiment and the statistical power available to detect differentially
    expressed genes</li>
 </ul>
+<h2 id="requirements">Requirements</h2>
+<p>Participants with no previous Galaxy experience are strongly recommended to attend the "Introduction to Galaxy" workshop first.</p>
+<p>Attendees are required to bring their own laptop computers.</p>
 <hr />
 <h2 id="the-data">The data</h2>
 <p>The sequencing data you will be working with is simulated from Drosophila
-melanogaster. The experiment has two conditioins, WT (wildtype) and KO
+melanogaster. The experiment has two conditions, WT (wildtype) and KO
 (knockout), and three samples in each condition. The sequencing data is
 paired-end, so there are two files for each of the six samples. Your aim will
 be to find differentially expressed genes in WT vs KO.</p>

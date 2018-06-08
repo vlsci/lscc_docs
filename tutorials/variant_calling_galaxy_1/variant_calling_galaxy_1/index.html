@@ -462,8 +462,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tutorial-overview" title="Tutorial Overview" class="md-nav__link">
-    Tutorial Overview
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
@@ -471,6 +471,13 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
     Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
@@ -1089,8 +1096,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tutorial-overview" title="Tutorial Overview" class="md-nav__link">
-    Tutorial Overview
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
@@ -1098,6 +1105,13 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
     Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
@@ -1288,19 +1302,20 @@
 <p><br></p>
 
 <h1 id="introduction-to-variant-calling-using-galaxy">Introduction to Variant Calling using Galaxy</h1>
-<hr />
-<h2 id="tutorial-overview">Tutorial Overview</h2>
-<p>In this tutorial we cover the concepts of detecting small variants (SNVs and indels) in human genomic DNA using a small set of reads from chromosome 22.</p>
-<p>Note: The tutorial is designed to introduce the tools, datatypes and workflow of variation detection. We filter the variants manually to understand what is actually happening in variant calling. In practice the datasets would be much larger and you would carry out some extra steps to improve the quality of the called variants.</p>
-<hr />
+<h2 id="overview">Overview</h2>
+<p>This tutorial is designed to introduce the tools, data types and workflow of variant detection. We will align reads to the genome, look for differences between reads and reference genome sequence, and filter the detected genomic variation manually to understand the computational basis of variant calling.</p>
+<p>We cover the concepts of detecting small variants (SNVs and indels) in human genomic DNA using a small set of reads from chromosome 22.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
-<p>At the end of this tutorial you should:</p>
+<p>At the end of the course, you will be able to:</p>
 <ul>
-<li>Be familiar with the FASTQ format and base quality scores</li>
-<li>Be able to align reads to generate a BAM file and subsequently generate a pileup file</li>
-<li>Be able to run the FreeBayes variant caller to find SNVs and indels</li>
-<li>Be able to visualise BAM files using the <a href="http://software.broadinstitute.org/software/igv/">Integrative Genomics Viewer (IGV)</a> and identify likely SNVs and indels by eye</li>
+<li>Work with the FASTQ format and base quality scores</li>
+<li>Align reads to generate a BAM file and subsequently generate a pileup file</li>
+<li>Run the FreeBayes variant caller to find SNVs and indels</li>
+<li>Visualise BAM files using the Integrative Genomics Viewer (IGV) and identify likely SNVs and indels by eye</li>
 </ul>
+<h2 id="requirements">Requirements</h2>
+<p>This workshop uses Galaxy as a platform. It is recommended that participants who have not used Galaxy before either sign up for our Intro to GVL workshop, or work through this tutorial themselves beforehand.</p>
+<p>This is a hands-on workshop and attendees are required to bring their own laptops.</p>
 <hr />
 <h2 id="background">Background</h2>
 <p>Some background reading material - <a href="https://www.google.com/url?q=https://docs.google.com/document/pub?id%3D1NfythYcSrkQwldGMrbHRKLRORFFn-WnBm3gOMHwIgmE&amp;sa=D&amp;usg=AFQjCNE7C6wmK6Fiu-_ZJhc0RSBaxFSRbg">background</a></p>
@@ -1314,9 +1329,9 @@
 </ul>
 </li>
 <li><strong>Create a new history for this tutorial.</strong><ul>
-<li>In the history pane, click on the cog icon at the top right. </li>
+<li>In the history pane, click on the cog icon at the top right.</li>
 <li>Click <em>Create New</em>.</li>
-<li>Click on <em>Unnamed history</em> and re-name it. </li>
+<li>Click on <em>Unnamed history</em> and re-name it.</li>
 </ul>
 </li>
 <li>
@@ -1387,7 +1402,7 @@ quality score: ?ACDDEFFHBCHHHHHFHGGCHHDFDIFFIFFIIIIHIGFIIFIEEIIEFEIIHIGFIIIIIGHC
    <li> red = tried to run and failed
    </ul></p>
 </blockquote>
-<p>When the job has finished, click on the eye icon to view the newly generated data (in this case a set of quality metrics for the FASTQ data). This will be a file called <em>FastQC on data 1: Web page</em>. 
+<p>When the job has finished, click on the eye icon to view the newly generated data (in this case a set of quality metrics for the FASTQ data). This will be a file called <em>FastQC on data 1: Web page</em>.
 Look at the various quality scores. The data looks pretty good - <em>high Per base sequence quality</em> (avg. above 30).</p>
 <hr />
 <h2 id="3-alignment-to-the-reference-fastq-to-bam">3. Alignment to the reference - (FASTQ to BAM)</h2>
