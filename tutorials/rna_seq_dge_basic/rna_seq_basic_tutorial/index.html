@@ -590,6 +590,26 @@
     Section 3: Visualise the aligned reads
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-in-jbrowse" title="Viewing in JBrowse" class="md-nav__link">
+    Viewing in JBrowse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-in-igv" title="Viewing in IGV" class="md-nav__link">
+    Viewing in IGV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1051,6 +1071,26 @@
     Section 3: Visualise the aligned reads
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-in-jbrowse" title="Viewing in JBrowse" class="md-nav__link">
+    Viewing in JBrowse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-in-igv" title="Viewing in IGV" class="md-nav__link">
+    Viewing in IGV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1159,8 +1199,8 @@
 <hr />
 <h2 id="tutorial-overview">Tutorial Overview</h2>
 <p>In this tutorial we cover the concepts of RNA-seq differential gene expression
-(DGE) analysis using a simulated dataset from the common fruit fly, Drosophila
-melanogaster.</p>
+(DGE) analysis using a simulated dataset from the common fruit fly, <em>Drosophila
+melanogaster</em>.</p>
 <p>The tutorial is designed to introduce the tools, datatypes and workflows of an
 RNA-seq DGE analysis. In practice, real datasets would be much larger and
 contain sequencing and alignment errors that make analysis more difficult.</p>
@@ -1206,26 +1246,27 @@ be to find differentially expressed genes in WT vs KO.</p>
 <hr />
 <h2 id="section-1-preparation">Section 1: Preparation</h2>
 <p><strong>1.  Register as a new user in Galaxy if you don’t already have an account</strong></p>
-<ol>
-<li>Open a browser and go to a Galaxy server. This can either be your
-    personal GVL server you <a href="http://genome.edu.au/get/get#launch">started previously</a>,
-    the public <a href="http://galaxy-tut.genome.edu.au">Galaxy Tutorial server</a>
-    or the public <a href="https://usegalaxy.org.au/">Galaxy Australia</a>.<br />
-    Recommended browsers include Firefox and Chrome. Internet Explorer
-    is not supported.</li>
-<li>Register as a new user by clicking <strong>User &gt; Register</strong> on the top
-    dark-grey bar. Alternatively, if you already have an account, login by
-    clicking <strong>User &gt; Login</strong>.</li>
-</ol>
+<ul>
+<li>Open a browser and go to a Galaxy server. For example, you could use <a href="https://usegalaxy.org.au/">Galaxy Australia</a>. Recommended browsers include Firefox and Chrome. Internet Explorer is not supported.</li>
+<li>Register as a new user by clicking <strong>User &gt; Register</strong> on the top dark-grey bar. Alternatively, if you already have an account, login by clicking <strong>User &gt; Login</strong>.</li>
+</ul>
+<!-- This can either be your
+    personal GVL server you [started previously](http://genome.edu.au/get/get#launch),
+    the public [Galaxy Tutorial server](http://galaxy-tut.genome.edu.au)
+    or the public [Galaxy Australia](https://usegalaxy.org.au/).  -->
+
 <p><strong>2.  Import the RNA-seq data for the workshop.</strong></p>
-<p>If you are using the public Galaxy Tutorial server or Galaxy Melbourne server,
+<!-- If you are using the public Galaxy Tutorial server or Galaxy Melbourne server,
 you can import the data directly from Galaxy. You can do this by going to
-<strong>Shared Data &gt; Published Histories</strong> on the top toolbar, and selecting
-the history called <strong>RNA-Seq_Basic_2017</strong>. Then click on "Import History" on
+**Shared Data > Published Histories** on the top toolbar, and selecting
+the history called **RNA-Seq_Basic_2017**. Then click on "Import History" on
 the top right and "start using this history" to switch to the newly imported
-history.</p>
-<p>Alternatively, if you are using your own personal Galaxy server, you can import
-the data by:</p>
+history.
+-->
+
+<p>If you are using Galaxy Australia, go to <strong>Shared Data &gt; Data Libraries</strong> in the top toolbar, and select <strong>Galaxy Australia Training Material: RNA-Seq: Fly RNA-Seq</strong>. Select (tick) all of the files and click <strong>To History</strong>, and choose <strong>as Datasets</strong>, then <strong>Import</strong>.</p>
+<p>Alternatively, if you are using your own personal Galaxy server or a different Galaxy server, you can import
+the data like this:</p>
 <ol>
 <li>In the tool panel located on the left, under Basic Tools select <strong>Get
     Data &gt; Upload File</strong>. Click on the <strong>Paste/Fetch data</strong> button on the
@@ -1344,11 +1385,21 @@ HISAT2 can be found <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">he
 <p>In the left tool panel menu, under NGS Analysis, select
 <strong>NGS: RNA Analysis &gt; HISAT2</strong> and set the parameters as follows:  </p>
 <ul>
-<li><strong>Input data format</strong> FASTQ</li>
-<li><strong>Single end or paired reads?</strong> Individual paired reads</li>
+<li>
+<p><strong>Source for the reference genome to align against:</strong> Use
+built-in genome</p>
+</li>
+<li>
+<p><strong>Select a reference genome:</strong> Fruit Fly (Drosophila melanogaster): dm3</p>
+</li>
+</ul>
+<!-- - **Input data format** FASTQ-->
+
+<ul>
+<li><strong>Single end or paired reads?</strong> Paired end</li>
 <li>
 <p><strong>Forward reads:</strong><br />
-(Click on the <strong>multiple datasets icon</strong> and select all six of the forward
+(Click on the <strong>multiple datasets icon</strong> (which looks like two pieces of paper in a stack) and select all six of the forward
 FASTQ files ending in *1.fastq. This should be correspond to every
 second file (1,3,5,7,9,11). This can be done by holding down the
 ctrl key (Windows) or the command key (OSX) to select multiple files.)</p>
@@ -1374,13 +1425,12 @@ FASTQ files ending in *2.fastq.)  </p>
 <li>KO_03_R2.fastq</li>
 </ul>
 </li>
-<li><strong>Source for the reference genome to align against:</strong> Use
-built-in genome</li>
-<li><strong>Select a reference genome:</strong> D. melanogaster Apr. 2006 (BDGP R5/dm3)
-  (dm3)</li>
-<li>Use defaults for the other fields</li>
+<li>
+<p>Use defaults for the other fields</p>
+</li>
 <li>Execute</li>
 </ul>
+<p>Your tool interface panel will look similar to this (although the options may be in a different order):</p>
 <p><img src="../media/rna_basic_hisat2.png"/></p>
 <p>Note: This may take a few minutes, depending on how busy the server is.</p>
 <p><strong>2.  Examine the alignment stats</strong></p>
@@ -1389,10 +1439,13 @@ files into a more meaningful name (e.g. 'HISAT on data 2 and data 1' to 'WT_01.b
 by using the <strong>pen icon</strong> next to the file.</p>
 <p>These files are BAM files (short for
 <a href="https://en.wikipedia.org/wiki/Binary_Alignment_Map">Binary Alignment Map</a>)
-and like the name suggests, is a binary file. This means we can't use the
+and like the name suggests, is a binary file. Galaxy automatically converts these to a plain-text equivalent (SAM) file to view, when you click on the eye icon.</p>
+<!-- This means we can't use the
 eye icon to view the data in Galaxy; we need to use software that can read the
 file or convert it into it's plain-text equivalent (SAM) to view it as text.
-In section 3, we'll use a genome viewer to view our alignments.</p>
+-->
+
+<p>In section 3, we'll use a genome viewer to view our alignments.</p>
 <p>HISAT2 also outputs some information to stderr which we can preview by
 clicking on the dataset name. To view the raw file, click the "info" button
 (view details) of a dataset, say WT_01.bam, and find the "Tool Standard Error"
@@ -1424,10 +1477,57 @@ data we have is simulated and has no contamination.</p>
 <li>visualise the quantitative, exon-based nature of RNA-seq data</li>
 <li>visualise the expression differences between samples represented by the
   quantity of reads, and</li>
-<li>become familiar with the <a href="https://www.broadinstitute.org/igv/">Integrative Genomics Viewer
-  (IGV)</a>-- an interactive
-  visualisation tool by the Broad Institute.  </li>
+<li>become familiar with interactive visualisation tools such as JBrowse.   </li>
 </ul>
+<!--
+- become familiar with the [Integrative Genomics Viewer
+  (IGV)](https://www.broadinstitute.org/igv/)-- an interactive
+  visualisation tool by the Broad Institute.  
+-->
+
+<h3 id="viewing-in-jbrowse">Viewing in JBrowse</h3>
+<p>To visualise the alignment data:</p>
+<ul>
+<li>search for "JBrowse" in the tool panel search bar</li>
+<li>for "Reference genome to display": <em>Use a built-in genome</em></li>
+<li>for "Select a reference genome": <em>Fruit Fly dm3</em></li>
+<li>leave other settings as default, except:</li>
+</ul>
+<p><strong>Set up a track for mapped RNA-seq reads:</strong></p>
+<ul>
+<li>click "Insert Track Group" and then "Insert Annotation Track"</li>
+<li>for "Track Type": <em>BAM pileups</em></li>
+<li>for "BAM Track Data": select the multiple datasets icon, then select a bam from each condition, e.g., WT_01.bam and KO_01.bam (your files may be named differently)</li>
+<li>for "Autogenerate SNP Track": <em>Yes</em></li>
+</ul>
+<p><strong>Set up a track for the annotated genome:</strong></p>
+<ul>
+<li>click "Insert Track Group" and then "Insert Annotation Track"</li>
+<li>for "Track Type": <em>GFF/GFF3/BED/GBK Features</em></li>
+<li>for "GFF/GFF3/BED Track Data": select the reference genome, e.g. ensembl_dm3.chr4.gtf (your files may be named differently)</li>
+<li><em>Execute</em></li>
+</ul>
+<p>JBrowse will create a single file with this visualization (this may take a while).</p>
+<ul>
+<li>When it is ready, click the eye icon to display in the centre panel.</li>
+<li>Make sure all "Available Tracks" on the left are ticked.</li>
+<li>Zoom in and out with the plus and minus buttons.</li>
+<li>Select "Chr4".</li>
+</ul>
+<p><img alt="JBrowse" src="../media/jbrowse.png" /></p>
+<p>The aim of this tutorial is to statistically test
+differential expression, but first it’s useful to reassure ourselves
+that the data looks right at this stage by comparing the aligned reads
+for condition 1 (WT) and condition 2 (KO).</p>
+<p>If you can't find any, try changing the location to
+<strong>chr4:816349-830862</strong> using the field on the top toolbar.
+The 'Sox102F' gene in this area looks like it has many more reads
+mapped in WT than in KO. Hover over the coverage track to view the read
+depth of the area. But, of course, it may be that there are many more
+reads in the library for WT than KO. So we need to statistically
+normalise the read counts before we can say anything definitive,
+which we will do in the next section.</p>
+<h3 id="viewing-in-igv">Viewing in IGV</h3>
 <p>To visualise the alignment data:</p>
 <ol>
 <li>Click on one of the BAM files, for example 'WT_01.bam'.</li>
