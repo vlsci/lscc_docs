@@ -576,6 +576,19 @@
     Section 1: Preparation
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-the-gtf-to-a-gff-file" title="Convert the GTF to a GFF file" class="md-nav__link">
+    Convert the GTF to a GFF file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1057,6 +1070,19 @@
     Section 1: Preparation
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-the-gtf-to-a-gff-file" title="Convert the GTF to a GFF file" class="md-nav__link">
+    Convert the GTF to a GFF file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1373,6 +1399,10 @@ unfamiliar with paired-end sequencing, you can read about it
     <a href="http://asia.ensembl.org/info/website/upload/gff.html">here</a>.</p>
 </li>
 </ol>
+<h3 id="convert-the-gtf-to-a-gff-file">Convert the GTF to a GFF file</h3>
+<p>This is needed for downstream analysis.</p>
+<p>In the tools panel, search for "GTF" and click on "GTF-to-GFF converter".</p>
+<p>Select the GTF file and click "Execute".</p>
 <hr />
 <h2 id="section-2-alignment-with-hisat2">Section 2: Alignment with HISAT2</h2>
 <p>In this section we map the reads in our FASTQ files to a reference genome. As
@@ -1504,7 +1534,7 @@ data we have is simulated and has no contamination.</p>
 <ul>
 <li>click "Insert Track Group" and then "Insert Annotation Track"</li>
 <li>for "Track Type": <em>GFF/GFF3/BED/GBK Features</em></li>
-<li>for "GFF/GFF3/BED Track Data": select the reference genome, e.g. ensembl_dm3.chr4.gtf (your files may be named differently)</li>
+<li>for "GFF/GFF3/BED Track Data": select the reference genome in GFF format, e.g. the converted GTF file (ensembl_dm3.chr4.gtf) - your files may be named differently</li>
 <li><em>Execute</em></li>
 </ul>
 <p>JBrowse will create a single file with this visualization (this may take a while).</p>
@@ -1568,26 +1598,29 @@ normalise the read counts before we can say anything definitive,
 which we will do in the next section.</p>
 </li>
 </ol>
-<p><strong>[Optional]</strong> Visualise the aligned reads in Trackster<br />
+<!--
+**[Optional]** Visualise the aligned reads in Trackster  
 If you have trouble getting IGV to work, you can also use the inbuilt
 Galaxy genome browser, Trackster, to visualise alignments. Trackster has fewer
 features than IGV, but sometimes it may be more convenient to use as it only
-requires the browser.</p>
-<ol>
-<li>On the top bar of Galaxy, select <strong>Visualization &gt; New Track Browser</strong>.</li>
-<li>Name your new visualization and select D. melanogaster (dm3) as the
-    reference genome build.</li>
-<li>Click the <strong>Add Datasets to Visualization</strong> button and select WT_01.bam and
-    KO_01.bam by using the checkboxes on the left.</li>
-<li>Select chr4 from the dropdown box. You can zoom in and out using the
+requires the browser.
+
+1.  On the top bar of Galaxy, select **Visualization > New Track Browser**.
+2.  Name your new visualization and select D. melanogaster (dm3) as the
+    reference genome build.
+3.  Click the **Add Datasets to Visualization** button and select WT_01.bam and
+    KO_01.bam by using the checkboxes on the left.
+4.  Select chr4 from the dropdown box. You can zoom in and out using the
     buttons on the top toolbar. You can also add more tracks using the Add
-    Tracks icon located on the top right.</li>
-<li>Next to the drop down list, click on the chromosomal position number
-    display and specify the location <strong>chr4:816349-830862</strong>.  </li>
-</ol>
-<p>Before starting the next section, leave the Trackster interface and return
+    Tracks icon located on the top right.
+5.  Next to the drop down list, click on the chromosomal position number
+    display and specify the location **chr4:816349-830862**.  
+
+Before starting the next section, leave the Trackster interface and return
 to the analysis view of Galaxy by clicking 'Analyze Data' on the top
-Galaxy toolbar.</p>
+Galaxy toolbar.
+-->
+
 <hr />
 <h2 id="section-4-quantification">Section 4. Quantification</h2>
 <p>HTSeq-count counts the number of the reads from each bam file that map to the

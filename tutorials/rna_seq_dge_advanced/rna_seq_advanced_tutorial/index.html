@@ -631,6 +631,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#convert-the-gtf-to-a-gff-file" title="Convert the GTF to a GFF file" class="md-nav__link">
+    Convert the GTF to a GFF file
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -659,8 +666,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-visualise-the-aligned-reads-with-trackster" title="3.  Visualise the aligned reads with Trackster" class="md-nav__link">
-    3.  Visualise the aligned reads with Trackster
+  <a href="#3-visualise-the-aligned-reads-with-jbrowse" title="3.  Visualise the aligned reads with JBrowse" class="md-nav__link">
+    3.  Visualise the aligned reads with JBrowse
   </a>
   
 </li>
@@ -1219,6 +1226,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#convert-the-gtf-to-a-gff-file" title="Convert the GTF to a GFF file" class="md-nav__link">
+    Convert the GTF to a GFF file
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1247,8 +1261,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-visualise-the-aligned-reads-with-trackster" title="3.  Visualise the aligned reads with Trackster" class="md-nav__link">
-    3.  Visualise the aligned reads with Trackster
+  <a href="#3-visualise-the-aligned-reads-with-jbrowse" title="3.  Visualise the aligned reads with JBrowse" class="md-nav__link">
+    3.  Visualise the aligned reads with JBrowse
   </a>
   
 </li>
@@ -1510,26 +1524,26 @@ tutorial a suitable length. This has implications, as discussed in section 8.</p
 <hr />
 <h2 id="section-1-preparation-15-min">Section 1: Preparation [15 min]</h2>
 <h4 id="1-register-as-a-new-user-in-galaxy-if-you-dont-already-have-an-account">1.  Register as a new user in Galaxy if you don’t already have an account</h4>
-<ol>
-<li>Open a browser and go to a Galaxy server. This can either be your
-    personal GVL server you <a href="http://genome.edu.au/get/get#launch">started previously</a>,
-    the public <a href="http://galaxy-tut.genome.edu.au">Galaxy Tutorial server</a>
-    or the public <a href="https://usegalaxy.org.au/">Galaxy Australia</a>.<br />
-    Recommended browsers include Firefox and Chrome. Internet Explorer
-    is not supported.</li>
-<li>Register as a new user by clicking <strong>User &gt; Register</strong> on the top
-    dark-grey bar. Alternatively, if you already have an account, login by
-    clicking <strong>User &gt; Login</strong>.</li>
-</ol>
+<ul>
+<li>Open a browser and go to a Galaxy server. For example, you could use <a href="https://usegalaxy.org.au/">Galaxy Australia</a>. Recommended browsers include Firefox and Chrome. Internet Explorer is not supported.</li>
+<li>Register as a new user by clicking <strong>User &gt; Register</strong> on the top dark-grey bar. Alternatively, if you already have an account, login by clicking <strong>User &gt; Login</strong>.</li>
+</ul>
 <h4 id="2-import-the-rna-seq-data-for-the-workshop">2.  Import the RNA-seq data for the workshop.</h4>
-<p>If you are using the public Galaxy Tutorial server or Galaxy Melbourne server,
-you can import the data directly from Galaxy. You can do this by going to
-<strong>Shared Data &gt; Published Histories</strong> on the top toolbar, and selecting
-the history called <strong>RNA-Seq_Adv_Sec_1</strong>. Then click on "Import History" on
+<p>If you are using Galaxy Australia, go to <strong>Shared Data &gt; Data Libraries</strong> in the top toolbar, and select <strong>Galaxy Australia Training Material: RNA-Seq: Yeast RNA-Seq</strong>. Select (tick) all of the files and click <strong>To History</strong>, and choose <strong>as Datasets</strong>, then <strong>Import</strong>.</p>
+<p>Alternatively, if you are using your own personal Galaxy server or a different Galaxy server, you can import
+the data like this:</p>
+<!-- If you are using the Galaxy Australia server, you can import the data directly from Galaxy.
+
+You can do this by going to
+**Shared Data > Published Histories** on the top toolbar, and selecting
+the history called **RNA-Seq_Adv_Sec_1**. Then click on "Import History" on
 the top right and "start using this history" to switch to the newly imported
-history.</p>
-<p>Alternatively, if you are using your own personal Galaxy server, you can import
-the data by:</p>
+history.
+
+Alternatively, if you are using your own personal Galaxy server, you can import
+the data by:
+-->
+
 <ol>
 <li>In the tool panel located on the left, under Basic Tools select <strong>Get
     Data &gt; Upload File</strong>. Click on the <strong>Paste/Fetch data</strong> button on the
@@ -1599,6 +1613,10 @@ batch1_chrI_2.fastq are paired reads from one sequencing run. Low quality
 reads have already been trimmed.</p>
 </li>
 </ol>
+<h3 id="convert-the-gtf-to-a-gff-file">Convert the GTF to a GFF file</h3>
+<p>This is needed for downstream analysis.</p>
+<p>In the tools panel, search for "GTF" and click on "GTF-to-GFF converter".</p>
+<p>Select the GTF file and click "Execute".</p>
 <hr />
 <h2 id="section-2-alignment-30-mins">Section 2: Alignment [30 mins]</h2>
 <p>In this section we map the reads in our FASTQ files to a reference genome. As
@@ -1647,23 +1665,15 @@ built-in genome</li>
 <li>Use defaults for the other fields</li>
 <li>Execute</li>
 </ul>
-<div class="showable-container hint showable-hidden" id="showable0">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle0"><a href="" id="showablelink0">Show screenshot</a></div>
-<div class="showable-body hint" id="showablebody0">
+<!--
+\showable{Show screenshot}{hint}
+
+<img src="../media/rna_advanced_tophat.png" height=800px>
+
+\endshowable
+-->
+
 <p><img src="../media/rna_advanced_tophat.png" height=800px></p>
-</div>
-</div>
-</div>
-<script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
-<script>
-    $(document).ready(function(){
-        $("#showablelink0").click(function(e){
-            e.preventDefault();
-            $("#showable0").toggleClass("showable-hidden");
-        });
-    });
-    </script>
 <p>Note: This may take a few minutes, depending on how busy the server is.</p>
 <h4 id="2-rename-the-output-files">2.  Rename the output files</h4>
 <p>You should have 5 output files for each of the FASTQ input files:</p>
@@ -1686,36 +1696,72 @@ built-in genome</li>
 <p>Rename the 6 accepted_hits files into a more meaningful name (e.g.
 'Tophat on data 2 and data 1: accepted_hits' to 'batch1-accepted_hits.bam')
 by using the <strong>pen icon</strong> next to the file.</p>
-<h4 id="3-visualise-the-aligned-reads-with-trackster">3.  Visualise the aligned reads with Trackster</h4>
-<ol>
-<li>On the top bar of Galaxy, select <strong>Visualization &gt; New Track Browser</strong>.</li>
-<li>Name your new visualization and select S. cerevisiae (sacCer2) as the
-    reference genome build.</li>
-<li>Click the <strong>Add Datasets to Visualization</strong> button and select
+<!-- #### 3.  Visualise the aligned reads with Trackster  
+1.  On the top bar of Galaxy, select **Visualization > New Track Browser**.
+2.  Name your new visualization and select S. cerevisiae (sacCer2) as the
+    reference genome build.
+3.  Click the **Add Datasets to Visualization** button and select
     'batch1-accepted_hits.bam' and 'chem1-accepted_hits.bam' by using the
-    checkboxes on the left.</li>
-<li>Select chrI from the dropdown box. You can zoom in and out using the
-    buttons on the top toolbar.</li>
-<li>You can also add more tracks using the <strong>Add Tracks icon</strong> located on the
+    checkboxes on the left.
+4.  Select chrI from the dropdown box. You can zoom in and out using the
+    buttons on the top toolbar.
+5.  You can also add more tracks using the **Add Tracks icon** located on the
     top right. Load one of the splice junction files such as 'Tophat on data 2
-    and data 1: splice junctions'.</li>
-<li>Explore the data and try to find a splice junction. Next to the
+    and data 1: splice junctions'.
+6.  Explore the data and try to find a splice junction. Next to the
     drop down list, click on the chromosomal position number
-    display and specify the location <strong>chrI:86985-87795</strong> to view an
-    intron junction.  </li>
-</ol>
-<p>Ideally we would add a gene model to the visualisation; but the
+    display and specify the location **chrI:86985-87795** to view an
+    intron junction.
+
+Ideally we would add a gene model to the visualisation; but the
 genes.gtf file for S. cerevisae (as downloaded from UCSC Table Browser)
 has a slightly different naming convention for one of the chromosomes
 than the reference genome used by Galaxy, which will cause an error to
 be thrown by Trackster if you try to add it. This is very typical of
 genomics currently! If you are interested, you can fiddle with the
 genes.gtf file to rename the chromosome '2-micron' to '2micron', which
-will fix the problem.</p>
-<p>Before starting the next section, leave the Trackster interface and return
+will fix the problem.
+
+Before starting the next section, leave the Trackster interface and return
 to the analysis view of Galaxy by clicking 'Analyze Data' on the top
-Galaxy toolbar.</p>
-<hr />
+Galaxy toolbar.
+
+-----
+-->
+
+<h4 id="3-visualise-the-aligned-reads-with-jbrowse">3.  Visualise the aligned reads with JBrowse</h4>
+<p>In the tool panel search bar, search for "JBrowse" and click on it.</p>
+<ul>
+<li>For "Reference genome to display": <em>Use a built-in genome</em></li>
+<li>"Select a reference genome": <em>Yeast: sacCer2</em></li>
+<li>"Genetic Code": <em>1. The Standard Code</em></li>
+</ul>
+<p>Set up a track for the mapped reads:</p>
+<ul>
+<li>Insert Track Group</li>
+<li>Insert Annotation Track</li>
+<li>Track Type: <em>Bam Pileups</em></li>
+<li>Select two bam files, one from each condition, e.g. <em>batch1_acceptedhits.bam</em> and <em>chem1_acceptedhits.bam</em></li>
+</ul>
+<p>Set up a track for the annotations:</p>
+<ul>
+<li>Insert Track Group</li>
+<li>Insert Annotation Track</li>
+<li>
+<p>Select the GFF file (that we converted from the GTF file earlier on)</p>
+</li>
+<li>
+<p>Execute</p>
+</li>
+</ul>
+<p>When the file is ready, click the eye icon.</p>
+<ul>
+<li>Select chr1 in the drop down box.</li>
+<li>Tick all the track names in the left hand side.</li>
+<li>Zoom in and out with the plus and minus buttons.</li>
+<li>Go to position 87500 to see a splice junction.</li>
+</ul>
+<p><img alt="jbrowse" src="../media/jbrowse.png" /></p>
 <h2 id="section-3-cuffdiff-40-min">Section 3. Cuffdiff [40 min]</h2>
 <p>The aim in this section is to statistically test for differential expression
 using Cuffdiff and obtain a list of significant genes.</p>
@@ -1752,22 +1798,15 @@ the ctrl key (Windows) or the command key (OSX).)</li>
 <li>Use defaults for the other fields</li>
 <li>Execute</li>
 </ul>
-<div class="showable-container hint showable-hidden" id="showable1">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle1"><a href="" id="showablelink1">Show screenshot</a></div>
-<div class="showable-body hint" id="showablebody1">
+<!--
+\showable{Show screenshot}{hint}
+
+<img src="../media/rna_advanced_cuffdiff.png" height=700px>
+
+\endshowable
+-->
+
 <p><img src="../media/rna_advanced_cuffdiff.png" height=700px></p>
-</div>
-</div>
-</div>
-<script>
-    $(document).ready(function(){
-        $("#showablelink1").click(function(e){
-            e.preventDefault();
-            $("#showable1").toggleClass("showable-hidden");
-        });
-    });
-    </script>
 <p>Note: This step may take a while, depending on how busy the server is.</p>
 <h4 id="2-explore-the-cuffdiff-output-files">2.  Explore the Cuffdiff output files</h4>
 <p>There should be 11 output files from Cuffdiff. These files should all begin
@@ -1798,8 +1837,7 @@ feature.</p>
 <ol>
 <li>
 <p>Use HTSeq-count to count the number of reads for each feature.<br />
-    In the left tool panel menu, under NGS Analysis, select
-    <strong>NGS: RNA Analysis &gt; SAM/BAM to count matrix</strong> and set the parameters as follows:  </p>
+    In the left tool panel menu search bar, search for "count matrix". Click on <strong>SAM/BAM to count matrix</strong> and set the parameters as follows:  </p>
 <ul>
 <li><strong>Gene model (GFF) file to count reads over from your current history:</strong> genes.gtf</li>
 <li><strong>bam/sam file from your history:</strong><br />
@@ -1921,10 +1959,10 @@ strongly advises against this for reasons of statistical validity.</p>
 <li>Examine the Differential_Counts_DESeq2.html file. This file has some
     output logs and plots from running DESeq2. Take a look at the PCA plot.</li>
 </ol>
-<div class="showable-container hint showable-hidden" id="showable2">
+<div class="showable-container hint showable-hidden" id="showable0">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle2"><a href="" id="showablelink2">More info on PCA plots</a></div>
-<div class="showable-body hint" id="showablebody2">
+<div class="showable-header hint" id="showabletitle0"><a href="" id="showablelink0">More info on PCA plots</a></div>
+<div class="showable-body hint" id="showablebody0">
 <p>PCA plots are useful for exploratory data analysis. Samples which are more
 similar to each other are expected to cluster together. A count matrix often
 has thousands of dimensions (one for each feature) and our PCA plot generated in
@@ -1940,11 +1978,12 @@ variability between replicates than the higher glucose (batch) condition.</p>
 </div>
 </div>
 </div>
+<script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
 <script>
     $(document).ready(function(){
-        $("#showablelink2").click(function(e){
+        $("#showablelink0").click(function(e){
             e.preventDefault();
-            $("#showable2").toggleClass("showable-hidden");
+            $("#showable0").toggleClass("showable-hidden");
         });
     });
     </script>
@@ -2124,7 +2163,7 @@ web service and can be found at <a href="http://www.vicbioinformatics.com/degust
 <ol>
 <li>In Galaxy, download the count data "bams to DGE count matrix_htseqsams2mx.xls"
     generated in Section 4 using the <strong>disk icon</strong>.</li>
-<li>Go to <a href="http://www.vicbioinformatics.com/degust/">vicbioinformatics.com/degust/</a>
+<li>Go to <a href="http://degust.erc.monash.edu/">http://degust.erc.monash.edu/</a>
     and click on "Upload your counts file".</li>
 <li>Click "Choose file" and upload the recently downloaded Galaxy tabular file
     containing your RNA-seq counts.</li>
@@ -2137,22 +2176,15 @@ web service and can be found at <a href="http://www.vicbioinformatics.com/degust
     samples which correspond with the condition.</li>
 <li>Click <strong>Save changes</strong> and view your data.</li>
 </ol>
-<div class="showable-container hint showable-hidden" id="showable3">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle3"><a href="" id="showablelink3">Show screenshot</a></div>
-<div class="showable-body hint" id="showablebody3">
+<!--
+\showable{Show screenshot}{hint}
+
+<img src="../media/rna_advanced_degust_2.png" height=700px style="display:block; margin-left: auto; margin-right:auto;">
+
+\endshowable
+-->
+
 <p><img src="../media/rna_advanced_degust_2.png" height=700px style="display:block; margin-left: auto; margin-right:auto;"></p>
-</div>
-</div>
-</div>
-<script>
-    $(document).ready(function(){
-        $("#showablelink3").click(function(e){
-            e.preventDefault();
-            $("#showable3").toggleClass("showable-hidden");
-        });
-    });
-    </script>
 <h4 id="3-explore-your-data">3. Explore your data</h4>
 <p>Read through the Degust tour of features. Explore the parallel coordinates plot,
 MA plot, MDS plot, heatmap and gene list. Each is fully interactive and
