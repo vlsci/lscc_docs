@@ -412,8 +412,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#method-2-again-get-data-from-a-public-url" title="Method 2 (again): Get data from a public URL" class="md-nav__link">
-    Method 2 (again): Get data from a public URL
+  <a href="#method-2-again-get-data-from-a-data-library" title="Method 2 (again): Get data from a Data Library" class="md-nav__link">
+    Method 2 (again): Get data from a Data Library
   </a>
   
 </li>
@@ -1093,8 +1093,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#method-2-again-get-data-from-a-public-url" title="Method 2 (again): Get data from a public URL" class="md-nav__link">
-    Method 2 (again): Get data from a public URL
+  <a href="#method-2-again-get-data-from-a-data-library" title="Method 2 (again): Get data from a Data Library" class="md-nav__link">
+    Method 2 (again): Get data from a Data Library
   </a>
   
 </li>
@@ -1294,21 +1294,23 @@
 </li>
 </ul>
 <p>Note that Galaxy is smart enough to recognize that this is a compressed file and so it will uncompress it as it loads it.</p>
-<h3 id="method-2-again-get-data-from-a-public-url">Method 2 (again): Get data from a public URL</h3>
-<p>Now we are going to upload another file from the remote data source.</p>
-<p>Repeat the above for: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/MRSA0252.fna</em></p>
-<p>Note that this file is a <em>fasta</em> file and not a <em>fastqsanger</em> file.</p>
-<p><details></p>
-<p><summary>Reveal detailed instructions</summary></p>
+<h3 id="method-2-again-get-data-from-a-data-library">Method 2 (again): Get data from a Data Library</h3>
+<p>Now we are going to get another file from a shared Data Library.</p>
 <ul>
-<li>From the tool panel, click on <strong>Get Data -&gt; Upload File</strong></li>
-<li>Click on the <strong>Paste/Fetch Data</strong> button</li>
-<li>Copy and paste the following web address into the URL/Text box: https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/MRSA0252.fna</li>
-<li>Set the file format to <em>fasta</em>.</li>
-<li>Click <strong>Start</strong></li>
-<li>Once the progress bar has reached 100%, click <strong>Close</strong></li>
+<li>
+<p>Go to the menu at the top of the screen and click <strong>Shared Data -&gt; Data Libraries</strong>.</p>
+</li>
+<li>
+<p>Click on the Library: "Galaxy Australia Training Material" then "Galaxy_101"</p>
+</li>
+<li>
+<p>To add the MRSA0252.fa file to our history</p>
+</li>
+<li>click on the checkbox next to it</li>
+<li>Then click the "To History" button at the top of the page and select "As Datasets"</li>
+<li>Click the "Import" button</li>
+<li>Finally, click "Analyse Data" in the menu at the top of the screen to return to your history.</li>
 </ul>
-<p></details></p>
 <p>The DNA sequence of <em>Staphlococcus aureus MRSA252</em> will be loaded into your history as a fasta file.</p>
 <p>Your history should now look like this.</p>
 <p><img src="../media/starting-history.png" width="300px" align="center" /></p>
@@ -1393,7 +1395,6 @@
 <li>"Column or expression": <em>c2</em></li>
 <li>Click <strong>Execute</strong></li>
 </ul>
-<p>You’ll note that the summary statistics tool failed and is red in the history. There was an error! If you click on the filename, and then the bug <img src="../media/Galaxy-bug.png" width=20 /> symbol, it will tell you what went wrong. (There is a missing python library.) At this point, you would normally contact your Galaxy server administrator.</p>
 <h3 id="example-2-convert-fastq-to-fasta">Example 2: Convert Fastq to Fasta</h3>
 <p>This shows how to convert a fastq file to a fasta file. The tool creates a new file with the converted data.</p>
 <p><strong>Converter tool</strong></p>
