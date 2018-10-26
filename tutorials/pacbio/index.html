@@ -1416,42 +1416,42 @@
                 
                 
                 <h1 id="long-read-assembly-workshop">Long read assembly workshop</h1>
-<p>This is a tutorial for a workshop on long-read (PacBio) genome assembly. </p>
-<p>It demonstrates how to use long PacBio sequencing reads to assemble a bacterial genome, and includes additional steps for circularising, trimming, finding plasmids, and correcting the assembly with short-read Illumina data. </p>
+<p>This is a tutorial for a workshop on long-read (PacBio) genome assembly.</p>
+<p>It demonstrates how to use long PacBio sequencing reads to assemble a bacterial genome, and includes additional steps for circularising, trimming, finding plasmids, and correcting the assembly with short-read Illumina data.</p>
 <h2 id="overview">Overview</h2>
 <p>Simplified version of workflow:</p>
 <p><img alt="workflow" src="./images/flowchart.png" /></p>
 <h2 id="1-get-started">1. Get started</h2>
-<p>Your workshop trainers will provide you with the address of a virtual machine. </p>
+<p>Your workshop trainers will provide you with the address of a virtual machine.</p>
 <h3 id="mac-users">Mac users</h3>
-<p>Open the Terminal. </p>
+<p>Open the Terminal.</p>
 <ul>
-<li>Type in </li>
+<li>Type in</li>
 </ul>
 <pre><code>ssh researcher@[your virtual machine address]
 </code></pre>
 
 <ul>
-<li>Type in the password provided. </li>
+<li>Type in the password provided.</li>
 </ul>
 <h3 id="windows-users">Windows users</h3>
-<p>If you are using Windows 10, you might be able to use the Ubuntu Subsystem. Otherwise, install and open Putty. </p>
+<p>If you are using Windows 10, you might be able to use the Ubuntu Subsystem. Otherwise, install and open Putty.</p>
 <ul>
 <li>Download putty <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>.</li>
-<li>Open. A configuration window will appear. </li>
-<li>Under "Host Name (or IP address)" enter in the address of your virtual machine. </li>
+<li>Open. A configuration window will appear.</li>
+<li>Under "Host Name (or IP address)" enter in the address of your virtual machine.</li>
 <li>Under "Port" type in 22</li>
 <li>Under "Connection Type" select "SSH"</li>
 <li>Click "Open"</li>
 <li>Under "Login as:" enter "researcher"</li>
-<li>Type in the password provided. </li>
+<li>Type in the password provided.</li>
 </ul>
 <h3 id="activate-the-conda-environment">Activate the conda environment</h3>
 <p>Type in:</p>
 <pre><code>source /mnt/gvl/apps/conda/bin/activate
 </code></pre>
 
-<p>(This points us to some different directories for the software we need). </p>
+<p>(This points us to some different directories for the software we need).</p>
 <h3 id="create-a-new-working-directory-on-your-remote-computer">Create a new working directory on your remote computer.</h3>
 <p>Because we are starting a new analysis it is always good practice to start in a new empty directory. Therefore, we will create a new directory and change to it for the rest of the workshop.</p>
 <p>In your terminal:</p>
@@ -1473,26 +1473,34 @@
 </code></pre>
 
 <h2 id="2-get-data">2. Get data</h2>
-<p>The sample used in this tutorial is from a bacteria called <em>Staphylococcus aureus</em>. We have used a small section of its real genome so that the programs can run in the workshop time. </p>
+<p>The sample used in this tutorial is from a bacteria called <em>Staphylococcus aureus</em>. We have used a small section of its real genome so that the programs can run in the workshop time.</p>
 <p>The files we need are:</p>
 <ul>
 <li><fn>pacbio.fq</fn>: the PacBio reads</li>
 <li><fn>R1.fq</fn>: the Illumina forward reads</li>
 <li><fn>R2.fq</fn>: the Illumina reverse reads</li>
 </ul>
-<p>In a new tab, go to <a href="https://doi.org/10.5281/zenodo.1009308">https://doi.org/10.5281/zenodo.1009308</a>. </p>
+<p>In a new tab, go to <a href="https://doi.org/10.5281/zenodo.1009308">https://doi.org/10.5281/zenodo.1009308</a>.</p>
 <ul>
 <li>Next to the first file, right-click (or control-click) the "Download" button, and select "Copy link address".</li>
-<li>Back in your terminal, enter </li>
+<li>Back in your terminal, enter</li>
 </ul>
 <pre><code class="text">wget [paste file link here]
 </code></pre>
 
 <ul>
-<li>The file should download. </li>
+<li>The file should download.</li>
 <li><em>Note:</em> paste the link to the file, not to the webpage.</li>
-<li>Repeat this for the other two files. </li>
+<li>Repeat this for the other two files.</li>
 </ul>
+<p>Shorten each of these files names with the <code>mv</code> command:</p>
+<pre><code>mv R1.fq\?download\=1 R1.fq
+mv R2.fq\?download\=1 R2.fq
+mv pacbio.fq\?download\=1 pacbio.fq
+</code></pre>
+
+<p>Type in <code>ls</code> to check the files are present and correctly-named.</p>
+<p>We should have <fn>R1.fq</fn>, <fn>R2.fq</fn> and <fn>pacbio.fq</fn>.</p>
 <h2 id="3-assemble">3. Assemble<a name="assemble"></a></h2>
 <p>We will use the assembly software called <a href="http://canu.readthedocs.io/en/stable/">Canu</a>, version 1.7.</p>
 <p>Run Canu with these commands:</p>
@@ -1503,11 +1511,11 @@
 <li>the first <code>canu</code> tells the program to run</li>
 <li><code>-p canu</code> names prefix for output files ("canu")</li>
 <li><code>-d canu_outdir</code> names output directory ("canu_outdir")</li>
-<li><code>genomeSize</code> only has to be approximate. (In this case we are using a partial genome of expected size 30,000 base pairs). </li>
-<li><code>corThreads=3</code> sets the number of available threads. </li>
+<li><code>genomeSize</code> only has to be approximate. (In this case we are using a partial genome of expected size 30,000 base pairs).</li>
+<li><code>corThreads=3</code> sets the number of available threads.</li>
 <li>Canu will correct, trim and assemble the reads.</li>
 <li>Various output will be displayed on the screen.</li>
-<li><em>Note</em>: Canu could say "Finished" but may still be running. In this case, type <code>squeue</code> to see if jobs are still running. </li>
+<li><em>Note</em>: Canu could say "Finished" but may still be running. In this case, type <code>squeue</code> to see if jobs are still running.</li>
 </ul>
 <p>If you run <code>squeue</code> you will see something like this:</p>
 <pre><code class="text">             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
@@ -1515,13 +1523,13 @@
                5_1      main cormhap_ research  R       0:29      1 master
 </code></pre>
 
-<p>You will know if <strong>Canu</strong> has completely finished when <code>squeue</code> shows no jobs listed under the header row. </p>
+<p>You will know if <strong>Canu</strong> has completely finished when <code>squeue</code> shows no jobs listed under the header row.</p>
 <h2 id="4-check-assembly-output">4. Check assembly output</h2>
-<p>Move into the canu output folder: </p>
+<p>Move into the canu output folder:</p>
 <pre><code>cd canu_outdir
 </code></pre>
 
-<p>View the list of files: </p>
+<p>View the list of files:</p>
 <pre><code>ls
 </code></pre>
 
@@ -1537,9 +1545,9 @@
 </code></pre>
 
 <ul>
-<li>This will show the contigs found by Canu. e.g.,  tig00000001  42107</li>
+<li>This will show the contigs found by Canu. e.g.,  tig00000001  47997</li>
 <li>"tig00000001" is the name given to the contig</li>
-<li>"42107" is the number of base pairs in that contig.</li>
+<li>"47997" is the number of base pairs in that contig.</li>
 </ul>
 <p>This matches what we were expecting for this sample (approximately 30,000 base pairs). For other data, Canu may not be able to join all the reads into one contig, so there may be several contigs in the output.</p>
 <p>We should also look at the <fn>canu.report</fn>. To do this:</p>
@@ -1548,10 +1556,10 @@
 
 <ul>
 <li>"less" is a command to display the file on the screen.</li>
-<li>Use the up and down arrows to scroll up and down. </li>
-<li>You will see lots of histograms of read lengths before and after processing, final contig construction, etc. </li>
+<li>Use the up and down arrows to scroll up and down.</li>
+<li>You will see lots of histograms of read lengths before and after processing, final contig construction, etc.</li>
 <li>For a description of the outputs that Canu produces, see: <a href="http://canu.readthedocs.io/en/latest/tutorial.html#outputs">http://canu.readthedocs.io/en/latest/tutorial.html#outputs</a></li>
-<li>Type <code>q</code> to exit viewing the report. </li>
+<li>Type <code>q</code> to exit viewing the report.</li>
 </ul>
 <h3 id="questions">Questions</h3>
 <p>How do long- and short-read assembly methods differ?</p>
@@ -1564,7 +1572,7 @@ Short reads are usually assembled with De Bruijn graphs. For long reads, there i
 <summary>Answer (click to reveal)</summary>
 Go to NCBI Genomes, enter species name, click on Genome Assembly and Annotation report, sort table by clicking on the column header Size (Mb), look at range of sizes in this column.
 </details></p>
-<p>In the assembly output, what are the unassembled reads? </p>
+<p>In the assembly output, what are the unassembled reads?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
 Reads and low-coverage contigs that were not used in the assembly.
@@ -1572,23 +1580,23 @@ Reads and low-coverage contigs that were not used in the assembly.
 <p>What are the corrected reads? How did canu correct the reads?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
-Canu builds overlaps between reads. The consensus is used to correct the reads. 
+Canu builds overlaps between reads. The consensus is used to correct the reads.
 </details></p>
 <p>Where could you view the output .gfa and what would it show?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
-A useful program is <a href="https://rrwick.github.io/Bandage/">Bandage</a>. If the assembly has multiple contigs, the assembly graph shows how these are connected. 
+A useful program is <a href="https://rrwick.github.io/Bandage/">Bandage</a>. If the assembly has multiple contigs, the assembly graph shows how these are connected.
 </details></p>
 <h2 id="5-trim-and-circularise">5. Trim and circularise</h2>
-<p>Bacteria have circular chromosomes. </p>
+<p>Bacteria have circular chromosomes.</p>
 <ul>
-<li>Because of sequencing errors, there may be some "overhang" in the assembled linear sequence. </li>
-<li>Our assembly may have some overhang because it is 9000 bases longer than expected. </li>
+<li>Because of sequencing errors, there may be some "overhang" in the assembled linear sequence.</li>
+<li>Our assembly may have some overhang because it is 9000 bases longer than expected.</li>
 </ul>
 <p><img alt="circlator" src="./images/circlator_diagram.png" />
 <em>Adapted from Figure 1. Hunt et al. Genome Biology 2015</em></p>
 <p>A tool called <a href="http://sanger-pathogens.github.io/circlator/">Circlator</a> identifies and trims overhangs (on chromosomes and plasmids). It takes in the assembled contigs from Canu, as well as the corrected reads prepared by Canu.</p>
-<p>Move back into your main analysis folder: </p>
+<p>Move back into your main analysis folder:</p>
 <pre><code>cd ..
 </code></pre>
 
@@ -1610,43 +1618,43 @@ A useful program is <a href="https://rrwick.github.io/Bandage/">Bandage</a>. If 
 </ul>
 <p>Some output will print to screen. When finished, it should say "Circularized x of x contig(s)".</p>
 <h3 id="check-the-output">Check the output</h3>
-<p>Move into the Circlator output directory: </p>
+<p>Move into the Circlator output directory:</p>
 <pre><code>cd circlator_outdir
 </code></pre>
 
-<p>List the files: </p>
+<p>List the files:</p>
 <pre><code>ls
 </code></pre>
 
-<p>Circlator has named the output files with numbers as prefixes. </p>
+<p>Circlator has named the output files with numbers as prefixes.</p>
 <p>Were the contigs circularised?</p>
 <pre><code>less 04.merge.circularise.log
 </code></pre>
 
 <ul>
 <li>"less" is a command to display the file on the screen.</li>
-<li><fn>04.merge.circularise.log</fn> is the name of the file. </li>
+<li><fn>04.merge.circularise.log</fn> is the name of the file.</li>
 <li>Yes, the contig was circularised (last column).</li>
 <li>Type <code>q</code> to exit.</li>
 </ul>
-<p>What are the trimmed contig sizes? </p>
+<p>What are the trimmed contig sizes?</p>
 <pre><code>infoseq 06.fixstart.fasta
 </code></pre>
 
 <ul>
 <li>The contig "tig00000001" has a length of 30019.</li>
-<li>This is about 12,000 bases shorter than before circularisation. This was the "overhang" and has now been trimmed. </li>
+<li>This is about 18,000 bases shorter than before circularisation. This was the "overhang" and has now been trimmed.</li>
 </ul>
 <p>Copy the circularised contigs file to the main analysis directory with a new name:</p>
 <pre><code>cp 06.fixstart.fasta ../contig1.fasta
 </code></pre>
 
-<p>Move back into the main folder: </p>
+<p>Move back into the main folder:</p>
 <pre><code>cd ..
 </code></pre>
 
 <h3 id="questions_1">Questions</h3>
-<p>Were all the contigs circularised? </p>
+<p>Were all the contigs circularised?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
 In this example, yes, the contig was circularised.
@@ -1718,24 +1726,24 @@ Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, 
 <li><code>--cov-cutoff auto</code> computes the coverage threshold (rather than the default setting, "off")</li>
 <li><code>-o</code> is the output directory</li>
 </ul>
-<p>Move into the output directory: </p>
+<p>Move into the output directory:</p>
 <pre><code>cd spades_assembly
 </code></pre>
 
-<p>Look at the contigs: </p>
+<p>Look at the contigs:</p>
 <pre><code>infoseq contigs.fasta
 </code></pre>
 
 <ul>
-<li>1 contig has been assembled with a length of 2359 bases. </li>
+<li>1 contig has been assembled with a length of 2359 bases.</li>
 </ul>
-<p>Copy it to a new file: </p>
+<p>Copy it to a new file:</p>
 <pre><code>cp contigs.fasta contig2.fasta
 </code></pre>
 
 <h3 id="trim-the-plasmid">Trim the plasmid</h3>
 <p>To trim any overhang on this plasmid, we will blast the start of contig2 against itself.</p>
-<p>Take the start of the contig: </p>
+<p>Take the start of the contig:</p>
 <pre><code>head -n 10 contig2.fasta &gt; contig2.fa.head
 </code></pre>
 
@@ -1748,7 +1756,7 @@ Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, 
 <p>We want to see if the start of the contig matches the end (overhang).</p>
 </li>
 </ul>
-<p>Format the assembly file for blast: </p>
+<p>Format the assembly file for blast:</p>
 <pre><code>makeblastdb -in contig2.fasta -dbtype nucl
 </code></pre>
 
@@ -1758,48 +1766,48 @@ Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, 
 <li><code>-in</code> sets the input file as <fn> contig2.fasta</fn></li>
 <li><code>-dbtype nucl</code> sets the type to nucleotide (rather than protein)</li>
 </ul>
-<p>Blast the start of the assembly (.head file) against all of the assembly: </p>
+<p>Blast the start of the assembly (.head file) against all of the assembly:</p>
 <pre><code>blastn -query contig2.fa.head -db contig2.fasta -evalue 1e-3 -dust no -out contig2.bls
 </code></pre>
 
 <ul>
 <li><code>blastn</code> is the tool Blast, set as blast<strong>n</strong> to compare sequences of nucleotides to each other</li>
 <li><code>-query</code> sets the input sequence as <fn>contig2.fa.head</fn></li>
-<li><code>-db</code> sets the database as that of the original sequence <fn>contig2.fasta</fn>. We don't have to specify the other files that were created when we formatted this file, but they need to present in our current directory. </li>
+<li><code>-db</code> sets the database as that of the original sequence <fn>contig2.fasta</fn>. We don't have to specify the other files that were created when we formatted this file, but they need to present in our current directory.</li>
 <li><code>-evalue</code> is the number of hits expected by chance, here set as 1e-3</li>
 <li><code>-dust no</code> turns off the masking of low-complexity regions</li>
 <li><code>-out</code> sets the output file as <fn>contig2.bls</fn></li>
 </ul>
-<p>Look at the hits (the matches): </p>
+<p>Look at the hits (the matches):</p>
 <pre><code>less contig2.bls
 </code></pre>
 
 <ul>
 <li>The first hit is at the start, as expected. We can see that "Query 1" (the start of the contig) is aligned to "Sbject 1" (the whole contig), for the first 540 bases.</li>
-<li>Scroll down with the down arrow. </li>
-<li>The second hit shows "Query 1" (the start of the contig) also matches to "Sbject 1" (the whole contig) at position 2253, all the way to the end, position 2359. </li>
+<li>Scroll down with the down arrow.</li>
+<li>The second hit shows "Query 1" (the start of the contig) also matches to "Sbject 1" (the whole contig) at position 2253, all the way to the end, position 2359.</li>
 </ul>
 <p><img alt="blast" src="./images/blasthits.png" /></p>
 <ul>
 <li>This is the overhang.</li>
 <li>Therefore, in the next step, we need to trim the contig to position 2252.</li>
-<li>Type <code>q</code> to exit. </li>
+<li>Type <code>q</code> to exit.</li>
 </ul>
 <p>First, change the name of the contig within the file:</p>
 <pre><code>nano contig2.fasta
 </code></pre>
 
 <ul>
-<li><code>nano</code> opens up a text editor. </li>
+<li><code>nano</code> opens up a text editor.</li>
 <li>Use the arrow keys to navigate. (The mouse won't work.)</li>
 <li>At the first line, delete the text, which will be something like "&gt;NODE_1_length_2359_cov_3.320333"</li>
-<li>Type in "&gt;contig2" </li>
+<li>Type in "&gt;contig2"</li>
 <li>Don't forget the <code>&gt;</code> symbol</li>
 <li>Press Control-X</li>
 <li>"Save modified buffer ?" - type <code>Y</code></li>
 <li>Press the Enter key</li>
 </ul>
-<p>Index the file (this will allow samtools to edit the file as it will have an index): </p>
+<p>Index the file (this will allow samtools to edit the file as it will have an index):</p>
 <pre><code>samtools faidx contig2.fasta
 </code></pre>
 
@@ -1819,16 +1827,16 @@ Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, 
 <p>We now have a trimmed plasmid.</p>
 </li>
 </ul>
-<p>Copy the plasmid file into the main folder: </p>
+<p>Copy the plasmid file into the main folder:</p>
 <pre><code>cp plasmid.fasta ../
 </code></pre>
 
-<p>Move file back into main folder: </p>
+<p>Move file back into main folder:</p>
 <pre><code>cd ..
 </code></pre>
 
 <h3 id="collect-contigs">Collect contigs</h3>
-<p>Collect the chromosome and the plasmid in one fasta file (they will be 2 records in the file): </p>
+<p>Collect the chromosome and the plasmid in one fasta file (they will be 2 records in the file):</p>
 <pre><code class="text">cat contig1.fasta plasmid.fasta &gt; genome.fasta
 </code></pre>
 
@@ -1867,7 +1875,7 @@ It is probably circular, matches the size of a known plasmid, and has a rep gene
 Possibly. One option is the program called Unicycler which may automate many of these steps. https://github.com/rrwick/Unicycler
 </details></p>
 <h2 id="7-correct-the-assembly">7. Correct the assembly</h2>
-<p>Sequences from PacBio can have more errors than those from Illumina. Therefore, although it is useful to use the long PacBio reads to assemble the genome, we can also use the shorter and more accurate Illumina reads to correct errors in the PacBio assembly. </p>
+<p>Sequences from PacBio can have more errors than those from Illumina. Therefore, although it is useful to use the long PacBio reads to assemble the genome, we can also use the shorter and more accurate Illumina reads to correct errors in the PacBio assembly.</p>
 <h3 id="make-an-alignment-file">Make an alignment file</h3>
 <p>Index the fasta file:</p>
 <pre><code class="text">bwa index genome.fasta
@@ -1878,7 +1886,7 @@ Possibly. One option is the program called Unicycler which may automate many of 
 </code></pre>
 
 <ul>
-<li>Aligns Illumina <fn>R1.fq</fn> and <fn>R2.fq</fn> to the PacBio assembly <fn>genome.fasta</fn>. </li>
+<li>Aligns Illumina <fn>R1.fq</fn> and <fn>R2.fq</fn> to the PacBio assembly <fn>genome.fasta</fn>.</li>
 <li>This produces a .bam file</li>
 <li><code>|</code> pipes the output to samtools to sort (required for downstream processing)</li>
 <li><code>&gt; pilon_aln.bam</code> redirects the sorted bam to this file</li>
@@ -1908,7 +1916,7 @@ Possibly. One option is the program called Unicycler which may automate many of 
 <li><code>--verbose</code> prints information to the screen during the run</li>
 <li><code>--threads</code>: number of cores</li>
 </ul>
-<p>Look at the changes file: </p>
+<p>Look at the changes file:</p>
 <pre><code>less pilon1.changes
 </code></pre>
 
@@ -1916,9 +1924,9 @@ Possibly. One option is the program called Unicycler which may automate many of 
 <p><img alt="pilon" src="./images/pilon.png" /></p>
 <ul>
 <li>We can see lots of cases where a deletion (represented by a dot) has been corrected to a base.  </li>
-<li>Type <code>q</code> to exit. </li>
+<li>Type <code>q</code> to exit.</li>
 </ul>
-<p>Look at the details of the fasta file: </p>
+<p>Look at the details of the fasta file:</p>
 <pre><code>infoseq pilon1.fasta
 </code></pre>
 
@@ -1926,7 +1934,7 @@ Possibly. One option is the program called Unicycler which may automate many of 
 <li>chromosome - 30059 (net +40 bases)</li>
 <li>plasmid - 2252 (no change)</li>
 </ul>
-<p>Change the file name: </p>
+<p>Change the file name:</p>
 <pre><code>cp pilon1.fasta assembly.fasta
 </code></pre>
 
@@ -1948,23 +1956,23 @@ Illumina reads have higher accuracy.
 Yes, if accuracy adequate.
 </details></p>
 <h2 id="8-comparative-genomics">8. Comparative Genomics</h2>
-<p>In the workshop so far, we used a partial bacterial genome so that the exercises could run in the time available. As a demonstration, to better see the effect of long and short reads on the assembly, we will examine a complete bacterial genome. </p>
+<p>In the workshop so far, we used a partial bacterial genome so that the exercises could run in the time available. As a demonstration, to better see the effect of long and short reads on the assembly, we will examine a complete bacterial genome.</p>
 <h3 id="assemblies">Assemblies</h3>
-<p>This bacterial genome has been assembled from either long PacBio reads (using Canu) or shorter Illumina reads (using Spades). </p>
+<p>This bacterial genome has been assembled from either long PacBio reads (using Canu) or shorter Illumina reads (using Spades).</p>
 <p>Assembly graphs:</p>
 <p>Look at the assembly graph (usually has a suffix .gfa), in the program <a href="https://rrwick.github.io/Bandage/">Bandage</a>. This shows how contigs are related, albeit with ambiguity in some places.</p>
 <p>The assembly graph from Illumina reads (Spades assembly):</p>
 <p><img alt="spades assembly graph" src="./images/25747_spades_illumina_graph.png" /></p>
 <p>The assembly graph from PacBio reads (Canu assembly) - this is missing the small plasmid:</p>
 <p><img alt="canu assembly graph" src="./images/25747_canu_pacbio_graph.png" /></p>
-<p>Here we can see that the long read data results in a more contiguous assembly - one complete chromosome versus many smaller contigs with ambiguous placement. </p>
+<p>Here we can see that the long read data results in a more contiguous assembly - one complete chromosome versus many smaller contigs with ambiguous placement.</p>
 <p>Does it matter that an assembly is in many contigs?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
 Yes and No. Yes: broken genes can lead to missing/incorrect annotations; fragmented assemblies provide less information about the genomic structure (<em>e.g.</em> the number of plasmids) and the location of genes of interest (<em>e.g.</em> gene A is located on plasmid X). No: many or all genes may still be annotated correctly. Gene location is useful (e.g. chromosome, plasmid1) but not always essential (e.g. presence/absence of particular resistance genes may be enough information).
 </details></p>
 <h3 id="annotations">Annotations</h3>
-<p>Genomic features such as genes can be identified with annotation tools. We have used a tool called <a href="https://github.com/tseemann/prokka">Prokka</a> to annotate the two genomes described above. </p>
+<p>Genomic features such as genes can be identified with annotation tools. We have used a tool called <a href="https://github.com/tseemann/prokka">Prokka</a> to annotate the two genomes described above.</p>
 <p>Some of the output data is displayed here:</p>
 <p><center></p>
 <table>
@@ -2004,19 +2012,19 @@ Yes and No. Yes: broken genes can lead to missing/incorrect annotations; fragmen
 </tbody>
 </table>
 <p></center></p>
-<p>Why are there more CDS identified in the PacBio assembly? </p>
+<p>Why are there more CDS identified in the PacBio assembly?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
 The PacBio assembly may have errors (usually a one base indel) which will cause a frame shift, which can result in three things: a longer CDS, a shorter CDS, or a shorter CDS plus an additional CDS. In addition, the Illumina assembly is about 33 kb smaller than the PacBio assembly. In bacteria, a rule of thumb is that 1 kb is roughly equal to one gene. Thus, we would probably expect about 33 fewer identified genes, which fits with these results.<br />
 </details></p>
-<p>Why are there more rRNA identified in the PacBio assembly? </p>
+<p>Why are there more rRNA identified in the PacBio assembly?</p>
 <p><details>
 <summary>Answer (click to reveal)</summary>
-There may be multiple copies of the rRNAs and these could have been collapsed as repeats in the Illumina assembly. 
+There may be multiple copies of the rRNAs and these could have been collapsed as repeats in the Illumina assembly.
 </details></p>
 <h2 id="9-summary">9. Summary</h2>
-<p>In this workshop, we used bacterial sequencing data from long and short reads to produce a polished genome. </p>
-<p>Procedure and tools: </p>
+<p>In this workshop, we used bacterial sequencing data from long and short reads to produce a polished genome.</p>
+<p>Procedure and tools:</p>
 <ul>
 <li>Canu to assemble long-read PacBio data</li>
 <li>Circlator to trim and circularise contigs</li>
@@ -2040,7 +2048,7 @@ There may be multiple copies of the rRNAs and these could have been collapsed as
 </ul>
 <p>Additional microbial genomics tutorials:</p>
 <ul>
-<li>http://sepsis-omics.github.io/tutorials/</li>
+<li>http://sepsis-omics.github.io/tutorials/ and https://galaxy-au-training.github.io/tutorials/</li>
 </ul>
                 
                   
