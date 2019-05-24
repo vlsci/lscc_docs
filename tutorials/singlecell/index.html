@@ -1,25 +1,1133 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Single cell data analysis - Bioinformatics Documentation</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../extra.css"><script>window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-21794901-5", "www.melbournebioinformatics.org.au/tutorials/")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#single-cell-data-analysis" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Bioinformatics Documentation</span><span class="md-header-nav__topic">Single cell data analysis</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="../.." title="Bioinformatics Documentation" class="md-nav__button md-logo"><i class="md-icon"></i></a>Bioinformatics Documentation</label><div class="md-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="Home" class="md-nav__link">Home</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Guides</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Guides</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">What is bioinformatics?</a></li><li class="md-nav__item"><a href="../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">The Galaxy platform</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">General Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">General Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../python_overview/python_overview/" title="Python Overview" class="md-nav__link">Python Overview</a></li><li class="md-nav__item"><a href="../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">Data tidying with Python and Pandas</a></li><li class="md-nav__item"><a href="../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">Data visualisation with Python</a></li><li class="md-nav__item"><a href="../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">Using Git and Github for revision control</a></li><li class="md-nav__item"><a href="../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">Introduction to HPC</a></li><li class="md-nav__item"><a href="../unix/unix/" title="Introduction to Unix" class="md-nav__link">Introduction to Unix</a></li><li class="md-nav__item"><a href="../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">Launching a Personal GVL Server</a></li><li class="md-nav__item"><a href="../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">Introduction to Galaxy</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9"><label class="md-nav__link" for="nav-3-9">Galaxy Workflows</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-3-9">Galaxy Workflows</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">History Creation</a></li></ul></nav></li><li class="md-nav__item"><a href="../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">Containerized Bioinformatics</a></li><li class="md-nav__item"><a href="../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">Common Workflow Language for Bioinformatics</a></li><li class="md-nav__item"><a href="../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">Command-line software development</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked><label class="md-nav__link" for="nav-4">Genomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">Genomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">Introduction to Variant Calling</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2"><label class="md-nav__link" for="nav-4-2">Variant Calling Advanced</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-2">Variant Calling Advanced</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3"><label class="md-nav__link" for="nav-4-3">RNA-seq DGE Basic</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-3">RNA-seq DGE Basic</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">Tuxedo Protocol Tutorial</a></li><li class="md-nav__item"><a href="../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">RNA-seq DGE Advanced</a></li><li class="md-nav__item"><a href="../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">RNA-seq DGE Experimental Design</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><a href="./" title="Single cell data analysis" class="md-nav__link md-nav__link--active">Single cell data analysis</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7"><label class="md-nav__link" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../assembly/assembly/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../assembly/assembly-background/" title="Method Background" class="md-nav__link">Method Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">Microbial assembly: Spades</a></li><li class="md-nav__item"><a href="../pacbio/" title="Long read assembly" class="md-nav__link">Long read assembly</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Proteomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Proteomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1"><label class="md-nav__link" for="nav-5-1">Identifying proteins from mass spectrometry data</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-5-1">Identifying proteins from mass spectrometry data</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">Galaxy Background</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">Data Formats Background</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">Create find count items workflow</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">Protein Databases</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">Search Engines</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">Protein Prophet</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6"><label class="md-nav__link" for="nav-6">Molecular Modelling Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">Molecular Modelling Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">Molecular Dynamics - Introduction to cluster computing</a></li><li class="md-nav__item"><a href="../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">Molecular Dynamics - Building input files, visualising the trajectory</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7"><label class="md-nav__link" for="nav-7">Protocols</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-7">Protocols</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">De Novo Genome Assembly for Illumina Data</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/singlecell/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1 id="single-cell-data-analysis">Single cell data analysis</h1>
-<p><strong>Melbourne Bioinformatics material under development, early 2019</strong></p>
-<p>Additional links:</p>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>10X single-cell RNA-seq analysis in R - Bioinformatics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#10x-single-cell-rna-seq-analysis-in-r" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Bioinformatics Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                10X single-cell RNA-seq analysis in R
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      melbournebioinformatics/MelBioInf_docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Bioinformatics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      melbournebioinformatics/MelBioInf_docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">
+      What is bioinformatics?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">
+      The Galaxy platform
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      General Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        General Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python_overview/python_overview/" title="Python Overview" class="md-nav__link">
+      Python Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">
+      Data tidying with Python and Pandas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">
+      Data visualisation with Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">
+      Using Git and Github for revision control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">
+      Introduction to HPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix/unix/" title="Introduction to Unix" class="md-nav__link">
+      Introduction to Unix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">
+      Launching a Personal GVL Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">
+      Introduction to Galaxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
+    
+    <label class="md-nav__link" for="nav-3-9">
+      Galaxy Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-9">
+        Galaxy Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">
+      History Creation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">
+      Containerized Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">
+      Common Workflow Language for Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">
+      Command-line software development
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Genomics Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Genomics Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">
+      Introduction to Variant Calling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Variant Calling Advanced
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Variant Calling Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      RNA-seq DGE Basic
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        RNA-seq DGE Basic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">
+      Tuxedo Protocol Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">
+      RNA-seq DGE Advanced
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">
+      RNA-seq DGE Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        10X single-cell RNA-seq analysis in R
+      </label>
+    
+    <a href="./" title="10X single-cell RNA-seq analysis in R" class="md-nav__link md-nav__link--active">
+      10X single-cell RNA-seq analysis in R
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-syllabus" title="Workshop syllabus" class="md-nav__link">
+    Workshop syllabus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-single-cell-analysis-links" title="Additional single-cell analysis links" class="md-nav__link">
+    Additional single-cell analysis links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Microbial de novo Assembly for Illumina Data: Velvet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        Microbial de novo Assembly for Illumina Data: Velvet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assembly/assembly/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assembly/assembly-background/" title="Method Background" class="md-nav__link">
+      Method Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">
+      Microbial assembly: Spades
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pacbio/" title="Long read assembly" class="md-nav__link">
+      Long read assembly
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Proteomics Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Proteomics Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Identifying proteins from mass spectrometry data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Identifying proteins from mass spectrometry data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">
+      Galaxy Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
+      Data Formats Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">
+      Create find count items workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
+      Protein Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
+      Search Engines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
+      Protein Prophet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Molecular Modelling Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Molecular Modelling Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
+      Molecular Dynamics - Introduction to cluster computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
+      Molecular Dynamics - Building input files, visualising the trajectory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Protocols
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Protocols
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">
+      De Novo Genome Assembly for Illumina Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-syllabus" title="Workshop syllabus" class="md-nav__link">
+    Workshop syllabus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-single-cell-analysis-links" title="Additional single-cell analysis links" class="md-nav__link">
+    Additional single-cell analysis links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/singlecell/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="10x-single-cell-rna-seq-analysis-in-r">10X single-cell RNA-seq analysis in R</h1>
+<h2 id="overview">Overview</h2>
+<p>In this workshop, you will be learning how to analyse 10X Chromium single-cell RNA-seq profiles using R. This will include reading the count data into R, quality control, normalisation, dimensionality reduction, cell clustering and finding marker genes. The main part of the workflow uses the package. You will learn how to generate common plots for visualising single-cell data, such as t-SNE plots and heatmaps. This workshop is aimed at biologists interested in learning how to explore single-cell RNA-seq data generated by the 10X platform.</p>
+<p>This workshop is presented by Dr Yunshun Chen from Walter Eliza Hall Institute of Medical Research (WEHI). Dr Chen is a statistical bioinformatician and a senior post-doc at WEHI Bioinformatics Division. He is one of the authors and the main maintainer of the edgeR package. He has extensive experience in RNA-seq gene expression and single-cell RNA-seq analyses.</p>
+<h2 id="requirements">Requirements</h2>
+<p>The course is aimed at advanced PhD students, postdoctoral researchers and principal investigators. Some basic R knowledge is assumed – this is not an introduction to R course. If you are not familiar with the R statistical programming language it is compulsory that you work through an introductory R course before you attend this workshop.</p>
+<p>This workshop will cover single-cell RNA-seq analysis and assumes you have some familiarity with the more common analysis of bulk RNA-seq data. If you have no experience in analysing bulk RNA-seq data, we strongly recommend you also attend our RNA-seq Differential Gene Expression analysis in R workshop.</p>
+<p>Participants must bring a laptop with a Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. Bringing your laptop charger is advised. R and a few specific software packages should be installed in advance. The 10X data to be analysed, the gene annotation file and the gene signature RData file should also be downloaded prior to the workshop to allow us time to troubleshoot any problems you may have.</p>
+<p>Downloads:</p>
+<ol>
+<li>Download R from <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>. The lastest version is recommended (version 3.6.0 for Windows and Mac OS X 10.11 and higher).</li>
+<li>Install R packages by opening R and copying the following commands into your R console</li>
+</ol>
+<pre><code>if (!requireNamespace(“BiocManager”, quietly = TRUE))
+
+    install.packages(“BiocManager”)
+
+BiocManager::install(c(“scran”, “monocle”, “vcd”))
+</code></pre>
+
+<ol>
+<li>Download the 10X single-cell RNA-seq data from GEO (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2510617). The three data files required for the workshop are: GSM2510617_P7-barcodes.tsv.gz, GSM2510617_P7-genes.tsv.gz and GSM2510617_P7-matrix.mtx.gz, of which the download links are available at the bottom of the web page. Unzip the three data files and store them in the working directory (or a sub-folder under the working directory).</li>
+<li>Download the mouse gene annotation file from <a href="http://bioinf.wehi.edu.au/edgeR/Mus_musculus.gene_info.gz">http://bioinf.wehi.edu.au/edgeR/Mus_musculus.gene_info.gz</a> and save it under the working directory. Note there is no need to unzip the file.</li>
+<li>Download gene signatures from <a href="http://bioinf.wehi.edu.au/edgeR/BulkSignatures.RData">http://bioinf.wehi.edu.au/edgeR/BulkSignatures.RData</a> and save it under the working directory.</li>
+<li>Check downloads are correct by looking for any error messages when running the commands:</li>
+</ol>
+<pre><code>library(edgeR)
+library(scater)
+library(scran)
+library(monocle)
+library(vcd)
+read.delim(“P7-genes.tsv”, nrow=5)
+read.delim(“Mus_musculus.gene_info.gz”, nrow=5)
+load(“BulkSignatures.RData”)
+</code></pre>
+
+<p>Important: If you have any trouble installing the software or packages, please contact us prior to the workshop.</p>
+<h2 id="workshop-syllabus">Workshop syllabus</h2>
+<p>This workshop will follow <a href="http://bioinf.wehi.edu.au/edgeR/10X.pdf">this analysis guide</a>.</p>
+<h2 id="additional-single-cell-analysis-links">Additional single-cell analysis links</h2>
 <ul>
 <li>
 <p>An overview and comparison of protocols and analysis methods: <a href="https://www.biorxiv.org/content/biorxiv/early/2018/10/08/433102.full.pdf">Tian, L. et al, Biorxiv, scRNA-seq mixology: towards better benchmarking of single cell RNA-seq protocols and analysis methods</a></p>
@@ -34,4 +1142,91 @@
 <li>
 <p>List of software packages for single-cell data analysis: <a href="https://doi.org/10.5281/zenodo.1117762">Davis, S. et al: Zenodo link</a>; <a href="https://github.com/seandavi/awesome-single-cell">Github link</a></p>
 </li>
-</ul></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>RNA-seq DGE Experimental Design</span></div></a><a href="../assembly/assembly/" title="Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Next</span>Tutorial</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight"><a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a></div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                RNA-seq DGE Experimental Design
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../assembly/assembly/" title="Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tutorial
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-21794901-5","www.melbournebioinformatics.org.au/tutorials/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
