@@ -1,0 +1,729 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Rna seq basic tutorial 2018 - Bioinformatics Documentation</title><link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css"><script src="../../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../../extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-21794901-5", "www.melbournebioinformatics.org.au/tutorials/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#rna-seq-differential-gene-expression" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Bioinformatics Documentation</span><span class="md-header-nav__topic">Rna seq basic tutorial 2018</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="../../.." title="Bioinformatics Documentation" class="md-nav__button md-logo"><i class="md-icon"></i></a>Bioinformatics Documentation</label><div class="md-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../.." title="Home" class="md-nav__link">Home</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Guides</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Guides</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">What is bioinformatics?</a></li><li class="md-nav__item"><a href="../../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">The Galaxy platform</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">General Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">General Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../python_overview/python_overview/" title="Python Overview" class="md-nav__link">Python Overview</a></li><li class="md-nav__item"><a href="../../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">Data tidying with Python and Pandas</a></li><li class="md-nav__item"><a href="../../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">Data visualisation with Python</a></li><li class="md-nav__item"><a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">Using Git and Github for revision control</a></li><li class="md-nav__item"><a href="../../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">Introduction to HPC</a></li><li class="md-nav__item"><a href="../../unix/unix/" title="Introduction to Unix" class="md-nav__link">Introduction to Unix</a></li><li class="md-nav__item"><a href="../../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">Launching a Personal GVL Server</a></li><li class="md-nav__item"><a href="../../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">Introduction to Galaxy</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9"><label class="md-nav__link" for="nav-3-9">Galaxy Workflows</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-3-9">Galaxy Workflows</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">History Creation</a></li></ul></nav></li><li class="md-nav__item"><a href="../../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">Containerized Bioinformatics</a></li><li class="md-nav__item"><a href="../../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">Common Workflow Language for Bioinformatics</a></li><li class="md-nav__item"><a href="../../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">Command-line software development</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">Genomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">Genomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">Introduction to Variant Calling</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2"><label class="md-nav__link" for="nav-4-2">Variant Calling Advanced</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-2">Variant Calling Advanced</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3"><label class="md-nav__link" for="nav-4-3">RNA-seq DGE Basic</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-3">RNA-seq DGE Basic</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">Tuxedo Protocol Tutorial</a></li><li class="md-nav__item"><a href="../rna_seq_basic_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">RNA-seq DGE Advanced</a></li><li class="md-nav__item"><a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">RNA-seq DGE Experimental Design</a></li><li class="md-nav__item"><a href="../../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">10X single-cell RNA-seq analysis in R</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7"><label class="md-nav__link" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../assembly/assembly/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../assembly/assembly-background/" title="Method Background" class="md-nav__link">Method Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">Microbial assembly: Spades</a></li><li class="md-nav__item"><a href="../../pacbio/" title="Long read assembly" class="md-nav__link">Long read assembly</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Proteomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Proteomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1"><label class="md-nav__link" for="nav-5-1">Identifying proteins from mass spectrometry data</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-5-1">Identifying proteins from mass spectrometry data</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">Galaxy Background</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">Data Formats Background</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">Create find count items workflow</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">Protein Databases</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">Search Engines</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">Protein Prophet</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6"><label class="md-nav__link" for="nav-6">Molecular Modelling Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">Molecular Modelling Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">Molecular Dynamics - Introduction to cluster computing</a></li><li class="md-nav__item"><a href="../../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">Molecular Dynamics - Building input files, visualising the trajectory</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7"><label class="md-nav__link" for="nav-7">Protocols</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-7">Protocols</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">De Novo Genome Assembly for Illumina Data</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#tutorial-overview" title="Tutorial Overview" class="md-nav__link">Tutorial Overview</a></li><li class="md-nav__item"><a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">Learning Objectives</a></li><li class="md-nav__item"><a href="#requirements" title="Requirements" class="md-nav__link">Requirements</a></li><li class="md-nav__item"><a href="#the-data" title="The data" class="md-nav__link">The data</a></li><li class="md-nav__item"><a href="#section-1-preparation" title="Section 1: Preparation" class="md-nav__link">Section 1: Preparation</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#convert-the-gtf-to-a-gff-file" title="Convert the GTF to a GFF file" class="md-nav__link">Convert the GTF to a GFF file</a></li></ul></nav></li><li class="md-nav__item"><a href="#section-2-alignment-with-hisat2" title="Section 2: Alignment with HISAT2" class="md-nav__link">Section 2: Alignment with HISAT2</a></li><li class="md-nav__item"><a href="#section-3-visualise-the-aligned-reads" title="Section 3: Visualise the aligned reads" class="md-nav__link">Section 3: Visualise the aligned reads</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#viewing-in-jbrowse" title="Viewing in JBrowse" class="md-nav__link">Viewing in JBrowse</a></li><li class="md-nav__item"><a href="#viewing-in-igv" title="Viewing in IGV" class="md-nav__link">Viewing in IGV</a></li></ul></nav></li><li class="md-nav__item"><a href="#section-4-quantification" title="Section 4. Quantification" class="md-nav__link">Section 4. Quantification</a></li><li class="md-nav__item"><a href="#section-5-degust" title="Section 5. Degust" class="md-nav__link">Section 5. Degust</a></li><li class="md-nav__item"><a href="#section-5-deseq2" title="Section 5. DESeq2" class="md-nav__link">Section 5. DESeq2</a></li><li class="md-nav__item"><a href="#section-6-the-importance-of-replicates" title="Section 6. The importance of replicates" class="md-nav__link">Section 6. The importance of replicates</a></li><li class="md-nav__item"><a href="#optional-extension" title="Optional extension" class="md-nav__link">Optional extension</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/rna_seq_dge_basic/rna_seq_basic_tutorial_2018.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><style type="text/css">
+    body{
+        line-height: 2;
+        font-size: 16px;
+    }
+
+    ol li{padding: 2px;}
+    ul li{padding: 0px;}
+    h4 {margin: 30px 0px 15px 0px;}
+
+    div.code {
+        font-family: "Courier New";
+        border: 1px solid;
+        border-color: #999999;
+        background-color: #eeeeee;
+        padding: 5px 10px;
+        margin: 10px;
+        border-radius: 5px;
+        overflow: auto;
+    }
+
+    div.question {
+        color: #666666;
+        background-color: #e1eaf9;
+        padding: 15px 25px;
+        margin: 20px;
+        font-size: 15px;
+        border-radius: 20px;
+    }
+
+    div.extra {
+        color: #444444;
+        background-color: #e1eaf9;
+        padding: 15px 25px;
+        margin: 20px;
+        font-size: 15px;
+        border-radius: 20px;
+    }
+
+    div.question h4 {
+        font-style: italic;
+        margin: 10px 0px !important;
+    }
+</style>
+
+<p><img src="../../../img/melbioinf_logo.png" height=100px>
+<img src="../media/gvl_logo.jpg" height=100px align=right></p>
+<h1 id="rna-seq-differential-gene-expression">RNA-Seq - Differential Gene Expression</h1>
+<p><strong>Authors: Jessica Chung, Mahtab Mirmomeni, Andrew Lonie</strong></p>
+<hr />
+<h2 id="tutorial-overview">Tutorial Overview</h2>
+<p>In this tutorial we cover the concepts of RNA-seq differential gene expression
+(DGE) analysis using a simulated dataset from the common fruit fly, <em>Drosophila
+melanogaster</em>.</p>
+<p>The tutorial is designed to introduce the tools, datatypes and workflows of an
+RNA-seq DGE analysis. In practice, real datasets would be much larger and
+contain sequencing and alignment errors that make analysis more difficult.</p>
+<p>In this tutorial we will:  </p>
+<ul>
+<li>introduce the types of files typically used in RNA-seq analysis</li>
+<li>align RNA-seq reads with an aligner (HISAT2)</li>
+<li>visualise RNA-seq alignment data with IGV</li>
+<li>use a number of different methods to find differentially expressed genes</li>
+<li>understand the importance of replicates for differential expression analysis</li>
+</ul>
+<p>This tutorial does not cover the following steps that we might do in a real
+RNA-seq DGE analysis:  </p>
+<ul>
+<li>QC (quality control) of the raw sequence data</li>
+<li>Trimming the reads for quality and for adaptor sequences</li>
+<li>QC of the RNA-seq alignment data  </li>
+</ul>
+<p>These steps have been omitted because the data we use in this tutorial is
+synthetic and has no quality issues, unlike real data.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>At the end of this tutorial you will be able to:</p>
+<ul>
+<li>understand the basic workflow of alignment, quantification, and testing,
+   for RNA-seq differential expression analysis</li>
+<li>process raw RNA sequence data into a list of differentially
+   expressed genes</li>
+<li>understand the relationship between the number of biological replicates
+   in an experiment and the statistical power available to detect differentially
+   expressed genes</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>Participants with no previous Galaxy experience are strongly recommended to attend the "Introduction to Galaxy" workshop first.</p>
+<p>Attendees are required to bring their own laptop computers.</p>
+<hr />
+<h2 id="the-data">The data</h2>
+<p>The sequencing data you will be working with is simulated from Drosophila
+melanogaster. The experiment has two conditions, WT (wildtype) and KO
+(knockout), and three samples in each condition. The sequencing data is
+paired-end, so there are two files for each of the six samples. Your aim will
+be to find differentially expressed genes in WT vs KO.</p>
+<p><img src="../media/dm_data.png" height=500px/></p>
+<hr />
+<h2 id="section-1-preparation">Section 1: Preparation</h2>
+<p><strong>1.  Register as a new user in Galaxy if you don’t already have an account</strong></p>
+<ul>
+<li>Open a browser and go to a Galaxy server. For example, you could use <a href="https://usegalaxy.org.au/">Galaxy Australia</a>. Recommended browsers include Firefox and Chrome. Internet Explorer is not supported.</li>
+<li>Register as a new user by clicking <strong>User &gt; Register</strong> on the top dark-grey bar. Alternatively, if you already have an account, login by clicking <strong>User &gt; Login</strong>.</li>
+</ul>
+<!-- This can either be your
+    personal GVL server you [started previously](http://genome.edu.au/get/get#launch),
+    the public [Galaxy Tutorial server](http://galaxy-tut.genome.edu.au)
+    or the public [Galaxy Australia](https://usegalaxy.org.au/).  -->
+
+<p><strong>2.  Import the RNA-seq data for the workshop.</strong></p>
+<!-- If you are using the public Galaxy Tutorial server or Galaxy Melbourne server,
+you can import the data directly from Galaxy. You can do this by going to
+**Shared Data > Published Histories** on the top toolbar, and selecting
+the history called **RNA-Seq_Basic_2017**. Then click on "Import History" on
+the top right and "start using this history" to switch to the newly imported
+history.
+-->
+
+<p>If you are using Galaxy Australia, go to <strong>Shared Data &gt; Data Libraries</strong> in the top toolbar, and select <strong>Galaxy Australia Training Material: RNA-Seq: Fly RNA-Seq</strong>. Select (tick) all of the files and click <strong>To History</strong>, and choose <strong>as Datasets</strong>, then <strong>Import</strong>.</p>
+<p>Alternatively, if you are using your own personal Galaxy server or a different Galaxy server, you can import
+the data like this:</p>
+<ol>
+<li>In the tool panel located on the left, under Basic Tools select <strong>Get
+    Data &gt; Upload File</strong>. Click on the <strong>Paste/Fetch data</strong> button on the
+    bottom section of the pop-up window.</li>
+<li>
+<p>Upload the sequence data by pasting the following links into the text
+    input area.
+    These six files are three paired-end samples from the WT flies. Make sure
+    the type is specified as 'fastqsanger' when uploading.
+    <div class="code">
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/WT_01_R1.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/WT_01_R2.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/WT_02_R1.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/WT_02_R2.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/WT_03_R1.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/WT_03_R2.fastq
+    <br>
+    </div>
+    These six files are three paired-end samples from the KO flies.
+    Make sure the type is specified as 'fastqsanger' when uploading.
+    <div class="code">
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/KO_01_R1.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/KO_01_R2.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/KO_02_R1.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/KO_02_R2.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/KO_03_R1.fastq
+    <br>
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/KO_03_R2.fastq
+    <br>
+    </div>
+    Then, upload this file of gene definitions. You don't need to specify
+    the type for this file as Galaxy will auto-detect the file as a GTF
+    file.
+    <div class="code">
+    https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/rna_seq_basic/ensembl_dm3.chr4.gtf
+    </div>
+    You should now have 13 files in your history.</p>
+<p><strong>Note:</strong> If you log out of Galaxy and log back at a later time your data
+and results from previous experiments will be available in the right panel
+of your screen called the ‘History’</p>
+</li>
+</ol>
+<p><strong>3.  View and have an understanding of the files involved in RNA-seq analysis.</strong></p>
+<ol>
+<li>
+<p>You should now have the following files in your Galaxy history:</p>
+<p>6 files containing paired-ended reads for the WT samples:
+<ul>
+<li>WT_01_R1.fastq<br />
+<li>WT_01_R2.fastq<br />
+<li>WT_02_R1.fastq<br />
+<li>WT_02_R2.fastq<br />
+<li>WT_03_R1.fastq<br />
+<li>WT_03_R2.fastq<br />
+</ul></p>
+<p>6 files containing paired-ended reads for the KO samples:
+<ul>
+<li>KO_01_R1.fastq<br />
+<li>KO_01_R2.fastq<br />
+<li>KO_02_R1.fastq<br />
+<li>KO_02_R2.fastq<br />
+<li>KO_03_R1.fastq<br />
+<li>KO_03_R2.fastq<br />
+</ul></p>
+<p>And 1 gene annotation file:
+<ul>
+<li>ensembl_dm3.chr4.gtf<br />
+</ul></p>
+<p>These files can be renamed by clicking the <strong>pen icon</strong> if you wish.</p>
+</li>
+<li>
+<p>These 12 sequencing files are in FASTQ format and have the file
+    extension: .fastq. If you are not familiar with the FASTQ format, <a href="https://en.wikipedia.org/wiki/FASTQ_format">click
+    here for an overview</a>.  </p>
+<p>Each condition has three samples, and each sample has two files (an R1
+file containing forward reads and an R2 file containing reverse reads).</p>
+<p>Click on the <strong>eye icon</strong> to the top right of any FASTQ file to view the
+first part of the file.</p>
+<p><strong>Note:</strong> Since the reads in this dataset are synthetic, they do not have
+real quality scores.</p>
+<p><strong>Note:</strong> The reads are paired-end, i.e. WT_01_R1.fastq and
+WT_01_R2.fastq are paired reads from one sequencing run. If you're
+unfamiliar with paired-end sequencing, you can read about it
+<a href="https://www.illumina.com/science/technology/next-generation-sequencing/paired-end-vs-single-read-sequencing.html">here</a>.</p>
+</li>
+<li>
+<p>The gene annotation file (ensembl_dm3.chr4.gtf) is in GTF format. This file
+    describes where the genes are located in the D. melanogaster reference
+    genome, filtered for genes on chromosome 4.
+    Each feature is defined by a chromosomal start and end point, feature type
+    (CDS, gene, exon etc), and parent gene and transcript.
+    We will examine this file more closely later in Section 3 of this
+    tutorial.
+    More information on the GTF format can be found
+    <a href="http://asia.ensembl.org/info/website/upload/gff.html">here</a>.</p>
+</li>
+</ol>
+<h3 id="convert-the-gtf-to-a-gff-file">Convert the GTF to a GFF file</h3>
+<p>This is needed for downstream analysis.</p>
+<p>In the tools panel, search for "GTF" and click on "GTF-to-GFF converter".</p>
+<p>Select the GTF file and click "Execute".</p>
+<hr />
+<h2 id="section-2-alignment-with-hisat2">Section 2: Alignment with HISAT2</h2>
+<p>In this section we map the reads in our FASTQ files to a reference genome. As
+these reads originate from mRNA, we expect some of them will cross exon/intron
+boundaries when we align them to the reference genome. We will use HISAT to
+perform our alignment. HISAT2 is a fast, splice-aware, alignment program that
+is a successor to TopHat2. More information on
+HISAT2 can be found <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">here</a>.</p>
+<p><strong>1.  Align the RNA-seq reads to a reference genome.</strong></p>
+<p>In the left tool panel menu, under NGS Analysis, select
+<strong>NGS: RNA Analysis &gt; HISAT2</strong> and set the parameters as follows:  </p>
+<ul>
+<li>
+<p><strong>Source for the reference genome to align against:</strong> Use
+built-in genome</p>
+</li>
+<li>
+<p><strong>Select a reference genome:</strong> Fruit Fly (Drosophila melanogaster): dm3</p>
+</li>
+</ul>
+<!-- - **Input data format** FASTQ-->
+
+<ul>
+<li><strong>Single end or paired reads?</strong> Paired end</li>
+<li>
+<p><strong>Forward reads:</strong><br />
+(Click on the <strong>multiple datasets icon</strong> (which looks like two pieces of paper in a stack) and select all six of the forward
+FASTQ files ending in *1.fastq. This should be correspond to every
+second file (1,3,5,7,9,11). This can be done by holding down the
+ctrl key (Windows) or the command key (OSX) to select multiple files.)</p>
+<ul>
+<li>WT_01_R1.fastq</li>
+<li>WT_02_R1.fastq</li>
+<li>WT_03_R1.fastq</li>
+<li>KO_01_R1.fastq</li>
+<li>KO_02_R1.fastq</li>
+<li>KO_03_R1.fastq</li>
+</ul>
+</li>
+<li>
+<p><strong>Reverse reads:</strong><br />
+(Click on the <strong>multiple datasets icon</strong> and select all six of the reverse
+FASTQ files ending in *2.fastq.)  </p>
+<ul>
+<li>WT_01_R2.fastq</li>
+<li>WT_02_R2.fastq</li>
+<li>WT_03_R2.fastq</li>
+<li>KO_01_R2.fastq</li>
+<li>KO_02_R2.fastq</li>
+<li>KO_03_R2.fastq</li>
+</ul>
+</li>
+<li>
+<p>Use defaults for the other fields</p>
+</li>
+<li>Execute</li>
+</ul>
+<p>Your tool interface panel will look similar to this (although the options may be in a different order):</p>
+<p><img src="../media/rna_basic_hisat2.png"/></p>
+<p>Note: This may take a few minutes, depending on how busy the server is.</p>
+<p><strong>2.  Examine the alignment stats</strong></p>
+<p>HISAT2 outputs one bam file for each set of paired-end read files. Rename the 6
+files into a more meaningful name (e.g. 'HISAT on data 2 and data 1' to 'WT_01.bam')
+by using the <strong>pen icon</strong> next to the file.</p>
+<p>These files are BAM files (short for
+<a href="https://en.wikipedia.org/wiki/Binary_Alignment_Map">Binary Alignment Map</a>)
+and like the name suggests, is a binary file. Galaxy automatically converts these to a plain-text equivalent (SAM) file to view, when you click on the eye icon.</p>
+<!-- This means we can't use the
+eye icon to view the data in Galaxy; we need to use software that can read the
+file or convert it into it's plain-text equivalent (SAM) to view it as text.
+-->
+
+<p>In section 3, we'll use a genome viewer to view our alignments.</p>
+<p>HISAT2 also outputs some information to stderr which we can preview by
+clicking on the dataset name. To view the raw file, click the "info" button
+(view details) of a dataset, say WT_01.bam, and find the "Tool Standard Error"
+row under "Job Information" in the table. Click the "stderr" link to view
+the alignment summary output.</p>
+<pre><code>16046 reads; of these:
+  16046 (100.00%) were paired; of these:
+    104 (0.65%) aligned concordantly 0 times
+    13558 (84.49%) aligned concordantly exactly 1 time
+    2384 (14.86%) aligned concordantly &gt;1 times
+    ----
+    104 pairs aligned concordantly 0 times; of these:
+      1 (0.96%) aligned discordantly 1 time
+    ----
+    103 pairs aligned 0 times concordantly or discordantly; of these:
+      206 mates make up the pairs; of these:
+        106 (51.46%) aligned 0 times
+        91 (44.17%) aligned exactly 1 time
+        9 (4.37%) aligned &gt;1 times
+99.67% overall alignment rate
+</code></pre>
+
+<p>Here we see we have a very high alignment rate, which is expected since the
+data we have is simulated and has no contamination.</p>
+<hr />
+<h2 id="section-3-visualise-the-aligned-reads">Section 3: Visualise the aligned reads</h2>
+<p>The purpose of this step is to :</p>
+<ul>
+<li>visualise the quantitative, exon-based nature of RNA-seq data</li>
+<li>visualise the expression differences between samples represented by the
+  quantity of reads, and</li>
+<li>become familiar with interactive visualisation tools such as JBrowse.   </li>
+</ul>
+<!--
+- become familiar with the [Integrative Genomics Viewer
+  (IGV)](https://www.broadinstitute.org/igv/)-- an interactive
+  visualisation tool by the Broad Institute.  
+-->
+
+<h3 id="viewing-in-jbrowse">Viewing in JBrowse</h3>
+<p>To visualise the alignment data:</p>
+<ul>
+<li>search for "JBrowse" in the tool panel search bar</li>
+<li>for "Reference genome to display": <em>Use a built-in genome</em></li>
+<li>for "Select a reference genome": <em>Fruit Fly dm3</em></li>
+<li>leave other settings as default, except:</li>
+</ul>
+<p><strong>Set up a track for mapped RNA-seq reads:</strong></p>
+<ul>
+<li>click "Insert Track Group" and then "Insert Annotation Track"</li>
+<li>for "Track Type": <em>BAM pileups</em></li>
+<li>for "BAM Track Data": select the multiple datasets icon, then select a bam from each condition, e.g., WT_01.bam and KO_01.bam (your files may be named differently)</li>
+<li>for "Autogenerate SNP Track": <em>Yes</em></li>
+</ul>
+<p><strong>Set up a track for the annotated genome:</strong></p>
+<ul>
+<li>click "Insert Track Group" and then "Insert Annotation Track"</li>
+<li>for "Track Type": <em>GFF/GFF3/BED/GBK Features</em></li>
+<li>for "GFF/GFF3/BED Track Data": select the reference genome in GFF format, e.g. the converted GTF file (ensembl_dm3.chr4.gtf) - your files may be named differently</li>
+<li><em>Execute</em></li>
+</ul>
+<p>JBrowse will create a single file with this visualization (this may take a while).</p>
+<ul>
+<li>When it is ready, click the eye icon to display in the centre panel.</li>
+<li>Make sure all "Available Tracks" on the left are ticked.</li>
+<li>Zoom in and out with the plus and minus buttons.</li>
+<li>Select "Chr4".</li>
+</ul>
+<p><img alt="JBrowse" src="../media/jbrowse.png" /></p>
+<p>The aim of this tutorial is to statistically test
+differential expression, but first it’s useful to reassure ourselves
+that the data looks right at this stage by comparing the aligned reads
+for condition 1 (WT) and condition 2 (KO).</p>
+<p>If you can't find any, try changing the location to
+<strong>chr4:816349-830862</strong> using the field on the top toolbar.
+The 'Sox102F' gene in this area looks like it has many more reads
+mapped in WT than in KO. Hover over the coverage track to view the read
+depth of the area. But, of course, it may be that there are many more
+reads in the library for WT than KO. So we need to statistically
+normalise the read counts before we can say anything definitive,
+which we will do in the next section.</p>
+<h3 id="viewing-in-igv">Viewing in IGV</h3>
+<p>To visualise the alignment data:</p>
+<ol>
+<li>Click on one of the BAM files, for example 'WT_01.bam'.</li>
+<li>Click on Display with IGV <strong>'webcurrent'</strong> (or 'local' if you have IGV
+    installed on your computer. You will need to open IGV before you click on
+    'local'). This should download a .jnlp Java Web Start file to your
+    computer. Open this file to run IGV. (You will need Java installed on your
+    computer to run IGV)</li>
+<li>Once IGV opens, it will show you the BAM file. (Note:
+    this may take a bit of time as the data is downloaded to IGV)</li>
+<li>Select <strong>chr4</strong> from the second drop box under the toolbar. Zoom in to
+    view alignments of reads to the reference genome.
+    You should see the characteristic distribution of RNA-seq reads across
+    the exons of the genes, with some gaps at intron/exon boundaries.
+    The number of reads aligned to a particular gene is proportional to the
+    abundance of the RNA derived from that gene in the sequenced sample.
+    (Note that IGV already has a list of known genes of most major organisms
+    including Drosophila, which is why you can see the genes in the bottom
+    panel of IGV.)</li>
+<li>
+<p>View differentially expressed genes by viewing two alignment files
+    simultaneously. The aim of this tutorial is to statistically test
+    differential expression, but first it’s useful to reassure ourselves
+    that the data looks right at this stage by comparing the aligned reads
+    for condition 1 (WT) and condition 2 (KO).</p>
+<p>Select 'KO_02.bam' and click on 'display with IGV local'. This time we are
+using the <strong>'local'</strong> link, as we already have an IGV window up and running
+locally from the last step. Once the file has loaded, try to find some
+genes that look differentially expressed.</p>
+<p><img src="../media/rna_igv.png" height=400px/></p>
+<p>If you can't find any, try changing the location to
+<strong>chr4:816349-830862</strong> using the field on the top toolbar.
+The 'Sox102F' gene in this area looks like it has many more reads
+mapped in WT than in KO. Hover over the coverage track to view the read
+depth of the area. But, of course, it may be that there are many more
+reads in the library for WT than KO. So we need to statistically
+normalise the read counts before we can say anything definitive,
+which we will do in the next section.</p>
+</li>
+</ol>
+<!--
+**[Optional]** Visualise the aligned reads in Trackster  
+If you have trouble getting IGV to work, you can also use the inbuilt
+Galaxy genome browser, Trackster, to visualise alignments. Trackster has fewer
+features than IGV, but sometimes it may be more convenient to use as it only
+requires the browser.
+
+1.  On the top bar of Galaxy, select **Visualization > New Track Browser**.
+2.  Name your new visualization and select D. melanogaster (dm3) as the
+    reference genome build.
+3.  Click the **Add Datasets to Visualization** button and select WT_01.bam and
+    KO_01.bam by using the checkboxes on the left.
+4.  Select chr4 from the dropdown box. You can zoom in and out using the
+    buttons on the top toolbar. You can also add more tracks using the Add
+    Tracks icon located on the top right.
+5.  Next to the drop down list, click on the chromosomal position number
+    display and specify the location **chr4:816349-830862**.  
+
+Before starting the next section, leave the Trackster interface and return
+to the analysis view of Galaxy by clicking 'Analyze Data' on the top
+Galaxy toolbar.
+-->
+
+<hr />
+<h2 id="section-4-quantification">Section 4. Quantification</h2>
+<p>HTSeq-count counts the number of the reads from each bam file that map to the
+genomic features in the provided annotation file. For each feature (a
+gene for example) we will obtain a numerical value associated with the
+expression of that feature in our sample (i.e. the number of reads that
+were aligned to that gene).</p>
+<p><strong>1.  Examine the GTF file</strong></p>
+<p>Click on the <strong>eye icon</strong> to display the ensembl_dm3.chr4.gtf file in Galaxy.</p>
+<p>This GTF file is essentially a list of chromosomal features
+which together define genes. Each feature is in turn defined by a
+chromosomal start and end point, feature type (CDS, gene, exon etc),
+and parent gene and transcript. Importantly, a gene may have many features,
+but one feature will belong to only one gene.
+More information on the GTF format can be found
+<a href="http://asia.ensembl.org/info/website/upload/gff.html">here</a>.
+<br><img src="../media/rna_basic_gtf.png" height=200px style="margin: 10px;"/><br>
+The ensembl_dm3.chr4.gtf file contains ~4900 features which together define
+the 92 known genes on chromosome 4 of Drosophila melanogaster.</p>
+<p><strong>2.  Run HTSeq-count</strong></p>
+<ol>
+<li>
+<p>Use HTSeq-count to count the number of reads for each feature.<br />
+    In the left tool panel menu, under NGS Analysis, select
+    <strong>NGS: RNA Analysis &gt; htseq-count</strong> and set the parameters as follows:  </p>
+<ul>
+<li><strong>Aligned SAM/BAM File:</strong><br />
+  (Select 'Multiple datasets', then select all six bam files using the shift key.)<ul>
+<li>WT_01.bam</li>
+<li>WT_02.bam</li>
+<li>WT_03.bam</li>
+<li>KO_01.bam</li>
+<li>KO_02.bam</li>
+<li>KO_03.bam</li>
+</ul>
+</li>
+<li><strong>GFF File:</strong> ensembl_dm3.chr4.gtf</li>
+<li><strong>Stranded:</strong> No</li>
+<li><strong>ID Attribute:</strong> gene_name</li>
+<li>Use defaults for the other fields</li>
+<li>Execute</li>
+</ul>
+</li>
+<li>
+<p>In the previous step, each input BAM file outputted two files. The first
+    file contains the counts for each of our genes. The second file
+    (ending with "(no feature)") contains the stats for the reads that weren't
+    able to be uniquely aligned to a gene. We don't need the "(no feature)"
+    files so we can remove then with the delete "X" button on the top right.</p>
+</li>
+<li>
+<p>Rename the remaining six files from htseq-count to meaningful names,
+    such as WT_01, WT_02, etc.</p>
+</li>
+</ol>
+<p><strong>3.  Generate a count matrix</strong></p>
+<ol>
+<li>Generate a combined count matrix by combining our six files.
+    In the left tool panel menu, under NGS Analysis, select
+    <strong>NGS: RNA Analysis &gt; Generate count matrix</strong> and set the parameters as follows:  <ul>
+<li><strong>Count files from your history:</strong><br />
+    (Select all six count files using the shift key.)<ul>
+<li>WT_01</li>
+<li>WT_02</li>
+<li>WT_03</li>
+<li>KO_01</li>
+<li>KO_02</li>
+<li>KO_03</li>
+</ul>
+</li>
+<li>Use defaults for the other fields</li>
+<li>Execute</li>
+</ul>
+</li>
+</ol>
+<p>Examine the outputted matrix by using the <strong>eye icon</strong>.<br />
+Each column corresponds to a sample and each row corresponds to a gene. By
+sight, see if you can find a gene you think is differentially expressed
+just by looking at the counts.</p>
+<p>We now have a count matrix which we will now use to find differentially
+expressed genes between WT samples and KO samples.</p>
+<hr />
+<h2 id="section-5-degust">Section 5. Degust</h2>
+<p>Degust is an interactive visualiser for analysing RNA-seq data. It runs as a
+web service and can be found at <a href="http://degust.erc.monash.edu/">degust.erc.monash.edu/</a>.</p>
+<p><img src="../media/degust_01.png" height=400px style="display:block; margin-left: auto; margin-right:auto;"></p>
+<p><strong>1. Load count data into Degust</strong></p>
+<ol>
+<li>In Galaxy, download the count matrix you generated in the last section
+    using the <strong>disk icon</strong>.</li>
+<li>Go to <a href="http://degust.erc.monash.edu/">degust.erc.monash.edu/</a>
+    and click on "Upload your counts file".</li>
+<li>Click "Choose file" and upload the recently downloaded Galaxy tabular file
+    containing your RNA-seq counts.</li>
+</ol>
+<p><strong>2. Configure your uploaded data</strong></p>
+<ol>
+<li>Give your visualisation a name.</li>
+<li>For the Info column, select "gene_id".</li>
+<li>Add two conditions: WT and KO. For each condition, select the three
+    samples which correspond with the condition.</li>
+<li>Set min gene CPM to 1 in at least 3 samples.</li>
+<li>Click <strong>Save changes</strong> and view your data.</li>
+</ol>
+<p><img src="../media/degust_02.png" style="display:block; margin-left: auto; margin-right:auto;"></p>
+<p>Read through the Degust tour of features. Explore the parallel coordinates plot,
+MA plot, MDS plot, heatmap and gene list. Each is fully interactive and
+influences other portions on the display depending on what is selected.</p>
+<p><img src="../media/degust_03.png" style="display:block; margin-left: auto; margin-right:auto;"></p>
+<p>On the right side of the page is an options module which can set thresholds to
+filter genes using statistical significance or absolute-fold-change.</p>
+<p>On the left side is a dropdown box you can specify the method (Voom/Limma or
+edgeR) used to perform differential expression analysis on the data. You can
+also view the R code by clicking "Show R code" under the options module on
+the right.</p>
+<p><strong>4. Explore the demo data</strong></p>
+<p>Degust also provides an example dataset with 4 conditions and more genes. You
+can play with the demo dataset by clicking on the "Try the demo" button on the
+Degust homepage. The demo dataset includes a column with an EC number for each
+gene. This means genes can be displayed on Kegg pathways using the module on
+the right.</p>
+<hr />
+<h2 id="section-5-deseq2">Section 5. DESeq2</h2>
+<p>In this section we'll use the "DESeq2" tool in Galaxy to do our differential
+gene analysis. This tool uses the separate HTSeq files we generated in section
+4.</p>
+<p>Similar to Voom/Limma or edgeR that was used in Degust to statistically test
+our data, DESeq2 will:</p>
+<ul>
+<li>statistically test for expression differences in normalised read counts for
+    each gene, taking into account the variance observed between samples,  </li>
+<li>for each gene, calculate the p-value of the gene being differentially
+    expressed-- this is the probability of seeing the data or something more
+    extreme given the null hypothesis (that the gene is not differentially
+    expressed between the two conditions),</li>
+<li>for each gene, estimate the fold change in expression between the two
+    conditions.</li>
+</ul>
+<p></p>
+
+<ol>
+<li>Use DESeq2 to find differentially expressed features from the count data.<br />
+    In the left tool panel menu, under NGS Analysis, select <strong>NGS: RNA Analysis
+    &gt; DESeq2</strong> and set the parameters as follows:<ul>
+<li><strong>1: Factor</strong><ul>
+<li><strong>Specify a factor name:</strong> condition</li>
+<li><strong>1: Factor level:</strong><ul>
+<li><strong>Specify a factor level:</strong> WT<br />
+(Select the three WT htseq-count files.)<ul>
+<li>WT_01</li>
+<li>WT_02</li>
+<li>WT_03</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>2: Factor level:</strong><ul>
+<li><strong>Specify a factor level:</strong> KO<br />
+(Select the three KO htseq-count files.)<ul>
+<li>KO_01</li>
+<li>KO_02</li>
+<li>KO_03</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use defaults for the other fields</li>
+<li>Execute</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="../media/rna_basic_deseq2.png"/></p>
+<ol>
+<li>Have a look at the outputs of DESeq2. We will now filter significant
+    (adjusted p-value &lt; 0.05) genes from the DESeq2 result file.<br />
+    Under Basic Tools, click on <strong>Filter and Sort &gt; Filter</strong>:<ul>
+<li><strong>Filter:</strong> "DESeq2 result file on data ..."</li>
+<li><strong>With following condition:</strong> c7 &lt; 0.05</li>
+<li>Execute</li>
+</ul>
+</li>
+</ol>
+<p>How many differentially expressed genes with adjusted p-value &lt; 0.05 are there?</p>
+<hr />
+<h2 id="section-6-the-importance-of-replicates">Section 6. The importance of replicates</h2>
+<ol>
+<li>
+<p>Repeat the previous differential expression analysis with two samples in
+    each group instead of three. How do you expect your results to differ when
+    using fewer samples?</p>
+</li>
+<li>
+<p>Filter genes with adjusted-p-value &lt; 0.05. How many genes are significant?</p>
+</li>
+<li>
+<p>Run DESeq2 again, using only one sample from each group. How many genes are
+    now significant?</p>
+</li>
+<li>
+<p>Can you find genes that were identified as differentially expressed when
+    using three samples in each condition that were not identified as
+    differentially expressed when using two samples? What do you expect these
+    gene's counts or logFC values to look like compared to genes that remained
+    statistically significance? Have a look at the counts or the logFC values
+    of these genes.</p>
+</li>
+</ol>
+<p>The identification of differentially expressed genes is based on the size
+of the difference in expression and the variance observed across multiple
+replicates. This demonstrates how important it is to have biological replicates
+in differential gene expression experiments.</p>
+<p>Myoglianin is an example of a gene that showed up as differentially expressed
+when we did a 3 vs 3 comparsion but not with a 2 vs 2 comparsion.
+If we say that genes like Myoglianin was <strong>truly</strong> differentially expressed, we
+can call these instances where the true differentially expressed genes are not
+identified as false negatives. Generally, increasing replicates decreases the
+number of false negatives.</p>
+<p>It is also more likely to see more false positives when using an insufficient
+number of replicates. False positives can be defined as identifiying a gene as
+differentially expressed when it is, in reality, not.</p>
+<hr />
+<h2 id="optional-extension">Optional extension</h2>
+<p>Have a go at doing another differential expression analysis with the following
+Saccharomyces cerevisiae data from chromosome I. This time, the two conditions
+are called 'batch' and 'chem', and like before, there are three samples per
+condition.</p>
+<p>Batch sequence data:
+<div class="code">
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/batch1_chrI_1.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/batch1_chrI_2.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/batch2_chrI_1.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/batch2_chrI_2.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/batch3_chrI_1.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/batch3_chrI_2.fastq
+<br>
+</div>
+Chem sequence data:
+<div class="code">
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/chem1_chrI_1.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/chem1_chrI_2.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/chem2_chrI_1.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/chem2_chrI_2.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/chem3_chrI_1.fastq
+<br>
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/chem3_chrI_2.fastq
+<br>
+</div>
+Gene annotation:
+<div class="code">
+https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_ADVNCD/genes.gtf
+</div></p></article></div></div></main><footer class="md-footer"><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight"><a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a></div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script></body></html>

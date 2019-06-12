@@ -1,1521 +1,28 @@
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
-    
-    
-      
-        <title>Long read assembly - Bioinformatics Documentation</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
-      
-    
-    
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-      
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-    
-      <link rel="stylesheet" href="../../extra.css">
-    
-    
-  </head>
-  
-    <body dir="ltr">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
-    
-      <a href="#long-read-assembly-workshop" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Bioinformatics Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Long read assembly
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      melbournebioinformatics/MelBioInf_docs
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </span>
-    Bioinformatics Documentation
-  </label>
-  
-    <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      melbournebioinformatics/MelBioInf_docs
-    </div>
-  </a>
-
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Guides
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Guides
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">
-      What is bioinformatics?
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">
-      The Galaxy platform
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      General Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        General Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../python_overview/python_overview/" title="Python Overview" class="md-nav__link">
-      Python Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">
-      Data tidying with Python and Pandas
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">
-      Data visualisation with Python
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">
-      Using Git and Github for revision control
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">
-      Introduction to HPC
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../unix/unix/" title="Introduction to Unix" class="md-nav__link">
-      Introduction to Unix
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">
-      Launching a Personal GVL Server
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">
-      Introduction to Galaxy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
-    
-    <label class="md-nav__link" for="nav-3-9">
-      Galaxy Workflows
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-9">
-        Galaxy Workflows
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">
-      History Creation
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">
-      Containerized Bioinformatics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">
-      Common Workflow Language for Bioinformatics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">
-      Command-line software development
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      Genomics Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Genomics Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">
-      Introduction to Variant Calling
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
-    
-    <label class="md-nav__link" for="nav-4-2">
-      Variant Calling Advanced
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
-        Variant Calling Advanced
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">
-      Background
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      RNA-seq DGE Basic
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
-        RNA-seq DGE Basic
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">
-      Tuxedo Protocol Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">
-      Background
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">
-      RNA-seq DGE Advanced
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">
-      RNA-seq DGE Experimental Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">
-      10X single-cell RNA-seq analysis in R
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
-    
-    <label class="md-nav__link" for="nav-4-7">
-      Microbial de novo Assembly for Illumina Data: Velvet
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-7">
-        Microbial de novo Assembly for Illumina Data: Velvet
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../assembly/assembly/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../assembly/assembly-background/" title="Method Background" class="md-nav__link">
-      Method Background
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">
-      Microbial assembly: Spades
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Long read assembly
-      </label>
-    
-    <a href="./" title="Long read assembly" class="md-nav__link md-nav__link--active">
-      Long read assembly
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-get-started" title="1. Get started" class="md-nav__link">
-    1. Get started
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mac-users" title="Mac users" class="md-nav__link">
-    Mac users
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-users" title="Windows users" class="md-nav__link">
-    Windows users
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#activate-the-conda-environment" title="Activate the conda environment" class="md-nav__link">
-    Activate the conda environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-new-working-directory-on-your-remote-computer" title="Create a new working directory on your remote computer." class="md-nav__link">
-    Create a new working directory on your remote computer.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-get-data" title="2. Get data" class="md-nav__link">
-    2. Get data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-assemble" title="3. Assemble" class="md-nav__link">
-    3. Assemble
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-check-assembly-output" title="4. Check assembly output" class="md-nav__link">
-    4. Check assembly output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#questions" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-trim-and-circularise" title="5. Trim and circularise" class="md-nav__link">
-    5. Trim and circularise
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-circlator" title="Run Circlator" class="md-nav__link">
-    Run Circlator
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-output" title="Check the output" class="md-nav__link">
-    Check the output
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questions_1" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-find-smaller-plasmids" title="6. Find smaller plasmids" class="md-nav__link">
-    6. Find smaller plasmids
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#align-illumina-reads-to-the-pacbio-contig" title="Align Illumina reads to the PacBio contig" class="md-nav__link">
-    Align Illumina reads to the PacBio contig
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extract-unmapped-illumina-reads" title="Extract unmapped Illumina reads" class="md-nav__link">
-    Extract unmapped Illumina reads
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assemble-the-unmapped-reads" title="Assemble the unmapped reads" class="md-nav__link">
-    Assemble the unmapped reads
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trim-the-plasmid" title="Trim the plasmid" class="md-nav__link">
-    Trim the plasmid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collect-contigs" title="Collect contigs" class="md-nav__link">
-    Collect contigs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questions_2" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-correct-the-assembly" title="7. Correct the assembly" class="md-nav__link">
-    7. Correct the assembly
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#make-an-alignment-file" title="Make an alignment file" class="md-nav__link">
-    Make an alignment file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-pilon" title="Run Pilon" class="md-nav__link">
-    Run Pilon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questions_3" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-comparative-genomics" title="8. Comparative Genomics" class="md-nav__link">
-    8. Comparative Genomics
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#assemblies" title="Assemblies" class="md-nav__link">
-    Assemblies
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annotations" title="Annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-summary" title="9. Summary" class="md-nav__link">
-    9. Summary
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Proteomics Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Proteomics Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
-    
-    <label class="md-nav__link" for="nav-5-1">
-      Identifying proteins from mass spectrometry data
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-1">
-        Identifying proteins from mass spectrometry data
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">
-      Galaxy Background
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
-      Data Formats Background
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">
-      Create find count items workflow
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
-      Protein Databases
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
-      Search Engines
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
-      Protein Prophet
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Molecular Modelling Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Molecular Modelling Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
-      Molecular Dynamics - Introduction to cluster computing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
-      Molecular Dynamics - Building input files, visualising the trajectory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Protocols
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Protocols
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">
-      De Novo Genome Assembly for Illumina Data
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-get-started" title="1. Get started" class="md-nav__link">
-    1. Get started
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mac-users" title="Mac users" class="md-nav__link">
-    Mac users
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-users" title="Windows users" class="md-nav__link">
-    Windows users
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#activate-the-conda-environment" title="Activate the conda environment" class="md-nav__link">
-    Activate the conda environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-new-working-directory-on-your-remote-computer" title="Create a new working directory on your remote computer." class="md-nav__link">
-    Create a new working directory on your remote computer.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-get-data" title="2. Get data" class="md-nav__link">
-    2. Get data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-assemble" title="3. Assemble" class="md-nav__link">
-    3. Assemble
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-check-assembly-output" title="4. Check assembly output" class="md-nav__link">
-    4. Check assembly output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#questions" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-trim-and-circularise" title="5. Trim and circularise" class="md-nav__link">
-    5. Trim and circularise
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-circlator" title="Run Circlator" class="md-nav__link">
-    Run Circlator
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-output" title="Check the output" class="md-nav__link">
-    Check the output
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questions_1" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-find-smaller-plasmids" title="6. Find smaller plasmids" class="md-nav__link">
-    6. Find smaller plasmids
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#align-illumina-reads-to-the-pacbio-contig" title="Align Illumina reads to the PacBio contig" class="md-nav__link">
-    Align Illumina reads to the PacBio contig
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extract-unmapped-illumina-reads" title="Extract unmapped Illumina reads" class="md-nav__link">
-    Extract unmapped Illumina reads
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assemble-the-unmapped-reads" title="Assemble the unmapped reads" class="md-nav__link">
-    Assemble the unmapped reads
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trim-the-plasmid" title="Trim the plasmid" class="md-nav__link">
-    Trim the plasmid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collect-contigs" title="Collect contigs" class="md-nav__link">
-    Collect contigs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questions_2" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-correct-the-assembly" title="7. Correct the assembly" class="md-nav__link">
-    7. Correct the assembly
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#make-an-alignment-file" title="Make an alignment file" class="md-nav__link">
-    Make an alignment file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-pilon" title="Run Pilon" class="md-nav__link">
-    Run Pilon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questions_3" title="Questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-comparative-genomics" title="8. Comparative Genomics" class="md-nav__link">
-    8. Comparative Genomics
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#assemblies" title="Assemblies" class="md-nav__link">
-    Assemblies
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annotations" title="Annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-summary" title="9. Summary" class="md-nav__link">
-    9. Summary
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/pacbio/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                <h1 id="long-read-assembly-workshop">Long read assembly workshop</h1>
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Long read assembly - Bioinformatics Documentation</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-21794901-5", "www.melbournebioinformatics.org.au/tutorials/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#long-read-assembly-workshop" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Bioinformatics Documentation</span><span class="md-header-nav__topic">Long read assembly</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="../.." title="Bioinformatics Documentation" class="md-nav__button md-logo"><i class="md-icon"></i></a>Bioinformatics Documentation</label><div class="md-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="Home" class="md-nav__link">Home</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Guides</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Guides</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">What is bioinformatics?</a></li><li class="md-nav__item"><a href="../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">The Galaxy platform</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">General Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">General Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../python_overview/python_overview/" title="Python Overview" class="md-nav__link">Python Overview</a></li><li class="md-nav__item"><a href="../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">Data tidying with Python and Pandas</a></li><li class="md-nav__item"><a href="../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">Data visualisation with Python</a></li><li class="md-nav__item"><a href="../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">Using Git and Github for revision control</a></li><li class="md-nav__item"><a href="../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">Introduction to HPC</a></li><li class="md-nav__item"><a href="../unix/unix/" title="Introduction to Unix" class="md-nav__link">Introduction to Unix</a></li><li class="md-nav__item"><a href="../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">Launching a Personal GVL Server</a></li><li class="md-nav__item"><a href="../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">Introduction to Galaxy</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9"><label class="md-nav__link" for="nav-3-9">Galaxy Workflows</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-3-9">Galaxy Workflows</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">History Creation</a></li></ul></nav></li><li class="md-nav__item"><a href="../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">Containerized Bioinformatics</a></li><li class="md-nav__item"><a href="../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">Common Workflow Language for Bioinformatics</a></li><li class="md-nav__item"><a href="../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">Command-line software development</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked><label class="md-nav__link" for="nav-4">Genomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">Genomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">Introduction to Variant Calling</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2"><label class="md-nav__link" for="nav-4-2">Variant Calling Advanced</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-2">Variant Calling Advanced</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3"><label class="md-nav__link" for="nav-4-3">RNA-seq DGE Basic</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-3">RNA-seq DGE Basic</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">Tuxedo Protocol Tutorial</a></li><li class="md-nav__item"><a href="../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">RNA-seq DGE Advanced</a></li><li class="md-nav__item"><a href="../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">RNA-seq DGE Experimental Design</a></li><li class="md-nav__item"><a href="../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">10X single-cell RNA-seq analysis in R</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7"><label class="md-nav__link" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../assembly/assembly/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../assembly/assembly-background/" title="Method Background" class="md-nav__link">Method Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">Microbial assembly: Spades</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">Long read assembly</label><a href="./" title="Long read assembly" class="md-nav__link md-nav__link--active">Long read assembly</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#overview" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="#1-get-started" title="1. Get started" class="md-nav__link">1. Get started</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#mac-users" title="Mac users" class="md-nav__link">Mac users</a></li><li class="md-nav__item"><a href="#windows-users" title="Windows users" class="md-nav__link">Windows users</a></li><li class="md-nav__item"><a href="#activate-the-conda-environment" title="Activate the conda environment" class="md-nav__link">Activate the conda environment</a></li><li class="md-nav__item"><a href="#create-a-new-working-directory-on-your-remote-computer" title="Create a new working directory on your remote computer." class="md-nav__link">Create a new working directory on your remote computer.</a></li></ul></nav></li><li class="md-nav__item"><a href="#2-get-data" title="2. Get data" class="md-nav__link">2. Get data</a></li><li class="md-nav__item"><a href="#3-assemble" title="3. Assemble" class="md-nav__link">3. Assemble</a></li><li class="md-nav__item"><a href="#4-check-assembly-output" title="4. Check assembly output" class="md-nav__link">4. Check assembly output</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#questions" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#5-trim-and-circularise" title="5. Trim and circularise" class="md-nav__link">5. Trim and circularise</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#run-circlator" title="Run Circlator" class="md-nav__link">Run Circlator</a></li><li class="md-nav__item"><a href="#check-the-output" title="Check the output" class="md-nav__link">Check the output</a></li><li class="md-nav__item"><a href="#questions_1" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#6-find-smaller-plasmids" title="6. Find smaller plasmids" class="md-nav__link">6. Find smaller plasmids</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#align-illumina-reads-to-the-pacbio-contig" title="Align Illumina reads to the PacBio contig" class="md-nav__link">Align Illumina reads to the PacBio contig</a></li><li class="md-nav__item"><a href="#extract-unmapped-illumina-reads" title="Extract unmapped Illumina reads" class="md-nav__link">Extract unmapped Illumina reads</a></li><li class="md-nav__item"><a href="#assemble-the-unmapped-reads" title="Assemble the unmapped reads" class="md-nav__link">Assemble the unmapped reads</a></li><li class="md-nav__item"><a href="#trim-the-plasmid" title="Trim the plasmid" class="md-nav__link">Trim the plasmid</a></li><li class="md-nav__item"><a href="#collect-contigs" title="Collect contigs" class="md-nav__link">Collect contigs</a></li><li class="md-nav__item"><a href="#questions_2" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#7-correct-the-assembly" title="7. Correct the assembly" class="md-nav__link">7. Correct the assembly</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#make-an-alignment-file" title="Make an alignment file" class="md-nav__link">Make an alignment file</a></li><li class="md-nav__item"><a href="#run-pilon" title="Run Pilon" class="md-nav__link">Run Pilon</a></li><li class="md-nav__item"><a href="#questions_3" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#8-comparative-genomics" title="8. Comparative Genomics" class="md-nav__link">8. Comparative Genomics</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#assemblies" title="Assemblies" class="md-nav__link">Assemblies</a></li><li class="md-nav__item"><a href="#annotations" title="Annotations" class="md-nav__link">Annotations</a></li></ul></nav></li><li class="md-nav__item"><a href="#9-summary" title="9. Summary" class="md-nav__link">9. Summary</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Proteomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Proteomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1"><label class="md-nav__link" for="nav-5-1">Identifying proteins from mass spectrometry data</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-5-1">Identifying proteins from mass spectrometry data</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">Galaxy Background</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">Data Formats Background</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">Create find count items workflow</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">Protein Databases</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">Search Engines</a></li><li class="md-nav__item"><a href="../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">Protein Prophet</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6"><label class="md-nav__link" for="nav-6">Molecular Modelling Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">Molecular Modelling Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">Molecular Dynamics - Introduction to cluster computing</a></li><li class="md-nav__item"><a href="../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">Molecular Dynamics - Building input files, visualising the trajectory</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7"><label class="md-nav__link" for="nav-7">Protocols</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-7">Protocols</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">De Novo Genome Assembly for Illumina Data</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#overview" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="#1-get-started" title="1. Get started" class="md-nav__link">1. Get started</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#mac-users" title="Mac users" class="md-nav__link">Mac users</a></li><li class="md-nav__item"><a href="#windows-users" title="Windows users" class="md-nav__link">Windows users</a></li><li class="md-nav__item"><a href="#activate-the-conda-environment" title="Activate the conda environment" class="md-nav__link">Activate the conda environment</a></li><li class="md-nav__item"><a href="#create-a-new-working-directory-on-your-remote-computer" title="Create a new working directory on your remote computer." class="md-nav__link">Create a new working directory on your remote computer.</a></li></ul></nav></li><li class="md-nav__item"><a href="#2-get-data" title="2. Get data" class="md-nav__link">2. Get data</a></li><li class="md-nav__item"><a href="#3-assemble" title="3. Assemble" class="md-nav__link">3. Assemble</a></li><li class="md-nav__item"><a href="#4-check-assembly-output" title="4. Check assembly output" class="md-nav__link">4. Check assembly output</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#questions" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#5-trim-and-circularise" title="5. Trim and circularise" class="md-nav__link">5. Trim and circularise</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#run-circlator" title="Run Circlator" class="md-nav__link">Run Circlator</a></li><li class="md-nav__item"><a href="#check-the-output" title="Check the output" class="md-nav__link">Check the output</a></li><li class="md-nav__item"><a href="#questions_1" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#6-find-smaller-plasmids" title="6. Find smaller plasmids" class="md-nav__link">6. Find smaller plasmids</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#align-illumina-reads-to-the-pacbio-contig" title="Align Illumina reads to the PacBio contig" class="md-nav__link">Align Illumina reads to the PacBio contig</a></li><li class="md-nav__item"><a href="#extract-unmapped-illumina-reads" title="Extract unmapped Illumina reads" class="md-nav__link">Extract unmapped Illumina reads</a></li><li class="md-nav__item"><a href="#assemble-the-unmapped-reads" title="Assemble the unmapped reads" class="md-nav__link">Assemble the unmapped reads</a></li><li class="md-nav__item"><a href="#trim-the-plasmid" title="Trim the plasmid" class="md-nav__link">Trim the plasmid</a></li><li class="md-nav__item"><a href="#collect-contigs" title="Collect contigs" class="md-nav__link">Collect contigs</a></li><li class="md-nav__item"><a href="#questions_2" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#7-correct-the-assembly" title="7. Correct the assembly" class="md-nav__link">7. Correct the assembly</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#make-an-alignment-file" title="Make an alignment file" class="md-nav__link">Make an alignment file</a></li><li class="md-nav__item"><a href="#run-pilon" title="Run Pilon" class="md-nav__link">Run Pilon</a></li><li class="md-nav__item"><a href="#questions_3" title="Questions" class="md-nav__link">Questions</a></li></ul></nav></li><li class="md-nav__item"><a href="#8-comparative-genomics" title="8. Comparative Genomics" class="md-nav__link">8. Comparative Genomics</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#assemblies" title="Assemblies" class="md-nav__link">Assemblies</a></li><li class="md-nav__item"><a href="#annotations" title="Annotations" class="md-nav__link">Annotations</a></li></ul></nav></li><li class="md-nav__item"><a href="#9-summary" title="9. Summary" class="md-nav__link">9. Summary</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/pacbio/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1 id="long-read-assembly-workshop">Long read assembly workshop</h1>
 <p>This is a tutorial for a workshop on long-read (PacBio) genome assembly.</p>
 <p>It demonstrates how to use long PacBio sequencing reads to assemble a bacterial genome, and includes additional steps for circularising, trimming, finding plasmids, and correcting the assembly with short-read Illumina data.</p>
 <h2 id="overview">Overview</h2>
 <p>Simplified version of workflow:</p>
-<p><img alt="workflow" src="./images/flowchart.png" /></p>
+<p><img alt="workflow" src="images/flowchart.png" /></p>
 <h2 id="1-get-started">1. Get started</h2>
 <p>Your workshop trainers will provide you with the address of a virtual machine.</p>
 <h3 id="mac-users">Mac users</h3>
@@ -1658,37 +165,42 @@ mv pacbio.fq\?download\=1 pacbio.fq
 </ul>
 <h3 id="questions">Questions</h3>
 <p>How do long- and short-read assembly methods differ?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Short reads are usually assembled with De Bruijn graphs. For long reads, there is a move back towards simpler overlap-layout-consensus methods.
-</details></p>
+</details>
+
 <p>Where can we find out the what the approximate genome size should be for the species being assembled?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Go to NCBI Genomes, enter species name, click on Genome Assembly and Annotation report, sort table by clicking on the column header Size (Mb), look at range of sizes in this column.
-</details></p>
+</details>
+
 <p>In the assembly output, what are the unassembled reads?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Reads and low-coverage contigs that were not used in the assembly.
-</details></p>
+</details>
+
 <p>What are the corrected reads? How did canu correct the reads?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Canu builds overlaps between reads. The consensus is used to correct the reads.
-</details></p>
+</details>
+
 <p>Where could you view the output .gfa and what would it show?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
-A useful program is <a href="https://rrwick.github.io/Bandage/">Bandage</a>. If the assembly has multiple contigs, the assembly graph shows how these are connected.
-</details></p>
+A useful program is [Bandage](https://rrwick.github.io/Bandage/). If the assembly has multiple contigs, the assembly graph shows how these are connected.
+</details>
+
 <h2 id="5-trim-and-circularise">5. Trim and circularise</h2>
 <p>Bacteria have circular chromosomes.</p>
 <ul>
 <li>Because of sequencing errors, there may be some "overhang" in the assembled linear sequence.</li>
 <li>Our assembly may have some overhang because it is 9000 bases longer than expected.</li>
 </ul>
-<p><img alt="circlator" src="./images/circlator_diagram.png" />
+<p><img alt="circlator" src="images/circlator_diagram.png" />
 <em>Adapted from Figure 1. Hunt et al. Genome Biology 2015</em></p>
 <p>A tool called <a href="http://sanger-pathogens.github.io/circlator/">Circlator</a> identifies and trims overhangs (on chromosomes and plasmids). It takes in the assembled contigs from Canu, as well as the corrected reads prepared by Canu.</p>
 <p>Move back into your main analysis folder:</p>
@@ -1750,15 +262,17 @@ A useful program is <a href="https://rrwick.github.io/Bandage/">Bandage</a>. If 
 
 <h3 id="questions_1">Questions</h3>
 <p>Were all the contigs circularised?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 In this example, yes, the contig was circularised.
-</details></p>
+</details>
+
 <p>Circlator can set the start of the sequence at a particular gene. Which gene does it use? Is this appropriate for all contigs?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, it uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as repA. It is possible to provide a file to Circlator to do this.
-</details></p>
+</details>
+
 <h2 id="6-find-smaller-plasmids">6. Find smaller plasmids</h2>
 <p>Pacbio reads are long, and may have been longer than small plasmids. We will look for any small plasmids using the Illumina reads.</p>
 <p>This section involves several steps:</p>
@@ -1882,7 +396,7 @@ Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, 
 <li>Scroll down with the down arrow.</li>
 <li>The second hit shows "Query 1" (the start of the contig) also matches to "Sbject 1" (the whole contig) at position 2253, all the way to the end, position 2359.</li>
 </ul>
-<p><img alt="blast" src="./images/blasthits.png" /></p>
+<p><img alt="blast" src="images/blasthits.png" /></p>
 <ul>
 <li>This is the overhang.</li>
 <li>Therefore, in the next step, we need to trim the contig to position 2252.</li>
@@ -1945,30 +459,35 @@ Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, 
 </ul>
 <h3 id="questions_2">Questions</h3>
 <p>Why is this section so complicated?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Finding small plasmids is difficult for many reasons! This paper has a nice summary: On the (im)possibility to reconstruct plasmids from whole genome short-read sequencing data. doi: https://doi.org/10.1101/086744
-</details></p>
+</details>
+
 <p>Why can PacBio sequencing miss small plasmids?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Library prep size selection.
-</details></p>
+</details>
+
 <p>We extract unmapped Illumina reads and assemble these to find small plasmids. What could they be missing?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Repeats that have mapped to the PacBio assembly.
-</details></p>
+</details>
+
 <p>How do you find a plasmid in a Bandage graph?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 It is probably circular, matches the size of a known plasmid, and has a rep gene.
-</details></p>
+</details>
+
 <p>Are there easier ways to find plasmids?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Possibly. One option is the program called Unicycler which may automate many of these steps. https://github.com/rrwick/Unicycler
-</details></p>
+</details>
+
 <h2 id="7-correct-the-assembly">7. Correct the assembly</h2>
 <p>Sequences from PacBio can have more errors than those from Illumina. Therefore, although it is useful to use the long PacBio reads to assemble the genome, we can also use the shorter and more accurate Illumina reads to correct errors in the PacBio assembly.</p>
 <h3 id="make-an-alignment-file">Make an alignment file</h3>
@@ -2016,7 +535,7 @@ Possibly. One option is the program called Unicycler which may automate many of 
 </code></pre>
 
 <p><em>Example:</em></p>
-<p><img alt="pilon" src="./images/pilon.png" /></p>
+<p><img alt="pilon" src="images/pilon.png" /></p>
 <ul>
 <li>We can see lots of cases where a deletion (represented by a dot) has been corrected to a base.  </li>
 <li>Type <code>q</code> to exit.</li>
@@ -2036,20 +555,23 @@ Possibly. One option is the program called Unicycler which may automate many of 
 <p>We now have the corrected genome assembly of <em>Staphylococcus aureus</em> in .fasta format, containing a chromosome and a small plasmid.  </p>
 <h3 id="questions_3">Questions</h3>
 <p>Why don't we correct earlier in the assembly process?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 We need to circularise the contigs and trim overhangs first.
-</details></p>
+</details>
+
 <p>Why can we use some reads (Illumina) to correct other reads (PacBio) ?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Illumina reads have higher accuracy.
-</details></p>
+</details>
+
 <p>Could we just use PacBio reads to assemble the genome?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 Yes, if accuracy adequate.
-</details></p>
+</details>
+
 <h2 id="8-comparative-genomics">8. Comparative Genomics</h2>
 <p>In the workshop so far, we used a partial bacterial genome so that the exercises could run in the time available. As a demonstration, to better see the effect of long and short reads on the assembly, we will examine a complete bacterial genome.</p>
 <h3 id="assemblies">Assemblies</h3>
@@ -2057,15 +579,16 @@ Yes, if accuracy adequate.
 <p>Assembly graphs:</p>
 <p>Look at the assembly graph (usually has a suffix .gfa), in the program <a href="https://rrwick.github.io/Bandage/">Bandage</a>. This shows how contigs are related, albeit with ambiguity in some places.</p>
 <p>The assembly graph from Illumina reads (Spades assembly):</p>
-<p><img alt="spades assembly graph" src="./images/25747_spades_illumina_graph.png" /></p>
+<p><img alt="spades assembly graph" src="images/25747_spades_illumina_graph.png" /></p>
 <p>The assembly graph from PacBio reads (Canu assembly) - this is missing the small plasmid:</p>
-<p><img alt="canu assembly graph" src="./images/25747_canu_pacbio_graph.png" /></p>
+<p><img alt="canu assembly graph" src="images/25747_canu_pacbio_graph.png" /></p>
 <p>Here we can see that the long read data results in a more contiguous assembly - one complete chromosome versus many smaller contigs with ambiguous placement.</p>
 <p>Does it matter that an assembly is in many contigs?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
-Yes and No. Yes: broken genes can lead to missing/incorrect annotations; fragmented assemblies provide less information about the genomic structure (<em>e.g.</em> the number of plasmids) and the location of genes of interest (<em>e.g.</em> gene A is located on plasmid X). No: many or all genes may still be annotated correctly. Gene location is useful (e.g. chromosome, plasmid1) but not always essential (e.g. presence/absence of particular resistance genes may be enough information).
-</details></p>
+Yes and No. Yes: broken genes can lead to missing/incorrect annotations; fragmented assemblies provide less information about the genomic structure (*e.g.* the number of plasmids) and the location of genes of interest (*e.g.* gene A is located on plasmid X). No: many or all genes may still be annotated correctly. Gene location is useful (e.g. chromosome, plasmid1) but not always essential (e.g. presence/absence of particular resistance genes may be enough information).
+</details>
+
 <h3 id="annotations">Annotations</h3>
 <p>Genomic features such as genes can be identified with annotation tools. We have used a tool called <a href="https://github.com/tseemann/prokka">Prokka</a> to annotate the two genomes described above.</p>
 <p>Some of the output data is displayed here:</p>
@@ -2108,15 +631,17 @@ Yes and No. Yes: broken genes can lead to missing/incorrect annotations; fragmen
 </table>
 <p></center></p>
 <p>Why are there more CDS identified in the PacBio assembly?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
-The PacBio assembly may have errors (usually a one base indel) which will cause a frame shift, which can result in three things: a longer CDS, a shorter CDS, or a shorter CDS plus an additional CDS. In addition, the Illumina assembly is about 33 kb smaller than the PacBio assembly. In bacteria, a rule of thumb is that 1 kb is roughly equal to one gene. Thus, we would probably expect about 33 fewer identified genes, which fits with these results.<br />
-</details></p>
+The PacBio assembly may have errors (usually a one base indel) which will cause a frame shift, which can result in three things: a longer CDS, a shorter CDS, or a shorter CDS plus an additional CDS. In addition, the Illumina assembly is about 33 kb smaller than the PacBio assembly. In bacteria, a rule of thumb is that 1 kb is roughly equal to one gene. Thus, we would probably expect about 33 fewer identified genes, which fits with these results.  
+</details>
+
 <p>Why are there more rRNA identified in the PacBio assembly?</p>
-<p><details>
+<details>
 <summary>Answer (click to reveal)</summary>
 There may be multiple copies of the rRNAs and these could have been collapsed as repeats in the Illumina assembly.
-</details></p>
+</details>
+
 <h2 id="9-summary">9. Summary</h2>
 <p>In this workshop, we used bacterial sequencing data from long and short reads to produce a polished genome.</p>
 <p>Procedure and tools:</p>
@@ -2144,91 +669,4 @@ There may be multiple copies of the rRNAs and these could have been collapsed as
 <p>Additional microbial genomics tutorials:</p>
 <ul>
 <li>http://sepsis-omics.github.io/tutorials/ and https://galaxy-au-training.github.io/tutorials/</li>
-</ul>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../assembly/spades/" title="Microbial assembly: Spades" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Microbial assembly: Spades
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Tutorial
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
-          </div>
-        
-        powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    
-      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
-      
-      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-21794901-5","www.melbournebioinformatics.org.au/tutorials/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-      
-    
-  </body>
-</html>
+</ul></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../assembly/spades/" title="Microbial assembly: Spades" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>Microbial assembly: Spades</span></div></a><a href="../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Next</span>Tutorial</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight"><a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a></div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>

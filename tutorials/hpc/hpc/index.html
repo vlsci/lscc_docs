@@ -1,2046 +1,23 @@
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
-    
-    
-      
-        <title>Introduction to HPC - Bioinformatics Documentation</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.8d40d89b.css">
-      
-    
-    
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-      
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-    
-      <link rel="stylesheet" href="../../../extra.css">
-    
-    
-  </head>
-  
-    <body dir="ltr">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
-    
-      <a href="#high-performance-computing" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Bioinformatics Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Introduction to HPC
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      melbournebioinformatics/MelBioInf_docs
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </span>
-    Bioinformatics Documentation
-  </label>
-  
-    <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      melbournebioinformatics/MelBioInf_docs
-    </div>
-  </a>
-
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Guides
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Guides
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">
-      What is bioinformatics?
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">
-      The Galaxy platform
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      General Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        General Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../python_overview/python_overview/" title="Python Overview" class="md-nav__link">
-      Python Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">
-      Data tidying with Python and Pandas
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">
-      Data visualisation with Python
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">
-      Using Git and Github for revision control
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Introduction to HPC
-      </label>
-    
-    <a href="./" title="Introduction to HPC" class="md-nav__link md-nav__link--active">
-      Introduction to HPC
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
-    Learning Objectives
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" title="Requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-an-hpc" title="What is an HPC?" class="md-nav__link">
-    What is an HPC?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-use-hpcs" title="Why use HPCs?" class="md-nav__link">
-    Why use HPCs?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software-modules" title="Software Modules" class="md-nav__link">
-    Software Modules
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#job-submission" title="Job Submission" class="md-nav__link">
-    Job Submission
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resources" title="Resources" class="md-nav__link">
-    Resources
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#job-types" title="Job Types" class="md-nav__link">
-    Job Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-to-the-hpc" title="Connecting to the HPC" class="md-nav__link">
-    Connecting to the HPC
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-1-exploring-an-hpc" title="Topic 1: Exploring an HPC" class="md-nav__link">
-    Topic 1: Exploring an HPC
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercises" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-what-is-the-contact-email-for-your-hpcs-system-administrator" title="1.1) What is the contact email for your HPC's System Administrator?" class="md-nav__link">
-    1.1) What is the contact email for your HPC's System Administrator?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc" title="1.2) Run the sinfo command.  How many nodes are there in this hpc?" class="md-nav__link">
-    1.2) Run the sinfo command.  How many nodes are there in this hpc?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-2-software-modules" title="Topic 2: Software Modules" class="md-nav__link">
-    Topic 2: Software Modules
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercises_1" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-what-happens-if-you-run-the-module-command-without-any-options-arguments" title="2.1) What happens if you run the module command without any options / arguments?" class="md-nav__link">
-    2.1) What happens if you run the module command without any options / arguments?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-how-do-you-find-a-list-of-available-software" title="2.2) How do you find a list of available software?" class="md-nav__link">
-    2.2) How do you find a list of available software?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-how-many-modules-are-there-starting-with-f" title="2.3) How many modules are there starting with 'f'?" class="md-nav__link">
-    2.3) How many modules are there starting with 'f'?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-run-the-pear-command-without-loading-it-does-it-work" title="2.4) Run the pear command (without loading it), does it work?" class="md-nav__link">
-    2.4) Run the pear command (without loading it), does it work?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-how-would-we-load-the-pear-module" title="2.5) How would we load the pear module?" class="md-nav__link">
-    2.5) How would we load the pear module?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's loaded, run pear again, what does it do?" class="md-nav__link">
-    2.6) Now it's loaded, run pear again, what does it do?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from" title="2.7) List all the loaded modules. How many are there? Where did all the others come from?" class="md-nav__link">
-    2.7) List all the loaded modules. How many are there? Where did all the others come from?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear" title="2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?" class="md-nav__link">
-    2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#29-how-do-you-clear-all-loaded-modules" title="2.9) How do you clear ALL loaded modules?" class="md-nav__link">
-    2.9) How do you clear ALL loaded modules?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-3-job-submission" title="Topic 3: Job Submission" class="md-nav__link">
-    Topic 3: Job Submission
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#background" title="Background" class="md-nav__link">
-    Background
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercises_2" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-which-nodes-could-a-main-job-go-on" title="3.1) Which nodes could a 'main' job go on?" class="md-nav__link">
-    3.1) Which nodes could a 'main' job go on?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-how-many-cpu-cores-will-each-ask-for" title="3.2) How many cpu cores will each ask for?" class="md-nav__link">
-    3.2) How many cpu cores will each ask for?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-what-about-total-memory" title="3.3) What about total memory?" class="md-nav__link">
-    3.3) What about total memory?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-how-long-can-each-run-for" title="3.4) How long can each run for?" class="md-nav__link">
-    3.4) How long can each run for?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-is-this-maximum-minimum-or-both-runtime" title="3.5) Is this maximum, minimum or both runtime?" class="md-nav__link">
-    3.5) Is this maximum, minimum or both runtime?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#36-calculate-the-time-specification-for-the-following-runtimes" title="3.6) Calculate the --time specification for the following runtimes:" class="md-nav__link">
-    3.6) Calculate the --time specification for the following runtimes:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#37-what-do-the-following-time-specifications-mean" title="3.7) What do the following --time specifications mean?" class="md-nav__link">
-    3.7) What do the following --time specifications mean?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reservations" title="Reservations" class="md-nav__link">
-    Reservations
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#38-what-job-id-was-your-job-given" title="3.8) What job id was your job given?" class="md-nav__link">
-    3.8) What job id was your job given?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#39-which-node-did-your-job-go-on" title="3.9) Which node did your job go on?" class="md-nav__link">
-    3.9) Which node did your job go on?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced" title="Advanced" class="md-nav__link">
-    Advanced
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds" title="3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds." class="md-nav__link">
-    3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds" title="3.11) Submit the job.  What was the largest prime number it found in 20 seconds?" class="md-nav__link">
-    3.11) Submit the job.  What was the largest prime number it found in 20 seconds?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again" title="3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again." class="md-nav__link">
-    3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-4-job-monitoring" title="Topic 4: Job Monitoring" class="md-nav__link">
-    Topic 4: Job Monitoring
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercises_3" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-what-does-the-top-command-show" title="4.1) What does the top command show?" class="md-nav__link">
-    4.1) What does the top command show?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-how-much-total-memory-does-this-hpc-head-node-have" title="4.2) How much total memory does this HPC (head-node) have?" class="md-nav__link">
-    4.2) How much total memory does this HPC (head-node) have?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-what-is-the-current-total-cpu-usage" title="4.3) What is the current total CPU usage?" class="md-nav__link">
-    4.3) What is the current total CPU usage?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low" title="4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?" class="md-nav__link">
-    4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#45-why-might-the-numbers-disagree" title="4.5) Why might the numbers disagree?" class="md-nav__link">
-    4.5) Why might the numbers disagree?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#46-what-command-line-flag-instructs-top-to-sort-results-by-mem" title="4.6) What command-line flag instructs top to sort results by %MEM?" class="md-nav__link">
-    4.6) What command-line flag instructs top to sort results by %MEM?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#47-run-top-c-what-does-it-do-how-might-this-be-helpful" title="4.7) Run "top -c".  What does it do?  How might this be helpful?" class="md-nav__link">
-    4.7) Run "top -c".  What does it do?  How might this be helpful?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful" title="4.8) How can you get top to only show your processes?  Why might this be useful?" class="md-nav__link">
-    4.8) How can you get top to only show your processes?  Why might this be useful?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-5-all-together" title="Topic 5: All Together" class="md-nav__link">
-    Topic 5: All Together
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-1-write-a-job-script" title="Task 1: Write a job script" class="md-nav__link">
-    Task 1: Write a job script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-2-loaduse-software-module" title="Task 2: Load/use software module" class="md-nav__link">
-    Task 2: Load/use software module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-3-submit-job" title="Task 3: Submit job" class="md-nav__link">
-    Task 3: Submit job
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-4-monitor-the-job" title="Task 4: Monitor the job" class="md-nav__link">
-    Task 4: Monitor the job
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-does-the-cpu-and-memory-usage-change-over-time" title="How does the CPU and Memory usage change over time?" class="md-nav__link">
-    How does the CPU and Memory usage change over time?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finished" title="Finished" class="md-nav__link">
-    Finished
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../unix/unix/" title="Introduction to Unix" class="md-nav__link">
-      Introduction to Unix
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">
-      Launching a Personal GVL Server
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">
-      Introduction to Galaxy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
-    
-    <label class="md-nav__link" for="nav-3-9">
-      Galaxy Workflows
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-9">
-        Galaxy Workflows
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">
-      History Creation
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">
-      Containerized Bioinformatics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">
-      Common Workflow Language for Bioinformatics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">
-      Command-line software development
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Genomics Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Genomics Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">
-      Introduction to Variant Calling
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
-    
-    <label class="md-nav__link" for="nav-4-2">
-      Variant Calling Advanced
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
-        Variant Calling Advanced
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">
-      Background
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      RNA-seq DGE Basic
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
-        RNA-seq DGE Basic
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">
-      Tuxedo Protocol Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">
-      Background
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">
-      RNA-seq DGE Advanced
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">
-      RNA-seq DGE Experimental Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">
-      10X single-cell RNA-seq analysis in R
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
-    
-    <label class="md-nav__link" for="nav-4-7">
-      Microbial de novo Assembly for Illumina Data: Velvet
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-7">
-        Microbial de novo Assembly for Illumina Data: Velvet
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../assembly/assembly/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../assembly/assembly-background/" title="Method Background" class="md-nav__link">
-      Method Background
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">
-      Microbial assembly: Spades
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../pacbio/" title="Long read assembly" class="md-nav__link">
-      Long read assembly
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Proteomics Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Proteomics Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
-    
-    <label class="md-nav__link" for="nav-5-1">
-      Identifying proteins from mass spectrometry data
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-1">
-        Identifying proteins from mass spectrometry data
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">
-      Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">
-      Galaxy Background
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
-      Data Formats Background
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">
-      Create find count items workflow
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
-      Protein Databases
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
-      Search Engines
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
-      Protein Prophet
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Molecular Modelling Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Molecular Modelling Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
-      Molecular Dynamics - Introduction to cluster computing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
-      Molecular Dynamics - Building input files, visualising the trajectory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Protocols
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Protocols
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">
-      De Novo Genome Assembly for Illumina Data
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
-    Learning Objectives
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" title="Requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-an-hpc" title="What is an HPC?" class="md-nav__link">
-    What is an HPC?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-use-hpcs" title="Why use HPCs?" class="md-nav__link">
-    Why use HPCs?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software-modules" title="Software Modules" class="md-nav__link">
-    Software Modules
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#job-submission" title="Job Submission" class="md-nav__link">
-    Job Submission
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resources" title="Resources" class="md-nav__link">
-    Resources
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#job-types" title="Job Types" class="md-nav__link">
-    Job Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-to-the-hpc" title="Connecting to the HPC" class="md-nav__link">
-    Connecting to the HPC
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-1-exploring-an-hpc" title="Topic 1: Exploring an HPC" class="md-nav__link">
-    Topic 1: Exploring an HPC
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercises" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-what-is-the-contact-email-for-your-hpcs-system-administrator" title="1.1) What is the contact email for your HPC's System Administrator?" class="md-nav__link">
-    1.1) What is the contact email for your HPC's System Administrator?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc" title="1.2) Run the sinfo command.  How many nodes are there in this hpc?" class="md-nav__link">
-    1.2) Run the sinfo command.  How many nodes are there in this hpc?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-2-software-modules" title="Topic 2: Software Modules" class="md-nav__link">
-    Topic 2: Software Modules
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercises_1" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-what-happens-if-you-run-the-module-command-without-any-options-arguments" title="2.1) What happens if you run the module command without any options / arguments?" class="md-nav__link">
-    2.1) What happens if you run the module command without any options / arguments?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-how-do-you-find-a-list-of-available-software" title="2.2) How do you find a list of available software?" class="md-nav__link">
-    2.2) How do you find a list of available software?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-how-many-modules-are-there-starting-with-f" title="2.3) How many modules are there starting with 'f'?" class="md-nav__link">
-    2.3) How many modules are there starting with 'f'?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-run-the-pear-command-without-loading-it-does-it-work" title="2.4) Run the pear command (without loading it), does it work?" class="md-nav__link">
-    2.4) Run the pear command (without loading it), does it work?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-how-would-we-load-the-pear-module" title="2.5) How would we load the pear module?" class="md-nav__link">
-    2.5) How would we load the pear module?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's loaded, run pear again, what does it do?" class="md-nav__link">
-    2.6) Now it's loaded, run pear again, what does it do?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from" title="2.7) List all the loaded modules. How many are there? Where did all the others come from?" class="md-nav__link">
-    2.7) List all the loaded modules. How many are there? Where did all the others come from?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear" title="2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?" class="md-nav__link">
-    2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#29-how-do-you-clear-all-loaded-modules" title="2.9) How do you clear ALL loaded modules?" class="md-nav__link">
-    2.9) How do you clear ALL loaded modules?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-3-job-submission" title="Topic 3: Job Submission" class="md-nav__link">
-    Topic 3: Job Submission
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#background" title="Background" class="md-nav__link">
-    Background
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercises_2" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-which-nodes-could-a-main-job-go-on" title="3.1) Which nodes could a 'main' job go on?" class="md-nav__link">
-    3.1) Which nodes could a 'main' job go on?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-how-many-cpu-cores-will-each-ask-for" title="3.2) How many cpu cores will each ask for?" class="md-nav__link">
-    3.2) How many cpu cores will each ask for?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-what-about-total-memory" title="3.3) What about total memory?" class="md-nav__link">
-    3.3) What about total memory?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-how-long-can-each-run-for" title="3.4) How long can each run for?" class="md-nav__link">
-    3.4) How long can each run for?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-is-this-maximum-minimum-or-both-runtime" title="3.5) Is this maximum, minimum or both runtime?" class="md-nav__link">
-    3.5) Is this maximum, minimum or both runtime?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#36-calculate-the-time-specification-for-the-following-runtimes" title="3.6) Calculate the --time specification for the following runtimes:" class="md-nav__link">
-    3.6) Calculate the --time specification for the following runtimes:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#37-what-do-the-following-time-specifications-mean" title="3.7) What do the following --time specifications mean?" class="md-nav__link">
-    3.7) What do the following --time specifications mean?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reservations" title="Reservations" class="md-nav__link">
-    Reservations
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#38-what-job-id-was-your-job-given" title="3.8) What job id was your job given?" class="md-nav__link">
-    3.8) What job id was your job given?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#39-which-node-did-your-job-go-on" title="3.9) Which node did your job go on?" class="md-nav__link">
-    3.9) Which node did your job go on?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced" title="Advanced" class="md-nav__link">
-    Advanced
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds" title="3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds." class="md-nav__link">
-    3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds" title="3.11) Submit the job.  What was the largest prime number it found in 20 seconds?" class="md-nav__link">
-    3.11) Submit the job.  What was the largest prime number it found in 20 seconds?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again" title="3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again." class="md-nav__link">
-    3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-4-job-monitoring" title="Topic 4: Job Monitoring" class="md-nav__link">
-    Topic 4: Job Monitoring
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercises_3" title="Exercises" class="md-nav__link">
-    Exercises
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-what-does-the-top-command-show" title="4.1) What does the top command show?" class="md-nav__link">
-    4.1) What does the top command show?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-how-much-total-memory-does-this-hpc-head-node-have" title="4.2) How much total memory does this HPC (head-node) have?" class="md-nav__link">
-    4.2) How much total memory does this HPC (head-node) have?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-what-is-the-current-total-cpu-usage" title="4.3) What is the current total CPU usage?" class="md-nav__link">
-    4.3) What is the current total CPU usage?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low" title="4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?" class="md-nav__link">
-    4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#45-why-might-the-numbers-disagree" title="4.5) Why might the numbers disagree?" class="md-nav__link">
-    4.5) Why might the numbers disagree?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#46-what-command-line-flag-instructs-top-to-sort-results-by-mem" title="4.6) What command-line flag instructs top to sort results by %MEM?" class="md-nav__link">
-    4.6) What command-line flag instructs top to sort results by %MEM?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#47-run-top-c-what-does-it-do-how-might-this-be-helpful" title="4.7) Run "top -c".  What does it do?  How might this be helpful?" class="md-nav__link">
-    4.7) Run "top -c".  What does it do?  How might this be helpful?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful" title="4.8) How can you get top to only show your processes?  Why might this be useful?" class="md-nav__link">
-    4.8) How can you get top to only show your processes?  Why might this be useful?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#topic-5-all-together" title="Topic 5: All Together" class="md-nav__link">
-    Topic 5: All Together
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-1-write-a-job-script" title="Task 1: Write a job script" class="md-nav__link">
-    Task 1: Write a job script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-2-loaduse-software-module" title="Task 2: Load/use software module" class="md-nav__link">
-    Task 2: Load/use software module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-3-submit-job" title="Task 3: Submit job" class="md-nav__link">
-    Task 3: Submit job
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-4-monitor-the-job" title="Task 4: Monitor the job" class="md-nav__link">
-    Task 4: Monitor the job
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-does-the-cpu-and-memory-usage-change-over-time" title="How does the CPU and Memory usage change over time?" class="md-nav__link">
-    How does the CPU and Memory usage change over time?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finished" title="Finished" class="md-nav__link">
-    Finished
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/hpc/hpc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                <style src="../media/tute.css" ></style>
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Introduction to HPC - Bioinformatics Documentation</title><link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css"><script src="../../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../../extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-21794901-5", "www.melbournebioinformatics.org.au/tutorials/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#high-performance-computing" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Bioinformatics Documentation</span><span class="md-header-nav__topic">Introduction to HPC</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="../../.." title="Bioinformatics Documentation" class="md-nav__button md-logo"><i class="md-icon"></i></a>Bioinformatics Documentation</label><div class="md-nav__source"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">melbournebioinformatics/MelBioInf_docs</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../.." title="Home" class="md-nav__link">Home</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">Guides</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">Guides</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">What is bioinformatics?</a></li><li class="md-nav__item"><a href="../../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">The Galaxy platform</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked><label class="md-nav__link" for="nav-3">General Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">General Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../python_overview/python_overview/" title="Python Overview" class="md-nav__link">Python Overview</a></li><li class="md-nav__item"><a href="../../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">Data tidying with Python and Pandas</a></li><li class="md-nav__item"><a href="../../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">Data visualisation with Python</a></li><li class="md-nav__item"><a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">Using Git and Github for revision control</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">Introduction to HPC</label><a href="./" title="Introduction to HPC" class="md-nav__link md-nav__link--active">Introduction to HPC</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#overview" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">Learning Objectives</a></li><li class="md-nav__item"><a href="#requirements" title="Requirements" class="md-nav__link">Requirements</a></li><li class="md-nav__item"><a href="#introduction" title="Introduction" class="md-nav__link">Introduction</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#connecting-to-the-hpc" title="Connecting to the HPC" class="md-nav__link">Connecting to the HPC</a></li></ul></nav></li><li class="md-nav__item"><a href="#topic-1-exploring-an-hpc" title="Topic 1: Exploring an HPC" class="md-nav__link">Topic 1: Exploring an HPC</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#exercises" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#11-what-is-the-contact-email-for-your-hpcs-system-administrator" title="1.1) What is the contact email for your HPC's System Administrator?" class="md-nav__link">1.1) What is the contact email for your HPC's System Administrator?</a></li><li class="md-nav__item"><a href="#12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc" title="1.2) Run the sinfo command.  How many nodes are there in this hpc?" class="md-nav__link">1.2) Run the sinfo command.  How many nodes are there in this hpc?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-2-software-modules" title="Topic 2: Software Modules" class="md-nav__link">Topic 2: Software Modules</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#exercises_1" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#21-what-happens-if-you-run-the-module-command-without-any-options-arguments" title="2.1) What happens if you run the module command without any options / arguments?" class="md-nav__link">2.1) What happens if you run the module command without any options / arguments?</a></li><li class="md-nav__item"><a href="#22-how-do-you-find-a-list-of-available-software" title="2.2) How do you find a list of available software?" class="md-nav__link">2.2) How do you find a list of available software?</a></li><li class="md-nav__item"><a href="#23-how-many-modules-are-there-starting-with-f" title="2.3) How many modules are there starting with 'f'?" class="md-nav__link">2.3) How many modules are there starting with 'f'?</a></li><li class="md-nav__item"><a href="#24-run-the-pear-command-without-loading-it-does-it-work" title="2.4) Run the pear command (without loading it), does it work?" class="md-nav__link">2.4) Run the pear command (without loading it), does it work?</a></li><li class="md-nav__item"><a href="#25-how-would-we-load-the-pear-module" title="2.5) How would we load the pear module?" class="md-nav__link">2.5) How would we load the pear module?</a></li><li class="md-nav__item"><a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's loaded, run pear again, what does it do?" class="md-nav__link">2.6) Now it's loaded, run pear again, what does it do?</a></li><li class="md-nav__item"><a href="#27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from" title="2.7) List all the loaded modules. How many are there? Where did all the others come from?" class="md-nav__link">2.7) List all the loaded modules. How many are there? Where did all the others come from?</a></li><li class="md-nav__item"><a href="#28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear" title="2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?" class="md-nav__link">2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?</a></li><li class="md-nav__item"><a href="#29-how-do-you-clear-all-loaded-modules" title="2.9) How do you clear ALL loaded modules?" class="md-nav__link">2.9) How do you clear ALL loaded modules?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-3-job-submission" title="Topic 3: Job Submission" class="md-nav__link">Topic 3: Job Submission</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#background" title="Background" class="md-nav__link">Background</a></li><li class="md-nav__item"><a href="#exercises_2" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#31-which-nodes-could-a-main-job-go-on" title="3.1) Which nodes could a 'main' job go on?" class="md-nav__link">3.1) Which nodes could a 'main' job go on?</a></li><li class="md-nav__item"><a href="#32-how-many-cpu-cores-will-each-ask-for" title="3.2) How many cpu cores will each ask for?" class="md-nav__link">3.2) How many cpu cores will each ask for?</a></li><li class="md-nav__item"><a href="#33-what-about-total-memory" title="3.3) What about total memory?" class="md-nav__link">3.3) What about total memory?</a></li><li class="md-nav__item"><a href="#34-how-long-can-each-run-for" title="3.4) How long can each run for?" class="md-nav__link">3.4) How long can each run for?</a></li><li class="md-nav__item"><a href="#35-is-this-maximum-minimum-or-both-runtime" title="3.5) Is this maximum, minimum or both runtime?" class="md-nav__link">3.5) Is this maximum, minimum or both runtime?</a></li><li class="md-nav__item"><a href="#36-calculate-the-time-specification-for-the-following-runtimes" title="3.6) Calculate the --time specification for the following runtimes:" class="md-nav__link">3.6) Calculate the --time specification for the following runtimes:</a></li><li class="md-nav__item"><a href="#37-what-do-the-following-time-specifications-mean" title="3.7) What do the following --time specifications mean?" class="md-nav__link">3.7) What do the following --time specifications mean?</a></li></ul></nav></li><li class="md-nav__item"><a href="#reservations" title="Reservations" class="md-nav__link">Reservations</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#38-what-job-id-was-your-job-given" title="3.8) What job id was your job given?" class="md-nav__link">3.8) What job id was your job given?</a></li><li class="md-nav__item"><a href="#39-which-node-did-your-job-go-on" title="3.9) Which node did your job go on?" class="md-nav__link">3.9) Which node did your job go on?</a></li></ul></nav></li><li class="md-nav__item"><a href="#advanced" title="Advanced" class="md-nav__link">Advanced</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds" title="3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds." class="md-nav__link">3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds.</a></li><li class="md-nav__item"><a href="#311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds" title="3.11) Submit the job.  What was the largest prime number it found in 20 seconds?" class="md-nav__link">3.11) Submit the job.  What was the largest prime number it found in 20 seconds?</a></li><li class="md-nav__item"><a href="#312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again" title="3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again." class="md-nav__link">3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-4-job-monitoring" title="Topic 4: Job Monitoring" class="md-nav__link">Topic 4: Job Monitoring</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#exercises_3" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#41-what-does-the-top-command-show" title="4.1) What does the top command show?" class="md-nav__link">4.1) What does the top command show?</a></li><li class="md-nav__item"><a href="#42-how-much-total-memory-does-this-hpc-head-node-have" title="4.2) How much total memory does this HPC (head-node) have?" class="md-nav__link">4.2) How much total memory does this HPC (head-node) have?</a></li><li class="md-nav__item"><a href="#43-what-is-the-current-total-cpu-usage" title="4.3) What is the current total CPU usage?" class="md-nav__link">4.3) What is the current total CPU usage?</a></li><li class="md-nav__item"><a href="#44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low" title="4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?" class="md-nav__link">4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?</a></li><li class="md-nav__item"><a href="#45-why-might-the-numbers-disagree" title="4.5) Why might the numbers disagree?" class="md-nav__link">4.5) Why might the numbers disagree?</a></li><li class="md-nav__item"><a href="#46-what-command-line-flag-instructs-top-to-sort-results-by-mem" title="4.6) What command-line flag instructs top to sort results by %MEM?" class="md-nav__link">4.6) What command-line flag instructs top to sort results by %MEM?</a></li><li class="md-nav__item"><a href="#47-run-top-c-what-does-it-do-how-might-this-be-helpful" title="4.7) Run "top -c".  What does it do?  How might this be helpful?" class="md-nav__link">4.7) Run "top -c".  What does it do?  How might this be helpful?</a></li><li class="md-nav__item"><a href="#48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful" title="4.8) How can you get top to only show your processes?  Why might this be useful?" class="md-nav__link">4.8) How can you get top to only show your processes?  Why might this be useful?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-5-all-together" title="Topic 5: All Together" class="md-nav__link">Topic 5: All Together</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#task-1-write-a-job-script" title="Task 1: Write a job script" class="md-nav__link">Task 1: Write a job script</a></li><li class="md-nav__item"><a href="#task-2-loaduse-software-module" title="Task 2: Load/use software module" class="md-nav__link">Task 2: Load/use software module</a></li><li class="md-nav__item"><a href="#task-3-submit-job" title="Task 3: Submit job" class="md-nav__link">Task 3: Submit job</a></li><li class="md-nav__item"><a href="#task-4-monitor-the-job" title="Task 4: Monitor the job" class="md-nav__link">Task 4: Monitor the job</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#how-does-the-cpu-and-memory-usage-change-over-time" title="How does the CPU and Memory usage change over time?" class="md-nav__link">How does the CPU and Memory usage change over time?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#finished" title="Finished" class="md-nav__link">Finished</a></li></ul></nav></li><li class="md-nav__item"><a href="../../unix/unix/" title="Introduction to Unix" class="md-nav__link">Introduction to Unix</a></li><li class="md-nav__item"><a href="../../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">Launching a Personal GVL Server</a></li><li class="md-nav__item"><a href="../../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">Introduction to Galaxy</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9"><label class="md-nav__link" for="nav-3-9">Galaxy Workflows</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-3-9">Galaxy Workflows</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">History Creation</a></li></ul></nav></li><li class="md-nav__item"><a href="../../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">Containerized Bioinformatics</a></li><li class="md-nav__item"><a href="../../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">Common Workflow Language for Bioinformatics</a></li><li class="md-nav__item"><a href="../../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">Command-line software development</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">Genomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">Genomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">Introduction to Variant Calling</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2"><label class="md-nav__link" for="nav-4-2">Variant Calling Advanced</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-2">Variant Calling Advanced</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3"><label class="md-nav__link" for="nav-4-3">RNA-seq DGE Basic</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-3">RNA-seq DGE Basic</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">Tuxedo Protocol Tutorial</a></li><li class="md-nav__item"><a href="../../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">RNA-seq DGE Advanced</a></li><li class="md-nav__item"><a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">RNA-seq DGE Experimental Design</a></li><li class="md-nav__item"><a href="../../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">10X single-cell RNA-seq analysis in R</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7"><label class="md-nav__link" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-7">Microbial de novo Assembly for Illumina Data: Velvet</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../assembly/assembly/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../assembly/assembly-background/" title="Method Background" class="md-nav__link">Method Background</a></li></ul></nav></li><li class="md-nav__item"><a href="../../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">Microbial assembly: Spades</a></li><li class="md-nav__item"><a href="../../pacbio/" title="Long read assembly" class="md-nav__link">Long read assembly</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">Proteomics Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">Proteomics Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1"><label class="md-nav__link" for="nav-5-1">Identifying proteins from mass spectrometry data</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-5-1">Identifying proteins from mass spectrometry data</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">Tutorial</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">Galaxy Background</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">Data Formats Background</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">Create find count items workflow</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">Protein Databases</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">Search Engines</a></li><li class="md-nav__item"><a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">Protein Prophet</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6"><label class="md-nav__link" for="nav-6">Molecular Modelling Tutorials</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">Molecular Modelling Tutorials</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">Molecular Dynamics - Introduction to cluster computing</a></li><li class="md-nav__item"><a href="../../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">Molecular Dynamics - Building input files, visualising the trajectory</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7"><label class="md-nav__link" for="nav-7">Protocols</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-7">Protocols</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">De Novo Genome Assembly for Illumina Data</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#overview" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">Learning Objectives</a></li><li class="md-nav__item"><a href="#requirements" title="Requirements" class="md-nav__link">Requirements</a></li><li class="md-nav__item"><a href="#introduction" title="Introduction" class="md-nav__link">Introduction</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#connecting-to-the-hpc" title="Connecting to the HPC" class="md-nav__link">Connecting to the HPC</a></li></ul></nav></li><li class="md-nav__item"><a href="#topic-1-exploring-an-hpc" title="Topic 1: Exploring an HPC" class="md-nav__link">Topic 1: Exploring an HPC</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#exercises" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#11-what-is-the-contact-email-for-your-hpcs-system-administrator" title="1.1) What is the contact email for your HPC's System Administrator?" class="md-nav__link">1.1) What is the contact email for your HPC's System Administrator?</a></li><li class="md-nav__item"><a href="#12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc" title="1.2) Run the sinfo command.  How many nodes are there in this hpc?" class="md-nav__link">1.2) Run the sinfo command.  How many nodes are there in this hpc?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-2-software-modules" title="Topic 2: Software Modules" class="md-nav__link">Topic 2: Software Modules</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#exercises_1" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#21-what-happens-if-you-run-the-module-command-without-any-options-arguments" title="2.1) What happens if you run the module command without any options / arguments?" class="md-nav__link">2.1) What happens if you run the module command without any options / arguments?</a></li><li class="md-nav__item"><a href="#22-how-do-you-find-a-list-of-available-software" title="2.2) How do you find a list of available software?" class="md-nav__link">2.2) How do you find a list of available software?</a></li><li class="md-nav__item"><a href="#23-how-many-modules-are-there-starting-with-f" title="2.3) How many modules are there starting with 'f'?" class="md-nav__link">2.3) How many modules are there starting with 'f'?</a></li><li class="md-nav__item"><a href="#24-run-the-pear-command-without-loading-it-does-it-work" title="2.4) Run the pear command (without loading it), does it work?" class="md-nav__link">2.4) Run the pear command (without loading it), does it work?</a></li><li class="md-nav__item"><a href="#25-how-would-we-load-the-pear-module" title="2.5) How would we load the pear module?" class="md-nav__link">2.5) How would we load the pear module?</a></li><li class="md-nav__item"><a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's loaded, run pear again, what does it do?" class="md-nav__link">2.6) Now it's loaded, run pear again, what does it do?</a></li><li class="md-nav__item"><a href="#27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from" title="2.7) List all the loaded modules. How many are there? Where did all the others come from?" class="md-nav__link">2.7) List all the loaded modules. How many are there? Where did all the others come from?</a></li><li class="md-nav__item"><a href="#28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear" title="2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?" class="md-nav__link">2.8) How do you undo the loading of the pear module?  List the loaded modules again, did they all disappear?</a></li><li class="md-nav__item"><a href="#29-how-do-you-clear-all-loaded-modules" title="2.9) How do you clear ALL loaded modules?" class="md-nav__link">2.9) How do you clear ALL loaded modules?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-3-job-submission" title="Topic 3: Job Submission" class="md-nav__link">Topic 3: Job Submission</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#background" title="Background" class="md-nav__link">Background</a></li><li class="md-nav__item"><a href="#exercises_2" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#31-which-nodes-could-a-main-job-go-on" title="3.1) Which nodes could a 'main' job go on?" class="md-nav__link">3.1) Which nodes could a 'main' job go on?</a></li><li class="md-nav__item"><a href="#32-how-many-cpu-cores-will-each-ask-for" title="3.2) How many cpu cores will each ask for?" class="md-nav__link">3.2) How many cpu cores will each ask for?</a></li><li class="md-nav__item"><a href="#33-what-about-total-memory" title="3.3) What about total memory?" class="md-nav__link">3.3) What about total memory?</a></li><li class="md-nav__item"><a href="#34-how-long-can-each-run-for" title="3.4) How long can each run for?" class="md-nav__link">3.4) How long can each run for?</a></li><li class="md-nav__item"><a href="#35-is-this-maximum-minimum-or-both-runtime" title="3.5) Is this maximum, minimum or both runtime?" class="md-nav__link">3.5) Is this maximum, minimum or both runtime?</a></li><li class="md-nav__item"><a href="#36-calculate-the-time-specification-for-the-following-runtimes" title="3.6) Calculate the --time specification for the following runtimes:" class="md-nav__link">3.6) Calculate the --time specification for the following runtimes:</a></li><li class="md-nav__item"><a href="#37-what-do-the-following-time-specifications-mean" title="3.7) What do the following --time specifications mean?" class="md-nav__link">3.7) What do the following --time specifications mean?</a></li></ul></nav></li><li class="md-nav__item"><a href="#reservations" title="Reservations" class="md-nav__link">Reservations</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#38-what-job-id-was-your-job-given" title="3.8) What job id was your job given?" class="md-nav__link">3.8) What job id was your job given?</a></li><li class="md-nav__item"><a href="#39-which-node-did-your-job-go-on" title="3.9) Which node did your job go on?" class="md-nav__link">3.9) Which node did your job go on?</a></li></ul></nav></li><li class="md-nav__item"><a href="#advanced" title="Advanced" class="md-nav__link">Advanced</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds" title="3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds." class="md-nav__link">3.10) Make a copy of task01 and call it prime_numbers.  Make it load the training module and use the prime command to calculate prime numbers for 20 seconds.</a></li><li class="md-nav__item"><a href="#311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds" title="3.11) Submit the job.  What was the largest prime number it found in 20 seconds?" class="md-nav__link">3.11) Submit the job.  What was the largest prime number it found in 20 seconds?</a></li><li class="md-nav__item"><a href="#312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again" title="3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again." class="md-nav__link">3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-4-job-monitoring" title="Topic 4: Job Monitoring" class="md-nav__link">Topic 4: Job Monitoring</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#exercises_3" title="Exercises" class="md-nav__link">Exercises</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#41-what-does-the-top-command-show" title="4.1) What does the top command show?" class="md-nav__link">4.1) What does the top command show?</a></li><li class="md-nav__item"><a href="#42-how-much-total-memory-does-this-hpc-head-node-have" title="4.2) How much total memory does this HPC (head-node) have?" class="md-nav__link">4.2) How much total memory does this HPC (head-node) have?</a></li><li class="md-nav__item"><a href="#43-what-is-the-current-total-cpu-usage" title="4.3) What is the current total CPU usage?" class="md-nav__link">4.3) What is the current total CPU usage?</a></li><li class="md-nav__item"><a href="#44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low" title="4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?" class="md-nav__link">4.4) What column does it appear to be sorting the processes by? Is this low-to-high OR high-to-low?</a></li><li class="md-nav__item"><a href="#45-why-might-the-numbers-disagree" title="4.5) Why might the numbers disagree?" class="md-nav__link">4.5) Why might the numbers disagree?</a></li><li class="md-nav__item"><a href="#46-what-command-line-flag-instructs-top-to-sort-results-by-mem" title="4.6) What command-line flag instructs top to sort results by %MEM?" class="md-nav__link">4.6) What command-line flag instructs top to sort results by %MEM?</a></li><li class="md-nav__item"><a href="#47-run-top-c-what-does-it-do-how-might-this-be-helpful" title="4.7) Run "top -c".  What does it do?  How might this be helpful?" class="md-nav__link">4.7) Run "top -c".  What does it do?  How might this be helpful?</a></li><li class="md-nav__item"><a href="#48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful" title="4.8) How can you get top to only show your processes?  Why might this be useful?" class="md-nav__link">4.8) How can you get top to only show your processes?  Why might this be useful?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#topic-5-all-together" title="Topic 5: All Together" class="md-nav__link">Topic 5: All Together</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#task-1-write-a-job-script" title="Task 1: Write a job script" class="md-nav__link">Task 1: Write a job script</a></li><li class="md-nav__item"><a href="#task-2-loaduse-software-module" title="Task 2: Load/use software module" class="md-nav__link">Task 2: Load/use software module</a></li><li class="md-nav__item"><a href="#task-3-submit-job" title="Task 3: Submit job" class="md-nav__link">Task 3: Submit job</a></li><li class="md-nav__item"><a href="#task-4-monitor-the-job" title="Task 4: Monitor the job" class="md-nav__link">Task 4: Monitor the job</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#how-does-the-cpu-and-memory-usage-change-over-time" title="How does the CPU and Memory usage change over time?" class="md-nav__link">How does the CPU and Memory usage change over time?</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#finished" title="Finished" class="md-nav__link">Finished</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/hpc/hpc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><style src="../media/tute.css" ></style>
 
 <style>em {font-style: normal; font-family: courier new;}</style>
 
@@ -2066,69 +43,81 @@
 <p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the main concepts of High-Performance Computing.
 The <a href="../slides.html">slides</a> are available if you would like.  </p>
 <p>Additionally the following reference material is available for later use:</p>
-<p><details>
-  <summary>Reference Material</summary></p>
-<h3 id="what-is-an-hpc">What is an HPC?</h3>
-<p>An HPC is simply a large collection of server-grade computers working together to solve large problems.</p>
-<ul>
-<li><strong>Big</strong>: HPCs typically have lots of CPUs and Memory and consequently large jobs.</li>
-<li><strong>Shared</strong>: There are usually lots of users making use of it at one time.</li>
-<li><strong>Coordinated</strong>: There is a coordinator program to ensure fair-use between its users.</li>
-<li><strong>Compute Collection</strong>: HPCs use a number of computers at once to solve lots of large jobs.</li>
-</ul>
-<p><img src="../media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="300px" /></p>
-<p><strong>Figure</strong>: The user (face at top) interacts with their local PC/Laptop through the keyboard and screen.  The PC/Laptop will 
+<details>
+  <summary>Reference Material</summary>
+
+### What is an HPC?
+
+An HPC is simply a large collection of server-grade computers working together to solve large problems.
+
+* **Big**: HPCs typically have lots of CPUs and Memory and consequently large jobs.
+* **Shared**: There are usually lots of users making use of it at one time.
+* **Coordinated**: There is a coordinator program to ensure fair-use between its users.
+* **Compute Collection**: HPCs use a number of computers at once to solve lots of large jobs.
+
+<img src="../media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="300px" />
+
+**Figure**: The user (face at top) interacts with their local PC/Laptop through the keyboard and screen.  The PC/Laptop will 
 connect to the Head/Login node of the HPC interactively.  The Head/Login node will send the jobs off to the Compute Nodes when
-one is available. </p>
-<h3 id="why-use-hpcs">Why use HPCs?</h3>
-<p>The main reason we use HPCs is because they are quite big.  Given their size, they are usually very expensive, however through 
-sharing the resources the per user/job cost can be kept low.</p>
-<ul>
-<li><strong>Many CPUs</strong>: HPCs typically have hundreds to tens of thousands of CPUs.  Compare this with the 4 or 8 that your PC/Laptop might have.</li>
-<li><strong>Large Memory</strong>: Hundreds of GBs to multiple TBs of RAM are typical for each node.</li>
-<li><strong>Efficient use</strong>: Through sharing the resources each user can have access to a very large computer for a period and hand 
-it back for others to use later.</li>
-</ul>
-<h3 id="software-modules">Software Modules</h3>
-<p>There are typically hundreds to thousands of software packages installed on an HPC.  Given that each can have its own special 
+one is available. 
+
+### Why use HPCs?
+
+The main reason we use HPCs is because they are quite big.  Given their size, they are usually very expensive, however through 
+sharing the resources the per user/job cost can be kept low.
+
+* **Many CPUs**: HPCs typically have hundreds to tens of thousands of CPUs.  Compare this with the 4 or 8 that your PC/Laptop might have.
+* **Large Memory**: Hundreds of GBs to multiple TBs of RAM are typical for each node.
+* **Efficient use**: Through sharing the resources each user can have access to a very large computer for a period and hand 
+it back for others to use later.
+
+
+### Software Modules
+
+There are typically hundreds to thousands of software packages installed on an HPC.  Given that each can have its own special 
 requirements and multiple versions will be made, software on the HPC will most commonly be packaged and only made available 
-to you when you request it.</p>
-<ul>
-<li><strong>Packaged</strong>: to avoid conflicts between software, each is packaged up into a module and only used on demand.</li>
-<li><strong>Loadable</strong>: before using a software module you need to load it.</li>
-<li><strong>Versions</strong>: given not all users want to use the same version of software (and to compare new results with old you might 
-   need the same version)    each version is made into its own software module so you have ultimate control.</li>
-</ul>
-<h3 id="job-submission">Job Submission</h3>
-<p>Job Submission is the process of instructing the HPC to perform a task for you.  Depending on the HPC software installed on 
-your HPC, the process of doing so might be different.</p>
-<ul>
-<li><strong>SLURM</strong>: this workshop uses an HPC that uses the SLURM HPC software.  Some common alternatives (not covered) are PBS or 
-   SGE/OGE.</li>
-<li><strong>Queues (Partition)</strong>: when a job is submitted it is added to a work queue; in SLURM this is called a Partition.</li>
-<li><strong>Batch</strong>: HPC jobs are not 'interactive'.  By this we mean, you can't type input into your job's programs and you won't 
-   immediately see the output that your program prints on the screen. </li>
-</ul>
-<h4 id="resources">Resources</h4>
-<p>So that SLURM knows how to schedule and fit jobs around each other, you need to specify what resources your job will use.
-That is, you need to tell it how many CPUs, RAM, Nodes (servers), and Time you need.</p>
-<ol>
-<li><strong>CPUs</strong>: most software is limited using 1 CPU by default but many can use more than one (or you can run multiple copies at once).
-   The number of CPUs you specify needs to match how many things your software can do at once.</li>
-<li><strong>Memory</strong>: you need to estimate (or guess) how much memory (RAM) your program needs.</li>
-<li><strong>Nodes</strong>: most software will only use one of the HPC's Nodes (i.e. one server), but some software can make use of more than
-   one to solve the problem sooner.</li>
-<li><strong>Time</strong>: like when you are scheduling meetings, SLURM needs to know how long each job will take (maximum) so it can organise
-   other jobs afterwards.</li>
-</ol>
-<h4 id="job-types">Job Types</h4>
-<p>There are two types of jobs that you can submit:</p>
-<ol>
-<li><strong>Shared</strong>: a shared job (as the name suggests) is one that shares a node with other jobs.  This is the default and preferred method.</li>
-<li><strong>Exclusive</strong>: an exclusive job gets a single (or multiple) nodes to itself.  Given this exclusivity, this type of job must know how 
-   to use multiple CPUs as most HPCs have at least 16 CPUs per node.</li>
-</ol>
-<p></details></p>
+to you when you request it.
+
+* **Packaged**: to avoid conflicts between software, each is packaged up into a module and only used on demand.
+* **Loadable**: before using a software module you need to load it.
+* **Versions**: given not all users want to use the same version of software (and to compare new results with old you might 
+   need the same version)    each version is made into its own software module so you have ultimate control.
+
+### Job Submission
+
+Job Submission is the process of instructing the HPC to perform a task for you.  Depending on the HPC software installed on 
+your HPC, the process of doing so might be different.
+
+* **SLURM**: this workshop uses an HPC that uses the SLURM HPC software.  Some common alternatives (not covered) are PBS or 
+   SGE/OGE.
+* **Queues (Partition)**: when a job is submitted it is added to a work queue; in SLURM this is called a Partition.
+* **Batch**: HPC jobs are not 'interactive'.  By this we mean, you can't type input into your job's programs and you won't 
+   immediately see the output that your program prints on the screen. 
+
+#### Resources
+
+So that SLURM knows how to schedule and fit jobs around each other, you need to specify what resources your job will use.
+That is, you need to tell it how many CPUs, RAM, Nodes (servers), and Time you need.
+
+1. **CPUs**: most software is limited using 1 CPU by default but many can use more than one (or you can run multiple copies at once).
+   The number of CPUs you specify needs to match how many things your software can do at once.
+2. **Memory**: you need to estimate (or guess) how much memory (RAM) your program needs.
+3. **Nodes**: most software will only use one of the HPC's Nodes (i.e. one server), but some software can make use of more than
+   one to solve the problem sooner.
+4. **Time**: like when you are scheduling meetings, SLURM needs to know how long each job will take (maximum) so it can organise
+   other jobs afterwards.
+
+#### Job Types
+
+There are two types of jobs that you can submit:
+
+1. **Shared**: a shared job (as the name suggests) is one that shares a node with other jobs.  This is the default and preferred method.
+2. **Exclusive**: an exclusive job gets a single (or multiple) nodes to itself.  Given this exclusivity, this type of job must know how 
+   to use multiple CPUs as most HPCs have at least 16 CPUs per node.
+
+
+</details>
+
 <h3 id="connecting-to-the-hpc">Connecting to the HPC</h3>
 <p>To begin this workshop you will need to connect to the HPC.
 Today we will use <em>barcoo</em>.
@@ -2141,79 +130,111 @@ The computer called <em>barcoo.vlsci.org.au</em> is the one that coordinates all
 <li><strong>password</strong>: (provided at workshop)</li>
 </ul>
 <p><strong>Connection instructions</strong>:</p>
-<p><details>
-  <summary>Mac OS X / Linux</summary></p>
-<p>Both Mac OS X and Linux come with a version of ssh (called OpenSSH) that can be used from the command line.  To use OpenSSH you must 
+<details>
+  <summary>Mac OS X / Linux</summary>
+
+Both Mac OS X and Linux come with a version of ssh (called OpenSSH) that can be used from the command line.  To use OpenSSH you must 
 first start a terminal program on your computer.  On OS X the standard terminal is called Terminal, and it is installed by default. 
 On Linux there are many popular terminal programs including: xterm, gnome-terminal, konsole (if you aren't sure, then xterm is a good 
-default).  When you've started the terminal you should see a command prompt.  To log into <em>barcoo</em>, for example, type this command at 
-the prompt and press return (where the word <em>username</em> is replaced with your <em>barcoo</em> username):</p>
-<p><em>$ ssh username@barcoo.vlsci.org.au</em></p>
-<p>The same procedure works for any other machine where you have an account except that if your Unix computer uses a port other than 22 you will
-need to specify the port by adding the option <em>-p PORT</em> with PORT substituted with the port number.</p>
-<p>You may be presented with a message along the lines of:</p>
+default).  When you've started the terminal you should see a command prompt.  To log into *barcoo*, for example, type this command at 
+the prompt and press return (where the word *username* is replaced with your *barcoo* username):
+
+*$ ssh username@barcoo.vlsci.org.au*
+
+The same procedure works for any other machine where you have an account except that if your Unix computer uses a port other than 22 you will
+need to specify the port by adding the option *-p PORT* with PORT substituted with the port number.
+
+You may be presented with a message along the lines of:
+
+
 <pre><code class="text">The authenticity of host 'barcoo.vlsci.org.au (131.172.36.150)' can't be  established.
 ...
 Are you sure you want to continue connecting (yes/no)?
 </code></pre>
 
-<p>Although you should never ignore a warning, this particular one is nothing to be concerned about; type <strong>yes</strong> and then <strong>press enter</strong>. 
+
+Although you should never ignore a warning, this particular one is nothing to be concerned about; type **yes** and then **press enter**. 
 If all goes well you will be asked to enter your password.  Assuming you type the correct username and password the system should 
 then display a welcome message, and then present you with a Unix prompt.  If you get this far then you are ready to start entering 
-Unix commands and thus begin using the remote computer.</p>
-<p></details></p>
-<p><details>
-  <summary>Windows</summary></p>
-<p>On Microsoft Windows (Vista, 7, 8) we recommend that you use the PuTTY ssh client.  PuTTY (putty.exe) can be downloaded 
-from this web page:</p>
-<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a></p>
-<p>Documentation for using PuTTY is here:</p>
-<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html</a></p>
-<p>When you start PuTTY you should see a window which looks something like this:</p>
-<p><img src="../../../includes/media/putty1.png" title="Putty Connection Dialog" alt="Putty Connection Dialog" width="400px" /></p>
-<p>To connect to <em>barcoo</em> you should enter <em>barcoo.vlsci.org.au</em> into the box entitled "Host Name (or IP address)" 
-and <em>22</em> in the port, 
+Unix commands and thus begin using the remote computer.
+
+</details>
+
+<details>
+  <summary>Windows</summary>
+
+On Microsoft Windows (Vista, 7, 8) we recommend that you use the PuTTY ssh client.  PuTTY (putty.exe) can be downloaded 
+from this web page:
+
+[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+
+Documentation for using PuTTY is here:
+
+[http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html)
+
+When you start PuTTY you should see a window which looks something like this:
+
+<img src="../../../includes/media/putty1.png" title="Putty Connection Dialog" alt="Putty Connection Dialog" width="400px" />
+
+To connect to *barcoo* you should enter *barcoo.vlsci.org.au* into the box entitled "Host Name (or IP address)" 
+and *22* in the port, 
 then click on the Open button. All of the settings should remain the same as they were when PuTTY started (which should be the 
-same as they are in the picture above).</p>
-<p>In some circumstances you will be presented with a window entitled PuTTY Security Alert. It will say something along the lines 
-of <em>"The server's host key is not cached in the registry"</em>. This is nothing to worry about, and you should agree to continue (by 
-clicking on Yes). You usually see this message the first time you try to connect to a particular remote computer.</p>
-<p>If all goes well, a terminal window will open, showing a prompt with the text <em>"login as:"</em>. An example terminal window is shown 
-below. You should type your <em>barcoo</em> username and press enter. After entering your username you will be prompted for your 
+same as they are in the picture above).
+
+In some circumstances you will be presented with a window entitled PuTTY Security Alert. It will say something along the lines 
+of *"The server's host key is not cached in the registry"*. This is nothing to worry about, and you should agree to continue (by 
+clicking on Yes). You usually see this message the first time you try to connect to a particular remote computer.
+
+If all goes well, a terminal window will open, showing a prompt with the text *"login as:"*. An example terminal window is shown 
+below. You should type your *barcoo* username and press enter. After entering your username you will be prompted for your 
 password. Assuming you type the correct username and password the system should then display a welcome message, and then 
 present you with a Unix prompt. If you get this far then you are ready to start entering Unix commands and thus begin using 
-the remote computer.</p>
-<p><img src="../../../includes/media/putty2.png" title="Putty login screen" alt="Putty login screen" width="400px" /></p>
-<p></details></p>
+the remote computer.
+
+<img src="../../../includes/media/putty2.png" title="Putty login screen" alt="Putty login screen" width="400px" />
+
+</details>
+
 <h2 id="topic-1-exploring-an-hpc">Topic 1: Exploring an HPC</h2>
 <p>An HPC (short for 'High-Performance Computer') is simply a collection of Server Grade computers that work together to solve large problems.</p>
 <p><img src="../media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="245px" /></p>
 <p><strong>Figure</strong>: Overview of the computers involved when using an HPC.  Computer systems are shown in rectangles and arrows represent interactions.</p>
 <h3 id="exercises">Exercises</h3>
 <h4 id="11-what-is-the-contact-email-for-your-hpcs-system-administrator">1.1) What is the contact email for your HPC's System Administrator?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>When you login, you will be presented with a message; this is called the <em>Message Of The Day</em> and usually includes lots of useful
-information.  On <em>barcoo</em> this includes a list of useful commands, the last login details for your account and
-the contact email of the system administrator</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>Depending on which computer you are working:</p>
-<ul>
-<li>SNOWY &amp; BARCOO: help@vlsci.unimelb.edu.au</li>
-</ul>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+When you login, you will be presented with a message; this is called the *Message Of The Day* and usually includes lots of useful
+information.  On *barcoo* this includes a list of useful commands, the last login details for your account and
+the contact email of the system administrator
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+Depending on which computer you are working:
+
+* SNOWY & BARCOO: help@vlsci.unimelb.edu.au
+
+</details>
+
 <hr />
 <h4 id="12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc">1.2) Run the <em>sinfo</em> command.  How many nodes are there in this hpc?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p><em>barcoo[2-4]</em> is shorthand for <em>barcoo2 barcoo3 and barcoo4</em> and <em>barcoo[1,5]</em> is shorthand for
-<em>barcoo1</em> and <em>barcoo5</em></p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>Have a look at the NODELIST column.  Only count each node once.</p>
+  <summary>Hint</summary>
+
+*barcoo[2-4]* is shorthand for *barcoo2 barcoo3 and barcoo4* and *barcoo[1,5]* is shorthand for
+*barcoo1* and *barcoo5*
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+Have a look at the NODELIST column.  Only count each node once.
+
+
 <pre><code class="sh">$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
@@ -2223,31 +244,41 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
 </code></pre>
 
-<p>NOTE: the above list will vary depending on the HPC setup.</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The <em>sinfo</em> command lists all available partitions and the status of each node within them.  If you count up the names of nodes
-(uniquely) you will get the total nodes in this cluster.  </p>
-<ul>
-<li>BARCOO: <strong>70</strong> (<em>barcoo001</em> through <em>barcoo070</em>)</li>
-<li>SNOWY: <strong>43</strong> (<em>snowy001</em> through <em>snowy043</em>)</li>
-</ul>
-<p></details></p>
-<p><details>
-  <summary>Alternate Method</summary></p>
-<p>An automatic (though more complex) way would have been running the following command:</p>
+NOTE: the above list will vary depending on the HPC setup.
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The *sinfo* command lists all available partitions and the status of each node within them.  If you count up the names of nodes
+(uniquely) you will get the total nodes in this cluster.  
+
+* BARCOO: **70** (*barcoo001* through *barcoo070*)
+* SNOWY: **43** (*snowy001* through *snowy043*)
+
+</details>
+
+<details>
+  <summary>Alternate Method</summary>
+
+An automatic (though more complex) way would have been running the following command:
+
+
 <pre><code class="sh">$ scontrol show node | grep NodeName | wc -l
 </code></pre>
 
-<p>Where:</p>
-<ul>
-<li><em>scontrol show node</em>: lists details of all nodes (over multiple lines)</li>
-<li><em>grep NodeName</em>: only shows the NodeName line</li>
-<li><em>wc -l</em>: counts the number of lines</li>
-</ul>
-<p></details></p>
+
+Where:
+
+* *scontrol show node*: lists details of all nodes (over multiple lines)
+* *grep NodeName*: only shows the NodeName line
+* *wc -l*: counts the number of lines
+
+</details>
+
 <h2 id="topic-2-software-modules">Topic 2: Software Modules</h2>
 <p>Up to this point we have been using only standard Unix software packages which are included with Linux/Unix computers.
 Large computing systems such as HPCs often use a system of modules to load specific software packages (and versions)
@@ -2256,13 +287,19 @@ when needed for the user.</p>
 <p>This topic uses the <em>man</em> and <em>module</em> commands heavily</p>
 <h3 id="exercises_1">Exercises</h3>
 <h4 id="21-what-happens-if-you-run-the-module-command-without-any-options-arguments">2.1) What happens if you run the <em>module</em> command without any options / arguments?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Literally type <em>module</em> and press <em>ENTER</em> key.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>: It prints an error followed by a list of available options / flags</p>
+<details>
+  <summary>Hint</summary>
+
+Literally type *module* and press *ENTER* key.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**: It prints an error followed by a list of available options / flags
+
+
 <pre><code class="text">$ module
 cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
 
@@ -2306,23 +343,37 @@ Switches:
     + initclear
 </code></pre>
 
-<p></details></p>
+
+</details>
+
 <hr />
 <h4 id="22-how-do-you-find-a-list-of-available-software">2.2) How do you find a list of <em>available</em> software?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Try the <em>module</em> command.  Don't forget the <em>man</em> command to get help for a command</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>Run the command <em>man module</em></p>
-<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;)</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The module command is used to show details of software modules (tools).</p>
-<p><strong>Answer</strong>:</p>
+  <summary>Hint</summary>
+
+Try the *module* command.  Don't forget the *man* command to get help for a command
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+Run the command *man module*
+
+Use a search to find out about the *avail* subcommand (e.g. /avail&lt;enter&gt;)
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The module command is used to show details of software modules (tools).
+
+**Answer**:
+
+
 <pre><code class="sh">$ module avail
 
 ------------------- /usr/share/Modules/modulefiles --------------------
@@ -2335,30 +386,43 @@ arlequin/3.5.1.3                   matplotlib-gcc/1.3.1
 ...
 </code></pre>
 
-<p>The modules list has been shortened because it is very long.  The modules after the <em>/usr/local/Modules/modulefiles</em> line
-are the science software; before this are a few built-in ones that you can ignore.</p>
-<p></details></p>
+
+The modules list has been shortened because it is very long.  The modules after the */usr/local/Modules/modulefiles* line
+are the science software; before this are a few built-in ones that you can ignore.
+
+</details>
+
 <hr />
 <h4 id="23-how-many-modules-are-there-starting-with-f">2.3) How many modules are there starting with '<em>f</em>'?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Run the command <em>man module</em></p>
-<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;).  You may have to press 'n' a few times
-to reach the section where the it describes the <em>avail</em> subcommand.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<blockquote>
-<p>If an argument is given, then each directory in the MODULEPATH is searched for modulefiles
-whose pathname match the argument</p>
-</blockquote>
-<p>This is a quote from the manual page for the module command explaining the avail subcommand.  It uses rather technical
-language but basically it's saying you can put search terms after the avail subcommand when entering the command.</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The man page told us that we could put a search term after <em>module avail</em>.</p>
+  <summary>Hint</summary>
+
+Run the command *man module*
+
+Use a search to find out about the *avail* subcommand (e.g. /avail&lt;enter&gt;).  You may have to press 'n' a few times
+to reach the section where the it describes the *avail* subcommand.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+> If an argument is given, then each directory in the MODULEPATH is searched for modulefiles
+> whose pathname match the argument
+
+This is a quote from the manual page for the module command explaining the avail subcommand.  It uses rather technical
+language but basically it's saying you can put search terms after the avail subcommand when entering the command.
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The man page told us that we could put a search term after *module avail*.
+
+
 <pre><code class="sh">$ module avail f
 ------------------- /usr/local/Modules/modulefiles -------------------
 fasta-gcc/35.4.12            flex-gcc/2.5.39
@@ -2368,73 +432,104 @@ fastStructure-gcc/20150320   freetype-gcc/2.5.3
 fastx_toolkit-gcc/0.0.14
 </code></pre>
 
-<p><strong>Answer</strong>: 26 modules</p>
-<p>NOTE: this was correct at time of writing this workshop and might increase over time so don't be alarmed if you got more</p>
-<p></details></p>
-<p><details>
-  <summary>Alternate Method</summary></p>
-<p>To get a fully automated solution your could do the following command:</p>
+
+**Answer**: 26 modules
+
+NOTE: this was correct at time of writing this workshop and might increase over time so don't be alarmed if you got more
+
+</details>
+
+<details>
+  <summary>Alternate Method</summary>
+
+To get a fully automated solution your could do the following command:
+
+
 <pre><code class="sh">$ module -l avail 2&gt;&amp;1 | grep &quot;^f&quot; | wc -l
 </code></pre>
 
-<p>Where:</p>
-<ul>
-<li><em>module -l avail</em>: lists all modules (in long format, i.e. one per line)</li>
-<li><em>2&gt;&amp;1</em>: merges output from <em>standard error</em> to the <em>standard output</em> so it can be feed into grep.  For some reason the
-developers of the <em>module</em> command thought it was a good idea to output the module names on the <em>error</em> stream rather than
-the logical <em>output</em> stream.</li>
-<li><em>grep "^f"</em>: only shows lines beginning with <em>f</em></li>
-<li><em>wc -l</em>: counts the number of lines</li>
-</ul>
-<p></details></p>
+
+Where:
+
+* *module -l avail*: lists all modules (in long format, i.e. one per line)
+* *2>&1*: merges output from *standard error* to the *standard output* so it can be feed into grep.  For some reason the
+developers of the *module* command thought it was a good idea to output the module names on the *error* stream rather than
+the logical *output* stream.
+* *grep "^f"*: only shows lines beginning with *f*
+* *wc -l*: counts the number of lines
+
+</details>
+
 <hr />
 <h4 id="24-run-the-pear-command-without-loading-it-does-it-work">2.4) Run the <em>pear</em> command (without loading it), does it work?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>This question is very literal</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+<details>
+  <summary>Hint</summary>
+
+This question is very literal
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="sh">$ pear
 -bash: pear: command not found
 </code></pre>
 
-<p>The error you see is from BASH, it is complaining that it doesn't know anything about a command called 'pear'</p>
-<p><strong>Answer</strong>: No, command not found</p>
-<p></details></p>
+
+The error you see is from BASH, it is complaining that it doesn't know anything about a command called 'pear'
+
+**Answer**: No, command not found
+
+</details>
+
 <hr />
 <h4 id="25-how-would-we-load-the-pear-module">2.5) How would we <em>load</em> the <em>pear</em> module?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Check the man page for <em>module</em> again and look for a subcommand that might load modules; it is quite literal as well.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>Run the command <em>man module</em></p>
-<p>Use a search to find out about the <em>load</em> subcommand (e.g. /load&lt;enter&gt;)</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+  <summary>Hint</summary>
+
+Check the man page for *module* again and look for a subcommand that might load modules; it is quite literal as well.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+Run the command *man module*
+
+Use a search to find out about the *load* subcommand (e.g. /load&lt;enter&gt;)
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="sh">$ module load pear-gcc/0.9.4
 </code></pre>
 
+
 <div class="info"><b>-gcc | -intel</b>: Lots of modules will have either <i>-gcc</i> or <i>-intel</i> after the software name.  This refers to the compiler that
 was used to make the software.  If you have a choice then usually the <i>-intel</i> one will be faster.</div>
-
 <div class="info"><b>VERSIONS</b>: <u>module load pear-gcc</u> would have been sufficient to load the module however it is best-practice (in science) to specify the
 version number so that the answer you get today will be the answer you get in 1 year time.  Some software will produce different results with different versions
 of the software.</div>
 
-<p></details></p>
+</details>
+
 <hr />
 <h4 id="26-now-its-loaded-run-pear-again-what-does-it-do">2.6) Now it's <em>load</em>ed, run pear again, what does it do?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>The paper citation gives a clue.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+<details>
+  <summary>Hint</summary>
+
+The paper citation gives a clue.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="sh">$ module load pear-gcc/0.9.4
 [15:59:19] training21@lims-hpc-m ~ $ pear
  ____  _____    _    ____
@@ -2450,67 +545,106 @@ Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/bt
 ... REST REMOVED ...
 </code></pre>
 
-<p><strong>Answer</strong>: "PEAR: a fast and accurate Illumina Paired-End reAd mergeR" (i.e. merges paired dna reads into a single read when they overlap)</p>
-<p></details></p>
+
+**Answer**: "PEAR: a fast and accurate Illumina Paired-End reAd mergeR" (i.e. merges paired dna reads into a single read when they overlap)
+
+</details>
+
 <hr />
 <h4 id="27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from">2.7) <em>List</em> all the loaded modules. How many are there? Where did all the others come from?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use man to find a subcommand that will list currently loaded modules.</p>
-<p>We are not really expecting you to be able to answer the 2nd question however if you do get it correct then well-done, that was very tough.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong> <em>List</em> all the loaded modules. How many are there?</strong></p>
+<details>
+  <summary>Hint</summary>
+
+Use man to find a subcommand that will list currently loaded modules.
+
+We are not really expecting you to be able to answer the 2nd question however if you do get it correct then well-done, that was very tough.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+** *List* all the loaded modules. How many are there?**
+
+
 <pre><code class="sh">$ module list
 Currently Loaded Modulefiles:
   1) gmp/5.1.3         3) mpc/1.0.2         5) bzip2-gcc/1.0.6
   2) mpfr/3.1.2        4) gcc/4.8.2         6) pear-gcc/0.9.4
 </code></pre>
 
-<p><strong>Answer</strong>: 6</p>
-<p><strong>Where did all the others come from?</strong></p>
-<p>You may have noticed when we loaded <em>pear-gcc</em> the module called <em>gcc</em> was also loaded; this gives a hint as to where the others come from.</p>
-<p><strong>Answer</strong>: They are <em>dependencies</em>; that is, they are supporting software that is used by the module we loaded.  Additionally, some HPC's
-automatically load some modules for you when you login.</p>
-<p></details></p>
+**Answer**: 6
+
+**Where did all the others come from?**
+
+You may have noticed when we loaded *pear-gcc* the module called *gcc* was also loaded; this gives a hint as to where the others come from.
+
+**Answer**: They are *dependencies*; that is, they are supporting software that is used by the module we loaded.  Additionally, some HPC's
+automatically load some modules for you when you login.
+
+</details>
+
 <hr />
 <h4 id="28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear">2.8) How do you undo the loading of the <em>pear</em> module?  List the loaded modules again, did they all disappear?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Computer Scientists are not always inventive with naming commands, try something starting with <em>un</em></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>How do you undo the loading of the <em>pear</em> module?</strong></p>
+<details>
+  <summary>Hint</summary>
+
+Computer Scientists are not always inventive with naming commands, try something starting with *un*
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**How do you undo the loading of the *pear* module?**
+
+
 <pre><code class="sh">$ module unload pear-gcc
 </code></pre>
 
-<p><strong>Answer</strong>: the <em>unload</em> sub-command removes the named module from our current SSH session.</p>
-<p><strong>List the loaded modules again, did they all disapear?</strong></p>
-<p><strong>Answer</strong>: Unfortunately not, the module command is not smart enough to determine if any of the other modules that were loaded are still
-needed or not so we will need to do it manually (or see next question)</p>
-<p></details></p>
+
+**Answer**: the *unload* sub-command removes the named module from our current SSH session.
+
+**List the loaded modules again, did they all disapear?**
+
+**Answer**: Unfortunately not, the module command is not smart enough to determine if any of the other modules that were loaded are still
+needed or not so we will need to do it manually (or see next question)
+
+</details>
+
 <hr />
 <h4 id="29-how-do-you-clear-all-loaded-modules">2.9) How do you clear ALL loaded modules?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>It's easier than running <em>unload</em> for all modules</p>
-<p>This one isn't that straight forward; try a <a href="https://www.google.com.au/search?q=rid+synonym">synonym</a> of <em>rid</em>.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>We will <em>purge</em> the list of loaded modules.</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+  <summary>Hint</summary>
+
+It's easier than running *unload* for all modules
+
+This one isn't that straight forward; try a [synonym](https://www.google.com.au/search?q=rid+synonym) of *rid*.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+We will *purge* the list of loaded modules.
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="sh">$ module purge
 </code></pre>
 
-<p><strong>Answer</strong>: running the <em>purge</em> sub-command will unload all modules you loaded (and all dependencies).</p>
-<p><strong>Alternative</strong>: if you close your SSH connection and re-open it the new session will be blank as well.</p>
-<p></details></p>
+
+**Answer**: running the *purge* sub-command will unload all modules you loaded (and all dependencies).
+
+**Alternative**: if you close your SSH connection and re-open it the new session will be blank as well.
+
+</details>
+
 <hr />
 <div class="error"><b>BEFORE CONTINUING</b>: If you are using BARCOO or SNOWY you will need to load the default commands
 again.  Do so by running <em>module load vlsci</em></div>
@@ -2543,14 +677,20 @@ for a period of time exclusively for you.</li>
 <h3 id="exercises_2">Exercises</h3>
 <p><strong>Useful Commands</strong>: <em>man, sinfo, cat, sbatch, squeue, cp, module, prime</em></p>
 <h4 id="31-which-nodes-could-a-main-job-go-on">3.1) Which nodes could a 'main' job go on?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Try the <em>sinfo</em> command</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>Have a look at the PARTITION and NODELIST columns.  The <em>barcoo[2-4]</em> is shorthand for <em>barcoo2 barcoo3
-and barcoo4</em></p>
+  <summary>Hint</summary>
+
+Try the *sinfo* command
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+Have a look at the PARTITION and NODELIST columns.  The *barcoo[2-4]* is shorthand for *barcoo2 barcoo3
+and barcoo4*
+
+
 <pre><code class="sh">$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
@@ -2560,105 +700,150 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
 </code></pre>
 
-<p>Note: the output to the sinfo command will look different depending on which HPC you are using and it's current usage levels</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The <em>sinfo</em> command will list the <em>partitions</em>.  It summaries the nodes by their current status so there may be more
-than one line with <em>main</em> in the partition column.  It lists the nodes in shorthand i.e. barcoo[1,3-5] means
-barcoo1, barcoo3, barcoo4, barcoo5.</p>
-<p><strong>Answer</strong>: barcoo001, barcoo002, ..., barcoo070</p>
-<p></details></p>
+Note: the output to the sinfo command will look different depending on which HPC you are using and it's current usage levels
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The *sinfo* command will list the *partitions*.  It summaries the nodes by their current status so there may be more
+than one line with *main* in the partition column.  It lists the nodes in shorthand i.e. barcoo[1,3-5] means
+barcoo1, barcoo3, barcoo4, barcoo5.
+
+**Answer**: barcoo001, barcoo002, ..., barcoo070
+
+</details>
+
 <hr />
 <p>Use the <em>cat</em> command to view the contents of <em>task01</em>, <em>task02</em> and <em>task03</em> job script</p>
 <h4 id="32-how-many-cpu-cores-will-each-ask-for">3.2) How many <em>cpu cores</em> will each ask for?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Lookup the man page for <em>sbatch</em> command.  <em>sbatch</em>'s options match up with the <em>#SBATCH</em> comments at the top of each job
-script.  Some will be affected by more than one option</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p><strong>Non-exclusive (shared) jobs</strong>:</p>
-<p>It is <em>--cpus-per-task x --ntasks</em> but if <em>--ntasks</em> is not present it defaults to 1 so it's <em>--cpus-per-task x 1</em></p>
-<p><strong>Exclusive jobs</strong>:</p>
-<p>The <em>--nodes</em> options tells us how many nodes we ask for and the <em>--exclusive</em> option says give us all it has.  This
-one is a bit tricky as we don't really know until it runs.</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>:</p>
-<ul>
-<li>task01: <strong>1 cpu core</strong></li>
-<li>task02: <strong>6 cpu cores</strong></li>
-<li>task03: <strong>at least 1</strong> as this has requested all cpu cores on the node its running on (<em>--exclusive</em>).<br />
-However, since we know that all nodes on <em>barcoo</em> have 16, we know it will get 16.</li>
-</ul>
-<p></details></p>
+  <summary>Hint</summary>
+
+Lookup the man page for *sbatch* command.  *sbatch*'s options match up with the *#SBATCH* comments at the top of each job
+script.  Some will be affected by more than one option
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+**Non-exclusive (shared) jobs**:
+
+It is *--cpus-per-task x --ntasks* but if *--ntasks* is not present it defaults to 1 so it's *--cpus-per-task x 1*
+
+**Exclusive jobs**:
+
+The *--nodes* options tells us how many nodes we ask for and the *--exclusive* option says give us all it has.  This
+one is a bit tricky as we don't really know until it runs.
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**:
+
+* task01: **1 cpu core**
+* task02: **6 cpu cores**
+* task03: **at least 1** as this has requested all cpu cores on the node its running on (*--exclusive*).  
+However, since we know that all nodes on *barcoo* have 16, we know it will get 16.
+
+</details>
+
 <hr />
 <h4 id="33-what-about-total-memory">3.3) What about total memory?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Lookup the man page for <em>sbatch</em> command.  <em>sbatch</em>'s options match up with the <em>#SBATCH</em> comments at the top of each job
-script.  Some will be affected by more than one option</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
-<p>For task01 and task02 the calculation is <em>--mem-per-cpu x --cpus-per-task x --ntasks</em></p>
-<p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
-<p>For task01 and task02 the calculation is <em>--mem-per-cpu x --ntasks x --cpus-per-task</em></p>
-<p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
+  <summary>Hint</summary>
+
+Lookup the man page for *sbatch* command.  *sbatch*'s options match up with the *#SBATCH* comments at the top of each job
+script.  Some will be affected by more than one option
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+The *--mem-per-cpu* OR *--mem* options are holding the answer to total memory.
+
+For task01 and task02 the calculation is *--mem-per-cpu x --cpus-per-task x --ntasks*
+
+For task03, like with the cpus cores question, we get all the memory available on the node we get allocated
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The *--mem-per-cpu* OR *--mem* options are holding the answer to total memory.
+
+For task01 and task02 the calculation is *--mem-per-cpu x --ntasks x --cpus-per-task*
+
+For task03, like with the cpus cores question, we get all the memory available on the node we get allocated
+
 <div class="warning"><b>NOTE</b>: it might be tempting to use the <em>--mem</em> option on non-exclusive (i.e. <em>--share</em>) jobs
 however this will <b>NOT</b> work since the meaning of <em>--mem</em> is <em>"go on a node with at least X MB of memory"</em>; it does
 not actually allocate any of it to you so your job will get terminated once it tries to use any memory.</div>
 
-<p><strong>Answer</strong>:</p>
-<ul>
-<li>task01: <strong>1024MB</strong> (1GB) i.e. 1024 x 1 x 1</li>
-<li>task02: <strong>12288MB</strong> (12GB) i.e. 2048 x 3 x 2</li>
-<li>task03: <strong>at least 1024MB</strong> (1GB).  The actual amount could be a lot more as most HPCs have 100GB+ per node</li>
-</ul>
-<p></details></p>
+**Answer**:
+
+* task01: **1024MB** (1GB) i.e. 1024 x 1 x 1
+* task02: **12288MB** (12GB) i.e. 2048 x 3 x 2
+* task03: **at least 1024MB** (1GB).  The actual amount could be a lot more as most HPCs have 100GB+ per node
+
+</details>
+
 <hr />
 <h4 id="34-how-long-can-each-run-for">3.4) How long can each run for?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type
-<em>/--time</em> and press enter)</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The <em>--time</em> option is what tells slurm how long your job will run for.</p>
-<p><strong>Answer</strong>:</p>
-<ul>
-<li>task01: requests <strong>30:00 (30mins 0secs)</strong>, uses ~30secs</li>
-<li>task02: requests <strong>5:00 (5mins 0secs)</strong>, uses ~5secs</li>
-<li>task03: requests <strong>1:00 (1min 0secs)</strong>, uses ~30secs</li>
-</ul>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+Use the *man sbatch* command to look up the time specification.  If you search for *--time* it will describe the formats it uses (i.e. type
+*/--time* and press enter)
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The *--time* option is what tells slurm how long your job will run for.
+
+**Answer**:
+
+* task01: requests **30:00 (30mins 0secs)**, uses ~30secs
+* task02: requests **5:00 (5mins 0secs)**, uses ~5secs
+* task03: requests **1:00 (1min 0secs)**, uses ~30secs
+
+</details>
+
 <hr />
 <h4 id="35-is-this-maximum-minimum-or-both-runtime">3.5) Is this maximum, minimum or both runtime?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type
-<em>/--time</em> and press enter)</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>This is a maximum time.  Your job may finish early, at which point it hands back the resources for the next job.  However if it
+<details>
+  <summary>Hint</summary>
+
+Use the *man sbatch* command to look up the time specification.  If you search for *--time* it will describe the formats it uses (i.e. type
+*/--time* and press enter)
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+This is a maximum time.  Your job may finish early, at which point it hands back the resources for the next job.  However if it
 tries to run longer the HPC will terminate the job.
 <div class="info"><b>HINT</b>: when selecting a time for your job its best to estimate your job runtime to be close to
 what it actually uses as it can help the HPC scheduler 'fit' your job in between other jobs though be careful to allow enough
-time.  If you think your job may not complete in time you can ask the system administrator of your HPC to add more time.</div></p>
-<p></details></p>
+time.  If you think your job may not complete in time you can ask the system administrator of your HPC to add more time.</div>
+
+</details>
+
 <hr />
 <h4 id="36-calculate-the-time-specification-for-the-following-runtimes">3.6) Calculate the <em>--time</em> specification for the following runtimes:</h4>
 <ol>
@@ -2667,20 +852,26 @@ time.  If you think your job may not complete in time you can ask the system adm
 <li><span class="fix150">1.5days:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
 <li><span class="fix150">30m:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
 </ol>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type
-<em>/--time</em> and press enter)</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<ol>
-<li><span class="fix150">1h30m:</span><span class="fix60">--time=01:30:00 (alternatively: 0-01:30)</span></li>
-<li><span class="fix150">1m20s:</span><span class="fix60">--time=01:20</span></li>
-<li><span class="fix150">1.5days:</span><span class="fix60">--time=1-12</span></li>
-<li><span class="fix150">30m:</span><span class="fix60">--time=30</span></li>
-</ol>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+Use the *man sbatch* command to look up the time specification.  If you search for *--time* it will describe the formats it uses (i.e. type
+*/--time* and press enter)
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+
+
+1. <span class="fix150">1h30m:</span><span class="fix60">--time=01:30:00 (alternatively: 0-01:30)</span>
+2. <span class="fix150">1m20s:</span><span class="fix60">--time=01:20</span>
+3. <span class="fix150">1.5days:</span><span class="fix60">--time=1-12</span>
+4. <span class="fix150">30m:</span><span class="fix60">--time=30</span>
+
+</details>
+
 <hr />
 <h4 id="37-what-do-the-following-time-specifications-mean">3.7) What do the following --time specifications mean?</h4>
 <ol>
@@ -2688,19 +879,23 @@ time.  If you think your job may not complete in time you can ask the system adm
 <li><span class="fix150">--time=45</span><span class="fix60"></span><span class="answer100"></span></li>
 <li><span class="fix150">--time=00:30</span><span class="fix60"></span><span class="answer100"></span></li>
 </ol>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type
-<em>/--time</em> and press enter)</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<ol>
-<li><span class="fix150">--time=12-00:20</span><span class="fix60">12 days and 20 minutes</span></li>
-<li><span class="fix150">--time=45</span><span class="fix60">45 minutes</span></li>
-<li><span class="fix150">--time=00:30</span><span class="fix60">30 seconds</span></li>
-</ol>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+Use the *man sbatch* command to look up the time specification.  If you search for *--time* it will describe the formats it uses (i.e. type
+*/--time* and press enter)
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+1. <span class="fix150">--time=12-00:20</span><span class="fix60">12 days and 20 minutes</span>
+2. <span class="fix150">--time=45</span><span class="fix60">45 minutes</span>
+3. <span class="fix150">--time=00:30</span><span class="fix60">30 seconds</span>
+
+</details>
+
 <hr />
 <h3 id="reservations">Reservations</h3>
 <p>Before we continue, a quick note on reservations.  Reservations are not normally needed however sometimes we will, particularly
@@ -2712,29 +907,42 @@ jobs will need to contain the line:</p>
 <p>Now use sbatch to submit the <em>task01</em> job:</p>
 <hr />
 <h4 id="38-what-job-id-was-your-job-given">3.8) What job id was your job given?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the man page for the sbatch command.  The <em>Synopsis</em> at the top will give you an idea how to run it.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+<details>
+  <summary>Hint</summary>
+
+Use the man page for the sbatch command.  The *Synopsis* at the top will give you an idea how to run it.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="sh">$ sbatch task01
 Submitted batch job 9998
 </code></pre>
 
-<p><strong>Answer</strong>: it's unique for each job; in the above example mine was <em>9998</em></p>
-<p></details></p>
+
+**Answer**: it's unique for each job; in the above example mine was *9998*
+
+</details>
+
 <hr />
 <h4 id="39-which-node-did-your-job-go-on">3.9) Which node did your job go on?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>The <em>squeue</em> command shows you the currently running jobs.  If it's been longer than 30 seconds since you submitted it you might have to resubmit it.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>Use the <em>squeue</em> command to show all jobs.  Search for your <em>jobid</em> and look in the <em>NODELIST</em> column.</p>
+<details>
+  <summary>Hint</summary>
+
+The *squeue* command shows you the currently running jobs.  If it's been longer than 30 seconds since you submitted it you might have to resubmit it.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+Use the *squeue* command to show all jobs.  Search for your *jobid* and look in the *NODELIST* column.
+
 <div class="info"><b>NOTE</b>: if there are lots of jobs you can use <b>squeue -u YOUR_USERNAME</b> to only show your jobs, where
 YOUR_USERNAME is replaced with your actual username.</div>
+
 
 <pre><code class="sh">$ sbatch task01
 Submitted batch job 9999
@@ -2743,21 +951,29 @@ $ squeue -u training01
   9999   compute   task01 training  R       0:05      1 lims-hpc-2
 </code></pre>
 
-<p><strong>Answer</strong>: it's dependent on node availability at time; in the above example mine was <em>lims-hpc-2</em></p>
-<p></details></p>
+
+**Answer**: it's dependent on node availability at time; in the above example mine was *lims-hpc-2*
+
+</details>
+
 <h3 id="advanced">Advanced</h3>
 <h4 id="310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds">3.10) Make a copy of <em>task01</em> and call it <em>prime_numbers</em>.  Make it load the training module and use the <em>prime</em> command to calculate prime numbers for 20 seconds.</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>You can find the <em>prime</em> command in the <em>training-gcc/1.0</em> module</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The key points to change in the task01 script are:</p>
-<ol>
-<li>adding the <em>module load training-gcc/1.0</em></li>
-<li>replacing the <em>sleep</em> (and <em>echo</em>) statements with a call to <em>prime 20</em>.</li>
-</ol>
+<details>
+  <summary>Hint</summary>
+
+You can find the *prime* command in the *training-gcc/1.0* module
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The key points to change in the task01 script are:
+
+1. adding the *module load training-gcc/1.0*
+2. replacing the *sleep* (and *echo*) statements with a call to *prime 20*.
+
+
 <pre><code class="bash">#!/bin/bash
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1024
@@ -2772,26 +988,33 @@ prime 20
 echo &quot;Finished at: $(date)&quot;
 </code></pre>
 
-<p>Where <em>RESERVATION</em> is replaced with <em>training</em> and
-<em>PARTITION</em> is replaced with <em>main</em></p>
+
+Where *RESERVATION* is replaced with *training* and
+*PARTITION* is replaced with *main*
+
 <div class="info"><b>Repeatable Science</b>: It's good scientific practice to include the version number of the module when loading it as this will
 ensure that the same version is loaded next time you run this script which will mean you get the same results.</div>
-
 <div class="info"><b>Date your work</b>: It's also good practice to include the date command in the output so you have a permanent record
 of when this job was run.  If you have one before and after your main program you will get a record of how long it ran for as well.</div>
 
-<p></details></p>
+</details>
+
 <hr />
 <h4 id="311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds">3.11) Submit the job.  What was the <em>largest</em> prime number it found in 20 seconds?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>The output from the program will provide the results that we are after.  For HPC jobs this will be placed in the <em>SLURM output file</em>; this is called
-<em>slurm-JOBID.out</em> where JOBID is replaced by the actual job id.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>You should get results similar to below however the actual numbers will vary as amount of computations performed will be affected by
-the amount of other jobs running on the HPC</p>
+<details>
+  <summary>Hint</summary>
+
+The output from the program will provide the results that we are after.  For HPC jobs this will be placed in the *SLURM output file*; this is called
+*slurm-JOBID.out* where JOBID is replaced by the actual job id.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+You should get results similar to below however the actual numbers will vary as amount of computations performed will be affected by
+the amount of other jobs running on the HPC
+
 <pre><code class="bash">$ sbatch prime_numbers
 Submitted batch job 9304
 $ cat slurm-9304.out
@@ -2804,24 +1027,34 @@ Runtime:       20 seconds
 Finished at: Fri May  8 16:11:27 AEST 2015
 </code></pre>
 
-<p></details></p>
+
+</details>
+
 <hr />
 <h4 id="312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again">3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.</h4>
 <ul>
 <li><strong>Did it start immediately or have some delay?</strong></li>
 <li><strong>How long did it actually run for?</strong></li>
 </ul>
-<p><details>
-  <summary>Hint</summary></p>
-<p>There are two options that you will need to set.  See sbatch manpage for details.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p>Both start with <em>--mail</em></p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+  <summary>Hint</summary>
+
+There are two options that you will need to set.  See sbatch manpage for details.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+Both start with *--mail*
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="bash">#!/bin/bash
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1024
@@ -2838,14 +1071,17 @@ prime 20
 echo &quot;Finished at: $(date)&quot;
 </code></pre>
 
-<p>Where <em>RESERVATION</em> is replaced with <em>training</em>, <em>PARTITION</em> is replaced with <em>main</em> and <em>name@email.address</em> by your email address</p>
-<p><strong>Answers</strong>:</p>
-<ul>
-<li><strong>Did it start immediately or have some delay?</strong> The <em>Queued time</em> value in the subject of start email will tell you how long it waited.</li>
-<li><strong>How long did it actually run for?</strong> The <em>Run time</em> value in the subject of the end email will tell you how long it ran for which should
-be ~20 seconds.</li>
-</ul>
-<p></details></p>
+
+Where *RESERVATION* is replaced with *training*, *PARTITION* is replaced with *main* and *name@email.address* by your email address
+
+**Answers**:
+
+* **Did it start immediately or have some delay?** The *Queued time* value in the subject of start email will tell you how long it waited.
+* **How long did it actually run for?** The *Run time* value in the subject of the end email will tell you how long it ran for which should
+be ~20 seconds.
+
+</details>
+
 <h2 id="topic-4-job-monitoring">Topic 4: Job Monitoring</h2>
 <p>It is often difficult to predict how a software tool may utilise HPC System Resources (CPU/Memory) as it can vary quite widely based
 on a number of factors (data set, number of CPU's, processing step etc.).</p>
@@ -2853,12 +1089,16 @@ on a number of factors (data set, number of CPU's, processing step etc.).</p>
 in the future.</p>
 <h3 id="exercises_3">Exercises</h3>
 <h4 id="41-what-does-the-top-command-show">4.1) What does the <em>top</em> command show?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>When all else fails, try <em>man</em>; specifically, the description section</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
+<details>
+  <summary>Hint</summary>
+
+When all else fails, try *man*; specifically, the description section
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
 <pre><code class="sh">$ man top
 ...
 DESCRIPTION
@@ -2866,125 +1106,192 @@ DESCRIPTION
 ...
 </code></pre>
 
-<p><strong>Answer</strong>: in lay-person terms <em>"Continually updating CPU and Memory usage"</em></p>
-<p></details></p>
+
+**Answer**: in lay-person terms *"Continually updating CPU and Memory usage"*
+
+</details>
+
 <hr />
 <p>Run the <em>top</em> command.  Above the black line it shows some <em>system-wide statistics</em> and below are statistics specific to a single
 process (a.k.a, tasks OR software applications).</p>
 <h4 id="42-how-much-total-memory-does-this-hpc-head-node-have">4.2) How much total memory does this HPC (head-node) have?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>This would be a system-wide statistic.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>: If you look at the first value on the <em>Mem</em> line (line 4) it will tell you the total memory on this computer (node).</p>
-<ul>
-<li><strong>BARCOO</strong>: 65942760k or ~64 GigaBytes</li>
-<li><strong>SNOWY</strong>: 132035040k or ~128 GigaBytes</li>
-</ul>
-<p>To transfer from kB to MB you divide by 1024 and MB to GB by 1024 again.</p>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+This would be a system-wide statistic.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**: If you look at the first value on the *Mem* line (line 4) it will tell you the total memory on this computer (node).
+
+* **BARCOO**: 65942760k or ~64 GigaBytes
+* **SNOWY**: 132035040k or ~128 GigaBytes
+
+To transfer from kB to MB you divide by 1024 and MB to GB by 1024 again.
+
+</details>
+
 <hr />
 <h4 id="43-what-is-the-current-total-cpu-usage">4.3) What is the current total CPU usage?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>This might be easier to work out what is not used and subtract it from 100%</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p><em>Idle</em> is another term for not used (or <em>id</em> for short)</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>: If you subtract the <em>%id</em> value (4th value on Cpu(s) line) from 100% you will get the total CPU Usage</p>
-<p></details></p>
+  <summary>Hint</summary>
+
+This might be easier to work out what is not used and subtract it from 100%
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+*Idle* is another term for not used (or *id* for short)
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**: If you subtract the *%id* value (4th value on Cpu(s) line) from 100% you will get the total CPU Usage
+
+</details>
+
 <hr />
 <h4 id="44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low">4.4) What column does it appear to be sorting the processes by? Is this <em>low-to-high</em> OR <em>high-to-low</em>?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>It's not PID but from time to time it might be ordered sequentially.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>: <em>%CPU</em> which gives you an indication of how much CPU time each process uses and sorted high-to-low.</p>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+It's not PID but from time to time it might be ordered sequentially.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**: *%CPU* which gives you an indication of how much CPU time each process uses and sorted high-to-low.
+
+</details>
+
 <hr />
 <p>Add up the top few CPU usages of processes and compare this to the system-wide CPU usage at that time.  NOTE: you may need to quit
 <em>top</em> (by pressing q) so you can compare before it updates.</p>
 <h4 id="45-why-might-the-numbers-disagree">4.5) Why might the numbers disagree?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>It might have something to do with the total number of CPU Cores on the system.</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>: <em>%CPU</em> column gives you an indication of how much this process uses of 1 CPU Core, where as the system-wide values at the top
-are exactly that, how much the entire system is utilised.  i.e. if you could see all processes in <em>top</em> (excluding round errors)
+<details>
+  <summary>Hint</summary>
+
+It might have something to do with the total number of CPU Cores on the system.
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**: *%CPU* column gives you an indication of how much this process uses of 1 CPU Core, where as the system-wide values at the top
+are exactly that, how much the entire system is utilised.  i.e. if you could see all processes in *top* (excluding round errors)
 they would add up 100% x the number of cpu cores available.
-On BARCOO it is 0-2400% and SNOWY it is 0-3200% for individual processes.</p>
-<p></details></p>
+On BARCOO it is 0-2400% and SNOWY it is 0-3200% for individual processes.
+
+</details>
+
 <hr />
 <h4 id="46-what-command-line-flag-instructs-top-to-sort-results-by-mem">4.6) What command-line flag instructs <em>top</em> to sort results by <em>%MEM</em>?</h4>
 <p>Can you think of a reason that this might be useful?</p>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>top</em> manpage.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p><em>"m is for memory!"</em></p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>Answer</strong>: <em>top -m</em> will cause <em>top</em> to sort the processes by memory usage.</p>
-<p><strong>Can you think of a reason that this might be useful?</strong></p>
-<p>Your program might be using a lot of memory and you want to know how much; by sorting by memory will cause your program to stay at the top.</p>
-<p></details></p>
+  <summary>Hint</summary>
+
+Use the *top* manpage.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+*"m is for memory!"*
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**Answer**: *top -m* will cause *top* to sort the processes by memory usage.
+
+**Can you think of a reason that this might be useful?**
+
+Your program might be using a lot of memory and you want to know how much; by sorting by memory will cause your program to stay at the top.
+
+</details>
+
 <hr />
 <h4 id="47-run-top-c-what-does-it-do-how-might-this-be-helpful">4.7) Run <em>"top -c"</em>.  What does it do?  How might this be helpful?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>top</em> manpage.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p><em>"c is for complete!"</em></p>
-<p><em>"c is also for command!"</em> which is another name for program</p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>What does it do?</strong><br />
-It changes the COMMAND column (right most) to show the complete command (or as much that fits) including the flags and options.</p>
-<p><strong>How might this be helpful?</strong><br />
+  <summary>Hint</summary>
+
+Use the *top* manpage.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+*"c is for complete!"*
+
+*"c is also for command!"* which is another name for program
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**What does it do?**  
+It changes the COMMAND column (right most) to show the complete command (or as much that fits) including the flags and options.
+
+**How might this be helpful?**  
 Sometimes you might be running a lot of commands with the same name that only differ by the command-line options.  In this case it is hard
-to tell which ones are still running unless you use the <em>-c</em> flag to show the complete command.</p>
-<p><strong>NOTE</strong>:<br />
-If <em>top</em> is running you can press the <em>c</em> key to toggle show/hide complete command</p>
-<p></details></p>
+to tell which ones are still running unless you use the *-c* flag to show the complete command.
+
+**NOTE**:  
+If *top* is running you can press the *c* key to toggle show/hide complete command
+
+</details>
+
 <hr />
 <h4 id="48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful">4.8) How can you get <em>top</em> to only show your processes?  Why might this be useful?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>Use the <em>top</em> manpage.</p>
-<p></details>
 <details>
-  <summary>Additional Hint</summary></p>
-<p><em>"u is for user[name]!"</em></p>
-<p></details></p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p><strong>How can you get <em>top</em> to only show your processes?</strong><br />
-<strong>Answer 1</strong>: <em>top -u YOURUSERNAME</em><br />
-<strong>Answer 2</strong>: while running <em>top</em> press the <em>u</em> key, type YOURUSERNAME and press <ENTER> key</p>
-<p><strong>Why might this be useful?</strong><br />
+  <summary>Hint</summary>
+
+Use the *top* manpage.
+
+</details>
+
+<details>
+  <summary>Additional Hint</summary>
+
+*"u is for user[name]!"*
+
+</details>
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+**How can you get *top* to only show your processes?**  
+**Answer 1**: *top -u YOURUSERNAME*  
+**Answer 2**: while running *top* press the *u* key, type YOURUSERNAME and press <ENTER> key
+
+**Why might this be useful?**  
 When you are looking to see how much CPU or Memory you are using on a node that has other user jobs running it can be hard
-to quickly identify yours.</p>
-<p></details></p>
+to quickly identify yours.
+
+</details>
+
 <h2 id="topic-5-all-together">Topic 5: All Together</h2>
 <p>This topic will allow you to put all the skills that you learnt in this workshop to the test.  You might need to refer back to
 the earlier topics if you have forgotten how to do these tasks.</p>
@@ -3062,15 +1369,21 @@ Changes to:
 here when everyone is running the same jobs.</p>
 <hr />
 <h4 id="how-does-the-cpu-and-memory-usage-change-over-time">How does the CPU and Memory usage change over time?</h4>
-<p><details>
-  <summary>Hint</summary></p>
-<p>It should vary (within the limits you set in the job script)</p>
-<p></details></p>
-<p><details>
-  <summary>Answer</summary></p>
-<p>The <em>fakejob</em> program should vary its CPU usage between 50 and 100% CPU and 500 and 1000MB of memory.  The percentage that it shows is based on the total
-memory of the node that runs your job; check Topic 4, Question 4.2 to remember how to find the total memory.</p>
-<p></details></p>
+<details>
+  <summary>Hint</summary>
+
+It should vary (within the limits you set in the job script)
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+
+The *fakejob* program should vary its CPU usage between 50 and 100% CPU and 500 and 1000MB of memory.  The percentage that it shows is based on the total
+memory of the node that runs your job; check Topic 4, Question 4.2 to remember how to find the total memory.
+
+</details>
+
 <hr />
 <h2 id="finished">Finished</h2>
 <p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it
@@ -3080,91 +1393,4 @@ not the training one).</p>
 <p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this
 workshop for later reference.</p>
 <p>Thank you for your attendance, please don't forget to complete the training survey and return it
-to the workshop facilitators.</p>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Using Git and Github for revision control
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../unix/unix/" title="Introduction to Unix" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Introduction to Unix
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
-          </div>
-        
-        powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    
-      <script src="../../../assets/javascripts/application.b438e6c5.js"></script>
-      
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-21794901-5","www.melbournebioinformatics.org.au/tutorials/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-      
-    
-  </body>
-</html>
+to the workshop facilitators.</p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>Using Git and Github for revision control</span></div></a><a href="../../unix/unix/" title="Introduction to Unix" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Next</span>Introduction to Unix</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight"><a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a></div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script></body></html>
