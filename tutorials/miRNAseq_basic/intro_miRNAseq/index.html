@@ -1,0 +1,1610 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>intro miRNAseq - Bioinformatics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-21794901-5", "www.melbournebioinformatics.org.au/tutorials/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#basic-mirna-seq-data-analysis" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bioinformatics Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                intro miRNAseq
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Bioinformatics Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Bioinformatics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guides/bioinfo/" title="What is bioinformatics?" class="md-nav__link">
+      What is bioinformatics?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guides/galaxy/" title="The Galaxy platform" class="md-nav__link">
+      The Galaxy platform
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      General Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        General Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_overview/python_overview/" title="Python Overview" class="md-nav__link">
+      Python Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_pandas_tidy_data/python_pandas_tidy_data/" title="Data tidying with Python and Pandas" class="md-nav__link">
+      Data tidying with Python and Pandas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">
+      Data visualisation with Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">
+      Using Git and Github for revision control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">
+      Introduction to HPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../unix/unix/" title="Introduction to Unix" class="md-nav__link">
+      Introduction to Unix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">
+      Launching a Personal GVL Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">
+      Introduction to Galaxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
+    
+    <label class="md-nav__link" for="nav-3-9">
+      Galaxy Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-9">
+        Galaxy Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../galaxy-workflows/galaxy-workflows/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../galaxy-workflows/history_creation/" title="History Creation" class="md-nav__link">
+      History Creation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">
+      Containerized Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">
+      Common Workflow Language for Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">
+      Command-line software development
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Genomics Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Genomics Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">
+      Introduction to Variant Calling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Variant Calling Advanced
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Variant Calling Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      RNA-seq DGE in Galaxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        RNA-seq DGE in Galaxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Basic Tutorial" class="md-nav__link">
+      Basic Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="Tuxedo Protocol Tutorial" class="md-nav__link">
+      Tuxedo Protocol Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="Advanced Tutorial" class="md-nav__link">
+      Advanced Tutorial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">
+      RNA-seq DGE Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_in_r/rna_seq_r/" title="RNA-seq DGE in R" class="md-nav__link">
+      RNA-seq DGE in R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">
+      10X single-cell RNA-seq analysis in R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Microbial de novo Assembly for Illumina Data: Velvet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        Microbial de novo Assembly for Illumina Data: Velvet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-background/" title="Method Background" class="md-nav__link">
+      Method Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/spades/" title="Microbial assembly: Spades" class="md-nav__link">
+      Microbial assembly: Spades
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pacbio/" title="Long read assembly" class="md-nav__link">
+      Long read assembly
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Proteomics Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Proteomics Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Identifying proteins from mass spectrometry data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Identifying proteins from mass spectrometry data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">
+      Galaxy Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
+      Data Formats Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">
+      Create find count items workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
+      Protein Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
+      Search Engines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
+      Protein Prophet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Molecular Modelling Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Molecular Modelling Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
+      Molecular Dynamics - Introduction to cluster computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
+      Molecular Dynamics - Building input files, visualising the trajectory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Protocols
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Protocols
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">
+      De Novo Genome Assembly for Illumina Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic" title="Topic" class="md-nav__link">
+    Topic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-level" title="Skill level" class="md-nav__link">
+    Skill level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" title="Description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
+    Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-preparation" title="Requirements and preparation" class="md-nav__link">
+    Requirements and preparation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-your-laptop-prior-to-starting-this-workshop" title="Preparing your laptop prior to starting this workshop" class="md-nav__link">
+    Preparing your laptop prior to starting this workshop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author-information" title="Author Information" class="md-nav__link">
+    Author Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-basics-of-mirnas" title="Section 1: Basics of miRNAs" class="md-nav__link">
+    Section 1: Basics of miRNAs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-overview-of-mirna-seq-data-analysis-procedure" title="Section 2: Overview of miRNA-seq data analysis procedure" class="md-nav__link">
+    Section 2: Overview of miRNA-seq data analysis procedure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-example-dataset-from-ncbi-geo" title="Section 3: Example dataset from NCBI GEO" class="md-nav__link">
+    Section 3: Example dataset from NCBI GEO
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-dataset-from-ncbi-geo" title="Example dataset from NCBI GEO" class="md-nav__link">
+    Example dataset from NCBI GEO
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-example-sequences" title="1. Download example sequences" class="md-nav__link">
+    1. Download example sequences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-upload-reference-mirna-data-from-mirbase" title="2. Upload reference miRNA data from miRBase" class="md-nav__link">
+    2. Upload reference miRNA data from miRBase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-quality-control-and-pre-processing" title="Section 4: Quality control and pre-processing" class="md-nav__link">
+    Section 4: Quality control and pre-processing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-check-sequencing-quality" title="1. Check sequencing quality" class="md-nav__link">
+    1. Check sequencing quality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-trim-out-adapter-sequence-and-low-quality-region" title="2. Trim out adapter sequence and low-quality region" class="md-nav__link">
+    2. Trim out adapter sequence and low-quality region
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-fastqc-again-on-the-trimmed" title="3. Run FastQC again on the trimmed" class="md-nav__link">
+    3. Run FastQC again on the trimmed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-running-mirdeep2" title="Section 5: Running miRdeep2" class="md-nav__link">
+    Section 5: Running miRdeep2
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-mirdeep2-mapper-on-built-in-genome-hg38-with-trimmed-sequences" title="1. Run ‘MiRDeep2 Mapper’ on built-in genome (hg38) with trimmed sequences" class="md-nav__link">
+    1. Run ‘MiRDeep2 Mapper’ on built-in genome (hg38) with trimmed sequences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-mirdeep2-quantifier-on-mirdeep2-mapper-results" title="2. Run ‘MiRDeep2 Quantifier’ on ‘MiRDeep2 Mapper’ results" class="md-nav__link">
+    2. Run ‘MiRDeep2 Quantifier’ on ‘MiRDeep2 Mapper’ results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-inspect-the-quantification-results" title="3. Inspect the quantification results." class="md-nav__link">
+    3. Inspect the quantification results.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-generate-a-single-read-count-matrix" title="Section 6: Generate a single read-count matrix" class="md-nav__link">
+    Section 6: Generate a single read-count matrix
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-merge-read-count-columns-from-four-quantification-results-into-one-table" title="1. Merge read-count columns from four quantification results into one table." class="md-nav__link">
+    1. Merge read-count columns from four quantification results into one table.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-extract-the-read-count-matrix" title="2. Extract the read-count matrix" class="md-nav__link">
+    2. Extract the read-count matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-column-names-to-the-filtered-read-count-matrix" title="3. Add column names to the filtered read-count matrix" class="md-nav__link">
+    3. Add column names to the filtered read-count matrix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-7-an-alternative-way-to-generate-a-single-read-count-matrix-optional" title="Section 7: An alternative way to generate a single read-count matrix (optional)" class="md-nav__link">
+    Section 7: An alternative way to generate a single read-count matrix (optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-8-basic-differential-expression-analysis" title="Section 8: Basic differential expression analysis" class="md-nav__link">
+    Section 8: Basic differential expression analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading-optional" title="Additional reading (optional)" class="md-nav__link">
+    Additional reading (optional)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/miRNAseq_basic/intro_miRNAseq.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <p><img src="../../img/melbioinf_logo.png" width="350"> <img src="media/PRIMARY_A_Vertical_Housed_RGB.png" width="85"></p>
+<h1 id="basic-mirna-seq-data-analysis">Basic miRNA-seq data analysis</h1>
+<p>Anticipated workshop duration when delivered to a group of participants is <strong>2 hours</strong>.  </p>
+<p>For queries relating to this workshop, contact Melbourne Bioinformatics (bioinformatics-training@unimelb.edu.au).</p>
+<h2 id="overview">Overview</h2>
+<p>This is a tutorial for basic miRNA-seq data analysis using miRdeep2 on Galaxy.</br>
+It assumes that you have your sequencing result files in FASTQ format. From there this tutorial takes you through a series of tasks, including an essential quality control procedure, alignment, identification and quantification of (known) miRNAs and a basic differential expression analysis.</br>
+Additionally, some subsequent analyses that commonly follow the differential expression analysis are suggested in the end.</p>
+<h3 id="topic">Topic</h3>
+<ul>
+<li>[ ] Genomics</li>
+<li>[x] Transcriptomics</li>
+<li>[ ] Proteomics</li>
+<li>[ ] Metabolomics</li>
+<li>[ ] Statistics and visualisation</li>
+<li>[ ] Structural Modelling</li>
+<li>[x] Basic skills</li>
+</ul>
+<h3 id="skill-level">Skill level</h3>
+<ul>
+<li>[x] Beginner  </li>
+<li>[ ] Intermediate  </li>
+<li>[ ] Advanced  </li>
+</ul>
+<p>This workshop is designed for participants with limited skills in computers and linux/unix environments.</p>
+<h3 id="description">Description</h3>
+<p>This tutorial uses a subset of small RNA-seq data from a published paper, which was for a study of biogenesis of miRNAs (ref). The raw sequencing data for this study are downloadable from Gene Expression Omnibus database of NCBI, a public repository for genomic data, in FASTQ format. The downloaded FASTQ files were quality-checked and pre-processed by FastQC and Trimmomatic, and the pre-processed FASTQ files were analysed by MirDeep2 for the sequence alignment, identification and quantification of known miRNAs. The latest MiRBase database (ref) was used as the reference for known miRNAs of human. MiRBase is a database of published miRNAs sequences and annotation (http://www.mirbase.org/)</br>
+After the quantification of known human miRNAs, edgeR was used for differential expression analysis.</p>
+<p>Data: 4 samples from Gene Expression Omnibus dataset GSE56862</br>
+Pipeline &amp; Tools: FastQC, Trimmomatic, miRDeep2, edgeR</p>
+<p><strong>Section 1</strong> covers basic background of miRNA and miRNA-seq experiment.</br>
+<strong>Section 2</strong> illustrates the overall miRNA-seq data procedure, introducing tools utilized for each step in this tutorial.</br>
+<strong>Section 3</strong> introduces the example dataset from NCBI GEO database.</br>
+<strong>Section 4</strong> covers essential quality control and pre-processing procedures.<br>
+<strong>Section 5</strong> covers taking the pre-processed miRNA-seq data through the 'MiRDeep2' pipeline.</br>
+<strong>Section 6</strong> covers how to combine (known) miRNA quantification result from each sample into a single read-count matrix.</br>
+<strong>Section 7</strong> (optional) introduces an alternative way to generate a single read-count matrix, using spreadsheet softwares such as MS Excel, Google-spreadsheet, etc.</br>
+<strong>Section 8</strong> covers basic differential expression analysis on miRNA read-count matrix using edgeR.</br>
+<strong>In the Additional reading,</strong> some subsequent analysis that commonly follow the differential expression analysis are introduced.</br></p>
+<hr />
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>At the end of this introductory workshop, you will :</p>
+<ul>
+<li>Understand the overall procedure of miRNA-seq data analysis.</li>
+<li>Be familiar with data types and tools for miRNA-seq data analysis.</li>
+<li>Know how to use the Galaxy for data-processing and exploring.</li>
+</ul>
+<hr />
+<h2 id="requirements-and-preparation">Requirements and preparation</h2>
+<p>!!! attention "Important"
+    <strong>Attendees are required to bring their own laptop computers.</strong><br />
+    At least one week before the workshop, participants should install the software and data files below.  This should provide sufficient time for participants to liaise with their own IT support should they encounter any IT problems.  </p>
+<h3 id="preparing-your-laptop-prior-to-starting-this-workshop">Preparing your laptop prior to starting this workshop</h3>
+<ol>
+<li>Required softwares:</li>
+<li>Web browser is necessary (<a href="https://www.google.com/chrome/">Chrome</a> or <a href="https://www.mozilla.org/en-US/">FireFox</a> are preferable.)</br></li>
+<li>Required Data:</li>
+<li>Required data will be directly downloaded from NCBI's GEO site and MiRBase database site.</li>
+</ol>
+<hr />
+<h2 id="author-information">Author Information</h2>
+<p>Written by: Chol-hee JUNG
+Melbourne Bioinformatics, University of Melbourne</p>
+<p>Created/Reviewed: March, 2020</br>
+Updated: Aug, 2020</p>
+<hr />
+<h2 id="background">Background</h2>
+<p>MicroRNA (miRNA) is a type of small non-coding RNA, which is typically ~21nt long and processed from a hairpin structured precursor (typically 60-120nt long).</br>
+MiRNA is found in animals and plants, and involved in the gene-expression regulation in various mechanisms by binding to their target mRNAs (e.g., inducing degradation, inhibiting translation, etc.).</p>
+<hr />
+<h2 id="section-1-basics-of-mirnas">Section 1: Basics of miRNAs</h2>
+<p>In this section you will learn about some basics of miRNA-seq experiments.</br></p>
+<hr />
+<h2 id="section-2-overview-of-mirna-seq-data-analysis-procedure">Section 2: Overview of miRNA-seq data analysis procedure</h2>
+<p>In this section we will take a look at the overview of miRNA-seq analysis procedure.</br>
+As shown in the image below, once library construction and sequencing are done as per the design of the experiment, the resulting sequencing data (FASTQ files) will go through two steps of quality control (QC).</br>
+The first QC is for checking the sequencing quality. Popular FASTQ quality assessment tools, such as <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, should be able to report the overall quality of the sequencing data. FastQC also reports the over-represented sequences in the FASTQ file. This is particularly important for miRNA-seq. In miRNA-seq data the 3'-adapter sequence almost always appears in every read, because the typical read-length of sequencing machines exceed the full length of mature miRNAs. Unless there is a serious contamination, the most over-represented sequence in the FASTQ file should be the 3'adapter sequence. Unlike 3'-adapter sequence, 5'-adapter sequence should be appear in the FASTQ file. If it does, it would mean poor library quality or poor sequencing quality. Once the over-represented sequences are identified as 3'-adapter sequence, sequence trimming tools, such as <a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>, can trim out from each read the adapter sequence and/or prevailing or trailing poor quality regions.<br>
+The second QC checks more specifically for the library quality. At this stage, 3'-adapter sequence should be removed from the sequencing data. Without 3'-adapter sequence, each read should contains only the mature miRNA sequence, the length of which typically ranges 20-25nt. If the trimmed sequences include a large quantity of sequence reads that are outside of this size-range, it may mean high level of contamination at the library construction stage.</br>
+After two-steps of QC, when all look good, the trimmed reads will be mapped to the genome. From this alignment result, the expression level known miRNAs can be  measured, and novel miRNAs can be also identified and quantified.</br>
+Known/unknown miRNAs were identified and quantified across samples from multiple groups (e.g., disease vs control), differential expression analysis can follow using other popular tools, such as <a href="https://bioconductor.org/packages/release/bioc/html/edgeR.html">edgeR</a>.
+<img src="media/miRNA_procedure.png" width="600"></p>
+<hr />
+<h2 id="section-3-example-dataset-from-ncbi-geo">Section 3: Example dataset from NCBI GEO</h2>
+<p>In this section, we will import the example dataset to Galaxy for the analysis.</br></p>
+<h3 id="example-dataset-from-ncbi-geo">Example dataset from NCBI GEO</h3>
+<p><b>GSE: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56862">GSE56862</a> </b></br>
+<b>SRA: <a href="https://www.ncbi.nlm.nih.gov//sra/?term=SRP041228">SRP041228</a> </b></br>
+This GEO dataset GSE56832 consist of 12 samples, including 7 small RNA-seq samples and 5 RNA-seq samples. The GSE dataset page from the link contains the description of the study using this dataset. Briefly, this study examines the biogenesis of miRNAs by the Microprocessor complex. The actual raw sequencing data are separately deposited in Sequence Read Archive (SRA) with the ID SRP041228.</br>
+Although there are a total of 12 samples in this dataset, we will use only 4 of them with individual sample accession IDs from GSM1370365 through to GSM1370368 as below.</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Sample</th>
+<th align="left">Description</th>
+<th align="center">SRX ID</th>
+<th align="center">SRR ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GSM1370365</td>
+<td align="left">Hela_repA_smallRNASeq</td>
+<td align="center">SRX518817</td>
+<td align="center">SRR1240812</td>
+</tr>
+<tr>
+<td align="left">GSM1370366</td>
+<td align="left">Hela_repB_smallRNASeq</td>
+<td align="center">SRX518818</td>
+<td align="center">SRR1240813</td>
+</tr>
+<tr>
+<td align="left">GSM1370367</td>
+<td align="left">A549_repA_smallRNASeq</td>
+<td align="center">SRX518819</td>
+<td align="center">SRR1240814</td>
+</tr>
+<tr>
+<td align="left">GSM1370368</td>
+<td align="left">A549_repB_smallRNASeq</td>
+<td align="center">SRX518820</td>
+<td align="center">SRR1240815</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-download-example-sequences">1. Download example sequences</h4>
+<p>Raw FASTQ files for the 4 small RNA-seq samples need to be downloaded to Galaxy.
+Galaxy has a functionality to directly retrieve data from SRA using the accession IDs.</br>
+<strong>a.</strong> 'Get Data' -&gt; 'Download and Extract Reads in FASTA/Q'</br>
+Put a SRR ID (e.g, SRR1240812) in the 'Accession' box </br>
+<img src="media/GetData_SRR1240812.png" width="600"></p>
+<p><strong>b.</strong> Repeat for three other SRR IDs.</br>
+It may take some time to complete this task.</br>
+When completed the downloaded FASTQ files will appear in the 'History' panel on the right-hand side of the screen. Clicking on the 'View data' icon show top lines of the imported FASTQ file as below.</br>
+<img src="media/GetData_preview.png" width="600"></p>
+<p><strong>c.</strong> Rename the uploaded data to more appropriate names by clicking on 'Edit attributes' icon</p>
+<p><em>e.g.,</em><br/>
+'SRR1240812' to 'Hela repA FASTQ',<br/>
+'SRR1240813' to 'Hela repB FASTQ',<br/>
+'SRR1240814' to 'A549 repA FASTQ',<br/>
+'SRR1240815' to 'A549 repB FASTQ'<br/></p>
+<p><img src="media/GetData_Edit_attributes.png" width="600"> </br></p>
+<p><strong>d.</strong> Alternatively, the raw FASTQ files can be downloaded to local computer and be uploaded using <b>'Get Data'</b> -&gt; <b>'Upload File'</b>.</br>
+(need a screenshot)</p>
+<h4 id="2-upload-reference-mirna-data-from-mirbase">2. Upload reference miRNA data from miRBase</h4>
+<p>MiRDeep2 uses sequences of known miRNAs (both precursor and mature) as reference to identify which miRNAs are present in the input data. In this tutorial, we will use the miRNA sequences deposited in miRBase database (ref).</br>
+The reference precursor miRNAs and mature miRNA sequences can be downloaded to local computer from the miRBase FTP site, and be uploaded to Galaxy. But, Galaxy can also fetch files directly as using the URL of files: </br></p>
+<p><strong>a.</strong> 'Get Data' -&gt; 'Upload File' -&gt; 'Paste/Fetch data'
+Copy and paste the URLs below into the text box, and set the 'Type' to 'fasta.gz'. Leave other parameters as default.</p>
+<p><fn>ftp://mirbase.org/pub/mirbase/CURRENT/hairpin.fa.gz</fn></br>
+<fn>ftp://mirbase.org/pub/mirbase/CURRENT/mature.fa.gz</fn></p>
+<p><img src="media/GetData.miRBase.png" width="600"></p>
+<hr />
+<h2 id="section-4-quality-control-and-pre-processing">Section 4: Quality control and pre-processing</h2>
+<p>In this section we will check the quality of the 4 small RNA-seq data uploaded to Galaxy. As mentioned above, we will use FastQC and Trimmomatic.</br>
+Quality control and pre-processing include the checking of general sequencing quality, adapter-contamination and the removal of any un-wanted parts from the sequencing data. FastQC examines the sequencing quality, and Trimmomatic cleans up the sequencing data.</br></p>
+<h4 id="1-check-sequencing-quality">1. Check sequencing quality</h4>
+<p><strong>a.</strong> 'FASTQ Quality Control' -&gt; 'FastQC'<br/>
+All four FASTQ files can be selected at once.</br></p>
+<p><img src="media/QC.FastQC.01.png" width="600"></p>
+<p><strong>b.</strong> In most cases, the sequence reads are longer than mature miRNA sequences. In consequence, 3'-adapter sequence is left in the FASTQ file. In contrast, 5'-adapter sequence should not be present in the FASTQ file. It this is from one's own analysis, the information of 3'-adapter sequence would be probably provided. However, if the adapter sequence is unknown, it could be identified from FastQC reports.<br/>
+Among the over-represented sequences, the sequence in the first row takes up ~64% of all sequences of Hela_repA. Also, the whole 50bp region is identical to a known RNA PCR primer sequence with 100% identity. This is likely the adapter sequence to be removed before further analysis.</br></p>
+<p><img src="media/QC.FastQC.01.result_01.png" width="600"></br></p>
+<h4 id="2-trim-out-adapter-sequence-and-low-quality-region">2. Trim out adapter sequence and low-quality region</h4>
+<p><strong>a.</strong> ‘FASTA/FASTQ' -&gt; ‘Trimmomatic’<br/>
+<strong>b.</strong> Select all 4 FastQ files<br/>
+<strong>c.</strong> ‘Yes’ to ‘Perform initial ILLUMINACLIP step?’<br/>
+<strong>d.</strong> ‘Custom’ to ‘Select standard adapter sequences or provide custom?’ and paste in the most over-represented RNA PCR Primer sequence in FASTA format<br/>
+<em>e.g.</em><br/>
+>primer<br/>
+TGGAATTCTCGGGTGCCAAGGAACTCCAGTCACATCACGATCTCGTATGC<br/></p>
+<p><img src="media/QC.Trimmomatic.png" width="600"></br></p>
+<p><strong>e.</strong> 'Execute'</p>
+<p><strong>f.</strong> Rename Trimmomatic results to more appropriate names<br/>
+<em>e.g.,</em> 'Trimmomatic on Hela repA FASTQ' to 'Hela repA trimmed'</br></p>
+<p><img src="media/QC.trimmomatic.rename.png" width="600"></br></p>
+<h4 id="3-run-fastqc-again-on-the-trimmed">3. Run FastQC again on the trimmed</h4>
+<p>It is always a good idea to check the quality of the pre-processed data, which are the result files from Trimmomatic, in this case. Thus, FastQC run at this stage is mainly for checking on read-length distribution.<br/>
+<strong>a.</strong> 'FASTQ Quality Control' -&gt; 'FastQC'</br>
+<img src="media/QC.FastQC.on_trimmed.png" width="600"></p>
+<p><strong>b.</strong> 'Execute'</br></p>
+<p><strong>c.</strong> After adapter-trimming, sequences of typical miRNA-sizes are enriched.<br/>
+Note that this sample contains miRNAs and other types of small RNAs. So, we should expect to see peaks at the sizes outside of typical miRNA lengths. </br>
+<img src="media/QC.FastQC.02.read_length.png" width="600"></p>
+<hr />
+<h2 id="section-5-running-mirdeep2">Section 5: Running miRdeep2</h2>
+<p>In this section we will run MiRDeep2 to identify and quantify known human miRNAs present in the sequencing data.</br>
+First, the pre-processed sequencing data will be mapped to the reference genome using 'MiRDeep2 Mapper'. By default, pre-processed reads are collapsed before mapping. I.e., identical reads become a single read, but the total number of identical reads is kept in the sequence description line. This reduces the mapping time.</p>
+<h4 id="1-run-mirdeep2-mapper-on-built-in-genome-hg38-with-trimmed-sequences">1. Run ‘MiRDeep2 Mapper’ on built-in genome (hg38) with trimmed sequences</h4>
+<p><strong>a.</strong> Select all 4 trimmed results<br/>
+<img src="media/MirDeep2_Mapper.01.png" width="600"></p>
+<p><strong>b.</strong> Select 'Clip Sequence' to clip 3'-Adapter Sequence and insert the adapter sequence used for Trimmomatic.<br/>
+<strong>c.</strong> Select ‘Human (Homo sapiens) (b38): hg38’ in 'Select a reference genome'<br/>
+<img src="media/MirDeep2_Mapper.02.png" width="600"> </br></p>
+<p><strong>d.</strong> 'Execute'</br>
+This may take a while.</br></p>
+<p><strong>e.</strong> Rename the mapping results to more appropriate names</br>
+<em>e.g.,</em> 'Collapsed reads of MiRDeep2 Mapper on data 16' to 'Hela repA mapped'</p>
+<h4 id="2-run-mirdeep2-quantifier-on-mirdeep2-mapper-results">2. Run ‘MiRDeep2 Quantifier’ on ‘MiRDeep2 Mapper’ results</h4>
+<p><strong>a.</strong> In 'Collapsed deep sequencing reads', Select all four ‘MirDeep2 Mapper’ results.<br/>
+<strong>b.</strong> Select ‘ftp://mirbase.org/pub/mirbase/CURRENT/hairpin.fa.gz’ for ‘Precursor sequences’<br/>
+<strong>c.</strong> Select ‘ftp://mirbase.org/pub/mirbase/CURRENT/mature.fa.gz’ for ‘Mature miRNA sequences’<br/>
+<strong>d.</strong> Select ‘human’ for ‘Search in species’<br/>
+<img src="media/MirDeep2_Quantifier.01.png" width="600"></p>
+<p><strong>e.</strong> 'Execute'</br>
+This may take a while.</br></p>
+<p><strong>f.</strong> Rename the quantification results to more appropriate names</br>
+<img src="media/MirDeep2_Quantifier.02.rename.png" width="600">
+<em>e.g.,</em> 'output of MiRDeep2 Quantifier on data 7, data 6, and data 20' to 'MiRDeep2 Quantifier on Hela repA'</br>
+'MiRDeep2 Quantifier on data 7, data 6, and data 20 (html report)' to 'MiRDeep2 Quantifier on Hela repA (html report)'</br></p>
+<h4 id="3-inspect-the-quantification-results">3. Inspect the quantification results.</h4>
+<p>‘MirDeep2 Quantifier’ generates two output files: quantification table and detailed HTML report of the miRNA quantification.<br/>
+<strong>a.</strong> ‘MiRDeep2 Quantifier on A549 repB’ shows the number of reads associated to each of known miRNA in the reference data.<br/>
+In this example, ‘read_count’, ‘total’ and ‘seq’ columns have the same raw-read counts, which could be used for the subsequent differential expression analysis.<br/>
+<img src="media/MirDeep2_Quantifier.output.tab.png" width="600"></p>
+<p><strong>b.</strong> ‘MiRDeep2 Quantifier on A549 repB (html report)’ show the same read-count table with links to detailed information.</br>
+<img src="media/MirDeep2_Quantifier.output.html.png" width="600"></p>
+<hr />
+<h2 id="section-6-generate-a-single-read-count-matrix">Section 6: Generate a single read-count matrix</h2>
+<p>In this section we will merge the individual quantification results into one read-count matrix, which can be used for differential expression analysis.</br>
+'MiRDeep2 Quantifier' output data for each of 4 samples will be merged into one big table, and relevant columns will be extracted from the merged table.</p>
+<h4 id="1-merge-read-count-columns-from-four-quantification-results-into-one-table">1. Merge read-count columns from four quantification results into one table.</h4>
+<p><strong>a.</strong> ‘Text Manipulation’ -&gt; ‘Paste’.<br/>
+Select ‘output of MiRDeep2 Quantifier on Hela repA’ for the first drop-down box, and ‘output of MiRDeep2 Quantifier on Hela repB’ for the second drop-down box.</br>
+<img src="media/TextManipulation.01.paste.01.png" width="600"></p>
+<p><strong>b.</strong> Repeat the ‘Paste’ with the previous ‘Paste’ result and another quantification output:<br/>
+‘Paste on data 39 and data 37’ for the first drop-box’ and ‘output of MiRDeep2 Quantifier on A549 repA’</br>
+<img src="media/TextManipulation.03.paste.02.png" width="600"></p>
+<p><strong>c.</strong> Repeat ‘b’ for ‘output of MiRDeep2 Quantifier on A549 repB’<br/>
+The result is a table of 24 columns, because 4 tables of 6 columns were merged side-by-side.</br>
+<img src="media/TextManipulation.04.paste.03.merged.png" width="600"></p>
+<h4 id="2-extract-the-read-count-matrix">2. Extract the read-count matrix</h4>
+<p>The merged table from the previous step has lots of redundant columns. So, we’ll have to extract only read-count columns. Also, miRNA IDs are not appropriate for unique identifier, because there could be multiple copies of precursor miRNAs originating the same miRNAs. For example, ‘hsa-let-7a-5p’ appears 3 times in the table, because there are 3 copies of ‘hsa-let-7a’ (hsa-let-7a-1, hsa-let-7a-2 and hsa-let-7a-3). So, we’ll combine the precursor ID and mature miRNA ID with ‘.’ in-between.<br/></p>
+<p><strong>a.</strong> ‘Text Manipulation’ -&gt; ‘Add column’<br/>
+‘Add this value’: ‘.’</br>
+'to Dataset': '38: Paste on data 34 and data 37'</br>
+<img src="media/TextManipulation.05.add_column.01.png" width="600"></br></p>
+<p>The resulting table has a column on '.' at the right-most end (column 25).</br>
+<img src="media/TextManipulation.05.add_column.02.png" width="600"></br></p>
+<p><strong>b.</strong> ‘Merge Columns’-&gt; ‘+Insert Columns’ button (we’re merging 3 columns).<br/>
+‘Select data’: result of the previous step (e.g., ‘48: Add column on data 47’)<br/>
+‘Merge column’: ‘column: 3’ (column for ‘precursor’)<br/>
+‘with column’: ‘column: 25’ (added column in the previous step, containing only ‘.’)<br/>
+‘Add column’: ‘Column: 1’ (column for ‘mature miRNA’)</br>
+<img src="media/TextManipulation.06.merge_columns.01.png" width="600"></p>
+<p><strong>c.</strong> ‘Cut’<br/>
+Input ‘c26,c2,c8,c14,c20’<br/>
+‘c26’ (Column 26) is the newly added column containing the new ID, which is precursor name followed by ‘.’ and mature miRNA name. c2, c8, c14 and c20 are columns for read-counts.</br>
+<img src="media/TextManipulation.07.cut.01.png" width="600"></p>
+<p><strong>d.</strong> The resulting table has only the new IDs and four read-count columns.</br>
+<img src="media/TextManipulation.08.cut.02.png" width="600"></p>
+<p><strong>e.</strong> The merged table include all known miRNAs in the reference data. But they aren’t always expressed. We’re keeping in miRNAs that were expressed at least in one sample.<br/>
+‘Filter and Sort’ -&gt; ‘Filter’<br/>
+Insert ‘(c2+c3+c4+c5) &gt; 0’ in ‘With following condition’</br>
+<img src="media/Filter.01.png" width="600"></p>
+<h4 id="3-add-column-names-to-the-filtered-read-count-matrix">3. Add column names to the filtered read-count matrix</h4>
+<p>The filtered table has no column names. The easiest way to add them in is downloading the table file, adding the header using a text editor and re-uploading the new file.<br/>
+<strong>a.</strong> Download the filtered table by clicking on ‘Download’ icon.<br/>
+<strong>b.</strong> Use any text editor to add the header line as below:<br/>
+‘precursor.miRNA    Hela_repA   Hela_repB   A549_repA   A549_repB’<br/>
+<strong><em>Remember to use ‘tab’ as separator</em></strong><br/>
+<img src="media/NotePad.header_line.png" width="600"></p>
+<p><strong>c.</strong> Save and upload the edited table file<br/>
+‘Get Data’ -&gt; ‘Upload File’<br/>
+<img src="media/GetData.filtered_table.png" width="600"></p>
+<p><strong>d.</strong> Rename the uploaded table to ‘GSE56862 miRNAs read-counts’<br/>
+<img src="media/GetData.filtered_table.rename.png" width="600"></p>
+<hr />
+<h2 id="section-7-an-alternative-way-to-generate-a-single-read-count-matrix-optional">Section 7: An alternative way to generate a single read-count matrix (optional)</h2>
+<p>In this section we will use a spreadsheet software and a text editor on your local computer to generate a single read-count matrix. Depending on your familiarity to those software, you may find it much easier to achieve the same thing that we did in the Section 6.</p>
+<hr />
+<h2 id="section-8-basic-differential-expression-analysis">Section 8: Basic differential expression analysis</h2>
+<p>In this section we will try a differential expression analysis on the miRNAs.</br>
+Now, we have miRNA expression data from a subset of GSE56862 dataset. The miRNA expression data were now merged into a single read-count table, which can be analyzed by any count-based differential expression analysis tools. In this tutorial, we will use 'edgeR'.</p>
+<p><strong>a.</strong>  ‘NGA: RNA Analysis’ -&gt; ‘edgeR’<br/>
+‘Single Count Matrix’<br/>
+‘Factor Name’: ‘cell_line’<br/>
+‘Groups’: HeLa,HeLa,A549,A549<br/>
+‘Contrast of Interest’: HeLa-A549<br/>
+<img src="media/RNA.edgeR.01.png" width="600"></p>
+<p><strong>b.</strong> Before the execution, we can choose to obtain the normalised counts, R scripts and R dataset from this edgeR analysis.<br/>
+<img src="media/RNA.edgeR.02.png" width="600"></p>
+<p><strong>c.</strong> 'edgeR' report<br/>
+<img src="media/RNA.edgeR.05.report.new_01.png" width="600"></br>
+<img src="media/RNA.edgeR.05.report.new_02.png" width="600"></br></p>
+<p><strong>d.</strong> Summary of differential expression test for each miRNA<br/>
+<img src="media/RNA.edgeR.06.result_files.png" width="600"></p>
+<hr />
+<h2 id="additional-reading-optional">Additional reading (optional)</h2>
+<p>Once differentially expressed miRNAs are identified, one of the common subsequent analyses is looking for the (potential) target genes, which are the genes that  are regulated by miRNAs. Target gene analysis tools include <a href="http://www.microrna.org/microrna/home.do">miRanda</a> and <a href="http://www.targetscan.org/">TargetScan</a> among many.</br>
+For example, 'miRanda' takes in a list of miRNAs of interest and retrieves the list of genes that have the target sites. Two miRNAs "let-7e" and "mir-1" were among the differentially expressed miRNAs in this tutorial. Searching for the target sites of these two miRNAs retrieved thousands of genes as below.</br>
+<img src="media/miRanda.02.search.png" width="600"></br>
+<img src="media/miRanda.02.search_result.png" width="600"></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
