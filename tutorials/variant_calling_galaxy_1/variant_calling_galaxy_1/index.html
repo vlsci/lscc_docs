@@ -1370,11 +1370,11 @@
 
 <p><br></p>
 
-<h1 id="introduction-to-variant-calling-using-galaxy">Introduction to Variant Calling using Galaxy</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="introduction-to-variant-calling-using-galaxy">Introduction to Variant Calling using Galaxy<a class="headerlink" href="#introduction-to-variant-calling-using-galaxy" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This tutorial is designed to introduce the tools, data types and workflow of variant detection. We will align reads to the genome, look for differences between reads and reference genome sequence, and filter the detected genomic variation manually to understand the computational basis of variant calling.</p>
 <p>We cover the concepts of detecting small variants (SNVs and indels) in human genomic DNA using a small set of reads from chromosome 22.</p>
-<h2 id="learning-objectives">Learning Objectives</h2>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
 <p>At the end of the course, you will be able to:</p>
 <ul>
 <li>Work with the FASTQ format and base quality scores</li>
@@ -1382,16 +1382,16 @@
 <li>Run the FreeBayes variant caller to find SNVs and indels</li>
 <li>Visualise BAM files using the Integrative Genomics Viewer (IGV) and identify likely SNVs and indels by eye</li>
 </ul>
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>This workshop uses Galaxy as a platform. It is recommended that participants who have not used Galaxy before either sign up for our Intro to GVL workshop, or work through this tutorial themselves beforehand.</p>
 <p>This is a hands-on workshop and attendees are required to bring their own laptops.</p>
 <hr />
-<h2 id="background">Background</h2>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>Some background reading material - <a href="https://www.google.com/url?q=https://docs.google.com/document/pub?id%3D1NfythYcSrkQwldGMrbHRKLRORFFn-WnBm3gOMHwIgmE&amp;sa=D&amp;usg=AFQjCNE7C6wmK6Fiu-_ZJhc0RSBaxFSRbg">background</a></p>
 <p><strong>Where is the data in this tutorial from?</strong></p>
 <p>The workshop is based on analysis of short read data from the exome of chromosome 22 of a single human individual. There are one million 76bp reads in the dataset, produced on an Illumina GAIIx from exome-enriched DNA. This data was generated as part of the <a href="http://www.1000genomes.org/">1000 genomes</a> Genomes project.</p>
 <hr />
-<h2 id="1-preparation">1. Preparation</h2>
+<h2 id="1-preparation">1. Preparation<a class="headerlink" href="#1-preparation" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Make sure you have an instance of Galaxy ready to go.</strong><ul>
 <li>For example, you can use the <a href="https://usegalaxy.org.au/">Galaxy Australia server</a>.</li>
@@ -1409,15 +1409,15 @@
 <li>In this case, we are uploading a <a href="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</a> file.</li>
 <li><strong>Method 1</strong><br />
 <em>Paste/Fetch data from a URL to Galaxy.</em><ol>
-<li>In the Galaxy tools panel (left), click on <code>Get Data</code> and choose <code>Upload File</code>.</li>
+<li>In the Galaxy tools panel (left), click on <code class="codehilite"><span class="k">Get</span> <span class="k">Data</span></code> and choose <code class="codehilite"><span class="n">Upload</span> <span class="n">File</span></code>.</li>
 <li>Click <em>Paste/Fetch data</em> and paste the following URL into the box
 <div class="code">
-https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/VariantDet_BASIC/NA12878.GAIIx.exome_chr22.1E6reads.76bp.fastq
+<a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/VariantDet_BASIC/NA12878.GAIIx.exome_chr22.1E6reads.76bp.fastq">https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/VariantDet_BASIC/NA12878.GAIIx.exome_chr22.1E6reads.76bp.fastq</a>
 <br>
 </div></li>
 <li>Select <em>Type</em> as <strong>fastqsanger</strong> and click <em>Start</em>.</li>
 <li>Once the upload status turns <em>green</em>, it means the upload is complete. You should now be able to see the file in the Galaxy history panel (right).</li>
-<li>The dataset will have a very long name, as it's named after the full URL we got it from. Optionally, once the file is in your History, click the pencil icon in the upper-right corner of the green dataset box, then select the <em>Name</em> box and give the file a shorter name by removing the URL. Then click <em>Save</em>.</li>
+<li>The dataset will have a very long name, as it&rsquo;s named after the full URL we got it from. Optionally, once the file is in your History, click the pencil icon in the upper-right corner of the green dataset box, then select the <em>Name</em> box and give the file a shorter name by removing the URL. Then click <em>Save</em>.</li>
 </ol>
 </li>
 </ul>
@@ -1425,7 +1425,7 @@ https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/Var
 <ul>
 <li><strong>Method 2</strong><br />
 <em>Upload data to Galaxy.</em><ol>
-<li>In the Galaxy tools panel (left), click on <code>Get Data</code> and choose <code>Upload File</code>.</li>
+<li>In the Galaxy tools panel (left), click on <code class="codehilite"><span class="k">Get</span> <span class="k">Data</span></code> and choose <code class="codehilite"><span class="n">Upload</span> <span class="n">File</span></code>.</li>
 <li>From <em>Choose local file</em> select the downloaded FASTQ file. Select <em>Type</em> as <strong>fastqsanger</strong> and click <em>Start</em>.</li>
 <li>Once the upload status turns <em>green</em>, it means the upload is complete. You should now be able to see the file in the Galaxy history panel (right).</li>
 </ol>
@@ -1438,26 +1438,31 @@ So far, we have started a Galaxy instance, got hold of our data and uploaded it 
 the Galaxy instance.<br />
 Now we are ready to perform our analysis.</p>
 <hr />
-<h2 id="2-quality-control">2. Quality Control</h2>
+<h2 id="2-quality-control">2. Quality Control<a class="headerlink" href="#2-quality-control" title="Permanent link">&para;</a></h2>
 <p>The first step is to evaluate the quality of the raw sequence data. If the quality is poor, then adjustments can be made - e.g. trimming the short reads, or adjusting your expectations of the final outcome!</p>
-<h4 id="1-take-a-look-at-the-fastq-file">1. Take a look at the FASTQ file</h4>
+<h4 id="1-take-a-look-at-the-fastq-file">1. Take a look at the FASTQ file<a class="headerlink" href="#1-take-a-look-at-the-fastq-file" title="Permanent link">&para;</a></h4>
 <p>Click on the eye icon to the top right of the FASTQ file to view the a snippet of the file.</p>
 <p>Note that each read is represented by 4 lines:
     * read identifier
     * short read sequence
     * separator
     * short read sequence quality scores</p>
-<pre><code class="text">e.g.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>e.g.
 identifier:    @61CC3AAXX100125:7:72:14903:20386/1
 read sequence: TTCCTCCTGAGGCCCCACCCACTATACATCATCCCTTCATGGTGAGGGAGACTTCAGCCCTCAATGCCACCTTCAT
 separator:     +
 quality score: ?ACDDEFFHBCHHHHHFHGGCHHDFDIFFIFFIIIIHIGFIIFIEEIIEFEIIHIGFIIIIIGHCIIIFIID?@&lt;6
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p>For more details see <a href="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</a>.</p>
-<h4 id="2-assessing-read-quality-from-the-fastq-files">2. Assessing read quality from the FASTQ files</h4>
+<h4 id="2-assessing-read-quality-from-the-fastq-files">2. Assessing read quality from the FASTQ files<a class="headerlink" href="#2-assessing-read-quality-from-the-fastq-files" title="Permanent link">&para;</a></h4>
 <ol>
-<li>From the Galaxy tools panel, in the search box at the top, type in "FastQC".</li>
+<li>From the Galaxy tools panel, in the search box at the top, type in &ldquo;FastQC&rdquo;.</li>
 <li>Click on <ss>FastQC</ss></li>
 </ol>
 <p><br>The input FASTQ file will be selected by default. Keep the other defaults and click execute.</p>
@@ -1475,16 +1480,16 @@ quality score: ?ACDDEFFHBCHHHHHFHGGCHHDFDIFFIFFIIIIHIGFIIFIEEIIEFEIIHIGFIIIIIGHC
 <p>When the job has finished, click on the eye icon to view the newly generated data (in this case a set of quality metrics for the FASTQ data). This will be a file called <em>FastQC on data 1: Web page</em>.
 Look at the various quality scores. The data looks pretty good - <em>high Per base sequence quality</em> (avg. above 30).</p>
 <hr />
-<h2 id="3-alignment-to-the-reference-fastq-to-bam">3. Alignment to the reference - (FASTQ to BAM)</h2>
+<h2 id="3-alignment-to-the-reference-fastq-to-bam">3. Alignment to the reference - (FASTQ to BAM)<a class="headerlink" href="#3-alignment-to-the-reference-fastq-to-bam" title="Permanent link">&para;</a></h2>
 <p>The basic process here to map individual reads - from the input sample FASTQ file - to a matching region on the reference genome.</p>
-<h4 id="1-align-the-reads-with-bwa">1. Align the reads with BWA</h4>
+<h4 id="1-align-the-reads-with-bwa">1. Align the reads with BWA<a class="headerlink" href="#1-align-the-reads-with-bwa" title="Permanent link">&para;</a></h4>
 <p>We will map (align) the reads with the <a href="http://bio-bwa.sourceforge.net/">BWA</a> tool to the human reference genome. For this tutorial, use <em>Human reference genome 19 (hg19)</em> - this is <a href="http://genome.ucsc.edu/cgi-bin/hgTracks">hg19 from UCSC</a>.</p>
 <ol>
 <li>
 <p>Align the reads [3-5mins]: from the Galaxy tools panel, search for <ss>Map with BWA-MEM</ss><br>
    From the options:<br></p>
 <ul>
-<li><em>Will you selection a reference genome...:</em> Use a built-in genome index</li>
+<li><em>Will you selection a reference genome&hellip;:</em> Use a built-in genome index</li>
 <li><em>Using reference genome:</em> set to hg19</li>
 <li><em>Single or Paired-end reads:</em> set to Single</li>
 <li>Make sure your fastq file is the input file.</li>
@@ -1502,7 +1507,7 @@ Look at the various quality scores. The data looks pretty good - <em>high Per ba
 </ul>
 </li>
 </ol>
-<h4 id="2-examine-the-alignment">2. Examine the alignment</h4>
+<h4 id="2-examine-the-alignment">2. Examine the alignment<a class="headerlink" href="#2-examine-the-alignment" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>To examine the output sorted BAM file, we need to first convert it into readable <a href="https://samtools.github.io/hts-specs/SAMv1.pdf">SAM</a> format.
@@ -1530,7 +1535,7 @@ Galaxy auto-generates a name for all outputs. Therefore, it is advisable to choo
 <p>This can be done as follows:</p>
 <p>Click on the pencil icon (edit attributes) and change Name e.g. Sample.bam or Sample.sam or Sample.sorted.bam etc.</p>
 </blockquote>
-<h4 id="3-assess-the-alignment-data">3. Assess the alignment data</h4>
+<h4 id="3-assess-the-alignment-data">3. Assess the alignment data<a class="headerlink" href="#3-assess-the-alignment-data" title="Permanent link">&para;</a></h4>
 <p>We can generate some mapping statistics from the BAM file to assess the quality of our alignment.</p>
 <ol>
 <li>
@@ -1555,39 +1560,39 @@ unmapped reads.</p>
 </li>
 </ol>
 <hr />
-<h2 id="4-visualise-the-bam-file-with-igv">4. Visualise the BAM file with IGV</h2>
+<h2 id="4-visualise-the-bam-file-with-igv">4. Visualise the BAM file with IGV<a class="headerlink" href="#4-visualise-the-bam-file-with-igv" title="Permanent link">&para;</a></h2>
 <p>To visualise the alignment data:</p>
 <ol>
 <li>Click on the sorted BAM file dataset in the History panel.</li>
-<li>Click on "Display with IGV <strong>web current</strong>". This should download a .jnlp
+<li>Click on &ldquo;Display with IGV <strong>web current</strong>&rdquo;. This should download a .jnlp
     Java Web Start file to your computer. Open this file to run IGV.
-    (You will need Java installed on your computer to run IGV). NOTE: If IGV is already open on your computer, you can click "<strong>local</strong>" instead of "web current", and this will open the BAM file in your current IGV session.</li>
+    (You will need Java installed on your computer to run IGV). NOTE: If IGV is already open on your computer, you can click &ldquo;<strong>local</strong>&rdquo; instead of &ldquo;web current&rdquo;, and this will open the BAM file in your current IGV session.</li>
 <li>Once IGV opens, it will show you the BAM file. This may take a bit of time as the data is downloaded.</li>
 <li>Our reads for this tutorial are from chromosome 22, so select <strong>chr22</strong> from the second
     drop box under the toolbar. Zoom in to view alignments of reads to the reference genome.</li>
 </ol>
 <p><a href="../media/igv1.jpg"><img src="../media/igv1.jpg" alt="IGV view 1" width="640px" style="display:block; margin-left: auto; margin-right:auto;"/></a></p>
-<p>Try looking at region <code>chr22:36,006,744-36,007,406</code></p>
+<p>Try looking at region <code class="codehilite"><span class="n">chr22</span><span class="o">:</span><span class="mi">36</span><span class="o">,</span><span class="mi">006</span><span class="o">,</span><span class="mi">744</span><span class="o">-</span><span class="mi">36</span><span class="o">,</span><span class="mi">007</span><span class="o">,</span><span class="mi">406</span></code></p>
 <p>Can you see a few variants?  </p>
 <p><a href="../media/igv_mb.jpg"><img src="../media/igv_mb.jpg" alt="IGV view 1" width="640px" style="display:block; margin-left: auto; margin-right:auto;"/></a></p>
-<p>Don't close IGV yet as we'll be using it later.</p>
+<p>Don&rsquo;t close IGV yet as we&rsquo;ll be using it later.</p>
 <hr />
-<h2 id="5-generate-a-pileup-file">5. Generate a pileup file</h2>
+<h2 id="5-generate-a-pileup-file">5. Generate a pileup file<a class="headerlink" href="#5-generate-a-pileup-file" title="Permanent link">&para;</a></h2>
 <p>A pileup is essentially a column-wise representation of the aligned reads - at the base level - to the reference. The pileup file summarises all data from the reads at each genomic region that is covered by at least one read. Each row of the pileup file gives similar information to a single vertical column of reads in the IGV view.</p>
-<p>The current generation of variant calling tools do not output pileup files, and you don't need to do this section in order to use FreeBayes in the next section. However, a pileup file is a good illustration of the evidence the variant caller is looking at internally, and we will produce one to see this evidence.</p>
-<h4 id="1-generate-a-pileup-file">1. Generate a pileup file</h4>
+<p>The current generation of variant calling tools do not output pileup files, and you don&rsquo;t need to do this section in order to use FreeBayes in the next section. However, a pileup file is a good illustration of the evidence the variant caller is looking at internally, and we will produce one to see this evidence.</p>
+<h4 id="1-generate-a-pileup-file">1. Generate a pileup file<a class="headerlink" href="#1-generate-a-pileup-file" title="Permanent link">&para;</a></h4>
 <p>From the Galaxy tools panel, search for <ss>Generate pileup</ss><br>
 From the options:</p>
 <ul>
 <li><em>Call consensus according to MAQ model:</em> set to Yes<br>
-  This generates a called 'consensus base' for each chromosomal position.
+  This generates a called &lsquo;consensus base&rsquo; for each chromosomal position.
   This would allow us to use this pileup directly for variant detection, if we wanted.</li>
 <li>Keep other options as default and click execute</li>
 </ul>
-<p>Galaxy tries to assign a datatype attribute to every output file. In this case, you'll need to manually set the datatype to <em>pileup</em>.</p>
+<p>Galaxy tries to assign a datatype attribute to every output file. In this case, you&rsquo;ll need to manually set the datatype to <em>pileup</em>.</p>
 <ol>
 <li>First, rename the output to something more meaningful by clicking on the pencil icon</li>
-<li>To change the datatype, click on the Datatype link from the top tab while you're editing attributes.</li>
+<li>To change the datatype, click on the Datatype link from the top tab while you&rsquo;re editing attributes.</li>
 <li>For downstream processing we want to tell Galaxy that this is a <em>pileup</em> file. From the drop-down, select Pileup and click save.</li>
 </ol>
 <blockquote>
@@ -1611,15 +1616,15 @@ Each character represents one of the following (the longer this string, higher t
   <li> , = match on reverse strand
   <li> ACGTN = mismatch on forward
   <li> acgtn = mismatch on reverse
-  <li> +[0-9]+[ACGTNacgtn]+' = insertion between this reference position and the next
-  <li> -[0-9]+[ACGTNacgtn]+' = deletion between this reference position and the next
+  <li> +[0-9]+[ACGTNacgtn]+&rsquo; = insertion between this reference position and the next
+  <li> -[0-9]+[ACGTNacgtn]+&rsquo; = deletion between this reference position and the next
   <li> ^ = start of read
   <li> $ = end of read
   <li> BaseQualities = one character per base in ReadBases, ASCII encoded Phred scores
   </ul></p>
 </blockquote>
-<h4 id="2-filter-the-pileup-file">2. Filter the pileup file</h4>
-<p>If you click the eye icon to view the contents of your pileup file, you'll see that the visible rows of the file aren't very interesting as they are outside chromosome 22 and have very low coverage. Let's filter to regions with coverage of at least 10 reads.</p>
+<h4 id="2-filter-the-pileup-file">2. Filter the pileup file<a class="headerlink" href="#2-filter-the-pileup-file" title="Permanent link">&para;</a></h4>
+<p>If you click the eye icon to view the contents of your pileup file, you&rsquo;ll see that the visible rows of the file aren&rsquo;t very interesting as they are outside chromosome 22 and have very low coverage. Let&rsquo;s filter to regions with coverage of at least 10 reads.</p>
 <p>From the Galaxy tools panel, search for <ss>Filter Pileup</ss><br>
 From the options:</p>
 <ul>
@@ -1634,16 +1639,16 @@ From the options:</p>
 <li>Then, repeat the step but set <em>Only report variants?</em> to <strong>Yes</strong>. This will effectively do variant calling: it will give you only locations that have some evidence that there might be a variant present. This variant calling is not very stringent, so you will still get lots of rows. We could filter further to, for instance, variants with high quality scores.</li>
 </ul>
 <p>Examine your two pileup files and understand the difference between them. Which coordinates are present in each? What do the bases look like in one compared to the other? Compare the variant quality score (in column 6) to the bases listed on each row.</p>
-<h2 id="6-call-variants-with-freebayes">6. Call variants with FreeBayes</h2>
+<h2 id="6-call-variants-with-freebayes">6. Call variants with FreeBayes<a class="headerlink" href="#6-call-variants-with-freebayes" title="Permanent link">&para;</a></h2>
 <p>FreeBayes is a Bayesian variant caller which assesses the likelihood of each possible genotype for each position in the reference genome, given the observed reads at that position, and reports back the list of possible variants. We look at it in more detail in the <a href="../var_detect_advanced/var_detect_advanced">Advanced Variant Calling</a> tutorial.</p>
-<h4 id="1-call-variants-with-freebayes">1. Call variants with FreeBayes.</h4>
+<h4 id="1-call-variants-with-freebayes">1. Call variants with FreeBayes.<a class="headerlink" href="#1-call-variants-with-freebayes" title="Permanent link">&para;</a></h4>
 <p>In the tool panel search for <ss>FreeBayes</ss>.</p>
 <ul>
 <li>Select your sorted BAM file as input, and select the correct reference genome.</li>
-<li>Under <em>Choose parameter selection level</em>, select "Simple diploid calling with filtering and coverage". This will consider only aligned reads with sufficient mapping quality and base quality. You can see the exact parameters this sets by scrolling down in the main Galaxy window to the Galaxy FreeBayes documentation section on <em>Galaxy-specific options</em>.</li>
+<li>Under <em>Choose parameter selection level</em>, select &ldquo;Simple diploid calling with filtering and coverage&rdquo;. This will consider only aligned reads with sufficient mapping quality and base quality. You can see the exact parameters this sets by scrolling down in the main Galaxy window to the Galaxy FreeBayes documentation section on <em>Galaxy-specific options</em>.</li>
 <li><em>Execute</em> FreeBayes. (This may take a while.)</li>
 </ul>
-<h4 id="2-check-the-generated-list-of-variants">2. Check the generated list of variants</h4>
+<h4 id="2-check-the-generated-list-of-variants">2. Check the generated list of variants<a class="headerlink" href="#2-check-the-generated-list-of-variants" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Click the eye icon to examine the VCF file contents. The VCF format is described below - make sure you can identify the header rows and the data, and understand the important columns.</li>
 <li>How many variants exactly are in your list? (Hint: you can look at the number of lines in the dataset, listed in the green box in the History, but remember the top lines are header lines.)</li>
@@ -1654,7 +1659,7 @@ From the options:</p>
 FreeBayes, like most variant callers, produces a <a href="http://vcftools.sourceforge.net/specs.html">Variant Call Format (VCF)</a> file.</p>
 <p>VCF consists of a header section and a data section. The header section has some information about the file and the parameters used to produce it. The header also specifies what information is stored in the INFO, FILTER and FORMAT columns, as this is different for different variant callers.</p>
 <p>The data section has several columns. For this tutorial, you should concentrate on CHROM, POS, REF, ALT and QUAL.
-CHROM and POS describe the variant's genomic location, REF and ALT describe the variant's nucleotides relative to the reference, and QUAL is a quality score giving FreeBayes' confidence in the correctness of this variant call.</p>
+CHROM and POS describe the variant&rsquo;s genomic location, REF and ALT describe the variant&rsquo;s nucleotides relative to the reference, and QUAL is a quality score giving FreeBayes&rsquo; confidence in the correctness of this variant call.</p>
 <p>The columns in more detail are:</p>
 </blockquote>
 <table>
@@ -1721,16 +1726,16 @@ CHROM and POS describe the variant's genomic location, REF and ALT describe the 
 <blockquote>
 <p>For even more detail on VCF files, you can look at the <a href="http://vcftools.sourceforge.net/specs.html"><em>VCF format specification</em></a>.</p>
 </blockquote>
-<h4 id="3-visualise-the-variants-and-compare-files">3. Visualise the variants and compare files</h4>
+<h4 id="3-visualise-the-variants-and-compare-files">3. Visualise the variants and compare files<a class="headerlink" href="#3-visualise-the-variants-and-compare-files" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Open the VCF file in IGV using the dataset's <em>display in IGV local</em> link (using the <em>web current</em> link will open IGV again, and using <em>local</em> should use your already-running IGV). This will give an annotation track in IGV to visualise where variants have been called. Compare it to your BAM file.</li>
-<li>Take a look again at the same region as earlier: <code>chr22:36,006,744-36,007,406</code></li>
-<li>Try comparing to the corresponding location in the pileup file. You can filter to the same window as we just opened in IGV with the tool <code>Filter and Sort &gt; Filter</code>. Choose your previously-filtered pileup file as input, and set the filter condition to <code>c1=="chr22" and c2 &gt; 36006744 and c2 &lt; 36007406</code>.</li>
+<li>Open the VCF file in IGV using the dataset&rsquo;s <em>display in IGV local</em> link (using the <em>web current</em> link will open IGV again, and using <em>local</em> should use your already-running IGV). This will give an annotation track in IGV to visualise where variants have been called. Compare it to your BAM file.</li>
+<li>Take a look again at the same region as earlier: <code class="codehilite"><span class="n">chr22</span><span class="o">:</span><span class="mi">36</span><span class="o">,</span><span class="mi">006</span><span class="o">,</span><span class="mi">744</span><span class="o">-</span><span class="mi">36</span><span class="o">,</span><span class="mi">007</span><span class="o">,</span><span class="mi">406</span></code></li>
+<li>Try comparing to the corresponding location in the pileup file. You can filter to the same window as we just opened in IGV with the tool <code class="codehilite"><span class="n">Filter</span> <span class="k">and</span> <span class="n">Sort</span> <span class="o">&gt;</span> <span class="n">Filter</span></code>. Choose your previously-filtered pileup file as input, and set the filter condition to <code class="codehilite"><span class="n">c1</span><span class="o">==</span><span class="ss">&quot;chr22&quot;</span> <span class="k">and</span> <span class="n">c2</span> <span class="o">&gt;</span> <span class="mi">36006744</span> <span class="k">and</span> <span class="n">c2</span> <span class="o">&lt;</span> <span class="mi">36007406</span></code>.</li>
 </ul>
-<h4 id="4-optional-filter-variants">4. Optional: filter variants</h4>
-<p>See if you can work out how to filter your VCF file to variants with quality scores greater than 50. You can use the <code>Filter and Sort: Filter</code> tool we used above.</p>
-<h2 id="7-further-steps">7. Further steps</h2>
-<p>We've seen how to:</p>
+<h4 id="4-optional-filter-variants">4. Optional: filter variants<a class="headerlink" href="#4-optional-filter-variants" title="Permanent link">&para;</a></h4>
+<p>See if you can work out how to filter your VCF file to variants with quality scores greater than 50. You can use the <code class="codehilite"><span class="n">Filter</span> <span class="k">and</span> <span class="n">Sort</span><span class="p">:</span> <span class="n">Filter</span></code> tool we used above.</p>
+<h2 id="7-further-steps">7. Further steps<a class="headerlink" href="#7-further-steps" title="Permanent link">&para;</a></h2>
+<p>We&rsquo;ve seen how to:</p>
 <ul>
 <li>Align the raw data (sequence reads) to a reference genome</li>
 <li>Generate variant calls from aligned reads</li>

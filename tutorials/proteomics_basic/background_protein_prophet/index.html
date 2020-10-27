@@ -972,27 +972,27 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/proteomics_basic/background_protein_prophet.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="protein-prophet">Protein Prophet</h1>
-<p>The development of the Protein Prophet statistical models, and its associated program was a big step forward for practitioners wanting to perform automated, large scale protein inference.  The original paper describing protein prophet is worth reading. It's citation is;</p>
+                <h1 id="protein-prophet">Protein Prophet<a class="headerlink" href="#protein-prophet" title="Permanent link">&para;</a></h1>
+<p>The development of the Protein Prophet statistical models, and its associated program was a big step forward for practitioners wanting to perform automated, large scale protein inference.  The original paper describing protein prophet is worth reading. It&rsquo;s citation is;</p>
 <blockquote>
 <p>Nesvizhskii, A. I., Keller, A., Kolker, E. &amp; Aebersold, R. A Statistical Model for Identifying Proteins by Tandem Mass Spectrometry. Anal. Chem. 75, 4646–4658 (2003).</p>
 </blockquote>
-<p>The practical reality of using Protein Prophet is a little different however as the program has undergone several significant developments since its original publication, and interpretation of Protein Prophet groupings can be challenging.  Let's look at a few examples;</p>
+<p>The practical reality of using Protein Prophet is a little different however as the program has undergone several significant developments since its original publication, and interpretation of Protein Prophet groupings can be challenging.  Let&rsquo;s look at a few examples;</p>
 <p><strong>Uniquely identified protein</strong></p>
 <blockquote>
 <p>sp|P00761|TRYP_PIG</p>
 </blockquote>
-<p>Search for this protein in the Protein Prophet results file. It should have <code>group_probability</code> and <code>protein_probability</code> scores of <code>1.0</code>.  All of the three peptides that contribute evidence for this protein map uniquely to this protein alone so there are no other proteins in this group.</p>
+<p>Search for this protein in the Protein Prophet results file. It should have <code class="codehilite"><span class="n">group_probability</span></code> and <code class="codehilite"><span class="n">protein_probability</span></code> scores of <code class="codehilite"><span class="mi">1</span><span class="p">.</span><span class="mi">0</span></code>.  All of the three peptides that contribute evidence for this protein map uniquely to this protein alone so there are no other proteins in this group.</p>
 <p><strong>Indistinguishable Protein</strong></p>
 <blockquote>
 <p>sp|O08600|NUCG_MOUSE</p>
 </blockquote>
-<p>In this case there still just one entry for the protein, but <code>Protein Prophet</code> lists another protein <code>tr|Q3UN47|Q3UN47_MOUSE</code> in the indistinguishable proteins column.  This protein is indistinguishable from the primary entry <code>sp|O08600|NUCG_MOUSE</code> because all of the identified peptides are shared between both.</p>
+<p>In this case there still just one entry for the protein, but <code class="codehilite"><span class="n">Protein</span> <span class="n">Prophet</span></code> lists another protein <code class="codehilite"><span class="n">tr</span><span class="o">|</span><span class="n">Q3UN47</span><span class="o">|</span><span class="n">Q3UN47_MOUSE</span></code> in the indistinguishable proteins column.  This protein is indistinguishable from the primary entry <code class="codehilite"><span class="n">sp</span><span class="o">|</span><span class="n">O08600</span><span class="o">|</span><span class="n">NUCG_MOUSE</span></code> because all of the identified peptides are shared between both.</p>
 <p><strong>A well behaved protein group</strong></p>
 <blockquote>
 <p>sp|O08677|KNG1_MOUSE</p>
 </blockquote>
-<p>This protein is part of a smallish group of similar proteins.  The overall group probability is high (<code>1.0</code>) but probabilities group members are different.  The first member of the group has a high probability <code>0.99</code> but all other members have probabilities of <code>0.0</code>.  This is because all of the high scoring peptides are contained in the first entry.  Evidence for the other entries consists of either (a) peptides that are contained in the first entry or (b) peptides with very low scores. Protein Prophet uses the principle of Occam's razor;</p>
+<p>This protein is part of a smallish group of similar proteins.  The overall group probability is high (<code class="codehilite"><span class="mi">1</span><span class="p">.</span><span class="mi">0</span></code>) but probabilities group members are different.  The first member of the group has a high probability <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">99</span></code> but all other members have probabilities of <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">0</span></code>.  This is because all of the high scoring peptides are contained in the first entry.  Evidence for the other entries consists of either (a) peptides that are contained in the first entry or (b) peptides with very low scores. Protein Prophet uses the principle of Occam&rsquo;s razor;</p>
 <blockquote>
 <p>plurality should not be posited with out necessity</p>
 </blockquote>

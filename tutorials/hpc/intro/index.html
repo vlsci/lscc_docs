@@ -1018,7 +1018,7 @@
                 
                   <h1>Intro</h1>
                 
-                <h3 id="what-is-an-hpc">What is an HPC?</h3>
+                <h3 id="what-is-an-hpc">What is an HPC?<a class="headerlink" href="#what-is-an-hpc" title="Permanent link">&para;</a></h3>
 <p>An HPC is simply a large collection of server-grade computers working together to solve large problems.</p>
 <ul>
 <li><strong>Big</strong>: HPCs typically have lots of CPUs and Memory and consequently large jobs.</li>
@@ -1030,7 +1030,7 @@
 <p><strong>Figure</strong>: The user (face at top) interacts with their local PC/Laptop through the keyboard and screen.  The PC/Laptop will 
 connect to the Head/Login node of the HPC interactively.  The Head/Login node will send the jobs off to the Compute Nodes when
 one is available. </p>
-<h3 id="why-use-hpcs">Why use HPCs?</h3>
+<h3 id="why-use-hpcs">Why use HPCs?<a class="headerlink" href="#why-use-hpcs" title="Permanent link">&para;</a></h3>
 <p>The main reason we use HPCs is because they are quite big.  Given their size, they are usually very expensive, however through 
 sharing the resources the per user/job cost can be kept low.</p>
 <ul>
@@ -1039,7 +1039,7 @@ sharing the resources the per user/job cost can be kept low.</p>
 <li><strong>Efficient use</strong>: Through sharing the resources each user can have access to a very large computer for a period and hand 
 it back for others to use later.</li>
 </ul>
-<h3 id="software-modules">Software Modules</h3>
+<h3 id="software-modules">Software Modules<a class="headerlink" href="#software-modules" title="Permanent link">&para;</a></h3>
 <p>There are typically hundreds to thousands of software packages installed on an HPC.  Given that each can have its own special 
 requirements and multiple versions will be made, software on the HPC will most commonly be packaged and only made available 
 to you when you request it.</p>
@@ -1049,29 +1049,29 @@ to you when you request it.</p>
 <li><strong>Versions</strong>: given not all users want to use the same version of software (and to compare new results with old you might 
    need the same version)    each version is made into its own software module so you have ultimate control.</li>
 </ul>
-<h3 id="job-submission">Job Submission</h3>
+<h3 id="job-submission">Job Submission<a class="headerlink" href="#job-submission" title="Permanent link">&para;</a></h3>
 <p>Job Submission is the process of instructing the HPC to perform a task for you.  Depending on the HPC software installed on 
 your HPC, the process of doing so might be different.</p>
 <ul>
 <li><strong>SLURM</strong>: this workshop uses an HPC that uses the SLURM HPC software.  Some common alternatives (not covered) are PBS or 
    SGE/OGE.</li>
 <li><strong>Queues (Partition)</strong>: when a job is submitted it is added to a work queue; in SLURM this is called a Partition.</li>
-<li><strong>Batch</strong>: HPC jobs are not 'interactive'.  By this we mean, you can't type input into your job's programs and you won't 
+<li><strong>Batch</strong>: HPC jobs are not &lsquo;interactive&rsquo;.  By this we mean, you can&rsquo;t type input into your job&rsquo;s programs and you won&rsquo;t 
    immediately see the output that your program prints on the screen. </li>
 </ul>
-<h4 id="resources">Resources</h4>
+<h4 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h4>
 <p>So that SLURM knows how to schedule and fit jobs around each other, you need to specify what resources your job will use.
 That is, you need to tell it how many CPUs, RAM, Nodes (servers), and Time you need.</p>
 <ol>
 <li><strong>CPUs</strong>: most software is limited using 1 CPU by default but many can use more than one (or you can run multiple copies at once).
    The number of CPUs you specify needs to match how many things your software can do at once.</li>
 <li><strong>Memory</strong>: you need to estimate (or guess) how much memory (RAM) your program needs.</li>
-<li><strong>Nodes</strong>: most software will only use one of the HPC's Nodes (i.e. one server), but some software can make use of more than
+<li><strong>Nodes</strong>: most software will only use one of the HPC&rsquo;s Nodes (i.e. one server), but some software can make use of more than
    one to solve the problem sooner.</li>
 <li><strong>Time</strong>: like when you are scheduling meetings, SLURM needs to know how long each job will take (maximum) so it can organise
    other jobs afterwards.</li>
 </ol>
-<h4 id="job-types">Job Types</h4>
+<h4 id="job-types">Job Types<a class="headerlink" href="#job-types" title="Permanent link">&para;</a></h4>
 <p>There are two types of jobs that you can submit:</p>
 <ol>
 <li><strong>Shared</strong>: a shared job (as the name suggests) is one that shares a node with other jobs.  This is the default and preferred method.</li>

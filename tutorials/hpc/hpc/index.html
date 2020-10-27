@@ -493,8 +493,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's loaded, run pear again, what does it do?" class="md-nav__link">
-    2.6) Now it's loaded, run pear again, what does it do?
+  <a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's *load*ed, run pear again, what does it do?" class="md-nav__link">
+    2.6) Now it's *load*ed, run pear again, what does it do?
   </a>
   
 </li>
@@ -1573,8 +1573,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's loaded, run pear again, what does it do?" class="md-nav__link">
-    2.6) Now it's loaded, run pear again, what does it do?
+  <a href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="2.6) Now it's *load*ed, run pear again, what does it do?" class="md-nav__link">
+    2.6) Now it's *load*ed, run pear again, what does it do?
   </a>
   
 </li>
@@ -1919,14 +1919,14 @@
 
 <style>em {font-style: normal; font-family: courier new;}</style>
 
-<h1 id="high-performance-computing">High-Performance Computing</h1>
+<h1 id="high-performance-computing">High-Performance Computing<a class="headerlink" href="#high-performance-computing" title="Permanent link">&para;</a></h1>
 <p>A hands-on-workshop covering High-Performance Computing (HPC).</p>
-<h2 id="overview">Overview</h2>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Using High Performance Computing (HPC) resources such as Melbourne Bioinformatics in an effective and efficient manner is key to modern research. This workshop will introduce you to HPC environments and assist you to get on with your research.</p>
-<h2 id="learning-objectives">Learning Objectives</h2>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
 <p>At the end of the course, you will be able to:</p>
 <ul>
-<li>Define 'What is HPC?'</li>
+<li>Define &lsquo;What is HPC?&rsquo;</li>
 <li>Load software modules</li>
 <li>Submit jobs</li>
 <li>Select job queues</li>
@@ -1934,10 +1934,10 @@
 <li>Know what resources you can request</li>
 <li>Select appropriate resources</li>
 </ul>
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>You will need a basic understanding of Unix, or you should have attended an <a href="../../unix/unix/">Introduction to Unix</a> workshop in the past.</p>
 <p>All participants are required to bring their own laptop computers.</p>
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the main concepts of High-Performance Computing.
 The <a href="../slides.html">slides</a> are available if you would like.  </p>
 <p>Additionally the following reference material is available for later use:</p>
@@ -2016,10 +2016,10 @@ There are two types of jobs that you can submit:
 
 </details>
 
-<h3 id="connecting-to-the-hpc">Connecting to the HPC</h3>
+<h3 id="connecting-to-the-hpc">Connecting to the HPC<a class="headerlink" href="#connecting-to-the-hpc" title="Permanent link">&para;</a></h3>
 <p>To begin this workshop you will need to connect to the HPC.
 Today we will use <em>barcoo</em>.
-The computer called <em>barcoo.vlsci.org.au</em> is the one that coordinates all the HPC's tasks.</p>
+The computer called <em>barcoo.vlsci.org.au</em> is the one that coordinates all the HPC&rsquo;s tasks.</p>
 <p><strong>Server details</strong>:</p>
 <ul>
 <li><strong>host</strong>: barcoo.vlsci.org.au</li>
@@ -2044,12 +2044,13 @@ need to specify the port by adding the option *-p PORT* with PORT substituted wi
 
 You may be presented with a message along the lines of:
 
-
-<pre><code class="text">The authenticity of host 'barcoo.vlsci.org.au (131.172.36.150)' can't be  established.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>The authenticity of host &#39;barcoo.vlsci.org.au (131.172.36.150)&#39; can&#39;t be  established.
 ...
 Are you sure you want to continue connecting (yes/no)?
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Although you should never ignore a warning, this particular one is nothing to be concerned about; type **yes** and then **press enter**. 
 If all goes well you will be asked to enter your password.  Assuming you type the correct username and password the system should 
@@ -2093,12 +2094,12 @@ the remote computer.
 
 </details>
 
-<h2 id="topic-1-exploring-an-hpc">Topic 1: Exploring an HPC</h2>
-<p>An HPC (short for 'High-Performance Computer') is simply a collection of Server Grade computers that work together to solve large problems.</p>
+<h2 id="topic-1-exploring-an-hpc">Topic 1: Exploring an HPC<a class="headerlink" href="#topic-1-exploring-an-hpc" title="Permanent link">&para;</a></h2>
+<p>An HPC (short for &lsquo;High-Performance Computer&rsquo;) is simply a collection of Server Grade computers that work together to solve large problems.</p>
 <p><img src="../media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="245px" /></p>
 <p><strong>Figure</strong>: Overview of the computers involved when using an HPC.  Computer systems are shown in rectangles and arrows represent interactions.</p>
-<h3 id="exercises">Exercises</h3>
-<h4 id="11-what-is-the-contact-email-for-your-hpcs-system-administrator">1.1) What is the contact email for your HPC's System Administrator?</h4>
+<h3 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h3>
+<h4 id="11-what-is-the-contact-email-for-your-hpcs-system-administrator">1.1) What is the contact email for your HPC&rsquo;s System Administrator?<a class="headerlink" href="#11-what-is-the-contact-email-for-your-hpcs-system-administrator" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2118,7 +2119,7 @@ Depending on which computer you are working:
 </details>
 
 <hr />
-<h4 id="12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc">1.2) Run the <em>sinfo</em> command.  How many nodes are there in this hpc?</h4>
+<h4 id="12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc">1.2) Run the <em>sinfo</em> command.  How many nodes are there in this hpc?<a class="headerlink" href="#12-run-the-sinfo-command-how-many-nodes-are-there-in-this-hpc" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2132,16 +2133,21 @@ Depending on which computer you are working:
 
 Have a look at the NODELIST column.  Only count each node once.
 
-
-<pre><code class="sh">$ sinfo
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
-compute*     up 200-00:00:      2   idle lims-hpc-[1,5]
-bigmem       up 200-00:00:      1   idle lims-hpc-1
-8hour        up   08:00:00      3    mix lims-hpc-[2-4]
-8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
-</code></pre>
-
+compute*     up <span class="m">200</span>-00:00:      <span class="m">3</span>    mix lims-hpc-<span class="o">[</span><span class="m">2</span>-4<span class="o">]</span>
+compute*     up <span class="m">200</span>-00:00:      <span class="m">2</span>   idle lims-hpc-<span class="o">[</span><span class="m">1</span>,5<span class="o">]</span>
+bigmem       up <span class="m">200</span>-00:00:      <span class="m">1</span>   idle lims-hpc-1
+8hour        up   <span class="m">08</span>:00:00      <span class="m">3</span>    mix lims-hpc-<span class="o">[</span><span class="m">2</span>-4<span class="o">]</span>
+8hour        up   <span class="m">08</span>:00:00      <span class="m">3</span>   idle lims-hpc-<span class="o">[</span><span class="m">1</span>,5<span class="o">]</span>,lims-hpc-m
+</pre></div>
+</td></tr></table>
 NOTE: the above list will vary depending on the HPC setup.
 
 </details>
@@ -2164,10 +2170,9 @@ The *sinfo* command lists all available partitions and the status of each node w
 
 An automatic (though more complex) way would have been running the following command:
 
-
-<pre><code class="sh">$ scontrol show node | grep NodeName | wc -l
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ scontrol show node <span class="p">|</span> grep NodeName <span class="p">|</span> wc -l
+</pre></div>
+</td></tr></table>
 
 Where:
 
@@ -2177,14 +2182,14 @@ Where:
 
 </details>
 
-<h2 id="topic-2-software-modules">Topic 2: Software Modules</h2>
+<h2 id="topic-2-software-modules">Topic 2: Software Modules<a class="headerlink" href="#topic-2-software-modules" title="Permanent link">&para;</a></h2>
 <p>Up to this point we have been using only standard Unix software packages which are included with Linux/Unix computers.
 Large computing systems such as HPCs often use a system of modules to load specific software packages (and versions)
 when needed for the user.</p>
 <p>In this topic we will discover what science software modules (tools) are available and load them ready for analysis.</p>
 <p>This topic uses the <em>man</em> and <em>module</em> commands heavily</p>
-<h3 id="exercises_1">Exercises</h3>
-<h4 id="21-what-happens-if-you-run-the-module-command-without-any-options-arguments">2.1) What happens if you run the <em>module</em> command without any options / arguments?</h4>
+<h3 id="exercises_1">Exercises<a class="headerlink" href="#exercises_1" title="Permanent link">&para;</a></h3>
+<h4 id="21-what-happens-if-you-run-the-module-command-without-any-options-arguments">2.1) What happens if you run the <em>module</em> command without any options / arguments?<a class="headerlink" href="#21-what-happens-if-you-run-the-module-command-without-any-options-arguments" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2197,17 +2202,56 @@ Literally type *module* and press *ENTER* key.
 
 **Answer**: It prints an error followed by a list of available options / flags
 
-
-<pre><code class="text">$ module
-cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module
+cmdModule.c(166):ERROR:11: Usage is &#39;module command  [arguments ...] &#39;
 
   Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
 
   Usage: module [ switches ] [ subcommand ] [subcommand-args ]
 
 Switches:
-    -H|--help       this usage info
-    -V|--version        modules version &amp; configuration options
+<span class="hll">    -H|--help       this usage info
+</span>    -V|--version        modules version &amp; configuration options
     -f|--force      force active dependency resolution
     -t|--terse      terse    format avail and list format
     -l|--long       long     format avail and list format
@@ -2218,20 +2262,20 @@ Switches:
     -i|--icase      case insensitive
     -u|--userlvl &lt;lvl&gt;  set user level to (nov[ice],exp[ert],adv[anced])
   Available SubCommands and Args:
-    + add|load      modulefile [modulefile ...]
-    + rm|unload     modulefile [modulefile ...]
+<span class="hll">    + add|load      modulefile [modulefile ...]
+</span>    + rm|unload     modulefile [modulefile ...]
     + switch|swap       [modulefile1] modulefile2
     + display|show      modulefile [modulefile ...]
-    + avail         [modulefile [modulefile ...]]
-    + use [-a|--append] dir [dir ...]
+<span class="hll">    + avail         [modulefile [modulefile ...]]
+</span>    + use [-a|--append] dir [dir ...]
     + unuse         dir [dir ...]
     + update
     + refresh
-    + purge
-    + list
-    + clear
-    + help          [modulefile [modulefile ...]]
-    + whatis        [modulefile [modulefile ...]]
+<span class="hll">    + purge
+</span><span class="hll">    + list
+</span>    + clear
+<span class="hll">    + help          [modulefile [modulefile ...]]
+</span>    + whatis        [modulefile [modulefile ...]]
     + apropos|keyword   string
     + initadd       modulefile [modulefile ...]
     + initprepend       modulefile [modulefile ...]
@@ -2239,13 +2283,13 @@ Switches:
     + initswitch        modulefile1 modulefile2
     + initlist
     + initclear
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="22-how-do-you-find-a-list-of-available-software">2.2) How do you find a list of <em>available</em> software?</h4>
+<h4 id="22-how-do-you-find-a-list-of-available-software">2.2) How do you find a list of <em>available</em> software?<a class="headerlink" href="#22-how-do-you-find-a-list-of-available-software" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2271,8 +2315,16 @@ The module command is used to show details of software modules (tools).
 
 **Answer**:
 
-
-<pre><code class="sh">$ module avail
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module avail
 
 ------------------- /usr/share/Modules/modulefiles --------------------
 dot         module-git  module-info modules     null        use.own
@@ -2282,8 +2334,8 @@ acana/1.60                         mafft-gcc/7.215
 aftrrad/4.1.20150201               malt/0.1.0
 arlequin/3.5.1.3                   matplotlib-gcc/1.3.1
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 The modules list has been shortened because it is very long.  The modules after the */usr/local/Modules/modulefiles* line
 are the science software; before this are a few built-in ones that you can ignore.
@@ -2291,7 +2343,7 @@ are the science software; before this are a few built-in ones that you can ignor
 </details>
 
 <hr />
-<h4 id="23-how-many-modules-are-there-starting-with-f">2.3) How many modules are there starting with '<em>f</em>'?</h4>
+<h4 id="23-how-many-modules-are-there-starting-with-f">2.3) How many modules are there starting with &lsquo;<em>f</em>&rsquo;?<a class="headerlink" href="#23-how-many-modules-are-there-starting-with-f" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2320,16 +2372,21 @@ language but basically it's saying you can put search terms after the avail subc
 
 The man page told us that we could put a search term after *module avail*.
 
-
-<pre><code class="sh">$ module avail f
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module avail f
 ------------------- /usr/local/Modules/modulefiles -------------------
 fasta-gcc/35.4.12            flex-gcc/2.5.39
 fastqc/0.10.1                fontconfig-gcc/2.11.93
 fastStructure-gcc/2013.11.07 freebayes-gcc/20140603
 fastStructure-gcc/20150320   freetype-gcc/2.5.3
 fastx_toolkit-gcc/0.0.14
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: 26 modules
 
@@ -2342,10 +2399,9 @@ NOTE: this was correct at time of writing this workshop and might increase over 
 
 To get a fully automated solution your could do the following command:
 
-
-<pre><code class="sh">$ module -l avail 2&gt;&amp;1 | grep &quot;^f&quot; | wc -l
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module -l avail <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep <span class="s2">&quot;^f&quot;</span> <span class="p">|</span> wc -l
+</pre></div>
+</td></tr></table>
 
 Where:
 
@@ -2359,7 +2415,7 @@ the logical *output* stream.
 </details>
 
 <hr />
-<h4 id="24-run-the-pear-command-without-loading-it-does-it-work">2.4) Run the <em>pear</em> command (without loading it), does it work?</h4>
+<h4 id="24-run-the-pear-command-without-loading-it-does-it-work">2.4) Run the <em>pear</em> command (without loading it), does it work?<a class="headerlink" href="#24-run-the-pear-command-without-loading-it-does-it-work" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2370,10 +2426,11 @@ This question is very literal
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ pear
--bash: pear: command not found
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pear
+-bash: pear: <span class="nb">command</span> not found
+</pre></div>
+</td></tr></table>
 
 The error you see is from BASH, it is complaining that it doesn't know anything about a command called 'pear'
 
@@ -2382,7 +2439,7 @@ The error you see is from BASH, it is complaining that it doesn't know anything 
 </details>
 
 <hr />
-<h4 id="25-how-would-we-load-the-pear-module">2.5) How would we <em>load</em> the <em>pear</em> module?</h4>
+<h4 id="25-how-would-we-load-the-pear-module">2.5) How would we <em>load</em> the <em>pear</em> module?<a class="headerlink" href="#25-how-would-we-load-the-pear-module" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2404,9 +2461,9 @@ Use a search to find out about the *load* subcommand (e.g. /load&lt;enter&gt;)
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ module load pear-gcc/0.9.4
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module load pear-gcc/0.9.4
+</pre></div>
+</td></tr></table>
 
 <div class="info"><b>-gcc | -intel</b>: Lots of modules will have either <i>-gcc</i> or <i>-intel</i> after the software name.  This refers to the compiler that
 was used to make the software.  If you have a choice then usually the <i>-intel</i> one will be faster.</div>
@@ -2417,7 +2474,7 @@ of the software.</div>
 </details>
 
 <hr />
-<h4 id="26-now-its-loaded-run-pear-again-what-does-it-do">2.6) Now it's <em>load</em>ed, run pear again, what does it do?</h4>
+<h4 id="26-now-its-loaded-run-pear-again-what-does-it-do">2.6) Now it&rsquo;s *load*ed, run pear again, what does it do?<a class="headerlink" href="#26-now-its-loaded-run-pear-again-what-does-it-do" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2428,28 +2485,40 @@ The paper citation gives a clue.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ module load pear-gcc/0.9.4
-[15:59:19] training21@lims-hpc-m ~ $ pear
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module load pear-gcc/0.9.4
+<span class="o">[</span><span class="m">15</span>:59:19<span class="o">]</span> training21@lims-hpc-m ~ $ pear
  ____  _____    _    ____
-|  _ \| ____|  / \  |  _ \
-| |_) |  _|   / _ \ | |_) |
-|  __/| |___ / ___ \|  _ &lt;
-|_|   |_____/_/   \_\_| \_\
-PEAR v0.9.4 [August 8, 2014]  - [+bzlib]
+<span class="p">|</span>  _ <span class="se">\|</span> ____<span class="p">|</span>  / <span class="se">\ </span> <span class="p">|</span>  _ <span class="se">\</span>
+<span class="p">|</span> <span class="p">|</span>_<span class="o">)</span> <span class="p">|</span>  _<span class="p">|</span>   / _ <span class="se">\ </span><span class="p">|</span> <span class="p">|</span>_<span class="o">)</span> <span class="p">|</span>
+<span class="p">|</span>  __/<span class="p">|</span> <span class="p">|</span>___ / ___ <span class="se">\|</span>  _ &lt;
+<span class="p">|</span>_<span class="p">|</span>   <span class="p">|</span>_____/_/   <span class="se">\_\_</span><span class="p">|</span> <span class="se">\_\</span>
+PEAR v0.9.4 <span class="o">[</span>August <span class="m">8</span>, <span class="m">2014</span><span class="o">]</span>  - <span class="o">[</span>+bzlib<span class="o">]</span>
 
 Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
-Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+Zhang et al <span class="o">(</span><span class="m">2014</span><span class="o">)</span> Bioinformatics <span class="m">30</span><span class="o">(</span><span class="m">5</span><span class="o">)</span>: <span class="m">614</span>-620 <span class="p">|</span> doi:10.1093/bioinformatics/btt593
 
 ... REST REMOVED ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: "PEAR: a fast and accurate Illumina Paired-End reAd mergeR" (i.e. merges paired dna reads into a single read when they overlap)
 
 </details>
 
 <hr />
-<h4 id="27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from">2.7) <em>List</em> all the loaded modules. How many are there? Where did all the others come from?</h4>
+<h4 id="27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from">2.7) <em>List</em> all the loaded modules. How many are there? Where did all the others come from?<a class="headerlink" href="#27-list-all-the-loaded-modules-how-many-are-there-where-did-all-the-others-come-from" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2464,13 +2533,15 @@ We are not really expecting you to be able to answer the 2nd question however if
 
 ** *List* all the loaded modules. How many are there?**
 
-
-<pre><code class="sh">$ module list
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module list
 Currently Loaded Modulefiles:
-  1) gmp/5.1.3         3) mpc/1.0.2         5) bzip2-gcc/1.0.6
-  2) mpfr/3.1.2        4) gcc/4.8.2         6) pear-gcc/0.9.4
-</code></pre>
-
+  <span class="m">1</span><span class="o">)</span> gmp/5.1.3         <span class="m">3</span><span class="o">)</span> mpc/1.0.2         <span class="m">5</span><span class="o">)</span> bzip2-gcc/1.0.6
+  <span class="m">2</span><span class="o">)</span> mpfr/3.1.2        <span class="m">4</span><span class="o">)</span> gcc/4.8.2         <span class="m">6</span><span class="o">)</span> pear-gcc/0.9.4
+</pre></div>
+</td></tr></table>
 **Answer**: 6
 
 **Where did all the others come from?**
@@ -2483,7 +2554,7 @@ automatically load some modules for you when you login.
 </details>
 
 <hr />
-<h4 id="28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear">2.8) How do you undo the loading of the <em>pear</em> module?  List the loaded modules again, did they all disappear?</h4>
+<h4 id="28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear">2.8) How do you undo the loading of the <em>pear</em> module?  List the loaded modules again, did they all disappear?<a class="headerlink" href="#28-how-do-you-undo-the-loading-of-the-pear-module-list-the-loaded-modules-again-did-they-all-disappear" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2496,10 +2567,9 @@ Computer Scientists are not always inventive with naming commands, try something
 
 **How do you undo the loading of the *pear* module?**
 
-
-<pre><code class="sh">$ module unload pear-gcc
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module unload pear-gcc
+</pre></div>
+</td></tr></table>
 
 **Answer**: the *unload* sub-command removes the named module from our current SSH session.
 
@@ -2511,7 +2581,7 @@ needed or not so we will need to do it manually (or see next question)
 </details>
 
 <hr />
-<h4 id="29-how-do-you-clear-all-loaded-modules">2.9) How do you clear ALL loaded modules?</h4>
+<h4 id="29-how-do-you-clear-all-loaded-modules">2.9) How do you clear ALL loaded modules?<a class="headerlink" href="#29-how-do-you-clear-all-loaded-modules" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2533,9 +2603,9 @@ We will *purge* the list of loaded modules.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ module purge
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ module purge
+</pre></div>
+</td></tr></table>
 
 **Answer**: running the *purge* sub-command will unload all modules you loaded (and all dependencies).
 
@@ -2548,15 +2618,15 @@ We will *purge* the list of loaded modules.
 again.  Do so by running <em>module load vlsci</em></div>
 
 <hr />
-<h2 id="topic-3-job-submission">Topic 3: Job Submission</h2>
-<p>Up to this point in the workshop (and the previous Unix workshop) we have only used the head-node of the HPC.  While this is OK for small jobs, it's unworkable for most jobs.<br />
+<h2 id="topic-3-job-submission">Topic 3: Job Submission<a class="headerlink" href="#topic-3-job-submission" title="Permanent link">&para;</a></h2>
+<p>Up to this point in the workshop (and the previous Unix workshop) we have only used the head-node of the HPC.  While this is OK for small jobs, it&rsquo;s unworkable for most jobs.<br />
 In this topic we will start to learn how to make use of the rest of the HPCs immense compute power</p>
-<h3 id="background">Background</h3>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h3>
 <p>On conventional Unix computers (such as the HPC headnode) we enter the commands we want to run at the terminal and see the results directly output
 in front of us.  On an HPC this type of computation will only make use of one node, namely, the <em>Head Node</em>.  To make use of the remaining (<em>compute</em>) nodes
 we need to use the SLURM software package (called an HPC Scheduler).  The purpose of SLURM is to manage all user jobs and distribute the available resources
 (i.e. time on the compute nodes) to each job in a fair manner.  You can think of the SLURM software as like an electronic <em>calendar</em> and the user jobs like
-<em>meetings</em>.  Users <em>say</em> to SLURM "I want XX CPUS for YY hours" and SLURM will look at its current bookings and find the next available time it can fit the job.</p>
+<em>meetings</em>.  Users <em>say</em> to SLURM &ldquo;I want XX CPUS for YY hours&rdquo; and SLURM will look at its current bookings and find the next available time it can fit the job.</p>
 <p><strong>Terminology</strong>:</p>
 <ul>
 <li><strong>Node</strong>: a server grade computer which is part of an HPC</li>
@@ -2572,9 +2642,9 @@ is called the output file.</li>
 <li><strong>Reservation</strong>: much like a reservation for a resturant holds a table for you, the administrator can give you an HPC reservation which holds various resources
 for a period of time exclusively for you.</li>
 </ul>
-<h3 id="exercises_2">Exercises</h3>
+<h3 id="exercises_2">Exercises<a class="headerlink" href="#exercises_2" title="Permanent link">&para;</a></h3>
 <p><strong>Useful Commands</strong>: <em>man, sinfo, cat, sbatch, squeue, cp, module, prime</em></p>
-<h4 id="31-which-nodes-could-a-main-job-go-on">3.1) Which nodes could a 'main' job go on?</h4>
+<h4 id="31-which-nodes-could-a-main-job-go-on">3.1) Which nodes could a &lsquo;main&rsquo; job go on?<a class="headerlink" href="#31-which-nodes-could-a-main-job-go-on" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2588,16 +2658,21 @@ Try the *sinfo* command
 Have a look at the PARTITION and NODELIST columns.  The *barcoo[2-4]* is shorthand for *barcoo2 barcoo3
 and barcoo4*
 
-
-<pre><code class="sh">$ sinfo
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
-compute*     up 200-00:00:      2   idle lims-hpc-[1,5]
-bigmem       up 200-00:00:      1   idle lims-hpc-1
-8hour        up   08:00:00      3    mix lims-hpc-[2-4]
-8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
-</code></pre>
-
+compute*     up <span class="m">200</span>-00:00:      <span class="m">3</span>    mix lims-hpc-<span class="o">[</span><span class="m">2</span>-4<span class="o">]</span>
+compute*     up <span class="m">200</span>-00:00:      <span class="m">2</span>   idle lims-hpc-<span class="o">[</span><span class="m">1</span>,5<span class="o">]</span>
+bigmem       up <span class="m">200</span>-00:00:      <span class="m">1</span>   idle lims-hpc-1
+8hour        up   <span class="m">08</span>:00:00      <span class="m">3</span>    mix lims-hpc-<span class="o">[</span><span class="m">2</span>-4<span class="o">]</span>
+8hour        up   <span class="m">08</span>:00:00      <span class="m">3</span>   idle lims-hpc-<span class="o">[</span><span class="m">1</span>,5<span class="o">]</span>,lims-hpc-m
+</pre></div>
+</td></tr></table>
 Note: the output to the sinfo command will look different depending on which HPC you are using and it's current usage levels
 
 </details>
@@ -2617,7 +2692,7 @@ barcoo1, barcoo3, barcoo4, barcoo5.
 
 <hr />
 <p>Use the <em>cat</em> command to view the contents of <em>task01</em>, <em>task02</em> and <em>task03</em> job script</p>
-<h4 id="32-how-many-cpu-cores-will-each-ask-for">3.2) How many <em>cpu cores</em> will each ask for?</h4>
+<h4 id="32-how-many-cpu-cores-will-each-ask-for">3.2) How many <em>cpu cores</em> will each ask for?<a class="headerlink" href="#32-how-many-cpu-cores-will-each-ask-for" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2655,7 +2730,7 @@ However, since we know that all nodes on *barcoo* have 16, we know it will get 1
 </details>
 
 <hr />
-<h4 id="33-what-about-total-memory">3.3) What about total memory?</h4>
+<h4 id="33-what-about-total-memory">3.3) What about total memory?<a class="headerlink" href="#33-what-about-total-memory" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2699,7 +2774,7 @@ not actually allocate any of it to you so your job will get terminated once it t
 </details>
 
 <hr />
-<h4 id="34-how-long-can-each-run-for">3.4) How long can each run for?</h4>
+<h4 id="34-how-long-can-each-run-for">3.4) How long can each run for?<a class="headerlink" href="#34-how-long-can-each-run-for" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2722,7 +2797,7 @@ The *--time* option is what tells slurm how long your job will run for.
 </details>
 
 <hr />
-<h4 id="35-is-this-maximum-minimum-or-both-runtime">3.5) Is this maximum, minimum or both runtime?</h4>
+<h4 id="35-is-this-maximum-minimum-or-both-runtime">3.5) Is this maximum, minimum or both runtime?<a class="headerlink" href="#35-is-this-maximum-minimum-or-both-runtime" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2743,12 +2818,12 @@ time.  If you think your job may not complete in time you can ask the system adm
 </details>
 
 <hr />
-<h4 id="36-calculate-the-time-specification-for-the-following-runtimes">3.6) Calculate the <em>--time</em> specification for the following runtimes:</h4>
+<h4 id="36-calculate-the-time-specification-for-the-following-runtimes">3.6) Calculate the <em>&ndash;time</em> specification for the following runtimes:<a class="headerlink" href="#36-calculate-the-time-specification-for-the-following-runtimes" title="Permanent link">&para;</a></h4>
 <ol>
-<li><span class="fix150">1h30m:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
-<li><span class="fix150">1m20s:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
-<li><span class="fix150">1.5days:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
-<li><span class="fix150">30m:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
+<li><span class="fix150">1h30m:</span><span class="fix60">&ndash;time=</span><span class="answer100"></span></li>
+<li><span class="fix150">1m20s:</span><span class="fix60">&ndash;time=</span><span class="answer100"></span></li>
+<li><span class="fix150">1.5days:</span><span class="fix60">&ndash;time=</span><span class="answer100"></span></li>
+<li><span class="fix150">30m:</span><span class="fix60">&ndash;time=</span><span class="answer100"></span></li>
 </ol>
 <details>
   <summary>Hint</summary>
@@ -2771,11 +2846,11 @@ Use the *man sbatch* command to look up the time specification.  If you search f
 </details>
 
 <hr />
-<h4 id="37-what-do-the-following-time-specifications-mean">3.7) What do the following --time specifications mean?</h4>
+<h4 id="37-what-do-the-following-time-specifications-mean">3.7) What do the following &ndash;time specifications mean?<a class="headerlink" href="#37-what-do-the-following-time-specifications-mean" title="Permanent link">&para;</a></h4>
 <ol>
-<li><span class="fix150">--time=12-00:20</span><span class="fix60"></span><span class="answer100"></span></li>
-<li><span class="fix150">--time=45</span><span class="fix60"></span><span class="answer100"></span></li>
-<li><span class="fix150">--time=00:30</span><span class="fix60"></span><span class="answer100"></span></li>
+<li><span class="fix150">&ndash;time=12-00:20</span><span class="fix60"></span><span class="answer100"></span></li>
+<li><span class="fix150">&ndash;time=45</span><span class="fix60"></span><span class="answer100"></span></li>
+<li><span class="fix150">&ndash;time=00:30</span><span class="fix60"></span><span class="answer100"></span></li>
 </ol>
 <details>
   <summary>Hint</summary>
@@ -2795,16 +2870,16 @@ Use the *man sbatch* command to look up the time specification.  If you search f
 </details>
 
 <hr />
-<h3 id="reservations">Reservations</h3>
+<h3 id="reservations">Reservations<a class="headerlink" href="#reservations" title="Permanent link">&para;</a></h3>
 <p>Before we continue, a quick note on reservations.  Reservations are not normally needed however sometimes we will, particularly
-when the HPC is busy.  To make use of a reservation you need to know its name and provide it with the <em>--reservation</em> option</p>
+when the HPC is busy.  To make use of a reservation you need to know its name and provide it with the <em>&ndash;reservation</em> option</p>
 <p>Today we use the <em>training</em> reservation so that we have resources available to run our jobs.  Your
 jobs will need to contain the line:</p>
-<p><em>#SBATCH --reservation=training</em></p>
+<p><em>#SBATCH &ndash;reservation=training</em></p>
 <hr />
 <p>Now use sbatch to submit the <em>task01</em> job:</p>
 <hr />
-<h4 id="38-what-job-id-was-your-job-given">3.8) What job id was your job given?</h4>
+<h4 id="38-what-job-id-was-your-job-given">3.8) What job id was your job given?<a class="headerlink" href="#38-what-job-id-was-your-job-given" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2815,17 +2890,18 @@ Use the man page for the sbatch command.  The *Synopsis* at the top will give yo
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ sbatch task01
-Submitted batch job 9998
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sbatch task01
+Submitted batch job <span class="m">9998</span>
+</pre></div>
+</td></tr></table>
 
 **Answer**: it's unique for each job; in the above example mine was *9998*
 
 </details>
 
 <hr />
-<h4 id="39-which-node-did-your-job-go-on">3.9) Which node did your job go on?</h4>
+<h4 id="39-which-node-did-your-job-go-on">3.9) Which node did your job go on?<a class="headerlink" href="#39-which-node-did-your-job-go-on" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2841,21 +2917,24 @@ Use the *squeue* command to show all jobs.  Search for your *jobid* and look in 
 <div class="info"><b>NOTE</b>: if there are lots of jobs you can use <b>squeue -u YOUR_USERNAME</b> to only show your jobs, where
 YOUR_USERNAME is replaced with your actual username.</div>
 
-
-<pre><code class="sh">$ sbatch task01
-Submitted batch job 9999
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sbatch task01
+Submitted batch job <span class="m">9999</span>
 $ squeue -u training01
- JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-  9999   compute   task01 training  R       0:05      1 lims-hpc-2
-</code></pre>
-
+ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+  <span class="m">9999</span>   compute   task01 training  R       <span class="m">0</span>:05      <span class="m">1</span> lims-hpc-2
+</pre></div>
+</td></tr></table>
 
 **Answer**: it's dependent on node availability at time; in the above example mine was *lims-hpc-2*
 
 </details>
 
-<h3 id="advanced">Advanced</h3>
-<h4 id="310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds">3.10) Make a copy of <em>task01</em> and call it <em>prime_numbers</em>.  Make it load the training module and use the <em>prime</em> command to calculate prime numbers for 20 seconds.</h4>
+<h3 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h3>
+<h4 id="310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds">3.10) Make a copy of <em>task01</em> and call it <em>prime_numbers</em>.  Make it load the training module and use the <em>prime</em> command to calculate prime numbers for 20 seconds.<a class="headerlink" href="#310-make-a-copy-of-task01-and-call-it-prime_numbers-make-it-load-the-training-module-and-use-the-prime-command-to-calculate-prime-numbers-for-20-seconds" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2871,21 +2950,31 @@ The key points to change in the task01 script are:
 1. adding the *module load training-gcc/1.0*
 2. replacing the *sleep* (and *echo*) statements with a call to *prime 20*.
 
-
-<pre><code class="bash">#!/bin/bash
-#SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=1024
-#SBATCH --partition=PARTITION
-#SBATCH --time=30:00
-#SBATCH --reservation=RESERVATION
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --mem-per-cpu=1024</span>
+<span class="c1">#SBATCH --partition=PARTITION</span>
+<span class="c1">#SBATCH --time=30:00</span>
+<span class="c1">#SBATCH --reservation=RESERVATION</span>
 
 module load training-gcc/1.0
 
-echo &quot;Starting at: $(date)&quot;
-prime 20
-echo &quot;Finished at: $(date)&quot;
-</code></pre>
-
+<span class="nb">echo</span> <span class="s2">&quot;Starting at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+prime <span class="m">20</span>
+<span class="nb">echo</span> <span class="s2">&quot;Finished at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 
 Where *RESERVATION* is replaced with *training* and
 *PARTITION* is replaced with *main*
@@ -2898,7 +2987,7 @@ of when this job was run.  If you have one before and after your main program yo
 </details>
 
 <hr />
-<h4 id="311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds">3.11) Submit the job.  What was the <em>largest</em> prime number it found in 20 seconds?</h4>
+<h4 id="311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds">3.11) Submit the job.  What was the <em>largest</em> prime number it found in 20 seconds?<a class="headerlink" href="#311-submit-the-job-what-was-the-largest-prime-number-it-found-in-20-seconds" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2912,24 +3001,32 @@ The output from the program will provide the results that we are after.  For HPC
 
 You should get results similar to below however the actual numbers will vary as amount of computations performed will be affected by
 the amount of other jobs running on the HPC
-
-<pre><code class="bash">$ sbatch prime_numbers
-Submitted batch job 9304
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sbatch prime_numbers
+Submitted batch job <span class="m">9304</span>
 $ cat slurm-9304.out
-Starting at: Fri May  8 16:11:07 AEST 2015
+Starting at: Fri May  <span class="m">8</span> <span class="m">16</span>:11:07 AEST <span class="m">2015</span>
 
-Primes:        710119
-Last trial:    10733927
-Largest prime: 10733873
-Runtime:       20 seconds
-Finished at: Fri May  8 16:11:27 AEST 2015
-</code></pre>
-
+Primes:        <span class="m">710119</span>
+Last trial:    <span class="m">10733927</span>
+Largest prime: <span class="m">10733873</span>
+Runtime:       <span class="m">20</span> seconds
+Finished at: Fri May  <span class="m">8</span> <span class="m">16</span>:11:27 AEST <span class="m">2015</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again">3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.</h4>
+<h4 id="312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again">3.12) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again.<a class="headerlink" href="#312-modify-your-prime_numbers-script-to-notify-you-via-email-when-it-starts-and-ends-submit-it-again" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Did it start immediately or have some delay?</strong></li>
 <li><strong>How long did it actually run for?</strong></li>
@@ -2953,22 +3050,35 @@ Both start with *--mail*
 <details>
   <summary>Answer</summary>
 
-<pre><code class="bash">#!/bin/bash
-#SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=1024
-#SBATCH --partition=TRAINING
-#SBATCH --time=30:00
-#SBATCH --reservation=RESERVATION
-#SBATCH --mail-user=name@email.address
-#SBATCH --mail-type=ALL
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --mem-per-cpu=1024</span>
+<span class="c1">#SBATCH --partition=TRAINING</span>
+<span class="c1">#SBATCH --time=30:00</span>
+<span class="c1">#SBATCH --reservation=RESERVATION</span>
+<span class="c1">#SBATCH --mail-user=name@email.address</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
 
 module load training/1.0
 
-echo &quot;Starting at: $(date)&quot;
-prime 20
-echo &quot;Finished at: $(date)&quot;
-</code></pre>
-
+<span class="nb">echo</span> <span class="s2">&quot;Starting at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+prime <span class="m">20</span>
+<span class="nb">echo</span> <span class="s2">&quot;Finished at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 
 Where *RESERVATION* is replaced with *training*, *PARTITION* is replaced with *main* and *name@email.address* by your email address
 
@@ -2980,13 +3090,13 @@ be ~20 seconds.
 
 </details>
 
-<h2 id="topic-4-job-monitoring">Topic 4: Job Monitoring</h2>
+<h2 id="topic-4-job-monitoring">Topic 4: Job Monitoring<a class="headerlink" href="#topic-4-job-monitoring" title="Permanent link">&para;</a></h2>
 <p>It is often difficult to predict how a software tool may utilise HPC System Resources (CPU/Memory) as it can vary quite widely based
-on a number of factors (data set, number of CPU's, processing step etc.).</p>
+on a number of factors (data set, number of CPU&rsquo;s, processing step etc.).</p>
 <p>In this topic we will cover some of the tools that are available that enable you to <em>watch</em> what is happening so we can make better predictions
 in the future.</p>
-<h3 id="exercises_3">Exercises</h3>
-<h4 id="41-what-does-the-top-command-show">4.1) What does the <em>top</em> command show?</h4>
+<h3 id="exercises_3">Exercises<a class="headerlink" href="#exercises_3" title="Permanent link">&para;</a></h3>
+<h4 id="41-what-does-the-top-command-show">4.1) What does the <em>top</em> command show?<a class="headerlink" href="#41-what-does-the-top-command-show" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2997,13 +3107,17 @@ When all else fails, try *man*; specifically, the description section
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ man top
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ man top
 ...
 DESCRIPTION
        The top program provides a dynamic real-time view of a running system.
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: in lay-person terms *"Continually updating CPU and Memory usage"*
 
@@ -3012,7 +3126,7 @@ DESCRIPTION
 <hr />
 <p>Run the <em>top</em> command.  Above the black line it shows some <em>system-wide statistics</em> and below are statistics specific to a single
 process (a.k.a, tasks OR software applications).</p>
-<h4 id="42-how-much-total-memory-does-this-hpc-head-node-have">4.2) How much total memory does this HPC (head-node) have?</h4>
+<h4 id="42-how-much-total-memory-does-this-hpc-head-node-have">4.2) How much total memory does this HPC (head-node) have?<a class="headerlink" href="#42-how-much-total-memory-does-this-hpc-head-node-have" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3033,7 +3147,7 @@ To transfer from kB to MB you divide by 1024 and MB to GB by 1024 again.
 </details>
 
 <hr />
-<h4 id="43-what-is-the-current-total-cpu-usage">4.3) What is the current total CPU usage?</h4>
+<h4 id="43-what-is-the-current-total-cpu-usage">4.3) What is the current total CPU usage?<a class="headerlink" href="#43-what-is-the-current-total-cpu-usage" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3058,7 +3172,7 @@ This might be easier to work out what is not used and subtract it from 100%
 </details>
 
 <hr />
-<h4 id="44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low">4.4) What column does it appear to be sorting the processes by? Is this <em>low-to-high</em> OR <em>high-to-low</em>?</h4>
+<h4 id="44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low">4.4) What column does it appear to be sorting the processes by? Is this <em>low-to-high</em> OR <em>high-to-low</em>?<a class="headerlink" href="#44-what-column-does-it-appear-to-be-sorting-the-processes-by-is-this-low-to-high-or-high-to-low" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3076,7 +3190,7 @@ It's not PID but from time to time it might be ordered sequentially.
 <hr />
 <p>Add up the top few CPU usages of processes and compare this to the system-wide CPU usage at that time.  NOTE: you may need to quit
 <em>top</em> (by pressing q) so you can compare before it updates.</p>
-<h4 id="45-why-might-the-numbers-disagree">4.5) Why might the numbers disagree?</h4>
+<h4 id="45-why-might-the-numbers-disagree">4.5) Why might the numbers disagree?<a class="headerlink" href="#45-why-might-the-numbers-disagree" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3095,7 +3209,7 @@ On BARCOO it is 0-2400% and SNOWY it is 0-3200% for individual processes.
 </details>
 
 <hr />
-<h4 id="46-what-command-line-flag-instructs-top-to-sort-results-by-mem">4.6) What command-line flag instructs <em>top</em> to sort results by <em>%MEM</em>?</h4>
+<h4 id="46-what-command-line-flag-instructs-top-to-sort-results-by-mem">4.6) What command-line flag instructs <em>top</em> to sort results by <em>%MEM</em>?<a class="headerlink" href="#46-what-command-line-flag-instructs-top-to-sort-results-by-mem" title="Permanent link">&para;</a></h4>
 <p>Can you think of a reason that this might be useful?</p>
 <details>
   <summary>Hint</summary>
@@ -3125,7 +3239,7 @@ Your program might be using a lot of memory and you want to know how much; by so
 </details>
 
 <hr />
-<h4 id="47-run-top-c-what-does-it-do-how-might-this-be-helpful">4.7) Run <em>"top -c"</em>.  What does it do?  How might this be helpful?</h4>
+<h4 id="47-run-top-c-what-does-it-do-how-might-this-be-helpful">4.7) Run <em>&ldquo;top -c&rdquo;</em>.  What does it do?  How might this be helpful?<a class="headerlink" href="#47-run-top-c-what-does-it-do-how-might-this-be-helpful" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3160,7 +3274,7 @@ If *top* is running you can press the *c* key to toggle show/hide complete comma
 </details>
 
 <hr />
-<h4 id="48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful">4.8) How can you get <em>top</em> to only show your processes?  Why might this be useful?</h4>
+<h4 id="48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful">4.8) How can you get <em>top</em> to only show your processes?  Why might this be useful?<a class="headerlink" href="#48-how-can-you-get-top-to-only-show-your-processes-why-might-this-be-useful" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3190,7 +3304,7 @@ to quickly identify yours.
 
 </details>
 
-<h2 id="topic-5-all-together">Topic 5: All Together</h2>
+<h2 id="topic-5-all-together">Topic 5: All Together<a class="headerlink" href="#topic-5-all-together" title="Permanent link">&para;</a></h2>
 <p>This topic will allow you to put all the skills that you learnt in this workshop to the test.  You might need to refer back to
 the earlier topics if you have forgotten how to do these tasks.</p>
 <p><strong>Overview</strong>:</p>
@@ -3200,7 +3314,7 @@ the earlier topics if you have forgotten how to do these tasks.</p>
 <li>Submit job</li>
 <li>Monitor job</li>
 </ul>
-<h3 id="task-1-write-a-job-script">Task 1: Write a job script</h3>
+<h3 id="task-1-write-a-job-script">Task 1: Write a job script<a class="headerlink" href="#task-1-write-a-job-script" title="Permanent link">&para;</a></h3>
 <p>Write a job script that requests the following resources:</p>
 <ul>
 <li><strong>Filename</strong>: monINITIALS.slurm<ul>
@@ -3214,7 +3328,7 @@ the earlier topics if you have forgotten how to do these tasks.</p>
 <li><strong>Memory</strong>: 1 GB (remember to specify it in MB)</li>
 <li><strong>Reservation</strong>: training</li>
 </ul>
-<h3 id="task-2-loaduse-software-module">Task 2: Load/use software module</h3>
+<h3 id="task-2-loaduse-software-module">Task 2: Load/use software module<a class="headerlink" href="#task-2-loaduse-software-module" title="Permanent link">&para;</a></h3>
 <p>Edit your job script so that it:</p>
 <ul>
 <li>Loads the <em>training-gcc/1.0</em> module</li>
@@ -3229,7 +3343,7 @@ the earlier topics if you have forgotten how to do these tasks.</p>
 <b>NOTE</b>: remember good practice here and add the date commands to print the date/time in your output.  You can copy them from the *task01* script.
 </div>
 
-<h3 id="task-3-submit-job">Task 3: Submit job</h3>
+<h3 id="task-3-submit-job">Task 3: Submit job<a class="headerlink" href="#task-3-submit-job" title="Permanent link">&para;</a></h3>
 <div class="warning">
 <b>NOTE</b>: Task 4 is time dependent on task 3; you need to do it within 2 or 3 minutes of running step 3.1 so it might be a good idea to
 read ahead before hand.  Don't stress if you don't complete it in time, you can simply run 3.1 again.
@@ -3241,32 +3355,41 @@ read ahead before hand.  Don't stress if you don't complete it in time, you can 
 <li>Use squeue (or qs) to check that is started ok.</li>
 <li>When it starts check which compute node it is running on (for the next task).</li>
 </ol>
-<h3 id="task-4-monitor-the-job">Task 4: Monitor the job</h3>
+<h3 id="task-4-monitor-the-job">Task 4: Monitor the job<a class="headerlink" href="#task-4-monitor-the-job" title="Permanent link">&para;</a></h3>
 <p>Use the <em>top</em> command to check how much CPU and Memory the job is using.  Given that SLURM is running the job on your behalf on one of the compute
-nodes, <em>top</em> won't be able to see the job.  To be able to use top, you will first need to login to the compute node that is running your job.</p>
+nodes, <em>top</em> won&rsquo;t be able to see the job.  To be able to use top, you will first need to login to the compute node that is running your job.</p>
 <p>To login:</p>
-<pre><code class="sh">$ ssh barcooXXX
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ssh barcooXXX
+</pre></div>
+</td></tr></table>
 
 <p>Where XXX is the actual node number you were allocated (See task 3.4).</p>
 <p>You are now connected from your computer to barcoo which is connected to barcooXXX.</p>
-<pre><code class="text">+---------------+            +------------+            +------------+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>+---------------+            +------------+            +------------+
 | YOUR COMPUTER | -- SSH --&gt; |  BARCOO    | -- SSH --&gt; | BARCOOXXX  |
 +---------------+            +------------+            +------------+
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p>You can tell which node you are on by the text in the prompt</p>
-<pre><code class="sh">[USERNAME@barcoo USERNAME]$
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span>USERNAME@barcoo USERNAME<span class="o">]</span>$
 
 Changes to:
 
-[USERNAME@barcooXXX USERNAME]$
-</code></pre>
+<span class="o">[</span>USERNAME@barcooXXX USERNAME<span class="o">]</span>$
+</pre></div>
+</td></tr></table>
 
 <p>Once logged in to the relevent compute node you can run <em>top</em> to view your job.  Remember the <em>u</em> and <em>c</em> options we learnt earlier; they will be helpful
 here when everyone is running the same jobs.</p>
 <hr />
-<h4 id="how-does-the-cpu-and-memory-usage-change-over-time">How does the CPU and Memory usage change over time?</h4>
+<h4 id="how-does-the-cpu-and-memory-usage-change-over-time">How does the CPU and Memory usage change over time?<a class="headerlink" href="#how-does-the-cpu-and-memory-usage-change-over-time" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3283,14 +3406,14 @@ memory of the node that runs your job; check Topic 4, Question 4.2 to remember h
 </details>
 
 <hr />
-<h2 id="finished">Finished</h2>
+<h2 id="finished">Finished<a class="headerlink" href="#finished" title="Permanent link">&para;</a></h2>
 <p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it
 was a lot to take in.</p>
 <p>From here you should be comfortable to begin submitting real jobs to the HPC (in your real account,
 not the training one).</p>
 <p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this
 workshop for later reference.</p>
-<p>Thank you for your attendance, please don't forget to complete the training survey and return it
+<p>Thank you for your attendance, please don&rsquo;t forget to complete the training survey and return it
 to the workshop facilitators.</p>
                 
                   

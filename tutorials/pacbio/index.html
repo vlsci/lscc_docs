@@ -1483,64 +1483,68 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/pacbio/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="long-read-assembly-workshop">Long read assembly workshop</h1>
+                <h1 id="long-read-assembly-workshop">Long read assembly workshop<a class="headerlink" href="#long-read-assembly-workshop" title="Permanent link">&para;</a></h1>
 <p>This is a tutorial for a workshop on long-read (PacBio) genome assembly.</p>
 <p>It demonstrates how to use long PacBio sequencing reads to assemble a bacterial genome, and includes additional steps for circularising, trimming, finding plasmids, and correcting the assembly with short-read Illumina data.</p>
-<h2 id="overview">Overview</h2>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Simplified version of workflow:</p>
 <p><img alt="workflow" src="images/flowchart.png" /></p>
-<h2 id="1-get-started">1. Get started</h2>
+<h2 id="1-get-started">1. Get started<a class="headerlink" href="#1-get-started" title="Permanent link">&para;</a></h2>
 <p>Your workshop trainers will provide you with the address of a virtual machine.</p>
-<h3 id="mac-users">Mac users</h3>
+<h3 id="mac-users">Mac users<a class="headerlink" href="#mac-users" title="Permanent link">&para;</a></h3>
 <p>Open the Terminal.</p>
 <ul>
 <li>Type in</li>
 </ul>
-<pre><code>ssh researcher@[your virtual machine address]
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ssh</span> <span class="n">researcher</span><span class="o">@</span><span class="p">[</span><span class="n">your</span> <span class="n">virtual</span> <span class="n">machine</span> <span class="n">address</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>Type in the password provided.</li>
 </ul>
-<h3 id="windows-users">Windows users</h3>
+<h3 id="windows-users">Windows users<a class="headerlink" href="#windows-users" title="Permanent link">&para;</a></h3>
 <p>If you are using Windows 10, you might be able to use the Ubuntu Subsystem. Otherwise, install and open Putty.</p>
 <ul>
 <li>Download putty <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>.</li>
 <li>Open. A configuration window will appear.</li>
-<li>Under "Host Name (or IP address)" enter in the address of your virtual machine.</li>
-<li>Under "Port" type in 22</li>
-<li>Under "Connection Type" select "SSH"</li>
-<li>Click "Open"</li>
-<li>Under "Login as:" enter "researcher"</li>
+<li>Under &ldquo;Host Name (or IP address)&rdquo; enter in the address of your virtual machine.</li>
+<li>Under &ldquo;Port&rdquo; type in 22</li>
+<li>Under &ldquo;Connection Type&rdquo; select &ldquo;SSH&rdquo;</li>
+<li>Click &ldquo;Open&rdquo;</li>
+<li>Under &ldquo;Login as:&rdquo; enter &ldquo;researcher&rdquo;</li>
 <li>Type in the password provided.</li>
 </ul>
-<h3 id="activate-the-conda-environment">Activate the conda environment</h3>
-<p>Type in:</p>
-<pre><code>source /mnt/gvl/apps/conda/bin/activate
-</code></pre>
-
+<h3 id="activate-the-conda-environment">Activate the conda environment<a class="headerlink" href="#activate-the-conda-environment" title="Permanent link">&para;</a></h3>
+<p>Type in:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">source</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">gvl</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</td></tr></table></p>
 <p>(This points us to some different directories for the software we need).</p>
-<h3 id="create-a-new-working-directory-on-your-remote-computer">Create a new working directory on your remote computer.</h3>
+<h3 id="create-a-new-working-directory-on-your-remote-computer">Create a new working directory on your remote computer.<a class="headerlink" href="#create-a-new-working-directory-on-your-remote-computer" title="Permanent link">&para;</a></h3>
 <p>Because we are starting a new analysis it is always good practice to start in a new empty directory. Therefore, we will create a new directory and change to it for the rest of the workshop.</p>
 <p>In your terminal:</p>
 <ul>
-<li>Create a new directory called "Workshop"</li>
+<li>Create a new directory called &ldquo;Workshop&rdquo;</li>
 </ul>
-<pre><code class="text">mkdir Workshop
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir Workshop
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>Change to that directory</li>
 </ul>
-<pre><code class="text">cd Workshop
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd Workshop
+</pre></div>
+</td></tr></table>
 
 <p><strong>NOTE: Every time you open a new terminal or Putty session, you will need to make sure you are in this directory again.</strong></p>
 <p>Find your current directory by typing:</p>
-<pre><code class="text">pwd
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pwd
+</pre></div>
+</td></tr></table>
 
-<h2 id="2-get-data">2. Get data</h2>
+<h2 id="2-get-data">2. Get data<a class="headerlink" href="#2-get-data" title="Permanent link">&para;</a></h2>
 <p>The sample used in this tutorial is from a bacteria called <em>Staphylococcus aureus</em>. We have used a small section of its real genome so that the programs can run in the workshop time.</p>
 <p>The files we need are:</p>
 <ul>
@@ -1550,57 +1554,62 @@
 </ul>
 <p>In a new tab, go to <a href="https://doi.org/10.5281/zenodo.1009308">https://doi.org/10.5281/zenodo.1009308</a>.</p>
 <ul>
-<li>Next to the first file, right-click (or control-click) the "Download" button, and select "Copy link address".</li>
-<li>Back in your terminal, enter</li>
-</ul>
-<pre><code class="text">wget [paste file link here]
-</code></pre>
-
-<ul>
+<li>Next to the first file, right-click (or control-click) the &ldquo;Download&rdquo; button, and select &ldquo;Copy link address&rdquo;.</li>
+<li>Back in your terminal, enter
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wget [paste file link here]
+</pre></div>
+</td></tr></table></li>
 <li>The file should download.</li>
 <li><em>Note:</em> paste the link to the file, not to the webpage.</li>
 <li>Repeat this for the other two files.</li>
 </ul>
-<p>Shorten each of these files names with the <code>mv</code> command:</p>
-<pre><code>mv R1.fq\?download\=1 R1.fq
-mv R2.fq\?download\=1 R2.fq
-mv pacbio.fq\?download\=1 pacbio.fq
-</code></pre>
+<p>Shorten each of these files names with the <code class="codehilite"><span class="n">mv</span></code> command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mv</span> <span class="n">R1</span><span class="p">.</span><span class="n">fq</span><span class="err">\</span><span class="o">?</span><span class="n">download</span><span class="err">\</span><span class="o">=</span><span class="mi">1</span> <span class="n">R1</span><span class="p">.</span><span class="n">fq</span>
+<span class="n">mv</span> <span class="n">R2</span><span class="p">.</span><span class="n">fq</span><span class="err">\</span><span class="o">?</span><span class="n">download</span><span class="err">\</span><span class="o">=</span><span class="mi">1</span> <span class="n">R2</span><span class="p">.</span><span class="n">fq</span>
+<span class="n">mv</span> <span class="n">pacbio</span><span class="p">.</span><span class="n">fq</span><span class="err">\</span><span class="o">?</span><span class="n">download</span><span class="err">\</span><span class="o">=</span><span class="mi">1</span> <span class="n">pacbio</span><span class="p">.</span><span class="n">fq</span>
+</pre></div>
+</td></tr></table>
 
-<p>Type in <code>ls</code> to check the files are present and correctly-named.</p>
+<p>Type in <code class="codehilite"><span class="n">ls</span></code> to check the files are present and correctly-named.</p>
 <p>We should have <fn>R1.fq</fn>, <fn>R2.fq</fn> and <fn>pacbio.fq</fn>.</p>
-<h2 id="3-assemble">3. Assemble<a name="assemble"></a></h2>
+<h2 id="3-assemble">3. Assemble<a name="assemble"></a><a class="headerlink" href="#3-assemble" title="Permanent link">&para;</a></h2>
 <p>We will use the assembly software called <a href="http://canu.readthedocs.io/en/stable/">Canu</a>, version 1.7.</p>
 <p>Run Canu with these commands:</p>
-<pre><code class="text">canu -p canu -d canu_outdir genomeSize=0.03m corThreads=3 -pacbio-raw pacbio.fq
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>canu -p canu -d canu_outdir genomeSize=0.03m corThreads=3 -pacbio-raw pacbio.fq
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li>the first <code>canu</code> tells the program to run</li>
-<li><code>-p canu</code> names prefix for output files ("canu")</li>
-<li><code>-d canu_outdir</code> names output directory ("canu_outdir")</li>
-<li><code>genomeSize</code> only has to be approximate. (In this case we are using a partial genome of expected size 30,000 base pairs).</li>
-<li><code>corThreads=3</code> sets the number of available threads.</li>
+<li>the first <code class="codehilite"><span class="n">canu</span></code> tells the program to run</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">p</span> <span class="n">canu</span></code> names prefix for output files (&ldquo;canu&rdquo;)</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">d</span> <span class="n">canu_outdir</span></code> names output directory (&ldquo;canu_outdir&rdquo;)</li>
+<li><code class="codehilite"><span class="n">genomeSize</span></code> only has to be approximate. (In this case we are using a partial genome of expected size 30,000 base pairs).</li>
+<li><code class="codehilite"><span class="n">corThreads</span><span class="o">=</span><span class="mi">3</span></code> sets the number of available threads.</li>
 <li>Canu will correct, trim and assemble the reads.</li>
 <li>Various output will be displayed on the screen.</li>
-<li><em>Note</em>: Canu could say "Finished" but may still be running. In this case, type <code>squeue</code> to see if jobs are still running.</li>
+<li><em>Note</em>: Canu could say &ldquo;Finished&rdquo; but may still be running. In this case, type <code class="codehilite"><span class="n">squeue</span></code> to see if jobs are still running.</li>
 </ul>
-<p>If you run <code>squeue</code> you will see something like this:</p>
-<pre><code class="text">             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+<p>If you run <code class="codehilite"><span class="n">squeue</span></code> you will see something like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                  6      main canu_can research PD       0:00      1 (Dependency)
                5_1      main cormhap_ research  R       0:29      1 master
-</code></pre>
+</pre></div>
+</td></tr></table>
 
-<p>You will know if <strong>Canu</strong> has completely finished when <code>squeue</code> shows no jobs listed under the header row.</p>
-<h2 id="4-check-assembly-output">4. Check assembly output</h2>
-<p>Move into the canu output folder:</p>
-<pre><code>cd canu_outdir
-</code></pre>
-
-<p>View the list of files:</p>
-<pre><code>ls
-</code></pre>
-
+<p>You will know if <strong>Canu</strong> has completely finished when <code class="codehilite"><span class="n">squeue</span></code> shows no jobs listed under the header row.</p>
+<h2 id="4-check-assembly-output">4. Check assembly output<a class="headerlink" href="#4-check-assembly-output" title="Permanent link">&para;</a></h2>
+<p>Move into the canu output folder:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="n">canu_outdir</span>
+</pre></div>
+</td></tr></table></p>
+<p>View the list of files:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</td></tr></table></p>
 <ul>
 <li>The <fn>canu.contigs.fasta</fn> are the assembled sequences.</li>
 <li>The <fn>canu.unassembled.fasta</fn> are the reads that could not be assembled.</li>
@@ -1608,28 +1617,30 @@ mv pacbio.fq\?download\=1 pacbio.fq
 <li>The <fn>canu.contigs.gfa</fn> is the graph of the assembly.</li>
 <li>The <fn>canu.report</fn> file is a summary of all of the steps Canu performed with information about the reads used, how they were handled and a whole lot of summary information about the assembly.</li>
 </ul>
-<p>Display summary information about the contigs: (<code>infoseq</code> is a tool from <a href="http://emboss.sourceforge.net/index.html">EMBOSS</a>)</p>
-<pre><code class="text">infoseq canu.contigs.fasta
-</code></pre>
+<p>Display summary information about the contigs: (<code class="codehilite"><span class="n">infoseq</span></code> is a tool from <a href="http://emboss.sourceforge.net/index.html">EMBOSS</a>)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>infoseq canu.contigs.fasta
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>This will show the contigs found by Canu. e.g.,  tig00000001  47997</li>
-<li>"tig00000001" is the name given to the contig</li>
-<li>"47997" is the number of base pairs in that contig.</li>
+<li>&ldquo;tig00000001&rdquo; is the name given to the contig</li>
+<li>&ldquo;47997&rdquo; is the number of base pairs in that contig.</li>
 </ul>
 <p>This matches what we were expecting for this sample (approximately 30,000 base pairs). For other data, Canu may not be able to join all the reads into one contig, so there may be several contigs in the output.</p>
 <p>We should also look at the <fn>canu.report</fn>. To do this:</p>
-<pre><code>less canu.report
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">less</span> <span class="n">canu</span><span class="p">.</span><span class="n">report</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li>"less" is a command to display the file on the screen.</li>
+<li>&ldquo;less&rdquo; is a command to display the file on the screen.</li>
 <li>Use the up and down arrows to scroll up and down.</li>
 <li>You will see lots of histograms of read lengths before and after processing, final contig construction, etc.</li>
 <li>For a description of the outputs that Canu produces, see: <a href="http://canu.readthedocs.io/en/latest/tutorial.html#outputs">http://canu.readthedocs.io/en/latest/tutorial.html#outputs</a></li>
-<li>Type <code>q</code> to exit viewing the report.</li>
+<li>Type <code class="codehilite"><span class="n">q</span></code> to exit viewing the report.</li>
 </ul>
-<h3 id="questions">Questions</h3>
+<h3 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h3>
 <p>How do long- and short-read assembly methods differ?</p>
 <details>
 <summary>Answer (click to reveal)</summary>
@@ -1660,73 +1671,77 @@ Canu builds overlaps between reads. The consensus is used to correct the reads.
 A useful program is [Bandage](https://rrwick.github.io/Bandage/). If the assembly has multiple contigs, the assembly graph shows how these are connected.
 </details>
 
-<h2 id="5-trim-and-circularise">5. Trim and circularise</h2>
+<h2 id="5-trim-and-circularise">5. Trim and circularise<a class="headerlink" href="#5-trim-and-circularise" title="Permanent link">&para;</a></h2>
 <p>Bacteria have circular chromosomes.</p>
 <ul>
-<li>Because of sequencing errors, there may be some "overhang" in the assembled linear sequence.</li>
+<li>Because of sequencing errors, there may be some &ldquo;overhang&rdquo; in the assembled linear sequence.</li>
 <li>Our assembly may have some overhang because it is 9000 bases longer than expected.</li>
 </ul>
 <p><img alt="circlator" src="images/circlator_diagram.png" />
 <em>Adapted from Figure 1. Hunt et al. Genome Biology 2015</em></p>
 <p>A tool called <a href="http://sanger-pathogens.github.io/circlator/">Circlator</a> identifies and trims overhangs (on chromosomes and plasmids). It takes in the assembled contigs from Canu, as well as the corrected reads prepared by Canu.</p>
-<p>Move back into your main analysis folder:</p>
-<pre><code>cd ..
-</code></pre>
-
-<h3 id="run-circlator">Run Circlator</h3>
-<pre><code class="text">circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir
-</code></pre>
+<p>Move back into your main analysis folder:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="p">..</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="run-circlator">Run Circlator<a class="headerlink" href="#run-circlator" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
 <p>(Click on the dark grey slider bar above and move it to the right, to see all the way to the end of the line.)</p>
 </li>
 <li>
-<p><code>--threads</code> is the number of cores</p>
+<p><code class="codehilite"><span class="c1">--threads</span></code> is the number of cores</p>
 </li>
-<li><code>--verbose</code> prints progress information to the screen</li>
-<li><code>canu_outdir/canu.contigs.fasta</code> is the file path to the input Canu assembly</li>
-<li><code>canu_outdir/canu.correctedReads.fasta.gz</code> is the file path to the corrected Pacbio reads - note, fastA not fastQ</li>
-<li><code>circlator_outdir</code> is the name of the output directory.</li>
+<li><code class="codehilite"><span class="c1">--verbose</span></code> prints progress information to the screen</li>
+<li><code class="codehilite"><span class="n">canu_outdir</span><span class="o">/</span><span class="n">canu</span><span class="p">.</span><span class="n">contigs</span><span class="p">.</span><span class="n">fasta</span></code> is the file path to the input Canu assembly</li>
+<li><code class="codehilite"><span class="n">canu_outdir</span><span class="o">/</span><span class="n">canu</span><span class="p">.</span><span class="n">correctedReads</span><span class="p">.</span><span class="n">fasta</span><span class="p">.</span><span class="n">gz</span></code> is the file path to the corrected Pacbio reads - note, fastA not fastQ</li>
+<li><code class="codehilite"><span class="n">circlator_outdir</span></code> is the name of the output directory.</li>
 </ul>
-<p>Some output will print to screen. When finished, it should say "Circularized x of x contig(s)".</p>
-<h3 id="check-the-output">Check the output</h3>
+<p>Some output will print to screen. When finished, it should say &ldquo;Circularized x of x contig(s)&rdquo;.</p>
+<h3 id="check-the-output">Check the output<a class="headerlink" href="#check-the-output" title="Permanent link">&para;</a></h3>
 <p>Move into the Circlator output directory:</p>
-<pre><code>cd circlator_outdir
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="n">circlator_outdir</span>
+</pre></div>
+</td></tr></table>
 
-<p>List the files:</p>
-<pre><code>ls
-</code></pre>
-
+<p>List the files:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</td></tr></table></p>
 <p>Circlator has named the output files with numbers as prefixes.</p>
 <p>Were the contigs circularised?</p>
-<pre><code>less 04.merge.circularise.log
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">less</span> <span class="mi">04</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">circularise</span><span class="p">.</span><span class="n">log</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li>"less" is a command to display the file on the screen.</li>
+<li>&ldquo;less&rdquo; is a command to display the file on the screen.</li>
 <li><fn>04.merge.circularise.log</fn> is the name of the file.</li>
 <li>Yes, the contig was circularised (last column).</li>
-<li>Type <code>q</code> to exit.</li>
+<li>Type <code class="codehilite"><span class="n">q</span></code> to exit.</li>
 </ul>
-<p>What are the trimmed contig sizes?</p>
-<pre><code>infoseq 06.fixstart.fasta
-</code></pre>
-
+<p>What are the trimmed contig sizes?
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">infoseq</span> <span class="mi">06</span><span class="p">.</span><span class="n">fixstart</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table></p>
 <ul>
-<li>The contig "tig00000001" has a length of 30019.</li>
-<li>This is about 18,000 bases shorter than before circularisation. This was the "overhang" and has now been trimmed.</li>
+<li>The contig &ldquo;tig00000001&rdquo; has a length of 30019.</li>
+<li>This is about 18,000 bases shorter than before circularisation. This was the &ldquo;overhang&rdquo; and has now been trimmed.</li>
 </ul>
 <p>Copy the circularised contigs file to the main analysis directory with a new name:</p>
-<pre><code>cp 06.fixstart.fasta ../contig1.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cp</span> <span class="mi">06</span><span class="p">.</span><span class="n">fixstart</span><span class="p">.</span><span class="n">fasta</span> <span class="p">..</span><span class="o">/</span><span class="n">contig1</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table>
 
-<p>Move back into the main folder:</p>
-<pre><code>cd ..
-</code></pre>
-
-<h3 id="questions_1">Questions</h3>
+<p>Move back into the main folder:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="p">..</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="questions_1">Questions<a class="headerlink" href="#questions_1" title="Permanent link">&para;</a></h3>
 <p>Were all the contigs circularised?</p>
 <details>
 <summary>Answer (click to reveal)</summary>
@@ -1739,191 +1754,197 @@ In this example, yes, the contig was circularised.
 Circlator uses dnaA (if present) for the chromosomal contig. For other contigs, it uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as repA. It is possible to provide a file to Circlator to do this.
 </details>
 
-<h2 id="6-find-smaller-plasmids">6. Find smaller plasmids</h2>
+<h2 id="6-find-smaller-plasmids">6. Find smaller plasmids<a class="headerlink" href="#6-find-smaller-plasmids" title="Permanent link">&para;</a></h2>
 <p>Pacbio reads are long, and may have been longer than small plasmids. We will look for any small plasmids using the Illumina reads.</p>
 <p>This section involves several steps:</p>
 <ol>
 <li>Use the Canu+Circlator output of a trimmed assembly contig.</li>
 <li>Map all the Illumina reads against this Pacbio-assembled contig.</li>
-<li>Extract any reads that <em>didn't</em> map and assemble them together: this could be a plasmid, or part of a plasmid.</li>
+<li>Extract any reads that <em>didn&rsquo;t</em> map and assemble them together: this could be a plasmid, or part of a plasmid.</li>
 <li>Look for overhang: if found, trim.</li>
 </ol>
-<h3 id="align-illumina-reads-to-the-pacbio-contig">Align Illumina reads to the PacBio contig</h3>
+<h3 id="align-illumina-reads-to-the-pacbio-contig">Align Illumina reads to the PacBio contig<a class="headerlink" href="#align-illumina-reads-to-the-pacbio-contig" title="Permanent link">&para;</a></h3>
 <p>Index the contigs file:</p>
-<pre><code class="text">bwa index contig1.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bwa index contig1.fasta
+</pre></div>
+</td></tr></table>
 
 <p>Align Illumina reads using using bwa mem:</p>
-<pre><code class="text">bwa mem -t 4 contig1.fasta R1.fq R2.fq | samtools sort &gt; aln.bam
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bwa mem -t 4 contig1.fasta R1.fq R2.fq | samtools sort &gt; aln.bam
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li><code>bwa mem</code> is the alignment tool</li>
-<li><code>-t 4</code> is the number of cores</li>
-<li><code>contig1.fasta</code> is the input assembly file</li>
-<li><code>R1.fq R2.fq</code> are the Illumina reads</li>
-<li><code>| samtools sort</code> pipes the output to samtools to sort</li>
-<li><code>&gt; aln.bam</code> sends the alignment to the file <fn>aln.bam</fn></li>
+<li><code class="codehilite"><span class="n">bwa</span> <span class="n">mem</span></code> is the alignment tool</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">t</span> <span class="mi">4</span></code> is the number of cores</li>
+<li><code class="codehilite"><span class="n">contig1</span><span class="p">.</span><span class="n">fasta</span></code> is the input assembly file</li>
+<li><code class="codehilite"><span class="n">R1</span><span class="p">.</span><span class="n">fq</span> <span class="n">R2</span><span class="p">.</span><span class="n">fq</span></code> are the Illumina reads</li>
+<li><code class="codehilite"><span class="o">|</span> <span class="n">samtools</span> <span class="n">sort</span></code> pipes the output to samtools to sort</li>
+<li><code class="codehilite"><span class="o">&gt;</span> <span class="n">aln</span><span class="p">.</span><span class="n">bam</span></code> sends the alignment to the file <fn>aln.bam</fn></li>
 </ul>
-<h3 id="extract-unmapped-illumina-reads">Extract unmapped Illumina reads</h3>
+<h3 id="extract-unmapped-illumina-reads">Extract unmapped Illumina reads<a class="headerlink" href="#extract-unmapped-illumina-reads" title="Permanent link">&para;</a></h3>
 <p>Index the alignment file:</p>
-<pre><code class="text">samtools index aln.bam
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>samtools index aln.bam
+</pre></div>
+</td></tr></table>
 
-<p>Extract the fastq files from the bam alignment - those reads that were unmapped to the Pacbio alignment - and save them in various "unmapped" files:</p>
-<pre><code class="text">samtools fastq -f 4 -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq aln.bam
-</code></pre>
+<p>Extract the fastq files from the bam alignment - those reads that were unmapped to the Pacbio alignment - and save them in various &ldquo;unmapped&rdquo; files:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>samtools fastq -f 4 -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq aln.bam
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li><code>fastq</code> is a command that coverts a <fn>.bam</fn> file into fastq format</li>
-<li><code>-f 4</code> : only output unmapped reads</li>
-<li><code>-1</code> : put R1 reads into a file called <fn>unmapped.R1.fastq</fn></li>
-<li><code>-2</code> : put R2 reads into a file called <fn>unmapped.R2.fastq</fn></li>
-<li><code>-s</code> : put singleton reads into a file called <fn>unmapped.RS.fastq</fn></li>
-<li><code>aln.bam</code> : input alignment file</li>
+<li><code class="codehilite"><span class="n">fastq</span></code> is a command that coverts a <fn>.bam</fn> file into fastq format</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">f</span> <span class="mi">4</span></code> : only output unmapped reads</li>
+<li><code class="codehilite"><span class="o">-</span><span class="mi">1</span></code> : put R1 reads into a file called <fn>unmapped.R1.fastq</fn></li>
+<li><code class="codehilite"><span class="o">-</span><span class="mi">2</span></code> : put R2 reads into a file called <fn>unmapped.R2.fastq</fn></li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">s</span></code> : put singleton reads into a file called <fn>unmapped.RS.fastq</fn></li>
+<li><code class="codehilite"><span class="n">aln</span><span class="p">.</span><span class="n">bam</span></code> : input alignment file</li>
 </ul>
 <p>We now have three files of the unampped reads: <fn> unmapped.R1.fastq</fn>, <fn> unmapped.R2.fastq</fn>, <fn> unmapped.RS.fastq</fn>.</p>
-<h3 id="assemble-the-unmapped-reads">Assemble the unmapped reads</h3>
+<h3 id="assemble-the-unmapped-reads">Assemble the unmapped reads<a class="headerlink" href="#assemble-the-unmapped-reads" title="Permanent link">&para;</a></h3>
 <p>Assemble with Spades:</p>
-<pre><code class="text">spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
 <p>(Click on the dark grey slider bar above and move it to the right, to see all the way to the end of the line.)</p>
 </li>
 <li>
-<p><code>-1</code> is input file forward</p>
+<p><code class="codehilite"><span class="o">-</span><span class="mi">1</span></code> is input file forward</p>
 </li>
-<li><code>-2</code> is input file reverse</li>
-<li><code>-s</code> is unpaired</li>
-<li><code>--careful</code> minimizes mismatches and short indels</li>
-<li><code>--cov-cutoff auto</code> computes the coverage threshold (rather than the default setting, "off")</li>
-<li><code>-o</code> is the output directory</li>
+<li><code class="codehilite"><span class="o">-</span><span class="mi">2</span></code> is input file reverse</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">s</span></code> is unpaired</li>
+<li><code class="codehilite"><span class="c1">--careful</span></code> minimizes mismatches and short indels</li>
+<li><code class="codehilite"><span class="c1">--cov-cutoff auto</span></code> computes the coverage threshold (rather than the default setting, &ldquo;off&rdquo;)</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">o</span></code> is the output directory</li>
 </ul>
-<p>Move into the output directory:</p>
-<pre><code>cd spades_assembly
-</code></pre>
-
-<p>Look at the contigs:</p>
-<pre><code>infoseq contigs.fasta
-</code></pre>
-
+<p>Move into the output directory:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="n">spades_assembly</span>
+</pre></div>
+</td></tr></table></p>
+<p>Look at the contigs:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">infoseq</span> <span class="n">contigs</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table></p>
 <ul>
 <li>1 contig has been assembled with a length of 2359 bases.</li>
 </ul>
-<p>Copy it to a new file:</p>
-<pre><code>cp contigs.fasta contig2.fasta
-</code></pre>
-
-<h3 id="trim-the-plasmid">Trim the plasmid</h3>
+<p>Copy it to a new file:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cp</span> <span class="n">contigs</span><span class="p">.</span><span class="n">fasta</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="trim-the-plasmid">Trim the plasmid<a class="headerlink" href="#trim-the-plasmid" title="Permanent link">&para;</a></h3>
 <p>To trim any overhang on this plasmid, we will blast the start of contig2 against itself.</p>
 <p>Take the start of the contig:</p>
-<pre><code>head -n 10 contig2.fasta &gt; contig2.fa.head
-</code></pre>
-
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span> <span class="o">&gt;</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fa</span><span class="p">.</span><span class="n">head</span>
+</pre></div>
+</td></tr></table>
+- <code class="codehilite"><span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span></code> takes the first ten lines of <fn>contig2.fasta</fn>
+- <code class="codehilite"><span class="o">&gt;</span></code> sends that output to a new file called <fn>contig2.fa.head</fn></p>
 <ul>
-<li><code>head -n 10</code> takes the first ten lines of <fn>contig2.fasta</fn></li>
-<li>
-<p><code>&gt;</code> sends that output to a new file called <fn>contig2.fa.head</fn></p>
-</li>
-<li>
-<p>We want to see if the start of the contig matches the end (overhang).</p>
-</li>
+<li>We want to see if the start of the contig matches the end (overhang).</li>
 </ul>
-<p>Format the assembly file for blast:</p>
-<pre><code>makeblastdb -in contig2.fasta -dbtype nucl
-</code></pre>
-
+<p>Format the assembly file for blast:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">makeblastdb</span> <span class="o">-</span><span class="k">in</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span> <span class="o">-</span><span class="n">dbtype</span> <span class="n">nucl</span>
+</pre></div>
+</td></tr></table>
+- <code class="codehilite"><span class="n">makeblastdb</span></code> makes a database for the tool Blast
+- This will generate three new files in the directory with suffixes .nhr, .nin and .nsq
+- <code class="codehilite"><span class="o">-</span><span class="k">in</span></code> sets the input file as <fn> contig2.fasta</fn>
+- <code class="codehilite"><span class="o">-</span><span class="n">dbtype</span> <span class="n">nucl</span></code> sets the type to nucleotide (rather than protein)</p>
+<p>Blast the start of the assembly (.head file) against all of the assembly:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">blastn</span> <span class="o">-</span><span class="n">query</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fa</span><span class="p">.</span><span class="n">head</span> <span class="o">-</span><span class="n">db</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span> <span class="o">-</span><span class="n">evalue</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span><span class="n">dust</span> <span class="k">no</span> <span class="o">-</span><span class="k">out</span> <span class="n">contig2</span><span class="p">.</span><span class="n">bls</span>
+</pre></div>
+</td></tr></table></p>
 <ul>
-<li><code>makeblastdb</code> makes a database for the tool Blast</li>
-<li>This will generate three new files in the directory with suffixes .nhr, .nin and .nsq</li>
-<li><code>-in</code> sets the input file as <fn> contig2.fasta</fn></li>
-<li><code>-dbtype nucl</code> sets the type to nucleotide (rather than protein)</li>
+<li><code class="codehilite"><span class="n">blastn</span></code> is the tool Blast, set as blast**n** to compare sequences of nucleotides to each other</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">query</span></code> sets the input sequence as <fn>contig2.fa.head</fn></li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">db</span></code> sets the database as that of the original sequence <fn>contig2.fasta</fn>. We don&rsquo;t have to specify the other files that were created when we formatted this file, but they need to present in our current directory.</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">evalue</span></code> is the number of hits expected by chance, here set as 1e-3</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">dust</span> <span class="k">no</span></code> turns off the masking of low-complexity regions</li>
+<li><code class="codehilite"><span class="o">-</span><span class="k">out</span></code> sets the output file as <fn>contig2.bls</fn></li>
 </ul>
-<p>Blast the start of the assembly (.head file) against all of the assembly:</p>
-<pre><code>blastn -query contig2.fa.head -db contig2.fasta -evalue 1e-3 -dust no -out contig2.bls
-</code></pre>
-
+<p>Look at the hits (the matches):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">less</span> <span class="n">contig2</span><span class="p">.</span><span class="n">bls</span>
+</pre></div>
+</td></tr></table></p>
 <ul>
-<li><code>blastn</code> is the tool Blast, set as blast<strong>n</strong> to compare sequences of nucleotides to each other</li>
-<li><code>-query</code> sets the input sequence as <fn>contig2.fa.head</fn></li>
-<li><code>-db</code> sets the database as that of the original sequence <fn>contig2.fasta</fn>. We don't have to specify the other files that were created when we formatted this file, but they need to present in our current directory.</li>
-<li><code>-evalue</code> is the number of hits expected by chance, here set as 1e-3</li>
-<li><code>-dust no</code> turns off the masking of low-complexity regions</li>
-<li><code>-out</code> sets the output file as <fn>contig2.bls</fn></li>
-</ul>
-<p>Look at the hits (the matches):</p>
-<pre><code>less contig2.bls
-</code></pre>
-
-<ul>
-<li>The first hit is at the start, as expected. We can see that "Query 1" (the start of the contig) is aligned to "Sbject 1" (the whole contig), for the first 540 bases.</li>
+<li>The first hit is at the start, as expected. We can see that &ldquo;Query 1&rdquo; (the start of the contig) is aligned to &ldquo;Sbject 1&rdquo; (the whole contig), for the first 540 bases.</li>
 <li>Scroll down with the down arrow.</li>
-<li>The second hit shows "Query 1" (the start of the contig) also matches to "Sbject 1" (the whole contig) at position 2253, all the way to the end, position 2359.</li>
+<li>The second hit shows &ldquo;Query 1&rdquo; (the start of the contig) also matches to &ldquo;Sbject 1&rdquo; (the whole contig) at position 2253, all the way to the end, position 2359.</li>
 </ul>
 <p><img alt="blast" src="images/blasthits.png" /></p>
 <ul>
 <li>This is the overhang.</li>
 <li>Therefore, in the next step, we need to trim the contig to position 2252.</li>
-<li>Type <code>q</code> to exit.</li>
+<li>Type <code class="codehilite"><span class="n">q</span></code> to exit.</li>
 </ul>
 <p>First, change the name of the contig within the file:</p>
-<pre><code>nano contig2.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">nano</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li><code>nano</code> opens up a text editor.</li>
-<li>Use the arrow keys to navigate. (The mouse won't work.)</li>
-<li>At the first line, delete the text, which will be something like "&gt;NODE_1_length_2359_cov_3.320333"</li>
-<li>Type in "&gt;contig2"</li>
-<li>Don't forget the <code>&gt;</code> symbol</li>
+<li><code class="codehilite"><span class="n">nano</span></code> opens up a text editor.</li>
+<li>Use the arrow keys to navigate. (The mouse won&rsquo;t work.)</li>
+<li>At the first line, delete the text, which will be something like &ldquo;&gt;NODE_1_length_2359_cov_3.320333&rdquo;</li>
+<li>Type in &ldquo;&gt;contig2&rdquo;</li>
+<li>Don&rsquo;t forget the <code class="codehilite"><span class="o">&gt;</span></code> symbol</li>
 <li>Press Control-X</li>
-<li>"Save modified buffer ?" - type <code>Y</code></li>
+<li>&ldquo;Save modified buffer ?&rdquo; - type <code class="codehilite"><span class="n">Y</span></code></li>
 <li>Press the Enter key</li>
 </ul>
 <p>Index the file (this will allow samtools to edit the file as it will have an index):</p>
-<pre><code>samtools faidx contig2.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">samtools</span> <span class="n">faidx</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li><code>faidx</code> means index the fasta file</li>
+<li><code class="codehilite"><span class="n">faidx</span></code> means index the fasta file</li>
 </ul>
 <p>Trim the contig:</p>
-<pre><code>samtools faidx contig2.fasta contig2:1-2252 &gt; plasmid.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">samtools</span> <span class="n">faidx</span> <span class="n">contig2</span><span class="p">.</span><span class="n">fasta</span> <span class="n">contig2</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">2252</span> <span class="o">&gt;</span> <span class="n">plasmid</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>this extracts contig2 from position 1-2252</li>
 <li>
-<p><code>&gt; plasmid.fasta</code> sends the extracted section to a new file</p>
+<p><code class="codehilite"><span class="o">&gt;</span> <span class="n">plasmid</span><span class="p">.</span><span class="n">fasta</span></code> sends the extracted section to a new file</p>
 </li>
 <li>
 <p>We now have a trimmed plasmid.</p>
 </li>
 </ul>
 <p>Copy the plasmid file into the main folder:</p>
-<pre><code>cp plasmid.fasta ../
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cp</span> <span class="n">plasmid</span><span class="p">.</span><span class="n">fasta</span> <span class="p">..</span><span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <p>Move file back into main folder:</p>
-<pre><code>cd ..
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="p">..</span>
+</pre></div>
+</td></tr></table>
 
-<h3 id="collect-contigs">Collect contigs</h3>
+<h3 id="collect-contigs">Collect contigs<a class="headerlink" href="#collect-contigs" title="Permanent link">&para;</a></h3>
 <p>Collect the chromosome and the plasmid in one fasta file (they will be 2 records in the file):</p>
-<pre><code class="text">cat contig1.fasta plasmid.fasta &gt; genome.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat contig1.fasta plasmid.fasta &gt; genome.fasta
+</pre></div>
+</td></tr></table>
 
 <p>See the contigs and sizes:</p>
-<pre><code class="text">infoseq genome.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>infoseq genome.fasta
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>chromosome: 30019</li>
 <li>plasmid: 2252</li>
 </ul>
-<h3 id="questions_2">Questions</h3>
+<h3 id="questions_2">Questions<a class="headerlink" href="#questions_2" title="Permanent link">&para;</a></h3>
 <p>Why is this section so complicated?</p>
 <details>
 <summary>Answer (click to reveal)</summary>
@@ -1954,73 +1975,78 @@ It is probably circular, matches the size of a known plasmid, and has a rep gene
 Possibly. One option is the program called Unicycler which may automate many of these steps. https://github.com/rrwick/Unicycler
 </details>
 
-<h2 id="7-correct-the-assembly">7. Correct the assembly</h2>
+<h2 id="7-correct-the-assembly">7. Correct the assembly<a class="headerlink" href="#7-correct-the-assembly" title="Permanent link">&para;</a></h2>
 <p>Sequences from PacBio can have more errors than those from Illumina. Therefore, although it is useful to use the long PacBio reads to assemble the genome, we can also use the shorter and more accurate Illumina reads to correct errors in the PacBio assembly.</p>
-<h3 id="make-an-alignment-file">Make an alignment file</h3>
+<h3 id="make-an-alignment-file">Make an alignment file<a class="headerlink" href="#make-an-alignment-file" title="Permanent link">&para;</a></h3>
 <p>Index the fasta file:</p>
-<pre><code class="text">bwa index genome.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bwa index genome.fasta
+</pre></div>
+</td></tr></table>
 
 <p>Align the Illumina reads:</p>
-<pre><code class="text">bwa mem -t 4 genome.fasta R1.fq R2.fq | samtools sort &gt; pilon_aln.bam
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bwa mem -t 4 genome.fasta R1.fq R2.fq | samtools sort &gt; pilon_aln.bam
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>Aligns Illumina <fn>R1.fq</fn> and <fn>R2.fq</fn> to the PacBio assembly <fn>genome.fasta</fn>.</li>
 <li>This produces a .bam file</li>
-<li><code>|</code> pipes the output to samtools to sort (required for downstream processing)</li>
-<li><code>&gt; pilon_aln.bam</code> redirects the sorted bam to this file</li>
+<li><code class="codehilite"><span class="o">|</span></code> pipes the output to samtools to sort (required for downstream processing)</li>
+<li><code class="codehilite"><span class="o">&gt;</span> <span class="n">pilon_aln</span><span class="p">.</span><span class="n">bam</span></code> redirects the sorted bam to this file</li>
 </ul>
 <p>Index the files:</p>
-<pre><code class="text">samtools index pilon_aln.bam
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>samtools index pilon_aln.bam
+</pre></div>
+</td></tr></table>
 
-<pre><code class="text">samtools faidx genome.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>samtools faidx genome.fasta
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>Now we have an alignment file to use  with the tool <a href="https://github.com/broadinstitute/pilon/wiki">Pilon</a>: <fn>pilon_aln.bam</fn></li>
 </ul>
-<h3 id="run-pilon">Run Pilon</h3>
+<h3 id="run-pilon">Run Pilon<a class="headerlink" href="#run-pilon" title="Permanent link">&para;</a></h3>
 <p>Run:</p>
-<pre><code class="text">pilon --genome genome.fasta --frags pilon_aln.bam --output pilon1 --fix all --mindepth 0.5 --changes --verbose --threads 4
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pilon --genome genome.fasta --frags pilon_aln.bam --output pilon1 --fix all --mindepth 0.5 --changes --verbose --threads 4
+</pre></div>
+</td></tr></table>
 
 <ul>
-<li><code>--genome</code> is the name of the input assembly to be corrected</li>
-<li><code>--frags</code> is the alignment of the reads against the assembly</li>
-<li><code>--output</code> is the name of the output prefix</li>
-<li><code>--fix</code> is an option for types of corrections</li>
-<li><code>--mindepth</code> gives a minimum read depth to use</li>
-<li><code>--changes</code> produces an output file of the changes made</li>
-<li><code>--verbose</code> prints information to the screen during the run</li>
-<li><code>--threads</code>: number of cores</li>
+<li><code class="codehilite"><span class="c1">--genome</span></code> is the name of the input assembly to be corrected</li>
+<li><code class="codehilite"><span class="c1">--frags</span></code> is the alignment of the reads against the assembly</li>
+<li><code class="codehilite"><span class="c1">--output</span></code> is the name of the output prefix</li>
+<li><code class="codehilite"><span class="c1">--fix</span></code> is an option for types of corrections</li>
+<li><code class="codehilite"><span class="c1">--mindepth</span></code> gives a minimum read depth to use</li>
+<li><code class="codehilite"><span class="c1">--changes</span></code> produces an output file of the changes made</li>
+<li><code class="codehilite"><span class="c1">--verbose</span></code> prints information to the screen during the run</li>
+<li><code class="codehilite"><span class="c1">--threads</span></code>: number of cores</li>
 </ul>
-<p>Look at the changes file:</p>
-<pre><code>less pilon1.changes
-</code></pre>
-
+<p>Look at the changes file:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">less</span> <span class="n">pilon1</span><span class="p">.</span><span class="n">changes</span>
+</pre></div>
+</td></tr></table></p>
 <p><em>Example:</em></p>
 <p><img alt="pilon" src="images/pilon.png" /></p>
 <ul>
 <li>We can see lots of cases where a deletion (represented by a dot) has been corrected to a base.  </li>
-<li>Type <code>q</code> to exit.</li>
+<li>Type <code class="codehilite"><span class="n">q</span></code> to exit.</li>
 </ul>
-<p>Look at the details of the fasta file:</p>
-<pre><code>infoseq pilon1.fasta
-</code></pre>
-
+<p>Look at the details of the fasta file:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">infoseq</span> <span class="n">pilon1</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table></p>
 <ul>
 <li>chromosome - 30059 (net +40 bases)</li>
 <li>plasmid - 2252 (no change)</li>
 </ul>
-<p>Change the file name:</p>
-<pre><code>cp pilon1.fasta assembly.fasta
-</code></pre>
-
+<p>Change the file name:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cp</span> <span class="n">pilon1</span><span class="p">.</span><span class="n">fasta</span> <span class="n">assembly</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table></p>
 <p>We now have the corrected genome assembly of <em>Staphylococcus aureus</em> in .fasta format, containing a chromosome and a small plasmid.  </p>
-<h3 id="questions_3">Questions</h3>
-<p>Why don't we correct earlier in the assembly process?</p>
+<h3 id="questions_3">Questions<a class="headerlink" href="#questions_3" title="Permanent link">&para;</a></h3>
+<p>Why don&rsquo;t we correct earlier in the assembly process?</p>
 <details>
 <summary>Answer (click to reveal)</summary>
 We need to circularise the contigs and trim overhangs first.
@@ -2038,9 +2064,9 @@ Illumina reads have higher accuracy.
 Yes, if accuracy adequate.
 </details>
 
-<h2 id="8-comparative-genomics">8. Comparative Genomics</h2>
+<h2 id="8-comparative-genomics">8. Comparative Genomics<a class="headerlink" href="#8-comparative-genomics" title="Permanent link">&para;</a></h2>
 <p>In the workshop so far, we used a partial bacterial genome so that the exercises could run in the time available. As a demonstration, to better see the effect of long and short reads on the assembly, we will examine a complete bacterial genome.</p>
-<h3 id="assemblies">Assemblies</h3>
+<h3 id="assemblies">Assemblies<a class="headerlink" href="#assemblies" title="Permanent link">&para;</a></h3>
 <p>This bacterial genome has been assembled from either long PacBio reads (using Canu) or shorter Illumina reads (using Spades).</p>
 <p>Assembly graphs:</p>
 <p>Look at the assembly graph (usually has a suffix .gfa), in the program <a href="https://rrwick.github.io/Bandage/">Bandage</a>. This shows how contigs are related, albeit with ambiguity in some places.</p>
@@ -2055,7 +2081,7 @@ Yes, if accuracy adequate.
 Yes and No. Yes: broken genes can lead to missing/incorrect annotations; fragmented assemblies provide less information about the genomic structure (*e.g.* the number of plasmids) and the location of genes of interest (*e.g.* gene A is located on plasmid X). No: many or all genes may still be annotated correctly. Gene location is useful (e.g. chromosome, plasmid1) but not always essential (e.g. presence/absence of particular resistance genes may be enough information).
 </details>
 
-<h3 id="annotations">Annotations</h3>
+<h3 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h3>
 <p>Genomic features such as genes can be identified with annotation tools. We have used a tool called <a href="https://github.com/tseemann/prokka">Prokka</a> to annotate the two genomes described above.</p>
 <p>Some of the output data is displayed here:</p>
 <p><center></p>
@@ -2108,7 +2134,7 @@ The PacBio assembly may have errors (usually a one base indel) which will cause 
 There may be multiple copies of the rRNAs and these could have been collapsed as repeats in the Illumina assembly.
 </details>
 
-<h2 id="9-summary">9. Summary</h2>
+<h2 id="9-summary">9. Summary<a class="headerlink" href="#9-summary" title="Permanent link">&para;</a></h2>
 <p>In this workshop, we used bacterial sequencing data from long and short reads to produce a polished genome.</p>
 <p>Procedure and tools:</p>
 <ul>
@@ -2130,11 +2156,11 @@ There may be multiple copies of the rRNAs and these could have been collapsed as
 </ul>
 <p>Melbourne Bioinformatics tutorials:</p>
 <ul>
-<li>https://www.melbournebioinformatics.org.au/tutorials/</li>
+<li><a href="https://www.melbournebioinformatics.org.au/tutorials/">https://www.melbournebioinformatics.org.au/tutorials/</a></li>
 </ul>
 <p>Additional microbial genomics tutorials:</p>
 <ul>
-<li>http://sepsis-omics.github.io/tutorials/ and https://galaxy-au-training.github.io/tutorials/</li>
+<li><a href="http://sepsis-omics.github.io/tutorials/">http://sepsis-omics.github.io/tutorials/</a> and <a href="https://galaxy-au-training.github.io/tutorials/">https://galaxy-au-training.github.io/tutorials/</a></li>
 </ul>
                 
                   

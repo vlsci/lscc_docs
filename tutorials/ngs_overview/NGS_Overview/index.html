@@ -1148,8 +1148,8 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/ngs_overview/NGS_Overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="next-generation-sequencing-overview">Next Generation Sequencing Overview</h1>
-<h2 id="sequencing-technologies">Sequencing technologies</h2>
+                <h1 id="next-generation-sequencing-overview">Next Generation Sequencing Overview<a class="headerlink" href="#next-generation-sequencing-overview" title="Permanent link">&para;</a></h1>
+<h2 id="sequencing-technologies">Sequencing technologies<a class="headerlink" href="#sequencing-technologies" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Sequencing by hybridisation and ligation (Complete Genomics, Life Technologies, Polonator)<ol>
 <li>Emulsion PCR amplification</li>
@@ -1172,26 +1172,26 @@
 </ol>
 </li>
 </ol>
-<h2 id="applications">Applications</h2>
-<h4 id="genomic">Genomic</h4>
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h4 id="genomic">Genomic<a class="headerlink" href="#genomic" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Whole genome resequencing</strong> for <strong>variation detection</strong></li>
 <li>Whole genome sequencing for de novo assembly</li>
-<li>Metagenomics (sequencing of multiple genomes together in a 'metasample')</li>
+<li>Metagenomics (sequencing of multiple genomes together in a &lsquo;metasample&rsquo;)</li>
 <li><strong>Targetted resequencing</strong> for variation detection<ol>
 <li><strong>Exome sequencing</strong>/targetted exome capture</li>
 <li>Arbitrary PCR enrichment of target</li>
 </ol>
 </li>
 </ol>
-<h4 id="epigenomic">Epigenomic</h4>
+<h4 id="epigenomic">Epigenomic<a class="headerlink" href="#epigenomic" title="Permanent link">&para;</a></h4>
 <ol>
 <li><a href="http://www.illumina.com/technology/chip_seq_assay.ilmn">CHiP-Seq</a> through sequencing of DNA enriched by immunoprecipitation</li>
 <li><strong>DNA methylation analysis</strong></li>
 <li>Sequencing of DNA enriched through immunoprecipitation of 5-methylcytosine ()</li>
 <li>Methylation-sensitive restriction enzyme fragment enrichment</li>
 </ol>
-<h4 id="transcriptomic-rna-seq">Transcriptomic (RNA-seq)</h4>
+<h4 id="transcriptomic-rna-seq">Transcriptomic (RNA-seq)<a class="headerlink" href="#transcriptomic-rna-seq" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Whole transcriptome <strong>expression profiling</strong> (comparative gene expression)</li>
 <li>Whole transcriptome sequencing for de novo assembly (identify genes)</li>
@@ -1201,30 +1201,30 @@
 <li><strong>Differential splicing detection</strong></li>
 <li>sRNA analysis</li>
 </ol>
-<h3 id="types-of-outcome">Types of outcome</h3>
-<h4 id="variation-detection"><strong>Variation Detection</strong></h4>
+<h3 id="types-of-outcome">Types of outcome<a class="headerlink" href="#types-of-outcome" title="Permanent link">&para;</a></h3>
+<h4 id="variation-detection"><strong>Variation Detection</strong><a class="headerlink" href="#variation-detection" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Copy number variation (CNV)</li>
 <li>Single Nucleotide Polymorphisms (SNPs)</li>
 <li>Insertions and deletions (Indels)</li>
 <li>Rearrangements</li>
 </ol>
-<h4 id="de-novo-assembly">De Novo assembly</h4>
+<h4 id="de-novo-assembly">De Novo assembly<a class="headerlink" href="#de-novo-assembly" title="Permanent link">&para;</a></h4>
 <p>Concatemers (length?)</p>
-<h4 id="comparative-gene-expression">Comparative gene expression</h4>
+<h4 id="comparative-gene-expression">Comparative gene expression<a class="headerlink" href="#comparative-gene-expression" title="Permanent link">&para;</a></h4>
 <p>Matrix of gene vs expression level</p>
-<h4 id="splicing-detection">Splicing detection</h4>
+<h4 id="splicing-detection">Splicing detection<a class="headerlink" href="#splicing-detection" title="Permanent link">&para;</a></h4>
 <p>List of alternative splice isoforms</p>
-<h4 id="resequencing-alignment-strategies">Resequencing alignment strategies</h4>
+<h4 id="resequencing-alignment-strategies">Resequencing alignment strategies<a class="headerlink" href="#resequencing-alignment-strategies" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Align to transcriptome (simplest)</li>
 <li>Align to genome and exon-exon junction sequences (discover new transcripts, splice variants)</li>
 <li>De novo (most complex)</li>
 </ol>
-<h2 id="categories-of-analysis">Categories of analysis</h2>
+<h2 id="categories-of-analysis">Categories of analysis<a class="headerlink" href="#categories-of-analysis" title="Permanent link">&para;</a></h2>
 <p>NGS informatics may be categorised into:</p>
 <p><strong>1. Primary analysis:</strong></p>
-<p>Conversion of imagesets (output from NGS machines) into strings of bases - 'base calling'.</p>
+<p>Conversion of imagesets (output from NGS machines) into strings of bases - &lsquo;base calling&rsquo;.</p>
 <p><em>Inputs:</em></p>
 <ul>
 <li><em>Image files from NGS machine</em></li>
@@ -1279,29 +1279,29 @@ on the NGS platform being supported - Illumina Solexa pipeline is
 different to an Applied Biosystems SOLiD pipeline.</p>
 <p><strong>Anecdotally, 80% of processing in a NGS project is manual and occurs
 mainly in tertiary analysis.</strong></p>
-<h2 id="sample-preparation">Sample preparation</h2>
-<h3 id="fragment">Fragment</h3>
+<h2 id="sample-preparation">Sample preparation<a class="headerlink" href="#sample-preparation" title="Permanent link">&para;</a></h2>
+<h3 id="fragment">Fragment<a class="headerlink" href="#fragment" title="Permanent link">&para;</a></h3>
 <p>Each read is independent - an arbitrary fragment of DNA with no
 meta-information about the relationship of that read to any other read</p>
-<h3 id="paired-end-sequencing">Paired-end sequencing</h3>
+<h3 id="paired-end-sequencing">Paired-end sequencing<a class="headerlink" href="#paired-end-sequencing" title="Permanent link">&para;</a></h3>
 <p>Each fragment is sequenced twice, once from each end, in succession.
 Probably the reads will not overlap, as the average length of a fragment
 is normally &gt;2x that of a read.</p>
-<p>The two reads are thus 'related' and have extra information about the
+<p>The two reads are thus &lsquo;related&rsquo; and have extra information about the
 structure of the sample. The information is that the two reads from the
-single fragment are 'close' - depending on the length of fragments that
+single fragment are &lsquo;close&rsquo; - depending on the length of fragments that
 were prepared for the run.</p>
 <p><a href="http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn">http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn</a></p>
-<h3 id="mate-pair"><strong>Mate-pair</strong></h3>
+<h3 id="mate-pair"><strong>Mate-pair</strong><a class="headerlink" href="#mate-pair" title="Permanent link">&para;</a></h3>
 <p>Similar to paired-end, but ends of sequenced fragment can be much
 further apart - up to 10kb (normally 2-5kb)</p>
 <p><a href="http://www.illumina.com/technology/mate_pair_sequencing_assay.ilmn">http://www.illumina.com/technology/mate_pair_sequencing_assay.ilmn</a></p>
-<h3 id="barcoded-fragments">Barcoded fragments</h3>
-<p>Multiple samples are prepared independently. Each sample is 'labelled'
+<h3 id="barcoded-fragments">Barcoded fragments<a class="headerlink" href="#barcoded-fragments" title="Permanent link">&para;</a></h3>
+<p>Multiple samples are prepared independently. Each sample is &lsquo;labelled&rsquo;
 with a unique sequence adaptor (barcode). Samples are then mixed and
 sequenced together. Individual reads can be categorised to a particular
 sample by their barcodes.</p>
-<h3 id="enrichment-for-target-sequences">Enrichment for target sequences</h3>
+<h3 id="enrichment-for-target-sequences">Enrichment for target sequences<a class="headerlink" href="#enrichment-for-target-sequences" title="Permanent link">&para;</a></h3>
 <ol>
 <li>PCR</li>
 <li>Hybridisation to oligo arrays</li>
@@ -1310,7 +1310,7 @@ sample by their barcodes.</p>
 <li>Precipitation</li>
 </ol>
 <p><img alt="" src="../media/image1.png" /></p>
-<h2 id="potential-services-in-ngs">Potential services in NGS</h2>
+<h2 id="potential-services-in-ngs">Potential services in NGS<a class="headerlink" href="#potential-services-in-ngs" title="Permanent link">&para;</a></h2>
 <p>Courtesy <a href="http://web.research.colostate.edu/NGS/process.aspx?AspxAutoDetectCookieSupport=1">Colorado State Uni</a></p>
 <p>Sequence Matching Analysis</p>
 <ul>
@@ -1420,8 +1420,8 @@ sample by their barcodes.</p>
 <p>SRF is a standardized file format for describing DNA sequence data</p>
 </li>
 </ul>
-<h2 id="appendix">Appendix</h2>
-<h3 id="paired-end-sequencing-empirical-observations">Paired end sequencing - empirical observations</h3>
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="paired-end-sequencing-empirical-observations">Paired end sequencing - empirical observations<a class="headerlink" href="#paired-end-sequencing-empirical-observations" title="Permanent link">&para;</a></h3>
 <p><em>paired end</em> or <em>mate pair</em> refers to how the library is made, and
 then how it is sequenced. Both are methodologies that, in addition to
 the sequence information, give you information about the physical
@@ -1447,14 +1447,14 @@ is due to bioinformatics but some of which is real and simply reflects
 biology. Likewise a tiny proportion of reads at all read distances will
 be F-F or B-B. Also there appear to often be a tiny proportion of reads
 that come out overlapping where the read distance is the same as a read
-length ie 1+L+2 is, in this case, \~50-100. I have no idea of the
+length ie 1+L+2 is, in this case, ~50-100. I have no idea of the
 prevelance of such reads but you can often find them if you look. Lastly
 if its not going to be part of the assembler, end trimming and quality
 trimming can often mean that 1 and 2 are different lengths and that a
 substantial number of reads from a paired end run end up with no partner
 at all.</p>
-<h3 id="mate-pair-sequencing">Mate-pair sequencing</h3>
-<p>Illumina refers to "paired end" as the original library preparation
+<h3 id="mate-pair-sequencing">Mate-pair sequencing<a class="headerlink" href="#mate-pair-sequencing" title="Permanent link">&para;</a></h3>
+<p>Illumina refers to &ldquo;paired end&rdquo; as the original library preparation
 method they use, where you sequence each end of the same molecule.
 Because of the way the cluster generation technology works, it is
 limited to an inter-pair distance of ~300bp ( 200-600bp).</p>
@@ -1463,11 +1463,11 @@ library prep method which is designed to provide paired sequences
 separated by a greater distance (between about 2 and 10kb). This method
 still actually only sequences the ends of ~400bp molecules, but this
 template is derived from both ends of a 2-10kb fragment that has had the
-middle section cut out and the 'internal' ends ligated in the middle.
+middle section cut out and the &lsquo;internal&rsquo; ends ligated in the middle.
 Basically, you take your 2-10kb random fragments, biotinylate the end,
 circularise them, shear the circles to ~400bp, capture biotinylated
 molecules, and then sequence those (they go into what is essentially a
-standard 'paired end' sample prep procedure).</p>
+standard &lsquo;paired end&rsquo; sample prep procedure).</p>
 <p>Source: <a href="http://seqanswers.com/forums/showthread.php?t=503">http://seqanswers.com/forums/showthread.php?t=503</a></p>
                 
                   

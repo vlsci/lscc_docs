@@ -1171,12 +1171,12 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/proteomics_basic/proteomics_basic.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identifying-proteins-from-mass-spec-data">Identifying proteins from mass spec data</h1>
-<h2 id="overview">Overview</h2>
+                <h1 id="identifying-proteins-from-mass-spec-data">Identifying proteins from mass spec data<a class="headerlink" href="#identifying-proteins-from-mass-spec-data" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This tutorial describes how to identify a list of proteins from tandem mass spectrometry data. </p>
-<p>Analyses of this type are a fundamental part of most proteomics studies. The basic idea is to match tandem ms spectra obtained from a sample with equivalent theoretical spectra from a reference protein database. The process is referred to as "protein database search" or even "protein sequencing", although amino acid sequences are not obtained <em>de novo</em> with this method.</p>
+<p>Analyses of this type are a fundamental part of most proteomics studies. The basic idea is to match tandem ms spectra obtained from a sample with equivalent theoretical spectra from a reference protein database. The process is referred to as &ldquo;protein database search&rdquo; or even &ldquo;protein sequencing&rdquo;, although amino acid sequences are not obtained <em>de novo</em> with this method.</p>
 <p>The data used in this tutorial were obtained from a single run on an Orbitrap Elite mass spectrometer.  The sample itself corresponds to a purified organelle from Mouse cells.  </p>
-<p>The aim of the tutorial will be to create a list of all proteins that can be confidently said to be present in the sample, and then to use this list to guess the identity of the "mystery" organelle.</p>
+<p>The aim of the tutorial will be to create a list of all proteins that can be confidently said to be present in the sample, and then to use this list to guess the identity of the &ldquo;mystery&rdquo; organelle.</p>
 <p>This tutorial uses free software including;</p>
 <ul>
 <li>The <a href="http://www.thegpm.org/tandem/">X!Tandem</a> search engine</li>
@@ -1184,7 +1184,7 @@
 <li>The <a href="https://github.com/iracooke/protk">Protk</a> tool suite for various conversion tasks and to make working with X!Tandem and the TPP easier</li>
 <li>The <a href="http://galaxyproject.org/">Galaxy</a> platform to bring all these tools together</li>
 </ul>
-<h2 id="login-to-galaxy">Login to Galaxy</h2>
+<h2 id="login-to-galaxy">Login to Galaxy<a class="headerlink" href="#login-to-galaxy" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Open a browser and go to a Galaxy server.</p>
@@ -1201,28 +1201,30 @@
 <p>Register as a new user if you don’t already have an account on that particular server</p>
 </li>
 </ol>
-<h2 id="import-mass-spec-data">Import mass spec data</h2>
+<h2 id="import-mass-spec-data">Import mass spec data<a class="headerlink" href="#import-mass-spec-data" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="background_galaxy#create-a-new-history">Create a new history</a> in Galaxy and name it "Organelle Tutorial"</li>
+<li><a href="background_galaxy#create-a-new-history">Create a new history</a> in Galaxy and name it &ldquo;Organelle Tutorial&rdquo;</li>
 <li>
 <p><strong>Download datasets</strong> using the Galaxy uploader tool. </p>
 <p>Open this tool by clicking the button as shown below</p>
 <p><img alt="Uploader tool" src="../media/galaxy_uploader.png" /></p>
 <p>After opening the tool select <em>Paste/Fetch data</em> and paste the following URL into the box that appears.  Then click <em>Start</em> to initiate the download.</p>
-<pre><code>https://swift.rc.nectar.org.au:8888/v1/AUTH_ffb00634530a4c37a0b8b08c48068adf/proteomics_tutorial/OrganelleSample.mzML
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">swift</span><span class="p">.</span><span class="n">rc</span><span class="p">.</span><span class="n">nectar</span><span class="p">.</span><span class="n">org</span><span class="p">.</span><span class="n">au</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">AUTH_ffb00634530a4c37a0b8b08c48068adf</span><span class="o">/</span><span class="n">proteomics_tutorial</span><span class="o">/</span><span class="n">OrganelleSample</span><span class="p">.</span><span class="n">mzML</span>
+</pre></div>
+</td></tr></table>
+
 <p>After the download is finished you should have a single item in your history.</p>
 </li>
 <li>
-<p><strong>Rename</strong> the history item by clicking the pencil icon beside it to "Edit attributes".</p>
+<p><strong>Rename</strong> the history item by clicking the pencil icon beside it to &ldquo;Edit attributes&rdquo;.</p>
 <p><img alt="Edit attributes icon" src="../media/galaxy_edit_attributes.png" /></p>
 <p>This should bring up a dialog box where you can edit the name.  </p>
-<p>Change the name by removing everything up to the last forward slash "/"</p>
+<p>Change the name by removing everything up to the last forward slash &ldquo;/&rdquo;</p>
 <p>Your item should then be named <em>OrganelleSample.mzML</em></p>
-<p>Dont forget to click "Save"</p>
+<p>Dont forget to click &ldquo;Save&rdquo;</p>
 </li>
 </ol>
-<h2 id="basic-properties-of-the-data">Basic properties of the data</h2>
+<h2 id="basic-properties-of-the-data">Basic properties of the data<a class="headerlink" href="#basic-properties-of-the-data" title="Permanent link">&para;</a></h2>
 <p><strong>Format:</strong></p>
 <p>Mass spectrometry data comes in many different formats and the first step in a proteomics analysis often involves data conversion or pre-processing. You can read more about <a href="../background_data_formats/">mass spectrometry data formats here</a> </p>
 <div class="showable-container question showable-hidden" id="showable0">
@@ -1231,7 +1233,7 @@
 </div>
 </div>
 <script>//<![CDATA[<!--
-(function(w,d,u){if(!w.$){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}}})(window,document)
+(function(w,d,u){if(!w.<span><span class="MathJax_Preview">){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.</span><script type="math/tex">){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.</script></span>=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}}})(window,document)
 //-->]]></script>
 <div class="showable-container hint showable-hidden" id="showable1">
 <div class="showable-inner">
@@ -1274,8 +1276,8 @@
 <p><img alt="Tandem MS Schematic" src="../media/tandem_ms.png" /></p>
 <p><strong>Number of spectra:</strong></p>
 <p>Click the eye icon on the history item to view the <em>mzML</em> file as text.  The file is almost impossible to read by hand but with some text searching we will be able to deduce the number of <strong>MS</strong> and <strong>MS/MS</strong> spectra in the file.</p>
-<p>Now try searching for the text "MS1 spectrum" in the page using your web browser's search function.  Looking closely you should see that this text appears once for every <strong>MS1</strong> spectrum in the file (plus it occurs one extra time at the top of the file as part of the file description).  The file is large though and the browser can only see the first megabyte of it. </p>
-<p>Now search for the text "spectrumList count". It should bring you to a line in the file that says spectrumList count="24941".  There are a total of 24941 spectra in the entire file including both <strong>MS</strong> and <strong>MS/MS</strong> spectra.</p>
+<p>Now try searching for the text &ldquo;MS1 spectrum&rdquo; in the page using your web browser&rsquo;s search function.  Looking closely you should see that this text appears once for every <strong>MS1</strong> spectrum in the file (plus it occurs one extra time at the top of the file as part of the file description).  The file is large though and the browser can only see the first megabyte of it. </p>
+<p>Now search for the text &ldquo;spectrumList count&rdquo;. It should bring you to a line in the file that says spectrumList count=&rdquo;24941&rdquo;.  There are a total of 24941 spectra in the entire file including both <strong>MS</strong> and <strong>MS/MS</strong> spectra.</p>
 <div class="showable-container question showable-hidden" id="showable3">
 <div class="showable-inner">
 <div class="showable-header question" id="showabletitle3"><span class="link-like" id="showablelink3"> 2) How many <strong>MS</strong> spectra are there in this dataset?</span>
@@ -1286,12 +1288,12 @@
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle4"><a href="" id="showablelink4">Hint</a></div>
 <div class="showable-body hint" id="showablebody4">
-<p>To answer this question you will need to use the <em>Select</em> tool from the <em>Filter and Sort</em> submenu to select lines matching the text "MS1 spectrum" in the whole file.  Then use the <em>Line/Word/Character count</em> tool from the <em>Text Manipulation</em> submenu to count the number of lines returned by running the <em>Select</em> tool.</p>
+<p>To answer this question you will need to use the <em>Select</em> tool from the <em>Filter and Sort</em> submenu to select lines matching the text &ldquo;MS1 spectrum&rdquo; in the whole file.  Then use the <em>Line/Word/Character count</em> tool from the <em>Text Manipulation</em> submenu to count the number of lines returned by running the <em>Select</em> tool.</p>
 <div class="showable-container showable-hidden" id="showable5">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle5"><a href="" id="showablelink5">More</a> &lt;- and here to show more</div>
 <div class="showable-body" id="showablebody5">
-<p>The text "MS1 spectrum" also appears at the top of the file as part of its description so you will need to subtract 1 from your answer</p>
+<p>The text &ldquo;MS1 spectrum&rdquo; also appears at the top of the file as part of its description so you will need to subtract 1 from your answer</p>
 </div>
 </div>
 </div>
@@ -1300,8 +1302,9 @@
     $(document).ready(function(){
         $("#showablelink5").click(function(e){
             e.preventDefault();
-            $("#showable5").toggleClass("showable-hidden");
-            if ($("#showable5").hasClass("showable-hidden")) {
+            <span><span class="MathJax_Preview">("#showable5").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable5").toggleClass("showable-hidden");
+            if (</script></span>("#showable5").hasClass("showable-hidden")) {
                 $("#showablelink5").text("More");
             } else {
                 $("#showablelink5").text("Less");
@@ -1386,14 +1389,16 @@
         });
     }); //-->]]>
     </script>
-<h2 id="alternate-data-formats">Alternate data formats</h2>
-<p>Another format you are likely to encounter for tandem mass spectrometry data is <em>Mascot Generic Format</em> or <em>mgf</em>.  Mascot Generic Format (<em>mgf</em>) is the data file format preferred by the <em>Mascot</em> search engine.  It is a text based format is much easier to read by hand than the <em>mzML</em> file.  Each spectrum appears between "BEGIN IONS" and "END IONS" statements and simply consists of (<em>mz</em>,<em>intensity</em>) pairs.  Additional summary information about the precursor (whole peptide) ion such as its mass, retention time and charge are included. </p>
+<h2 id="alternate-data-formats">Alternate data formats<a class="headerlink" href="#alternate-data-formats" title="Permanent link">&para;</a></h2>
+<p>Another format you are likely to encounter for tandem mass spectrometry data is <em>Mascot Generic Format</em> or <em>mgf</em>.  Mascot Generic Format (<em>mgf</em>) is the data file format preferred by the <em>Mascot</em> search engine.  It is a text based format is much easier to read by hand than the <em>mzML</em> file.  Each spectrum appears between &ldquo;BEGIN IONS&rdquo; and &ldquo;END IONS&rdquo; statements and simply consists of (<em>mz</em>,<em>intensity</em>) pairs.  Additional summary information about the precursor (whole peptide) ion such as its mass, retention time and charge are included. </p>
 <ol>
 <li>
 <p>Download the Organelle Sample data in <em>mgf</em> format</p>
 <p>Use the <em>Paste/Fetch data</em> tool again and paste the following URL into the box that appears.  Then click <em>Start</em> to initiate the download.</p>
-<pre><code>https://swift.rc.nectar.org.au:8888/v1/AUTH_ffb00634530a4c37a0b8b08c48068adf/proteomics_tutorial/OrganelleSample.mgf
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">swift</span><span class="p">.</span><span class="n">rc</span><span class="p">.</span><span class="n">nectar</span><span class="p">.</span><span class="n">org</span><span class="p">.</span><span class="n">au</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">AUTH_ffb00634530a4c37a0b8b08c48068adf</span><span class="o">/</span><span class="n">proteomics_tutorial</span><span class="o">/</span><span class="n">OrganelleSample</span><span class="p">.</span><span class="n">mgf</span>
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Inspect the data manually by viewing it in Galaxy. Try to get a feel for the way data is organised within the file.</p>
@@ -1409,7 +1414,7 @@
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle11"><a href="" id="showablelink11">Hint</a></div>
 <div class="showable-body hint" id="showablebody11">
-<p>Use the same technique you used for the previous exercise (or your workflow). Remember that for every spectrum there is one "BEGIN IONS" statement in the file.</p>
+<p>Use the same technique you used for the previous exercise (or your workflow). Remember that for every spectrum there is one &ldquo;BEGIN IONS&rdquo; statement in the file.</p>
 <div class="showable-container showable-hidden" id="showable12">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle12"><a href="" id="showablelink12">More</a> &lt;- and here to show more</div>
@@ -1423,8 +1428,9 @@
     $(document).ready(function(){
         $("#showablelink12").click(function(e){
             e.preventDefault();
-            $("#showable12").toggleClass("showable-hidden");
-            if ($("#showable12").hasClass("showable-hidden")) {
+            <span><span class="MathJax_Preview">("#showable12").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable12").toggleClass("showable-hidden");
+            if (</script></span>("#showable12").hasClass("showable-hidden")) {
                 $("#showablelink12").text("More");
             } else {
                 $("#showablelink12").text("Less");
@@ -1464,8 +1470,8 @@
         });
     }); //-->]]>
     </script>
-<h2 id="obtain-a-search-database">Obtain a Search Database</h2>
-<p>Setting up a search database is a critical step.  For this tutorial we have created a database for you, but if you need to create a database for your own data you'll need to consider the following key issues;</p>
+<h2 id="obtain-a-search-database">Obtain a Search Database<a class="headerlink" href="#obtain-a-search-database" title="Permanent link">&para;</a></h2>
+<p>Setting up a search database is a critical step.  For this tutorial we have created a database for you, but if you need to create a database for your own data you&rsquo;ll need to consider the following key issues;</p>
 <ul>
 <li>Database size</li>
 <li>Whether to include decoys</li>
@@ -1477,16 +1483,22 @@
 <li>
 <p>Download a database of Mouse proteins in <em>fasta</em> format</p>
 <p>Use the <em>Paste/Fetch data</em> tool again and paste the following URL into the box that appears.  Then click <em>Start</em> to initiate the download.</p>
-<pre><code>https://swift.rc.nectar.org.au:8888/v1/AUTH_ffb00634530a4c37a0b8b08c48068adf/proteomics_tutorial/UniprotMouseD_20140716.fasta
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">swift</span><span class="p">.</span><span class="n">rc</span><span class="p">.</span><span class="n">nectar</span><span class="p">.</span><span class="n">org</span><span class="p">.</span><span class="n">au</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">AUTH_ffb00634530a4c37a0b8b08c48068adf</span><span class="o">/</span><span class="n">proteomics_tutorial</span><span class="o">/</span><span class="n">UniprotMouseD_20140716</span><span class="p">.</span><span class="n">fasta</span>
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
-<p>Inspect the first few items in the database in Galaxy.  The file is in <a href="https://en.wikipedia.org/wiki/FASTA_format">Fasta</a> format which means that each entry has a single description line that starts with a "&gt;" followed by a unique identifier and then some general descriptive information.  The actual sequence of amino acids is given after the description line. Take note of the format of the database identifiers. They are in Uniprot format and look like this;</p>
-<pre><code>sp|Q9CQV8|1433B_MOUSE
-</code></pre>
+<p>Inspect the first few items in the database in Galaxy.  The file is in <a href="https://en.wikipedia.org/wiki/FASTA_format">Fasta</a> format which means that each entry has a single description line that starts with a &ldquo;&gt;&rdquo; followed by a unique identifier and then some general descriptive information.  The actual sequence of amino acids is given after the description line. Take note of the format of the database identifiers. They are in Uniprot format and look like this;</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">sp</span><span class="o">|</span><span class="n">Q9CQV8</span><span class="o">|</span><span class="mi">1433</span><span class="n">B_MOUSE</span>
+</pre></div>
+</td></tr></table>
+
 <p>The database also includes decoy sequences, appended at the end.  They have identifiers like this;</p>
-<pre><code>decoy_rp75404
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">decoy_rp75404</span>
+</pre></div>
+</td></tr></table>
+
 </li>
 </ol>
 <div class="showable-container question showable-hidden" id="showable14">
@@ -1500,7 +1512,7 @@
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle15"><a href="" id="showablelink15">Hint</a></div>
 <div class="showable-body hint" id="showablebody15">
-<p>Decoys are easiest to search for because they all start with "decoy_". The total number of database entries can be found simply expanding the fasta file in your history (by clicking on its title).</p>
+<p>Decoys are easiest to search for because they all start with &ldquo;decoy_&rdquo;. The total number of database entries can be found simply expanding the fasta file in your history (by clicking on its title).</p>
 </div>
 </div>
 </div>
@@ -1532,7 +1544,7 @@
         });
     }); //-->]]>
     </script>
-<h2 id="run-a-search-using-xtandem">Run a search using X!Tandem</h2>
+<h2 id="run-a-search-using-xtandem">Run a search using X!Tandem<a class="headerlink" href="#run-a-search-using-xtandem" title="Permanent link">&para;</a></h2>
 <p>A large number of search engines now exist for proteomics data.  This exercise uses <em>X!Tandem</em> which is one of the fastest and most widely used. Other search engines include <em>OMSSA</em>, <em>MS-GF+</em> and <em>Mascot</em>.</p>
 <ol>
 <li>Select the <em>X!Tandem Search</em> tool</li>
@@ -1549,35 +1561,35 @@
 <tbody>
 <tr>
 <td>Uploaded Fasta File</td>
-<td><code>UniprotMouseD_20140716.fasta</code></td>
+<td><code class="codehilite"><span class="n">UniprotMouseD_20140716</span><span class="p">.</span><span class="n">fasta</span></code></td>
 </tr>
 <tr>
 <td>MSMS File</td>
-<td><code>OrganelleSample.mgf</code></td>
+<td><code class="codehilite"><span class="n">OrganelleSample</span><span class="p">.</span><span class="n">mgf</span></code></td>
 </tr>
 <tr>
 <td>Variable Modifications</td>
-<td><code>Oxidation M</code></td>
+<td><code class="codehilite"><span class="n">Oxidation</span> <span class="n">M</span></code></td>
 </tr>
 <tr>
 <td>Fixed Modifications</td>
-<td><code>Carbamidomethyl C</code></td>
+<td><code class="codehilite"><span class="n">Carbamidomethyl</span> <span class="k">C</span></code></td>
 </tr>
 <tr>
 <td>Missed Cleavages Allowed</td>
-<td><code>2</code></td>
+<td><code class="codehilite"><span class="mi">2</span></code></td>
 </tr>
 <tr>
 <td>Enzyme</td>
-<td><code>Trypsin</code></td>
+<td><code class="codehilite"><span class="n">Trypsin</span></code></td>
 </tr>
 <tr>
 <td>Fragment Ion Tolerance</td>
-<td><code>0.5</code></td>
+<td><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">5</span></code></td>
 </tr>
 <tr>
 <td>Precursor Ion Tolerance</td>
-<td><code>10 ppm</code></td>
+<td><code class="codehilite"><span class="mi">10</span> <span class="n">ppm</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1586,8 +1598,8 @@
 <li>Select the <em>Tandem to pepXML</em> tool</li>
 <li>Select the output from the previous step as input and click <em>Execute</em></li>
 </ol>
-<p>While the search is running, read some background theory on <a href="../background_search_engines/">how search engine's work</a>.</p>
-<h2 id="convert-results-to-tabular-format">Convert Results to tabular format</h2>
+<p>While the search is running, read some background theory on <a href="../background_search_engines/">how search engine&rsquo;s work</a>.</p>
+<h2 id="convert-results-to-tabular-format">Convert Results to tabular format<a class="headerlink" href="#convert-results-to-tabular-format" title="Permanent link">&para;</a></h2>
 <p>Although the <em>pepXML</em> format is useful as input to other tools it is not designed to be read or analyzed directly. Galaxy includes a tool to convert <em>pepXML</em> into tabular (tab separated) format, which is much easier to read.  Tabular format also has the advantage that it can be downloaded and opened using many other programs including <em>Excel</em> and <a href="http://cran.r-project.org/">R</a>.</p>
 <ol>
 <li>Select the <em>pepXML to Table</em> tool</li>
@@ -1619,7 +1631,7 @@
         });
     }); //-->]]>
     </script>
-<h2 id="sort-tabular-outputs">Sort tabular outputs</h2>
+<h2 id="sort-tabular-outputs">Sort tabular outputs<a class="headerlink" href="#sort-tabular-outputs" title="Permanent link">&para;</a></h2>
 <p>Examine the tabular output file from the previous step.  It contains many columns, of which the most interesting are probably the raw search engine score and the name of the protein from which each peptide has been derived. Note the presence of plenty of decoy proteins among the results.  These decoys should tend to have quite poor scores compared with real hits.  The <em>raw score</em> for <em>X!Tandem</em> searches is an <em>E-value</em>.  To push these decoys to the bottom of the list we can sort the data by <em>raw score</em>. </p>
 <ol>
 <li>Select the <em>Sort</em> data tool from the <em>Filter and Sort</em> menu in the left pane of Galaxy</li>
@@ -1627,9 +1639,9 @@
 <li>Select <em>Ascending order</em> for the sort direction (small E-values are good) and click <em>Execute</em></li>
 </ol>
 <p>Browse the resulting dataset.  The top of the file should now have very few decoys.</p>
-<h2 id="convert-raw-scores-to-probabilities">Convert raw scores to probabilities</h2>
-<p>Raw <em>X!Tandem</em> scores only give a rough estimate of the reliability of each peptide to spectrum match (PSM). A better estimate can be obtained by running a tool that uses global statistical properties of the search to assign a probability to each PSM of being correct.  A number of tools exist for this, and in this tutorial we use <em>Peptide Prophet</em>, which can work with a wide variety of different search engine scoring systems. It is extremely useful as it effectively converts disparate scores to the common scale of probability. The probabilities produced by <em>Peptide Prophet</em> can be used to set a threshold for acceptance.  For example we could decide to accept only PSM's with a probability greater than 0.95. Note that this is not the same as the False Discovery Rate which is computed by taking (1-p) for all the accepted PSM's and dividing by the total number of accepted PSM's. A widely used alternative to <em>Peptide Prophet</em> is <a href="http://per-colator.com/">Percolator</a>.</p>
-<p>If you're curious about how <em>Peptide Prophet</em> works, take a look at <a href="http://proteome-software.wikispaces.com/file/view/peptide_prophet_dissected.pdf">this explainer</a>, or <a href="http://www.proteomecenter.org/classpubs/2keller.pdf">the original paper</a></p>
+<h2 id="convert-raw-scores-to-probabilities">Convert raw scores to probabilities<a class="headerlink" href="#convert-raw-scores-to-probabilities" title="Permanent link">&para;</a></h2>
+<p>Raw <em>X!Tandem</em> scores only give a rough estimate of the reliability of each peptide to spectrum match (PSM). A better estimate can be obtained by running a tool that uses global statistical properties of the search to assign a probability to each PSM of being correct.  A number of tools exist for this, and in this tutorial we use <em>Peptide Prophet</em>, which can work with a wide variety of different search engine scoring systems. It is extremely useful as it effectively converts disparate scores to the common scale of probability. The probabilities produced by <em>Peptide Prophet</em> can be used to set a threshold for acceptance.  For example we could decide to accept only PSM&rsquo;s with a probability greater than 0.95. Note that this is not the same as the False Discovery Rate which is computed by taking (1-p) for all the accepted PSM&rsquo;s and dividing by the total number of accepted PSM&rsquo;s. A widely used alternative to <em>Peptide Prophet</em> is <a href="http://per-colator.com/">Percolator</a>.</p>
+<p>If you&rsquo;re curious about how <em>Peptide Prophet</em> works, take a look at <a href="http://proteome-software.wikispaces.com/file/view/peptide_prophet_dissected.pdf">this explainer</a>, or <a href="http://www.proteomecenter.org/classpubs/2keller.pdf">the original paper</a></p>
 <ol>
 <li>Select the <em>Peptide Prophet</em> tool</li>
 <li>Select the <em>X!Tandem</em> output in <em>pepXML</em> format generated earlier as input</li>
@@ -1639,22 +1651,24 @@
 <p>Take a look at the resulting tabular file.  Note that this time the <em>peptideprophet_prob</em> column is populated and contains numbers between 0 and 1.</p>
 <div class="showable-container question showable-hidden" id="showable19">
 <div class="showable-inner">
-<div class="showable-header question" id="showabletitle19"><span class="link-like" id="showablelink19"> 7) How many PSM's have a peptideprophet probability greater than or equal to 0.95</span></div>
+<div class="showable-header question" id="showabletitle19"><span class="link-like" id="showablelink19"> 7) How many PSM&rsquo;s have a peptideprophet probability greater than or equal to 0.95</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable20">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle20"><a href="" id="showablelink20">Hint</a></div>
 <div class="showable-body hint" id="showablebody20">
-<p>Use the <em>Filter</em> tool from the <em>Filter and Sort</em> submenu. Also remember that Peptide Prophet probability is given in a column called <em>peptideprophet_prob</em>.  The syntax for "greater than or equal to" in the <em>Filter</em> tool is &gt;=.</p>
+<p>Use the <em>Filter</em> tool from the <em>Filter and Sort</em> submenu. Also remember that Peptide Prophet probability is given in a column called <em>peptideprophet_prob</em>.  The syntax for &ldquo;greater than or equal to&rdquo; in the <em>Filter</em> tool is &gt;=.</p>
 <div class="showable-container showable-hidden" id="showable21">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle21"><a href="" id="showablelink21">More</a> &lt;- and here to show more</div>
 <div class="showable-body" id="showablebody21">
 <p>Use this text in <em>match with condition</em> field of the <em>Filter and Sort</em> tool.</p>
-<pre><code>c11&gt;=0.95
-</code></pre>
-<p>To answer the second question use the <em>Select</em> tool on the filtered table to select lines matching "decoy_"</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">c11</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">.</span><span class="mi">95</span>
+</pre></div>
+</td></tr></table>
+
+<p>To answer the second question use the <em>Select</em> tool on the filtered table to select lines matching &ldquo;decoy_&rdquo;</p>
 </div>
 </div>
 </div>
@@ -1663,8 +1677,9 @@
     $(document).ready(function(){
         $("#showablelink21").click(function(e){
             e.preventDefault();
-            $("#showable21").toggleClass("showable-hidden");
-            if ($("#showable21").hasClass("showable-hidden")) {
+            <span><span class="MathJax_Preview">("#showable21").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable21").toggleClass("showable-hidden");
+            if (</script></span>("#showable21").hasClass("showable-hidden")) {
                 $("#showablelink21").text("More");
             } else {
                 $("#showablelink21").text("Less");
@@ -1727,8 +1742,9 @@
     $(document).ready(function(){
         $("#showablelink25").click(function(e){
             e.preventDefault();
-            $("#showable25").toggleClass("showable-hidden");
-            if ($("#showable25").hasClass("showable-hidden")) {
+            <span><span class="MathJax_Preview">("#showable25").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable25").toggleClass("showable-hidden");
+            if (</script></span>("#showable25").hasClass("showable-hidden")) {
                 $("#showablelink25").text("More");
             } else {
                 $("#showablelink25").text("Less");
@@ -1767,8 +1783,8 @@
         });
     }); //-->]]>
     </script>
-<h2 id="perform-protein-inference">Perform Protein Inference</h2>
-<p>Up to this point we have looked at peptide to spectrum matches <em>PSMs</em>.  Each of the peptides observed will have come from a protein sequence in the <em>fasta</em> file that we used as a database, and this protein is recorded along with the <em>PSM</em> itself in all of the result tables we've viewed so far.  Unfortunately, the process of inferring the existence of proteins based on these <em>PSMs</em> is much more complicated than that because some peptides are found in more than one protein, and of course some proteins are supported by more than one <em>PSM</em>.</p>
+<h2 id="perform-protein-inference">Perform Protein Inference<a class="headerlink" href="#perform-protein-inference" title="Permanent link">&para;</a></h2>
+<p>Up to this point we have looked at peptide to spectrum matches <em>PSMs</em>.  Each of the peptides observed will have come from a protein sequence in the <em>fasta</em> file that we used as a database, and this protein is recorded along with the <em>PSM</em> itself in all of the result tables we&rsquo;ve viewed so far.  Unfortunately, the process of inferring the existence of proteins based on these <em>PSMs</em> is much more complicated than that because some peptides are found in more than one protein, and of course some proteins are supported by more than one <em>PSM</em>.</p>
 <p>The <em>Protein Prophet</em> tool can be used to run a proper protein inference analysis, and assigns probabilities to individual proteins, as well as groups of related proteins.</p>
 <ol>
 <li>Select the <em>Protein Prophet</em> tool</li>
@@ -1817,13 +1833,13 @@
     }); //-->]]>
     </script>
 <p>If you have time, read over <a href="../background_protein_prophet/">these notes</a> on the Protein Prophet output.  Explore your output (use the unfiltered tabular output) to find examples of different kinds of Protein groupings.</p>
-<h2 id="functional-enrichment-analysis">Functional enrichment analysis</h2>
+<h2 id="functional-enrichment-analysis">Functional enrichment analysis<a class="headerlink" href="#functional-enrichment-analysis" title="Permanent link">&para;</a></h2>
 <p>This step will allow you to discover the identity of the Organelle that was used to create the sample.  </p>
 <p>We use the GOrilla gene ontology enrichment analysis tool (a web based tool) to discover GO terms that are over-represented in proteins at the top of our list compared with those that are assigned very low probabilities (at the bottom).</p>
 <ol>
 <li>Start with unfiltered tabular protein prophet results</li>
 <li>Use the Cut columns tool from the Text Manipulation menu to extract the third column from the filtered protein table (contains <em>protein_name</em>). </li>
-<li>Convert the "pipes" that separate parts of the protein_name into separate columns using the <em>Convert delimiters to TAB</em> tool in the <em>Text manipulation</em> submenu of Galaxy. This should result in a file with 3 columns</li>
+<li>Convert the &ldquo;pipes&rdquo; that separate parts of the protein_name into separate columns using the <em>Convert delimiters to TAB</em> tool in the <em>Text manipulation</em> submenu of Galaxy. This should result in a file with 3 columns</li>
 <li>Use the <em>Cut columns</em> tool again to cut the second column from this dataset</li>
 <li>Download this file to your desktop and rename it to <em>organelle.txt</em></li>
 <li>Open the <a href="http://cbl-gorilla.cs.technion.ac.il/">GOrilla</a> web page in your web browser</li>

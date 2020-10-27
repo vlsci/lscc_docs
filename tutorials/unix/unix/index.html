@@ -1989,15 +1989,15 @@
 
 <style>em {font-style: normal; font-family: courier new;}</style>
 
-<h1 id="introduction-to-unix">Introduction to Unix</h1>
+<h1 id="introduction-to-unix">Introduction to Unix<a class="headerlink" href="#introduction-to-unix" title="Permanent link">&para;</a></h1>
 <p>A hands-on workshop covering the basics of the Unix/Linux command line interface.</p>
-<h2 id="overview">Overview</h2>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Knowledge of the Unix operating system is fundamental to being
 productive on HPC systems. This workshop will introduce you to the
 fundamental Unix concepts by way of a series of hands-on exercises.</p>
 <p>The workshop is facilitated by experienced Unix users who will be able
 to guide you through the exercises and offer assistance where needed.</p>
-<h2 id="learning-objectives">Learning Objectives</h2>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
 <p>At the end of the course, you will be able to:</p>
 <ul>
 <li>Log into a Unix machine remotely</li>
@@ -2008,12 +2008,12 @@ to guide you through the exercises and offer assistance where needed.</p>
 <li>Use command line programs to manipulate files</li>
 <li>Automate your workflow using shell scripts</li>
 </ul>
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The workshop is intended for beginners with no prior experience in Unix.</li>
 <li>Attendees are required to bring their own laptop computers.</li>
 </ul>
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the Unix concepts.
 The <a href="../slides.html">slides</a> are available if you would like.  Additionally the following reference material is available for later
 use.</p>
@@ -2157,11 +2157,11 @@ Now, if the current working directory is changed to */home/user2* the relative p
 
 </details>
 
-<h2 id="topic-1-remote-log-in">Topic 1: Remote log in</h2>
+<h2 id="topic-1-remote-log-in">Topic 1: Remote log in<a class="headerlink" href="#topic-1-remote-log-in" title="Permanent link">&para;</a></h2>
 <p>In this topic we will learn how to connect to a <em>Unix</em> computer via a program called <em>ssh</em> and run a few basic commands.</p>
-<h3 id="connecting-to-a-unix-computer">Connecting to a Unix computer</h3>
+<h3 id="connecting-to-a-unix-computer">Connecting to a Unix computer<a class="headerlink" href="#connecting-to-a-unix-computer" title="Permanent link">&para;</a></h3>
 <p>To begin this workshop you will need to connect to an HPC.  Today we will use <em>barcoo</em>.
-The computer called <em>barcoo.vlsci.org.au</em> is the one that coordinates all the HPC's tasks.</p>
+The computer called <em>barcoo.vlsci.org.au</em> is the one that coordinates all the HPC&rsquo;s tasks.</p>
 <p><strong>Server details</strong>:</p>
 <ul>
 <li><strong>host</strong>: barcoo.vlsci.org.au</li>
@@ -2185,12 +2185,13 @@ need to specify the port by adding the option *-p PORT* with PORT substituted wi
 
 You may be presented with a message along the lines of:
 
-
-<pre><code class="text">The authenticity of host 'barcoo.vlsci.org.au (131.172.36.150)' can't be  established.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>The authenticity of host &#39;barcoo.vlsci.org.au (131.172.36.150)&#39; can&#39;t be  established.
 ...
 Are you sure you want to continue connecting (yes/no)?
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Although you should never ignore a warning, this particular one is nothing to be concerned about; type **yes** and then **press enter**. 
 If all goes well you will be asked to enter your password.  Assuming you type the correct username and password the system should 
@@ -2244,8 +2245,8 @@ the HPC, and have the results displayed on your local screen.</p>
 username and password will be supplied at the start of the workshop.</p>
 <p>Log out of barcoo, and log back in again (to make sure you can repeat the process).</p>
 <p>All the remaining parts assume that you are logged into barcoo over ssh.</p>
-<h3 id="exercises">Exercises</h3>
-<h4 id="11-when-youve-logged-into-the-unix-server-run-the-following-commands-and-see-what-they-do">1.1) When you've logged into the Unix server, run the following commands and see what they do:</h4>
+<h3 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h3>
+<h4 id="11-when-youve-logged-into-the-unix-server-run-the-following-commands-and-see-what-they-do">1.1) When you&rsquo;ve logged into the Unix server, run the following commands and see what they do:<a class="headerlink" href="#11-when-youve-logged-into-the-unix-server-run-the-following-commands-and-see-what-they-do" title="Permanent link">&para;</a></h4>
 <ul>
 <li><em>who</em></li>
 <li><em>whoami</em></li>
@@ -2267,13 +2268,13 @@ the current month.
 
 </details>
 
-<h2 id="topic-2-exploring-your-home-directory">Topic 2: Exploring your home directory</h2>
-<p>In this topic we will learn how to "look" at the filesystem and further expand our repertoire of Unix commands.</p>
+<h2 id="topic-2-exploring-your-home-directory">Topic 2: Exploring your home directory<a class="headerlink" href="#topic-2-exploring-your-home-directory" title="Permanent link">&para;</a></h2>
+<p>In this topic we will learn how to &ldquo;look&rdquo; at the filesystem and further expand our repertoire of Unix commands.</p>
 <p><strong>Duration</strong>: 20 minutes. <!-- See "The shell and the command line" and "The file system" section of the workshop notes. --></p>
 <p><strong>Relevant commands</strong>: <em>ls</em>, <em>pwd</em>, <em>echo</em>, <em>man</em></p>
 <p>Your home directory contains your own private working space.  Your <em>current working directory</em> is automatically set
 to your <em>home</em> directory when you log into a Unix computer.</p>
-<h4 id="21-use-the-ls-command-to-list-the-files-in-your-home-directory-how-many-files-are-there">2.1) Use the <em>ls</em> command to list the files in your <em>home</em> directory.  How many files are there?</h4>
+<h4 id="21-use-the-ls-command-to-list-the-files-in-your-home-directory-how-many-files-are-there">2.1) Use the <em>ls</em> command to list the files in your <em>home</em> directory.  How many files are there?<a class="headerlink" href="#21-use-the-ls-command-to-list-the-files-in-your-home-directory-how-many-files-are-there" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2284,10 +2285,11 @@ Literally, type *ls* and press the *ENTER* key.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ ls
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls
 exp01  file01  muscle.fq
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 When running the *ls* command with no options it will list files in your current working directory.  The place
 where you start when you first login is your *HOME* directory.
@@ -2298,7 +2300,7 @@ where you start when you first login is your *HOME* directory.
 
 <hr />
 <p>The above answer is not quite correct.  There are a number of <em>hidden</em> files in your home directory as well.</p>
-<h4 id="22-what-flag-might-you-use-to-display-all-files-with-the-ls-command-how-many-files-are-really-there">2.2) What <em>flag</em> might you use to display <em>all</em> files with the <em>ls</em> command?  How many files are really there?</h4>
+<h4 id="22-what-flag-might-you-use-to-display-all-files-with-the-ls-command-how-many-files-are-really-there">2.2) What <em>flag</em> might you use to display <em>all</em> files with the <em>ls</em> command?  How many files are really there?<a class="headerlink" href="#22-what-flag-might-you-use-to-display-all-files-with-the-ls-command-how-many-files-are-really-there" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2322,13 +2324,15 @@ Now you should see several files in your home directory whose names all begin wi
 created automatically for your user account. They are mostly configuration options for various programs including
 the shell. It is safe to ignore them for the moment.
 
-
-<pre><code class="sh">$ ls --all
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls --all
 .              .bash_logout    exp01    .lesshst
 ..             .bash_profile   file01   muscle.fq
 .bash_history  .bashrc         .kshrc   .viminfo
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 There are two trick files here; namely *.* and *..* which are not real files but instead, shortcuts.  *.* is a shortcut
 for the current directory and *..* a shortcut for the directory above the current one.
@@ -2338,7 +2342,7 @@ for the current directory and *..* a shortcut for the directory above the curren
 </details>
 
 <hr />
-<h4 id="23-what-is-the-full-path-name-of-your-home-directory">2.3) What is the full path name of your <em>home</em> directory?</h4>
+<h4 id="23-what-is-the-full-path-name-of-your-home-directory">2.3) What is the full path name of your <em>home</em> directory?<a class="headerlink" href="#23-what-is-the-full-path-name-of-your-home-directory" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2359,11 +2363,11 @@ Try a shortened version of *print working directory*
 You can find out the full path name of the current working directory with the *pwd* command. Your home directory
 will look something like this:
 
-
-<pre><code class="sh">$ pwd
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">pwd</span>
 /home/trainingXX
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: */vlsci/TRAINING/trainXX*
 
@@ -2372,15 +2376,14 @@ where *XX* is replaced by some 2 digit sequence.
 **Alternate method**:
 You can also find out the name of your home directory by printing the value of the *$HOME* shell variable:
 
-
-<pre><code class="sh">echo $HOME
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="nv">$HOME</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="24-run-ls-using-the-long-flag-l-how-did-the-output-change">2.4) Run <em>ls</em> using the long flag (<em>-l</em>), how did the output change?</h4>
+<h4 id="24-run-ls-using-the-long-flag-l-how-did-the-output-change">2.4) Run <em>ls</em> using the long flag (<em>-l</em>), how did the output change?<a class="headerlink" href="#24-run-ls-using-the-long-flag-l-how-did-the-output-change" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2394,25 +2397,31 @@ Run *ls -l*
 **Answer**: it changed the output to place 1 file/directory per line.  It also added some extra information
 about each.
 
-
-<pre><code class="sh">$ ls -l
-total 32
-drwxr-x--- 2 training01 training 2048 Jun 14 11:28 exp01
--rw-r----- 1 training01 training   97 Jun 14 11:28 file01
--rw-r----- 1 training01 training 2461 Jun 14 11:28 muscle.fq
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l
+total <span class="m">32</span>
+drwxr-x--- <span class="m">2</span> training01 training <span class="m">2048</span> Jun <span class="m">14</span> <span class="m">11</span>:28 exp01
+-rw-r----- <span class="m">1</span> training01 training   <span class="m">97</span> Jun <span class="m">14</span> <span class="m">11</span>:28 file01
+-rw-r----- <span class="m">1</span> training01 training <span class="m">2461</span> Jun <span class="m">14</span> <span class="m">11</span>:28 muscle.fq
+</pre></div>
+</td></tr></table>
 
 **Details**:
 
-
-<pre><code class="sh">drwxr-x--- 2 training01 training 2048 Jun 14 11:28 exp01
-\--------/ ^ \--------/ \------/ \--/ \----------/ \---/
-permission |  username   group   size    date       name
-       /---^---\
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>drwxr-x--- <span class="m">2</span> training01 training <span class="m">2048</span> Jun <span class="m">14</span> <span class="m">11</span>:28 exp01
+<span class="se">\-</span>-------/ ^ <span class="se">\-</span>-------/ <span class="se">\-</span>-----/ <span class="se">\-</span>-/ <span class="se">\-</span>---------/ <span class="se">\-</span>--/
+permission <span class="p">|</span>  username   group   size    date       name
+       /---^---<span class="se">\</span>
        linkcount
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Where:
 
@@ -2431,7 +2440,7 @@ Where:
 </details>
 
 <hr />
-<h4 id="25-what-type-of-file-is-exp01-and-musclefq">2.5) What type of file is <em>exp01</em> and <em>muscle.fq</em>?</h4>
+<h4 id="25-what-type-of-file-is-exp01-and-musclefq">2.5) What type of file is <em>exp01</em> and <em>muscle.fq</em>?<a class="headerlink" href="#25-what-type-of-file-is-exp01-and-musclefq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2450,7 +2459,7 @@ Check the output from the *ls -l*.
 </details>
 
 <hr />
-<h4 id="26-who-has-permission-to-read-write-and-execute-your-home-directory">2.6) Who has permission to <em>read</em>, <em>write</em> and <em>execute</em> your <em>home</em> directory?</h4>
+<h4 id="26-who-has-permission-to-read-write-and-execute-your-home-directory">2.6) Who has permission to <em>read</em>, <em>write</em> and <em>execute</em> your <em>home</em> directory?<a class="headerlink" href="#26-who-has-permission-to-read-write-and-execute-your-home-directory" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2476,13 +2485,15 @@ There are various ways you could find out the permissions on your home directory
 
 **Method 1**: given we know the *CWD* is our home directory.
 
-
-<pre><code class="sh">$ ls -l ..
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l ..
 ...
-drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
+drwxr-x--- <span class="m">4</span> trainingXY training  <span class="m">512</span> Feb  <span class="m">9</span> <span class="m">14</span>:18 trainingXY
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 The *..* refers to the parent directory.
 
 
@@ -2490,13 +2501,15 @@ The *..* refers to the parent directory.
 
 You could list the permissions of all files and directories in the parent directory of your home:
 
-
-<pre><code class="sh">$ ls -l $HOME/..
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l <span class="nv">$HOME</span>/..
 ...
-drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
+drwxr-x--- <span class="m">4</span> trainingXY training  <span class="m">512</span> Feb  <span class="m">9</span> <span class="m">14</span>:18 trainingXY
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 In this case we use the shell variable to refer to our home directory.
 
@@ -2505,13 +2518,15 @@ In this case we use the shell variable to refer to our home directory.
 
 You may also refer to your home directory using the *~* (tilde) character:
 
-
-<pre><code class="sh">$ ls -l ~/..
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l ~/..
 ...
-drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
+drwxr-x--- <span class="m">4</span> trainingXY training  <span class="m">512</span> Feb  <span class="m">9</span> <span class="m">14</span>:18 trainingXY
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 All 3 of the methods above mean the same thing.
 
@@ -2520,13 +2535,15 @@ be the name of your home directory, something like *trainXX*.  Where *XX* is rep
 
 **Altername**: using the *-a* flag and looking at the *.* (dot) special file.
 
-
-<pre><code class="sh">$ ls -la
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -la
 ...
-drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 .
+drwxr-x--- <span class="m">4</span> trainingXY training  <span class="m">512</span> Feb  <span class="m">9</span> <span class="m">14</span>:18 .
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 
 **Answer**: *drwxr-x---*
@@ -2558,7 +2575,7 @@ occurance of <em>hello</em> etc.</p>
 </div>
 
 <hr />
-<h4 id="27-use-the-man-command-to-find-out-what-the-h-flag-does-for-ls">2.7) Use the <em>man</em> command to find out what the <em>-h</em> flag does for <em>ls</em></h4>
+<h4 id="27-use-the-man-command-to-find-out-what-the-h-flag-does-for-ls">2.7) Use the <em>man</em> command to find out what the <em>-h</em> flag does for <em>ls</em><a class="headerlink" href="#27-use-the-man-command-to-find-out-what-the-h-flag-does-for-ls" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2578,23 +2595,22 @@ Give *ls* as an option to *man* command.
 
 Use the following command to view the *man* page for *ls*:
 
-
-<pre><code class="sh">$ man ls
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ man ls
+</pre></div>
+</td></tr></table>
 
 **Answer**: You should discover that the *-h* option prints file sizes in human readable format
 
-
-<pre><code class="sh">-h, --human-readable
-              with -l, print sizes in human readable format (e.g., 1K 234M 2G)
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>-h, --human-readable
+              with -l, print sizes in human readable format <span class="o">(</span>e.g., 1K 234M 2G<span class="o">)</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="28-use-the-h-how-did-the-output-change-of-musclefq">2.8) Use the <em>-h</em>, how did the output change of <em>muscle.fq</em>?</h4>
+<h4 id="28-use-the-h-how-did-the-output-change-of-musclefq">2.8) Use the <em>-h</em>, how did the output change of <em>muscle.fq</em>?<a class="headerlink" href="#28-use-the-h-how-did-the-output-change-of-musclefq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2612,36 +2628,38 @@ Run *ls -lh*
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ ls -lh
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -lh
 ...
--rw-r----- 1 training01 training 2.5K Jun 14 11:28 muscle.fq
-</code></pre>
-
+-rw-r----- <span class="m">1</span> training01 training <span class="m">2</span>.5K Jun <span class="m">14</span> <span class="m">11</span>:28 muscle.fq
+</pre></div>
+</td></tr></table>
 
 **Answer**: it changed the output so the *filesize* of *muscle.fq* is now *2.5K* instead of *2461*
 
 </details>
 
-<h2 id="topic-3-exploring-the-file-system">Topic 3: Exploring the file system</h2>
+<h2 id="topic-3-exploring-the-file-system">Topic 3: Exploring the file system<a class="headerlink" href="#topic-3-exploring-the-file-system" title="Permanent link">&para;</a></h2>
 <p>In this topic we will learn how to move around the filesystem and see what is there.</p>
 <p><strong>Duration</strong>: 30 minutes. <!-- See "The file system" section of the workshop notes. --></p>
 <p><strong>Relevant commands</strong>: <em>pwd</em>, <em>cd</em>, <em>ls</em>, <em>file</em></p>
-<h4 id="31-print-the-value-of-your-current-working-directory">3.1) Print the value of your current working directory.</h4>
+<h4 id="31-print-the-value-of-your-current-working-directory">3.1) Print the value of your current working directory.<a class="headerlink" href="#31-print-the-value-of-your-current-working-directory" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Answer</summary>
 
 The *pwd* command prints the value of your current working directory.
 
-
-<pre><code class="sh">$ pwd
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">pwd</span>
 /home/training01
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="32-list-the-contents-of-the-root-directory-called-forward-slash">3.2) List the contents of the root directory, called '<em>/</em>' (forward slash).</h4>
+<h4 id="32-list-the-contents-of-the-root-directory-called-forward-slash">3.2) List the contents of the root directory, called &lsquo;<em>/</em>&lsquo; (forward slash).<a class="headerlink" href="#32-list-the-contents-of-the-root-directory-called-forward-slash" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2652,14 +2670,19 @@ The *pwd* command prints the value of your current working directory.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ ls /
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls /
 applications-merged  etc         media    root     tmp
 bin                  home        mnt      sbin     usr
 boot                 lib         oldhome  selinux  var
 data                 lib64       opt      srv
 dev                  lost+found  proc     sys
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Here we see that *ls* can take a filepath as its argument, which allows you to list the contents of directories
 other than your current working directory.
@@ -2667,7 +2690,7 @@ other than your current working directory.
 </details>
 
 <hr />
-<h4 id="33-use-the-cd-command-to-change-your-working-directory-to-the-root-directory-did-your-prompt-change">3.3) Use the <em>cd</em> command to change your working directory to the root directory.  Did your prompt change?</h4>
+<h4 id="33-use-the-cd-command-to-change-your-working-directory-to-the-root-directory-did-your-prompt-change">3.3) Use the <em>cd</em> command to change your working directory to the root directory.  Did your prompt change?<a class="headerlink" href="#33-use-the-cd-command-to-change-your-working-directory-to-the-root-directory-did-your-prompt-change" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2681,10 +2704,9 @@ other than your current working directory.
 The *cd* command changes the value of your current working directory. To change to the root directory use the
 following command:
 
-
-<pre><code class="sh">$ cd /
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> /
+</pre></div>
+</td></tr></table>
 
 **Answer**: Yes, it now says the CWD is */* instead of *~*.
 
@@ -2702,7 +2724,7 @@ such command.  However, it will get grumpy if something went wrong by way of an 
 </div>
 
 <hr />
-<h4 id="34-list-the-contents-of-the-cwd-and-verify-it-matches-the-list-in-32">3.4) List the contents of the CWD and verify it matches the list in 3.2</h4>
+<h4 id="34-list-the-contents-of-the-cwd-and-verify-it-matches-the-list-in-32">3.4) List the contents of the CWD and verify it matches the list in 3.2<a class="headerlink" href="#34-list-the-contents-of-the-cwd-and-verify-it-matches-the-list-in-32" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2718,15 +2740,19 @@ Assuming you have changed to the root directory then this can be achieved with *
 
 If you are not currently in the root directory then you can list its contents by passing it as an argument to ls:
 
-
-<pre><code class="sh">$ ls
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls
 applications-merged  etc         media    root     tmp
 bin                  home        mnt      sbin     usr
 boot                 lib         oldhome  selinux  var
 data                 lib64       opt      srv
 dev                  lost+found  proc     sys
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: Yes, we got the same output as exercise 3.2
 
@@ -2735,7 +2761,7 @@ dev                  lost+found  proc     sys
 </details>
 
 <hr />
-<h4 id="35-change-your-current-working-directory-back-to-your-home-directory-what-is-the-simplest-unix-command-that-will-get-you-back-to-your-home-directory-from-anywhere-else-in-the-file-system">3.5) Change your current working directory back to your home directory. What is the simplest Unix command that will get you back to your home directory from anywhere else in the file system?</h4>
+<h4 id="35-change-your-current-working-directory-back-to-your-home-directory-what-is-the-simplest-unix-command-that-will-get-you-back-to-your-home-directory-from-anywhere-else-in-the-file-system">3.5) Change your current working directory back to your home directory. What is the simplest Unix command that will get you back to your home directory from anywhere else in the file system?<a class="headerlink" href="#35-change-your-current-working-directory-back-to-your-home-directory-what-is-the-simplest-unix-command-that-will-get-you-back-to-your-home-directory-from-anywhere-else-in-the-file-system" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2757,34 +2783,31 @@ is buried in *man cd* however *cd* doesn't have its own manpage so you will need
 Use the *cd* command to change your working directory to your home directory. There are a number of ways to refer
 to your home directory:
 
-
-<pre><code class="sh">cd $HOME
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>
+</pre></div>
+</td></tr></table>
 
 is equivalent to:
 
-
-<pre><code class="sh">cd ~
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~
+</pre></div>
+</td></tr></table>
 
 The simplest way to change your current working directory to your home directory is to run the *cd* command with
 no arguments:
 
 **Answer**: the simplest for is cd with NO options.
 
-
-<pre><code class="sh">cd
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span>
+</pre></div>
+</td></tr></table>
 
 This is a special-case behaviour which is built into *cd* for convenience.
 
 </details>
 
 <hr />
-<h4 id="36-change-your-working-directory-to-the-following-directory">3.6) Change your working directory to the following directory:</h4>
+<h4 id="36-change-your-working-directory-to-the-following-directory">3.6) Change your working directory to the following directory:<a class="headerlink" href="#36-change-your-working-directory-to-the-following-directory" title="Permanent link">&para;</a></h4>
 <p><em>/vlsci/TRAINING/shared/Intro_to_Unix</em></p>
 <details>
   <summary>Answer</summary>
@@ -2794,7 +2817,7 @@ This is a special-case behaviour which is built into *cd* for convenience.
 </details>
 
 <hr />
-<h4 id="37-list-the-contents-of-that-directory-how-many-files-does-it-contain">3.7) List the contents of that directory. How many files does it contain?</h4>
+<h4 id="37-list-the-contents-of-that-directory-how-many-files-does-it-contain">3.7) List the contents of that directory. How many files does it contain?<a class="headerlink" href="#37-list-the-contents-of-that-directory-how-many-files-does-it-contain" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2807,18 +2830,18 @@ This is a special-case behaviour which is built into *cd* for convenience.
 
 You can do this with *ls*
 
-
-<pre><code class="sh">$ ls
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls
 expectations.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: 7 files (expectations.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy)
 
 </details>
 
 <hr />
-<h4 id="38-what-kind-of-file-is-vlscitrainingsharedintro_to_unixsleepy">3.8) What kind of <em>file</em> is <em>/vlsci/TRAINING/shared/Intro_to_Unix/sleepy</em>?</h4>
+<h4 id="38-what-kind-of-file-is-vlscitrainingsharedintro_to_unixsleepy">3.8) What kind of <em>file</em> is <em>/vlsci/TRAINING/shared/Intro_to_Unix/sleepy</em>?<a class="headerlink" href="#38-what-kind-of-file-is-vlscitrainingsharedintro_to_unixsleepy" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2840,19 +2863,19 @@ Use the *file* command to get extra information about the contents of a file:
 
 Assuming your current working directory is */vlsci/TRAINING/shared/Intro_to_Unix*
 
-
-<pre><code class="sh">$ file sleepy
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ file sleepy
 Bourne-Again shell script text executable
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Otherwise specify the full path of sleepy:
 
-
-<pre><code class="sh">$ file /vlsci/TRAINING/shared/Intro_to_Unix/sleepy
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ file /vlsci/TRAINING/shared/Intro_to_Unix/sleepy
 Bourne-Again shell script text executable
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer**: Bourne-Again shell script text executable
 
@@ -2862,10 +2885,9 @@ is (probably) a shell script written in the language of BASH.
 The file command uses various heuristics to guess the "type" of a file. If you want to know how it works
 then read the Unix manual page like so:
 
-
-<pre><code class="sh">man file
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>man file
+</pre></div>
+</td></tr></table>
 
 </details>
 
@@ -2883,12 +2905,13 @@ Take the word *file* quite literally.
 
 Use the file command again. If you are in the same directory as *hi* then:
 
-
-<pre><code class="sh">$ file hi
-ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux
-2.6.9, not stripped
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ file hi
+ELF <span class="m">64</span>-bit LSB executable, x86-64, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked <span class="o">(</span>uses shared libs<span class="o">)</span>, <span class="k">for</span> GNU/Linux
+<span class="m">2</span>.6.9, not stripped
+</pre></div>
+</td></tr></table>
 
 **Answer**: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux
 
@@ -2898,7 +2921,7 @@ program (raw instructions that the computer can execute directly).
 </details>
 
 <hr />
-<h4 id="310-what-are-the-file-permissions-of-the-following-file-and-what-do-they-mean">3.10) What are the file permissions of the following file and what do they mean?</h4>
+<h4 id="310-what-are-the-file-permissions-of-the-following-file-and-what-do-they-mean">3.10) What are the file permissions of the following file and what do they mean?<a class="headerlink" href="#310-what-are-the-file-permissions-of-the-following-file-and-what-do-they-mean" title="Permanent link">&para;</a></h4>
 <p><em>/vlsci/TRAINING/shared/Intro_to_Unix/sleepy</em></p>
 <details>
   <summary>Hint</summary>
@@ -2913,11 +2936,11 @@ Remember the *ls* command, and don't forget the *-l* flag
 You can find the permissions of *sleepy* using the *ls* command with the *-l* flag. If you are in the same
 directory as *sleepy* then:
 
-
-<pre><code class="sh">$ ls -l sleepy
--rw-r--r-- 1 arobinson common 183 Feb  9 16:36 sleepy
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l sleepy
+-rw-r--r-- <span class="m">1</span> arobinson common <span class="m">183</span> Feb  <span class="m">9</span> <span class="m">16</span>:36 sleepy
+</pre></div>
+</td></tr></table>
 
 **Answer**: The Answer is dependent on the computer you are connected too however will follow something like above.
 We can see that this particular instance of sleepy is owned by the user arobinson, and is part of the common
@@ -2930,7 +2953,7 @@ future reference: links are created with the *ln* command.
 </details>
 
 <hr />
-<h4 id="311-change-your-working-directory-back-to-your-home-directory-ready-for-the-next-topic">3.11) Change your working directory back to your home directory ready for the next topic.</h4>
+<h4 id="311-change-your-working-directory-back-to-your-home-directory-ready-for-the-next-topic">3.11) Change your working directory back to your home directory ready for the next topic.<a class="headerlink" href="#311-change-your-working-directory-back-to-your-home-directory-ready-for-the-next-topic" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2943,14 +2966,13 @@ future reference: links are created with the *ln* command.
 
 You should know how to do this with the cd command:
 
-
-<pre><code class="sh">cd
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
-<h2 id="topic-4-working-with-files-and-directories">Topic 4: Working with files and directories</h2>
+<h2 id="topic-4-working-with-files-and-directories">Topic 4: Working with files and directories<a class="headerlink" href="#topic-4-working-with-files-and-directories" title="Permanent link">&para;</a></h2>
 <p>In this topic we will start to read, create, edit and delete files and directories.</p>
 <p><strong>Duration</strong>: 50 minutes.  <!-- See "Working with files" from the workshop notes. --></p>
 <p><strong>Relevant commands</strong>: <em>mkdir</em>, <em>cp</em>, <em>ls</em>, <em>diff</em>, <em>wc</em>, <em>nano</em>, <em>mv</em>, <em>rm</em>, <em>rmdir</em>, <em>head</em>, <em>tail</em>, <em>grep</em>, <em>gzip</em>, <em>gunzip</em></p>
@@ -2960,7 +2982,7 @@ command find out what they do, in particular the NAME, SYNOPSIS and DESCRIPTION 
 </div>
 
 <hr />
-<h4 id="41-in-your-home-directory-make-a-sub-directory-called-test">4.1) In your home directory make a sub-directory called test.</h4>
+<h4 id="41-in-your-home-directory-make-a-sub-directory-called-test">4.1) In your home directory make a sub-directory called test.<a class="headerlink" href="#41-in-your-home-directory-make-a-sub-directory-called-test" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -2982,23 +3004,22 @@ Make sure you are in your home directory first. If not *cd* to your home directo
 
 Use the *mkdir* command to make new directories:
 
-
-<pre><code class="sh">$ mkdir test
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdir <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
 
 Use the *ls* command to check that the new directory was created.
 
-
-<pre><code class="sh">$ ls
-exp01  file01  muscle.fq  test
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls
+exp01  file01  muscle.fq  <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="42-copy-all-the-files-from-the-following-directory-into-the-newly-created-test-directory">4.2) Copy all the files from the following directory into the newly created test directory:</h4>
+<h4 id="42-copy-all-the-files-from-the-following-directory-into-the-newly-created-test-directory">4.2) Copy all the files from the following directory into the newly created test directory:<a class="headerlink" href="#42-copy-all-the-files-from-the-following-directory-into-the-newly-created-test-directory" title="Permanent link">&para;</a></h4>
 <p><em>/vlsci/TRAINING/shared/Intro_to_Unix</em></p>
 <details>
   <summary>Hint</summary>
@@ -3010,15 +3031,21 @@ You are trying to *copy*, which of the above commands looks like a shortened ver
 <details>
   <summary>Additional Hint</summary>
 
-<pre><code class="sh">$ man cp
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ man cp
 ...
 SYNOPSIS
-       cp [OPTION]... [-T] SOURCE DEST
+       cp <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> SOURCE DEST
 ...
 DESCRIPTION
-       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
-</code></pre>
-
+       Copy SOURCE to DEST, or multiple SOURCE<span class="o">(</span>s<span class="o">)</span> to DIRECTORY.
+</pre></div>
+</td></tr></table>
 
 which means *cp* expects zero or more flags, a SOURCE file followed by a DEST file or directory
 
@@ -3038,29 +3065,28 @@ paths to *cp*. You only need to perform one of these ways, but we show multiple 
 
 **Answer 1**: From your home directory:
 
-
-<pre><code class="sh">$ cp /vlsci/TRAINING/shared/Intro_to_Unix/* test
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cp /vlsci/TRAINING/shared/Intro_to_Unix/* <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
 
 **Answer 2**: Change to the test directory and then copy (assuming you started in your home directory):
 
-
-<pre><code class="sh">$ cd test
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> <span class="nb">test</span>
 $ cp /vlsci/TRAINING/shared/Intro_to_Unix/* .
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 In the example above the '*.*' (dot) character refers to the current working directory. It should be
 the test subdirectory of your home directory.
 
 **Answer 3**: Change to the \end{UNIX_TRAINING_FILES_PATH} directory and then copy:
 
-
-<pre><code class="sh">cd /vlsci/TRAINING/shared/Intro_to_Unix/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /vlsci/TRAINING/shared/Intro_to_Unix/
 cp * ~/test
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Remember that ~ is a shortcut reference to your home directory.
 
@@ -3068,7 +3094,7 @@ Remember that ~ is a shortcut reference to your home directory.
 
 <hr />
 <p><strong>Note</strong>: This exercise assumes that the copy command from the previous exercise was successful.</p>
-<h4 id="43-check-that-the-file-size-of-expectationstxt-is-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to">4.3) Check that the file size of <em>expectations.txt</em> is the same in both the directory that you copied it from and the directory that you copied it to.</h4>
+<h4 id="43-check-that-the-file-size-of-expectationstxt-is-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to">4.3) Check that the file size of <em>expectations.txt</em> is the same in both the directory that you copied it from and the directory that you copied it to.<a class="headerlink" href="#43-check-that-the-file-size-of-expectationstxt-is-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3091,12 +3117,13 @@ Use *ls -l* to check the size of files.
 You could do this in many ways depending on the value of your working directory. We just show one possible
 way for each file:
 
-
-<pre><code class="sh">$ ls -l /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
 
 $ ls -l ~/test/expectations.txt
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 From the output of the above commands you should be able to see the size of each file and check that they
 are the same.
@@ -3106,11 +3133,11 @@ are the same.
 **Alternate**: Sometimes it is useful to get file sizes reported in more "human friendly" units than bytes. If this is
 true then try the *-h* option for ls:
 
-
-<pre><code class="sh">$ ls -lh /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
--rw-r--r-- 1 arobinson common 1010K Mar 26  2012 /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -lh /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
+-rw-r--r-- <span class="m">1</span> arobinson common 1010K Mar <span class="m">26</span>  <span class="m">2012</span> /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
+</pre></div>
+</td></tr></table>
 
 In this case the size is reported in kilobytes as *1010K*. Larger files are reported in megabytes, gigabytes
 etcetera.
@@ -3119,7 +3146,7 @@ etcetera.
 
 <hr />
 <p><strong>Note</strong>: this exercise assumes your working directory is <em>~/test</em>; if not run <em>cd ~/test</em></p>
-<h4 id="44-check-that-the-contents-of-expectationstxt-are-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to">4.4) Check that the contents of expectations.txt are the same in both the directory that you copied it from and the directory that you copied it to.</h4>
+<h4 id="44-check-that-the-contents-of-expectationstxt-are-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to">4.4) Check that the contents of expectations.txt are the same in both the directory that you copied it from and the directory that you copied it to.<a class="headerlink" href="#44-check-that-the-contents-of-expectationstxt-are-the-same-in-both-the-directory-that-you-copied-it-from-and-the-directory-that-you-copied-it-to" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3139,10 +3166,9 @@ What is the opposite of *same*?
 
 Use the *diff* command to compare the contents of two files.
 
-
-<pre><code class="sh">$ diff /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt expectations.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ diff /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt expectations.txt
+</pre></div>
+</td></tr></table>
 
 If the two files are identical the *diff* command will NOT produce any output)
 
@@ -3151,7 +3177,7 @@ If the two files are identical the *diff* command will NOT produce any output)
 </details>
 
 <hr />
-<h4 id="45-how-many-lines-words-and-characters-are-in-expectationstxt">4.5) How many lines, words and characters are in expectations.txt?</h4>
+<h4 id="45-how-many-lines-words-and-characters-are-in-expectationstxt">4.5) How many lines, words and characters are in expectations.txt?<a class="headerlink" href="#45-how-many-lines-words-and-characters-are-in-expectationstxt" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3171,30 +3197,34 @@ Initialisms are key
 
 Use the *wc* (for "word count") to count the number of characters, lines and words in a file:
 
-
-<pre><code class="sh">$ wc expectations.txt
-  20415  187465 1033773 expectations.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wc expectations.txt
+  <span class="m">20415</span>  <span class="m">187465</span> <span class="m">1033773</span> expectations.txt
+</pre></div>
+</td></tr></table>
 
 **Answer**: There are *20415* lines, *187465* words and *1033773* characters in expectations.txt.
 
 To get just the line, word or character count:
 
-
-<pre><code class="sh">$ wc -l expectations.txt
-20415 expectations.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wc -l expectations.txt
+<span class="m">20415</span> expectations.txt
 $ wc -w expectations.txt
-187465 expectations.txt
+<span class="m">187465</span> expectations.txt
 $ wc -c expectations.txt
-1033773 expectations.txt
-</code></pre>
-
+<span class="m">1033773</span> expectations.txt
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="46-open-testexpectationstxt-in-the-nano-text-editor-delete-the-first-line-of-text-and-save-your-changes-to-the-file-exit-nano">4.6) Open <em>~/test/expectations.txt</em> in the <em>nano</em> text editor, delete the first line of text, and save your changes to the file. Exit <em>nano</em>.</h4>
+<h4 id="46-open-testexpectationstxt-in-the-nano-text-editor-delete-the-first-line-of-text-and-save-your-changes-to-the-file-exit-nano">4.6) Open <em>~/test/expectations.txt</em> in the <em>nano</em> text editor, delete the first line of text, and save your changes to the file. Exit <em>nano</em>.<a class="headerlink" href="#46-open-testexpectationstxt-in-the-nano-text-editor-delete-the-first-line-of-text-and-save-your-changes-to-the-file-exit-nano" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3225,7 +3255,7 @@ editors exist such as *vim* and *emacs*, however they take a substantial amount 
 </details>
 
 <hr />
-<h4 id="47-did-the-changes-you-made-to-testexpectationstxt-have-any-effect-on-vlscitrainingsharedintro_to_unix">4.7) Did the changes you made to <em>~/test/expectations.txt</em> have any effect on <em>/vlsci/TRAINING/shared/Intro_to_Unix</em>?</h4>
+<h4 id="47-did-the-changes-you-made-to-testexpectationstxt-have-any-effect-on-vlscitrainingsharedintro_to_unix">4.7) Did the changes you made to <em>~/test/expectations.txt</em> have any effect on <em>/vlsci/TRAINING/shared/Intro_to_Unix</em>?<a class="headerlink" href="#47-did-the-changes-you-made-to-testexpectationstxt-have-any-effect-on-vlscitrainingsharedintro_to_unix" title="Permanent link">&para;</a></h4>
 <p>How can you tell if two files are the same or different in their contents?</p>
 <details>
   <summary>Hint</summary>
@@ -3247,18 +3277,18 @@ Use *diff*
 Use *diff* to check that the two files are different after you have made the change to the copy of
 *expectations.txt* in your *~/test* directory.
 
-
-<pre><code class="sh">diff ~/test/expectations.txt \
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>diff ~/test/expectations.txt <span class="se">\</span>
 /vlsci/TRAINING/shared/Intro_to_Unix/expectations.txt
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 You could also use *ls* to check that the files have different sizes.
 
 </details>
 
 <hr />
-<h4 id="48-in-your-test-subdirectory-rename-expectationstxt-to-footxt">4.8) In your <em>test</em> subdirectory, rename <em>expectations.txt</em> to <em>foo.txt</em>.</h4>
+<h4 id="48-in-your-test-subdirectory-rename-expectationstxt-to-footxt">4.8) In your <em>test</em> subdirectory, rename <em>expectations.txt</em> to <em>foo.txt</em>.<a class="headerlink" href="#48-in-your-test-subdirectory-rename-expectationstxt-to-footxt" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3280,35 +3310,37 @@ Use *man mv* if you need to work out how to use it.
 
 Use the *mv* command to rename the file:
 
-
-<pre><code class="sh">$ mv expectations.txt foo.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mv expectations.txt foo.txt
 $ ls
 foo.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="49-rename-footxt-back-to-expectationstxt">4.9) Rename foo.txt back to expectations.txt.</h4>
+<h4 id="49-rename-footxt-back-to-expectationstxt">4.9) Rename foo.txt back to expectations.txt.<a class="headerlink" href="#49-rename-footxt-back-to-expectationstxt" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Answer</summary>
 
 Use the *mv* command to rename the file:
 
-
-<pre><code class="sh">$ mv foo.txt expectations.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mv foo.txt expectations.txt
 $ ls
 expectations.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Use *ls* to check that the file is in fact renamed.
 
 </details>
 
 <hr />
-<h4 id="410-remove-the-file-expectationstxt-from-your-test-directory">4.10) Remove the file <em>expectations.txt</em> from your <em>test</em> directory.</h4>
+<h4 id="410-remove-the-file-expectationstxt-from-your-test-directory">4.10) Remove the file <em>expectations.txt</em> from your <em>test</em> directory.<a class="headerlink" href="#410-remove-the-file-expectationstxt-from-your-test-directory" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3328,17 +3360,18 @@ We are trying to *remove* a file, check the commands at the top of this topic.
 
 Use the *rm* command to remove files (carefully):
 
-
-<pre><code class="sh">$ rm expectations.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rm expectations.txt
 $ ls
 hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="411-remove-the-entire-test-directory-and-all-the-files-within-it">4.11) Remove the entire <em>test</em> directory and all the files within it.</h4>
+<h4 id="411-remove-the-entire-test-directory-and-all-the-files-within-it">4.11) Remove the entire <em>test</em> directory and all the files within it.<a class="headerlink" href="#411-remove-the-entire-test-directory-and-all-the-files-within-it" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3364,19 +3397,20 @@ A faster way is to pass the *-r* (for recursive) flag to *rm* to remove all the 
 directory in one go:
 
 **Logical Answer**:
-
-<pre><code class="sh">cd ~
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~
 rm test/*
-rmdir test
-</code></pre>
-
+rmdir <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
 
 **Easier Answer**:
-
-<pre><code class="sh">cd ~
-rm -r test
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~
+rm -r <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
 
 <div class="error"><b>Warning</b>: Be very careful with <em>rm -r</em>, it will remove all files
 and all subdirectories underneath the specified directory. This could be catastrophic if you do it
@@ -3385,7 +3419,7 @@ in the wrong location! Now is a good moment to pause and think about file backup
 </details>
 
 <hr />
-<h4 id="412-recreate-the-test-directory-in-your-home-directory-and-copy-all-the-files-from-vlscitrainingsharedintro_to_unix-back-into-the-test-directory">4.12) Recreate the test directory in your home directory and copy all the files from <em>/vlsci/TRAINING/shared/Intro_to_Unix</em> back into the test directory.</h4>
+<h4 id="412-recreate-the-test-directory-in-your-home-directory-and-copy-all-the-files-from-vlscitrainingsharedintro_to_unix-back-into-the-test-directory">4.12) Recreate the test directory in your home directory and copy all the files from <em>/vlsci/TRAINING/shared/Intro_to_Unix</em> back into the test directory.<a class="headerlink" href="#412-recreate-the-test-directory-in-your-home-directory-and-copy-all-the-files-from-vlscitrainingsharedintro_to_unix-back-into-the-test-directory" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3398,17 +3432,18 @@ See exercises 4.1 and 4.2
 
 Repeat exercises 4.1 and 4.2.
 
-
-<pre><code class="sh">$ cd ~
-$ mkdir test
-$ cp /vlsci/TRAINING/shared/Intro_to_Unix/* test
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
+$ mkdir <span class="nb">test</span>
+$ cp /vlsci/TRAINING/shared/Intro_to_Unix/* <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="413-change-directories-to-test-and-use-the-cat-command-to-display-the-entire-contents-of-the-file-helloc">4.13) Change directories to <em>~/test</em> and use the <em>cat</em> command to display the entire contents of the file <em>hello.c</em></h4>
+<h4 id="413-change-directories-to-test-and-use-the-cat-command-to-display-the-entire-contents-of-the-file-helloc">4.13) Change directories to <em>~/test</em> and use the <em>cat</em> command to display the entire contents of the file <em>hello.c</em><a class="headerlink" href="#413-change-directories-to-test-and-use-the-cat-command-to-display-the-entire-contents-of-the-file-helloc" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3419,29 +3454,35 @@ Use *man* if you can't guess how it might work.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ cd ~/test
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/test
 $ cat hello.c
-#include &lt;stdio.h&gt;
-int main(void) {
-    printf (&quot;Hello World\n&quot;);
-    return 0;
-}
-</code></pre>
-
+<span class="c1">#include &lt;stdio.h&gt;</span>
+int main<span class="o">(</span>void<span class="o">)</span> <span class="o">{</span>
+    <span class="nb">printf</span> <span class="o">(</span><span class="s2">&quot;Hello World\n&quot;</span><span class="o">)</span><span class="p">;</span>
+    <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
 
 *hello.c* contains the source code of a C program. The compiled executable version of this code
 is in the file called *hi*, which you can run like so:
 
-
-<pre><code class="sh">$ ./hi
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ./hi
 Hello World
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="414-use-the-head-command-to-view-the-first-20-lines-of-the-file-sample_1fastq">4.14) Use the <em>head</em> command to view the first <em>20</em> lines of the file <em>sample_1.fastq</em></h4>
+<h4 id="414-use-the-head-command-to-view-the-first-20-lines-of-the-file-sample_1fastq">4.14) Use the <em>head</em> command to view the first <em>20</em> lines of the file <em>sample_1.fastq</em><a class="headerlink" href="#414-use-the-head-command-to-view-the-first-20-lines-of-the-file-sample_1fastq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3459,34 +3500,54 @@ Use *man* to find out what option you need to add to display a given number of *
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ head -20 sample_1.fastq
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ head -20 sample_1.fastq
 @IRIS:7:1:17:394#0/1
 GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
 +IRIS:7:1:17:394#0/1
-aaabaa`]baaaaa_aab]D^^`b`aYDW]abaa`^
+aaabaa<span class="sb">`</span><span class="o">]</span>baaaaa_aab<span class="o">]</span>D^^<span class="sb">`</span>b<span class="sb">`</span>aYDW<span class="o">]</span>abaa<span class="sb">`</span>^
 @IRIS:7:1:17:800#0/1
 GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
 +IRIS:7:1:17:800#0/1
-ababbaaabaaaaa`]`ba`]`aaaaYD\\_a``XT
+ababbaaabaaaaa<span class="sb">`</span><span class="o">]</span><span class="sb">`</span>ba<span class="sb">`</span><span class="o">]</span><span class="sb">`</span>aaaaYD<span class="se">\\</span>_a<span class="sb">``</span>XT
 @IRIS:7:1:17:1757#0/1
 TTTTCTCGACGATTTCCACTCCTGGTCNACGAATCC
 +IRIS:7:1:17:1757#0/1
-aaaaaa``aaa`aaaa_^a```]][Z[DY^XYV^_Y
+aaaaaa<span class="sb">``</span>aaa<span class="sb">`</span>aaaa_^a<span class="sb">```</span><span class="o">]][</span>Z<span class="o">[</span>DY^XYV^_Y
 @IRIS:7:1:17:1479#0/1
 CATATTGTAGGGTGGATCTCGAAAGATATGAAAGAT
 +IRIS:7:1:17:1479#0/1
-abaaaaa`a```^aaaaa`_]aaa`aaa__a_X]``
+abaaaaa<span class="sb">`</span>a<span class="sb">```</span>^aaaaa<span class="sb">`</span>_<span class="o">]</span>aaa<span class="sb">`</span>aaa__a_X<span class="o">]</span><span class="sb">``</span>
 @IRIS:7:1:17:150#0/1
 TGATGTACTATGCATATGAACTTGTATGCAAAGTGG
 +IRIS:7:1:17:150#0/1
-abaabaa`aaaaaaa^ba_]]aaa^aaaaa_^][aa
-</code></pre>
-
+abaabaa<span class="sb">`</span>aaaaaaa^ba_<span class="o">]]</span>aaa^aaaaa_^<span class="o">][</span>aa
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="415-use-the-tail-command-to-view-the-last-8-lines-of-the-file-sample_1fastq">4.15) Use the <em>tail</em> command to view the last <em>8</em> lines of the file <em>sample_1.fastq</em></h4>
+<h4 id="415-use-the-tail-command-to-view-the-last-8-lines-of-the-file-sample_1fastq">4.15) Use the <em>tail</em> command to view the last <em>8</em> lines of the file <em>sample_1.fastq</em><a class="headerlink" href="#415-use-the-tail-command-to-view-the-last-8-lines-of-the-file-sample_1fastq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3497,22 +3558,30 @@ It's very much like *head*.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">tail -8 sample_1.fastq
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tail -8 sample_1.fastq
 @IRIS:7:32:731:717#0/1
 TAATAATTGGAGCCAAATCATGAATCAAAGGACATA
 +IRIS:7:32:731:717#0/1
-ababbababbab]abbaa`babaaabbb`bbbabbb
+ababbababbab<span class="o">]</span>abbaa<span class="sb">`</span>babaaabbb<span class="sb">`</span>bbbabbb
 @IRIS:7:32:731:1228#0/1
 CTGATGCCGAGGCACGCCGTTAGGCGCGTGCTGCAG
 +IRIS:7:32:731:1228#0/1
-`aaaaa``aaa`a``a`^a`a`a_[a_a`a`aa`__
-</code></pre>
-
+<span class="sb">`</span>aaaaa<span class="sb">``</span>aaa<span class="sb">`</span>a<span class="sb">``</span>a<span class="sb">`</span>^a<span class="sb">`</span>a<span class="sb">`</span>a_<span class="o">[</span>a_a<span class="sb">`</span>a<span class="sb">`</span>aa<span class="sb">`</span>__
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="416-use-the-grep-command-to-find-out-all-the-lines-in-mobytxt-that-contain-the-word-ahab">4.16) Use the <em>grep</em> command to find out all the lines in <em>moby.txt</em> that contain the word "Ahab"</h4>
+<h4 id="416-use-the-grep-command-to-find-out-all-the-lines-in-mobytxt-that-contain-the-word-ahab">4.16) Use the <em>grep</em> command to find out all the lines in <em>moby.txt</em> that contain the word &ldquo;Ahab&rdquo;<a class="headerlink" href="#416-use-the-grep-command-to-find-out-all-the-lines-in-mobytxt-that-contain-the-word-ahab" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3523,42 +3592,50 @@ One might say we are 'looking for the *pattern* "Ahab"'
 <details>
   <summary>Additional Hint</summary>
 
-<pre><code class="sh">$ man grep
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ man grep
 ...
 SYNOPSIS
-       grep [OPTIONS] PATTERN [FILE...]
+       grep <span class="o">[</span>OPTIONS<span class="o">]</span> PATTERN <span class="o">[</span>FILE...<span class="o">]</span>
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ grep Ahab moby.txt
-&quot;Want to see what whaling is, eh? Have ye clapped eye on Captain Ahab?&quot;
-&quot;Who is Captain Ahab, sir?&quot;
-&quot;Aye, aye, I thought so. Captain Ahab is the Captain of this ship.&quot;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep Ahab moby.txt
+<span class="s2">&quot;Want to see what whaling is, eh? Have ye clapped eye on Captain Ahab?&quot;</span>
+<span class="s2">&quot;Who is Captain Ahab, sir?&quot;</span>
+<span class="s2">&quot;Aye, aye, I thought so. Captain Ahab is the Captain of this ship.&quot;</span>
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 If you want to know how many lines are in the output of the above command you can "pipe" it
 into the *wc -l* command:
 
-
-<pre><code class="sh">$ grep Ahab moby.txt | wc -l
-491
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep Ahab moby.txt <span class="p">|</span> wc -l
+<span class="m">491</span>
+</pre></div>
+</td></tr></table>
 
 which shows that there are *491* lines in *moby.txt* that contain the word Ahab.
 
 </details>
 
 <hr />
-<h4 id="417-use-the-grep-command-to-find-out-all-the-lines-in-expectationstxt-that-contain-the-word-the-with-a-case-insensitive-search-it-should-count-the-the-the-the-etcetera">4.17) Use the <em>grep</em> command to find out all the lines in <em>expectations.txt</em> that contain the word "the" with a case insensitive search (it should count "the" "The" "THE" "tHe" etcetera).</h4>
+<h4 id="417-use-the-grep-command-to-find-out-all-the-lines-in-expectationstxt-that-contain-the-word-the-with-a-case-insensitive-search-it-should-count-the-the-the-the-etcetera">4.17) Use the <em>grep</em> command to find out all the lines in <em>expectations.txt</em> that contain the word &ldquo;the&rdquo; with a case insensitive search (it should count &ldquo;the&rdquo; &ldquo;The&rdquo; &ldquo;THE&rdquo; &ldquo;tHe&rdquo; etcetera).<a class="headerlink" href="#417-use-the-grep-command-to-find-out-all-the-lines-in-expectationstxt-that-contain-the-word-the-with-a-case-insensitive-search-it-should-count-the-the-the-the-etcetera" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3569,13 +3646,17 @@ One might say we are *ignoring case*.
 <details>
   <summary>Additional Hint</summary>
 
-<pre><code class="sh">$ man grep
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ man grep
 ...
        -i, --ignore-case
-              Ignore case distinctions in both the PATTERN and the input files.  (-i is specified by POSIX.)
+              Ignore <span class="k">case</span> distinctions in both the PATTERN and the input files.  <span class="o">(</span>-i is specified by POSIX.<span class="o">)</span>
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
@@ -3584,28 +3665,32 @@ One might say we are *ignoring case*.
 
 Use the *-i* flag to *grep* to make it perform case insensitive search:
 
-
-<pre><code class="sh">$ grep -i the expectations.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep -i the expectations.txt
 The Project Gutenberg EBook of Great Expectations, by Charles Dickens
-This eBook is for the use of anyone anywhere at no cost and with
+This eBook is <span class="k">for</span> the use of anyone anywhere at no cost and with
 re-use it under the terms of the Project Gutenberg License included
-[Project Gutenberg Editor's Note: There is also another version of
+<span class="o">[</span>Project Gutenberg Editor<span class="err">&#39;</span>s Note: There is also another version of
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 Again, "pipe" the output to *wc -l* to count the number of lines:
 
-
-<pre><code class="sh">$ grep -i the expectations.txt  | wc -l
-8165
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep -i the expectations.txt  <span class="p">|</span> wc -l
+<span class="m">8165</span>
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="418-use-the-gzip-command-to-compress-the-file-sample_1fastq-use-gunzip-to-decompress-it-back-to-the-original-contents">4.18) Use the <em>gzip</em> command to compress the file <em>sample_1.fastq</em>. Use <em>gunzip</em> to decompress it back to the original contents.</h4>
+<h4 id="418-use-the-gzip-command-to-compress-the-file-sample_1fastq-use-gunzip-to-decompress-it-back-to-the-original-contents">4.18) Use the <em>gzip</em> command to compress the file <em>sample_1.fastq</em>. Use <em>gunzip</em> to decompress it back to the original contents.<a class="headerlink" href="#418-use-the-gzip-command-to-compress-the-file-sample_1fastq-use-gunzip-to-decompress-it-back-to-the-original-contents" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3618,25 +3703,39 @@ Use the above commands along with *man* and *ls* to see what happens to the file
 
 Check the file size of sample_1.fastq before compressing it:
 
-
-<pre><code class="sh"># check filesize
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># check filesize</span>
 $ ls -l sample_1.fastq
--rw-r--r-- 1 training01 training 90849644 Jun 14 20:03 sample_1.fastq
+-rw-r--r-- <span class="m">1</span> training01 training <span class="m">90849644</span> Jun <span class="m">14</span> <span class="m">20</span>:03 sample_1.fastq
 
-# compress it (takes a few seconds)
+<span class="c1"># compress it (takes a few seconds)</span>
 $ gzip sample_1.fastq
 
-# check filesize (Note: its name changed)
+<span class="c1"># check filesize (Note: its name changed)</span>
 $ ls -l sample_1.fastq.gz
--rw-r--r-- 1 training01 training 26997595 Jun 14 20:03 sample_1.fastq.gz
+-rw-r--r-- <span class="m">1</span> training01 training <span class="m">26997595</span> Jun <span class="m">14</span> <span class="m">20</span>:03 sample_1.fastq.gz
 
-# decompress it
+<span class="c1"># decompress it</span>
 $ gunzip sample_1.fastq.gz
 
 $ ls -l sample_1.fastq
--rw-r--r-- 1 training01 training 90849644 Jun 14 20:03 sample_1.fastq
-</code></pre>
-
+-rw-r--r-- <span class="m">1</span> training01 training <span class="m">90849644</span> Jun <span class="m">14</span> <span class="m">20</span>:03 sample_1.fastq
+</pre></div>
+</td></tr></table>
 
 You will see that when it was compressed it is *26997595* bytes in size, making it about *0.3* times the size of the
 original file.
@@ -3646,12 +3745,12 @@ do then they wont do anything.
 
 </details>
 
-<h2 id="topic-5-pipes-output-redirection-and-shell-scripts">Topic 5: Pipes, output redirection and shell scripts</h2>
+<h2 id="topic-5-pipes-output-redirection-and-shell-scripts">Topic 5: Pipes, output redirection and shell scripts<a class="headerlink" href="#topic-5-pipes-output-redirection-and-shell-scripts" title="Permanent link">&para;</a></h2>
 <p>In this section we will cover a lot of the more advanced Unix concepts; it is here where you will start to see
-the power of Unix.  I say <em>start</em> because this is only the "tip of the iceberg".</p>
+the power of Unix.  I say <em>start</em> because this is only the &ldquo;tip of the iceberg&rdquo;.</p>
 <p><strong>Duration</strong>: 50 minutes. <!-- See "Processes" from the workshop notes. --></p>
 <p><strong>Relevant commands</strong>: <em>wc</em>, <em>paste</em>, <em>grep</em>, <em>sort</em>, <em>uniq</em>, <em>nano</em>, <em>cut</em></p>
-<h4 id="51-how-many-reads-are-contained-in-the-file-sample_1fastq">5.1) How many <em>reads</em> are contained in the file <em>sample_1.fastq</em>?</h4>
+<h4 id="51-how-many-reads-are-contained-in-the-file-sample_1fastq">5.1) How many <em>reads</em> are contained in the file <em>sample_1.fastq</em>?<a class="headerlink" href="#51-how-many-reads-are-contained-in-the-file-sample_1fastq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3671,22 +3770,22 @@ Count the number of lines
 
 We can answer this question by counting the number of lines in the file and dividing by 4:
 
-
-<pre><code class="sh">$ wc -l sample_1.fastq
-3000000
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wc -l sample_1.fastq
+<span class="m">3000000</span>
+</pre></div>
+</td></tr></table>
 
 **Answer**: There are *3000000* lines in the file representing *750000* reads.
 
 If you want to do simple arithmetic at the command line then you can use the "basic calculator"
 called *bc*:
 
-
-<pre><code class="sh">$ echo &quot;3000000 / 4&quot; | bc
-750000
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">echo</span> <span class="s2">&quot;3000000 / 4&quot;</span> <span class="p">|</span> bc
+<span class="m">750000</span>
+</pre></div>
+</td></tr></table>
 
 <div class="info"><b>Note</b>: that the vertical bar character "|" is the Unix pipe (and is often
 called the "pipe symbol"). It is used for connecting the output of one command into the input of
@@ -3699,7 +3798,7 @@ programming language (such as Python etcetera).
 </details>
 
 <hr />
-<h4 id="52-how-many-reads-in-sample_1fastq-contain-the-sequence-gattaca">5.2) How many reads in <em>sample_1.fastq</em> contain the sequence <em>GATTACA</em>?</h4>
+<h4 id="52-how-many-reads-in-sample_1fastq-contain-the-sequence-gattaca">5.2) How many reads in <em>sample_1.fastq</em> contain the sequence <em>GATTACA</em>?<a class="headerlink" href="#52-how-many-reads-in-sample_1fastq-contain-the-sequence-gattaca" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3712,11 +3811,11 @@ Check out exercise 4.16
 
 Use *grep* to find all the lines that contain *GATTACA* and "pipe" the output to *wc -l* to count them:
 
-
-<pre><code class="sh">$ grep GATTACA sample_1.fastq | wc -l
-1119
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep GATTACA sample_1.fastq <span class="p">|</span> wc -l
+<span class="m">1119</span>
+</pre></div>
+</td></tr></table>
 
 **Answer**: *1119*
 
@@ -3726,7 +3825,7 @@ the *-i* (ignore case option for grep).
 </details>
 
 <hr />
-<h4 id="53-on-what-line-numbers-do-the-sequences-containing-gattaca-occur">5.3) On what line numbers do the sequences containing <em>GATTACA</em> occur?</h4>
+<h4 id="53-on-what-line-numbers-do-the-sequences-containing-gattaca-occur">5.3) On what line numbers do the sequences containing <em>GATTACA</em> occur?<a class="headerlink" href="#53-on-what-line-numbers-do-the-sequences-containing-gattaca-occur" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3747,57 +3846,69 @@ Check out the manpage for *grep* and/or *nl*
 You can use the *-n* flag to grep to make it prefix each line with a line number:
 
 **Answer 1**:
-
-<pre><code class="sh">$ grep -n GATTACA sample_1.fastq
-5078:AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
-7170:AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
-8238:ATAGTTTTTTCGATTACATGGATTATATCTGTTTGC
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep -n GATTACA sample_1.fastq
+<span class="m">5078</span>:AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
+<span class="m">7170</span>:AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
+<span class="m">8238</span>:ATAGTTTTTTCGATTACATGGATTATATCTGTTTGC
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Answer 2**: Or you can use the *nl* command to number each line of sample_1.fastq and then search for *GATTACA*
 in the numbered lines:
 
-
-<pre><code class="sh">$ nl sample_1.fastq | grep GATTACA
-  5078  AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
-  7170  AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
-  8238  ATAGTTTTTTCGATTACATGGATTATATCTGTTTGC
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nl sample_1.fastq <span class="p">|</span> grep GATTACA
+  <span class="m">5078</span>  AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
+  <span class="m">7170</span>  AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
+  <span class="m">8238</span>  ATAGTTTTTTCGATTACATGGATTATATCTGTTTGC
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 **Just the line numbers**:
 
 If you just want to see the line numbers then you can "pipe" the output of the above command into
 *cut -f 1*:
 
-
-<pre><code class="sh">$ nl sample_1.fastq | grep GATTACA | cut -f 1
-  5078
-  7170
-  8238
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nl sample_1.fastq <span class="p">|</span> grep GATTACA <span class="p">|</span> cut -f <span class="m">1</span>
+  <span class="m">5078</span>
+  <span class="m">7170</span>
+  <span class="m">8238</span>
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 *cut* will remove certain columns from the input; in this case it will remove all except column 1
 (a.k.a. field 1, hence the *-f 1* option)
 
-
-<pre><code class="sh">$ grep -n GATTACA sample_1.fastq | cut -d: -f 1
-5078
-7170
-8238
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ grep -n GATTACA sample_1.fastq <span class="p">|</span> cut -d: -f <span class="m">1</span>
+<span class="m">5078</span>
+<span class="m">7170</span>
+<span class="m">8238</span>
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="54-use-the-nl-command-to-print-each-line-of-sample_1fastq-with-its-corresponding-line-number-at-the-beginning">5.4) Use the <em>nl</em> command to print each line of <em>sample_1.fastq</em> with its corresponding line number at the beginning.</h4>
+<h4 id="54-use-the-nl-command-to-print-each-line-of-sample_1fastq-with-its-corresponding-line-number-at-the-beginning">5.4) Use the <em>nl</em> command to print each line of <em>sample_1.fastq</em> with its corresponding line number at the beginning.<a class="headerlink" href="#54-use-the-nl-command-to-print-each-line-of-sample_1fastq-with-its-corresponding-line-number-at-the-beginning" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3808,18 +3919,27 @@ Check answer to 5.3.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ nl sample_1.fastq
-     1  @IRIS:7:1:17:394#0/1
-     2  GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
-     3  +IRIS:7:1:17:394#0/1
-     4  aaabaa`]baaaaa_aab]D^^`b`aYDW]abaa`^
-     5  @IRIS:7:1:17:800#0/1
-     6  GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
-     7  +IRIS:7:1:17:800#0/1
-     8  ababbaaabaaaaa`]`ba`]`aaaaYD\\_a``XT
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nl sample_1.fastq
+     <span class="m">1</span>  @IRIS:7:1:17:394#0/1
+     <span class="m">2</span>  GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
+     <span class="m">3</span>  +IRIS:7:1:17:394#0/1
+     <span class="m">4</span>  aaabaa<span class="sb">`</span><span class="o">]</span>baaaaa_aab<span class="o">]</span>D^^<span class="sb">`</span>b<span class="sb">`</span>aYDW<span class="o">]</span>abaa<span class="sb">`</span>^
+     <span class="m">5</span>  @IRIS:7:1:17:800#0/1
+     <span class="m">6</span>  GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
+     <span class="m">7</span>  +IRIS:7:1:17:800#0/1
+     <span class="m">8</span>  ababbaaabaaaaa<span class="sb">`</span><span class="o">]</span><span class="sb">`</span>ba<span class="sb">`</span><span class="o">]</span><span class="sb">`</span>aaaaYD<span class="se">\\</span>_a<span class="sb">``</span>XT
 ... AND MUCH MUCH MORE ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 There are a lot of lines in that file so this command might take a while to print all its output.
 If you get tired of looking at the output you can kill the command with *control-c* (hold the
@@ -3828,10 +3948,10 @@ If you get tired of looking at the output you can kill the command with *control
 </details>
 
 <hr />
-<h4 id="55-redirect-the-output-of-the-previous-command-to-a-file-called-sample_1fastqnl">5.5) Redirect the output of the previous command to a file called <em>sample_1.fastq.nl</em>.</h4>
+<h4 id="55-redirect-the-output-of-the-previous-command-to-a-file-called-sample_1fastqnl">5.5) Redirect the output of the previous command to a file called <em>sample_1.fastq.nl</em>.<a class="headerlink" href="#55-redirect-the-output-of-the-previous-command-to-a-file-called-sample_1fastqnl" title="Permanent link">&para;</a></h4>
 <p>Check the first <em>20</em> lines of <em>sample_1.fastq.nl</em> with the <em>head</em> command. Use the <em>less</em> command to
 interactively view the contents of <em>sample_1.fastq.nl</em> (use the arrow keys to navigate up and down,
-<em>q</em> to quit and '<em>/</em>' to search). Use the search facility in less to find occurrences of
+<em>q</em> to quit and &lsquo;<em>/</em>&lsquo; to search). Use the search facility in less to find occurrences of
 <em>GATTACA</em>.</p>
 <details>
   <summary>Hint</summary>
@@ -3844,9 +3964,9 @@ Ok that one was tough, *> FILENAME* is how you do it if you didn't break out an 
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ nl sample_1.fastq &gt; sample_1.fastq.nl
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nl sample_1.fastq &gt; sample_1.fastq.nl
+</pre></div>
+</td></tr></table>
 
 The greater-than sign "*>*" is the file redirection operator. It causes the standard output of the
 command on the left-hand-side to be written to the file on the right-hand-side.
@@ -3857,35 +3977,43 @@ a terminal.
 
 To check that the first 20 lines of the file look reasonable you can use the *head* command like so:
 
-
-<pre><code class="sh">$ head -20 sample_1.fastq.nl
-     1  @IRIS:7:1:17:394#0/1
-     2  GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
-     3  +IRIS:7:1:17:394#0/1
-     4  aaabaa`]baaaaa_aab]D^^`b`aYDW]abaa`^
-     5  @IRIS:7:1:17:800#0/1
-     6  GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
-     7  +IRIS:7:1:17:800#0/1
-     8  ababbaaabaaaaa`]`ba`]`aaaaYD\\_a``XT
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ head -20 sample_1.fastq.nl
+     <span class="m">1</span>  @IRIS:7:1:17:394#0/1
+     <span class="m">2</span>  GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
+     <span class="m">3</span>  +IRIS:7:1:17:394#0/1
+     <span class="m">4</span>  aaabaa<span class="sb">`</span><span class="o">]</span>baaaaa_aab<span class="o">]</span>D^^<span class="sb">`</span>b<span class="sb">`</span>aYDW<span class="o">]</span>abaa<span class="sb">`</span>^
+     <span class="m">5</span>  @IRIS:7:1:17:800#0/1
+     <span class="m">6</span>  GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
+     <span class="m">7</span>  +IRIS:7:1:17:800#0/1
+     <span class="m">8</span>  ababbaaabaaaaa<span class="sb">`</span><span class="o">]</span><span class="sb">`</span>ba<span class="sb">`</span><span class="o">]</span><span class="sb">`</span>aaaaYD<span class="se">\\</span>_a<span class="sb">``</span>XT
 ...
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 The *less* command allows you to interactively view a file. The arrow keys move the page up and
 down. You can search using the '*/*' followed by the search term. You can quit by pressing "*q*". Note
 that the *less* command is used by default to display man pages.
 
-
-<pre><code class="sh">$ less sample_1.fastq.nl
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ less sample_1.fastq.nl
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="56-the-four-lines-per-read-format-of-fastq-is-cumbersome-to-deal-with-often-it-would-be-preferable-if-we-could-convert-it-to-tab-separated-value-tsv-format-such-that-each-read-appears-on-a-single-line-with-each-of-its-fields-separated-by-tabs-use-the-following-command-to-convert-sample_1fastq-into-tsv-format">5.6) The four-lines-per-read format of FASTQ is cumbersome to deal with. Often it would be preferable if we could convert it to tab-separated-value (TSV) format, such that each read appears on a single line with each of its fields separated by tabs. Use the following command to convert sample_1.fastq into TSV format:</h4>
-<pre><code class="sh">$ cat sample_1.fastq | paste - - - - &gt; sample_1.tsv
-</code></pre>
+<h4 id="56-the-four-lines-per-read-format-of-fastq-is-cumbersome-to-deal-with-often-it-would-be-preferable-if-we-could-convert-it-to-tab-separated-value-tsv-format-such-that-each-read-appears-on-a-single-line-with-each-of-its-fields-separated-by-tabs-use-the-following-command-to-convert-sample_1fastq-into-tsv-format">5.6) The four-lines-per-read format of FASTQ is cumbersome to deal with. Often it would be preferable if we could convert it to tab-separated-value (TSV) format, such that each read appears on a single line with each of its fields separated by tabs. Use the following command to convert sample_1.fastq into TSV format:<a class="headerlink" href="#56-the-four-lines-per-read-format-of-fastq-is-cumbersome-to-deal-with-often-it-would-be-preferable-if-we-could-convert-it-to-tab-separated-value-tsv-format-such-that-each-read-appears-on-a-single-line-with-each-of-its-fields-separated-by-tabs-use-the-following-command-to-convert-sample_1fastq-into-tsv-format" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cat sample_1.fastq <span class="p">|</span> paste - - - - &gt; sample_1.tsv
+</pre></div>
+</td></tr></table>
 
 <details>
   <summary>Answer</summary>
@@ -3901,9 +4029,10 @@ which causes it to join consecutive groups of 4 lines from the file into one lin
 </details>
 
 <hr />
-<h4 id="57-do-you-expect-the-output-of-the-following-command-to-produce-the-same-output-as-above-and-why">5.7) Do you expect the output of the following command to produce the same output as above? and why?</h4>
-<pre><code class="sh">$ paste sample_1.fastq sample_1.fastq sample_1.fastq sample_1.fastq &gt; sample_1b.tsv
-</code></pre>
+<h4 id="57-do-you-expect-the-output-of-the-following-command-to-produce-the-same-output-as-above-and-why">5.7) Do you expect the output of the following command to produce the same output as above? and why?<a class="headerlink" href="#57-do-you-expect-the-output-of-the-following-command-to-produce-the-same-output-as-above-and-why" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ paste sample_1.fastq sample_1.fastq sample_1.fastq sample_1.fastq &gt; sample_1b.tsv
+</pre></div>
+</td></tr></table>
 
 <p>Try it, see what ends up in sample_1b.tsv (maybe use <em>less</em>)</p>
 <details>
@@ -3926,7 +4055,7 @@ side point.
 </details>
 
 <hr />
-<h4 id="58-check-that-sample_1tsv-has-the-correct-number-of-lines-use-the-head-command-to-view-the-first-20-lines-of-the-file">5.8) Check that <em>sample_1.tsv</em> has the correct number of lines. Use the <em>head</em> command to view the first <em>20</em> lines of the file.</h4>
+<h4 id="58-check-that-sample_1tsv-has-the-correct-number-of-lines-use-the-head-command-to-view-the-first-20-lines-of-the-file">5.8) Check that <em>sample_1.tsv</em> has the correct number of lines. Use the <em>head</em> command to view the first <em>20</em> lines of the file.<a class="headerlink" href="#58-check-that-sample_1tsv-has-the-correct-number-of-lines-use-the-head-command-to-view-the-first-20-lines-of-the-file" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3939,24 +4068,22 @@ Remember the *wc* command.
 
 We can count the number of lines in *sample_1.tsv* using *wc*:
 
-
-<pre><code class="sh">$ wc -l sample_1.tsv
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wc -l sample_1.tsv
+</pre></div>
+</td></tr></table>
 
 The output should be *750000* as expected (1/4 of the number of lines in sample_1.fastq).
 
 To view the first *20* lines of *sample_1.tsv* use the *head* command:
 
-
-<pre><code class="sh">$ head -20 sample_1.tsv
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ head -20 sample_1.tsv
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="59-use-the-cut-command-to-print-out-the-second-column-of-sample_1tsv-redirect-the-output-to-a-file-called-sample_1dnatxt">5.9) Use the <em>cut</em> command to print out the second column of <em>sample_1.tsv</em>. Redirect the output to a file called <em>sample_1.dna.txt</em>.</h4>
+<h4 id="59-use-the-cut-command-to-print-out-the-second-column-of-sample_1tsv-redirect-the-output-to-a-file-called-sample_1dnatxt">5.9) Use the <em>cut</em> command to print out the second column of <em>sample_1.tsv</em>. Redirect the output to a file called <em>sample_1.dna.txt</em>.<a class="headerlink" href="#59-use-the-cut-command-to-print-out-the-second-column-of-sample_1tsv-redirect-the-output-to-a-file-called-sample_1dnatxt" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3971,17 +4098,16 @@ The file sample_1.tsv is in column format. The cut command can be used to select
 from the file. The DNA sequences appear in column 2, we select that column using the -f 2 flag
 (the f stands for "field").
 
-
-<pre><code class="sh">cut -f 2 sample_1.tsv &gt; sample_1.dna.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cut -f <span class="m">2</span> sample_1.tsv &gt; sample_1.dna.txt
+</pre></div>
+</td></tr></table>
 
 Check that the output file looks reasonable using *head* or *less*.
 
 </details>
 
 <hr />
-<h4 id="510-use-the-sort-command-to-sort-the-lines-of-sample_1dnatxt-and-redirect-the-output-to-sample_1dnasortedtxt-use-head-to-look-at-the-first-few-lines-of-the-output-file-you-should-see-a-lot-of-repeated-sequences-of-as">5.10) Use the <em>sort</em> command to sort the lines of <em>sample_1.dna.txt</em> and redirect the output to <em>sample_1.dna.sorted.txt</em>. Use <em>head</em> to look at the first few lines of the output file. You should see a lot of repeated sequences of As.</h4>
+<h4 id="510-use-the-sort-command-to-sort-the-lines-of-sample_1dnatxt-and-redirect-the-output-to-sample_1dnasortedtxt-use-head-to-look-at-the-first-few-lines-of-the-output-file-you-should-see-a-lot-of-repeated-sequences-of-as">5.10) Use the <em>sort</em> command to sort the lines of <em>sample_1.dna.txt</em> and redirect the output to <em>sample_1.dna.sorted.txt</em>. Use <em>head</em> to look at the first few lines of the output file. You should see a lot of repeated sequences of As.<a class="headerlink" href="#510-use-the-sort-command-to-sort-the-lines-of-sample_1dnatxt-and-redirect-the-output-to-sample_1dnasortedtxt-use-head-to-look-at-the-first-few-lines-of-the-output-file-you-should-see-a-lot-of-repeated-sequences-of-as" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -3992,9 +4118,9 @@ Use *man* (sort) and see exercise 5.5 (redirection)
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ sort sample_1.dna.txt &gt; sample_1.dna.sorted.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sort sample_1.dna.txt &gt; sample_1.dna.sorted.txt
+</pre></div>
+</td></tr></table>
 
 Running *head* on the output file reveals that there are duplicate DNA sequences in the input FASTQ
 file.
@@ -4002,7 +4128,7 @@ file.
 </details>
 
 <hr />
-<h4 id="511-use-the-uniq-command-to-remove-duplicate-consecutive-lines-from-sample_1dnasortedtxt-redirect-the-result-to-sample_1dnauniqtxt-compare-the-number-of-lines-in-sample1_dnatxt-to-the-number-of-lines-in-sample_1dnauniqtxt">5.11) Use the <em>uniq</em> command to remove duplicate consecutive lines from <em>sample_1.dna.sorted.txt</em>, redirect the result to <em>sample_1.dna.uniq.txt</em>. Compare the number of lines in sample1_dna.txt to the number of lines in <em>sample_1.dna.uniq.txt</em>.</h4>
+<h4 id="511-use-the-uniq-command-to-remove-duplicate-consecutive-lines-from-sample_1dnasortedtxt-redirect-the-result-to-sample_1dnauniqtxt-compare-the-number-of-lines-in-sample1_dnatxt-to-the-number-of-lines-in-sample_1dnauniqtxt">5.11) Use the <em>uniq</em> command to remove duplicate consecutive lines from <em>sample_1.dna.sorted.txt</em>, redirect the result to <em>sample_1.dna.uniq.txt</em>. Compare the number of lines in sample1_dna.txt to the number of lines in <em>sample_1.dna.uniq.txt</em>.<a class="headerlink" href="#511-use-the-uniq-command-to-remove-duplicate-consecutive-lines-from-sample_1dnasortedtxt-redirect-the-result-to-sample_1dnauniqtxt-compare-the-number-of-lines-in-sample1_dnatxt-to-the-number-of-lines-in-sample_1dnauniqtxt" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -4014,19 +4140,21 @@ redirection now.
 <details>
   <summary>Answer</summary>
 
-<pre><code class="sh">$ uniq sample_1.dna.sorted.txt &gt; sample_1.dna.uniq.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ uniq sample_1.dna.sorted.txt &gt; sample_1.dna.uniq.txt
+</pre></div>
+</td></tr></table>
 
 Compare the outputs of:
 
-
-<pre><code class="sh">$ wc -l sample_1.dna.sorted.txt
-750000
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wc -l sample_1.dna.sorted.txt
+<span class="m">750000</span>
 $ wc -l sample_1.dna.uniq.txt
-614490
-</code></pre>
-
+<span class="m">614490</span>
+</pre></div>
+</td></tr></table>
 
 View the contents of *sample_1.dna.uniq.txt* to check that the duplicate DNA sequences have been
 removed.
@@ -4034,7 +4162,7 @@ removed.
 </details>
 
 <hr />
-<h4 id="512-can-you-modify-the-command-from-above-to-produce-only-those-sequences-of-dna-which-were-duplicated-in-sample_1dnasortedtxt">5.12) Can you modify the command from above to produce <em>only</em> those sequences of DNA which were duplicated in <em>sample_1.dna.sorted.txt</em>?</h4>
+<h4 id="512-can-you-modify-the-command-from-above-to-produce-only-those-sequences-of-dna-which-were-duplicated-in-sample_1dnasortedtxt">5.12) Can you modify the command from above to produce <em>only</em> those sequences of DNA which were duplicated in <em>sample_1.dna.sorted.txt</em>?<a class="headerlink" href="#512-can-you-modify-the-command-from-above-to-produce-only-those-sequences-of-dna-which-were-duplicated-in-sample_1dnasortedtxt" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -4054,15 +4182,14 @@ Look at the man page for uniq.
 
 Use the *-d* flag to *uniq* to print out only the duplicated lines from the file:
 
-
-<pre><code class="sh">$ uniq -d sample_1.dna.sorted.txt &gt; sample_1.dna.dup.txt
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ uniq -d sample_1.dna.sorted.txt &gt; sample_1.dna.dup.txt
+</pre></div>
+</td></tr></table>
 
 </details>
 
 <hr />
-<h4 id="513-write-a-shell-pipeline-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq">5.13) Write a <em>shell pipeline</em> which will print the number of duplicated DNA sequences in sample_1.fastq.</h4>
+<h4 id="513-write-a-shell-pipeline-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq">5.13) Write a <em>shell pipeline</em> which will print the number of duplicated DNA sequences in sample_1.fastq.<a class="headerlink" href="#513-write-a-shell-pipeline-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -4084,18 +4211,18 @@ Finally we can 'pipe' all the pieces together into a sophisticated pipeline whic
 FASTQ file and ends with a list of duplicated DNA sequences:
 
 **Answer**:
-
-<pre><code class="sh">$ cat sample_1.fastq | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
-56079
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cat sample_1.fastq <span class="p">|</span> paste - - - - <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l
+<span class="m">56079</span>
+</pre></div>
+</td></tr></table>
 
 The output file should have *56079* lines.
 
 </details>
 
 <hr />
-<h4 id="514-advanced-write-a-shell-script-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq">5.14) (Advanced) Write a shell script which will print the number of duplicated DNA sequences in sample_1.fastq.</h4>
+<h4 id="514-advanced-write-a-shell-script-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq">5.14) (Advanced) Write a shell script which will print the number of duplicated DNA sequences in sample_1.fastq.<a class="headerlink" href="#514-advanced-write-a-shell-script-which-will-print-the-number-of-duplicated-dna-sequences-in-sample_1fastq" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -4113,12 +4240,13 @@ create the file.
 
 **Answer**: the contents of the file will look like this:
 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-<pre><code class="sh">#!/bin/bash
-
-cat sample_1.fastq | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
-</code></pre>
-
+cat sample_1.fastq <span class="p">|</span> paste - - - - <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l
+</pre></div>
+</td></tr></table>
 
 <div class="info"><b>Note</b>: the first line has special meaning.  If it starts with '<em>#!</em>' (Hash
 then exclamation mark) then it tells bash this file is a script that can be interpreted.  The command
@@ -4126,24 +4254,22 @@ then exclamation mark) then it tells bash this file is a script that can be inte
 
 Give everyone execute permissions on the file with chmod:
 
-
-<pre><code class="sh">$ chmod +x sample_1_dups.sh
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ chmod +x sample_1_dups.sh
+</pre></div>
+</td></tr></table>
 
 You can run the script like so:
 
-
-<pre><code class="sh">$ ./sample_1_dups.sh
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ./sample_1_dups.sh
+</pre></div>
+</td></tr></table>
 
 If all goes well the script should behave in exactly the same way as the answer to 5.13.
 
 </details>
 
 <hr />
-<h4 id="515-advanced-modify-your-shell-script-so-that-it-accepts-the-name-of-the-input-fastq-file-as-a-command-line-parameter">5.15) (Advanced) Modify your shell script so that it accepts the name of the input FASTQ file as a command line parameter.</h4>
+<h4 id="515-advanced-modify-your-shell-script-so-that-it-accepts-the-name-of-the-input-fastq-file-as-a-command-line-parameter">5.15) (Advanced) Modify your shell script so that it accepts the name of the input FASTQ file as a command line parameter.<a class="headerlink" href="#515-advanced-modify-your-shell-script-so-that-it-accepts-the-name-of-the-input-fastq-file-as-a-command-line-parameter" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Hint</summary>
 
@@ -4165,26 +4291,25 @@ Shell scripts can refer to command line arguments by their position using specia
 
 Copy the shell script from *5.14* into a new file:
 
-
-<pre><code class="sh">$ cp sample_1_dups.sh fastq_dups.sh
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cp sample_1_dups.sh fastq_dups.sh
+</pre></div>
+</td></tr></table>
 
 Edit the new shell script file and change it to use the command line parameters:
 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-<pre><code class="sh">#!/bin/bash
-
-cat $1 | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
-</code></pre>
-
+cat <span class="nv">$1</span> <span class="p">|</span> paste - - - - <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l
+</pre></div>
+</td></tr></table>
 
 You can run the new script like so:
 
-
-<pre><code class="sh">$ ./fastq_dups.sh sample_1.fastq
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ./fastq_dups.sh sample_1.fastq
+</pre></div>
+</td></tr></table>
 
 In the above example the script takes *sample_1.fastq* as input and prints the number of duplicated
 sequences as output.
@@ -4195,16 +4320,21 @@ Ideally we would write our shell script to be more robust. At the moment it just
 will be at least one command line argument. However, it would be better to check and produce an
 error message if insufficient arguments were given:
 
-
-<pre><code class="sh">#!/bin/bash
-if [ $# -eq 1 ]; then
-    cat $1 | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
-else
-    echo &quot;Usage: $0 &lt;fastq_filename&gt;&quot;
-    exit 1
-fi
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    cat <span class="nv">$1</span> <span class="p">|</span> paste - - - - <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> &lt;fastq_filename&gt;&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
 
 The '*if ...; then*' line means: do the following line(s) ONLY if the *...* (called condition) bit is true.
 
@@ -4233,20 +4363,23 @@ provide an *exit ..* line then it automatically returns a 0 for you.</div>
 </details>
 
 <hr />
-<h4 id="516-advanced-modify-your-shell-script-so-that-it-accepts-zero-or-more-fastq-files-on-the-command-line-argument-and-outputs-the-number-of-duplicated-dna-sequences-in-each-file">5.16) (Advanced) Modify your shell script so that it accepts zero or more FASTQ files on the command line argument and outputs the number of duplicated DNA sequences in each file.</h4>
+<h4 id="516-advanced-modify-your-shell-script-so-that-it-accepts-zero-or-more-fastq-files-on-the-command-line-argument-and-outputs-the-number-of-duplicated-dna-sequences-in-each-file">5.16) (Advanced) Modify your shell script so that it accepts zero or more FASTQ files on the command line argument and outputs the number of duplicated DNA sequences in each file.<a class="headerlink" href="#516-advanced-modify-your-shell-script-so-that-it-accepts-zero-or-more-fastq-files-on-the-command-line-argument-and-outputs-the-number-of-duplicated-dna-sequences-in-each-file" title="Permanent link">&para;</a></h4>
 <details>
   <summary>Answer</summary>
 
 We can add a loop to our script to accept multiple input FASTQ files:
 
-
-<pre><code class="sh">#!/bin/bash
-for file in $@; do
-    dups=$(cat $file | paste - - - - | cut -f 2 | sort | uniq -d | wc -l)
-    echo &quot;$file $dups&quot;
-done
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">for</span> file in <span class="nv">$@</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">dups</span><span class="o">=</span><span class="k">$(</span>cat <span class="nv">$file</span> <span class="p">|</span> paste - - - - <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l<span class="k">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2"> </span><span class="nv">$dups</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</pre></div>
+</td></tr></table>
 
 There's a lot going on in this script.
 
@@ -4260,30 +4393,30 @@ case we capture the output of the pipeline and save it to the variable called *d
 
 If you had multiple FASTQ files available you could run the script like so:
 
-
-<pre><code class="sh">./fastq_dups.sh sample_1.fastq sample_2.fastq sample_3.fastq
-</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>./fastq_dups.sh sample_1.fastq sample_2.fastq sample_3.fastq
+</pre></div>
+</td></tr></table>
 
 And it would produce output like:
 
-
-<pre><code class="text">sample_1.fastq 56079
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sample_1.fastq 56079
 sample_2.fastq XXXXX
 sample_3.fastq YYYYY
-</code></pre>
-
+</pre></div>
+</td></tr></table>
 
 </details>
 
-<h2 id="finished">Finished</h2>
+<h2 id="finished">Finished<a class="headerlink" href="#finished" title="Permanent link">&para;</a></h2>
 <p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it
 was a lot to take in.</p>
 <p>From here you should be comfortable around the Unix command line and ready to take on the HPC
 Workshop.</p>
 <p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this
 workshop for later reference.</p>
-<p>Thank you for your attendance, please don't forget to complete the training survey and give it
+<p>Thank you for your attendance, please don&rsquo;t forget to complete the training survey and give it
 back to the workshop facilitators.</p>
                 
                   

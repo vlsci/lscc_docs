@@ -972,7 +972,7 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/python_overview/python_overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="authors">Authors:</h1>
+                <h1 id="authors">Authors:<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Bernie Pope, Melbourne Bioinformatics (formerly VLSCI)</p>
@@ -981,10 +981,10 @@
 <p>Catherine de Burgh-Day, Dept. of Physics, The University of Melbourne</p>
 </li>
 </ul>
-<h1 id="general-information">General information</h1>
+<h1 id="general-information">General information<a class="headerlink" href="#general-information" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
-<p>Python modules are stored in files containing a ".py" suffix (e.g solver.py).</p>
+<p>Python modules are stored in files containing a &ldquo;.py&rdquo; suffix (e.g solver.py).</p>
 </li>
 <li>
 <p>The main implementation of Python is called CPython (it is written in C). It is byte-code interpreted.</p>
@@ -993,7 +993,7 @@
 <p>Python can be used in two modes: interactive and scripted. In interactive mode you enter a program fragment and Python evaluates
   it immediately and then prints the result before prompting for a
   new input. The interactive prompt is usually rendered as the
-  <em>chevron</em> <code>&gt;&gt;&gt;</code>. In scripted mode your program is stored in one
+  <em>chevron</em> <code class="codehilite"><span class="o">&gt;&gt;&gt;</span></code>. In scripted mode your program is stored in one
   or more files which are executed as one monolithic entity. Such
   programs behave like ordinary applications.</p>
 </li>
@@ -1002,7 +1002,7 @@
   automatically when no longer used.</p>
 </li>
 </ul>
-<h2 id="python-2-versus-python-3">Python 2 versus Python 3</h2>
+<h2 id="python-2-versus-python-3">Python 2 versus Python 3<a class="headerlink" href="#python-2-versus-python-3" title="Permanent link">&para;</a></h2>
 <p>Currently there are two distinct flavours of Python available:</p>
 <ul>
 <li>
@@ -1019,7 +1019,7 @@ added to version 3. The public transition from 2 to 3 has been slower
 than some people would like. You are encouraged to use version 3 where
 possible. These notes are generally compatible with both versions, but
 we will point out key differences where necessary.</p>
-<h2 id="indentation-for-grouping-code-blocks">Indentation for grouping code blocks</h2>
+<h2 id="indentation-for-grouping-code-blocks">Indentation for grouping code blocks<a class="headerlink" href="#indentation-for-grouping-code-blocks" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Python uses indentation to group code blocks. Most other languages use some kind of brackets for grouping.</p>
@@ -1034,45 +1034,74 @@ we will point out key differences where necessary.</p>
 <p>Most good text editors can be configured so that that tab key is rendered as 4 space characters when editing Python code.</p>
 </li>
 </ul>
-<h2 id="style-guide">Style Guide</h2>
+<h2 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h2>
 <p>A popular style guide for Python is known as <a href="https://www.python.org/dev/peps/pep-0008/">PEP 0008</a>, there is a
 corresponding tool called <a href="https://pypi.python.org/pypi/pep8">pep8</a> which will check your code against
 the guide and report any transgressions.</p>
 <p><strong>Example, Python compared to C:</strong></p>
 <p>Python program for computing factorial:</p>
-<pre><code class="python"># Compute factorial of n,
-# assuming n &gt;= 0
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Compute factorial of n,</span>
+<span class="c1"># assuming n &gt;= 0</span>
 
-def factorial(n):
-  result = 1
-  while n &gt; 0:
-      result *= n
-      n -= 1
-  return result
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">result</span> <span class="o">*=</span> <span class="n">n</span>
+      <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">result</span>
 
-print(factorial(10))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
 
 <p>C program for computing factorial:</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-/* Compute factorial of n,
-  assuming n &gt;= 0 */
+<span class="cm">/* Compute factorial of n,</span>
+<span class="cm">  assuming n &gt;= 0 */</span>
 
-int factorial(int n) {
-   int result = 1;
+<span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-   while (n &gt; 0) {
-      result *= n;
-      n -= 1;
-   }
-   return result;
-}
+   <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">result</span> <span class="o">*=</span> <span class="n">n</span><span class="p">;</span>
+      <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
 
-int main(void) {
-   printf(&quot;%d\n&quot;, factorial(10));
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
 
 <p>Things to note:</p>
 <ul>
@@ -1098,24 +1127,34 @@ int main(void) {
     memory in your computer).</p>
 </li>
 </ul>
-<h2 id="comments">Comments</h2>
-<p>Program comments start with a hash character "#" and continue until the
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
+<p>Program comments start with a hash character &ldquo;#&rdquo; and continue until the
 end of the line. There are no multi-line comment markers, but that can
 sometimes be faked with multi-line string literals.</p>
 <p><strong>Examples:</strong></p>
-<pre><code class="python"># This is a comment.
-# This is another comment.
-x = 5 # This is a comment that follows some code.
-'''This is
-a multi-line
-string literal
-which can sometimes act like
-a
-comment.
-'''
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># This is a comment.</span>
+<span class="c1"># This is another comment.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># This is a comment that follows some code.</span>
+<span class="sd">&#39;&#39;&#39;This is</span>
+<span class="sd">a multi-line</span>
+<span class="sd">string literal</span>
+<span class="sd">which can sometimes act like</span>
+<span class="sd">a</span>
+<span class="sd">comment.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</td></tr></table>
 
-<h2 id="running-a-python-program">Running a Python program</h2>
+<h2 id="running-a-python-program">Running a Python program<a class="headerlink" href="#running-a-python-program" title="Permanent link">&para;</a></h2>
 <p>There are many ways to run Python code:</p>
 <ul>
 <li>
@@ -1137,14 +1176,14 @@ comment.
     being aware of how the program was implemented.</p>
 </li>
 </ul>
-<h2 id="objects-and-types">Objects and types</h2>
+<h2 id="objects-and-types">Objects and types<a class="headerlink" href="#objects-and-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Every value in Python is an <em>object</em> (including functions!).</p>
 </li>
 <li>
 <p>Objects can have attributes and methods, which are accessed via the
-    dot "." operator.</p>
+    dot &ldquo;.&rdquo; operator.</p>
 </li>
 <li>
 <p>All objects have a type.</p>
@@ -1157,7 +1196,7 @@ comment.
     never at compile time.</p>
 </li>
 <li>
-<p><code>type(x)</code> returns the type of x.</p>
+<p><code class="codehilite"><span class="k">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> returns the type of x.</p>
 </li>
 <li>
 <p>Python variables may be assigned to values of different types at
@@ -1165,118 +1204,167 @@ comment.
 </li>
 </ul>
 <p><strong>Interactive examples (Python 3):</strong></p>
-<pre><code>&gt;&gt;&gt; # Create a list, assign to the variable x
-&gt;&gt;&gt; x = [3, 1, 2, 3]
-&gt;&gt;&gt; # Ask for the type of the value assigned to x
-&gt;&gt;&gt; type(x)
-&lt;class 'list'&gt;
-&gt;&gt;&gt; # Ask for the type of the first item in the list (an integer)
-&gt;&gt;&gt; type(x[0])
-&lt;class 'int'&gt;
-&gt;&gt;&gt; # Count the number of times 3 appears in the list
-&gt;&gt;&gt; # by calling the count method
-&gt;&gt;&gt; x.count(3)
-2
-&gt;&gt;&gt; # Sort the contents of the list in-place.
-&gt;&gt;&gt; # Note that this mutates the list object!
-&gt;&gt;&gt; # Also note that Python does not print the result in this case.
-&gt;&gt;&gt; x.sort()
-&gt;&gt;&gt; # Ask Python to show the value of the list
-&gt;&gt;&gt; # assigned to the variable x (note it is now sorted)
-&gt;&gt;&gt; x
-[1, 2, 3, 3]
-&gt;&gt;&gt; # Assign x to an object of a different type (a float)
-&gt;&gt;&gt; x = 3.142
-&gt;&gt;&gt; type(x)
-&lt;class 'float'&gt;
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> # <span class="nv">Create</span> <span class="nv">a</span> <span class="nv">list</span>, <span class="nv">assign</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">variable</span> <span class="nv">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span> <span class="o">=</span> [<span class="mi">3</span>, <span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>]
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Ask</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">type</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">value</span> <span class="nv">assigned</span> <span class="nv">to</span> <span class="nv">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">type</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>
+<span class="o">&lt;</span><span class="nv">class</span> <span class="s1">&#39;</span><span class="s">list</span><span class="s1">&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Ask</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">type</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">first</span> <span class="nv">item</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">list</span> <span class="ss">(</span><span class="nv">an</span> <span class="nv">integer</span><span class="ss">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">type</span><span class="ss">(</span><span class="nv">x</span>[<span class="mi">0</span>]<span class="ss">)</span>
+<span class="o">&lt;</span><span class="nv">class</span> <span class="s1">&#39;</span><span class="s">int</span><span class="s1">&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Count</span> <span class="nv">the</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">times</span> <span class="mi">3</span> <span class="nv">appears</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">list</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">by</span> <span class="nv">calling</span> <span class="nv">the</span> <span class="nv">count</span> <span class="nv">method</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span>.<span class="nv">count</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Sort</span> <span class="nv">the</span> <span class="nv">contents</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">list</span> <span class="nv">in</span><span class="o">-</span><span class="nv">place</span>.
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Note</span> <span class="nv">that</span> <span class="nv">this</span> <span class="nv">mutates</span> <span class="nv">the</span> <span class="nv">list</span> <span class="nv">object</span><span class="o">!</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Also</span> <span class="nv">note</span> <span class="nv">that</span> <span class="nv">Python</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">print</span> <span class="nv">the</span> <span class="nb">result</span> <span class="nv">in</span> <span class="nv">this</span> <span class="nv">case</span>.
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span>.<span class="nv">sort</span><span class="ss">()</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Ask</span> <span class="nv">Python</span> <span class="nv">to</span> <span class="k">show</span> <span class="nv">the</span> <span class="nv">value</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">list</span>
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">assigned</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">variable</span> <span class="nv">x</span> <span class="ss">(</span><span class="nv">note</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">now</span> <span class="nv">sorted</span><span class="ss">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span>
+[<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">3</span>]
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">Assign</span> <span class="nv">x</span> <span class="nv">to</span> <span class="nv">an</span> <span class="nv">object</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">different</span> <span class="nv">type</span> <span class="ss">(</span><span class="nv">a</span> <span class="nv">float</span><span class="ss">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">3</span>.<span class="mi">142</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">type</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>
+<span class="o">&lt;</span><span class="nv">class</span> <span class="s1">&#39;</span><span class="s">float</span><span class="s1">&#39;</span><span class="o">&gt;</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="booleans">Booleans</h1>
+<h1 id="booleans">Booleans<a class="headerlink" href="#booleans" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Represent truth values</li>
-<li>Values: <code>True</code>, <code>False</code></li>
-<li>Type: <code>bool</code></li>
-<li>Operators: <code>and</code>, <code>or</code>, <code>not</code></li>
-<li><code>bool(x)</code> will convert x to a boolean. The heuristic is that empty things and zero-ish things are <code>False</code>, everything else is <code>True</code> (but the user can override for their own types).<ul>
-<li><code>False</code> values:<ul>
-<li><code>False</code></li>
-<li><code>0</code> (zero integer)</li>
-<li><code>0.0</code> (zero float)</li>
-<li><code>{}</code> (empty dictionary)</li>
-<li><code>()</code> (empty tuple)</li>
-<li><code>[]</code> (empty list)</li>
-<li><code>''</code> (empty string)</li>
-<li><code>None</code></li>
+<li>Values: <code class="codehilite"><span class="k">True</span></code>, <code class="codehilite"><span class="k">False</span></code></li>
+<li>Type: <code class="codehilite"><span class="n">bool</span></code></li>
+<li>Operators: <code class="codehilite"><span class="k">and</span></code>, <code class="codehilite"><span class="k">or</span></code>, <code class="codehilite"><span class="k">not</span></code></li>
+<li><code class="codehilite"><span class="n">bool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> will convert x to a boolean. The heuristic is that empty things and zero-ish things are <code class="codehilite"><span class="k">False</span></code>, everything else is <code class="codehilite"><span class="k">True</span></code> (but the user can override for their own types).<ul>
+<li><code class="codehilite"><span class="k">False</span></code> values:<ul>
+<li><code class="codehilite"><span class="k">False</span></code></li>
+<li><code class="codehilite"><span class="mi">0</span></code> (zero integer)</li>
+<li><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">0</span></code> (zero float)</li>
+<li><code class="codehilite"><span class="err">{}</span></code> (empty dictionary)</li>
+<li><code class="codehilite"><span class="p">()</span></code> (empty tuple)</li>
+<li><code class="codehilite"><span class="p">[]</span></code> (empty list)</li>
+<li><code class="codehilite"><span class="s1">&#39;&#39;</span></code> (empty string)</li>
+<li><code class="codehilite"><span class="k">None</span></code></li>
 </ul>
 </li>
-<li><code>True</code> values:<ul>
+<li><code class="codehilite"><span class="k">True</span></code> values:<ul>
 <li>everything else</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>In numerical contexts <code>True</code> is considered equal to the integer <code>1</code> and
-    <code>False</code> is considered equal to the integer <code>0</code>. However, these
+<li>In numerical contexts <code class="codehilite"><span class="k">True</span></code> is considered equal to the integer <code class="codehilite"><span class="mi">1</span></code> and
+    <code class="codehilite"><span class="k">False</span></code> is considered equal to the integer <code class="codehilite"><span class="mi">0</span></code>. However, these
     conversions are a common cause of bugs and should be avoided.</li>
 <li>Python will automatically test the <em>truthiness</em> of a value if it
     appears in a boolean context.</li>
 </ul>
 <p><strong>Interactive examples:</strong></p>
-<pre><code class="python">&gt;&gt;&gt; not True
-False
-&gt;&gt;&gt; not False
-True
-&gt;&gt;&gt; not ()
-True
-&gt;&gt;&gt; not [1,2,3]
-False
-&gt;&gt;&gt; True and False
-False
-&gt;&gt;&gt; True and ()
-()
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="bp">True</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="bp">False</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="p">()</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">and</span> <span class="p">()</span>
+<span class="p">()</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="conditional-statements">Conditional Statements</h1>
+<h1 id="conditional-statements">Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Conditional statements use the keywords: <code>if</code>, <code>elif</code>, <code>else</code>. The syntax
+<li>Conditional statements use the keywords: <code class="codehilite"><span class="k">if</span></code>, <code class="codehilite"><span class="n">elif</span></code>, <code class="codehilite"><span class="k">else</span></code>. The syntax
     for a conditional statement is:</li>
 </ul>
-<pre><code class="python">if expression:
-    statement-block
-elif expression:
-    statement-block
-...
-else:
-    statement-block
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">statement</span><span class="o">-</span><span class="n">block</span>
+<span class="k">elif</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">statement</span><span class="o">-</span><span class="n">block</span>
+<span class="o">...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">statement</span><span class="o">-</span><span class="n">block</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
-<p>A conditional statement must have exactly one <code>if</code> part. It may have
-    zero or more <code>elif</code> parts, and a single optional <code>else</code> part at the
+<p>A conditional statement must have exactly one <code class="codehilite"><span class="k">if</span></code> part. It may have
+    zero or more <code class="codehilite"><span class="n">elif</span></code> parts, and a single optional <code class="codehilite"><span class="k">else</span></code> part at the
     end.</p>
 </li>
 <li>
-<p>The <code>if</code> and <code>elif</code> parts test the value of their boolean expressions.
-    If the expression evaluates to something which is <code>True</code> or can be
-    converted to <code>True</code> (see the rules for Booleans above) then the
+<p>The <code class="codehilite"><span class="k">if</span></code> and <code class="codehilite"><span class="n">elif</span></code> parts test the value of their boolean expressions.
+    If the expression evaluates to something which is <code class="codehilite"><span class="k">True</span></code> or can be
+    converted to <code class="codehilite"><span class="k">True</span></code> (see the rules for Booleans above) then the
     statement block immediately beneath that part is executed.
-    Otherwise the following condition (if any) is tried. The <code>else</code>
+    Otherwise the following condition (if any) is tried. The <code class="codehilite"><span class="k">else</span></code>
     part, if it exists, is always and only executed if no preceding
-    condition was <code>True</code>.</p>
+    condition was <code class="codehilite"><span class="k">True</span></code>.</p>
 </li>
 </ul>
 <p><strong>Interactive examples:</strong></p>
-<pre><code>&gt;&gt;&gt; if []:
-...     print(&quot;Was considered True&quot;)
-... else:
-...     print(&quot;Was considered False&quot;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> []:
+...     <span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Was considered True</span><span class="s2">&quot;</span><span class="ss">)</span>
+... <span class="k">else</span>:
+...     <span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Was considered False</span><span class="s2">&quot;</span><span class="ss">)</span>
 ...
-Was considered False
-</code></pre>
+<span class="nv">Was</span> <span class="nv">considered</span> <span class="nv">False</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="numbers-and-basic-mathematics">Numbers and basic mathematics</h1>
-<h2 id="integers">Integers</h2>
+<h1 id="numbers-and-basic-mathematics">Numbers and basic mathematics<a class="headerlink" href="#numbers-and-basic-mathematics" title="Permanent link">&para;</a></h1>
+<h2 id="integers">Integers<a class="headerlink" href="#integers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Represent whole negative and positive numbers (and zero).</p>
@@ -1286,64 +1374,78 @@ Was considered False
     by how much memory you have on your computer).</p>
 </li>
 <li>
-<p>Python 2 distinguishes between two integer types <code>int</code> and <code>long</code>, and
-    automatically promotes <code>int</code> to long where necessary, whereas Python
-    3 considers them all one type called <code>int</code>.</p>
+<p>Python 2 distinguishes between two integer types <code class="codehilite"><span class="nb">int</span></code> and <code class="codehilite"><span class="n">long</span></code>, and
+    automatically promotes <code class="codehilite"><span class="nb">int</span></code> to long where necessary, whereas Python
+    3 considers them all one type called <code class="codehilite"><span class="nb">int</span></code>.</p>
 </li>
 <li>
-<p>Base ten is the default literal notation: <code>42</code> (means <code>(4 * 10) + 2</code>)</p>
+<p>Base ten is the default literal notation: <code class="codehilite"><span class="mi">42</span></code> (means <code class="codehilite"><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span></code>)</p>
 </li>
 <li>
-<p>Hexadecimal literals start with <code>0x</code>, octal literals start with <code>0o</code>,
-    binary literals start with <code>0b</code>.</p>
+<p>Hexadecimal literals start with <code class="codehilite"><span class="mi">0</span><span class="n">x</span></code>, octal literals start with <code class="codehilite"><span class="mi">0</span><span class="n">o</span></code>,
+    binary literals start with <code class="codehilite"><span class="mi">0</span><span class="n">b</span></code>.</p>
 </li>
 <li>
-<p><code>int(x)</code> will try to convert x to an integer, x can be another numeric
+<p><code class="codehilite"><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> will try to convert x to an integer, x can be another numeric
     type (including booleans) or a string. You may specify an optional
     base for the conversion.</p>
 </li>
 </ul>
 <p><strong>Interactive examples (in Python 3):</strong></p>
-<pre><code>&gt;&gt;&gt; 2 ** 200
-1606938044258990275541962092341162602522202993782792835301376
-&gt;&gt;&gt; 0x10
-16
-&gt;&gt;&gt; 0b10
-2
-&gt;&gt;&gt; -0 == 0
-True
-&gt;&gt;&gt; int(&quot;123&quot;)
-123
-&gt;&gt;&gt; int(&quot;3.142&quot;)
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-    ValueError: invalid literal for int() with base 10: '3.142'
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">200</span>
+<span class="mi">1606938044258990275541962092341162602522202993782792835301376</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="nv">x10</span>
+<span class="mi">16</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="nv">b10</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="nv">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">int</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">123</span><span class="s2">&quot;</span><span class="ss">)</span>
+<span class="mi">123</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">int</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">3.142</span><span class="s2">&quot;</span><span class="ss">)</span>
+<span class="nv">Traceback</span> <span class="ss">(</span><span class="nv">most</span> <span class="nv">recent</span> <span class="k">call</span> <span class="nl">last</span><span class="ss">)</span>:
+<span class="nv">File</span> <span class="s2">&quot;</span><span class="s">&lt;stdin&gt;</span><span class="s2">&quot;</span>, <span class="nv">line</span> <span class="mi">1</span>, <span class="nv">in</span> <span class="o">&lt;</span><span class="nv">module</span><span class="o">&gt;</span>
+    <span class="nv">ValueError</span>: <span class="nv">invalid</span> <span class="nv">literal</span> <span class="k">for</span> <span class="nv">int</span><span class="ss">()</span> <span class="nv">with</span> <span class="nv">base</span> <span class="mi">10</span>: <span class="s1">&#39;</span><span class="s">3.142</span><span class="s1">&#39;</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="floating-point-numbers">Floating Point Numbers</h1>
+<h1 id="floating-point-numbers">Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Represent a finite approximation to the real numbers.</p>
 </li>
 <li>
-<p>Type: <code>float</code>.</p>
+<p>Type: <code class="codehilite"><span class="nb">float</span></code>.</p>
 </li>
 <li>
 <p>(On most platforms) Python uses IEEE-754 double precision floating
     point numbers which provide 53 bits of precision.</p>
 </li>
 <li>
-<p><code>sys.float_info</code> contains details about max, min, epsilon etcetera.</p>
+<p><code class="codehilite"><span class="n">sys</span><span class="p">.</span><span class="n">float_info</span></code> contains details about max, min, epsilon etcetera.</p>
 </li>
 <li>
 <p>Literals can be in ordinary notation or in exponential notation:</p>
 <ul>
-<li>Ordinary: <code>3.142</code></li>
-<li>Exponential: <code>314.2e-2</code></li>
+<li>Ordinary: <code class="codehilite"><span class="mi">3</span><span class="p">.</span><span class="mi">142</span></code></li>
+<li>Exponential: <code class="codehilite"><span class="mi">314</span><span class="p">.</span><span class="mi">2</span><span class="n">e</span><span class="o">-</span><span class="mi">2</span></code></li>
 </ul>
 </li>
 <li>
-<p>Ordinary notation requires a point <code>.</code>, but digits following the
+<p>Ordinary notation requires a point <code class="codehilite"><span class="p">.</span></code>, but digits following the
     point are optional.</p>
 </li>
 <li>
@@ -1351,7 +1453,7 @@ File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
     fractional component.</p>
 </li>
 <li>
-<p><code>float(x)</code> will try to convert x to a floating point number, x can be
+<p><code class="codehilite"><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> will try to convert x to a floating point number, x can be
     another numeric type (including booleans) or a string.</p>
 </li>
 <li>
@@ -1359,61 +1461,88 @@ File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
     floating point in mixed-type expressions.</p>
 </li>
 <li>
-<p>In Python 3 the division operator <code>/</code> computes a floating point result
+<p>In Python 3 the division operator <code class="codehilite"><span class="o">/</span></code> computes a floating point result
     for integer arguments. However, in Python 2 it computes an integer
     result for integer arguments.</p>
 </li>
 </ul>
 <p><strong>Interactive examples:</strong></p>
-<pre><code>&gt;&gt;&gt; type(3.142)
-&lt;class 'float'&gt;
-&gt;&gt;&gt; type(12)
-&lt;class 'int'&gt;
-&gt;&gt;&gt; 3.142 + 12
-15.142
-&gt;&gt;&gt; 3.142 == 314.2e-2
-True
-&gt;&gt;&gt; 3. == 3.0
-True
-&gt;&gt;&gt; 1/0
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-ZeroDivisionError: division by zero
-&gt;&gt;&gt; # Integer divided by integer yields a float in Python 3
-&gt;&gt;&gt; 10 / 3
-3.3333333333333335
-&gt;&gt;&gt; float(&quot;123&quot;)
-123.0
-&gt;&gt;&gt; float(&quot;3.142&quot;)
-3.142
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">type</span><span class="p">(</span><span class="mi">3</span><span class="p">.</span><span class="mi">142</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;float&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">type</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;int&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="p">.</span><span class="mi">142</span> <span class="o">+</span> <span class="mi">12</span>
+<span class="mi">15</span><span class="p">.</span><span class="mi">142</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="p">.</span><span class="mi">142</span> <span class="o">==</span> <span class="mi">314</span><span class="p">.</span><span class="mi">2</span><span class="n">e</span><span class="o">-</span><span class="mi">2</span>
+<span class="k">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="p">.</span> <span class="o">==</span> <span class="mi">3</span><span class="p">.</span><span class="mi">0</span>
+<span class="k">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="k">call</span> <span class="k">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="ss">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="k">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="k">by</span> <span class="n">zero</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">#</span> <span class="nb">Integer</span> <span class="n">divided</span> <span class="k">by</span> <span class="nb">integer</span> <span class="n">yields</span> <span class="n">a</span> <span class="nb">float</span> <span class="k">in</span> <span class="n">Python</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="mi">3</span><span class="p">.</span><span class="mi">3333333333333335</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="ss">&quot;123&quot;</span><span class="p">)</span>
+<span class="mi">123</span><span class="p">.</span><span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="ss">&quot;3.142&quot;</span><span class="p">)</span>
+<span class="mi">3</span><span class="p">.</span><span class="mi">142</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="complex-numbers">Complex Numbers</h1>
+<h1 id="complex-numbers">Complex Numbers<a class="headerlink" href="#complex-numbers" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Represent a finite approximation to the complex numbers.</p>
 </li>
 <li>
-<p>Type: <code>complex</code></p>
+<p>Type: <code class="codehilite"><span class="n">complex</span></code></p>
 </li>
 <li>
-<p>A pair of floating point numbers: real +/- imaginary.</p>
+<p>A pair of floating point numbers: real &plusmn; imaginary.</p>
 </li>
 <li>
 <p>The real part is optional (defaults to 0). The imaginary part is
-    followed immediately by the character <code>j</code>.</p>
+    followed immediately by the character <code class="codehilite"><span class="n">j</span></code>.</p>
 </li>
 </ul>
 <p><strong>Interactive Examples:</strong></p>
-<pre><code>&gt;&gt;&gt; 5j + 3j
-8j
-&gt;&gt;&gt; 2-5j
-(2-5j)
-&gt;&gt;&gt; 2-5j + 3j
-(2-2j)
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span><span class="n">j</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>
+<span class="mi">8</span><span class="n">j</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="n">j</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="n">j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="n">j</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="numeric-operators">Numeric Operators</h1>
+<h1 id="numeric-operators">Numeric Operators<a class="headerlink" href="#numeric-operators" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -1426,49 +1555,49 @@ ZeroDivisionError: division by zero
 </thead>
 <tbody>
 <tr>
-<td><code>+</code></td>
+<td><code class="codehilite"><span class="o">+</span></code></td>
 <td>add</td>
 <td>low</td>
 <td>left</td>
 <td>Can also be used to concatenate strings together.</td>
 </tr>
 <tr>
-<td><code>*</code></td>
+<td><code class="codehilite"><span class="o">*</span></code></td>
 <td>multiply</td>
 <td>medium</td>
 <td>left</td>
 <td></td>
 </tr>
 <tr>
-<td><code>-</code></td>
+<td><code class="codehilite"><span class="o">-</span></code></td>
 <td>subtract</td>
 <td>low</td>
 <td>left</td>
 <td></td>
 </tr>
 <tr>
-<td><code>/</code></td>
+<td><code class="codehilite"><span class="o">/</span></code></td>
 <td>divide</td>
 <td>medium</td>
 <td>left</td>
 <td>In Python 3 the result is always a floating point number. In Python 2 the result is an integer if both operands are integers.</td>
 </tr>
 <tr>
-<td><code>//</code></td>
+<td><code class="codehilite"><span class="o">//</span></code></td>
 <td>floor-divide</td>
 <td>medium</td>
 <td>left</td>
 <td>divide then floor, result is an integer</td>
 </tr>
 <tr>
-<td><code>**</code></td>
+<td><code class="codehilite"><span class="o">**</span></code></td>
 <td>exponent</td>
 <td>high</td>
 <td>right</td>
 <td></td>
 </tr>
 <tr>
-<td><code>%</code></td>
+<td><code class="codehilite"><span class="c">%</span></code></td>
 <td>modulus</td>
 <td>medium</td>
 <td>left</td>
@@ -1477,29 +1606,43 @@ ZeroDivisionError: division by zero
 </tbody>
 </table>
 <p><strong>Interactive Examples (Python 3):</strong></p>
-<pre><code>&gt;&gt;&gt; 3 + 4 * 5
-23
-&gt;&gt;&gt; (3 + 4) * 5
-35
-&gt;&gt;&gt; 10 / 3
-3.3333333333333335
-&gt;&gt;&gt; 10 // 3
-3
-&gt;&gt;&gt; 10 % 3
-1
-&gt;&gt;&gt; 2 ** 3 ** 4
-2417851639229258349412352
-&gt;&gt;&gt; (2 ** 3) ** 4
-4096
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="mi">23</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="mi">35</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="mi">3</span><span class="p">.</span><span class="mi">3333333333333335</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">//</span> <span class="mi">3</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">4</span>
+<span class="mi">2417851639229258349412352</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span>
+<span class="mi">4096</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="strings">Strings</h1>
+<h1 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Represent text</p>
 </li>
 <li>
-<p>Type: <code>str</code></p>
+<p>Type: <code class="codehilite"><span class="n">str</span></code></p>
 </li>
 <li>
 <p>In Python 3, the str type contains Unicode characters.</p>
@@ -1508,20 +1651,20 @@ ZeroDivisionError: division by zero
 <p>In Python 2, the str type contains ASCII characters (sometimes
     called byte strings). Python 2 has a separate type for unicode
     strings, the type is called unicode; literals of this type are
-    prefixed by the letter <code>u</code>.</p>
+    prefixed by the letter <code class="codehilite"><span class="n">u</span></code>.</p>
 </li>
 <li>
 <p>String literals must be quoted. There are 3 quoting styles:</p>
 <ul>
 <li>
-<p>single quote characters: <code>'hello'</code></p>
+<p>single quote characters: <code class="codehilite"><span class="s1">&#39;hello&#39;</span></code></p>
 </li>
 <li>
-<p>double quote characters: <code>"hello"</code></p>
+<p>double quote characters: <code class="codehilite"><span class="ss">&quot;hello&quot;</span></code></p>
 </li>
 <li>
-<p>triple quote characters: <code>'''hello'''</code> (three single quotes in a
-    row) or <code>"""hello"""</code> (three double quote characters in a row)</p>
+<p>triple quote characters: <code class="codehilite"><span class="s1">&#39;&#39;&#39;hello&#39;&#39;&#39;</span></code> (three single quotes in a
+    row) or <code class="codehilite"><span class="ss">&quot;&quot;&quot;hello&quot;&quot;&quot;</span></code> (three double quote characters in a row)</p>
 </li>
 </ul>
 </li>
@@ -1532,15 +1675,23 @@ ZeroDivisionError: division by zero
     (avoiding the need to escape the quote character). For example:</p>
 </li>
 </ul>
-<pre><code>&gt;&gt;&gt; &quot;This inverted comma won't be a problem inside quotation marks&quot;
-&quot;This inverted comma won't be a problem inside quotation marks&quot;
-&gt;&gt;&gt; 'this &quot;quote&quot; will work'
-'this &quot;quote&quot; will work'
-&gt;&gt;&gt; 'this isn't going to work though'
-File &quot;&lt;stdin&gt;&quot;, line 1
-'this isn't going to work though'
-^ SyntaxError: invalid syntax
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="ss">&quot;This inverted comma won&#39;t be a problem inside quotation marks&quot;</span>
+<span class="ss">&quot;This inverted comma won&#39;t be a problem inside quotation marks&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;this &quot;quote&quot; will work&#39;</span>
+<span class="s1">&#39;this &quot;quote&quot; will work&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;this isn&#39;</span><span class="n">t</span> <span class="n">going</span> <span class="k">to</span> <span class="k">work</span> <span class="n">though</span><span class="s1">&#39;</span>
+<span class="s1">File &quot;&lt;stdin&gt;&quot;, line 1</span>
+<span class="s1">&#39;</span><span class="n">this</span> <span class="n">isn</span><span class="s1">&#39;t going to work though&#39;</span>
+<span class="o">^</span> <span class="n">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
@@ -1552,19 +1703,19 @@ File &quot;&lt;stdin&gt;&quot;, line 1
 <p>The usual set of escape characters are supported:</p>
 <ul>
 <li>
-<p><code>\n</code> newline</p>
+<p><code class="codehilite"><span class="err">\</span><span class="n">n</span></code> newline</p>
 </li>
 <li>
-<p><code>\t</code> tab</p>
+<p><code class="codehilite"><span class="err">\</span><span class="n">t</span></code> tab</p>
 </li>
 <li>
-<p><code>\\</code> backslash</p>
+<p><code class="codehilite"><span class="err">\\</span></code> backslash</p>
 </li>
 <li>
-<p><code>\'</code> single quote</p>
+<p><code class="codehilite"><span class="err">\&#39;</span></code> single quote</p>
 </li>
 <li>
-<p><code>\"</code> double quote</p>
+<p><code class="codehilite"><span class="err">\&quot;</span></code> double quote</p>
 </li>
 <li>
 <p>and many more</p>
@@ -1580,7 +1731,7 @@ File &quot;&lt;stdin&gt;&quot;, line 1
     loop) you process it one character at a time from left to right.</p>
 </li>
 <li>
-<p>Strings can be indexed to obtain individual characters, e.g. <code>s[5]</code></p>
+<p>Strings can be indexed to obtain individual characters, e.g. <code class="codehilite"><span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span></code></p>
 </li>
 <li>
 <p>Indices are zero-based (but you may also use negative indices to
@@ -1592,72 +1743,113 @@ File &quot;&lt;stdin&gt;&quot;, line 1
 </li>
 </ul>
 <p><strong>Interactive Examples (Python 3):</strong></p>
-<pre><code>&gt;&gt;&gt; type(&quot;hello&quot;)
-&lt;class 'str'&gt;
-&gt;&gt;&gt; &quot;hello&quot; == 'hello'
-True
-&gt;&gt;&gt; '''This string
-... is on
-... multiple
-... lines'''
-'This string\\nis on\\nmultiple\\nlines'
-&gt;&gt;&gt; &quot;bonjour&quot;.upper()
-'BONJOUR'
-&gt;&gt;&gt; len(&quot;bonjour&quot;)
-7
-&gt;&gt;&gt; &quot;bonjour&quot;.startswith(&quot;b&quot;)
-True
-&gt;&gt;&gt; &quot;cat,sat,flat&quot;.split(&quot;,&quot;)
-['cat', 'sat', 'flat']
-&gt;&gt;&gt; # Print the first 5 Chinese unicode characters
-&gt;&gt;&gt; print('\u4E00\u4E01\u4E02\u4E03\u4E04')
-一丁丂七丄
-&gt;&gt;&gt; x = &quot;floyd&quot;
-&gt;&gt;&gt; x[0]
-'f'
-&gt;&gt;&gt; &quot;hello&quot; + &quot; &quot; + &quot;world&quot;
-'hello world'
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">type</span><span class="p">(</span><span class="ss">&quot;hello&quot;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;str&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ss">&quot;hello&quot;</span> <span class="o">==</span> <span class="s1">&#39;hello&#39;</span>
+<span class="k">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;&#39;&#39;This string</span>
+<span class="s1">... is on</span>
+<span class="s1">... multiple</span>
+<span class="s1">... lines&#39;&#39;&#39;</span>
+<span class="s1">&#39;This string\\nis on\\nmultiple\\nlines&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ss">&quot;bonjour&quot;</span><span class="p">.</span><span class="k">upper</span><span class="p">()</span>
+<span class="s1">&#39;BONJOUR&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">len</span><span class="p">(</span><span class="ss">&quot;bonjour&quot;</span><span class="p">)</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ss">&quot;bonjour&quot;</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="ss">&quot;b&quot;</span><span class="p">)</span>
+<span class="k">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ss">&quot;cat,sat,flat&quot;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="ss">&quot;,&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;sat&#39;</span><span class="p">,</span> <span class="s1">&#39;flat&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">#</span> <span class="n">Print</span> <span class="n">the</span> <span class="k">first</span> <span class="mi">5</span> <span class="n">Chinese</span> <span class="n">unicode</span> <span class="n">characters</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;\u4E00\u4E01\u4E02\u4E03\u4E04&#39;</span><span class="p">)</span>
+<span class="err">一丁丂七丄</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="ss">&quot;floyd&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;f&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ss">&quot;hello&quot;</span> <span class="o">+</span> <span class="ss">&quot; &quot;</span> <span class="o">+</span> <span class="ss">&quot;world&quot;</span>
+<span class="s1">&#39;hello world&#39;</span>
+</pre></div>
+</td></tr></table>
 
 <p><strong>Example program:</strong></p>
-<pre><code class="python"># Prompt the user to input a string:
-input = raw_input(&quot;Enter string: &quot;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Prompt the user to input a string:</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;Enter string: &quot;</span><span class="p">)</span>
 
-# Count the number of vowels in the input string
-vowels = 'aeiou'
-count = 0
+<span class="c1"># Count the number of vowels in the input string</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="s1">&#39;aeiou&#39;</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 
-for char in input:
-    if char in vowels:
-        count += 1
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-# Print the count to the standard output
-print(count)
-</code></pre>
+<span class="c1"># Print the count to the standard output</span>
+<span class="k">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>Example usage of the above program from the operating system command
-prompt, assuming the program is saved in a file called <code>vowels.py</code>:</p>
-<pre><code class="no-highlight">python vowels.py
-Enter string: abracadabra
-5
-</code></pre>
+prompt, assuming the program is saved in a file called <code class="codehilite"><span class="n">vowels</span><span class="p">.</span><span class="n">py</span></code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">python</span> <span class="n">vowels</span><span class="p">.</span><span class="n">py</span>
+<span class="n">Enter</span> <span class="n">string</span><span class="p">:</span> <span class="n">abracadabra</span>
+<span class="mi">5</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="lists">Lists</h1>
+<h1 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Represent mutable ordered sequences of values.</p>
 </li>
 <li>
-<p>Type: <code>list</code></p>
+<p>Type: <code class="codehilite"><span class="n">list</span></code></p>
 </li>
 <li>
-<p>List literals are written in between square brackets, e.g. <code>[1, 2, 3]</code></p>
+<p>List literals are written in between square brackets, e.g. <code class="codehilite"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span></code></p>
 </li>
 <li>
 <p>List elements can be objects of any type (including other lists).</p>
 </li>
 <li>
-<p>Like strings, lists can be indexed like so: <code>x[3]</code></p>
+<p>Like strings, lists can be indexed like so: <code class="codehilite"><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code></p>
 </li>
 <li>
 <p>Indices are zero-based (but you may also use negative indices to
@@ -1672,30 +1864,51 @@ Enter string: abracadabra
 </li>
 </ul>
 <p><strong>Interactive Examples:</strong></p>
-<pre><code>&gt;&gt;&gt; type([1, 2, 3])
-&lt;class 'list'&gt;
-&gt;&gt;&gt; x = []
-&gt;&gt;&gt; len(x)
-0
-&gt;&gt;&gt; x.append(&quot;hello&quot;)
-&gt;&gt;&gt; x
-['hello']
-&gt;&gt;&gt; len(x)
-1
-&gt;&gt;&gt; x[0]
-'hello'
-&gt;&gt;&gt; x.insert(0, True)
-&gt;&gt;&gt; x
-[True, 'hello']
-&gt;&gt;&gt; del x[1]
-&gt;&gt;&gt; x
-[True]
-&gt;&gt;&gt; x += [42, &quot;Newton&quot;, 3.142]
-&gt;&gt;&gt; x
-[True, 42, 'Newton', 3.142]
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">type</span><span class="p">(</span><span class="o">[</span><span class="n">1, 2, 3</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+<span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="s1">&#39;list&#39;</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="mi">0</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="ss">&quot;hello&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="o">[</span><span class="n">&#39;hello&#39;</span><span class="o">]</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="mi">1</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"></span>
+<span class="s1">&#39;hello&#39;</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="o">[</span><span class="n">True, &#39;hello&#39;</span><span class="o">]</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="o">[</span><span class="n">True</span><span class="o">]</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="o">[</span><span class="n">42, &quot;Newton&quot;, 3.142</span><span class="o">]</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="o">[</span><span class="n">True, 42, &#39;Newton&#39;, 3.142</span><span class="o">]</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="dictionaries">Dictionaries</h1>
+<h1 id="dictionaries">Dictionaries<a class="headerlink" href="#dictionaries" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Represent finite mappings from keys to values.</p>
@@ -1705,16 +1918,16 @@ Enter string: abracadabra
     (which rules out mutable objects, such as lists).</p>
 </li>
 <li>
-<p>Type: <code>dict</code></p>
+<p>Type: <code class="codehilite"><span class="n">dict</span></code></p>
 </li>
 <li>
 <p>Dictionary literals are written inside curly brackets, with
-    key-value pairs separated by colons: e.g. <code>{12: "XII", 6: "VI"}</code></p>
+    key-value pairs separated by colons: e.g. <code class="codehilite"><span class="err">{</span><span class="mi">12</span><span class="p">:</span> <span class="ss">&quot;XII&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="ss">&quot;VI&quot;</span><span class="err">}</span></code></p>
 </li>
 <li>
 <p>Dictionaries can be indexed by keys. If the key exists in the
     dictionary its corresponding value is returned, otherwise a
-    <code>KeyError</code> exception is raised.</p>
+    <code class="codehilite"><span class="n">KeyError</span></code> exception is raised.</p>
 </li>
 <li>
 <p>The cost of indexing a dictionary is proportional to the time taken
@@ -1733,80 +1946,137 @@ Enter string: abracadabra
 </li>
 </ul>
 <p><strong>Interactive Examples:</strong></p>
-<pre><code>&gt;&gt;&gt; type({12: &quot;XII&quot;, 6: &quot;VI&quot;})
-&lt;class 'dict'&gt;
-&gt;&gt;&gt; friends = {}
-&gt;&gt;&gt; friends['Fred'] = ['Barney', 'Dino']
-&gt;&gt;&gt; friends
-{'Fred': ['Barney', 'Dino']}
-&gt;&gt;&gt; friends['Fred']
-['Barney', 'Dino']
-&gt;&gt;&gt; friends['Barney']
-Traceback (most recent call last):
-File &quot;\&lt;stdin\&gt;&quot;, line 1, in \&lt;module\&gt;
-KeyError: 'Barney'
-&gt;&gt;&gt; friends['Wilma'] = ['Betty']
-&gt;&gt;&gt; friends
-{'Fred': ['Barney', 'Dino'], 'Wilma': ['Betty']}
-&gt;&gt;&gt; friends.keys()
-dict_keys(['Fred', 'Wilma'])
-&gt;&gt;&gt; friends.values()
-dict_values([['Barney', 'Dino'], ['Betty']])
-&gt;&gt;&gt; 'Dino' in friends
-False
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">type</span><span class="p">(</span><span class="err">{</span><span class="mi">12</span><span class="p">:</span> <span class="ss">&quot;XII&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="ss">&quot;VI&quot;</span><span class="err">}</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;dict&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span> <span class="o">=</span> <span class="err">{}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span><span class="p">[</span><span class="s1">&#39;Fred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Barney&#39;</span><span class="p">,</span> <span class="s1">&#39;Dino&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span>
+<span class="err">{</span><span class="s1">&#39;Fred&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Barney&#39;</span><span class="p">,</span> <span class="s1">&#39;Dino&#39;</span><span class="p">]</span><span class="err">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span><span class="p">[</span><span class="s1">&#39;Fred&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;Barney&#39;</span><span class="p">,</span> <span class="s1">&#39;Dino&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span><span class="p">[</span><span class="s1">&#39;Barney&#39;</span><span class="p">]</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="k">call</span> <span class="k">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="ss">&quot;\&lt;stdin\&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="k">in</span> <span class="err">\</span><span class="o">&lt;</span><span class="n">module</span><span class="err">\</span><span class="o">&gt;</span>
+<span class="n">KeyError</span><span class="p">:</span> <span class="s1">&#39;Barney&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span><span class="p">[</span><span class="s1">&#39;Wilma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Betty&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span>
+<span class="err">{</span><span class="s1">&#39;Fred&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Barney&#39;</span><span class="p">,</span> <span class="s1">&#39;Dino&#39;</span><span class="p">],</span> <span class="s1">&#39;Wilma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Betty&#39;</span><span class="p">]</span><span class="err">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;Wilma&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">friends</span><span class="p">.</span><span class="k">values</span><span class="p">()</span>
+<span class="n">dict_values</span><span class="p">([[</span><span class="s1">&#39;Barney&#39;</span><span class="p">,</span> <span class="s1">&#39;Dino&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Betty&#39;</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;Dino&#39;</span> <span class="k">in</span> <span class="n">friends</span>
+<span class="k">False</span>
+</pre></div>
+</td></tr></table>
 
 <p><strong>Example program:</strong></p>
-<pre><code class="python"># Compute and print a histogram of a sequence of integers entered
-# on standard input, one number per line
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Compute and print a histogram of a sequence of integers entered</span>
+<span class="c1"># on standard input, one number per line</span>
 
-import sys
+<span class="kn">import</span> <span class="nn">sys</span>
 
-histogram = {}
+<span class="n">histogram</span> <span class="o">=</span> <span class="p">{}</span>
 
-# Iterate over each line in the standard input
-for line in sys.stdin:
-    # Parse the next input as an integer
-    next_integer = int(line)
-    # Update the histogram accordingly
-    if next_integer in histogram:
-        # We've seen this integer before
-        histogram[next_integer] += 1
-    else:
-        # First occurrence of this integer in the input
-        histogram[next_integer] = 1
+<span class="c1"># Iterate over each line in the standard input</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+    <span class="c1"># Parse the next input as an integer</span>
+    <span class="n">next_integer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="c1"># Update the histogram accordingly</span>
+    <span class="k">if</span> <span class="n">next_integer</span> <span class="ow">in</span> <span class="n">histogram</span><span class="p">:</span>
+        <span class="c1"># We&#39;ve seen this integer before</span>
+        <span class="n">histogram</span><span class="p">[</span><span class="n">next_integer</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># First occurrence of this integer in the input</span>
+        <span class="n">histogram</span><span class="p">[</span><span class="n">next_integer</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-# Print each key: value pair in the histogram in ascending
-# sorted order of keys
-for key in sorted(histogram):
-    print(&quot;{} {}&quot;.format(key, histogram[key]))s
-</code></pre>
+<span class="c1"># Print each key: value pair in the histogram in ascending</span>
+<span class="c1"># sorted order of keys</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">histogram</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">histogram</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span><span class="n">s</span>
+</pre></div>
+</td></tr></table>
 
 <p>Example usage of the above program from the operating system command
-prompt, assuming the program is saved in a file called <code>histo.py</code>:</p>
-<pre><code class="no-highlight">python histo.py
-</code></pre>
+prompt, assuming the program is saved in a file called <code class="codehilite"><span class="n">histo</span><span class="p">.</span><span class="n">py</span></code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">python</span> <span class="n">histo</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</td></tr></table>
 
 <p>User types in a sequence of integers to the program, one per line, and
 presses control-d to terminate the input:</p>
-<pre><code class="no-highlight">3
-43
-12
-19
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
 3
-12
-12
-43
-</code></pre>
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mi">3</span>
+<span class="mi">43</span>
+<span class="mi">12</span>
+<span class="mi">19</span>
+<span class="mi">3</span>
+<span class="mi">12</span>
+<span class="mi">12</span>
+<span class="mi">43</span>
+</pre></div>
+</td></tr></table>
 
 <p>Program prints its output:</p>
-<pre><code class="no-highlight">3 2
-12 3
-19 1
-43 2
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mi">3</span> <span class="mi">2</span>
+<span class="mi">12</span> <span class="mi">3</span>
+<span class="mi">19</span> <span class="mi">1</span>
+<span class="mi">43</span> <span class="mi">2</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="tuples">Tuples</h1>
+<h1 id="tuples">Tuples<a class="headerlink" href="#tuples" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Represent <em>immutable</em> ordered sequences of values.</p>
@@ -1815,45 +2085,53 @@ presses control-d to terminate the input:</p>
 <p>Very much like lists except they cannot be modified once created.</p>
 </li>
 <li>
-<p>Type: <code>tuple</code></p>
+<p>Type: <code class="codehilite"><span class="n">tuple</span></code></p>
 </li>
 <li>
-<p>Literals are written in between parentheses: <code>(1, 2, 3)</code></p>
+<p>Literals are written in between parentheses: <code class="codehilite"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></code></p>
 </li>
 <li>
 <p>The can be used as keys in dictionaries (unlike lists).</p>
 </li>
 </ul>
-<h1 id="loops">Loops</h1>
-<h2 id="while-loops">While loops</h2>
+<h1 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">&para;</a></h1>
+<h2 id="while-loops">While loops<a class="headerlink" href="#while-loops" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Iterate until condition is <code>False</code></p>
+<p>Iterate until condition is <code class="codehilite"><span class="k">False</span></code></p>
 </li>
 <li>
 <p>Syntax:</p>
 </li>
 </ul>
-<pre><code class="python">while expression:
-    statement_block
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">statement_block</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>The value of the boolean expression is tested. If it evaluates to
-    <code>True</code> then the statement block is executed once, before repeating
+    <code class="codehilite"><span class="k">True</span></code> then the statement block is executed once, before repeating
     the loop. If it evaluates to False then the program continues
     execution immediately after the loop.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="python">def factorial(n):
-    result = 1
-    while n &gt; 0:
-        result *= n
-        n -= 1
-    return result
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</td></tr></table>
 
-<h2 id="for-loops">For loops</h2>
+<h2 id="for-loops">For loops<a class="headerlink" href="#for-loops" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Iterate over each item in a collection (e.g. list, string, tuple,
@@ -1863,9 +2141,11 @@ presses control-d to terminate the input:</p>
 <p>Syntax:</p>
 </li>
 </ul>
-<pre><code class="python">for variable in expression:
-    statement_block
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">statement_block</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
@@ -1880,36 +2160,41 @@ presses control-d to terminate the input:</p>
     an arbitrary order.</p>
 </li>
 <li>
-<p>The <code>range()</code> function is useful for generating iterators of numbers
+<p>The <code class="codehilite"><span class="n">range</span><span class="p">()</span></code> function is useful for generating iterators of numbers
     within a range. Note that the lower bound is inclusive and the
     upper bound is exclusive.</p>
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code>def factorial(n):
-    result = 1
-    for item in range(n + 1):
-        result *= item
-    return result
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">def</span> <span class="nv">factorial</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>:
+    <span class="nb">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="nv">item</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="nv">n</span> <span class="o">+</span> <span class="mi">1</span><span class="ss">)</span>:
+        <span class="nb">result</span> <span class="o">*=</span> <span class="nv">item</span>
+    <span class="k">return</span> <span class="nb">result</span>
+</pre></div>
+</td></tr></table>
 
-<h2 id="break-and-continue">Break and continue</h2>
+<h2 id="break-and-continue">Break and continue<a class="headerlink" href="#break-and-continue" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Both types of loops support the <code>break</code> and <code>continue</code> keywords.</p>
+<p>Both types of loops support the <code class="codehilite"><span class="k">break</span></code> and <code class="codehilite"><span class="k">continue</span></code> keywords.</p>
 </li>
 <li>
-<p><code>break</code> terminates the loop immediately.</p>
+<p><code class="codehilite"><span class="k">break</span></code> terminates the loop immediately.</p>
 </li>
 <li>
-<p><code>continue</code> jumps immediately back to the start of the loop.</p>
+<p><code class="codehilite"><span class="k">continue</span></code> jumps immediately back to the start of the loop.</p>
 </li>
 <li>
 <p>They can sometimes simplify the conditional logic of a loop, but
     should be used sparingly.</p>
 </li>
 </ul>
-<h1 id="functions">Functions</h1>
+<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Allow you to define reusable abstractions. Sometimes called
@@ -1920,7 +2205,7 @@ presses control-d to terminate the input:</p>
     nested.</p>
 </li>
 <li>
-<p>Type: <code>function</code></p>
+<p>Type: <code class="codehilite"><span class="k">function</span></code></p>
 </li>
 <li>
 <p>Named functions are bound to a variable name and may have complex
@@ -1934,55 +2219,72 @@ presses control-d to terminate the input:</p>
 <p>Named function syntax:</p>
 </li>
 </ul>
-<pre><code>def variable(parameter_list):
-    statement_block
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">def</span> <span class="k">variable</span><span class="p">(</span><span class="n">parameter_list</span><span class="p">):</span>
+    <span class="n">statement_block</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>Anonymous function syntax:</li>
 </ul>
-<pre><code>lambda parameter_list: expression
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">lambda</span> <span class="n">parameter_list</span><span class="p">:</span> <span class="n">expression</span>
+</pre></div>
+</td></tr></table>
 
 <p><strong>Example:</strong></p>
-<pre><code class="python">def is_leap_year(year):
-    if year % 4 == 0 and year % 100 != 0:
-        return True
-    else:
-        return year % 400 == 0
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">is_leap_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span>
 
-for year in range(2000, 2100 + 1):
-    result = is_leap_year(year)
-    print(&quot;{} {}&quot;.format(year, result))
-</code></pre>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">is_leap_year</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
 
 <p><strong>Anonymous function example:</strong></p>
-<pre><code class="python">&gt;&gt;&gt; squared = lambda x: x ** 2
-&gt;&gt;&gt; squared(2)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
 4
-&gt;&gt;&gt; list(map(lambda x: x + 1, [1, 2, 3]))
-[2, 3, 4]
-</code></pre>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">squared</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">squared</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="input-and-output">Input and output</h1>
+<h1 id="input-and-output">Input and output<a class="headerlink" href="#input-and-output" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
-<p>The <code>print</code> function is useful for displaying text (and other values
+<p>The <code class="codehilite"><span class="n">print</span></code> function is useful for displaying text (and other values
     converted to text).</p>
 </li>
 <li>
-<p>In Python 2 <code>print</code> was a special keyword. In Python 3 it is a
+<p>In Python 2 <code class="codehilite"><span class="n">print</span></code> was a special keyword. In Python 3 it is a
     function defined in the builtins.</p>
 </li>
 <li>
 <p>Fancy string formatting can be done with the format method on
     strings. Older Python code uses the string interpolation operator
-    for the same task <code>%</code>, but its use is now discouraged.</p>
+    for the same task <code class="codehilite"><span class="c">%</span></code>, but its use is now discouraged.</p>
 </li>
 <li>
 <p>Files must be opened before than can be manipulated. A file can be
-    opened in different modes: read <code>"r"</code>, write <code>"w"</code>, read-write <code>"r+"</code>,
-    and append <code>"a"</code>. Opening a new file in write or append modes
+    opened in different modes: read <code class="codehilite"><span class="ss">&quot;r&quot;</span></code>, write <code class="codehilite"><span class="ss">&quot;w&quot;</span></code>, read-write <code class="codehilite"><span class="ss">&quot;r+&quot;</span></code>,
+    and append <code class="codehilite"><span class="ss">&quot;a&quot;</span></code>. Opening a new file in write or append modes
     creates a new file. Opening an existing file in write mode
     overwrites its contents from the start. Opening an existing file
     in append mode adds new content at the end of the old content.</p>
@@ -2000,38 +2302,60 @@ for year in range(2000, 2100 + 1):
 </li>
 <li>
 <p>The command line arguments of a Python program are contained in a
-    list called <code>sys.argv</code> (it is a variable exported from the <code>sys</code>
+    list called <code class="codehilite"><span class="n">sys</span><span class="p">.</span><span class="n">argv</span></code> (it is a variable exported from the <code class="codehilite"><span class="n">sys</span></code>
     module). For complex program you should consider using a command
     line argument parsing library such as <a href="https://docs.python.org/3/library/argparse.html">argparse</a>.</p>
 </li>
 </ul>
 <p><strong>Example program:</strong></p>
-<pre><code># Count the number of words and lines in a file
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Count the number of words and lines in a file</span>
 
-import sys
+<span class="kn">import</span> <span class="nn">sys</span>
 
-# Get the input file name from the command line arguments
-filename = sys.argv[1]
+<span class="c1"># Get the input file name from the command line arguments</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-# Open the file
-file = open(filename)
+<span class="c1"># Open the file</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
-# Count the number of lines in the file
-num_lines = 0
-num_words = 0
+<span class="c1"># Count the number of lines in the file</span>
+<span class="n">num_lines</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">num_words</span> <span class="o">=</span> <span class="mi">0</span>
 
-for line in file:
-    num_lines += 1
-    num_words += len(line.split())
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">num_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">num_words</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 
-file.close()
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-print(&quot;Number of lines and words in {}: {} {}&quot; \
-        .format(filename, num_lines, num_words))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Number of lines and words in {}: {} {}&quot;</span> \
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">num_lines</span><span class="p">,</span> <span class="n">num_words</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="advanced-topics">Advanced Topics</h1>
-<h2 id="classes">Classes</h2>
+<h1 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h1>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Classes allow you to define your own types.</p>
@@ -2047,9 +2371,11 @@ print(&quot;Number of lines and words in {}: {} {}&quot; \
 <p>Syntax:</p>
 </li>
 </ul>
-<pre><code>class variable(superclass_list):
-    body
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="n">variable</span>(<span class="n">superclass_list</span>):
+    <span class="nb">body</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
@@ -2063,7 +2389,7 @@ print(&quot;Number of lines and words in {}: {} {}&quot; \
     were a function.</p>
 </li>
 <li>
-<p>If defined, the special method called <code>__init__</code> is used to
+<p>If defined, the special method called <code class="codehilite"><span class="n">__init__</span></code> is used to
     initialise a newly created instance of a class.</p>
 </li>
 <li>
@@ -2074,32 +2400,55 @@ print(&quot;Number of lines and words in {}: {} {}&quot; \
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="python">class Vector(object):
-    def __init__(self, x=0, y=0, z=0):
-        self.x = x
-        self.y = y
-        self.z = z
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Vector</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
 
-    def magnitude(self):
-        return sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+    <span class="k">def</span> <span class="nf">magnitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
-    def normalise(self):
-        magnitude = self.magnitude()
-        if magnitude == 0:
-            # Somehow we have a degenerate vector.
-            return self
-        else:
-            return self / self.magnitude()
+    <span class="k">def</span> <span class="nf">normalise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">magnitude</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">magnitude</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Somehow we have a degenerate vector.</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span>
 
-    def angle(self, other):
-        dp = self.dot_product(other)
-        return acos(dp / self.magnitude() * other.magnitude())
+    <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot_product</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">acos</span><span class="p">(</span><span class="n">dp</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">magnitude</span><span class="p">())</span>
 
-    def dot_product(self, other):
-        return self.x * other.x + self.y * other.y + self.z * other.z
-</code></pre>
+    <span class="k">def</span> <span class="nf">dot_product</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">z</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="exceptions">Exceptions</h1>
+<h1 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>Exceptions allow Python programs to handle erroneous program
@@ -2113,19 +2462,24 @@ print(&quot;Number of lines and words in {}: {} {}&quot; \
 <p>Exception handlers have the syntax:</p>
 </li>
 </ul>
-<pre><code class="python">try:
-    statement_block
-except exception_type as variable:
-    statement_block
-...
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">statement_block</span>
+<span class="k">except</span> <span class="n">exception_type</span> <span class="k">as</span> <span class="n">variable</span><span class="p">:</span>
+    <span class="n">statement_block</span>
+<span class="o">...</span>
+</pre></div>
+</td></tr></table>
 
 <ul>
 <li>
-<p>The statement block after <code>try</code> is executed. If no exceptions are
+<p>The statement block after <code class="codehilite"><span class="n">try</span></code> is executed. If no exceptions are
     raised in that block the program continues immediately after the
     exception handler. If an exception is raised in the block then
-    program control jumps to the innermost closing <code>except</code> clause.
+    program control jumps to the innermost closing <code class="codehilite"><span class="k">except</span></code> clause.
     Except clauses may optionally specify the set of exception types
     that they can handle. If the raised exception is an instance of
     the handled type then the body of the except clause is executed,
@@ -2137,21 +2491,29 @@ except exception_type as variable:
     print a stack trace at this point for error diagnosis.</p>
 </li>
 <li>
-<p>You may raise your own exceptions using the <code>raise</code> keyword.</p>
+<p>You may raise your own exceptions using the <code class="codehilite"><span class="n">raise</span></code> keyword.</p>
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="python"># alternative version of the histogram code from the section on
-# dictionaries
-for line in sys.stdin:
-    next_integer = int(line)
-    try:
-        histogram[next_integer] += 1
-    except KeyError:
-        histogram[next_integer] = 1
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># alternative version of the histogram code from the section on</span>
+<span class="c1"># dictionaries</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+    <span class="n">next_integer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">histogram</span><span class="p">[</span><span class="n">next_integer</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">histogram</span><span class="p">[</span><span class="n">next_integer</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</td></tr></table>
 
-<h2 id="modules">Modules</h2>
+<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>A module is a file which contains Python code.</p>
@@ -2173,13 +2535,13 @@ for line in sys.stdin:
 <p>Python comes with many standard modules.</p>
 </li>
 <li>
-<p>The <code>import</code> keyword is used to import an entire module.</p>
+<p>The <code class="codehilite"><span class="n">import</span></code> keyword is used to import an entire module.</p>
 </li>
 <li>
-<p>You may import a subset of things from a module using the <code>from ... import ...</code> syntax.</p>
+<p>You may import a subset of things from a module using the <code class="codehilite"><span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="o">...</span></code> syntax.</p>
 </li>
 <li>
-<p>You may import a module with a new name using the <code>from ... import ... as ...</code> or <code>import ... as ...</code></p>
+<p>You may import a module with a new name using the <code class="codehilite"><span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="o">...</span> <span class="k">as</span> <span class="o">...</span></code> or <code class="codehilite"><span class="kn">import</span> <span class="o">...</span> <span class="k">as</span> <span class="o">...</span></code></p>
 </li>
 <li>
 <p>When a module is first imported in a program, all of its top-level
@@ -2188,28 +2550,41 @@ for line in sys.stdin:
     re-executed.</p>
 </li>
 <li>
-<p>A special module called <code>builtins</code> is imported into every other module
+<p>A special module called <code class="codehilite"><span class="n">builtins</span></code> is imported into every other module
     by default, and it is automatically imported at the interactive
     prompt in the interpreter.</p>
 </li>
 </ul>
 <p><strong>Interactive Example:</strong></p>
-<pre><code class="python">&gt;&gt;&gt; import math
-&gt;&gt;&gt; math.sqrt(100)
-10.0
-&gt;&gt;&gt; sqrt(100)
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-NameError: name 'sqrt' is not defined
-&gt;&gt;&gt; from math import sqrt
-&gt;&gt;&gt; sqrt(100)
-10.0
-&gt;&gt;&gt; import math as m
-&gt;&gt;&gt; m.sqrt(100)
-10.0
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="mf">10.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;sqrt&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="mf">10.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span> <span class="kn">as</span> <span class="nn">m</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="mf">10.0</span>
+</pre></div>
+</td></tr></table>
 
-<h1 id="packages">Packages</h1>
+<h1 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>A package is a collection of modules in a hierarchy.</p>
@@ -2233,7 +2608,7 @@ NameError: name 'sqrt' is not defined
 </li>
 <li>
 <p>Many people use <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">virtualenv</a> to install packages into a local
-    "sandboxed" Python environment. This avoids conflicts with the
+    &ldquo;sandboxed&rdquo; Python environment. This avoids conflicts with the
     central Python package database on your computer, and allows
     multiple different versions of packages to be used.</p>
 </li>

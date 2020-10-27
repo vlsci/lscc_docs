@@ -1168,8 +1168,8 @@
                 
                 
                 <p><img alt="" src="../../../img/melbioinf_logo.png" /></p>
-<h1 id="molecular-dynamics-tutorial-introduction-to-cluster-computing">Molecular Dynamics Tutorial - Introduction to cluster computing</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="molecular-dynamics-tutorial-introduction-to-cluster-computing">Molecular Dynamics Tutorial - Introduction to cluster computing<a class="headerlink" href="#molecular-dynamics-tutorial-introduction-to-cluster-computing" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>In the following tutorials we will be logging on to a high performance computer (HPC) to submit <a href="http://www.ks.uiuc.edu/Research/namd/">NAMD</a> molecular dynamics (MD) jobs and visualising the results with the molecular visualization program <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>. As students have a vast range of skill levels and requirements, the tutorials are divided into two parts described below. Each tutorial is designed to be stand alone, start where you feel most comfortable and skip the exercises that are too simple.</p>
 <ul>
 <li>
@@ -1179,7 +1179,7 @@
 <p><strong><a href="../molecular_dynamics_201/molecular_dynamics_201/">MD tutorial - Building input files</a></strong>: In this tutorial we will be introducing a more sophisticated directory structure using scripts to direct the output and run the job. We initially download a copy of the directory to our local computer where we then build up the input files using VMD. We then upload this directory to the cluster where we submit the job. Finally we will download the results back to our local computer to visualize with VMD.</p>
 </li>
 </ul>
-<h2 id="learning-objectives">Learning Objectives</h2>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
 <p>At the end of the course, you will be able to:</p>
 <ul>
 <li>Log onto a high performance computer cluster</li>
@@ -1187,7 +1187,7 @@
 <li>Submit a basic molecular dynamics job on the cluster</li>
 <li>Download the output and visualise the preliminary results</li>
 </ul>
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>This workshop is intended for scientists interested in learning the basics of running molecular dynamics on a HPC cluster.</p>
 <p>It is recommended that participants attend Introduction to <a href="../../hpc/hpc/">High Performance Computing</a> prior to this workshop. If you are not familiar with using the command line, please also attend the <a href="../../unix/unix/">Introduction to Unix</a> workshop.</p>
 <p>Please bring along your laptops with the following installed before arriving:</p>
@@ -1195,181 +1195,246 @@
 <li>VMD (<a href="http://www.ks.uiuc.edu/Research/vmd/">http://www.ks.uiuc.edu/Research/vmd/</a>)</li>
 <li>Putty (<a href="https://www.putty.org/">https://www.putty.org/</a>) – only if you use Windows.</li>
 </ul>
-<p><strong>Important</strong>: NAMD has specific licencing requirements. Users are required to agree to these requirements to use NAMD on the Melbourne Bioinformatics HPC clusters. Login on <a href="https://my.vlsci.org.au/">https://my.vlsci.org.au/</a>, select 'Software agreement', 'Add software', 'NAMD'.</p>
+<p><strong>Important</strong>: NAMD has specific licencing requirements. Users are required to agree to these requirements to use NAMD on the Melbourne Bioinformatics HPC clusters. Login on <a href="https://my.vlsci.org.au/">https://my.vlsci.org.au/</a>, select &lsquo;Software agreement&rsquo;, &lsquo;Add software&rsquo;, &lsquo;NAMD&rsquo;.</p>
 <blockquote>
-<p><strong>Note</strong>: this tutorial describes the use of Snowy, but all these steps can be carried out on Barcoo by substituting every instance of <code>snowy</code> for <code>barcoo</code>.</p>
+<p><strong>Note</strong>: this tutorial describes the use of Snowy, but all these steps can be carried out on Barcoo by substituting every instance of <code class="codehilite"><span class="n">snowy</span></code> for <code class="codehilite"><span class="n">barcoo</span></code>.</p>
 </blockquote>
 <p><em>Tutorials created by Mike Kuiper, edited by Thomas Coudrat.</em></p>
 <hr />
-<h2 id="1-overview">1 - Overview</h2>
+<h2 id="1-overview">1 - Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>The aim of this tutorial is to give the user experience to upload and submit a typical parallel job to the cluster, download the output, and visualize the preliminary results. Though this example is mostly relevant to those studying in the life sciences area, the workflow is representative of launching other parallel jobs.</p>
 <p>The program we shall use, NAMD, is a parallel, molecular dynamics simulation program developed by the <a href="http://www.ks.uiuc.edu/">Theoretical and Computational Biophysics Group at Illinois University at Urbana Champaign</a>. It is particularly good at modelling large biomolecular systems using HPC clusters and is freely available for academic work. If you are interested in running NAMD simulations you should also install a local copy of VMD on your own computer. VMD is a molecular viewer program developed by the same group that can be used to help set up NAMD simulation and to help visualize NAMD output.</p>
-<h2 id="2-basic-introduction-to-cluster-computing">2 - Basic introduction to cluster computing</h2>
-<h3 id="a-logging-in-to-the-cluster">a) Logging in to the cluster</h3>
+<h2 id="2-basic-introduction-to-cluster-computing">2 - Basic introduction to cluster computing<a class="headerlink" href="#2-basic-introduction-to-cluster-computing" title="Permanent link">&para;</a></h2>
+<h3 id="a-logging-in-to-the-cluster">a) Logging in to the cluster<a class="headerlink" href="#a-logging-in-to-the-cluster" title="Permanent link">&para;</a></h3>
 <p>Using a terminal on your local computer and your username and password, login to the HPC cluster.</p>
-<pre><code>ssh &lt;username&gt;@snowy.vlsci.unimelb.edu.au
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ssh</span><span class="w"> </span><span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span><span class="nv">@snowy</span><span class="p">.</span><span class="n">vlsci</span><span class="p">.</span><span class="n">unimelb</span><span class="p">.</span><span class="n">edu</span><span class="p">.</span><span class="n">au</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
 <p>You should see a welcome screen and a command line prompt.
-If you type <code>ls</code> at the prompt you should see a list of the files and directories - which should be nothing as we haven’t put anything there yet!</p>
+If you type <code class="codehilite"><span class="n">ls</span></code> at the prompt you should see a list of the files and directories - which should be nothing as we haven’t put anything there yet!</p>
 <blockquote>
 <p><strong>Note</strong>: be careful to use the right <strong>terminal</strong> when you are typing in commands!
 Sometimes you need to type the commands on the cluster terminal, and sometimes on your local terminal. You can tell which is which by looking at the command line prompt. When you are logged into the cluster, you should see the machine name at the prompt, for example:</p>
-<p><code>[&lt;username&gt;@snowy ~]$</code>               &lt;- tells you your terminal is on Snowy</p>
+<p><code class="codehilite"><span class="o">[</span><span class="n">&lt;username&gt;@snowy ~</span><span class="o">]</span><span class="err">$</span><span class="w"></span></code>               &lt;- tells you your terminal is on Snowy</p>
 </blockquote>
-<h3 id="b-copy-across-files-starting-the-job">b) Copy across files, starting the job</h3>
+<h3 id="b-copy-across-files-starting-the-job">b) Copy across files, starting the job<a class="headerlink" href="#b-copy-across-files-starting-the-job" title="Permanent link">&para;</a></h3>
 <p>We’ll need to copy across the basic example directory to our working directory on <strong>Snowy</strong>. Do this with:</p>
-<pre><code>cp -r /vlsci/examples/namd/Namd_simple_example_01 .
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">vlsci</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">namd</span><span class="o">/</span><span class="n">Namd_simple_example_01</span> <span class="p">.</span>
+</pre></div>
+</td></tr></table>
 
 <blockquote>
 <p>Note that the dot is important!</p>
 </blockquote>
-<p>Change into this directory and launch the job with the command <code>sbatch</code> and the sbatch script.</p>
-<pre><code>cd Namd_simple_example_01
-</code></pre>
+<p>Change into this directory and launch the job with the command <code class="codehilite"><span class="n">sbatch</span></code> and the sbatch script.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="n">Namd_simple_example_01</span>
+</pre></div>
+</td></tr></table>
 
 <p>Then type:</p>
-<pre><code>sbatch sbatch_namd_start_job
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">sbatch</span> <span class="n">sbatch_namd_start_job</span>
+</pre></div>
+</td></tr></table>
 
 <p>Your job has now been submitted to the cluster. Easy hey?
-Check the job is running with the <code>showq</code> command. (type it at the command line).</p>
+Check the job is running with the <code class="codehilite"><span class="n">showq</span></code> command. (type it at the command line).</p>
 <p>Too much information? Try:</p>
-<pre><code>showq -u &lt;username&gt;
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">showq</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+</pre></div>
+</td></tr></table>
 
 <p>This particular job is <em>very</em> short compared to a regular NAMD simulation and should be finished in less than 4 minutes. As the job runs, various output files are produced but the main one you will be interested in is the trajectory file with the <strong>.dcd</strong> suffix.</p>
-<h3 id="c-understanding-the-input-files">c) Understanding the input files</h3>
-<p>While we wait, let's take a look at the sbatch example script to understand what is going on. Type:</p>
-<pre><code>less sbatch_namd_start_job
-</code></pre>
+<h3 id="c-understanding-the-input-files">c) Understanding the input files<a class="headerlink" href="#c-understanding-the-input-files" title="Permanent link">&para;</a></h3>
+<p>While we wait, let&rsquo;s take a look at the sbatch example script to understand what is going on. Type:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">less</span> <span class="n">sbatch_namd_start_job</span>
+</pre></div>
+</td></tr></table>
 
 <blockquote>
-<p><code>less</code> is a Unix file viewer. <strong>Press “q” to quit the viewing of the file</strong></p>
+<p><code class="codehilite"><span class="k">less</span></code> is a Unix file viewer. <strong>Press “q” to quit the viewing of the file</strong></p>
 </blockquote>
 <p>You should see the lines:</p>
-<pre><code>#SBATCH --nodes=4
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">SBATCH</span> <span class="c1">--nodes=4</span>
+</pre></div>
+</td></tr></table>
 
 <p>This line tells us how many cores we are to use for the job. Generally speaking, the more cores used the faster the job runs, but only to a point. Molecular dynamics jobs don’t always scale efficiently so eventually more cores will actually run slower than less cores. This depends very much on the program you use and the architecture of the HPC.</p>
 <p>Now let us have a look at the NAMD configuration script:</p>
-<pre><code>less namd_1ubq_example.conf
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">less</span> <span class="n">namd_1ubq_example</span><span class="p">.</span><span class="n">conf</span>
+</pre></div>
+</td></tr></table>
 
-<p>Woah! There is quite a bit of information here, don't worry though. Most of the parameters stay the same for each simulation. Let us just point out the important bits. See the lines near the top:</p>
-<pre><code>structure    1ubq_example.psf
-coordinates  1ubq_example.pdb
-outputName   1ubq_output_01
-</code></pre>
+<p>Woah! There is quite a bit of information here, don&rsquo;t worry though. Most of the parameters stay the same for each simulation. Let us just point out the important bits. See the lines near the top:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">structure</span>    <span class="mi">1</span><span class="n">ubq_example</span><span class="p">.</span><span class="n">psf</span>
+<span class="n">coordinates</span>  <span class="mi">1</span><span class="n">ubq_example</span><span class="p">.</span><span class="n">pdb</span>
+<span class="n">outputName</span>   <span class="mi">1</span><span class="n">ubq_output_01</span>
+</pre></div>
+</td></tr></table>
 
 <p>These are simply defining the input files, (the protein structure file <strong>.psf</strong>, and the coordinate file, <strong>.pdb</strong>) and also the name of the output files.</p>
 <p>Further down you will see:</p>
-<pre><code>set Temp    310
-temperature $Temp
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">set</span> <span class="n">Temp</span>    <span class="mi">310</span>
+<span class="n">temperature</span> <span class="err">$</span><span class="n">Temp</span>
+</pre></div>
+</td></tr></table>
 
 <p>Which is setting the temperature to 310 K (37 C) while below that we have:</p>
-<pre><code>## Parameter file
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="k">Parameter</span> <span class="n">file</span>
 
-paraTypeCharmm  on
-parameters      par_all27_prot_na.prm
-</code></pre>
+<span class="n">paraTypeCharmm</span>  <span class="k">on</span>
+<span class="k">parameters</span>      <span class="n">par_all27_prot_na</span><span class="p">.</span><span class="n">prm</span>
+</pre></div>
+</td></tr></table>
 
-<p>which tells NAMD which parameter file to use. (you'll see a copy of the parameter file in the NAMD_example directory). Depending on what molecules you have in your simulation, you may need to use a more detailed parameter file.</p>
+<p>which tells NAMD which parameter file to use. (you&rsquo;ll see a copy of the parameter file in the NAMD_example directory). Depending on what molecules you have in your simulation, you may need to use a more detailed parameter file.</p>
 <p>Somewhere in the middle you will see these lines:</p>
-<pre><code>## Periodic Boundary Conditions
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="n">Periodic</span> <span class="n">Boundary</span> <span class="n">Conditions</span>
 
-cellBasisVector1  48. 0.  0.
-cellBasisVector2  0. 48.  0.
-cellBasisVector3  0.  0. 48.
-cellOrigin        0   0   0
-wrapAll on
-wrapWater on
-</code></pre>
+<span class="n">cellBasisVector1</span>  <span class="mi">48</span><span class="p">.</span> <span class="mi">0</span><span class="p">.</span>  <span class="mi">0</span><span class="p">.</span>
+<span class="n">cellBasisVector2</span>  <span class="mi">0</span><span class="p">.</span> <span class="mi">48</span><span class="p">.</span>  <span class="mi">0</span><span class="p">.</span>
+<span class="n">cellBasisVector3</span>  <span class="mi">0</span><span class="p">.</span>  <span class="mi">0</span><span class="p">.</span> <span class="mi">48</span><span class="p">.</span>
+<span class="n">cellOrigin</span>        <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+<span class="n">wrapAll</span> <span class="k">on</span>
+<span class="n">wrapWater</span> <span class="k">on</span>
+</pre></div>
+</td></tr></table>
 
 <p>This defines the boundary conditions (a cheats way to simulate an infinite system), where a molecule coming off one side of the boundary will reappear on the other.</p>
 <p>Near the bottom we have the lines:</p>
-<pre><code>## Output files
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="k">Output</span> <span class="n">files</span>
 
-restartfreq 5000
-dcdfreq 100
-xstFreq 100
-outputEnergies 100
-outputPressure 100
-outputTiming 100
-</code></pre>
+<span class="n">restartfreq</span> <span class="mi">5000</span>
+<span class="n">dcdfreq</span> <span class="mi">100</span>
+<span class="n">xstFreq</span> <span class="mi">100</span>
+<span class="n">outputEnergies</span> <span class="mi">100</span>
+<span class="n">outputPressure</span> <span class="mi">100</span>
+<span class="n">outputTiming</span> <span class="mi">100</span>
+</pre></div>
+</td></tr></table>
 
-<p>These lines tell us how often to write out to the output files. The most important is the <code>dcdfreq</code>, (here set to 100), or how often to save a frame of the dynamics trajectory. (Usually this is set around 5,000 to 10,000). The <strong>.dcd</strong> output file can become ridiculously <strong>HUGE</strong> if this is too small. 100 is OK for this short example. Just remember to change it for a much larger value in your own runs!</p>
+<p>These lines tell us how often to write out to the output files. The most important is the <code class="codehilite"><span class="n">dcdfreq</span></code>, (here set to 100), or how often to save a frame of the dynamics trajectory. (Usually this is set around 5,000 to 10,000). The <strong>.dcd</strong> output file can become ridiculously <strong>HUGE</strong> if this is too small. 100 is OK for this short example. Just remember to change it for a much larger value in your own runs!</p>
 <p>The last few line in the configuration file:</p>
-<pre><code>## Minimize, reinitialize velocities, run dynamics
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="n">Minimize</span><span class="p">,</span> <span class="n">reinitialize</span> <span class="n">velocities</span><span class="p">,</span> <span class="n">run</span> <span class="n">dynamics</span>
 
-minimize 500
-run 10000
-</code></pre>
+<span class="n">minimize</span> <span class="mi">500</span>
+<span class="n">run</span> <span class="mi">10000</span>
+</pre></div>
+</td></tr></table>
 
-<p>tell us that the simulation is first minimized for 500 steps (a good idea to iron out bad contacts and steric clashes, but usually set to 1000 steps or more), and then told to run only a mere 10,000 steps. (<strong>This is a very short example!</strong>). Typically you might set "run" to 10,000,000 or more.</p>
-<p>Press "q" to quit viewing the configuration file.</p>
+<p>tell us that the simulation is first minimized for 500 steps (a good idea to iron out bad contacts and steric clashes, but usually set to 1000 steps or more), and then told to run only a mere 10,000 steps. (<strong>This is a very short example!</strong>). Typically you might set &ldquo;run&rdquo; to 10,000,000 or more.</p>
+<p>Press &ldquo;q&rdquo; to quit viewing the configuration file.</p>
 <p>Check again on the status of your job:</p>
-<pre><code>showq -u &lt;username&gt;
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">showq</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+</pre></div>
+</td></tr></table>
 
-<p>If you don't see anything it probably means the job has finished.
-List your directory using the command <code>ls -lrt</code> and you should see something like:</p>
-<pre><code>[mike@snowy Namd_simple_example_01]$ ls -rlt
-total 17088
--rw-r--r-- 1 mike VR0021   243622 Dec  8 11:40 par_all27_prot_na.prm
--rw-r--r-- 1 mike VR0021      655 Dec  8 11:40 sbatch_namd_start_bluegene
--rw-r--r-- 1 mike VR0021     3932 Dec  8 11:40 namd_1ubq_example.conf
--rw-r--r-- 1 mike VR0021   814960 Dec  8 11:40 1ubq_example.pdb
-drwxr-xr-x 2 mike VR0021      512 Dec  8 11:40 BUILD_DIR
--rw-r--r-- 1 mike VR0021      700 Dec  8 11:40 sbatch_namd_restartjob_bluegene
--rw-r--r-- 1 mike VR0021  1182412 Dec  8 11:40 1ubq_example.psf
--rw-r--r-- 1 mike VR0021     4508 Dec  8 11:40 namd_1ubq_restart_example.conf
--rw-r--r-- 1 mike VR0021      159 Dec  8 11:40 slurm-2746442.out
--rw-r--r-- 1 mike VR0021     1371 Dec  8 11:40 FFTW_NAMD_2.9_BlueGeneQ.txt
--rw-r--r-- 1 mike VR0021   247564 Dec  8 11:41 1ubq_output.restart.coor.old
--rw-r--r-- 1 mike VR0021   247564 Dec  8 11:41 1ubq_output.restart.vel.old
--rw-r--r-- 1 mike VR0021      216 Dec  8 11:41 1ubq_output.restart.xsc.old
--rw-r--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.restart.coor
--rw-r--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.restart.vel
--rw-r--r-- 1 mike VR0021      218 Dec  8 11:42 1ubq_output.restart.xsc
--rw-r--r-- 1 mike VR0021     8417 Dec  8 11:42 1ubq_output.xst
--rw-r--r-- 1 mike VR0021 13005576 Dec  8 11:42 1ubq_output.dcd
--rw-r--r-- 1 mike VR0021      215 Dec  8 11:42 1ubq_output.xsc
--rw-r--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.coor
--rw-r--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.vel
--rw-r--r-- 1 mike VR0021   425681 Dec  8 11:43 Namd_1ubq_example_output.txt
-</code></pre>
+<p>If you don&rsquo;t see anything it probably means the job has finished.
+List your directory using the command <code class="codehilite"><span class="n">ls</span> <span class="o">-</span><span class="n">lrt</span></code> and you should see something like:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">mike@snowy Namd_simple_example_01</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="n">rlt</span><span class="w"></span>
+<span class="n">total</span><span class="w"> </span><span class="mi">17088</span><span class="w"></span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   243622 Dec  8 11:40 par_all27_prot_na.prm</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021      655 Dec  8 11:40 sbatch_namd_start_bluegene</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021     3932 Dec  8 11:40 namd_1ubq_example.conf</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   814960 Dec  8 11:40 1ubq_example.pdb</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">mike</span><span class="w"> </span><span class="n">VR0021</span><span class="w">      </span><span class="mi">512</span><span class="w"> </span><span class="k">Dec</span><span class="w">  </span><span class="mi">8</span><span class="w"> </span><span class="mi">11</span><span class="err">:</span><span class="mi">40</span><span class="w"> </span><span class="n">BUILD_DIR</span><span class="w"></span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021      700 Dec  8 11:40 sbatch_namd_restartjob_bluegene</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021  1182412 Dec  8 11:40 1ubq_example.psf</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021     4508 Dec  8 11:40 namd_1ubq_restart_example.conf</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021      159 Dec  8 11:40 slurm-2746442.out</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021     1371 Dec  8 11:40 FFTW_NAMD_2.9_BlueGeneQ.txt</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   247564 Dec  8 11:41 1ubq_output.restart.coor.old</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   247564 Dec  8 11:41 1ubq_output.restart.vel.old</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021      216 Dec  8 11:41 1ubq_output.restart.xsc.old</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.restart.coor</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.restart.vel</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021      218 Dec  8 11:42 1ubq_output.restart.xsc</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021     8417 Dec  8 11:42 1ubq_output.xst</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021 13005576 Dec  8 11:42 1ubq_output.dcd</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021      215 Dec  8 11:42 1ubq_output.xsc</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.coor</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   247564 Dec  8 11:42 1ubq_output.vel</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 mike VR0021   425681 Dec  8 11:43 Namd_1ubq_example_output.txt</span>
+</pre></div>
+</td></tr></table>
 
-<p>The highlighted <strong>.dcd</strong> file is the main output file while the <strong>.xsc</strong>, <strong>.coor</strong>, <strong>.vel</strong> files all have to do with being able to restart the simulation at a later date, while the <code>Namd_1ubq_example_output.txt</code> file contains the text output from the simulation.</p>
+<p>The highlighted <strong>.dcd</strong> file is the main output file while the <strong>.xsc</strong>, <strong>.coor</strong>, <strong>.vel</strong> files all have to do with being able to restart the simulation at a later date, while the <code class="codehilite"><span class="n">Namd_1ubq_example_output</span><span class="p">.</span><span class="n">txt</span></code> file contains the text output from the simulation.</p>
 <p><em>Congratulations!</em></p>
-<p>You have just run a short molecular dynamics simulation on the cluster. Next, we'll copy that information back to your local computer and use VMD to visualize the results.</p>
+<p>You have just run a short molecular dynamics simulation on the cluster. Next, we&rsquo;ll copy that information back to your local computer and use VMD to visualize the results.</p>
 <p>Now on to part 2, visualizing the results with VMD.</p>
-<h2 id="3-visualizing-namd-results-with-vmd">3 - Visualizing NAMD results with VMD</h2>
-<p>In this section you will be using the <a href="http://www.ks.uiuc.edu/Research/vmd/">molecular visualization program VMD</a> to look at the trajectory data of the ubiquitin protein you generated in the first part of the tutorial. If you haven't already done so, download and install VMD to your local computer (make sure to pick the right flavour: Windows, Mac or Linux).</p>
+<h2 id="3-visualizing-namd-results-with-vmd">3 - Visualizing NAMD results with VMD<a class="headerlink" href="#3-visualizing-namd-results-with-vmd" title="Permanent link">&para;</a></h2>
+<p>In this section you will be using the <a href="http://www.ks.uiuc.edu/Research/vmd/">molecular visualization program VMD</a> to look at the trajectory data of the ubiquitin protein you generated in the first part of the tutorial. If you haven&rsquo;t already done so, download and install VMD to your local computer (make sure to pick the right flavour: Windows, Mac or Linux).</p>
 <blockquote>
 <p><strong>Tip</strong>: the most confusing part of this exercise seems to be remembering to use the right terminal! That is, either one is connected to the cluster, or one is running on your local computer. The exercises we just ran were on the cluster. That is, a terminal which we used to connect to the <strong>Snowy</strong> cluster using the program <strong>ssh</strong>.</p>
 <p>You can usually tell which computer you are logged into by the terminal command line: for example the terminal command line:</p>
-<p><code>[mike@snowy Namd_simple_example_01]$</code></p>
-<p>tells me I am logged into <strong>Snowy</strong>, in the <code>Namd_simple_example_01</code> directory.</p>
+<p><code class="codehilite"><span class="o">[</span><span class="n">mike@snowy Namd_simple_example_01</span><span class="o">]</span><span class="err">$</span><span class="w"></span></code></p>
+<p>tells me I am logged into <strong>Snowy</strong>, in the <code class="codehilite"><span class="n">Namd_simple_example_01</span></code> directory.</p>
 <p>Compared to my local terminal command line:</p>
-<p><code>mike@axion:~$</code></p>
-<p>tells me I am on my local machine (called "axion" in this case).</p>
+<p><code class="codehilite"><span class="n">mike</span><span class="nv">@axion</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"></span></code></p>
+<p>tells me I am on my local machine (called &ldquo;axion&rdquo; in this case).</p>
 </blockquote>
 <p>Download the entire NAMD example directory back to your <strong>local computer</strong>.
-For example, in Linux you can type in your <strong>local computer</strong> terminal: (if you see <code>snowy</code> in the command line prompt you are typing in the wrong terminal!)</p>
-<pre><code>scp -r &lt;username&gt;@snowy.vlsci.unimelb.edu.au:Namd_simple_example_01 .
-</code></pre>
+For example, in Linux you can type in your <strong>local computer</strong> terminal: (if you see <code class="codehilite"><span class="n">snowy</span></code> in the command line prompt you are typing in the wrong terminal!)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">scp</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span><span class="nv">@snowy</span><span class="p">.</span><span class="n">vlsci</span><span class="p">.</span><span class="n">unimelb</span><span class="p">.</span><span class="n">edu</span><span class="p">.</span><span class="nl">au</span><span class="p">:</span><span class="n">Namd_simple_example_01</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
 <p>What to do if your simulations didn’t run.</p>
 <p>If for some reason your simulations didn’t run properly you can download a copy of the precomputed data to your local computer by using the following command command from a local terminal:</p>
-<pre><code>scp -r &lt;username&gt;@snowy.vlsci.unimelb.edu.au:/vlsci/examples/namd/Namd_simple_example_01_finished .  
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">scp</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span><span class="nv">@snowy</span><span class="p">.</span><span class="n">vlsci</span><span class="p">.</span><span class="n">unimelb</span><span class="p">.</span><span class="n">edu</span><span class="p">.</span><span class="nl">au</span><span class="p">:</span><span class="o">/</span><span class="n">vlsci</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">namd</span><span class="o">/</span><span class="n">Namd_simple_example_01_finished</span><span class="w"> </span><span class="p">.</span><span class="w">  </span>
+</pre></div>
+</td></tr></table>
 
 <p>You can now start VMD <strong>locally</strong> and load up the trajectory data. In a new local terminal type:</p>
-<pre><code>vmd
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vmd</span>
+</pre></div>
+</td></tr></table>
 
 <blockquote>
 <p><strong>Note</strong>: On Windows, start VMD from the Program menu, under the folder University of Illinios. If this doesn’t work, there could be a problem with defining the path to vmd on your computer.</p>
@@ -1381,7 +1446,7 @@ For example, in Linux you can type in your <strong>local computer</strong> termi
 <p><img alt="" src="../media/vmd_display.png" /></p>
 <p>And the terminal should turn into the <em>console</em>:</p>
 <p><img alt="" src="../media/vmd_console.png" /></p>
-<h3 id="a-reading-structure-data-files-into-vmd">a) Reading structure data files into VMD</h3>
+<h3 id="a-reading-structure-data-files-into-vmd">a) Reading structure data files into VMD<a class="headerlink" href="#a-reading-structure-data-files-into-vmd" title="Permanent link">&para;</a></h3>
 <p>The first file you need to read into VMD is the protein structure file,
 (1ubq_example.psf in this case). The <strong>.psf</strong> file contains important information about the system such as which atoms are bonded together, what charge they are, and the mass of each atom type, but does not contain any spatial information.</p>
 <p>From the <em>main panel</em>:</p>

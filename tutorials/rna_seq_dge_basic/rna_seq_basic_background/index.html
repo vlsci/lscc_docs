@@ -1261,21 +1261,21 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/rna_seq_dge_basic/rna_seq_basic_background.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="background">Background</h1>
-<h2 id="introduction-to-rna-seq">Introduction to RNA-seq</h2>
+                <h1 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-to-rna-seq">Introduction to RNA-seq<a class="headerlink" href="#introduction-to-rna-seq" title="Permanent link">&para;</a></h2>
 <p>RNA-seq as a genomics application is essentially the process of collecting RNA (of any type: mRNA, rRNA, miRNA), converting in some way to DNA, and sequencing on a massively parallel sequencing technology such as Illumina Hiseq. Critically, the number of short reads generated for a particular RNA is assumed to be proportional to the amount of that RNA that was present in the collected sample.</p>
 <p>Differential gene expression studies can exploit RNA-seq to quantitate the amount of mRNA in different samples and statistically test the difference in expression per-gene (generally measured as the normalised number of sequence reads per gene/transcript) between the samples.</p>
 <p>In eukaryotes, differential gene expression analysis is complicated by the possibility of multiple isoforms for any particular gene through alternative splicing and/or multiple transcription start sites</p>
-<h2 id="the-galaxy-workflow-platform">The Galaxy workflow platform</h2>
-<h3 id="what-is-galaxy">What is Galaxy?</h3>
+<h2 id="the-galaxy-workflow-platform">The Galaxy workflow platform<a class="headerlink" href="#the-galaxy-workflow-platform" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-galaxy">What is Galaxy?<a class="headerlink" href="#what-is-galaxy" title="Permanent link">&para;</a></h3>
 <p>Galaxy is an online bioinformatics workflow management system. Essentially, you upload your files, create various analysis pipelines and run them, then visualise your results.</p>
 <p>Galaxy is really an interface to the various tools that do the data processing; each of these tools could be run from the command line, outside of Galaxy. Galaxy makes it easier to link up the tools together and visualise the entire analysis pipeline.</p>
-<p>Galaxy uses the concept of 'histories'. Histories are sets of data and workflows that act on that data. The data for this workshop is available in a shared history, which you can import into your own Galaxy account</p>
+<p>Galaxy uses the concept of &lsquo;histories&rsquo;. Histories are sets of data and workflows that act on that data. The data for this workshop is available in a shared history, which you can import into your own Galaxy account</p>
 <p><a href="http://wiki.g2.bx.psu.edu/">Learn more about Galaxy here</a></p>
-<h4 id="figure-1-the-galaxy-interface">Figure 1: The Galaxy interface</h4>
+<h4 id="figure-1-the-galaxy-interface">Figure 1: The Galaxy interface<a class="headerlink" href="#figure-1-the-galaxy-interface" title="Permanent link">&para;</a></h4>
 <p>Tools on the left, data in the middle, analysis workflow on the right.</p>
 <p><img alt="" src="../media/image04.png" /></p>
-<h2 id="differential-gene-expression-analysis-using-tophat-and-cufflinks">Differential gene expression analysis using Tophat and Cufflinks</h2>
+<h2 id="differential-gene-expression-analysis-using-tophat-and-cufflinks">Differential gene expression analysis using Tophat and Cufflinks<a class="headerlink" href="#differential-gene-expression-analysis-using-tophat-and-cufflinks" title="Permanent link">&para;</a></h2>
 <p>Two protocols are described in the paper inspiring this tutorial (Trapnell et al 2012):</p>
 <ol>
 <li>
@@ -1287,17 +1287,17 @@
 </ol>
 <p>Assembling a transcriptome is advised if no well characterised transcriptome exists, but as <em>D. melanogaster</em> is a model organism we have access to well-annotated and comprehensive genomes and transcriptomes from the multitude of previous genomic analyses on <em>D. melanogaster</em>, so the simpler ‘Alternate protocol’ is appropriate. It also has the advantage of being simpler.</p>
 <p>If we were investigating a novel organism then we would first need to characterise the transcriptome by assembling it from the experimental data, as gene expression is only meaningful in the context of a defined transcriptome.</p>
-<h3 id="the-alternate-protocol">The Alternate protocol</h3>
+<h3 id="the-alternate-protocol">The Alternate protocol<a class="headerlink" href="#the-alternate-protocol" title="Permanent link">&para;</a></h3>
 <p>The overall workflow for this protocol is depicted below[^1]. Briefly, raw reads from each of the sequenced replicates for each experimental condition are aligned against a reference genome; during this process splice sites are identified and reads mapped across introns as required. The mapped reads are then used to derive counts of reads vs genes by cross referencing against a list of known genes (the ‘reference transcriptome’); these read counts are normalised within and between sample sets by a variety of methods and then statistical tests are used to assess the significance of differences between the normalised read counts of sample sets, producing a ranked list of differentially expressed genes.</p>
-<h4 id="figure-2-general-workflow-for-testing-expression-differences-between-two-experimental-conditions">Figure 2: General workflow for testing expression differences between two experimental conditions</h4>
+<h4 id="figure-2-general-workflow-for-testing-expression-differences-between-two-experimental-conditions">Figure 2: General workflow for testing expression differences between two experimental conditions<a class="headerlink" href="#figure-2-general-workflow-for-testing-expression-differences-between-two-experimental-conditions" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="../media/image05.png" /></p>
-<h3 id="tophat">Tophat</h3>
+<h3 id="tophat">Tophat<a class="headerlink" href="#tophat" title="Permanent link">&para;</a></h3>
 <p>Reads from experimental conditions A and B are mapped to a reference genome with TopHat. TopHat uses the Bowtie aligner as an alignment engine; it breaks up the reads that Bowtie cannot align on its own into smaller pieces called segments.</p>
 <ul>
 <li>TopHat input: Fasta or Fastq files</li>
 <li>TopHat output: BAM file (Compressed SAM file)</li>
 </ul>
-<h3 id="cuffdiff">Cuffdiff</h3>
+<h3 id="cuffdiff">Cuffdiff<a class="headerlink" href="#cuffdiff" title="Permanent link">&para;</a></h3>
 <p>The reads and the reference transcriptome are fed to Cuffdiff which calculates expression levels and tests the statistical significance of the observed changes.</p>
 <ul>
 <li>Cuffdiff input: Reference transcriptome as GTF file</li>
@@ -1315,8 +1315,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="the-full-tuxedo-protocol">The full Tuxedo Protocol</h2>
-<h4 id="figure-3-full-tuxedo-protocol-workflow">Figure 3: Full Tuxedo protocol workflow</h4>
+<h2 id="the-full-tuxedo-protocol">The full Tuxedo Protocol<a class="headerlink" href="#the-full-tuxedo-protocol" title="Permanent link">&para;</a></h2>
+<h4 id="figure-3-full-tuxedo-protocol-workflow">Figure 3: Full Tuxedo protocol workflow<a class="headerlink" href="#figure-3-full-tuxedo-protocol-workflow" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="../media/image01.png" /></p>
 <ol>
 <li>
@@ -1380,19 +1380,19 @@
 <p>CummRbund[^3]: Using an R package called CummRbund, diiferentially expressed genes and transcriptomes can be visually displayed using various expression plots.</p>
 </li>
 </ol>
-<h2 id="protocols-recommendations">Protocols recommendations</h2>
+<h2 id="protocols-recommendations">Protocols recommendations<a class="headerlink" href="#protocols-recommendations" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Create a replicate from each condition to control the batch effects such as variation in culture conditions. With current available kits creating triplicates is feasible and strongly recommended.</li>
 <li>Do paired-end sequencing whenever possible. For example, Cufflinks is much more accurate in the presence of paired-end reads.</li>
 <li>Sequence with longer reads whenever possible. Tophat is more accurate in presence of longer reads in compare to shorter reads. However, since the cost of sequencing with longer reads is substantially more than shorter reads, some researchers prefer to do more replicates or more samples with shorter reads.</li>
 <li>Identify new genes with traditional cloning and PCR-based techniques because transcriptome assembly is difficult.</li>
 </ol>
-<h2 id="limitations-of-the-protocols">Limitations of the protocols</h2>
+<h2 id="limitations-of-the-protocols">Limitations of the protocols<a class="headerlink" href="#limitations-of-the-protocols" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Both Tophat and Cufflinks require a reference genome.</li>
 <li>The protocol assumes that RNASeq was done using Illumina or Solid sequencing techniques.</li>
 </ol>
-<h2 id="references">References</h2>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Trapnell C, Roberts A, Pachter L, et al. Differential gene and transcript expression analysis of RNA-seq experiments with TopHat and Cufflinks. <em>Nature Protocols</em> [serial online]. March 1, 2012;7(3):562-578.</li>
 <li>James T. Robinson, Helga Thorvaldsdóttir, Wendy Winckler, Mitchell Guttman, Eric S. Lander, Gad Getz, Jill P. Mesirov.<a href="http://www.nature.com/nbt/journal/v29/n1/abs/nbt.1754.html"> </a><a href="http://www.nature.com/nbt/journal/v29/n1/abs/nbt.1754.html"><strong><em>Integrative Genomics Viewer</em></strong></a><a href="http://www.nature.com/nbt/journal/v29/n1/abs/nbt.1754.html"><em>. Nature Biotechnology 29, 24–26 (2011)</em></a>,</li>

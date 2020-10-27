@@ -998,18 +998,18 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/galaxy-workflows/history_creation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="history-creation-instructions-for-workflow-tutorial">History creation instructions for Workflow tutorial</h1>
-<p>Use this set of instructions to create the base history for the "Extract Workflow" section of the workflows tutorial.</p>
-<h2 id="step-1-import-the-raw-datafiles">Step 1: Import the raw datafiles</h2>
+                <h1 id="history-creation-instructions-for-workflow-tutorial">History creation instructions for Workflow tutorial<a class="headerlink" href="#history-creation-instructions-for-workflow-tutorial" title="Permanent link">&para;</a></h1>
+<p>Use this set of instructions to create the base history for the &ldquo;Extract Workflow&rdquo; section of the workflows tutorial.</p>
+<h2 id="step-1-import-the-raw-datafiles">Step 1: Import the raw datafiles<a class="headerlink" href="#step-1-import-the-raw-datafiles" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create a new blank history by clicking on the history menu <img src="../media/Galaxy-menu.png" width=20 />, then <strong>Create New</strong></li>
 <li>Use the upload data tool to upload the data files from a remote repository..<ul>
 <li>Click <strong>Get Data -&gt; Upload File</strong></li>
 <li>Click <strong>Paste/Fetch data</strong></li>
-<li>In the box paste the following two url's (one per line): <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_1.fastq.gz</em> and <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_2.fastq.gz</em></li>
+<li>In the box paste the following two url&rsquo;s (one per line): <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_1.fastq.gz">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_1.fastq.gz</a></em> and <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_2.fastq.gz">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_2.fastq.gz</a></em></li>
 <li>Change the <strong>Type</strong> to <em>fastqsanger</em></li>
 <li>Click the <strong>Paste/Fetch data</strong> button again.</li>
-<li>Paste <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna</em></li>
+<li>Paste <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna</a></em></li>
 <li>Change the <strong>Type</strong> on this file to <em>fasta</em></li>
 <li>Click the <strong>Start</strong> button.</li>
 <li>Click the <strong>Close</strong> button.</li>
@@ -1017,41 +1017,41 @@
 </li>
 </ul>
 <p>After the import is complete, you should have 3 files in your history. 2 fastq files and a fasta file.</p>
-<h2 id="step-2-run-bwa">Step 2: Run BWA</h2>
+<h2 id="step-2-run-bwa">Step 2: Run BWA<a class="headerlink" href="#step-2-run-bwa" title="Permanent link">&para;</a></h2>
 <p>Now we will run BWA on these files to map the reads to the reference.</p>
 <ul>
 <li>In the tools menu, click <strong>NGS: Mapping -&gt; Map with BWA</strong></li>
 <li>Set the following in the tool interface:<ul>
-<li>"Will you select a reference genome from your history or use a built-in index?": <em>Use a genome from history and build index</em></li>
-<li>"Use the following dataset as the reference sequence": <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna</em></li>
-<li>"Select first set of reads": <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_1.fastq</em></li>
-<li>"Select second set of reads": <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_2.fastq</em></li>
+<li>&ldquo;Will you select a reference genome from your history or use a built-in index?&rdquo;: <em>Use a genome from history and build index</em></li>
+<li>&ldquo;Use the following dataset as the reference sequence&rdquo;: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna</a></em></li>
+<li>&ldquo;Select first set of reads&rdquo;: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_1.fastq">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_1.fastq</a></em></li>
+<li>&ldquo;Select second set of reads&rdquo;: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_2.fastq">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/bacterial_std_err_2.fastq</a></em></li>
 </ul>
 </li>
 <li>Click <strong>Execute</strong></li>
 </ul>
 <p>This will run BWA and result in an output compressed BAM file containing the mapping information for all of the reads versus the reference.</p>
-<h2 id="step-3-run-freebayes">Step 3: Run Freebayes</h2>
+<h2 id="step-3-run-freebayes">Step 3: Run Freebayes<a class="headerlink" href="#step-3-run-freebayes" title="Permanent link">&para;</a></h2>
 <p>Now we will run Freebayes to call variants in out reads compared with the reference.</p>
 <ul>
 <li>In the tools menu, click <strong>NGS: Variant Analysis -&gt; Freebayes</strong></li>
 <li>Set the following in the tool interface:<ul>
-<li>"Choose the source for the reference genome": <em>History</em></li>
-<li>"BAM file": <em>Map with BWA on data 2, data 1, and data 3 (mapped reads in BAM format)</em></li>
-<li>"Use the following dataset as the reference sequence": <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna</em></li>
+<li>&ldquo;Choose the source for the reference genome&rdquo;: <em>History</em></li>
+<li>&ldquo;BAM file&rdquo;: <em>Map with BWA on data 2, data 1, and data 3 (mapped reads in BAM format)</em></li>
+<li>&ldquo;Use the following dataset as the reference sequence&rdquo;: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/COMP90014/Assignment1/Ecoli-O157_H7-Sakai-chr.fna</a></em></li>
 </ul>
 </li>
 <li>Click <strong>Execute</strong></li>
 </ul>
 <p>This will run Freebayes on your BAM file and will result in a variant calling format file (vcf). </p>
-<h2 id="step-4-filter-the-vcf-file">Step 4: Filter the VCF file.</h2>
+<h2 id="step-4-filter-the-vcf-file">Step 4: Filter the VCF file.<a class="headerlink" href="#step-4-filter-the-vcf-file" title="Permanent link">&para;</a></h2>
 <p>Now we will filter the vcf file to something sensible.</p>
 <ul>
 <li>In the tools menu, click <strong>Filter and Sort -&gt; Filter</strong></li>
 <li>Set the following in the tool interface:<ul>
-<li>"Filter": <em>FreeBayes on data 3 and data 4 (variants)</em></li>
-<li>"With following condition": <em>c6 &gt; 500</em></li>
-<li>"Number of header lines to skip": <em>56</em></li>
+<li>&ldquo;Filter&rdquo;: <em>FreeBayes on data 3 and data 4 (variants)</em></li>
+<li>&ldquo;With following condition&rdquo;: <em>c6 &gt; 500</em></li>
+<li>&ldquo;Number of header lines to skip&rdquo;: <em>56</em></li>
 </ul>
 </li>
 <li>Click <strong>Execute</strong></li>

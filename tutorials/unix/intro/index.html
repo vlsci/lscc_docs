@@ -1032,23 +1032,23 @@
                 
                   <h1>Intro</h1>
                 
-                <h3 id="why-use-unix">Why use unix</h3>
+                <h3 id="why-use-unix">Why use unix<a class="headerlink" href="#why-use-unix" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Powerful</strong>: Unix computers are typically very powerful in comparision to your desktop/laptop computers.
-  Additionally they don't typically use a Graphical User Interface which can free up much resources for actual
+  Additionally they don&rsquo;t typically use a Graphical User Interface which can free up much resources for actual
   computing.</li>
 <li><strong>Big data</strong>: Unix programs are designed to handle large data sets</li>
 <li><strong>Flexible</strong>: Small programs that can be arranged in many ways to solve your problems</li>
 <li><strong>Automation</strong>: Scripting allows you to do many tasks in one step and repeat steps many times</li>
-<li><strong>Pipelines</strong>: Unix programs are designed to be 'chained' together to form long multi-step pipelines</li>
+<li><strong>Pipelines</strong>: Unix programs are designed to be &lsquo;chained&rsquo; together to form long multi-step pipelines</li>
 <li><strong>Science Software</strong>: Lots of Scientific software is designed to run in a Unix environment</li>
 </ul>
-<h3 id="user-interface">User interface</h3>
+<h3 id="user-interface">User interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h3>
 <p>The Unix interface is a text-based command driven one; often known as a Command Line Interface (CLI).  This means
 that you control it by issuing (i.e. typing) commands at the command prompt.  Consequently, the Mouse does not perform
 any function in the unix environment.</p>
 <p><img src="../media/unix-screen.png" title="Unix Screen" alt="Unix Screen" width="500px" /></p>
-<h3 id="command-prompt">Command prompt</h3>
+<h3 id="command-prompt">Command prompt<a class="headerlink" href="#command-prompt" title="Permanent link">&para;</a></h3>
 <p>The command prompt is the first thing you see when you connect to a Unix Computer.  Its purpose is to receive the next
 command from you, the user.</p>
 <p><img src="../media/cli-parts.png" title="Command prompt" alt="Command prompt" width="500px" /></p>
@@ -1060,31 +1060,32 @@ command from you, the user.</p>
 <li><strong>Current working directory</strong>: the current position within the file system that your are working.  More to follow</li>
 <li><strong>Prompt</strong>: this is simply a sign to the user that the computer is ready to accept the next command</li>
 </ul>
-<p>From this point forward in this document, the command prompt will be simply represented as a '$' rather than
-the full command prompt as shown above.  When copying and pasting commands you should NOT copy the '$' sign.</p>
-<h3 id="command-line">Command line</h3>
+<p>From this point forward in this document, the command prompt will be simply represented as a &lsquo;<span><span class="MathJax_Preview">' rather than
+the full command prompt as shown above.  When copying and pasting commands you should NOT copy the '</span><script type="math/tex">' rather than
+the full command prompt as shown above.  When copying and pasting commands you should NOT copy the '</script></span>&lsquo; sign.</p>
+<h3 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h3>
 <p>Below is an example command with various flags and options.</p>
 <p><img src="../media/cli-command.png" title="Command line" alt="Command line" width="500px" /></p>
-<p>There are a number of parts which may be included in a command; each is separated by one of more 'white-space' characters (i.e. space, tab):</p>
+<p>There are a number of parts which may be included in a command; each is separated by one of more &lsquo;white-space&rsquo; characters (i.e. space, tab):</p>
 <ul>
 <li><strong>Command</strong>: this is the name of the program (command) that you want to run</li>
 <li><strong>Flag</strong>: these turn on (or off) specific features in the program.  They consist of a dash (-) followed by
   a single character.</li>
-<li><strong>Long flag</strong>: same as flag except they are generally two dashes (--) followed by a word (or two)</li>
+<li><strong>Long flag</strong>: same as flag except they are generally two dashes (&ndash;) followed by a word (or two)</li>
 <li><strong>Option</strong>: set the value of a configurable option.  They are a flag (or long flag) followed by a value</li>
 <li><strong>Anonymous options</strong>: these are one or more options that are specified in the required order</li>
-<li><strong>Quoted value</strong>: if you need to specify a space (or tab) in an option then you will need to use double (") or
-  single (') quotes on each side of the value.</li>
+<li><strong>Quoted value</strong>: if you need to specify a space (or tab) in an option then you will need to use double (&ldquo;) or
+  single (&lsquo;) quotes on each side of the value.</li>
 </ul>
-<h3 id="file-system">File system</h3>
+<h3 id="file-system">File system<a class="headerlink" href="#file-system" title="Permanent link">&para;</a></h3>
 <p>The file-system of a unix computer can be thought of as an up-side-down tree.  The topmost directory has a special name
-called 'root'; it contains all files and directories that are on the computer system.  It is represented by a single
+called &lsquo;root&rsquo;; it contains all files and directories that are on the computer system.  It is represented by a single
 slash (/).  The figure below shows an example file system with directories (black outline boxes) and files (grey dashed
 boxes).</p>
 <p><img src="../media/file-system.png" title="File system" alt="File system" width="400px" /></p>
 <p>At the top level we have one file (settings) and one directory (home).  Inside the home directory we have two directories
 (user1 and user2) and so on.</p>
-<h4 id="absolute-file-names">Absolute file names</h4>
+<h4 id="absolute-file-names">Absolute file names<a class="headerlink" href="#absolute-file-names" title="Permanent link">&para;</a></h4>
 <p>Absolute file names are a single unique name for each file and directory within the computer.  They start with the slash (/)
 character and follow all the parent directories above the file/directory.</p>
 <p><img src="../media/file-system-settings.png" title="File system" alt="File system" width="400px" /></p>
@@ -1093,14 +1094,14 @@ character and follow all the parent directories above the file/directory.</p>
 <p><strong>Absolute file name</strong>: <em>/home/user1/file01.txt</em></p>
 <p><img src="../media/file-system-user2.png" title="File system" alt="File system" width="400px" /></p>
 <p><strong>Absolute file name</strong>: <em>/home/user2</em>  </p>
-<p><strong>Note</strong>: the final slash is not needed (but generally doesn't hurt if it is present).</p>
-<h4 id="current-working-directory">Current working directory</h4>
+<p><strong>Note</strong>: the final slash is not needed (but generally doesn&rsquo;t hurt if it is present).</p>
+<h4 id="current-working-directory">Current working directory<a class="headerlink" href="#current-working-directory" title="Permanent link">&para;</a></h4>
 <p>The <em>current working directory</em> is the current location within the file system that you are currently using.
 When you first login to a unix computer it will begin with the current working directory set to your home directory, that
 is, a place that is unique to you and generally nobody else will have access to it.</p>
 <p><img src="../media/unix-cwd.png" title="Current working directory" alt="Current working directory" width="500px" /></p>
 <p>Remember from earlier that the current working directory is shown in the command prompt.</p>
-<h4 id="relative-file-names">Relative file names</h4>
+<h4 id="relative-file-names">Relative file names<a class="headerlink" href="#relative-file-names" title="Permanent link">&para;</a></h4>
 <p>Relative file names are a short cut to writing file names that are shorter.  The difference between an absolute file
 name is that relative file names do NOT begin with a slash.</p>
 <p><img src="../media/file-system-muscle.png" title="File system" alt="File system" width="400px" /></p>
@@ -1113,8 +1114,8 @@ name is that relative file names do NOT begin with a slash.</p>
 <li><em>~</em> (Tilde): is a short cut to your home directory</li>
 <li><em>.</em> (dot): is a short cut for the current directory</li>
 <li><em>..</em> (2x dot): means the parent (or one directory up) from current directory</li>
-<li><em>...</em> (3x dot): does not mean anything (a gotcha for new users).  If you want 2 directories up then chain two
-double dot's  e.g. <em>../..</em></li>
+<li><em>&hellip;</em> (3x dot): does not mean anything (a gotcha for new users).  If you want 2 directories up then chain two
+double dot&rsquo;s  e.g. <em>../..</em></li>
 </ul>
 <p><strong>Note</strong>: the special file names above can be used within absolute and relative file name and used multiple times.</p>
 <p><img src="../media/file-system-muscle2.png" title="File system" alt="File system" width="400px" /></p>

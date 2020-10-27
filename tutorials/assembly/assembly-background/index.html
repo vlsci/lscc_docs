@@ -1263,37 +1263,37 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/assembly/assembly-background.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="de-novo-genome-assembly-using-velvet">De novo genome assembly using Velvet</h1>
-<h2 id="background">Background</h2>
-<h3 id="introduction-to-de-novo-assembly">Introduction to de novo assembly</h3>
+                <h1 id="de-novo-genome-assembly-using-velvet">De novo genome assembly using Velvet<a class="headerlink" href="#de-novo-genome-assembly-using-velvet" title="Permanent link">&para;</a></h1>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<h3 id="introduction-to-de-novo-assembly">Introduction to de novo assembly<a class="headerlink" href="#introduction-to-de-novo-assembly" title="Permanent link">&para;</a></h3>
 <p>DNA sequence assembly from short fragments (&lt; 200 bp) is often the first step of any bioinformatic analysis. The goal of assembly is to take the millions of short reads produced by sequencing instruments and re-construct the DNA from which the reads originated.</p>
 <p>The sequence assembly issue was neatly summed up by the following quote:</p>
-<p><em>"The problem of sequence assembly can be compared to taking many copies of a book, passing them all through a shredder, and piecing a copy of the book back together from only shredded pieces.  The book may have many repeated paragraphs,  and some shreds may be modified to have typos.  Excerpts from another book may be added in, and some shreds may be completely unrecognizable."</em> – Wikipedia: Sequence assembly.</p>
+<p><em>&ldquo;The problem of sequence assembly can be compared to taking many copies of a book, passing them all through a shredder, and piecing a copy of the book back together from only shredded pieces.  The book may have many repeated paragraphs,  and some shreds may be modified to have typos.  Excerpts from another book may be added in, and some shreds may be completely unrecognizable.&rdquo;</em> – Wikipedia: Sequence assembly.</p>
 <p>An addition to the above for paired end sequencing is that now some of the shreds are quite long but only about 10% of the words from both ends of the shred are known.</p>
 <p>This tutorial describes de novo assembly of Illumina short reads using the Velvet assembler (Zerbino  et al. 2008, 2009) and the Velvet Optimiser (Gladman &amp; Seemann, 2009) from within the Galaxy workflow management system.</p>
 <hr />
-<h2 id="the-galaxy-workflow-platform">The Galaxy workflow platform</h2>
-<h3 id="what-is-galaxy">What is Galaxy?</h3>
+<h2 id="the-galaxy-workflow-platform">The Galaxy workflow platform<a class="headerlink" href="#the-galaxy-workflow-platform" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-galaxy">What is Galaxy?<a class="headerlink" href="#what-is-galaxy" title="Permanent link">&para;</a></h3>
 <p>Galaxy is an online bioinformatics workflow management system. Essentially, you upload your files, create various analysis pipelines and run them, then visualise your results.</p>
 <p>Galaxy is really an interface to the various tools that do the data processing; each of these tools could be run from the command line, outside of Galaxy. Galaxy makes it easier to link up the tools together and visualise the entire analysis pipeline.</p>
-<p>Galaxy uses the concept of 'histories'. Histories are sets of data and workflows that act on that data. The data for this workshop is available in a shared history, which you can import into your own Galaxy account</p>
+<p>Galaxy uses the concept of &lsquo;histories&rsquo;. Histories are sets of data and workflows that act on that data. The data for this workshop is available in a shared history, which you can import into your own Galaxy account</p>
 <p>Learn more about Galaxy here</p>
 <p><strong>Figure 1: The Galaxy interface</strong></p>
 <p>Tools on the left, data in the middle, analysis workflow on the right.</p>
 <p><img src="../media/screenshot-fastqc-output.png" width=100% /></p>
 <hr />
-<h2 id="de-novo-assembly-with-velvet-and-the-velvet-optimiser">De novo assembly with Velvet and the Velvet Optimiser.</h2>
-<h3 id="velvet">Velvet</h3>
+<h2 id="de-novo-assembly-with-velvet-and-the-velvet-optimiser">De novo assembly with Velvet and the Velvet Optimiser.<a class="headerlink" href="#de-novo-assembly-with-velvet-and-the-velvet-optimiser" title="Permanent link">&para;</a></h2>
+<h3 id="velvet">Velvet<a class="headerlink" href="#velvet" title="Permanent link">&para;</a></h3>
 <p>Velvet is software to perform dna assembly from short reads by manipulating de Bruijn graphs. It is capable of forming long contigs (n50 of in excess of 150kb) from paired end short reads. It has several input parameters for controlling the structure of the de Bruijn graph and these must be set optimally to get the best assembly possible. Velvet can read Fasta, FastQ, sam or bam files. However, it ignores any quality scores and simply relies on sequencing depth to resolve errors. The Velvet Optimiser software performs many Velvet assemblies with various parameter sets and searches for the optimal assembly automatically.</p>
-<h3 id="de-bruijn-graphs">de Bruijn graphs</h3>
+<h3 id="de-bruijn-graphs">de Bruijn graphs<a class="headerlink" href="#de-bruijn-graphs" title="Permanent link">&para;</a></h3>
 <p>A de Bruijn graph is a directed graph which represents overlaps between sequences of symbols. The size of the sequence contained in the nodes of the graph is called the word-length or k-mer size. In Figure 2, the word length is 3. The two symbols are 1 and 0. Each node in the graph has the last two symbols of the previous node and 1 new symbol. Sequences of symbols can be produced by traversing the graph and adding the “new” symbol to the growing sequence.</p>
 <p><strong>Figure 2: A de Bruijn graph of word length 3 for the symbols 1 and 0.</strong></p>
 <p><img src="../media/debruijn.jpg" width=80% /></p>
-<p><em>From: https://cameroncounts.wordpress.com/2015/02/28/1247/</em></p>
+<p><em>From: <a href="https://cameroncounts.wordpress.com/2015/02/28/1247/">https://cameroncounts.wordpress.com/2015/02/28/1247/</a></em></p>
 <p>Velvet constructs a de Bruijn graph of the reads. It has 4 symbols (A, C, G and T - N’s are converted to A’s) The word length (or k-mer size) is one of Velvet’s prime parameters.</p>
 <p>Velvet is not the only assembly software that works in this manner. Euler, Edena and SOAP de novo are examples of others.</p>
-<h3 id="the-velvet-algorithm">The Velvet algorithm</h3>
-<h4 id="step-1-hashing-the-reads"><em>Step 1: Hashing the reads.</em></h4>
+<h3 id="the-velvet-algorithm">The Velvet algorithm<a class="headerlink" href="#the-velvet-algorithm" title="Permanent link">&para;</a></h3>
+<h4 id="step-1-hashing-the-reads"><em>Step 1: Hashing the reads.</em><a class="headerlink" href="#step-1-hashing-the-reads" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Velvet breaks up each read into k-mers of length k.</li>
 <li>A k-mer is a k length subsequence of the read.</li>
@@ -1302,7 +1302,7 @@
 <li>Each k-mer is stored once but the number of times it appears is also recorded.</li>
 <li>This step is performed by “velveth” - one of the programs in the Velvet suite.</li>
 </ul>
-<h4 id="step-2-constructing-the-de-bruijn-graph"><em>Step 2: Constructing the de Bruijn graph.</em></h4>
+<h4 id="step-2-constructing-the-de-bruijn-graph"><em>Step 2: Constructing the de Bruijn graph.</em><a class="headerlink" href="#step-2-constructing-the-de-bruijn-graph" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Velvet adds the k-mers one-by-one to the graph.</li>
 <li>Adjacent k-mers overlap by k-1 nucleotides.</li>
@@ -1313,7 +1313,7 @@
 </ul>
 <p><strong>Figure 3: Section of a simple de Bruijn graph of reads with k-mer size 5. Coloured sequences are constructed by following the appropriately coloured line through the graph.</strong> <em>(Base figure Zerbino et al 2008.)</em></p>
 <p><img src="../media/velvet-graph.png" width=80% /></p>
-<h4 id="step-3-simplification-of-the-graph"><em>Step 3: Simplification of the graph.</em></h4>
+<h4 id="step-3-simplification-of-the-graph"><em>Step 3: Simplification of the graph.</em><a class="headerlink" href="#step-3-simplification-of-the-graph" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Chain merging: When there are two connected nodes in the graph without a divergence, merge the two nodes.</li>
 <li>Tip clipping: Tips are short (typically) chains of nodes that are disconnected on one end. They will be clipped if their length is &lt; 2 x k or their average k-mer depth is much less than the continuing path.</li>
@@ -1325,23 +1325,23 @@
 </ul>
 <p><strong>Figure 4: Representation of “bubbles” in a Velvet de Bruijn graph.</strong>  <em>(Base figure Zerbino et al 2008.)</em></p>
 <p><img src="../media/velvet-bubbles.png" width=80% /></p>
-<h4 id="step-4-read-off-the-contigs"><em>Step 4: Read off the contigs.</em></h4>
+<h4 id="step-4-read-off-the-contigs"><em>Step 4: Read off the contigs.</em><a class="headerlink" href="#step-4-read-off-the-contigs" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Follow the chains of nodes through the graph and “read off” the bases to create the contigs.</li>
 <li>Where there is an ambiguous divergence/convergence, stop the current contig and start a new one.</li>
 </ul>
-<h3 id="k-mer-size-and-coverage-cutoff-values">K-mer size and coverage cutoff values</h3>
+<h3 id="k-mer-size-and-coverage-cutoff-values">K-mer size and coverage cutoff values<a class="headerlink" href="#k-mer-size-and-coverage-cutoff-values" title="Permanent link">&para;</a></h3>
 <p>The size of the k-mers that construct the graph is very important and has a large effect on the outcome of the assembly. Generally, small k-mers create a graph with increased connectivity, more ambiguity (more divergences) and less clear “paths” through the graph. Large k-mers produce graphs with less connectivity but higher specificity. The paths through the graph are clearer but they are less connected and prone to breaking down.</p>
 <p>The coverage cutoff c used during the error correction step of Velvet also has a significant effect on the output of the assembly process. If c is too low, the assembly will contain nodes of the graph that are the product of sequencing errors and misconnections. If c is too high, it can create mis-assemblies in the contigs and destroys lots of useful data.</p>
 <p>Each dataset has its own optimum values for the k-mer size and the coverage cutoff used in the error removal step. Choosing them appropriately is one of the challenges faced by new users of the Velvet software.</p>
-<h3 id="velvet-optimiser">Velvet Optimiser</h3>
+<h3 id="velvet-optimiser">Velvet Optimiser<a class="headerlink" href="#velvet-optimiser" title="Permanent link">&para;</a></h3>
 <p>The Velvet Optimiser chooses the optimal values for k and c automatically by performing many runs of Velvet (partially in parallel) and interrogating the subsequent assemblies.  It uses different optimisation functions for k and c and these can be user controlled.</p>
 <p>It requires the user to input a range of k values to search (to cut down on running time).</p>
-<h2 id="references">References</h2>
-<p>http://en.wikipedia.org/wiki/Sequence_assembly</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p><a href="http://en.wikipedia.org/wiki/Sequence_assembly">http://en.wikipedia.org/wiki/Sequence_assembly</a></p>
 <p>Zerbino DR, Birney E, Velvet: algorithms for de novo short read assembly using de Bruijn graphs, Genome Research, 2008, 18:821-829</p>
 <p>Zerbino DR, McEwen GK, Margulies EH, Birney E, Pebble and rock band: heuristic resolution of repeats and scaffolding in the velvet short-read de novo assembler. PLoS One. 2009; 4(12):e8407.</p>
-<p>Gladman SL, Seemann T, Velvet Optimiser, http://www.vicbioinformatics.com/software.shtml 2009.</p>
+<p>Gladman SL, Seemann T, Velvet Optimiser, <a href="http://www.vicbioinformatics.com/software.shtml">http://www.vicbioinformatics.com/software.shtml</a> 2009.</p>
                 
                   
                 

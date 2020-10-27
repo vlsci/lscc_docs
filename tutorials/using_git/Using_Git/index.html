@@ -1155,8 +1155,8 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/using_git/Using_Git.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="using-git-and-github-for-revision-control">Using Git and Github for revision control</h1>
-<h2 id="what-is-git">What is Git?</h2>
+                <h1 id="using-git-and-github-for-revision-control">Using Git and Github for revision control<a class="headerlink" href="#using-git-and-github-for-revision-control" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-git">What is Git?<a class="headerlink" href="#what-is-git" title="Permanent link">&para;</a></h2>
 <p>Git is a revision control system. It is designed to help you keep track
 of collections of files which stem from a common source and undergo
 modifications over time. The files tend to be human generated text. It
@@ -1181,21 +1181,21 @@ Two of the more popular alternatives are:</p>
 <p><a href="http://mercurial.selenic.com">Mercurial</a> is very similar to Git, but is sometimes considered more user friendly.</p>
 </li>
 </ul>
-<h2 id="getting-help">Getting help</h2>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <p>There are lots of resources on the web for learning how to use Git. A
 popular reference is <em>Pro Git</em>, which is freely available online
 (<a href="http://git-scm.com/book">http://git-scm.com/book</a>). Another good
 reference is the book <em>Version Control with Git</em>, by Loeliger and
 McCullough.</p>
-<h2 id="a-simple-workflow">A simple workflow</h2>
-<h3 id="step-1-create-a-github-account">Step 1, create a github account.</h3>
+<h2 id="a-simple-workflow">A simple workflow<a class="headerlink" href="#a-simple-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-a-github-account">Step 1, create a github account.<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">&para;</a></h3>
 <p>Create a github account (<a href="https://github.com/">https://github.com/</a>).
 Do this step once only (unless you need multiple accounts).</p>
 <p>You get unlimited numbers of (world readable) public repositories for
 free.</p>
 <p>Private repositories (that can be shared with selected users) cost money
 (see <a href="https://github.com/plans">https://github.com/plans</a>), but <a href="https://education.github.com/discount_requests/new">discounts are available for academics</a>.</p>
-<h3 id="step-2-sign-into-github-and-create-a-repository">Step 2, sign into github and create a repository.</h3>
+<h3 id="step-2-sign-into-github-and-create-a-repository">Step 2, sign into github and create a repository.<a class="headerlink" href="#step-2-sign-into-github-and-create-a-repository" title="Permanent link">&para;</a></h3>
 <p>Sign in to your github account and create a new repository. Do this once
 for every new project you have.</p>
 <p><img alt="" src="../media/image05.png" /></p>
@@ -1219,7 +1219,7 @@ for every new project you have.</p>
 </li>
 </ul>
 <p><img alt="" src="../media/image10.png" /></p>
-<h3 id="step-3-clone-your-repository-to-your-local-computer">Step 3, clone your repository to your local computer.</h3>
+<h3 id="step-3-clone-your-repository-to-your-local-computer">Step 3, clone your repository to your local computer.<a class="headerlink" href="#step-3-clone-your-repository-to-your-local-computer" title="Permanent link">&para;</a></h3>
 <p>Clone your new repository from github to your local computer.</p>
 <p>Each repository on github is identified by a URL, which will look like
 the one below:</p>
@@ -1227,251 +1227,372 @@ the one below:</p>
 <p>Run the command below on your development machine in the directory where
 you want to keep the repository (of course you should use the actual URL
 of your own repository, not the one in the example).</p>
-<pre><code>$ git clone https://github.com/bjpop/test.git
-Cloning into 'test'...
-remote: Counting objects: 3, done.
-remote: Total 3 (delta 0), reused 0 (delta 0)
-Unpacking objects: 100% (3/3), done.
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git clone https://github.com/bjpop/test.git
+Cloning into <span class="s1">&#39;test&#39;</span>...
+remote: Counting objects: <span class="m">3</span>, <span class="k">done</span>.
+remote: Total <span class="m">3</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>
+Unpacking objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
+</pre></div>
+</td></tr></table>
 
-<p>This will create a directory with the same name as your repository (in this example it is called <code>test</code>).</p>
+<p>This will create a directory with the same name as your repository (in this example it is called <code class="codehilite"><span class="n">test</span></code>).</p>
 <p>If you change into that directory and list its contents you will see a
-<code>.git</code> subdirectory, which is where Git keeps all the data for your
+<code class="codehilite"><span class="na">.git</span></code> subdirectory, which is where Git keeps all the data for your
 repository. You will also see working copies of the files in the
-project. In this example the only such file is <code>README.md</code> which was
+project. In this example the only such file is <code class="codehilite"><span class="n">README</span><span class="p">.</span><span class="n">md</span></code> which was
 created automatically by github when the repository was first created.
 (The .md extension on the file suggests that it uses the <em>Markdown</em>
 syntax, see <a href="https://help.github.com/articles/github-flavored-markdown">https://help.github.com/articles/github-flavored-markdown</a>).</p>
-<pre><code>$ cd test
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> <span class="nb">test</span>
 $ ls -a
 . .. .git README.md
 $ ls .git
 branches config description HEAD hooks index info logs objects packed-refs refs
-</code></pre>
+</pre></div>
+</td></tr></table>
 
-<h3 id="step-4-commit-a-file-to-the-repository">Step 4, commit a file to the repository.</h3>
+<h3 id="step-4-commit-a-file-to-the-repository">Step 4, commit a file to the repository.<a class="headerlink" href="#step-4-commit-a-file-to-the-repository" title="Permanent link">&para;</a></h3>
 <p>Create a new file in the repository on your local computer and commit it
 to your local repository.</p>
 <p>How you create the file is immaterial. You could copy it from somewhere
 else, create it in a text editor. In this case we’ll make a little
 python program:</p>
-<pre><code>$ echo 'print(&quot;hello world&quot;)' &gt; hello.py
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;print(&quot;hello world&quot;)&#39;</span> &gt; hello.py
+</pre></div>
+</td></tr></table>
 
 <p>Test that your new file is satisfactory, in this case we test our code:</p>
-<pre><code>$ python hello.py
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python hello.py
 hello world
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p>Check the status of your repository:</p>
-<pre><code>$ git status
-# On branch master
-# Untracked files:
-# (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nv">git</span> <span class="nv">status</span>
+# <span class="nv">On</span> <span class="nv">branch</span> <span class="nv">master</span>
+# <span class="nv">Untracked</span> <span class="nv">files</span>:
+# <span class="ss">(</span><span class="nv">use</span> <span class="s2">&quot;</span><span class="s">git add &lt;file&gt;...</span><span class="s2">&quot;</span> <span class="nv">to</span> <span class="k">include</span> <span class="nv">in</span> <span class="nv">what</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">committed</span><span class="ss">)</span>
 #
-# hello.py
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)
-</code></pre>
+# <span class="nv">hello</span>.<span class="nv">py</span>
+<span class="nv">nothing</span> <span class="nv">added</span> <span class="nv">to</span> <span class="nv">commit</span> <span class="nv">but</span> <span class="nv">untracked</span> <span class="nv">files</span> <span class="nv">present</span> <span class="ss">(</span><span class="nv">use</span> <span class="s2">&quot;</span><span class="s">git add</span><span class="s2">&quot;</span> <span class="nv">to</span> <span class="nv">track</span><span class="ss">)</span>
+</pre></div>
+</td></tr></table>
 
-<p>Notice that git tells you that the new file <code>hello.py</code> is not tracked
+<p>Notice that git tells you that the new file <code class="codehilite"><span class="n">hello</span><span class="p">.</span><span class="n">py</span></code> is not tracked
 (not in the repository).</p>
 <p>When you are happy with your file, you can stage it (this is not a
 commit), but it will cause the file to be tracked:</p>
-<pre><code>$ git add hello.py
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git add hello.py
+</pre></div>
+</td></tr></table>
 
 <p>Note that git uses a two-stage process for committing changes. The first
-stage is to "stage" your changes. Staged changes appear in the
+stage is to &ldquo;stage&rdquo; your changes. Staged changes appear in the
 repository index, but are not committed. You can stage many changes
 together, and even amend or undo previously staged (but not committed)
 changes. The second stage is to commit the current staged changes to the
 repository. Committing causes the changes to be reflected in the state
 of the repository.</p>
 <p>Re-check the status of your repository:</p>
-<pre><code>$ git status
-# On branch master
-# Changes to be committed:
-# (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-#
-# new file: hello.py
-#
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git status
+<span class="c1"># On branch master</span>
+<span class="c1"># Changes to be committed:</span>
+<span class="c1"># (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span>
+<span class="c1">#</span>
+<span class="c1"># new file: hello.py</span>
+<span class="c1">#</span>
+</pre></div>
+</td></tr></table>
 
-<p>Now we can see that the changes to <code>hello.py</code> have been staged and are
-ready to be committed. Notice that <code>hello.py</code> is no longer untracked.</p>
+<p>Now we can see that the changes to <code class="codehilite"><span class="n">hello</span><span class="p">.</span><span class="n">py</span></code> have been staged and are
+ready to be committed. Notice that <code class="codehilite"><span class="n">hello</span><span class="p">.</span><span class="n">py</span></code> is no longer untracked.</p>
 <p>Commit your changes with a commit message:</p>
-<pre><code>$ git commit -m &quot;A little greeting program&quot;
-[master b1cce11] A little greeting program
-1 files changed, 1 insertions(+), 0 deletions(-)
-create mode 100644 hello.py
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;A little greeting program&quot;</span>
+<span class="p">[</span><span class="n">master</span> <span class="n">b1cce11</span><span class="p">]</span> <span class="n">A</span> <span class="n">little</span> <span class="n">greeting</span> <span class="n">program</span>
+<span class="mi">1</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">0</span> <span class="n">deletions</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+<span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">hello</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</td></tr></table>
 
 <p>Re-check the status of your repository:</p>
-<pre><code>$ git status
-# On branch master
-# Your branch is ahead of 'origin/master' by 1 commit.
-#
-nothing to commit (working directory clean)
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git status
+<span class="c1"># On branch master</span>
+<span class="c1"># Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
+<span class="c1">#</span>
+nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>Now we see that there a no uncommitted changes in the repository,
 however git tells us that our local repository is one commit ahead of
-the github version (which it calls <code>origin/master</code>).</p>
-<h3 id="step-5-push-your-changes-to-github">Step 5, push your changes to github.</h3>
+the github version (which it calls <code class="codehilite"><span class="n">origin</span><span class="o">/</span><span class="n">master</span></code>).</p>
+<h3 id="step-5-push-your-changes-to-github">Step 5, push your changes to github.<a class="headerlink" href="#step-5-push-your-changes-to-github" title="Permanent link">&para;</a></h3>
 <p>Push the commit in your local repository to github (thus synchronising them).</p>
-<pre><code>$ git push origin
-Username for 'https://github.com': &lt;type your github username&gt;
-Password for 'https://&lt;your github username&gt;@github.com': 
-Counting objects: 4, done.
-Delta compression using up to 16 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 305 bytes, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/bjpop/test.git
-71a771a..b1cce11 master -&gt; master
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nv">git</span> <span class="nv">push</span> <span class="nv">origin</span>
+<span class="nv">Username</span> <span class="k">for</span> <span class="s1">&#39;</span><span class="s">https://github.com</span><span class="s1">&#39;</span>: <span class="o">&lt;</span><span class="nv">type</span> <span class="nv">your</span> <span class="nv">github</span> <span class="nv">username</span><span class="o">&gt;</span>
+<span class="nv">Password</span> <span class="k">for</span> <span class="s1">&#39;</span><span class="s">https://&lt;your github username&gt;@github.com</span><span class="s1">&#39;</span>: 
+<span class="nv">Counting</span> <span class="nv">objects</span>: <span class="mi">4</span>, <span class="nv">done</span>.
+<span class="nv">Delta</span> <span class="nv">compression</span> <span class="nv">using</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">16</span> <span class="nv">threads</span>.
+<span class="nv">Compressing</span> <span class="nv">objects</span>: <span class="mi">100</span><span class="o">%</span> <span class="ss">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>, <span class="nv">done</span>.
+<span class="nv">Writing</span> <span class="nv">objects</span>: <span class="mi">100</span><span class="o">%</span> <span class="ss">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="ss">)</span>, <span class="mi">305</span> <span class="nv">bytes</span>, <span class="nv">done</span>.
+<span class="nv">Total</span> <span class="mi">3</span> <span class="ss">(</span><span class="nv">delta</span> <span class="mi">0</span><span class="ss">)</span>, <span class="nv">reused</span> <span class="mi">0</span> <span class="ss">(</span><span class="nv">delta</span> <span class="mi">0</span><span class="ss">)</span>
+<span class="nv">To</span> <span class="nv">https</span>:<span class="o">//</span><span class="nv">github</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">bjpop</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">git</span>
+<span class="mi">71</span><span class="nv">a771a</span>..<span class="nv">b1cce11</span> <span class="nv">master</span> <span class="o">-&gt;</span> <span class="nv">master</span>
+</pre></div>
+</td></tr></table>
 
 <p>Now if you look at your repository on github you should see the file
-<code>hello.py</code> has been uploaded, along with its commit time and commit
+<code class="codehilite"><span class="n">hello</span><span class="p">.</span><span class="n">py</span></code> has been uploaded, along with its commit time and commit
 message.</p>
 <p><img alt="" src="../media/image07.png" /></p>
 <p>You can inspect the contents of the file on github by clicking on its
 name:</p>
 <p><img alt="" src="../media/image08.png" /></p>
-<h3 id="step-6-create-a-branch-in-your-local-repository">Step 6, create a branch in your local repository.</h3>
+<h3 id="step-6-create-a-branch-in-your-local-repository">Step 6, create a branch in your local repository.<a class="headerlink" href="#step-6-create-a-branch-in-your-local-repository" title="Permanent link">&para;</a></h3>
 <p>You can ask git to tell you about the names of the current branches:</p>
-<pre><code>$ git branch
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch
 * master
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p>By default your repository starts with a branch called master. The
 asterisk next to the branch name tells you which is the current branch
 (at the moment there is only one branch).</p>
-<pre><code>$ git branch documentation
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch documentation
 $ git branch
 documentation
 * master
-</code></pre>
+</pre></div>
+</td></tr></table>
 
-<p>The first command above creates a new branch called <code>documentation</code>. The
+<p>The first command above creates a new branch called <code class="codehilite"><span class="n">documentation</span></code>. The
 second command shows us that the new branch has been created, but the
-current branch is still <code>master</code>.</p>
+current branch is still <code class="codehilite"><span class="n">master</span></code>.</p>
 <p>To switch to another branch you must check it out:</p>
-<pre><code>$ git checkout documentation
-Switched to branch 'documentation'
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git checkout documentation
+Switched to branch <span class="s1">&#39;documentation&#39;</span>
 $ git branch
 * documentation
 master
-</code></pre>
+</pre></div>
+</td></tr></table>
 
-<p>Let’s add a change to our existing <code>hello.py</code> file:</p>
-<pre><code>$ echo '#this is a comment' &gt;&gt; hello.py
-</code></pre>
+<p>Let’s add a change to our existing <code class="codehilite"><span class="n">hello</span><span class="p">.</span><span class="n">py</span></code> file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;#this is a comment&#39;</span> &gt;&gt; hello.py
+</pre></div>
+</td></tr></table>
 
 <p>Check the status of the repository (now in the documentation branch):</p>
-<pre><code>$ git status
-# On branch documentation
-# Changes not staged for commit:
-# (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-# (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
- directory)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nv">git</span> <span class="nv">status</span>
+# <span class="nv">On</span> <span class="nv">branch</span> <span class="nv">documentation</span>
+# <span class="nv">Changes</span> <span class="nv">not</span> <span class="nv">staged</span> <span class="k">for</span> <span class="nv">commit</span>:
+# <span class="ss">(</span><span class="nv">use</span> <span class="s2">&quot;</span><span class="s">git add &lt;file&gt;...</span><span class="s2">&quot;</span> <span class="nv">to</span> <span class="nv">update</span> <span class="nv">what</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">committed</span><span class="ss">)</span>
+# <span class="ss">(</span><span class="nv">use</span> <span class="s2">&quot;</span><span class="s">git checkout -- &lt;file&gt;...</span><span class="s2">&quot;</span> <span class="nv">to</span> <span class="nv">discard</span> <span class="nv">changes</span> <span class="nv">in</span> <span class="nv">working</span>
+ <span class="nv">directory</span><span class="ss">)</span>
 #
-# modified: hello.py
+# <span class="nv">modified</span>: <span class="nv">hello</span>.<span class="nv">py</span>
 #
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre>
+<span class="nv">no</span> <span class="nv">changes</span> <span class="nv">added</span> <span class="nv">to</span> <span class="nv">commit</span> <span class="ss">(</span><span class="nv">use</span> <span class="s2">&quot;</span><span class="s">git add</span><span class="s2">&quot;</span> <span class="nv">and</span><span class="o">/</span><span class="nv">or</span> <span class="s2">&quot;</span><span class="s">git commit -a</span><span class="s2">&quot;</span><span class="ss">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>Stage the new changes and commit them, and check the status again:</p>
-<pre><code>$ git add hello.py 
-$ git commit -m &quot;Added a comment&quot;
-[documentation 9bbe430] Added a comment
-1 files changed, 1 insertions(+), 0 deletions(-)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git add hello.py 
+$ git commit -m <span class="s2">&quot;Added a comment&quot;</span>
+<span class="o">[</span>documentation 9bbe430<span class="o">]</span> Added a comment
+<span class="m">1</span> files changed, <span class="m">1</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">0</span> deletions<span class="o">(</span>-<span class="o">)</span>
 $ git status
-# On branch documentation
-nothing to commit (working directory clean)
-</code></pre>
+<span class="c1"># On branch documentation</span>
+nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>Now we can push the new “documentation” branch to github:</p>
-<pre><code>$ git push origin documentation
-Username for 'https://github.com': &lt;your github username&gt;
-Password for 'https://&lt;your github username&gt;@github.com': 
-Counting objects: 5, done.
-Delta compression using up to 16 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 314 bytes, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/bjpop/test.git
-* [new branch] documentation -&gt; documentation
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">documentation</span>
+<span class="n">Username</span> <span class="k">for</span> <span class="err">&#39;</span><span class="nl">https</span><span class="p">:</span><span class="c1">//github.com&#39;: &lt;your github username&gt;</span>
+<span class="n">Password</span> <span class="k">for</span> <span class="err">&#39;</span><span class="nl">https</span><span class="p">:</span><span class="c1">//&lt;your github username&gt;@github.com&#39;: </span>
+<span class="n">Counting</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">16</span> <span class="n">threads</span><span class="p">.</span>
+<span class="n">Compressing</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">Writing</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">314</span> <span class="n">bytes</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">To</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/bjpop/test.git</span>
+<span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span> <span class="n">documentation</span> <span class="o">-&gt;</span> <span class="n">documentation</span>
+</pre></div>
+</td></tr></table>
 
 <p>On github you should be able to see the new branch:</p>
 <p><img alt="" src="../media/image11.png" /></p>
-<h3 id="step-7-merge-the-changes-back-into-the-master">Step 7, merge the changes back into the master</h3>
+<h3 id="step-7-merge-the-changes-back-into-the-master">Step 7, merge the changes back into the master<a class="headerlink" href="#step-7-merge-the-changes-back-into-the-master" title="Permanent link">&para;</a></h3>
 <p>branch.</p>
 <p>To go back to the master branch you must check it out:</p>
-<pre><code>$ git checkout master
-Switched to branch 'master'
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git checkout master
+Switched to branch <span class="s1">&#39;master&#39;</span>
+</pre></div>
+</td></tr></table>
 
 <p>You can confirm that the master branch does not yet have the changes
 made in the documentation branch:</p>
-<pre><code>$ cat hello.py 
-print(&quot;hello world&quot;)
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cat hello.py 
+print<span class="o">(</span><span class="s2">&quot;hello world&quot;</span><span class="o">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>Notice that the comment is missing.</p>
 <p>You can pull the changes in the documentation branch back into the
 master branch with the merge command:</p>
-<pre><code>$ git merge documentation
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git merge documentation
 Updating b1cce11..9bbe430
 Fast-forward
-hello.py | 1 +
-1 files changed, 1 insertions(+), 0 deletions(-)
-</code></pre>
+hello.py <span class="p">|</span> <span class="m">1</span> +
+<span class="m">1</span> files changed, <span class="m">1</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">0</span> deletions<span class="o">(</span>-<span class="o">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>In this case the merge was easy because there were no conflicts between
 master and documentation. In this case git automatically updates the
 tracked files in the current branch.</p>
 <p>We can test that the changes have taken place by looking at the contents
 of hello.py:</p>
-<pre><code>$ cat hello.py 
-print(&quot;hello world&quot;)
-#this is a comment
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cat hello.py 
+print<span class="o">(</span><span class="s2">&quot;hello world&quot;</span><span class="o">)</span>
+<span class="c1">#this is a comment</span>
+</pre></div>
+</td></tr></table>
 
 <p>Check the status of the master branch:</p>
-<pre><code>$ git status
-# On branch master
-# Your branch is ahead of 'origin/master' by 1 commit.
-#
-nothing to commit (working directory clean)
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git status
+<span class="c1"># On branch master</span>
+<span class="c1"># Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
+<span class="c1">#</span>
+nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>Push the changes in the master branch back to github:</p>
-<pre><code>$ git push origin master
-Username for 'https://github.com': bjpop
-Password for 'https://bjpop@github.com': 
-Total 0 (delta 0), reused 0 (delta 0)
-To https://github.com/bjpop/test.git
-b1cce11..9bbe430 master -&gt; master
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nv">git</span> <span class="nv">push</span> <span class="nv">origin</span> <span class="nv">master</span>
+<span class="nv">Username</span> <span class="k">for</span> <span class="s1">&#39;</span><span class="s">https://github.com</span><span class="s1">&#39;</span>: <span class="nv">bjpop</span>
+<span class="nv">Password</span> <span class="k">for</span> <span class="s1">&#39;</span><span class="s">https://bjpop@github.com</span><span class="s1">&#39;</span>: 
+<span class="nv">Total</span> <span class="mi">0</span> <span class="ss">(</span><span class="nv">delta</span> <span class="mi">0</span><span class="ss">)</span>, <span class="nv">reused</span> <span class="mi">0</span> <span class="ss">(</span><span class="nv">delta</span> <span class="mi">0</span><span class="ss">)</span>
+<span class="nv">To</span> <span class="nv">https</span>:<span class="o">//</span><span class="nv">github</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">bjpop</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">git</span>
+<span class="nv">b1cce11</span>..<span class="mi">9</span><span class="nv">bbe430</span> <span class="nv">master</span> <span class="o">-&gt;</span> <span class="nv">master</span>
+</pre></div>
+</td></tr></table>
 
 <p>Again you can verify on github that the changes have taken place.</p>
 <p>To get an idea of the history of a project you can ask for a log of the
 commit messages:</p>
-<pre><code>$ git log
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git log
 commit 9bbe430f6e8b70187927b4a70a8402f71b17b426
 Author: Bernie &lt;florbitous@gmail.com&gt;
-Date: Fri Mar 15 12:30:39 2013 +1100
+Date: Fri Mar <span class="m">15</span> <span class="m">12</span>:30:39 <span class="m">2013</span> +1100
 Added a comment
 commit b1cce115fb40a9b11917db7eb73c8295e276bb09
 Author: Bernie &lt;florbitous@gmail.com&gt;
-Date: Fri Mar 15 12:08:01 2013 +1100
+Date: Fri Mar <span class="m">15</span> <span class="m">12</span>:08:01 <span class="m">2013</span> +1100
 A little greeting program
 commit 71a771a86b8116c3f93c99db5416bfa371a6f772
 Author: Bernie Pope &lt;florbitous@gmail.com&gt;
-Date: Thu Mar 14 17:29:02 2013 -0700
-</code></pre>
+Date: Thu Mar <span class="m">14</span> <span class="m">17</span>:29:02 <span class="m">2013</span> -0700
+</pre></div>
+</td></tr></table>
                 
                   
                 

@@ -1026,17 +1026,17 @@
                 
                   <h1>Genomespace</h1>
                 
-                <h2 id="what-is-genomespace">What is GenomeSpace?</h2>
+                <h2 id="what-is-genomespace">What is GenomeSpace?<a class="headerlink" href="#what-is-genomespace" title="Permanent link">&para;</a></h2>
 <p>GenomeSpace is a cloud-based interoperability framework to support integrative genomics analysis through an easy-to-use Web interface. GenomeSpace provides access to a diverse range of bioinformatics tools, and bridges the gaps between the tools, making it easy to leverage the available analyses and visualizations in each of them. The tools retain their native look and feel, with GenomeSpace providing frictionless conduits between them through a lightweight interoperability layer.</p>
 <p>GenomeSpace does not perform any analyses itself; these are done within the member tools wherever they live – desktop, Web service, cloud, in-house server, etc. Rather, GenomeSpace provides tool selection and launch capabilities, and acts as a data highway automatically reformatting data as required when results move from the output of one tool to input for the next.</p>
 <p>The GVL GenomeSpace can be found at <a href="https://genomespace.genome.edu.au">https://genomespace.genome.edu.au</a>.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>GenomeSpace uses a few dialogue boxes to communicate with the NeCTAR cloud. If you have an AdBlocker installed, the dialogues will not be shown properly. If you have an AdBlocker on your system please disable it for the GenomeSpace.genome.edu.au domain.</p>
-<h2 id="registering-a-genomespace-account">Registering a GenomeSpace account</h2>
+<h2 id="registering-a-genomespace-account">Registering a GenomeSpace account<a class="headerlink" href="#registering-a-genomespace-account" title="Permanent link">&para;</a></h2>
 <p>To register a GenomeSpace account you need to have a valid email address and do the following:</p>
 <ul>
 <li>
-<p>Go to <a href="https://genomespace.genome.edu.au/">https://genomespace.genome.edu.au/</a> and click on the "Register new GenomeSpace user" link:
+<p>Go to <a href="https://genomespace.genome.edu.au/">https://genomespace.genome.edu.au/</a> and click on the &ldquo;Register new GenomeSpace user&rdquo; link:
     <img alt="" src="../media/images/register.png" /></p>
 </li>
 <li>
@@ -1064,21 +1064,21 @@ On this page you can find the following items:</p>
 </ol>
 </li>
 </ul>
-<h2 id="making-a-swift-container">Making a swift container</h2>
+<h2 id="making-a-swift-container">Making a swift container<a class="headerlink" href="#making-a-swift-container" title="Permanent link">&para;</a></h2>
 <p><em>(These instructions are for the NeCTAR Australian Research Cloud. For any other OpenStack-based cloud storage please change the parameters as necessary.)</em></p>
 <p>NeCTAR object storage is a place that people with NeCTAR credentials can store their data reliably.</p>
-<p>If you haven't used the NeCTAR cloud before, follow the steps in sections 1 and 2 of this tutorial: <a href="http://melbournebioinformatics.github.io/MelBioInf_docs/gvl_launch/gvl_launch/">http://melbournebioinformatics.github.io/MelBioInf_docs/gvl_launch/gvl_launch/</a>.</p>
+<p>If you haven&rsquo;t used the NeCTAR cloud before, follow the steps in sections 1 and 2 of this tutorial: <a href="http://melbournebioinformatics.github.io/MelBioInf_docs/gvl_launch/gvl_launch/">http://melbournebioinformatics.github.io/MelBioInf_docs/gvl_launch/gvl_launch/</a>.</p>
 <p>Go to the NeCTAR dashboard at <a href="https://dashboard.rc.nectar.org.au">https://dashboard.rc.nectar.org.au</a>.</p>
 <ul>
 <li>
-<p>On the left hand side of the dashboard click on "Object Store" and then "Containers".</p>
+<p>On the left hand side of the dashboard click on &ldquo;Object Store&rdquo; and then &ldquo;Containers&rdquo;.</p>
 </li>
 <li>
-<p>To make a container, click "Create Container".</p>
+<p>To make a container, click &ldquo;Create Container&rdquo;.</p>
 </li>
 </ul>
 <p><img alt="create container" src="../media/images/create_container.png" /></p>
-<h2 id="mounting-a-swift-container">Mounting a swift container</h2>
+<h2 id="mounting-a-swift-container">Mounting a swift container<a class="headerlink" href="#mounting-a-swift-container" title="Permanent link">&para;</a></h2>
 <p>Containers can be found under the Object Store link in NeCTAR’s dashboard.</p>
 <p>To mount an available container go to Connect menu bar in GenomeSpace and select Swift Container.
 <img alt="" src="../media/images/GS-swift.png" /></p>
@@ -1086,7 +1086,7 @@ On this page you can find the following items:</p>
 <p><img alt="" src="../media/images/swift-det.png" /></p>
 <p>To fill out this form you need the following parameters:</p>
 <ol>
-<li><strong>OpenStack EndPoint:</strong> The default value should be correct for NeCTAR: <em>https://keystone.rc.nectar.org.au:5000/v2.0/tokens</em></li>
+<li><strong>OpenStack EndPoint:</strong> The default value should be correct for NeCTAR: <em><a href="https://keystone.rc.nectar.org.au:5000/v2.0/tokens">https://keystone.rc.nectar.org.au:5000/v2.0/tokens</a></em></li>
 <li><strong>User Name:</strong> This is your NeCTAR user name. Your user name can be found at the top right corner of the NeCTAR dashboard as shown below:
   <img alt="" src="../media/images/Nectar-user.png" /></li>
 <li><strong>Password:</strong> This is your NeCTAR API key. The API key is the key that applications can use to connect to NeCTAR on your behalf. To find your API key:<ul>
@@ -1100,18 +1100,18 @@ On this page you can find the following items:</p>
 <li><strong>Tenancy name:</strong> Your NeCTAR Tenancy name (project name). The tenancy name has been assigned to your project by the NeCTAR administration process. <img alt="" src="../media/images/Nectar-Tenancy.JPG" /></li>
 <li><strong>Container name:</strong> The name of the container that you want to connect to. <img alt="" src="../media/images/containers.JPG" /></li>
 </ol>
-<h2 id="basic-file-manipulation">Basic file manipulation</h2>
+<h2 id="basic-file-manipulation">Basic file manipulation<a class="headerlink" href="#basic-file-manipulation" title="Permanent link">&para;</a></h2>
 <p>Under the containers directory you can perform basic file manipulation as follows:</p>
 <ul>
-<li><strong>Creating a directory:</strong> To create a directory under another directory, right click on the source directory and select "Create Subdirectory". You will be asked for a name and in a few seconds your target directory will be created.</li>
+<li><strong>Creating a directory:</strong> To create a directory under another directory, right click on the source directory and select &ldquo;Create Subdirectory&rdquo;. You will be asked for a name and in a few seconds your target directory will be created.</li>
 <li><strong>Uploading a file into a directory:</strong> Uploading a file can be done using drag and drop. Go to the directory you want to upload the file into and drag and drop the file you want to upload into the open area on the right-hand side of the Home directory. The effective area will turn green.</li>
 <li><strong>Deleting a file:</strong> To delete a file, right click on the selected file and select the “Delete”. The file will be deleted in a few seconds.</li>
-<li><strong>Previewing a file:</strong> Under the right click menu you will find the "preview" option, which will show the first 5000 bytes of a file.</li>
+<li><strong>Previewing a file:</strong> Under the right click menu you will find the &ldquo;preview&rdquo; option, which will show the first 5000 bytes of a file.</li>
 <li><strong>Downloading a file:</strong> To download a file simply right click on the file and select download. Your download will be started in a few seconds.</li>
 <li><strong>Creating a public link:</strong> Right click on the file you want to get the public link for and select the public link. The public link will be shown to you in a few seconds. (Warning: The public link is available for 4 days.)</li>
-<li><strong>Creating a private link:</strong> Right click on the file and select the "view file".</li>
+<li><strong>Creating a private link:</strong> Right click on the file and select the &ldquo;view file&rdquo;.</li>
 </ul>
-<h2 id="adding-a-galaxy-service-to-your-account">Adding a Galaxy service to your account:</h2>
+<h2 id="adding-a-galaxy-service-to-your-account">Adding a Galaxy service to your account:<a class="headerlink" href="#adding-a-galaxy-service-to-your-account" title="Permanent link">&para;</a></h2>
 <p><strong>PREREQUISITE: Please make sure you have an account on the Galaxy server you want to add to GenomeSpace. If you have launched a GVL instance, this is a new instance of Galaxy and you will need to register a Galaxy account in your new Galaxy server first.</strong></p>
 <p>The latest GVL image is fully compatible with GenomeSpace. Galaxy launched as part of GVL instances can be connected to GenomeSpace as follows:</p>
 <ol>
@@ -1120,7 +1120,7 @@ On this page you can find the following items:</p>
     <img alt="" src="../media/images/private-tool.png" /></p>
 </li>
 <li>
-<p>From the opened window press the "Add new" button.      <br />
+<p>From the opened window press the &ldquo;Add new&rdquo; button.      <br />
 <img alt="" src="../media/images/Galaxy.png" /></p>
 </li>
 <li>
@@ -1159,7 +1159,7 @@ On this page you can find the following items:</p>
 </li>
 </ol>
 <p>From now on your Galaxy can talk to GenomeSpace under your UserName.</p>
-<h2 id="file-transfer-tofrom-galaxy">File transfer to/from Galaxy</h2>
+<h2 id="file-transfer-tofrom-galaxy">File transfer to/from Galaxy<a class="headerlink" href="#file-transfer-tofrom-galaxy" title="Permanent link">&para;</a></h2>
 <p><strong>PREREQUISITE: Please make sure you have connected your Galaxy to GenomeSpace first (<a href="#galaxy">How to</a>).</strong></p>
 <ul>
 <li>
@@ -1171,7 +1171,7 @@ On this page you can find the following items:</p>
 </li>
 <li>
 <p><strong>Receiving a file:</strong></p>
-<p>Under each file click on the store icon and choose "Send to GenomeSpace". A dialog will be opened. Choose the directory to store the file and enter the name of the file to store. If you do not provide the file name the file will be stored as “display”. By clicking the Send button the file will be sent to GenomeSpace. The dialog box will close on success.</p>
+<p>Under each file click on the store icon and choose &ldquo;Send to GenomeSpace&rdquo;. A dialog will be opened. Choose the directory to store the file and enter the name of the file to store. If you do not provide the file name the file will be stored as “display”. By clicking the Send button the file will be sent to GenomeSpace. The dialog box will close on success.</p>
 </li>
 </ul>
                 

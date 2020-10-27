@@ -1527,8 +1527,8 @@
     <a href="https://www.melbournebioinformatics.org.au/"><img src="../../../img/melbioinf_logo.png" alt="Melbourne Bioinformatics logo" width="164"/></a>
 </div>
 
-<h1 id="microbial-de-novo-assembly-for-illumina-data">Microbial de novo Assembly for Illumina Data</h1>
-<h2 id="introductory-tutorial"><em>Introductory Tutorial</em></h2>
+<h1 id="microbial-de-novo-assembly-for-illumina-data">Microbial de novo Assembly for Illumina Data<a class="headerlink" href="#microbial-de-novo-assembly-for-illumina-data" title="Permanent link">&para;</a></h1>
+<h2 id="introductory-tutorial"><em>Introductory Tutorial</em><a class="headerlink" href="#introductory-tutorial" title="Permanent link">&para;</a></h2>
 <p>Written and maintained by <a href="mailto:simon.gladman@unimelb.edu.au">Simon Gladman</a> - Melbourne Bioinformatics (formerly VLSCI)</p>
 <!-- toc
 ## Contents
@@ -1542,7 +1542,7 @@
 7. [References](#7-references)
 -->
 
-<h2 id="tutorial-overview">Tutorial Overview</h2>
+<h2 id="tutorial-overview">Tutorial Overview<a class="headerlink" href="#tutorial-overview" title="Permanent link">&para;</a></h2>
 <p>In this tutorial we cover the concepts of Microbial de novo assembly using a very small synthetic dataset from a well studied organism.</p>
 <p><strong>What’s not covered</strong></p>
 <p>This tutorial covers the basic aspects of microbial de novo assembly from Illumina paired end or single end reads.
@@ -1552,10 +1552,10 @@ It does not cover more complicated aspects of assembly such as:</p>
 <li>Gap filling techniques for “finishing” an assembly</li>
 <li>Measuring the accuracy of assemblies</li>
 </ul>
-<h2 id="background">Background</h2>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="../assembly-background/#background">background to the workshop here</a></p>
 <p><strong>Where is the data in this tutorial from?</strong></p>
-<p>The data for this tutorial is from a whole genome sequencing experiment of a multi-drug resistant strain of the bacterium Staphylococcus aureus. The DNA was sequenced using an Illumina GAII sequencing machine. The data we are going to use consists of about 4 million x 75 base-pair, paired end reads (two FASTQ read files, one for each end of a DNA fragment.) The data was downloaded from the <a href="http://www.ncbi.nlm.nih.gov/sra/">NCBI Short Read Archive (SRA)</a> (http://www.ncbi.nlm.nih.gov/sra/). The specific sample is a public dataset published in April 2012 with SRA accession number ERR048396.</p>
+<p>The data for this tutorial is from a whole genome sequencing experiment of a multi-drug resistant strain of the bacterium Staphylococcus aureus. The DNA was sequenced using an Illumina GAII sequencing machine. The data we are going to use consists of about 4 million x 75 base-pair, paired end reads (two FASTQ read files, one for each end of a DNA fragment.) The data was downloaded from the <a href="http://www.ncbi.nlm.nih.gov/sra/">NCBI Short Read Archive (SRA)</a> (<a href="http://www.ncbi.nlm.nih.gov/sra/">http://www.ncbi.nlm.nih.gov/sra/</a>). The specific sample is a public dataset published in April 2012 with SRA accession number ERR048396.</p>
 <p>We will also use a FASTA file containing the sequences of the Illumina adapters used in the sequencing process. It is desirable to remove these as they are artificial sequences and not part of the bacterium that was sequenced.</p>
 <p>We will use software called <a href="https://www.ebi.ac.uk/~zerbino/velvet/">Velvet</a> (Zerbino et al 2008) for the main de novo assembly, as well as some other peripheral software for pre- and post-processing of the data. Details of these can be found in the background document linked above.</p>
 <p><strong>The protocol:</strong></p>
@@ -1564,8 +1564,8 @@ It does not cover more complicated aspects of assembly such as:</p>
 <p><strong>The protocol in a nutshell:</strong></p>
 <p><em>Input:</em> Raw reads from sequencer run on microbial DNA sample.</p>
 <p><em>Output:</em> File of assembled scaffolds/contigs and associated information.</p>
-<h2 id="preparation">Preparation</h2>
-<h3 id="login-to-galaxy">Login to Galaxy</h3>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<h3 id="login-to-galaxy">Login to Galaxy<a class="headerlink" href="#login-to-galaxy" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Open a browser and go to a Galaxy server. (what is <a href="../assembly-background/#the-galaxy-workflow-platform">Galaxy</a>?)<ul>
 <li>You can use a galaxy server of your own <strong>or</strong></li>
@@ -1578,10 +1578,10 @@ It does not cover more complicated aspects of assembly such as:</p>
 <p><img src="../media/tips.png" alt="Tip" height="42" width="42"/>
   NOTE: Firefox/Safari/Chrome all work well, Internet Explorer not so well.</p>
 </blockquote>
-<h3 id="import-the-dna-read-data-for-the-tutorial">Import the DNA read data for the tutorial.</h3>
-<p><strong>You can do this in a few ways. If you're using <a href="http://galaxy-tut.genome.edu.au">galaxy-tut.genome.edu.au</a>:</strong></p>
+<h3 id="import-the-dna-read-data-for-the-tutorial">Import the DNA read data for the tutorial.<a class="headerlink" href="#import-the-dna-read-data-for-the-tutorial" title="Permanent link">&para;</a></h3>
+<p><strong>You can do this in a few ways. If you&rsquo;re using <a href="http://galaxy-tut.genome.edu.au">galaxy-tut.genome.edu.au</a>:</strong></p>
 <ol>
-<li>Go to <strong>Shared Data -&gt; Published Histories</strong> and click on "<em>Microbial_assembly_input_data</em>". Then click <strong>'Import History'</strong> at top right, wait for the history to be imported to your account, and then <strong>‘start using this history’</strong>.</li>
+<li>Go to <strong>Shared Data -&gt; Published Histories</strong> and click on &ldquo;<em>Microbial_assembly_input_data</em>&rdquo;. Then click <strong>&lsquo;Import History&rsquo;</strong> at top right, wait for the history to be imported to your account, and then <strong>‘start using this history’</strong>.</li>
 <li>This will create a new Galaxy history in your account with all of the required data files.</li>
 <li>Proceed to step 4.</li>
 </ol>
@@ -1589,10 +1589,10 @@ It does not cover more complicated aspects of assembly such as:</p>
 <ol>
 <li>On the Galaxy tools panel, click on <strong>Get data -&gt; Upload File</strong>.</li>
 <li>Click on the <strong>Paste/Fetch Data</strong> button.</li>
-<li>Paste the URL: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_1.fastq.gz</em> into the text box. Change the type to <em>fastqsanger</em> (Not <em>fastqcsanger</em>).</li>
+<li>Paste the URL: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_1.fastq.gz">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_1.fastq.gz</a></em> into the text box. Change the type to <em>fastqsanger</em> (Not <em>fastqcsanger</em>).</li>
 <li>Click on the <strong>Paste/Fetch Data</strong> button again.</li>
-<li>Paste the URL: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_2.fastq.gz</em> into the text box and change it's type to <em>fastqsanger</em> as well.</li>
-<li>Repeat the process for the last URL: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/illumina_adapters.fna</em> , but make it's type <em>fasta</em></li>
+<li>Paste the URL: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_2.fastq.gz">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_2.fastq.gz</a></em> into the text box and change it&rsquo;s type to <em>fastqsanger</em> as well.</li>
+<li>Repeat the process for the last URL: <em><a href="https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/illumina_adapters.fna">https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/illumina_adapters.fna</a></em> , but make it&rsquo;s type <em>fasta</em></li>
 <li>Click on the <strong>Start</strong> button. Once all of the uploads are at 100%, click on the <strong>Close</strong> button.</li>
 <li>When the files have finished uploading, rename them to ‘ERR048396_1.fastq’, ‘ERR048396_2.fastq’ and ‘illumina_adapters.fna’ respectively by clicking on the <img src="../media/Galaxy-edit.png" width=20 /> icon to the top right of the file name in the right hand Galaxy panel (the history panel)</li>
 </ol>
@@ -1602,19 +1602,19 @@ It does not cover more complicated aspects of assembly such as:</p>
 <li><em>ERR048396_2.fastq</em> - reverse reads in fastq format</li>
 <li><em>illumina_adapters.fa</em> - Illumina adapter sequences in fasta format</li>
 </ul>
-<h3 id="view-the-fastq-files">View the fastq files</h3>
+<h3 id="view-the-fastq-files">View the fastq files<a class="headerlink" href="#view-the-fastq-files" title="Permanent link">&para;</a></h3>
 <p>Click on the <img src="../media/Galaxy-view.png" width=20 />  icon to the top right of each fastq file to view the first part of the file
 If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>NOTE: If you log out of Galaxy and log back in at a later time your data and results from previous experiments will be available in the right panel of your screen called the ‘History.’</p>
 <hr />
-<h2 id="section-1-quality-control">Section 1: Quality control</h2>
+<h2 id="section-1-quality-control">Section 1: Quality control<a class="headerlink" href="#section-1-quality-control" title="Permanent link">&para;</a></h2>
 <p>The basic process here is to collect statistics about the quality of the reads in the sample FASTQ readsets. We will then evaluate their quality and choose an appropriate regime for quality filtering using Trimmomatic (a fastq read quality trimmer.)</p>
 <p><a href="https://docs.google.com/document/pub?id=16GwPmwYW7o_r-ZUgCu8-oSBBY1gC97TfTTinGDk98Ws">More detailed description of FastQC quality analysis can be found here.</a></p>
 <p><a href="http://www.usadellab.org/cms/index.php?page=trimmomatic">More detailed description of Trimmomatic read quality filtering can be found here.</a></p>
-<h3 id="run-fastqc-on-both-input-read-files">Run FastQC on both input read files</h3>
+<h3 id="run-fastqc-on-both-input-read-files">Run FastQC on both input read files<a class="headerlink" href="#run-fastqc-on-both-input-read-files" title="Permanent link">&para;</a></h3>
 <ol>
 <li>From the tools menu in the left hand panel of Galaxy, select <strong>NGS QC and manipulation &gt; FastQC: Comprehensive QC</strong> (down the bottom of this category) and run with these parameters:<ul>
-<li>"FASTQ reads": <em>ERR048396_1.fastq</em></li>
+<li>&ldquo;FASTQ reads&rdquo;: <em>ERR048396_1.fastq</em></li>
 <li>Use default for other fields</li>
 </ul>
 </li>
@@ -1625,9 +1625,9 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p><img src="../media/tips.png" alt="Tip" height="42" width="42"/> Note: This may take a few minutes, depending on how busy Galaxy is.</p>
 </blockquote>
 <p>It is important to do both read files as the quality can be very different between them.</p>
-<h5 id="figure-1-screenshot-of-fastqc-interface-in-galaxy">Figure 1: Screenshot of FastQC interface in Galaxy</h5>
+<h5 id="figure-1-screenshot-of-fastqc-interface-in-galaxy">Figure 1: Screenshot of FastQC interface in Galaxy<a class="headerlink" href="#figure-1-screenshot-of-fastqc-interface-in-galaxy" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-fastqc-interface.png" width=80% /></p>
-<h3 id="examine-the-fastqc-output">Examine the FastQC output</h3>
+<h3 id="examine-the-fastqc-output">Examine the FastQC output<a class="headerlink" href="#examine-the-fastqc-output" title="Permanent link">&para;</a></h3>
 <p>You should have two output objects from the first step:</p>
 <ul>
 <li><em>FastQC_ERR048396_1.fastqc.html</em></li>
@@ -1640,25 +1640,25 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>The main parts of the output to evaluate are:</p>
 <ul>
 <li>Basic statistics. This section tells us that the ASCII quality encoding format used was Sanger/Illumina 1.9 and the reads are length 75 and the percent GC content of the entire file is 35%.</li>
-<li>Per base sequence quality. In the plot you should see that most of the early bases are up around the '32' mark and then increase to 38-40, which is very high quality; The spread of quality values for the last few bases increases and some of the outliers have quality scores of less than 30. This is a very good quality dataset. 20 is often used as a cutoff for reliable quality.</li>
+<li>Per base sequence quality. In the plot you should see that most of the early bases are up around the &lsquo;32&rsquo; mark and then increase to 38-40, which is very high quality; The spread of quality values for the last few bases increases and some of the outliers have quality scores of less than 30. This is a very good quality dataset. 20 is often used as a cutoff for reliable quality.</li>
 </ul>
-<h5 id="figure-2-screenshot-of-fastqc-output-in-galaxy">Figure 2: Screenshot of FastQC output in Galaxy</h5>
+<h5 id="figure-2-screenshot-of-fastqc-output-in-galaxy">Figure 2: Screenshot of FastQC output in Galaxy<a class="headerlink" href="#figure-2-screenshot-of-fastqc-output-in-galaxy" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-fastqc-output.png" width=80% /></p>
-<h3 id="quality-trim-the-reads-using-trimmomatic">Quality trim the reads using Trimmomatic.</h3>
+<h3 id="quality-trim-the-reads-using-trimmomatic">Quality trim the reads using Trimmomatic.<a class="headerlink" href="#quality-trim-the-reads-using-trimmomatic" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>From the tools menu in the left hand panel of Galaxy, select <strong>NGS QC and manipulation &gt; Trimmomatic</strong> and run with these parameters (only the non-default selections are listed here):</p>
 <ul>
-<li>"Input FASTQ file (R1/first of pair)": <em>ERR048396_1.fastq</em></li>
-<li>"Input FASTQ file (R2/second of pair)": <em>ERR048396_2.fastq</em></li>
-<li>"Perform initial ILLUMINACLIP step?": <em>Yes</em></li>
-<li>"Adapter sequences to use": <em>TruSeq3 (additional seqs) (paired end, for MiSeq and HiSeq)</em></li>
-<li>"How accurate ... read alignment": <em>40</em></li>
-<li>"How accurate ... against a read": <em>15</em></li>
+<li>&ldquo;Input FASTQ file (R1/first of pair)&rdquo;: <em>ERR048396_1.fastq</em></li>
+<li>&ldquo;Input FASTQ file (R2/second of pair)&rdquo;: <em>ERR048396_2.fastq</em></li>
+<li>&ldquo;Perform initial ILLUMINACLIP step?&rdquo;: <em>Yes</em></li>
+<li>&ldquo;Adapter sequences to use&rdquo;: <em>TruSeq3 (additional seqs) (paired end, for MiSeq and HiSeq)</em></li>
+<li>&ldquo;How accurate &hellip; read alignment&rdquo;: <em>40</em></li>
+<li>&ldquo;How accurate &hellip; against a read&rdquo;: <em>15</em></li>
 <li>We will use the default settings for the SLIDING_WINDOW operation but we need to add a few more Trimmomatic operations.</li>
 <li>Click <strong>Insert Trimmomatic Operation</strong><ul>
-<li>Add <em>Cut bases ... (LEADING)</em></li>
-<li>"Minimum quality required to keep a base": <em>15</em></li>
+<li>Add <em>Cut bases &hellip; (LEADING)</em></li>
+<li>&ldquo;Minimum quality required to keep a base&rdquo;: <em>15</em></li>
 </ul>
 </li>
 <li>Repeat the <strong>Insert Trimmomatic Operation</strong> for:<ul>
@@ -1673,9 +1673,9 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
       <br></br></p>
 </li>
 </ol>
-<h5 id="figure-3-screenshot-of-trimmomatic-inputs-in-galaxy">Figure 3: Screenshot of Trimmomatic inputs in Galaxy</h5>
+<h5 id="figure-3-screenshot-of-trimmomatic-inputs-in-galaxy">Figure 3: Screenshot of Trimmomatic inputs in Galaxy<a class="headerlink" href="#figure-3-screenshot-of-trimmomatic-inputs-in-galaxy" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-trimmomatic-inputs.png" width=80% /></p>
-<h3 id="examine-the-trimmomatic-output-fastq-files">Examine the Trimmomatic output FastQ files.</h3>
+<h3 id="examine-the-trimmomatic-output-fastq-files">Examine the Trimmomatic output FastQ files.<a class="headerlink" href="#examine-the-trimmomatic-output-fastq-files" title="Permanent link">&para;</a></h3>
 <p>You should have 4 new objects in your history from the output of Trimmomatic:</p>
 <ul>
 <li><em>Trimmomatic on data 2 and data 1 (R1 Paired)</em></li>
@@ -1685,23 +1685,23 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 </ul>
 <p>Click on the <img src="../media/Galaxy-view.png" width=20 /> on one of the objects to look at its contents. You’ll notice that not all of the reads are the same length now, as they have had the illumina adapters cut out of them and they’ve been quality trimmed.</p>
 <hr />
-<h2 id="section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser">Section 2: Assemble reads into contigs with Velvet and the Velvet Optimiser</h2>
+<h2 id="section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser">Section 2: Assemble reads into contigs with Velvet and the Velvet Optimiser<a class="headerlink" href="#section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser" title="Permanent link">&para;</a></h2>
 <p>The aim here is to assemble the trimmed reads into contigs/scaffolds using Velvet and the Velvet Optimiser.</p>
 <p>We will use a single tool, Velvet Optimiser, which takes the trimmed reads from Trimmomatic and performs numerous Velvet assemblies to find the best one. We need to add the reads in two separate libraries. One for the still paired reads and the other for the singleton reads orphaned from their pairs by the trimming process.</p>
 <p><a href="../assembly-background/">Click here for a more detailed explanation of Velvet assemblies and the Velvet Optimiser</a></p>
-<h3 id="de-novo-assembly-of-the-reads-into-contigs">De novo assembly of the reads into contigs</h3>
+<h3 id="de-novo-assembly-of-the-reads-into-contigs">De novo assembly of the reads into contigs<a class="headerlink" href="#de-novo-assembly-of-the-reads-into-contigs" title="Permanent link">&para;</a></h3>
 <ol>
 <li>From the tools menu in the left hand panel of Galaxy, select <strong>NGS: Assembly -&gt; Velvet Optimiser</strong> and run with these parameters (only the non-default selections are listed here):<ul>
-<li>"Start k-mer value": <em>55</em></li>
-<li>"End k-mer value": <em>69</em></li>
+<li>&ldquo;Start k-mer value&rdquo;: <em>55</em></li>
+<li>&ldquo;End k-mer value&rdquo;: <em>69</em></li>
 <li>In the input files section:<ul>
-<li>"Select first set of reads": <em>Trimmomatic on data 2 and data 1 (R1 paired)</em></li>
-<li>"Select second set of reads": <em>Trimmomatic on data 2 and data 1 (R2 paired)</em></li>
+<li>&ldquo;Select first set of reads&rdquo;: <em>Trimmomatic on data 2 and data 1 (R1 paired)</em></li>
+<li>&ldquo;Select second set of reads&rdquo;: <em>Trimmomatic on data 2 and data 1 (R2 paired)</em></li>
 </ul>
 </li>
 <li>Click the <strong>Insert Input Files</strong> button and add the following:<ul>
-<li>"Single or paired end reads": <em>Single</em></li>
-<li>"Select the reads": <em>Trimmomatic on data 2 and data 1 (R1 unpaired)</em></li>
+<li>&ldquo;Single or paired end reads&rdquo;: <em>Single</em></li>
+<li>&ldquo;Select the reads&rdquo;: <em>Trimmomatic on data 2 and data 1 (R1 unpaired)</em></li>
 </ul>
 </li>
 <li>Repeat the above process to add the other unpaired read set <em>Trimmomatic on data 2 and data 1 (R2 unpaired)</em> as well.</li>
@@ -1709,9 +1709,9 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 </li>
 <li>Click <strong>Execute</strong>.</li>
 </ol>
-<h5 id="figure-4-screenshot-of-velvet-optimiser-inputs-in-galaxy">Figure 4: Screenshot of Velvet Optimiser inputs in Galaxy</h5>
+<h5 id="figure-4-screenshot-of-velvet-optimiser-inputs-in-galaxy">Figure 4: Screenshot of Velvet Optimiser inputs in Galaxy<a class="headerlink" href="#figure-4-screenshot-of-velvet-optimiser-inputs-in-galaxy" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-velvetoptimiser-inputs.png" width=80% /></p>
-<h3 id="examine-assembly-output">Examine assembly output</h3>
+<h3 id="examine-assembly-output">Examine assembly output<a class="headerlink" href="#examine-assembly-output" title="Permanent link">&para;</a></h3>
 <p>Once step 1 is complete, you should now have 2 new objects in your history:
 * <em>VelvetOptimiser on data 9, data 7, and others: Contigs</em>
 * <em>VelvetOptimiser on data 9, data 7, and others: Contig Stats</em></p>
@@ -1724,15 +1724,15 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>Contig stats: This shows a table of the contigs and their k-mer coverages and which read library contributed to the coverage. It is interesting to note that some of them have much higher coverage than the average. These are most likely to be repeated contigs. (Things like ribosomal RNA and IS elements.)</p>
 </li>
 </ul>
-<h5 id="figure-5-screenshot-of-assembled-contigs-a-and-contig-stats-b">Figure 5: Screenshot of assembled contigs (a) and contig stats (b)</h5>
-<h5 id="a">a</h5>
+<h5 id="figure-5-screenshot-of-assembled-contigs-a-and-contig-stats-b">Figure 5: Screenshot of assembled contigs (a) and contig stats (b)<a class="headerlink" href="#figure-5-screenshot-of-assembled-contigs-a-and-contig-stats-b" title="Permanent link">&para;</a></h5>
+<h5 id="a">a<a class="headerlink" href="#a" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-contigs.png" width=80% /></p>
-<h5 id="b">b</h5>
+<h5 id="b">b<a class="headerlink" href="#b" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-contig-stats.png" width=80% /></p>
-<h3 id="calculate-some-statistics-on-the-assembled-contigs">Calculate some statistics on the assembled contigs</h3>
+<h3 id="calculate-some-statistics-on-the-assembled-contigs">Calculate some statistics on the assembled contigs<a class="headerlink" href="#calculate-some-statistics-on-the-assembled-contigs" title="Permanent link">&para;</a></h3>
 <ol>
 <li>From the tools menu in the left hand panel of Galaxy, select <strong>FASTA Manipulation -&gt; Fasta Statistics</strong> and run with these parameters:<ul>
-<li>"Fasta or multifasta file": <em>Velvet Optimiser ... Contigs</em></li>
+<li>&ldquo;Fasta or multifasta file&rdquo;: <em>Velvet Optimiser &hellip; Contigs</em></li>
 </ul>
 </li>
 <li>Click <strong>Execute</strong></li>
@@ -1741,15 +1741,15 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>You should now have one more object in your history: <em>Fasta Statistics on data 10: Fasta summary stats</em></p>
 <p>Click on the <img src="../media/Galaxy-view.png" width=20 /> icon next to this object and have a look at the output. You’ll see a statistical summary of the contigs including various length stats, the % GC content, the n50 as well as the number of contigs and the number of N bases contained in them.</p>
 <hr />
-<h2 id="section-3-extension">Section 3: Extension.</h2>
+<h2 id="section-3-extension">Section 3: Extension.<a class="headerlink" href="#section-3-extension" title="Permanent link">&para;</a></h2>
 <p>Examine the contig coverage depth and blast a high coverage contig against a protein database.</p>
-<h3 id="examine-the-contig-coverage-depth">Examine the contig coverage depth.</h3>
+<h3 id="examine-the-contig-coverage-depth">Examine the contig coverage depth.<a class="headerlink" href="#examine-the-contig-coverage-depth" title="Permanent link">&para;</a></h3>
 <p>Look at the Contig Stats data (Velvet Optimiser vlsci on data 8, data 9, and data 7: Contig stats) by clicking on the <img src="../media/Galaxy-view.png" width=20 /> icon. Note that column 2 contig length (lgth), shows a number of very short contigs (some are length 1).</p>
 <ul>
 <li>We can easily filter out these short contigs from this information list by using the <strong>Filter and Sort -&gt; Filter tool.</strong></li>
 <li>Set the following:<ul>
-<li>"Filter": <em>Velvet Optimiser on data 8, data 7 and others: Contig stats</em></li>
-<li>"With the following condition": <em>c2 &gt; 100</em></li>
+<li>&ldquo;Filter&rdquo;: <em>Velvet Optimiser on data 8, data 7 and others: Contig stats</em></li>
+<li>&ldquo;With the following condition&rdquo;: <em>c2 &gt; 100</em></li>
 </ul>
 </li>
 <li>Click <strong>Execute</strong></li>
@@ -1757,34 +1757,34 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>The new data object in the history is called: <em>Filter on data 11</em>.</p>
 <p>Click on its <img src="../media/Galaxy-view.png" width=20 /> icon to view it. Look through the list taking note of the coverages. Note that the average of the coverages (column 6) seems to be somewhere between 16 and 32.  There are a lot of contigs with coverage 16. We could say that these contigs only appear once in the genome of the bacteria. Therefore, contigs with double this coverage would appear twice. Note that some of the coverages are &gt;400! These contigs will appear in the genome more than 20 times!</p>
 <p>Lets have a look at one of these contigs and see if we can find out what it is.</p>
-<h3 id="extract-a-single-sequence-from-the-contigs-file">Extract a single sequence from the contigs file.</h3>
+<h3 id="extract-a-single-sequence-from-the-contigs-file">Extract a single sequence from the contigs file.<a class="headerlink" href="#extract-a-single-sequence-from-the-contigs-file" title="Permanent link">&para;</a></h3>
 <p>Note the contig number (column 1 in the Contig stats file) of a contig with a coverage of over 300. There should be a few of them. We need to extract the fasta sequence of this contig from the contigs multifasta so we can see it more easily.</p>
 <p>To do this we will use the tool:</p>
 <ul>
 <li><strong>Fasta manipulation -&gt; Fasta Extract Sequence</strong></li>
 <li>Set the following:<ul>
-<li>"Fasta or multifasta file": <em>Velvet Optimiser ... : Contigs</em></li>
-<li>"Sequence ID (or partial): <em>NODE_1_...</em> (for example)</li>
+<li>&ldquo;Fasta or multifasta file&rdquo;: <em>Velvet Optimiser &hellip; : Contigs</em></li>
+<li>&ldquo;Sequence ID (or partial): <em>NODE_1_&hellip;</em> (for example)</li>
 </ul>
 </li>
 <li>Click <strong>Execute</strong></li>
 </ul>
 <p>The new data object in the history is called: <em>Fasta Extract Sequence on data 10: Fasta</em>.</p>
 <p>Click on its <img src="../media/Galaxy-view.png" width=20 /> icon to view it. It is a single sequence in fasta format.</p>
-<h3 id="blast-sequence-to-determine-what-it-contains">Blast sequence to determine what it contains.</h3>
+<h3 id="blast-sequence-to-determine-what-it-contains">Blast sequence to determine what it contains.<a class="headerlink" href="#blast-sequence-to-determine-what-it-contains" title="Permanent link">&para;</a></h3>
 <p>We want to find out what this contig is or what kind of coding sequence (if any) it contains. So we will blast the sequence using the NCBI blast website. (External to Galaxy). To do this:</p>
 <ul>
 <li>Bring up the sequence of the contig into the main window of the browser by clicking on the <img src="../media/Galaxy-view.png" width=20 /> icon if it isn’t already.</li>
 <li>Select the entire sequence by clicking and dragging with the mouse or by pressing ctrl-a in the browser.</li>
 <li>Copy the selected sequence to the clipboard.</li>
-<li>Open a new tab of your browser and point it to: http://blast.ncbi.nlm.nih.gov/Blast.cgi</li>
+<li>Open a new tab of your browser and point it to: <a href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">http://blast.ncbi.nlm.nih.gov/Blast.cgi</a></li>
 <li>Under the BASIC BLAST section, click “blastx”.</li>
 <li>Paste the sequence into the large text box labelled: Enter Accession number(s), gi(s) or FASTA sequence(s).</li>
 <li>Change the Genetic code to: Bacteria and Archaea (11)</li>
 <li>Click the button labelled: BLAST</li>
 </ul>
 <p>After a while the website will present a report of the blast run. Note that the sequence we blasted (if you chose NODE_1) is identical to part of a transposase gene (IS256) from a similar Staphylococcus aureus bacteria. These transposases occur frequently as repeats in bacterial genomes and so we shouldn’t be surprised at its very high coverage.</p>
-<h5 id="figure-6-screenshot-of-the-output-from-the-ncbi-blast-website">Figure 6: Screenshot of the output from the NCBI Blast website</h5>
+<h5 id="figure-6-screenshot-of-the-output-from-the-ncbi-blast-website">Figure 6: Screenshot of the output from the NCBI Blast website<a class="headerlink" href="#figure-6-screenshot-of-the-output-from-the-ncbi-blast-website" title="Permanent link">&para;</a></h5>
 <p><img src="../media/screenshot-blast.png" width=80% /></p>
 <hr />
                 

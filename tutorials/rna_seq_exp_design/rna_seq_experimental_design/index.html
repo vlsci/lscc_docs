@@ -1101,8 +1101,8 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/rna_seq_exp_design/rna_seq_experimental_design.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="rna-seq-experimental-design">RNA-Seq Experimental Design</h1>
-<h2 id="what-is-rna-seq">What is RNA-seq?</h2>
+                <h1 id="rna-seq-experimental-design">RNA-Seq Experimental Design<a class="headerlink" href="#rna-seq-experimental-design" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-rna-seq">What is RNA-seq?<a class="headerlink" href="#what-is-rna-seq" title="Permanent link">&para;</a></h2>
 <p>RNA-seq is a method of measuring gene expression using shotgun sequencing. The
 process involves reverse transcribing RNA into cDNA, then sequencing fragments
 on a high-throughput platform such as Illumina to obtain a large number of
@@ -1112,7 +1112,7 @@ number of reads aligned to each gene or feature is recorded.</p>
 between two conditions (e.g. up and down-regulated genes in knock-out mice
 compared to wild-type mice). RNA-seq can also be used to discover new
 transcripts, splice variants, and fusion genes.</p>
-<h2 id="why-is-a-good-experimental-design-vital">Why is a good experimental design vital?</h2>
+<h2 id="why-is-a-good-experimental-design-vital">Why is a good experimental design vital?<a class="headerlink" href="#why-is-a-good-experimental-design-vital" title="Permanent link">&para;</a></h2>
 <p>An RNA-seq experiment produces high dimensional data. This means we get a huge
 number of observations for a small number of samples. For example, the
 expression of ~20,000 genes could be measured for 6 samples (3 knock-out and 3
@@ -1136,10 +1136,10 @@ You should invest time and thought in designing a robust experiment as failing
 to think this step through can lead to unusable data and wasted time, money,
 and effort.</p>
 <p>It is also useful to think about the statistical methods you will use to
-analyse the data. If you're planning to bring a data analyst or
+analyse the data. If you&rsquo;re planning to bring a data analyst or
 bioinformatician onboard for data analysis, you should include him or her in
 the experimental design stage.</p>
-<h2 id="terminology">Terminology</h2>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
 <p>Before progressing, it may be useful to define some terms which are commonly
 used in RNA-seq.</p>
 <table>
@@ -1201,7 +1201,7 @@ used in RNA-seq.</p>
     is affected by the number of replicates available and sequencing depth.
 </table>
 
-<h2 id="the-importance-of-replicates-to-estimate-variance">The importance of replicates to estimate variance</h2>
+<h2 id="the-importance-of-replicates-to-estimate-variance">The importance of replicates to estimate variance<a class="headerlink" href="#the-importance-of-replicates-to-estimate-variance" title="Permanent link">&para;</a></h2>
 <p>When performing a differential gene expression analysis, we look at the
 expression values of each gene and try to determine if the expression is
 significantly different in the different conditions (e.g. knock-out and
@@ -1241,12 +1241,12 @@ variables include:</p>
 <li>using a constant sample collection time,</li>
 <li>having the same laboratory technician perform each library prep,</li>
 <li>randomising samples to prevent a confounding batch effect if all samples
-   can't be processed at one time.</li>
+   can&rsquo;t be processed at one time.</li>
 </ul>
 <p>If variation between samples can not be removed it should be balanced between
 conditions of interest as much as possible, and carefully recorded to allow
 its effect to be measured and potentially removed during analysis.</p>
-<h2 id="how-many-replicates-and-how-many-reads-do-i-need">How many replicates and how many reads do I need?</h2>
+<h2 id="how-many-replicates-and-how-many-reads-do-i-need">How many replicates and how many reads do I need?<a class="headerlink" href="#how-many-replicates-and-how-many-reads-do-i-need" title="Permanent link">&para;</a></h2>
 <p>Two very common question asked are:</p>
 <ul>
 <li>how many biological replicates do I need, and</li>
@@ -1279,7 +1279,7 @@ care must be taken to balance the design in a manner that each stage is a
 valid experiment in its own right.  This can allow a focused question to be 
 answered in the first stage, with an ability to either address issues or 
 progress to a second stage with additional questions.</p>
-<h2 id="sequencing-options-to-consider">Sequencing options to consider</h2>
+<h2 id="sequencing-options-to-consider">Sequencing options to consider<a class="headerlink" href="#sequencing-options-to-consider" title="Permanent link">&para;</a></h2>
 <p><strong>How much total RNA is needed:</strong><br />
 Many sequencing centres such as
 <a href="http://www.agrf.org.au/resources/next-gen-resources/ngs-faqs#How much RNA do you need?">AGRF</a>
@@ -1287,7 +1287,7 @@ recommend at least 250ng of total RNA for RNA sequencing. It is possible to go
 as low as 100ng of total RNA, but results are not guaranteed. The quality of
 RNA is also important when making libraries. A RNA Integrity Number (RIN) is a
 number from 1 (poor) to 10 (good) and can indicate how much degradation there
-is in the sample. A poor score can lead to over representation at the 3' end
+is in the sample. A poor score can lead to over representation at the 3&rsquo; end
 of the transcript and low yield. Samples with low RIN scores (below 8) are
 not recommended for sequencing.  Care should also be taken to ensure RIN is
 consistent between conditions to avoid confounding this technical effect with
@@ -1325,9 +1325,9 @@ RNA-seq spike-in controls are a set of synthetic RNAs of known concentration
 which act as negative or positive controls. These controls have been used for
 normalisation and quality control, but recent work has shown that the amount
 of technical variability in their use dramatically reduces their utility.</p>
-<h2 id="summary">Summary</h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
-<li>A good experimental design is vital for a successful experiment. If you're
+<li>A good experimental design is vital for a successful experiment. If you&rsquo;re
    planning to work with a data analyst or bioinformatician, include them in
    the design stage.</li>
 <li>Aim to minimise variability by identifying possible sources of variance in

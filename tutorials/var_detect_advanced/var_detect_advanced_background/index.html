@@ -1293,8 +1293,8 @@
                   <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/var_detect_advanced/var_detect_advanced_background.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="introduction-to-variant-detection">Introduction to Variant detection</h1>
-<h2 id="background">Background</h2>
+                <h1 id="introduction-to-variant-detection">Introduction to Variant detection<a class="headerlink" href="#introduction-to-variant-detection" title="Permanent link">&para;</a></h1>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>A variant is something that is different from a standard or type.</p>
 <p>The aim of variation detection is to detect how many bases out of the total are different to a reference genome.</p>
 <p>In Craig Venter’s genome 4.1 million DNA variants were reported.</p>
@@ -1306,49 +1306,50 @@
 <li>Large Chromosome rearrangements-Structural variations (SV)</li>
 <li>Copy number variations (CNV)</li>
 </ul>
-<h3 id="variant-calling-vs-genotyping">Variant Calling vs genotyping</h3>
+<h3 id="variant-calling-vs-genotyping">Variant Calling vs genotyping<a class="headerlink" href="#variant-calling-vs-genotyping" title="Permanent link">&para;</a></h3>
 <p>Variant calling is concerned with whether there is evidence of variant in a particular locus whereas genotyping talks about what the sets of alleles in that locus are and their frequencies. In haploid organisms variant calling and genotyping are equivalent whereas the same rule does not apply to other organisms.</p>
 <p>Variant callers estimate the probability of a particular genotype given the observed data.</p>
 <p>The question one would be asking is what possible genotypes would be possible for a sample. The remaining question is, given that our variant calling process calls a variant, does that mean that there is truly a variant in this locus and also given that the variant caller doesn’t detect a variant in a position does that mean there is no variant in that position.</p>
 <p>The result of variant calling is a list of probable variants.</p>
-<h3 id="process-of-variant-calling">Process of variant calling</h3>
+<h3 id="process-of-variant-calling">Process of variant calling<a class="headerlink" href="#process-of-variant-calling" title="Permanent link">&para;</a></h3>
 <p>Sample DNA -&gt; Sequencing -&gt; Read alignment -&gt; BAM file of aligned reads against reference genome -&gt; Genotyper -&gt; Variant list</p>
 <p>The number of reads that stack up on each other is called <em>read coverage</em>. The data is converted into positional information of the reference with the read counts that have piled up under each position. Variant calling will look at how many bases out of the total number of bases is different to the reference at any position.</p>
-<h3 id="homozygous-or-heterozygous-mutations">Homozygous or Heterozygous mutations:</h3>
+<h3 id="homozygous-or-heterozygous-mutations">Homozygous or Heterozygous mutations:<a class="headerlink" href="#homozygous-or-heterozygous-mutations" title="Permanent link">&para;</a></h3>
 <p>What should be noted about variants is that they are rare events and homozygous variants are even rarer than heterozygous events.</p>
-<h2 id="variant-calling-software">Variant Calling Software:</h2>
+<h2 id="variant-calling-software">Variant Calling Software:<a class="headerlink" href="#variant-calling-software" title="Permanent link">&para;</a></h2>
 <p>There a number of software available for variant calling some of which are as follows:</p>
 <ol>
 <li>SAMtools (mpileup and bcftools): Li 2009 Bioinformatics</li>
 <li>GATK: McKenna et al. 2010 Genome Res</li>
 <li>FreeBayes: MIT</li>
-<li>DiBayes: SOLiD software http://www.lifetechnologies.com</li>
+<li>DiBayes: SOLiD software <a href="http://www.lifetechnologies.com">http://www.lifetechnologies.com</a></li>
 <li>InGAP: Qi J, Zhao F, Buboltz A, Schuster SC.. 2009. <em>Bioinformatics</em></li>
 <li>MAQGene: Bigelow H, Doitsidou M, Sarin S, Hobert O. 2009. <em>Nature Methods</em></li>
 </ol>
-<h3 id="variant-calling-using-samtools-mpileup-bcftools">Variant Calling using Samtools (Mpileup + bcftools)</h3>
+<h3 id="variant-calling-using-samtools-mpileup-bcftools">Variant Calling using Samtools (Mpileup + bcftools)<a class="headerlink" href="#variant-calling-using-samtools-mpileup-bcftools" title="Permanent link">&para;</a></h3>
 <p>Samtools calculates the genotype likelihoods. We then pipe the output to bcftools, which does our SNP calling based on those likelihoods.</p>
 <p>Mpileup: Input: BAM file Output: Pileuped up reads under the reference</p>
 <p>bcftools: Input: Pileup output from Mpileup Output: VCF file with sites and genotypes</p>
 <p><a href="http://samtools.sourceforge.net/mpileup.shtml">Further information</a></p>
-<h3 id="variant-calling-using-gatk-unified-genotyper">Variant Calling using GATK-Unified Genotyper</h3>
+<h3 id="variant-calling-using-gatk-unified-genotyper">Variant Calling using GATK-Unified Genotyper<a class="headerlink" href="#variant-calling-using-gatk-unified-genotyper" title="Permanent link">&para;</a></h3>
 <p>GATK is a programming framework based on the philosophy of MapReduce for developing NGS tools in a distributed or shared memory parallelized form.</p>
 <p>GATK unified genotyper uses a Bayesian probabilistic model to calculate genotype likelihoods.</p>
 <p>Inputs: BAM file</p>
 <p>Output: VCF file with sites and genotypes.</p>
 <p>The probability of a variant genotype for a given sequence of data is calculated using the <a href="http://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes Theorem</a> as follows:</p>
-<pre><code>P(Genotype | Data) =  (P(Data | Genotype) * P(Genotype)) / P(Data)
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">P</span><span class="p">(</span><span class="n">Genotype</span> <span class="o">|</span> <span class="k">Data</span><span class="p">)</span> <span class="o">=</span>  <span class="p">(</span><span class="n">P</span><span class="p">(</span><span class="k">Data</span> <span class="o">|</span> <span class="n">Genotype</span><span class="p">)</span> <span class="o">*</span> <span class="n">P</span><span class="p">(</span><span class="n">Genotype</span><span class="p">))</span> <span class="o">/</span> <span class="n">P</span><span class="p">(</span><span class="k">Data</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>P(Genotype) is the overall probability of that genotype being present in a sequence. This is called the prior probability of a Genotype.</p>
 <p>P(Data | Genotype) is the probability of the data (the reads) given the genotype</p>
 <p>P(Data) is the probability of seeing the reads.</p>
 <p>GATK unified genotyper is not very good in dealing with INDELs and thus we would only calculate SNPs throughout this tutorial. GATK is setup to work with diploid genomes but can be used on haploids as well.</p>
 <p><a href="http://www.broadinstitute.org/gatk/gatkdocs/org_broadinstitute_sting_gatk_walkers_genotyper_UnifiedGenotyper.html">Further information</a></p>
-<h3 id="variant-calling-using-freebayes">Variant Calling using FreeBayes</h3>
+<h3 id="variant-calling-using-freebayes">Variant Calling using FreeBayes<a class="headerlink" href="#variant-calling-using-freebayes" title="Permanent link">&para;</a></h3>
 <p>FreeBayes is a high performance, flexible variant caller which uses the open source Freebayes tool to detect genetic variations based high throughput sequencing data (BAM files).</p>
 <p><a href="http://bioinformatics.bc.edu/marthlab/FreeBayes">Further information</a></p>
-<h3 id="evaluation-of-detected-variants-using-variant-eval">Evaluation of detected variants using Variant Eval</h3>
+<h3 id="evaluation-of-detected-variants-using-variant-eval">Evaluation of detected variants using Variant Eval<a class="headerlink" href="#evaluation-of-detected-variants-using-variant-eval" title="Permanent link">&para;</a></h3>
 <p>The identified variation can further be evaluated against known variations such as common dbSNPs. The result can be checked for high concordance to the common SNPs or a known set of SNPs, the truth set.</p>
 <p>The results will have:</p>
 <ul>
@@ -1357,11 +1358,14 @@
 <li>True Negatives (TN): The variants not called by the software which are not known to be variants in the known variants file.</li>
 <li>False Negatives (FN): The variants not called by the software which are known as variants in the known variants file.</li>
 </ul>
-<h3 id="quality-matrix">Quality Matrix:</h3>
-<pre><code>TP | FP
----|----
-TN | FN
-</code></pre>
+<h3 id="quality-matrix">Quality Matrix:<a class="headerlink" href="#quality-matrix" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TP</span> <span class="o">|</span> <span class="n">FP</span>
+<span class="c1">---|----</span>
+<span class="n">TN</span> <span class="o">|</span> <span class="n">FN</span>
+</pre></div>
+</td></tr></table>
 
 <p>Sensitivity: TP/(TP+FN)</p>
 <p>Specificity: TN/(TN+FP)</p>
@@ -1380,17 +1384,17 @@ TN | FN
 <p>For more details on variant eval visit: <a href="http://www.broadinstitute.org/gatk/gatkdocs/org_broadinstitute_sting_gatk_walkers_varianteval_VariantEval.html">http://www.broadinstitute.org/gatk/gatkdocs/org_broadinstitute_sting_gatk_walkers_varianteval_VariantEval.html</a></p>
 <p><strong>Notes:</strong></p>
 <p>An important thing worth noting is the more data the better the variant calling. In addition multisampling improves performance.</p>
-<h3 id="local-realignment">Local realignment</h3>
+<h3 id="local-realignment">Local realignment<a class="headerlink" href="#local-realignment" title="Permanent link">&para;</a></h3>
 <p>In order to call SNPs close by INDELs correctly, local realignment is strongly recommended before variant calling when using both UnifiedGenotyper and FreeBayes. Samtools mpileup output would not however be affected since it works around this by introducing Base Alignment Quality (BAC). For more information on BAC refer to: <a href="http://samtools.sourceforge.net/mpileup.shtml">http://samtools.sourceforge.net/mpileup.shtml</a></p>
-<h2 id="the-galaxy-workflow-platform">The Galaxy workflow platform</h2>
+<h2 id="the-galaxy-workflow-platform">The Galaxy workflow platform<a class="headerlink" href="#the-galaxy-workflow-platform" title="Permanent link">&para;</a></h2>
 <p>Galaxy is an online bioinformatics workflow management system. Essentially, you upload your files, create various analysis pipelines and run them, then visualise your results.</p>
 <p>Galaxy is really an interface to the various tools that do the data processing; each of these tools could be run from the command line, outside of Galaxy. Galaxy makes it easier to link up the tools together and visualise the entire analysis pipeline.</p>
-<p>Galaxy uses the concept of 'histories'. Histories are sets of data and workflows that act on that data. The data for this workshop is available in a shared history, which you can import into your own Galaxy account</p>
+<p>Galaxy uses the concept of &lsquo;histories&rsquo;. Histories are sets of data and workflows that act on that data. The data for this workshop is available in a shared history, which you can import into your own Galaxy account</p>
 <p><a href="http://wiki.g2.bx.psu.edu/">Learn more about Galaxy here</a></p>
 <p><strong>The Galaxy interface. Tools on the left, data in the middle, analysis workflow on the right.</strong></p>
 <p><img alt="" src="../media/image03.png" /></p>
-<h2 id="data-format-used-in-the-tutorial">Data Format used in the tutorial</h2>
-<h4 id="sequence-alignment-map-format"><strong>Sequence Alignment Map format</strong></h4>
+<h2 id="data-format-used-in-the-tutorial">Data Format used in the tutorial<a class="headerlink" href="#data-format-used-in-the-tutorial" title="Permanent link">&para;</a></h2>
+<h4 id="sequence-alignment-map-format"><strong>Sequence Alignment Map format</strong><a class="headerlink" href="#sequence-alignment-map-format" title="Permanent link">&para;</a></h4>
 <p><strong>SAM format</strong></p>
 <p>Sequence Alignment/Map format records all information relevant to how a set of reads aligns to a reference genome. A SAM file has an optional set of header lines describing the context of the alignment, then one line per read, with the following format:</p>
 <ul>
@@ -1408,10 +1412,13 @@ TN | FN
 <li>11 QUAL: Query quality (ASCII-33=Phred base quality)</li>
 </ul>
 <p><strong>SAM example</strong></p>
-<pre><code>    SRR017937.312 16 chr20 43108717 37 76M * 0 0
-    TGAGCCTCCGGGCTATGTGTGCTCACTGACAGAAGACCTGGTCACCAAAGCCCGGGAAGAGCTGCAGGAAAAGCCG
-    ?,@A=A\&lt;5=,@==A:BB@=B9(.;A@B;\&gt;@ABBB@@9BB@:@5\&lt;BBBB9)\&gt;BBB2\&lt;BBB@BBB?;;BABBBBBBB@
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="n">SRR017937</span><span class="mf">.312</span> <span class="mi">16</span> <span class="n">chr20</span> <span class="mi">43108717</span> <span class="mi">37</span> <span class="mi">76</span><span class="n">M</span> <span class="o">*</span> <span class="mi">0</span> <span class="mi">0</span>
+    <span class="n">TGAGCCTCCGGGCTATGTGTGCTCACTGACAGAAGACCTGGTCACCAAAGCCCGGGAAGAGCTGCAGGAAAAGCCG</span>
+    <span class="o">?</span><span class="p">,@</span><span class="n">A</span><span class="o">=</span><span class="n">A</span><span class="err">\</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">=</span><span class="p">,@</span><span class="o">==</span><span class="nl">A</span><span class="p">:</span><span class="n">BB</span><span class="p">@</span><span class="o">=</span><span class="n">B9</span><span class="p">(.;</span><span class="n">A</span><span class="p">@</span><span class="n">B</span><span class="p">;</span><span class="err">\</span><span class="o">&gt;</span><span class="p">@</span><span class="n">ABBB</span><span class="p">@</span><span class="mi">@9</span><span class="n">BB</span><span class="p">@</span><span class="o">:</span><span class="mi">@5</span><span class="err">\</span><span class="o">&lt;</span><span class="n">BBBB9</span><span class="p">)</span><span class="err">\</span><span class="o">&gt;</span><span class="n">BBB2</span><span class="err">\</span><span class="o">&lt;</span><span class="n">BBB</span><span class="p">@</span><span class="n">BBB</span><span class="o">?</span><span class="p">;;</span><span class="n">BABBBBBBB</span><span class="p">@</span>
+</pre></div>
+</td></tr></table>
 
 <p>For this example:</p>
 <ul>
@@ -1420,7 +1427,7 @@ TN | FN
 <li><strong>RNAME = chr20</strong> - this read aligns to chromosome 20</li>
 <li><strong>POS = 43108717</strong> - this read aligns the sequence on chr20 at position 43108717</li>
 <li><strong>MAPQ = 37</strong> - this is quite a high quality score for the alignment (b/w 0 and 90)</li>
-<li><strong>CIGAR = 76M</strong> - this read aligns to the reference segment across all bases (76 Matches means no deletions or insertions. Note that 'aligns' can mean 'aligns with mismatches' - mismatches that don't affect the alignment are not recorded in this field)</li>
+<li><strong>CIGAR = 76M</strong> - this read aligns to the reference segment across all bases (76 Matches means no deletions or insertions. Note that &lsquo;aligns&rsquo; can mean &lsquo;aligns with mismatches&rsquo; - mismatches that don&rsquo;t affect the alignment are not recorded in this field)</li>
 <li><strong>MRNM = *</strong> - see the format description below</li>
 <li><strong>MPOS = 0</strong> as there is no mate for this read - the sequenced DNA library was single ended, not mate paired*.</li>
 <li><strong>ISIZE = 0</strong> as there is no mate for this read</li>
@@ -1428,20 +1435,20 @@ TN | FN
 <li><strong>QUAL =</strong> per-base quality scores for each position on the alignment. This is just a copy of what is in the FASTQ file</li>
 </ul>
 <p><strong>SAM</strong> format is described more fully <a href="http://samtools.sourceforge.net/SAM1.pdf"><em>here</em></a></p>
-<p>NOTE: reads are shown mapped to the "sense" strand of the reference, and bases are listed in 5' -> 3' order. This is important because an actual read might be from the other strand of DNA. The alignment tool will try to map the read as it is, and also the reverse compliment. If it was on the other strand then the reverse compliment is shown in the SAM file, rather than the original read itself</p>
+<p>NOTE: reads are shown mapped to the &ldquo;sense&rdquo; strand of the reference, and bases are listed in 5&rsquo; -> 3&rsquo; order. This is important because an actual read might be from the other strand of DNA. The alignment tool will try to map the read as it is, and also the reverse compliment. If it was on the other strand then the reverse compliment is shown in the SAM file, rather than the original read itself</p>
 <p>See<a href="http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn">http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn</a> for an overview of paired-end sequencing.</p>
 <p><strong>SAM file in Galaxy</strong></p>
 <p><img alt="" src="../media/image07.png" /></p>
-<h4 id="binary-sequence-alignment-map-format">Binary Sequence Alignment Map format</h4>
+<h4 id="binary-sequence-alignment-map-format">Binary Sequence Alignment Map format<a class="headerlink" href="#binary-sequence-alignment-map-format" title="Permanent link">&para;</a></h4>
 <p><strong>BAM format</strong></p>
 <p>SAM is a text format which is not space efficient. Binary Sequence Alignment is a compressed version of SAM.</p>
-<p>Data in a BAM file is binary and therefore can't be visualised as text. If you try and visualise in Galaxy, it will default to downloading the file</p>
+<p>Data in a BAM file is binary and therefore can&rsquo;t be visualised as text. If you try and visualise in Galaxy, it will default to downloading the file</p>
 <p><strong>BAM file in IGV</strong></p>
 <p><img alt="" src="../media/image01.png" /></p>
-<h4 id="vcf-file-format">VCF file format</h4>
+<h4 id="vcf-file-format">VCF file format<a class="headerlink" href="#vcf-file-format" title="Permanent link">&para;</a></h4>
 <p><strong>What is VCF file:</strong></p>
 <p>The <a href="http://vcftools.sourceforge.net/specs.html"><em>Variant Call Format</em></a> (VCF) is the emerging standard for storing variant data. Originally designed for SNPs and short INDELs, it also works for structural variations.</p>
-<p>VCF consists of a header section and a data section. The header must contain a line starting with one '#', showing the name of each field, and then the sample names starting at the 10th column. The data section is TAB delimited with each line consisting of at least 8 mandatory fields (the first 8 fields in the table below). The FORMAT field and sample information are allowed to be absent. We refer to the official <a href="http://vcftools.sourceforge.net/specs.html"><em>VCF spec</em></a> for a more rigorous description of the format.</p>
+<p>VCF consists of a header section and a data section. The header must contain a line starting with one &lsquo;#&lsquo;, showing the name of each field, and then the sample names starting at the 10<sup>th</sup> column. The data section is TAB delimited with each line consisting of at least 8 mandatory fields (the first 8 fields in the table below). The FORMAT field and sample information are allowed to be absent. We refer to the official <a href="http://vcftools.sourceforge.net/specs.html"><em>VCF spec</em></a> for a more rigorous description of the format.</p>
 <table>
 <thead>
 <tr>
@@ -1503,10 +1510,10 @@ TN | FN
 </tr>
 </tbody>
 </table>
-<h4 id="vcf-format-in-galaxy">VCF format in Galaxy:</h4>
+<h4 id="vcf-format-in-galaxy">VCF format in Galaxy:<a class="headerlink" href="#vcf-format-in-galaxy" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="../media/image06.png" /></p>
-<h4 id="bcf-file-format">Bcf file format:</h4>
-<h3 id="_1"></h3>
+<h4 id="bcf-file-format">Bcf file format:<a class="headerlink" href="#bcf-file-format" title="Permanent link">&para;</a></h4>
+<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><strong>BCF format:</strong></p>
 <p>BCF, or the binary variant call format, is the binary version of VCF. It keeps the same information in VCF, while much more efficient to process especially for many samples. The relationship between BCF and VCF is similar to that between BAM and SAM.</p>
                 

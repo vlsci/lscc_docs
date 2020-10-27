@@ -1145,9 +1145,9 @@
 </style>
 
 <p><img src="../media/gvl_logo.jpg" height=100px align=right></p>
-<h1 id="launching-a-personal-gvl-server-on-the-nectar-research-cloud">Launching a Personal GVL Server on the NeCTAR Research Cloud</h1>
+<h1 id="launching-a-personal-gvl-server-on-the-nectar-research-cloud">Launching a Personal GVL Server on the NeCTAR Research Cloud<a class="headerlink" href="#launching-a-personal-gvl-server-on-the-nectar-research-cloud" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="tutorial-overview">Tutorial Overview</h2>
+<h2 id="tutorial-overview">Tutorial Overview<a class="headerlink" href="#tutorial-overview" title="Permanent link">&para;</a></h2>
 <p>This document guides you to launch your own GVL Analysis platform, with Galaxy,
 using your default NeCTAR allocation.</p>
 <p>The tutorial will go over:</p>
@@ -1161,8 +1161,8 @@ using your default NeCTAR allocation.</p>
 <li>Shutting your machine down</li>
 </ol>
 <hr />
-<h2 id="background">Background</h2>
-<h4 id="what-is-the-gvl">What is the GVL?</h4>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<h4 id="what-is-the-gvl">What is the GVL?<a class="headerlink" href="#what-is-the-gvl" title="Permanent link">&para;</a></h4>
 <p>The Genomics Virtual Laboratory (GVL) is a research platform that can be
 deployed on the cloud.</p>
 <p><img src="../media/gvl_dashboard.png" height=500px style="display:block; margin-left: auto; margin-right:auto;"></p>
@@ -1178,7 +1178,7 @@ For example, public GVL servers do not provide access to the Ubuntu desktop,
 the Linux command line or JupyterHub at present.</p>
 <p>Accessing the GVL server is completely free on the Australian NeCTAR Research
 Cloud, provided that you have a account with NeCTAR with allocated resources.</p>
-<h4 id="what-is-nectar">What is NeCTAR?</h4>
+<h4 id="what-is-nectar">What is NeCTAR?<a class="headerlink" href="#what-is-nectar" title="Permanent link">&para;</a></h4>
 <p>The <a href="http://nectar.org.au/">National eResearch Collaboration Tools and Resources project</a>
 (NeCTAR) is an Australian programme that provides computing infrastructure
 and services to Australian researchers. The NeCTAR Cloud allows us to
@@ -1186,7 +1186,7 @@ deploy virtual machines as a platform for research.</p>
 <p>While it is possible to launch the GVL on <a href="https://aws.amazon.com/">Amazon</a>,
 you may have to pay Amazon usage charges (the GVL software itself is free).</p>
 <hr />
-<h2 id="section-1-access-the-nectar-dashboard">Section 1: Access the NeCTAR dashboard</h2>
+<h2 id="section-1-access-the-nectar-dashboard">Section 1: Access the NeCTAR dashboard<a class="headerlink" href="#section-1-access-the-nectar-dashboard" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Login into the NeCTAR dashboard at
@@ -1200,8 +1200,8 @@ you may have to pay Amazon usage charges (the GVL software itself is free).</p>
 </li>
 <li>
 <p>Choose your organisation from the list and login using your credentials.
-    If you are from the University of Melbourne, choose 'The University of
-    Melbourne' and not 'The University of Melbourne (with ECP)'.</p>
+    If you are from the University of Melbourne, choose &lsquo;The University of
+    Melbourne&rsquo; and not &lsquo;The University of Melbourne (with ECP)&rsquo;.</p>
 </li>
 <li>
 <p>Login with your institutional username and password. If this is the first
@@ -1217,7 +1217,7 @@ for more allocation <a href="https://dashboard.rc.nectar.org.au/allocation/">her
 </li>
 </ol>
 <hr />
-<h2 id="section-2-get-your-cloud-credentials">Section 2: Get your cloud credentials</h2>
+<h2 id="section-2-get-your-cloud-credentials">Section 2: Get your cloud credentials<a class="headerlink" href="#section-2-get-your-cloud-credentials" title="Permanent link">&para;</a></h2>
 <p>Launching a GVL instance requires OpenStack API credentials from NeCTAR. These credentials allows the GVL launcher
 to create a new GVL Virtual Machine on your behalf. Obtaining these credentials is a 5 step process.</p>
 <p><img src="../media/openstack_creds_annotated_step_1.png" height="400px" /></p>
@@ -1227,10 +1227,10 @@ to create a new GVL Virtual Machine on your behalf. Obtaining these credentials 
     Project &gt; Compute &gt; Access &amp; Security</p>
 </li>
 <li>
-<p>Click on the top <strong>'API Access'</strong> tab.</p>
+<p>Click on the top <strong>&lsquo;API Access&rsquo;</strong> tab.</p>
 </li>
 <li>
-<p>Click on the <strong>'Download OpenStack RC File'</strong> button on the top right.
+<p>Click on the <strong>&lsquo;Download OpenStack RC File&rsquo;</strong> button on the top right.
     A file containing your credentials will be saved to your downloads folder.
     This file will be needed later in the launch process.</p>
 </li>
@@ -1251,13 +1251,13 @@ and go to settings as shown below.</p>
 </li>
 </ol>
 <hr />
-<h2 id="section-3-launch-your-personal-gvl-instance">Section 3: Launch your personal GVL instance</h2>
+<h2 id="section-3-launch-your-personal-gvl-instance">Section 3: Launch your personal GVL instance<a class="headerlink" href="#section-3-launch-your-personal-gvl-instance" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>In a new browser tab, go to <a href="https://launch.usegalaxy.org">launch.usegalaxy.org</a></p>
 </li>
 <li>
-<p>You will see the screen below. Select the first option from the list - "Genomics Virtual Lab".</p>
+<p>You will see the screen below. Select the first option from the list - &ldquo;Genomics Virtual Lab&rdquo;.</p>
 <p><img src="../media/cloudlaunch_gvl_step_1.png" height="400px" /> </p>
 </li>
 <li>
@@ -1270,12 +1270,12 @@ and go to settings as shown below.</p>
 <ul>
 <li>
 <ol>
-<li>Select NeCTAR for the question "On which cloud would you like to launch your appliance"</li>
+<li>Select NeCTAR for the question &ldquo;On which cloud would you like to launch your appliance&rdquo;</li>
 </ol>
 </li>
 <li>
 <ol>
-<li>Click "load credentials from file" and provide file you downloaded in Section 2.3</li>
+<li>Click &ldquo;load credentials from file&rdquo; and provide file you downloaded in Section 2.3</li>
 </ol>
 </li>
 <li>
@@ -1285,7 +1285,7 @@ and go to settings as shown below.</p>
 </li>
 <li>
 <ol>
-<li>Click "Test and Use these Credentials". The Next button will now be activated.</li>
+<li>Click &ldquo;Test and Use these Credentials&rdquo;. The Next button will now be activated.</li>
 </ol>
 </li>
 </ul>
@@ -1300,7 +1300,7 @@ and go to settings as shown below.</p>
 </li>
 <li>
 <p>Optional advanced options<br />
-    Toggle the 'Advanced cloudlaunch options' option to see more options. For
+    Toggle the &lsquo;Advanced cloudlaunch options&rsquo; option to see more options. For
     this tutorial, it is not necessary to modify any of the advanced options.</p>
 <ul>
 <li><strong>Deployment name:</strong> You can override the name with a name of your choice.
@@ -1318,7 +1318,7 @@ and go to settings as shown below.</p>
 </ul>
 </li>
 <li>
-<p>Click <strong>'Launch'</strong> to launch a GVL.<br />
+<p>Click <strong>&lsquo;Launch&rsquo;</strong> to launch a GVL.<br />
     The launch process takes 2-5 minutes to start the machine and another 5
     minutes to start and configure Galaxy.</p>
 <p><img src="../media/cloudlaunch_gvl_wait.png" style="display:block; margin-left: auto; margin-right:auto;"></p>
@@ -1327,7 +1327,7 @@ selecting a different availability zone under the advanced cloudlaunch options -
 </li>
 </ol>
 <hr />
-<h2 id="section-4-access-your-gvl-instance">Section 4: Access your GVL instance</h2>
+<h2 id="section-4-access-your-gvl-instance">Section 4: Access your GVL instance<a class="headerlink" href="#section-4-access-your-gvl-instance" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Once your instance has finished launching, click on the Access address
@@ -1335,7 +1335,7 @@ selecting a different availability zone under the advanced cloudlaunch options -
 <p><img src="../media/cloudlaunch_gvl_ready.png" style="display:block; margin-left: auto; margin-right:auto;"></p>
 <p>If you accidentally closed the launch page, you can find your access address at any time
 by logging back into <a href="https://launch.usegalaxy.org">launch.usegalaxy.org</a> and navigating
-to the "My Appliances" section through the menu bar.</p>
+to the &ldquo;My Appliances&rdquo; section through the menu bar.</p>
 </li>
 <li>
 <p>Explore the GVL dashboard.
@@ -1344,31 +1344,31 @@ to the "My Appliances" section through the menu bar.</p>
 </ol>
 <p><img src="../media/gvl_dashboard.png" height=500px style="display:block; margin-left: auto; margin-right:auto;"></p>
 <hr />
-<h2 id="section-5-gvl-services">Section 5: GVL services</h2>
+<h2 id="section-5-gvl-services">Section 5: GVL services<a class="headerlink" href="#section-5-gvl-services" title="Permanent link">&para;</a></h2>
 <p>Listed below are short descriptions of the services the GVL provides.</p>
-<h4 id="galaxy">Galaxy</h4>
+<h4 id="galaxy">Galaxy<a class="headerlink" href="#galaxy" title="Permanent link">&para;</a></h4>
 <p><a href="https://galaxyproject.org/">Galaxy</a> is a web-based platform for computational
 biomedical research. The GVL has a number of Galaxy tutorials available
 <a href="http://genome.edu.au/learn">here</a>.</p>
 <p><img src="../media/gvl_galaxy.png" height=400px style="display:block; margin-left: auto; margin-right:auto;"></p>
 <p>To begin using Galaxy, register as a user by navigating to User &gt; Register
 on the top Galaxy bar.</p>
-<h4 id="cloudman">CloudMan</h4>
+<h4 id="cloudman">CloudMan<a class="headerlink" href="#cloudman" title="Permanent link">&para;</a></h4>
 <p>CloudMan is a cloud manager that manages services on your GVL instance. Use
 Cloudman to start and manage your Galaxy service and to add additional nodes
 to your compute cluster (if you have enough resources).</p>
-<p>You can log into CloudMan by using the username 'ubuntu' and your cluster
+<p>You can log into CloudMan by using the username &lsquo;ubuntu&rsquo; and your cluster
 password.</p>
 <p><img src="../media/cloudman.png" height=350px style="display:block; margin-left: auto; margin-right:auto;"></p>
 <p>You can also shut down your instance (permanently) with CloudMan.</p>
-<h4 id="lubuntu-desktop">Lubuntu Desktop</h4>
+<h4 id="lubuntu-desktop">Lubuntu Desktop<a class="headerlink" href="#lubuntu-desktop" title="Permanent link">&para;</a></h4>
 <p>Lubuntu is a lightweight desktop environment through which you can run desktop
 applications on your virtual machine through your web browser. You can also
 access the GVL command line utilities through the desktop.</p>
-<p>You can log into Lubuntu Desktop using the username 'ubuntu' and your cluster
+<p>You can log into Lubuntu Desktop using the username &lsquo;ubuntu&rsquo; and your cluster
 password.</p>
 <p><img src="../media/lubuntu.png" height=350px style="display:block; margin-left: auto; margin-right:auto;"></p>
-<h4 id="ssh">SSH</h4>
+<h4 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h4>
 <p>Secure Shell (SSH) is a network protocol that allows us to connect to a remotely
 machine. You can login to your virtual machine remotely through an SSH client.</p>
 <p>If you are using Windows, you will need to download an SSH client such as
@@ -1379,13 +1379,13 @@ OSX, open up a Terminal window.</p>
 <a href="../unix/">on UNIX</a>
 <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">can be</a>
 <a href="http://www.doc.ic.ac.uk/~wjk/UnixIntro/">found online</a>.</p>
-<p>You can ssh into your machine using the either the username 'ubuntu' or the
-username 'researcher' and using your cluster password. It is recommended to use
+<p>You can ssh into your machine using the either the username &lsquo;ubuntu&rsquo; or the
+username &lsquo;researcher&rsquo; and using your cluster password. It is recommended to use
 the researcher account when you are doing your computational research and use
 the ubuntu account when you need administrative powers (such as installing
 software).</p>
 <p><img src="../media/command_line.png" height=350px style="display:block; margin-left: auto; margin-right:auto;"></p>
-<h4 id="jupyterhub">JupyterHub</h4>
+<h4 id="jupyterhub">JupyterHub<a class="headerlink" href="#jupyterhub" title="Permanent link">&para;</a></h4>
 <p><a href="http://jupyter.org/">JupyterHub</a> is a web-based interactive computational
 environment where you can combine code execution, text, mathematics, plots and
 rich media into a single document. Currently, JupyterHub can connect to Python2
@@ -1394,35 +1394,35 @@ and Python3 kernals.</p>
 <a href="http://swcarpentry.github.io/python-novice-inflammation/">tutorials</a>
 <a href="../python_overview/python_overview/">available</a>
 <a href="http://pythonprogramminglanguage.com/">online</a>.</p>
-<p>You can log into JupyterHub with the username 'researcher' and your cluster
+<p>You can log into JupyterHub with the username &lsquo;researcher&rsquo; and your cluster
 password.</p>
 <p>You may need to install Python packages you intend to use via the command line
 beforehand.</p>
 <p><img src="../media/jupyterhub.png" height=350px style="display:block; margin-left: auto; margin-right:auto;"></p>
-<h4 id="rstudio">RStudio</h4>
+<h4 id="rstudio">RStudio<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h4>
 <p>RStudio Server gives browser-based access to RStudio, the popular programming
 and analysis environment for the R programming language. You can find out more
 about RStudio <a href="https://www.rstudio.com/home/">here</a>, and the R programming
 language <a href="https://www.r-project.org/">here</a>.</p>
-<p>You can log into RStudio with the username 'researcher' and your cluster
+<p>You can log into RStudio with the username &lsquo;researcher&rsquo; and your cluster
 password.</p>
 <p><img src="../media/rstudio.png" height=350px style="display:block; margin-left: auto; margin-right:auto;"></p>
-<h4 id="public-html">Public HTML</h4>
+<h4 id="public-html">Public HTML<a class="headerlink" href="#public-html" title="Permanent link">&para;</a></h4>
 <p>This is a shared web-accessible folder. Any files you place in the directory
-<code>/home/researcher/public_html</code> will be publicly accessible.</p>
-<h4 id="pacbio-smrt-portal">PacBio SMRT Portal</h4>
-<p><a href="http://www.pacb.com/products-and-services/analytical-software/smrt-analysis/">PacBio's SMRT Portal</a> is an open source software suite for the analysis of single molecule, real-time sequencing data.</p>
+<code class="codehilite"><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">researcher</span><span class="o">/</span><span class="n">public_html</span></code> will be publicly accessible.</p>
+<h4 id="pacbio-smrt-portal">PacBio SMRT Portal<a class="headerlink" href="#pacbio-smrt-portal" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.pacb.com/products-and-services/analytical-software/smrt-analysis/">PacBio&rsquo;s SMRT Portal</a> is an open source software suite for the analysis of single molecule, real-time sequencing data.</p>
 <p>Before you use SMRT Portal, you need to firstly install it through the Admin console. <em>Please note PacBio recommends the use of a 16 core instance with 64GB of RAM (or higher) for this package.</em></p>
 <p>To install SMRT Portal from the GVL dashboard:</p>
 <ul>
 <li>
-<p>Click on 'Admin' in the top navigation bar.</p>
+<p>Click on &lsquo;Admin&rsquo; in the top navigation bar.</p>
 </li>
 <li>
-<p>Log in with the username 'ubuntu' and your cluster password. The screen will now show all the tools available to be installed.</p>
+<p>Log in with the username &lsquo;ubuntu&rsquo; and your cluster password. The screen will now show all the tools available to be installed.</p>
 </li>
 <li>
-<p>Scroll down to 'SMRT Analysis', and click 'install'.</p>
+<p>Scroll down to &lsquo;SMRT Analysis&rsquo;, and click &lsquo;install&rsquo;.</p>
 </li>
 <li>
 <p>The install is complete when SMRT Portal is available as a tool on the GVL dashboard, and a green tick is displayed.</p>
@@ -1430,7 +1430,7 @@ password.</p>
 </ul>
 <p>When launching SMRT Portal for the first time, you will need to register yourself as a new user.</p>
 <hr />
-<h2 id="section-6-shutting-your-machine-down">Section 6: Shutting your machine down</h2>
+<h2 id="section-6-shutting-your-machine-down">Section 6: Shutting your machine down<a class="headerlink" href="#section-6-shutting-your-machine-down" title="Permanent link">&para;</a></h2>
 <p>There are two ways to terminate your instance. Terminating your instance is
 permanent and all data will be deleted (unless you have persistent
 <a href="https://support.rc.nectar.org.au/docs/volumes">volume storage</a> which you will
@@ -1438,8 +1438,8 @@ need to apply for).</p>
 <ol>
 <li>
 <p>Via Cloudman<br />
-    Log into CloudMan by using the username 'ubuntu' and your cluster password.
-    Click the <strong>Shut down...</strong> button under Cluster Controls.</p>
+    Log into CloudMan by using the username &lsquo;ubuntu&rsquo; and your cluster password.
+    Click the <strong>Shut down&hellip;</strong> button under Cluster Controls.</p>
 </li>
 <li>
 <p>Via the NeCTAR dashboard<br />
