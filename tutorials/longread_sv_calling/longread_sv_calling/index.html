@@ -1828,6 +1828,7 @@ Answer the questions below regarding isolate_reads.fastq:</p>
 </ul>
 </li>
 </ul>
+<p>rename the output to &lsquo;isolate_reads_filtered.fastq&rsquo;</p>
 <p>The above will remove any reads which are less than 1000 bp, or those where a section (250bp) of the read has mean quality below Q9. Our readset will now be ready for structural variant calling.</p>
 <p><br></p>
 <h3 id="alignment">Alignment<a class="headerlink" href="#alignment" title="Permanent link">&para;</a></h3>
@@ -1849,7 +1850,7 @@ Answer the questions below regarding isolate_reads.fastq:</p>
 <p><strong><em>Single or Paired-end reads</em></strong> single</p>
 </li>
 <li>
-<p><strong><em>Select fastq dataset</em></strong> isolate_reads.fastq</p>
+<p><strong><em>Select fastq dataset</em></strong> isolate_reads_filtered.fastq</p>
 <ul>
 <li><strong><em>Select a profile of preset options</em></strong> Oxford Nanopore read to reference mapping&hellip;</li>
 </ul>
@@ -1921,14 +1922,14 @@ chr22       gene        P53
 <p><strong>Process VCF with awk</strong></p>
 <p><strong>Tool:</strong> Text reformatting with awk</p>
 <ul>
-<li><strong><em>File to process:</em></strong> sniffles variant calls</li>
+<li><strong><em>File to process:</em></strong> sniffles variant calls sorted</li>
 <li><strong><em>AWK Program:</em></strong> 
 <div class="highlight"><pre><span></span><code>/SVTYPE=/ {split($8,infoArr,&quot;;&quot;); print substr(infoArr[9],8), $3, $1, substr(infoArr[3],6), $2, substr(infoArr[4],5), substr(infoArr[11],7)}
 </code></pre></div></li>
 </ul>
 <p>Rename output to “sniffles VCF summary”</p>
-<p>Your output may look something like this:</p>
-<p><img src="../media/sniffles_calls_rs10.png" style="display: block;
+<p><br>Your output may look something like this:</p>
+<p><br><img src="../media/sniffles_calls_rs10.png" style="display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60%;"></p>
@@ -1961,37 +1962,41 @@ chr22       gene        P53
   margin-right: auto;
   width: 95%;"></p>
 <p><br>Our filtered read set fastq file was 139 mb, so we have approximately 70 mbp worth of long read data. As the genome size of our isolate is approximately 5 mbp, this equates to only around 12x mean read depth for a given location in the reference genome. Read depth is not uniform, so we expect some regions to have less than 12x depth, resulting in some structural variants being missed by sniffles if not enough reads supported the call.</p>
-<p>As our mean depth is 12x, but the quality of our reads is good, we will reduce the &lsquo;read support&rsquo; setting to 4.</p>
+<p>As our mean depth is 12x, but the quality of our reads is good, we will reduce the &lsquo;read support&rsquo; setting to 5.</p>
 <p><strong>Re-run sniffles</strong></p>
 <p>Run sniffles again by clicking the re-run <img src="../media/rerun_icon.png" width="20px"> button on the sniffles VCF output. By clicking the re-run button, all the settings previously used will already be filled.</p>
 <p>Change the following:</p>
 <ul>
 <li><strong><em>Set general options</em></strong><ul>
-<li><strong><em>Minimum Support:</em></strong> 4</li>
+<li><strong><em>Minimum Support:</em></strong> 5</li>
 </ul>
 </li>
 </ul>
 <p>Leave all else default and click &lsquo;execute&rsquo;</p>
-<p>Rename the output to &lsquo;sniffles variant calls RS4&rsquo;</p>
+<p>Rename the output to &lsquo;sniffles variant calls RS5&rsquo;</p>
 <p><strong>Re-run VCFsort</strong></p>
 <p>Run VCFsort again by clicking the re-run <img src="../media/rerun_icon.png" width="20px"> button.</p>
 <p>Change the following:</p>
 <ul>
-<li><strong><em>Select VCF dataset:</em></strong> &lsquo;sniffles variant calls RS4&rsquo;</li>
+<li><strong><em>Select VCF dataset:</em></strong> &lsquo;sniffles variant calls RS5&rsquo;</li>
 </ul>
 <p>Leave all else default and click &lsquo;execute&rsquo;</p>
-<p>Rename the output to &lsquo;sniffles variant calls RS4 sorted&rsquo;</p>
+<p>Rename the output to &lsquo;sniffles variant calls RS5 sorted&rsquo;</p>
 <p><strong>Re-run awk</strong></p>
 <p>Run awk again to create a summary by clicking the re-run <img src="../media/rerun_icon.png" width="20px"> button.</p>
 <p>Change the following:</p>
 <ul>
-<li><strong><em>File to process:</em></strong> &lsquo;sniffles variant calls RS4 sorted&rsquo;</li>
+<li><strong><em>File to process:</em></strong> &lsquo;sniffles variant calls RS5 sorted&rsquo;</li>
 </ul>
 <p>Leave all else default and click &lsquo;execute&rsquo;</p>
-<p>Rename the output to &lsquo;sniffles VCF summary RS4&rsquo;</p>
+<p>Rename the output to &lsquo;sniffles VCF summary RS5&rsquo;</p>
 <p><br></p>
 <p>Our new variant calls should be an improvement on the original settings. You may see something similar to the following:</p>
-<p>(img here - side by side calls and report)</p>
+<p><br><img src="../media/sniffles_calls_rs5.png" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;"></p>
+<p><br>We have increased our recall by lowering our read support threshold to 5, rather than 10. While being less conservative in this manner will increase recall, it also may result in greater false positives (sniffles calling variants that don&rsquo;t exist). Whether we maximise precision or recall depends on the task at hand - in this case, we want to discover all the variants and prefer high recall, and should therefore treat our variant calls with more scepticism.  </p>
 <p><br></p>
 <h3 id="visualising-sv-calls">Visualising SV calls<a class="headerlink" href="#visualising-sv-calls" title="Permanent link">&para;</a></h3>
 <p>Visualisation and interpretation is an important part of any analysis. Now we have our SV calls, we can view them on a genome-wide scale using a type of visualisation called a <strong><em>circos</em></strong> plot. Circos plots are often featured on the cover of academic journals as they can communicate a large amount of genomic information at a glance.</p>
@@ -2010,7 +2015,7 @@ chr22       gene        P53
 <ul>
 <li><strong><em>sniffles VCF summary:</em></strong> sniffles VCF summary RS4</li>
 <li><strong><em>Reference Genome:</em></strong> ecoli_sakai.fna</li>
-<li><strong><em>SV truth record:</em></strong> ecoli_sakai_isolate_record.tsv</li>
+<li><strong><em>SV truth record:</em></strong> isolate_sv_record.tsv</li>
 </ul>
 <p>Click the blue &lsquo;Run Workflow&rsquo; button on the top right to execute the workflow. Your output might be similar to the following figure:</p>
 <p><br></p>
@@ -2135,7 +2140,7 @@ chr22       gene        P53
 <p>Today we will use genome annotations in the <strong><em>general feature format</em></strong> (GFF) format. We will invoke a workflow which uses a GFF file and our variant calls VCF file as input, then annotates the variant calls with any features they intersect with. </p>
 <p>A GFF has been provided for chr17, and includes a vast amount of information. We will just look at coding sequences (CDS) intersecting our variants, as distruptions in these regions are likely to have functional impact.  </p>
 <p>Invoke the workflow using this link: <br>
-<a href="https://usegalaxy.org.au/workflows/run?id=d69a765cfc82a399">https://usegalaxy.org.au/workflows/run?id=d69a765cfc82a399</a></p>
+<a href="https://usegalaxy.org.au/workflows/run?id=142e5f7c1f340838">https://usegalaxy.org.au/workflows/run?id=142e5f7c1f340838</a></p>
 <p>Set the following:</p>
 <ul>
 <li><strong><em>Genome Annotations (GFF):</em></strong> chr17_annotations.gff</li>
