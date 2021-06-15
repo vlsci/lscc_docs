@@ -1,0 +1,1998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Identifying proteins from mass spectrometry data - Bioinformatics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EMNLJD0DWP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-EMNLJD0DWP');
+</script>
+
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#identifying-proteins-from-mass-spec-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Bioinformatics Documentation" class="md-header__button md-logo" aria-label="Bioinformatics Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformatics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Identifying proteins from mass spectrometry data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Bioinformatics Documentation" class="md-nav__button md-logo" aria-label="Bioinformatics Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Bioinformatics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Tools and skill development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools and skill development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tools and skill development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/bioinfo.html" class="md-nav__link">
+        What is Bioinformatics?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/galaxy.html" class="md-nav__link">
+        Introduction to the Galaxy Platform
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../galaxy-workflows/galaxy-workflows.html" class="md-nav__link">
+        Introduction to Galaxy Workflows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_overview/python_overview.html" class="md-nav__link">
+        Introduction to Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using_git/Using_Git.html" class="md-nav__link">
+        Introduction to Git and Github
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hpc/hpc.html" class="md-nav__link">
+        Introduction to HPC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unix/unix.html" class="md-nav__link">
+        Introduction to Unix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro_R_biologists/intro_R_biologists.html" class="md-nav__link">
+        Introduction to R for Biologists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Genome_browsers/GenomeBrowsers_Intro.html" class="md-nav__link">
+        Introduction to Genome Browsers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_exp_design/rna_seq_experimental_design.html" class="md-nav__link">
+        RNA-seq Experimental Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/docker.html" class="md-nav__link">
+        Containerized Bioinformatics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cwl/cwl.html" class="md-nav__link">
+        Common Workflow Language for Bioinformatics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bionitio/bionitio.html" class="md-nav__link">
+        Command-line software development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Genomics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Genomics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Genomics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Variant detection
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Variant detection" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Variant detection
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../var_detect_advanced/var_detect_advanced_background.html" class="md-nav__link">
+        Introduction to Variant detection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variant_calling_galaxy_1/variant_calling_galaxy_1.html" class="md-nav__link">
+        Variant Calling part 1 (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../var_detect_advanced/var_detect_advanced.html" class="md-nav__link">
+        Variant Calling part 2 (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../longread_sv_calling/longread_sv_calling.html" class="md-nav__link">
+        Long-read Structural Variant Calling
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        de novo assembly
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="de novo assembly" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          de novo assembly
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/assembly-background.html" class="md-nav__link">
+        Introduction to de novo assembly with Velvet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/assembly-protocol.html" class="md-nav__link">
+        Introduction to de novo genome assembly for Illumina reads
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/assembly.html" class="md-nav__link">
+        de novo assembly of Illumina reads using Velvet (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/spades.html" class="md-nav__link">
+        de novo assembly of Illumina reads using Spades (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pacbio/index.html" class="md-nav__link">
+        de novo assembly of PacBio reads (unix)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hybrid_assembly/nanopore_assembly.html" class="md-nav__link">
+        Hybrid genome assembly - Nanopore and Illumina
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Transcriptomics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Transcriptomics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Transcriptomics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_exp_design/rna_seq_experimental_design.html" class="md-nav__link">
+        RNAseq Experimental Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Bulk RNAseq
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bulk RNAseq" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Bulk RNAseq
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_dge_basic/rna_seq_basic_background.html" class="md-nav__link">
+        Introduction to bulk RNAseq analysis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_dge_basic/rna_seq_basic_tutorial.html" class="md-nav__link">
+        RNAseq analysis using HISAT2 (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_dge_basic/rna_seq_basic_tuxedo.html" class="md-nav__link">
+        RNAseq analysis using Tuxedo (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_dge_advanced/rna_seq_advanced_tutorial.html" class="md-nav__link">
+        RNAseq differential expression tool comparision (Galaxy)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq_dge_in_r/rna_seq_r.html" class="md-nav__link">
+        RNAseq differential expression in R
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Singlecell RNAseq
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Singlecell RNAseq" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Singlecell RNAseq
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../singlecell/index.html" class="md-nav__link">
+        10X single-cell RNA-seq analysis in R
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Proteomics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Proteomics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Proteomics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Identifying proteins from mass spectrometry data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="proteomics_basic.html" class="md-nav__link md-nav__link--active">
+        Identifying proteins from mass spectrometry data
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-galaxy" class="md-nav__link">
+    Login to Galaxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-mass-spec-data" class="md-nav__link">
+    Import mass spec data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-properties-of-the-data" class="md-nav__link">
+    Basic properties of the data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternate-data-formats" class="md-nav__link">
+    Alternate data formats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtain-a-search-database" class="md-nav__link">
+    Obtain a Search Database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-search-using-xtandem" class="md-nav__link">
+    Run a search using X!Tandem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-results-to-tabular-format" class="md-nav__link">
+    Convert Results to tabular format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort-tabular-outputs" class="md-nav__link">
+    Sort tabular outputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-raw-scores-to-probabilities" class="md-nav__link">
+    Convert raw scores to probabilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-protein-inference" class="md-nav__link">
+    Perform Protein Inference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-enrichment-analysis" class="md-nav__link">
+    Functional enrichment analysis
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="background_data_formats.html" class="md-nav__link">
+        Data Formats Background
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="background_protein_databases.html" class="md-nav__link">
+        Protein Databases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="background_search_engines.html" class="md-nav__link">
+        Search Engines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="background_protein_prophet.html" class="md-nav__link">
+        Protein Prophet
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Statistics and Visualisation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Statistics and Visualisation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Statistics and Visualisation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_viz/python_viz.html" class="md-nav__link">
+        Data visualisation with Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Structural Modelling
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Structural Modelling" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Structural Modelling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../molecular_dynamics_101/molecular_dynamics_101.html" class="md-nav__link">
+        Molecular Dynamics - Introduction to cluster computing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../molecular_dynamics_201/molecular_dynamics_201.html" class="md-nav__link">
+        Molecular Dynamics - Building input files, visualising the trajectory
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-galaxy" class="md-nav__link">
+    Login to Galaxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-mass-spec-data" class="md-nav__link">
+    Import mass spec data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-properties-of-the-data" class="md-nav__link">
+    Basic properties of the data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternate-data-formats" class="md-nav__link">
+    Alternate data formats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtain-a-search-database" class="md-nav__link">
+    Obtain a Search Database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-search-using-xtandem" class="md-nav__link">
+    Run a search using X!Tandem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-results-to-tabular-format" class="md-nav__link">
+    Convert Results to tabular format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort-tabular-outputs" class="md-nav__link">
+    Sort tabular outputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-raw-scores-to-probabilities" class="md-nav__link">
+    Convert raw scores to probabilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-protein-inference" class="md-nav__link">
+    Perform Protein Inference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-enrichment-analysis" class="md-nav__link">
+    Functional enrichment analysis
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/proteomics_basic/proteomics_basic.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="identifying-proteins-from-mass-spec-data">Identifying proteins from mass spec data<a class="headerlink" href="#identifying-proteins-from-mass-spec-data" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This tutorial describes how to identify a list of proteins from tandem mass spectrometry data. </p>
+<p>Analyses of this type are a fundamental part of most proteomics studies. The basic idea is to match tandem ms spectra obtained from a sample with equivalent theoretical spectra from a reference protein database. The process is referred to as &ldquo;protein database search&rdquo; or even &ldquo;protein sequencing&rdquo;, although amino acid sequences are not obtained <em>de novo</em> with this method.</p>
+<p>The data used in this tutorial were obtained from a single run on an Orbitrap Elite mass spectrometer.  The sample itself corresponds to a purified organelle from Mouse cells.  </p>
+<p>The aim of the tutorial will be to create a list of all proteins that can be confidently said to be present in the sample, and then to use this list to guess the identity of the &ldquo;mystery&rdquo; organelle.</p>
+<p>This tutorial uses free software including;</p>
+<ul>
+<li>The <a href="http://www.thegpm.org/tandem/">X!Tandem</a> search engine</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Trans-Proteomic_Pipeline">Trans Proteomic Pipeline</a> (TPP) for post-search validation</li>
+<li>The <a href="https://github.com/iracooke/protk">Protk</a> tool suite for various conversion tasks and to make working with X!Tandem and the TPP easier</li>
+<li>The <a href="http://galaxyproject.org/">Galaxy</a> platform to bring all these tools together</li>
+</ul>
+<h2 id="login-to-galaxy">Login to Galaxy<a class="headerlink" href="#login-to-galaxy" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Open a browser and go to a Galaxy server.</p>
+<ul>
+<li>You can use a galaxy server of your own <strong>or</strong></li>
+<li><a href="http://galaxy-tut.genome.edu.au">Galaxy Tute</a> at genome.edu.au</li>
+</ul>
+<blockquote>
+<p><img src="../media/tips.png" alt="Tip" height="42" width="42"/> Use a supported browser. Firefox/Safari/Chrome all work well</p>
+<p>If you use your own galaxy server you will need to make sure you have the <a href="github.com/iracooke/protk-galaxytools">protk proteomics tools</a> installed.</p>
+</blockquote>
+</li>
+<li>
+<p>Register as a new user if you don’t already have an account on that particular server</p>
+</li>
+</ol>
+<h2 id="import-mass-spec-data">Import mass spec data<a class="headerlink" href="#import-mass-spec-data" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="background_galaxy#create-a-new-history">Create a new history</a> in Galaxy and name it &ldquo;Organelle Tutorial&rdquo;</li>
+<li>
+<p><strong>Download datasets</strong> using the Galaxy uploader tool. </p>
+<p>Open this tool by clicking the button as shown below</p>
+<p><img alt="Uploader tool" src="media/galaxy_uploader.png" /></p>
+<p>After opening the tool select <em>Paste/Fetch data</em> and paste the following URL into the box that appears.  Then click <em>Start</em> to initiate the download.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>https://swift.rc.nectar.org.au:8888/v1/AUTH_ffb00634530a4c37a0b8b08c48068adf/proteomics_tutorial/OrganelleSample.mzML
+</code></pre></div>
+</td></tr></table>
+<p>After the download is finished you should have a single item in your history.</p>
+</li>
+<li>
+<p><strong>Rename</strong> the history item by clicking the pencil icon beside it to &ldquo;Edit attributes&rdquo;.</p>
+<p><img alt="Edit attributes icon" src="media/galaxy_edit_attributes.png" /></p>
+<p>This should bring up a dialog box where you can edit the name.  </p>
+<p>Change the name by removing everything up to the last forward slash &ldquo;/&rdquo;</p>
+<p>Your item should then be named <em>OrganelleSample.mzML</em></p>
+<p>Dont forget to click &ldquo;Save&rdquo;</p>
+</li>
+</ol>
+<h2 id="basic-properties-of-the-data">Basic properties of the data<a class="headerlink" href="#basic-properties-of-the-data" title="Permanent link">&para;</a></h2>
+<p><strong>Format:</strong></p>
+<p>Mass spectrometry data comes in many different formats and the first step in a proteomics analysis often involves data conversion or pre-processing. You can read more about <a href="background_data_formats.html">mass spectrometry data formats here</a> </p>
+<div class="showable-container question showable-hidden" id="showable0">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle0"><span class="link-like" id="showablelink0"> 1) What format is the OrganelleSample.mzML file?</span></div>
+</div>
+</div>
+<script>//<![CDATA[<!--
+(function(w,d,u){if(!w.<span><span class="MathJax_Preview">){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.</span><script type="math/tex">){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.</script></span>=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}}})(window,document)
+//-->]]></script>
+<div class="showable-container hint showable-hidden" id="showable1">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle1"><a href="" id="showablelink1">Hint</a></div>
+<div class="showable-body hint" id="showablebody1">
+<p>Try clicking the title bar on the data in your galaxy history.  This will toggle display of some additional information about the data.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink1").click(function(e){
+            e.preventDefault();
+            $("#showable1").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable2">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle2"><a href="" id="showablelink2">Answer</a></div>
+<div class="showable-body answer" id="showablebody2">
+<ul>
+<li>mzML</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink2").click(function(e){
+            e.preventDefault();
+            $("#showable2").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<p><strong>MS versus MS/MS:</strong></p>
+<p>A key feature of <em>Tandem</em> mass spectrometry is the acquisition of mass spectra (spectra) that measure the masses of precursor ions (whole peptides) as well as spectra that measure the fragment masses of a single selected peptide.  These two types of measurements are called <strong>MS</strong> and <strong>MS/MS</strong> spectra respectively.  The following schematic shows how an <strong>MS/MS</strong> scan results from the fragmentation of a selected product ion.  Often multiple <strong>MS/MS</strong> spectra are obtained for each <strong>MS</strong> scan, selecting different precursor masses each time so that as many peptides as possible can be analyzed.</p>
+<p><img alt="Tandem MS Schematic" src="media/tandem_ms.png" /></p>
+<p><strong>Number of spectra:</strong></p>
+<p>Click the eye icon on the history item to view the <em>mzML</em> file as text.  The file is almost impossible to read by hand but with some text searching we will be able to deduce the number of <strong>MS</strong> and <strong>MS/MS</strong> spectra in the file.</p>
+<p>Now try searching for the text &ldquo;MS1 spectrum&rdquo; in the page using your web browser&rsquo;s search function.  Looking closely you should see that this text appears once for every <strong>MS1</strong> spectrum in the file (plus it occurs one extra time at the top of the file as part of the file description).  The file is large though and the browser can only see the first megabyte of it. </p>
+<p>Now search for the text &ldquo;spectrumList count&rdquo;. It should bring you to a line in the file that says spectrumList count=&rdquo;24941&rdquo;.  There are a total of 24941 spectra in the entire file including both <strong>MS</strong> and <strong>MS/MS</strong> spectra.</p>
+<div class="showable-container question showable-hidden" id="showable3">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle3"><span class="link-like" id="showablelink3"> 2) How many <strong>MS</strong> spectra are there in this dataset?</span>
+</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable4">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle4"><a href="" id="showablelink4">Hint</a></div>
+<div class="showable-body hint" id="showablebody4">
+<p>To answer this question you will need to use the <em>Select</em> tool from the <em>Filter and Sort</em> submenu to select lines matching the text &ldquo;MS1 spectrum&rdquo; in the whole file.  Then use the <em>Line/Word/Character count</em> tool from the <em>Text Manipulation</em> submenu to count the number of lines returned by running the <em>Select</em> tool.</p>
+<div class="showable-container showable-hidden" id="showable5">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle5"><a href="" id="showablelink5">More</a> &lt;- and here to show more</div>
+<div class="showable-body" id="showablebody5">
+<p>The text &ldquo;MS1 spectrum&rdquo; also appears at the top of the file as part of its description so you will need to subtract 1 from your answer</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink5").click(function(e){
+            e.preventDefault();
+            <span><span class="MathJax_Preview">("#showable5").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable5").toggleClass("showable-hidden");
+            if (</script></span>("#showable5").hasClass("showable-hidden")) {
+                $("#showablelink5").text("More");
+            } else {
+                $("#showablelink5").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink4").click(function(e){
+            e.preventDefault();
+            $("#showable4").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable6">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle6"><a href="" id="showablelink6">Answer</a></div>
+<div class="showable-body answer" id="showablebody6">
+<ul>
+<li>3142</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink6").click(function(e){
+            e.preventDefault();
+            $("#showable6").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<blockquote>
+<p>In the previous exercise we used two galaxy tools in succession to find out the number of items in a file that matched some text. Future exercises use the same technique so you might find it useful to create a tiny workflow to automate this proceedure. <a href="background_findcountitems_workflow.html">See the instructions here</a></p>
+</blockquote>
+<p>Prior to the development of tandem mass spectrometry, peptides and proteins were detected purely by matching <strong>MS</strong> peaks against the masses of whole peptides via <a href="https://en.wikipedia.org/wiki/Peptide_mass_fingerprinting">Peptide Mass Fingerprinting</a>.  This has largely been superceded by tandem mass spectrometry which gains much greater specificity by using the <strong>MS/MS</strong> spectra.  In this tutorial only the <strong>MS/MS</strong> spectra will be used.</p>
+<div class="showable-container question showable-hidden" id="showable7">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle7"><span class="link-like" id="showablelink7"> 3) How many <strong>MS/MS</strong> spectra are there in this dataset?</span>
+</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable8">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle8"><a href="" id="showablelink8">Hint</a></div>
+<div class="showable-body hint" id="showablebody8">
+<p>Use the fact that the file contains a total of 24941 spectra with your answer to the previous question about <strong>MS</strong> spectra.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink8").click(function(e){
+            e.preventDefault();
+            $("#showable8").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable9">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle9"><a href="" id="showablelink9">Answer</a></div>
+<div class="showable-body answer" id="showablebody9">
+<ul>
+<li>21799</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink9").click(function(e){
+            e.preventDefault();
+            $("#showable9").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="alternate-data-formats">Alternate data formats<a class="headerlink" href="#alternate-data-formats" title="Permanent link">&para;</a></h2>
+<p>Another format you are likely to encounter for tandem mass spectrometry data is <em>Mascot Generic Format</em> or <em>mgf</em>.  Mascot Generic Format (<em>mgf</em>) is the data file format preferred by the <em>Mascot</em> search engine.  It is a text based format is much easier to read by hand than the <em>mzML</em> file.  Each spectrum appears between &ldquo;BEGIN IONS&rdquo; and &ldquo;END IONS&rdquo; statements and simply consists of (<em>mz</em>,<em>intensity</em>) pairs.  Additional summary information about the precursor (whole peptide) ion such as its mass, retention time and charge are included. </p>
+<ol>
+<li>
+<p>Download the Organelle Sample data in <em>mgf</em> format</p>
+<p>Use the <em>Paste/Fetch data</em> tool again and paste the following URL into the box that appears.  Then click <em>Start</em> to initiate the download.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>https://swift.rc.nectar.org.au:8888/v1/AUTH_ffb00634530a4c37a0b8b08c48068adf/proteomics_tutorial/OrganelleSample.mgf
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Inspect the data manually by viewing it in Galaxy. Try to get a feel for the way data is organised within the file.</p>
+</li>
+</ol>
+<div class="showable-container question showable-hidden" id="showable10">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle10"><span class="link-like" id="showablelink10"> 4) How many spectra are there in this dataset and what type of spectra do you think they are?</span>
+</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable11">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle11"><a href="" id="showablelink11">Hint</a></div>
+<div class="showable-body hint" id="showablebody11">
+<p>Use the same technique you used for the previous exercise (or your workflow). Remember that for every spectrum there is one &ldquo;BEGIN IONS&rdquo; statement in the file.</p>
+<div class="showable-container showable-hidden" id="showable12">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle12"><a href="" id="showablelink12">More</a> &lt;- and here to show more</div>
+<div class="showable-body" id="showablebody12">
+<p>Consider your answers to questions 3 and 4</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink12").click(function(e){
+            e.preventDefault();
+            <span><span class="MathJax_Preview">("#showable12").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable12").toggleClass("showable-hidden");
+            if (</script></span>("#showable12").hasClass("showable-hidden")) {
+                $("#showablelink12").text("More");
+            } else {
+                $("#showablelink12").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink11").click(function(e){
+            e.preventDefault();
+            $("#showable11").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable13">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle13"><a href="" id="showablelink13">Answer</a></div>
+<div class="showable-body answer" id="showablebody13">
+<ul>
+<li>21799</li>
+<li>MS/MS</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink13").click(function(e){
+            e.preventDefault();
+            $("#showable13").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="obtain-a-search-database">Obtain a Search Database<a class="headerlink" href="#obtain-a-search-database" title="Permanent link">&para;</a></h2>
+<p>Setting up a search database is a critical step.  For this tutorial we have created a database for you, but if you need to create a database for your own data you&rsquo;ll need to consider the following key issues;</p>
+<ul>
+<li>Database size</li>
+<li>Whether to include decoys</li>
+<li>What types of variants to include if any</li>
+<li>How to format your database identifiers</li>
+</ul>
+<p>More details are provided <a href="background_protein_databases.html">here</a>.</p>
+<ol>
+<li>
+<p>Download a database of Mouse proteins in <em>fasta</em> format</p>
+<p>Use the <em>Paste/Fetch data</em> tool again and paste the following URL into the box that appears.  Then click <em>Start</em> to initiate the download.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>https://swift.rc.nectar.org.au:8888/v1/AUTH_ffb00634530a4c37a0b8b08c48068adf/proteomics_tutorial/UniprotMouseD_20140716.fasta
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Inspect the first few items in the database in Galaxy.  The file is in <a href="https://en.wikipedia.org/wiki/FASTA_format">Fasta</a> format which means that each entry has a single description line that starts with a &ldquo;&gt;&rdquo; followed by a unique identifier and then some general descriptive information.  The actual sequence of amino acids is given after the description line. Take note of the format of the database identifiers. They are in Uniprot format and look like this;</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sp|Q9CQV8|1433B_MOUSE
+</code></pre></div>
+</td></tr></table>
+<p>The database also includes decoy sequences, appended at the end.  They have identifiers like this;</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>decoy_rp75404
+</code></pre></div>
+</td></tr></table>
+</li>
+</ol>
+<div class="showable-container question showable-hidden" id="showable14">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle14"><span class="link-like" id="showablelink14"> 5) What is the ratio of decoys to non-decoys in the database?
+</span>
+</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable15">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle15"><a href="" id="showablelink15">Hint</a></div>
+<div class="showable-body hint" id="showablebody15">
+<p>Decoys are easiest to search for because they all start with &ldquo;decoy_&rdquo;. The total number of database entries can be found simply expanding the fasta file in your history (by clicking on its title).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink15").click(function(e){
+            e.preventDefault();
+            $("#showable15").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable16">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle16"><a href="" id="showablelink16">Answer</a></div>
+<div class="showable-body answer" id="showablebody16">
+<ul>
+<li>1:1</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink16").click(function(e){
+            e.preventDefault();
+            $("#showable16").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="run-a-search-using-xtandem">Run a search using X!Tandem<a class="headerlink" href="#run-a-search-using-xtandem" title="Permanent link">&para;</a></h2>
+<p>A large number of search engines now exist for proteomics data.  This exercise uses <em>X!Tandem</em> which is one of the fastest and most widely used. Other search engines include <em>OMSSA</em>, <em>MS-GF+</em> and <em>Mascot</em>.</p>
+<ol>
+<li>Select the <em>X!Tandem Search</em> tool</li>
+<li>Enter parameters as shown in the table below (leave all others at their defaults)</li>
+<li>Click Execute</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uploaded Fasta File</td>
+<td><code>UniprotMouseD_20140716.fasta</code></td>
+</tr>
+<tr>
+<td>MSMS File</td>
+<td><code>OrganelleSample.mgf</code></td>
+</tr>
+<tr>
+<td>Variable Modifications</td>
+<td><code>Oxidation M</code></td>
+</tr>
+<tr>
+<td>Fixed Modifications</td>
+<td><code>Carbamidomethyl C</code></td>
+</tr>
+<tr>
+<td>Missed Cleavages Allowed</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>Enzyme</td>
+<td><code>Trypsin</code></td>
+</tr>
+<tr>
+<td>Fragment Ion Tolerance</td>
+<td><code>0.5</code></td>
+</tr>
+<tr>
+<td>Precursor Ion Tolerance</td>
+<td><code>10 ppm</code></td>
+</tr>
+</tbody>
+</table>
+<p>The search should run for about 5-10 minutes and will produce an output file in <em>X!Tandem</em> xml format. A much more useful format is <em>pepXML</em> so the next step in the analysis will be to run a tool to convert from tandem to pepXML.</p>
+<ol>
+<li>Select the <em>Tandem to pepXML</em> tool</li>
+<li>Select the output from the previous step as input and click <em>Execute</em></li>
+</ol>
+<p>While the search is running, read some background theory on <a href="background_search_engines.html">how search engine&rsquo;s work</a>.</p>
+<h2 id="convert-results-to-tabular-format">Convert Results to tabular format<a class="headerlink" href="#convert-results-to-tabular-format" title="Permanent link">&para;</a></h2>
+<p>Although the <em>pepXML</em> format is useful as input to other tools it is not designed to be read or analyzed directly. Galaxy includes a tool to convert <em>pepXML</em> into tabular (tab separated) format, which is much easier to read.  Tabular format also has the advantage that it can be downloaded and opened using many other programs including <em>Excel</em> and <a href="http://cran.r-project.org/">R</a>.</p>
+<ol>
+<li>Select the <em>pepXML to Table</em> tool</li>
+<li>Select the <em>pepXML</em> file produced in the previous step as input and click <em>Execute</em></li>
+</ol>
+<p>To get the most out of tabular files it is often necessary to know the column number corresponding to columns of interest.  Explore the column assignments in your tabular file by clicking on its title in your galaxy history.  This will show extra details about the item, including a handy preview where column numbers are displayed.</p>
+<div class="showable-container question showable-hidden" id="showable17">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle17"><span class="link-like" id="showablelink17"> 6) In what column number is the <em>assumed_charge</em> of peptides in the <em>pepXML</em> tabular file?
+</span></div>
+</div>
+</div>
+<div class="showable-container answer showable-hidden" id="showable18">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle18"><a href="" id="showablelink18">Answer</a></div>
+<div class="showable-body answer" id="showablebody18">
+<ul>
+<li>3</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink18").click(function(e){
+            e.preventDefault();
+            $("#showable18").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="sort-tabular-outputs">Sort tabular outputs<a class="headerlink" href="#sort-tabular-outputs" title="Permanent link">&para;</a></h2>
+<p>Examine the tabular output file from the previous step.  It contains many columns, of which the most interesting are probably the raw search engine score and the name of the protein from which each peptide has been derived. Note the presence of plenty of decoy proteins among the results.  These decoys should tend to have quite poor scores compared with real hits.  The <em>raw score</em> for <em>X!Tandem</em> searches is an <em>E-value</em>.  To push these decoys to the bottom of the list we can sort the data by <em>raw score</em>. </p>
+<ol>
+<li>Select the <em>Sort</em> data tool from the <em>Filter and Sort</em> menu in the left pane of Galaxy</li>
+<li>Choose to sort on <em>raw_score</em>.  This is column c10 </li>
+<li>Select <em>Ascending order</em> for the sort direction (small E-values are good) and click <em>Execute</em></li>
+</ol>
+<p>Browse the resulting dataset.  The top of the file should now have very few decoys.</p>
+<h2 id="convert-raw-scores-to-probabilities">Convert raw scores to probabilities<a class="headerlink" href="#convert-raw-scores-to-probabilities" title="Permanent link">&para;</a></h2>
+<p>Raw <em>X!Tandem</em> scores only give a rough estimate of the reliability of each peptide to spectrum match (PSM). A better estimate can be obtained by running a tool that uses global statistical properties of the search to assign a probability to each PSM of being correct.  A number of tools exist for this, and in this tutorial we use <em>Peptide Prophet</em>, which can work with a wide variety of different search engine scoring systems. It is extremely useful as it effectively converts disparate scores to the common scale of probability. The probabilities produced by <em>Peptide Prophet</em> can be used to set a threshold for acceptance.  For example we could decide to accept only PSM&rsquo;s with a probability greater than 0.95. Note that this is not the same as the False Discovery Rate which is computed by taking (1-p) for all the accepted PSM&rsquo;s and dividing by the total number of accepted PSM&rsquo;s. A widely used alternative to <em>Peptide Prophet</em> is <a href="http://per-colator.com/">Percolator</a>.</p>
+<p>If you&rsquo;re curious about how <em>Peptide Prophet</em> works, take a look at <a href="http://proteome-software.wikispaces.com/file/view/peptide_prophet_dissected.pdf">this explainer</a>, or <a href="http://www.proteomecenter.org/classpubs/2keller.pdf">the original paper</a></p>
+<ol>
+<li>Select the <em>Peptide Prophet</em> tool</li>
+<li>Select the <em>X!Tandem</em> output in <em>pepXML</em> format generated earlier as input</li>
+<li>Check the box that says <em>Use decoys to pin down the negative distribution</em>.</li>
+<li>Convert the resulting <em>pepXML</em> file to tabular using the <em>PepXML to Table</em> tool</li>
+</ol>
+<p>Take a look at the resulting tabular file.  Note that this time the <em>peptideprophet_prob</em> column is populated and contains numbers between 0 and 1.</p>
+<div class="showable-container question showable-hidden" id="showable19">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle19"><span class="link-like" id="showablelink19"> 7) How many PSM&rsquo;s have a peptideprophet probability greater than or equal to 0.95</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable20">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle20"><a href="" id="showablelink20">Hint</a></div>
+<div class="showable-body hint" id="showablebody20">
+<p>Use the <em>Filter</em> tool from the <em>Filter and Sort</em> submenu. Also remember that Peptide Prophet probability is given in a column called <em>peptideprophet_prob</em>.  The syntax for &ldquo;greater than or equal to&rdquo; in the <em>Filter</em> tool is &gt;=.</p>
+<div class="showable-container showable-hidden" id="showable21">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle21"><a href="" id="showablelink21">More</a> &lt;- and here to show more</div>
+<div class="showable-body" id="showablebody21">
+<p>Use this text in <em>match with condition</em> field of the <em>Filter and Sort</em> tool.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>c11&gt;=0.95
+</code></pre></div>
+</td></tr></table>
+<p>To answer the second question use the <em>Select</em> tool on the filtered table to select lines matching &ldquo;decoy_&rdquo;</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink21").click(function(e){
+            e.preventDefault();
+            <span><span class="MathJax_Preview">("#showable21").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable21").toggleClass("showable-hidden");
+            if (</script></span>("#showable21").hasClass("showable-hidden")) {
+                $("#showablelink21").text("More");
+            } else {
+                $("#showablelink21").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink20").click(function(e){
+            e.preventDefault();
+            $("#showable20").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable22">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle22"><a href="" id="showablelink22">Answer</a></div>
+<div class="showable-body answer" id="showablebody22">
+<ul>
+<li>3808</li>
+<li>21</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink22").click(function(e){
+            e.preventDefault();
+            $("#showable22").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container question showable-hidden" id="showable23">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle23"><span class="link-like" id="showablelink23"> 8) What proportion of MS/MS spectra in the original data file produce a reliable (probability greater than or equal to 0.95) peptide to spectrum match (PSM)</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable24">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle24"><a href="" id="showablelink24">Hint</a></div>
+<div class="showable-body hint" id="showablebody24">
+<p>Consider your answer to question 7 relative to the total number of MS/MS spectra in the file (question 3)</p>
+<div class="showable-container showable-hidden" id="showable25">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle25"><a href="" id="showablelink25">More</a> &lt;- and here to show more</div>
+<div class="showable-body" id="showablebody25">
+<p>To take account of decoys remember that for every decoy in the results there is likely to be another non-decoy that is incorrect.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink25").click(function(e){
+            e.preventDefault();
+            <span><span class="MathJax_Preview">("#showable25").toggleClass("showable-hidden");
+            if (</span><script type="math/tex">("#showable25").toggleClass("showable-hidden");
+            if (</script></span>("#showable25").hasClass("showable-hidden")) {
+                $("#showablelink25").text("More");
+            } else {
+                $("#showablelink25").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink24").click(function(e){
+            e.preventDefault();
+            $("#showable24").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable26">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle26"><a href="" id="showablelink26">Answer</a></div>
+<div class="showable-body answer" id="showablebody26">
+<ul>
+<li>17.27%</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink26").click(function(e){
+            e.preventDefault();
+            $("#showable26").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="perform-protein-inference">Perform Protein Inference<a class="headerlink" href="#perform-protein-inference" title="Permanent link">&para;</a></h2>
+<p>Up to this point we have looked at peptide to spectrum matches <em>PSMs</em>.  Each of the peptides observed will have come from a protein sequence in the <em>fasta</em> file that we used as a database, and this protein is recorded along with the <em>PSM</em> itself in all of the result tables we&rsquo;ve viewed so far.  Unfortunately, the process of inferring the existence of proteins based on these <em>PSMs</em> is much more complicated than that because some peptides are found in more than one protein, and of course some proteins are supported by more than one <em>PSM</em>.</p>
+<p>The <em>Protein Prophet</em> tool can be used to run a proper protein inference analysis, and assigns probabilities to individual proteins, as well as groups of related proteins.</p>
+<ol>
+<li>Select the <em>Protein Prophet</em> tool</li>
+<li>Choose the <em>pepXML</em> formatted output from <em>Peptide Prophet</em> as input and click <em>Execute</em></li>
+<li>Convert the resulting <em>protXML</em> to tabular using the <em>protXML to Table</em> tool.</li>
+</ol>
+<div class="showable-container question showable-hidden" id="showable27">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle27"><span class="link-like" id="showablelink27"> 9) How many proteins are there with protein prophet probability greater than or equal to 0.99?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable28">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle28"><a href="" id="showablelink28">Hint</a></div>
+<div class="showable-body hint" id="showablebody28">
+<p>Filter on column 6 <em>protein_probability</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink28").click(function(e){
+            e.preventDefault();
+            $("#showable28").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable29">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle29"><a href="" id="showablelink29">Answer</a></div>
+<div class="showable-body answer" id="showablebody29">
+<ul>
+<li>601</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink29").click(function(e){
+            e.preventDefault();
+            $("#showable29").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<p>If you have time, read over <a href="background_protein_prophet.html">these notes</a> on the Protein Prophet output.  Explore your output (use the unfiltered tabular output) to find examples of different kinds of Protein groupings.</p>
+<h2 id="functional-enrichment-analysis">Functional enrichment analysis<a class="headerlink" href="#functional-enrichment-analysis" title="Permanent link">&para;</a></h2>
+<p>This step will allow you to discover the identity of the Organelle that was used to create the sample.  </p>
+<p>We use the GOrilla gene ontology enrichment analysis tool (a web based tool) to discover GO terms that are over-represented in proteins at the top of our list compared with those that are assigned very low probabilities (at the bottom).</p>
+<ol>
+<li>Start with unfiltered tabular protein prophet results</li>
+<li>Use the Cut columns tool from the Text Manipulation menu to extract the third column from the filtered protein table (contains <em>protein_name</em>). </li>
+<li>Convert the &ldquo;pipes&rdquo; that separate parts of the protein_name into separate columns using the <em>Convert delimiters to TAB</em> tool in the <em>Text manipulation</em> submenu of Galaxy. This should result in a file with 3 columns</li>
+<li>Use the <em>Cut columns</em> tool again to cut the second column from this dataset</li>
+<li>Download this file to your desktop and rename it to <em>organelle.txt</em></li>
+<li>Open the <a href="http://cbl-gorilla.cs.technion.ac.il/">GOrilla</a> web page in your web browser</li>
+<li>Select <em>Organism</em> as Mouse</li>
+<li>Upload the <em>organelle.txt</em> file as a ranged gene list</li>
+<li>Choose <em>Component</em> for the ontology</li>
+<li>Submit</li>
+</ol>
+<div class="showable-container question showable-hidden" id="showable30">
+<div class="showable-inner">
+<div class="showable-header question" id="showabletitle30"><span class="link-like" id="showablelink30"> 9) What <strong>intracellular</strong> organelle was enriched in the sample?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable31">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle31"><a href="" id="showablelink31">Hint</a></div>
+<div class="showable-body hint" id="showablebody31">
+<p>Ignore terms relating to <em>exosomes</em></p>
+<p>In the resulting output look to the most enriched and most specific GO terms. </p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink31").click(function(e){
+            e.preventDefault();
+            $("#showable31").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable32">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle32"><a href="" id="showablelink32">Answer</a></div>
+<div class="showable-body answer" id="showablebody32">
+<ul>
+<li>Mitochondria</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink32").click(function(e){
+            e.preventDefault();
+            $("#showable32").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../singlecell/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10X single-cell RNA-seq analysis in R" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              10X single-cell RNA-seq analysis in R
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="background_data_formats.html" class="md-footer__link md-footer__link--next" aria-label="Next: Data Formats Background" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Data Formats Background
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
