@@ -1,0 +1,1511 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>NGS Overview - Bioinformatics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EMNLJD0DWP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-EMNLJD0DWP');
+</script>
+
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#next-generation-sequencing-overview" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bioinformatics Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                NGS Overview
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Bioinformatics Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Bioinformatics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Tools and skill development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Tools and skill development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guides/bioinfo/" title="What is Bioinformatics?" class="md-nav__link">
+      What is Bioinformatics?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guides/galaxy/" title="Introduction to the Galaxy Platform" class="md-nav__link">
+      Introduction to the Galaxy Platform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../galaxy-workflows/galaxy-workflows/" title="Introduction to Galaxy Workflows" class="md-nav__link">
+      Introduction to Galaxy Workflows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_overview/python_overview/" title="Introduction to Python" class="md-nav__link">
+      Introduction to Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_git/Using_Git/" title="Introduction to Git and Github" class="md-nav__link">
+      Introduction to Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">
+      Introduction to HPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../unix/unix/" title="Introduction to Unix" class="md-nav__link">
+      Introduction to Unix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro_R_biologists/intro_R_biologists/" title="Introduction to R for Biologists" class="md-nav__link">
+      Introduction to R for Biologists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Genome_browsers/GenomeBrowsers_Intro/" title="Introduction to Genome Browsers" class="md-nav__link">
+      Introduction to Genome Browsers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq Experimental Design" class="md-nav__link">
+      RNA-seq Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">
+      Containerized Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">
+      Common Workflow Language for Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">
+      Command-line software development
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Genomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Genomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Variant detection
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Variant detection
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced_background/" title="Introduction to Variant detection" class="md-nav__link">
+      Introduction to Variant detection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Variant Calling part 1 (Galaxy)" class="md-nav__link">
+      Variant Calling part 1 (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced/" title="Variant Calling part 2 (Galaxy)" class="md-nav__link">
+      Variant Calling part 2 (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../longread_sv_calling/longread_sv_calling/" title="Long-read Structural Variant Calling" class="md-nav__link">
+      Long-read Structural Variant Calling
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      de novo assembly
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        de novo assembly
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-background/" title="Introduction to de novo assembly with Velvet" class="md-nav__link">
+      Introduction to de novo assembly with Velvet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-protocol/" title="Introduction to de novo genome assembly for Illumina reads" class="md-nav__link">
+      Introduction to de novo genome assembly for Illumina reads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly/" title="de novo assembly of Illumina reads using Velvet (Galaxy)" class="md-nav__link">
+      de novo assembly of Illumina reads using Velvet (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/spades/" title="de novo assembly of Illumina reads using Spades (Galaxy)" class="md-nav__link">
+      de novo assembly of Illumina reads using Spades (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pacbio/" title="de novo assembly of PacBio reads (unix)" class="md-nav__link">
+      de novo assembly of PacBio reads (unix)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hybrid_assembly/nanopore_assembly/" title="Hybrid genome assembly - Nanopore and Illumina" class="md-nav__link">
+      Hybrid genome assembly - Nanopore and Illumina
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Transcriptomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Transcriptomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNAseq Experimental Design" class="md-nav__link">
+      RNAseq Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Bulk RNAseq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Bulk RNAseq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_background/" title="Introduction to bulk RNAseq analysis" class="md-nav__link">
+      Introduction to bulk RNAseq analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="RNAseq analysis using HISAT2 (Galaxy)" class="md-nav__link">
+      RNAseq analysis using HISAT2 (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="RNAseq analysis using Tuxedo (Galaxy)" class="md-nav__link">
+      RNAseq analysis using Tuxedo (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNAseq differential expression tool comparision (Galaxy)" class="md-nav__link">
+      RNAseq differential expression tool comparision (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_in_r/rna_seq_r/" title="RNAseq differential expression in R" class="md-nav__link">
+      RNAseq differential expression in R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Singlecell RNAseq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Singlecell RNAseq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">
+      10X single-cell RNA-seq analysis in R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Proteomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Proteomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/proteomics_basic/" title="Identifying proteins from mass spectrometry data" class="md-nav__link">
+      Identifying proteins from mass spectrometry data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
+      Data Formats Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
+      Protein Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
+      Search Engines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
+      Protein Prophet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Statistics and Visualisation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Statistics and Visualisation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">
+      Data visualisation with Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Structural Modelling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Structural Modelling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
+      Molecular Dynamics - Introduction to cluster computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
+      Molecular Dynamics - Building input files, visualising the trajectory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sequencing-technologies" title="Sequencing technologies" class="md-nav__link">
+    Sequencing technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" title="Applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#genomic" title="Genomic" class="md-nav__link">
+    Genomic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epigenomic" title="Epigenomic" class="md-nav__link">
+    Epigenomic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transcriptomic-rna-seq" title="Transcriptomic (RNA-seq)" class="md-nav__link">
+    Transcriptomic (RNA-seq)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-outcome" title="Types of outcome" class="md-nav__link">
+    Types of outcome
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variation-detection" title="Variation Detection" class="md-nav__link">
+    Variation Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-novo-assembly" title="De Novo assembly" class="md-nav__link">
+    De Novo assembly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparative-gene-expression" title="Comparative gene expression" class="md-nav__link">
+    Comparative gene expression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splicing-detection" title="Splicing detection" class="md-nav__link">
+    Splicing detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resequencing-alignment-strategies" title="Resequencing alignment strategies" class="md-nav__link">
+    Resequencing alignment strategies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#categories-of-analysis" title="Categories of analysis" class="md-nav__link">
+    Categories of analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-preparation" title="Sample preparation" class="md-nav__link">
+    Sample preparation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fragment" title="Fragment" class="md-nav__link">
+    Fragment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paired-end-sequencing" title="Paired-end sequencing" class="md-nav__link">
+    Paired-end sequencing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mate-pair" title="Mate-pair" class="md-nav__link">
+    Mate-pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcoded-fragments" title="Barcoded fragments" class="md-nav__link">
+    Barcoded fragments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrichment-for-target-sequences" title="Enrichment for target sequences" class="md-nav__link">
+    Enrichment for target sequences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potential-services-in-ngs" title="Potential services in NGS" class="md-nav__link">
+    Potential services in NGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" title="Appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paired-end-sequencing-empirical-observations" title="Paired end sequencing - empirical observations" class="md-nav__link">
+    Paired end sequencing - empirical observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mate-pair-sequencing" title="Mate-pair sequencing" class="md-nav__link">
+    Mate-pair sequencing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/ngs_overview/NGS_Overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="next-generation-sequencing-overview">Next Generation Sequencing Overview<a class="headerlink" href="#next-generation-sequencing-overview" title="Permanent link">&para;</a></h1>
+<h2 id="sequencing-technologies">Sequencing technologies<a class="headerlink" href="#sequencing-technologies" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Sequencing by hybridisation and ligation (Complete Genomics, Life Technologies, Polonator)<ol>
+<li>Emulsion PCR amplification</li>
+<li>Detection: Cyclic ligation of nucleotide dimers. Multiple rounds required.</li>
+</ol>
+</li>
+<li>Sequencing by synthesis (Helicos, Illumina, Intelligent Bio-Sys)<ol>
+<li>Bridge PCR amplification on slides</li>
+<li>Detection: cyclic addition of reversible polymerisation terminators</li>
+</ol>
+</li>
+<li>Real-time sequencing by synthesis (Pacific BioSciences, VisiGen)<ol>
+<li>Single molecule, no amplification</li>
+<li>Cyclic removal of nucleotide and measure change in conductance of micropore</li>
+</ol>
+</li>
+<li>Pyrosequencing (Roche/454™).<ol>
+<li>Emulsion PCR amplification</li>
+<li>Detection: cyclic addition of single nucleotide species and detection of number of pyrophosphates released during polymerisation (through ATP to luciferase reaction)</li>
+</ol>
+</li>
+</ol>
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h4 id="genomic">Genomic<a class="headerlink" href="#genomic" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Whole genome resequencing</strong> for <strong>variation detection</strong></li>
+<li>Whole genome sequencing for de novo assembly</li>
+<li>Metagenomics (sequencing of multiple genomes together in a &lsquo;metasample&rsquo;)</li>
+<li><strong>Targetted resequencing</strong> for variation detection<ol>
+<li><strong>Exome sequencing</strong>/targetted exome capture</li>
+<li>Arbitrary PCR enrichment of target</li>
+</ol>
+</li>
+</ol>
+<h4 id="epigenomic">Epigenomic<a class="headerlink" href="#epigenomic" title="Permanent link">&para;</a></h4>
+<ol>
+<li><a href="http://www.illumina.com/technology/chip_seq_assay.ilmn">CHiP-Seq</a> through sequencing of DNA enriched by immunoprecipitation</li>
+<li><strong>DNA methylation analysis</strong></li>
+<li>Sequencing of DNA enriched through immunoprecipitation of 5-methylcytosine ()</li>
+<li>Methylation-sensitive restriction enzyme fragment enrichment</li>
+</ol>
+<h4 id="transcriptomic-rna-seq">Transcriptomic (RNA-seq)<a class="headerlink" href="#transcriptomic-rna-seq" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Whole transcriptome <strong>expression profiling</strong> (comparative gene expression)</li>
+<li>Whole transcriptome sequencing for de novo assembly (identify genes)</li>
+<li><strong>Strand-specific mRNA-seq</strong></li>
+<li><strong>Paired-end RNA-seq</strong></li>
+<li><strong>Whole transcriptome variation detection</strong></li>
+<li><strong>Differential splicing detection</strong></li>
+<li>sRNA analysis</li>
+</ol>
+<h3 id="types-of-outcome">Types of outcome<a class="headerlink" href="#types-of-outcome" title="Permanent link">&para;</a></h3>
+<h4 id="variation-detection"><strong>Variation Detection</strong><a class="headerlink" href="#variation-detection" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Copy number variation (CNV)</li>
+<li>Single Nucleotide Polymorphisms (SNPs)</li>
+<li>Insertions and deletions (Indels)</li>
+<li>Rearrangements</li>
+</ol>
+<h4 id="de-novo-assembly">De Novo assembly<a class="headerlink" href="#de-novo-assembly" title="Permanent link">&para;</a></h4>
+<p>Concatemers (length?)</p>
+<h4 id="comparative-gene-expression">Comparative gene expression<a class="headerlink" href="#comparative-gene-expression" title="Permanent link">&para;</a></h4>
+<p>Matrix of gene vs expression level</p>
+<h4 id="splicing-detection">Splicing detection<a class="headerlink" href="#splicing-detection" title="Permanent link">&para;</a></h4>
+<p>List of alternative splice isoforms</p>
+<h4 id="resequencing-alignment-strategies">Resequencing alignment strategies<a class="headerlink" href="#resequencing-alignment-strategies" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Align to transcriptome (simplest)</li>
+<li>Align to genome and exon-exon junction sequences (discover new transcripts, splice variants)</li>
+<li>De novo (most complex)</li>
+</ol>
+<h2 id="categories-of-analysis">Categories of analysis<a class="headerlink" href="#categories-of-analysis" title="Permanent link">&para;</a></h2>
+<p>NGS informatics may be categorised into:</p>
+<p><strong>1. Primary analysis:</strong></p>
+<p>Conversion of imagesets (output from NGS machines) into strings of bases - &lsquo;base calling&rsquo;.</p>
+<p><em>Inputs:</em></p>
+<ul>
+<li><em>Image files from NGS machine</em></li>
+</ul>
+<p><em>Outputs:</em></p>
+<ul>
+<li><em>Short reads</em></li>
+</ul>
+<p><em>Software:</em></p>
+<ul>
+<li>Firecrest and Bustard (for Illumina) </li>
+</ul>
+<p><strong>2. Secondary analysis:</strong></p>
+<p>Assembly of short strings of bases (output of primary analysis) into
+contigs, and/or -Li Jason 11/18/09 2:43 PM alignment onto a reference
+genome and extraction of the first level of genomic meaning (SNP,
+rearrangements)</p>
+<p><em>Inputs:</em></p>
+<ul>
+<li><em>Short reads (20-30million/run?)</em></li>
+</ul>
+<p><em>Outputs:</em></p>
+<ul>
+<li><em>Aligned sequences against a reference genome</em></li>
+<li><em>SNP analysis</em></li>
+<li><em>Copy number variation data</em></li>
+<li><em>Quantified expression data</em></li>
+</ul>
+<p><em>Software:</em></p>
+<ul>
+<li>E.g. Eland, BWA, MAQ for alignment. Velvet, ABySS for de-novo
+assembly. </li>
+</ul>
+<p><em>References:</em></p>
+<p><a href="http://www.illumina.com/Documents/products/technotes/technote_denovo_assembly.pdf">http://www.illumina.com/Documents/products/technotes/technote_denovo_assembly.pdf</a></p>
+<p><strong>3. Tertiary analysis</strong></p>
+<p>Extraction of biological information from the aligned sequences.
+Annotation of sequence data.</p>
+<p><em>Inputs:</em></p>
+<ul>
+<li>*E.g. Aligned sequences, SNP analysis *</li>
+</ul>
+<p><em>Outputs:</em></p>
+<ul>
+<li><em>Biological and statistical interpretations and visualisations</em></li>
+</ul>
+<p>At each stage there are multiple options for processing - vendor
+software, open source software, each with varying levels of accuracy and
+computational expense. There are also large amounts of data produced at
+each stage. Additionally, primary and secondary analysis are dependent
+on the NGS platform being supported - Illumina Solexa pipeline is
+different to an Applied Biosystems SOLiD pipeline.</p>
+<p><strong>Anecdotally, 80% of processing in a NGS project is manual and occurs
+mainly in tertiary analysis.</strong></p>
+<h2 id="sample-preparation">Sample preparation<a class="headerlink" href="#sample-preparation" title="Permanent link">&para;</a></h2>
+<h3 id="fragment">Fragment<a class="headerlink" href="#fragment" title="Permanent link">&para;</a></h3>
+<p>Each read is independent - an arbitrary fragment of DNA with no
+meta-information about the relationship of that read to any other read</p>
+<h3 id="paired-end-sequencing">Paired-end sequencing<a class="headerlink" href="#paired-end-sequencing" title="Permanent link">&para;</a></h3>
+<p>Each fragment is sequenced twice, once from each end, in succession.
+Probably the reads will not overlap, as the average length of a fragment
+is normally &gt;2x that of a read.</p>
+<p>The two reads are thus &lsquo;related&rsquo; and have extra information about the
+structure of the sample. The information is that the two reads from the
+single fragment are &lsquo;close&rsquo; - depending on the length of fragments that
+were prepared for the run.</p>
+<p><a href="http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn">http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn</a></p>
+<h3 id="mate-pair"><strong>Mate-pair</strong><a class="headerlink" href="#mate-pair" title="Permanent link">&para;</a></h3>
+<p>Similar to paired-end, but ends of sequenced fragment can be much
+further apart - up to 10kb (normally 2-5kb)</p>
+<p><a href="http://www.illumina.com/technology/mate_pair_sequencing_assay.ilmn">http://www.illumina.com/technology/mate_pair_sequencing_assay.ilmn</a></p>
+<h3 id="barcoded-fragments">Barcoded fragments<a class="headerlink" href="#barcoded-fragments" title="Permanent link">&para;</a></h3>
+<p>Multiple samples are prepared independently. Each sample is &lsquo;labelled&rsquo;
+with a unique sequence adaptor (barcode). Samples are then mixed and
+sequenced together. Individual reads can be categorised to a particular
+sample by their barcodes.</p>
+<h3 id="enrichment-for-target-sequences">Enrichment for target sequences<a class="headerlink" href="#enrichment-for-target-sequences" title="Permanent link">&para;</a></h3>
+<ol>
+<li>PCR</li>
+<li>Hybridisation to oligo arrays</li>
+<li>PolyA selection (mRNA-seq)</li>
+<li>Size selection</li>
+<li>Precipitation</li>
+</ol>
+<p><img alt="" src="../media/image1.png" /></p>
+<h2 id="potential-services-in-ngs">Potential services in NGS<a class="headerlink" href="#potential-services-in-ngs" title="Permanent link">&para;</a></h2>
+<p>Courtesy <a href="http://web.research.colostate.edu/NGS/process.aspx?AspxAutoDetectCookieSupport=1">Colorado State Uni</a></p>
+<p>Sequence Matching Analysis</p>
+<ul>
+<li>
+<p>Align SOLiD colorspace reads with reference genomes</p>
+</li>
+<li>
+<p>Generate consensus sequences</p>
+</li>
+</ul>
+<p>Mate-Pair Analysis</p>
+<ul>
+<li>
+<p>Analyze paired reads from SOLiD mate-pair runs</p>
+</li>
+<li>
+<p>Improve accuracy of read matches to detect structural variations
+    &gt; between sample and reference genomes</p>
+</li>
+</ul>
+<p>SNP / Indel Analysis</p>
+<ul>
+<li>
+<p>Identify single nucleotide polymorphisms</p>
+</li>
+<li>
+<p>Identify insertion and deletion mutations in DNA sequences</p>
+</li>
+</ul>
+<p>Copy Number Variation Analysis</p>
+<ul>
+<li>Detect copy number variations in DNA sequences</li>
+</ul>
+<p>Whole Transcriptome Analysis</p>
+<ul>
+<li>
+<p>Map SOLiD reads from a transcript sample to reference genomes</p>
+</li>
+<li>
+<p>Assign tag counts to features of the reference genome</p>
+</li>
+<li>
+<p>Identify novel transcripts</p>
+</li>
+</ul>
+<p>Inversion Analysis</p>
+<ul>
+<li>Identify paracentric and pericentric chromosomal inversions</li>
+</ul>
+<p><em>de Novo</em> Assembly</p>
+<ul>
+<li>
+<p>Create <em>de novo</em> assemblies from SOLiD colorspace reads</p>
+</li>
+<li>
+<p>Characterize genomic sequences for which no closely related reference genome exists</p>
+</li>
+<li>
+<p>Assemble SOLiD reads from microbial genomes into nucleotide sequence contigs of several thousand bases, and scaffolds of tens of thousands of bases.</p>
+</li>
+<li>
+<p>Assemble SOLiD reads from microbial genomes into scaffolds of tens of thousands of bases</p>
+</li>
+</ul>
+<p>smRNA Analysis</p>
+<ul>
+<li>
+<p>Whole genome analysis of SOLiD RNA library reads</p>
+</li>
+<li>
+<p>Includes filtering, matching against miRBase sequences, and matching against reference genomes</p>
+</li>
+</ul>
+<p>NextGENe Analysis</p>
+<ul>
+<li>
+<p>NextGENe is a comprehensive NGS bioinformatics package</p>
+</li>
+<li>
+<p>NextGENe includes de novo assembly, target assembly, SNP/Indel discovery, digital gene expression analysis, whole transcriptome analysis, ChiPSeq analysis, miRNA discovery and quantification, and a condensation assembly tool for reducing instrument error</p>
+</li>
+</ul>
+<p>System Alignment Browser (SAB)</p>
+<ul>
+<li>
+<p>SAB is a graphical genome annotation viewer</p>
+</li>
+<li>
+<p>Used for viewing basespace and colorspace reads aligned to reference genomes</p>
+</li>
+</ul>
+<p>GFF Conversion</p>
+<ul>
+<li>
+<p>Convert SOLiD system mapping files into GFF-format files</p>
+</li>
+<li>
+<p>GFF is a standardized file format for describing DNA, RNA, and proteins</p>
+</li>
+</ul>
+<p>SRF Conversion</p>
+<ul>
+<li>
+<p>Convert SOLiD system reads into SRF format</p>
+</li>
+<li>
+<p>SRF is a standardized file format for describing DNA sequence data</p>
+</li>
+</ul>
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="paired-end-sequencing-empirical-observations">Paired end sequencing - empirical observations<a class="headerlink" href="#paired-end-sequencing-empirical-observations" title="Permanent link">&para;</a></h3>
+<p><em>paired end</em> or <em>mate pair</em> refers to how the library is made, and
+then how it is sequenced. Both are methodologies that, in addition to
+the sequence information, give you information about the physical
+distance between the two reads in your genome. For example, you shear up
+some genomic DNA, and cut a region out at ~500bp. Then you prepare your
+library, and sequence 35bp from each end of each molecule. Now you have
+three pieces of information:</p>
+<ul>
+<li>the tag 1 sequence</li>
+<li>the tag 2 sequence*</li>
+<li>that they were 500bp ± (some) apart in your genome</li>
+</ul>
+<p>When we do 2x 50 bp paired-end runs on a GAIIx using the current gel
+purification step we get read distances of between that vary by about
+100 bp in a nice tight bell shaped curve starting between 160-200 bp. So
+the first thing to bear in mind is that L is not fixed within or between
+runs. Either way this group accounts for &gt;99.99% of paired-end reads in
+an assembly. Because of the way fragments are generated for sequencing 1
+and 2 can align either F-B of B-F.</p>
+<p>If you want to be more realistic there are always a tiny proportion of
+reads &lt;0.1% that align with much longer read distances, some of which
+is due to bioinformatics but some of which is real and simply reflects
+biology. Likewise a tiny proportion of reads at all read distances will
+be F-F or B-B. Also there appear to often be a tiny proportion of reads
+that come out overlapping where the read distance is the same as a read
+length ie 1+L+2 is, in this case, ~50-100. I have no idea of the
+prevelance of such reads but you can often find them if you look. Lastly
+if its not going to be part of the assembler, end trimming and quality
+trimming can often mean that 1 and 2 are different lengths and that a
+substantial number of reads from a paired end run end up with no partner
+at all.</p>
+<h3 id="mate-pair-sequencing">Mate-pair sequencing<a class="headerlink" href="#mate-pair-sequencing" title="Permanent link">&para;</a></h3>
+<p>Illumina refers to &ldquo;paired end&rdquo; as the original library preparation
+method they use, where you sequence each end of the same molecule.
+Because of the way the cluster generation technology works, it is
+limited to an inter-pair distance of ~300bp ( 200-600bp).</p>
+<p>Illumina refers to <em>mate pairs</em> as sequences derived from their newer
+library prep method which is designed to provide paired sequences
+separated by a greater distance (between about 2 and 10kb). This method
+still actually only sequences the ends of ~400bp molecules, but this
+template is derived from both ends of a 2-10kb fragment that has had the
+middle section cut out and the &lsquo;internal&rsquo; ends ligated in the middle.
+Basically, you take your 2-10kb random fragments, biotinylate the end,
+circularise them, shear the circles to ~400bp, capture biotinylated
+molecules, and then sequence those (they go into what is essentially a
+standard &lsquo;paired end&rsquo; sample prep procedure).</p>
+<p>Source: <a href="http://seqanswers.com/forums/showthread.php?t=503">http://seqanswers.com/forums/showthread.php?t=503</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

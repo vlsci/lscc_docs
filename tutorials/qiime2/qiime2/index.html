@@ -1,0 +1,1904 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>QIIME2 - Bioinformatics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EMNLJD0DWP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-EMNLJD0DWP');
+</script>
+
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#qiime2" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bioinformatics Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                QIIME2
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Bioinformatics Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Bioinformatics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/melbournebioinformatics/MelBioInf_docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    melbournebioinformatics/MelBioInf_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Tools and skill development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Tools and skill development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guides/bioinfo/" title="What is Bioinformatics?" class="md-nav__link">
+      What is Bioinformatics?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guides/galaxy/" title="Introduction to the Galaxy Platform" class="md-nav__link">
+      Introduction to the Galaxy Platform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../galaxy-workflows/galaxy-workflows/" title="Introduction to Galaxy Workflows" class="md-nav__link">
+      Introduction to Galaxy Workflows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_overview/python_overview/" title="Introduction to Python" class="md-nav__link">
+      Introduction to Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_git/Using_Git/" title="Introduction to Git and Github" class="md-nav__link">
+      Introduction to Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">
+      Introduction to HPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../unix/unix/" title="Introduction to Unix" class="md-nav__link">
+      Introduction to Unix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro_R_biologists/intro_R_biologists/" title="Introduction to R for Biologists" class="md-nav__link">
+      Introduction to R for Biologists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Genome_browsers/GenomeBrowsers_Intro/" title="Introduction to Genome Browsers" class="md-nav__link">
+      Introduction to Genome Browsers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq Experimental Design" class="md-nav__link">
+      RNA-seq Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker/" title="Containerized Bioinformatics" class="md-nav__link">
+      Containerized Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cwl/cwl/" title="Common Workflow Language for Bioinformatics" class="md-nav__link">
+      Common Workflow Language for Bioinformatics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bionitio/bionitio/" title="Command-line software development" class="md-nav__link">
+      Command-line software development
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Genomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Genomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Variant detection
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Variant detection
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced_background/" title="Introduction to Variant detection" class="md-nav__link">
+      Introduction to Variant detection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Variant Calling part 1 (Galaxy)" class="md-nav__link">
+      Variant Calling part 1 (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced/" title="Variant Calling part 2 (Galaxy)" class="md-nav__link">
+      Variant Calling part 2 (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../longread_sv_calling/longread_sv_calling/" title="Long-read Structural Variant Calling" class="md-nav__link">
+      Long-read Structural Variant Calling
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      de novo assembly
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        de novo assembly
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-background/" title="Introduction to de novo assembly with Velvet" class="md-nav__link">
+      Introduction to de novo assembly with Velvet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-protocol/" title="Introduction to de novo genome assembly for Illumina reads" class="md-nav__link">
+      Introduction to de novo genome assembly for Illumina reads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly/" title="de novo assembly of Illumina reads using Velvet (Galaxy)" class="md-nav__link">
+      de novo assembly of Illumina reads using Velvet (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/spades/" title="de novo assembly of Illumina reads using Spades (Galaxy)" class="md-nav__link">
+      de novo assembly of Illumina reads using Spades (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pacbio/" title="de novo assembly of PacBio reads (unix)" class="md-nav__link">
+      de novo assembly of PacBio reads (unix)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hybrid_assembly/nanopore_assembly/" title="Hybrid genome assembly - Nanopore and Illumina" class="md-nav__link">
+      Hybrid genome assembly - Nanopore and Illumina
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Transcriptomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Transcriptomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNAseq Experimental Design" class="md-nav__link">
+      RNAseq Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Bulk RNAseq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Bulk RNAseq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_background/" title="Introduction to bulk RNAseq analysis" class="md-nav__link">
+      Introduction to bulk RNAseq analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="RNAseq analysis using HISAT2 (Galaxy)" class="md-nav__link">
+      RNAseq analysis using HISAT2 (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tuxedo/" title="RNAseq analysis using Tuxedo (Galaxy)" class="md-nav__link">
+      RNAseq analysis using Tuxedo (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNAseq differential expression tool comparision (Galaxy)" class="md-nav__link">
+      RNAseq differential expression tool comparision (Galaxy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_in_r/rna_seq_r/" title="RNAseq differential expression in R" class="md-nav__link">
+      RNAseq differential expression in R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Singlecell RNAseq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Singlecell RNAseq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../singlecell/" title="10X single-cell RNA-seq analysis in R" class="md-nav__link">
+      10X single-cell RNA-seq analysis in R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Proteomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Proteomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/proteomics_basic/" title="Identifying proteins from mass spectrometry data" class="md-nav__link">
+      Identifying proteins from mass spectrometry data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
+      Data Formats Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
+      Protein Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
+      Search Engines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
+      Protein Prophet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Statistics and Visualisation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Statistics and Visualisation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_viz/python_viz/" title="Data visualisation with Python" class="md-nav__link">
+      Data visualisation with Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Structural Modelling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Structural Modelling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
+      Molecular Dynamics - Introduction to cluster computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
+      Molecular Dynamics - Building input files, visualising the trajectory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic" title="Topic" class="md-nav__link">
+    Topic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-level" title="Skill level" class="md-nav__link">
+    Skill level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" title="Description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" title="Learning Objectives" class="md-nav__link">
+    Learning Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-preparation" title="Requirements and preparation" class="md-nav__link">
+    Requirements and preparation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-software" title="Required Software" class="md-nav__link">
+    Required Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-data" title="Required Data" class="md-nav__link">
+    Required Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-of-delivery" title="Mode of Delivery" class="md-nav__link">
+    Mode of Delivery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author-information" title="Author Information" class="md-nav__link">
+    Author Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-players" title="The Players" class="md-nav__link">
+    The Players
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-study" title="The Study" class="md-nav__link">
+    The Study
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qiime-2-analysis-platform" title="QIIME 2 Analysis platform" class="md-nav__link">
+    QIIME 2 Analysis platform
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-qiime2-visualisations" title="Viewing QIIME2 visualisations" class="md-nav__link">
+    Viewing QIIME2 visualisations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-importing-cleaning-and-quality-control-of-the-data" title="Section 1: Importing, cleaning and quality control of the data" class="md-nav__link">
+    Section 1: Importing, cleaning and quality control of the data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-data" title="Import data" class="md-nav__link">
+    Import data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-primers" title="Remove primers" class="md-nav__link">
+    Remove primers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-interpret-sequence-quality-data" title="Create and interpret sequence quality data" class="md-nav__link">
+    Create and interpret sequence quality data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#denoising-the-data" title="Denoising the data" class="md-nav__link">
+    Denoising the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-summary-files" title="Generate summary files" class="md-nav__link">
+    Generate summary files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-taxonomic-analysis" title="Section 2: Taxonomic Analysis" class="md-nav__link">
+    Section 2: Taxonomic Analysis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assign-taxonomy" title="Assign taxonomy" class="md-nav__link">
+    Assign taxonomy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-a-viewable-summary-file-of-the-taxonomic-assignments" title="Generate a viewable summary file of the taxonomic assignments." class="md-nav__link">
+    Generate a viewable summary file of the taxonomic assignments.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering" title="Filtering" class="md-nav__link">
+    Filtering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-build-a-phylogenetic-tree" title="Section 3: Build a phylogenetic tree" class="md-nav__link">
+    Section 3: Build a phylogenetic tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-basic-visualisations-and-statistics" title="Section 4: Basic visualisations and statistics" class="md-nav__link">
+    Section 4: Basic visualisations and statistics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rarefaction-curves" title="Rarefaction curves" class="md-nav__link">
+    Rarefaction curves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asv-relative-abundance-bar-charts" title="ASV relative abundance bar charts" class="md-nav__link">
+    ASV relative abundance bar charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha-and-beta-diversity-analysis" title="Alpha and beta diversity analysis" class="md-nav__link">
+    Alpha and beta diversity analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-exporting-data-for-further-analysis-in-r" title="Section 5: Exporting data for further analysis in R" class="md-nav__link">
+    Section 5: Exporting data for further analysis in R
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/edit/master/docs/tutorials/qiime2/qiime2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="qiime2">QIIME2<a class="headerlink" href="#qiime2" title="Permanent link">&para;</a></h1>
+<p>Anticipated workshop duration when delivered to a group of participants is <strong>4 hours</strong>.  </p>
+<p>For queries relating to this workshop, contact Melbourne Bioinformatics (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#105;&#111;&#105;&#110;&#102;&#111;&#114;&#109;&#97;&#116;&#105;&#99;&#115;&#45;&#116;&#114;&#97;&#105;&#110;&#105;&#110;&#103;&#64;&#117;&#110;&#105;&#109;&#101;&#108;&#98;&#46;&#101;&#100;&#117;&#46;&#97;&#117;">&#98;&#105;&#111;&#105;&#110;&#102;&#111;&#114;&#109;&#97;&#116;&#105;&#99;&#115;&#45;&#116;&#114;&#97;&#105;&#110;&#105;&#110;&#103;&#64;&#117;&#110;&#105;&#109;&#101;&#108;&#98;&#46;&#101;&#100;&#117;&#46;&#97;&#117;</a>).</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="topic">Topic<a class="headerlink" href="#topic" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Genomics</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Transcriptomics</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Proteomics</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Metabolomics</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Statistics and visualisation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Structural Modelling</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Basic skills</li>
+</ul>
+<h3 id="skill-level">Skill level<a class="headerlink" href="#skill-level" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Beginner  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Intermediate  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Advanced  </li>
+</ul>
+<p><br>
+This workshop is designed for participants with command-line knowledge. You will need to be able to <code class="codehilite"><span class="n">ssh</span></code> into a remote machine, navigate the directory structure and <code class="codehilite"><span class="n">scp</span></code> files from a remote computer to your local computer.</p>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>What is the influence of genotype (intrinsic) and environment (extrinsic) on anemone-associated bacterial communities?</p>
+<p><strong>Data:</strong> Illumina MiSeq v3 paired-end (2 × 300 bp) reads (FASTQ).</p>
+<p><strong>Tools:</strong> QIIME 2</p>
+<p><strong>Pipeline:</strong>  </p>
+<p><em>Section 1:</em> Importing, cleaning and quality control of the data<br />
+<em>Section 2:</em> Taxonomic Analysis<br />
+<em>Section 3:</em> Building a phylogenetic tree<br />
+<em>Section 4:</em> Basic visualisations and statistics<br />
+<em>Section 5:</em> Exporting data for further analysis in R  </p>
+<hr />
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<p>At the end of this introductory workshop, you will:</p>
+<ul>
+<li>Take raw data from a sequencing facility and end with publication quality graphics and statistics</li>
+<li>Answer the question <em>What is the influence of genotype (intrinsic) and environment (extrinsic) on anemone-associated bacterial communities?</em></li>
+</ul>
+<hr />
+<h2 id="requirements-and-preparation">Requirements and preparation<a class="headerlink" href="#requirements-and-preparation" title="Permanent link">&para;</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Important</p>
+<p><strong>Attendees are required to use their own laptop computers.</strong>  </p>
+<p>At least one week before the workshop, if required, participants should install the software below.  This should provide sufficient time for participants to liaise with their own IT support should they encounter any IT problems.  </p>
+</div>
+<hr />
+<h3 id="required-software">Required Software<a class="headerlink" href="#required-software" title="Permanent link">&para;</a></h3>
+<p><strong>Mac Users:</strong> No additional software needs to be installed for this workshop.</p>
+<p><strong>Windows Users:</strong><br />
+1. A terminal emulator such as <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a>(free and open-source) will need to be downloaded.<br />
+2. Software for file transfers between a local computer and remote server such as <a href="https://winscp.net/eng/index.php">WinSCP</a> or <a href="https://filezilla-project.org/">FileZilla</a>.</p>
+<hr />
+<h3 id="required-data">Required Data<a class="headerlink" href="#required-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>No additional data needs to be downloaded for this workshop. It is located in the directory <code class="codehilite"><span class="n">raw_data</span></code> located in the home directory of the Nectar instance that you will log in to.</p>
+</li>
+<li>
+<p>If you wish to analyse the data independently at a later stage, it can be downloaded from <a href="https://github.com/melbournebioinformatics/MelBioInf_docs/blob/29266406cb16cf376ef5f3d48e9bf8ac3578f1b0/docs/tutorials/qiime2/raw_data.zip">here</a>. This zipped folder contains both the FASTQs and associated metadata file.    </p>
+</li>
+</ul>
+<hr />
+<h3 id="mode-of-delivery">Mode of Delivery<a class="headerlink" href="#mode-of-delivery" title="Permanent link">&para;</a></h3>
+<p>This workshop will be run on a <a href="https://cloud.nectar.org.au/">Nectar</a> Instance. An “Instance” is Nectar terminology for a virtual machine running on the Nectar Cloud OpenStack infrastructure. An “Instance” runs on a “compute node”; i.e. a physical computer populated with processor chips, memory chips and so on.</p>
+<p>You will be given an individual IP address and password to log on to using the SSH client tool on your computer (Terminal on Mac or PuTTY on Windows).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh ubuntu@ip-address
+</pre></div>
+</td></tr></table>
+
+<p><br>
+Should you wish to do this tutorial at a later stage independently, it is possible to apply for your own instance directly through a <a href="https://support.ehelp.edu.au/support/solutions/articles/6000068044-managing-an-allocation">Nectar allocation</a>. There are also many helpful <a href="https://tutorials.rc.nectar.org.au/">Nectar Research Cloud tutorials</a>.</p>
+<hr />
+<h2 id="author-information">Author Information<a class="headerlink" href="#author-information" title="Permanent link">&para;</a></h2>
+<p>Written by: Ashley Dungan and Gayle Philip<br />
+School of Biosciences, University of Melbourne; Melbourne Bioinformatics</p>
+<p>Created/Reviewed: May 2021</p>
+<hr />
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>What is the influence of genotype (intrinsic) and environment (extrinsic) on anemone-associated bacterial communities?</p>
+<h3 id="the-players">The Players<a class="headerlink" href="#the-players" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><em>Exaiptasia diaphana</em> - a shallow-water, marine anemone that is often used in research as a model organism for corals. In this experiment, two genotypes (AIMS1 and AIMS4) of <em>E. diaphana</em> were grown in each of two different environments:  </p>
+<ol>
+<li>sterile seawater <strong><em>OR</em></strong>  </li>
+<li>unfiltered control seawater  </li>
+</ol>
+</li>
+<li>
+<p>The anemone-associated bacterial communities or <em>microbiome</em> - these bacteria live on, or within <em>E. diaphana</em>, and likely consist of a combination of commensals, transients, and long-term stable members, and combined with their host, form a mutually beneficial, stable symbiosis.</p>
+</li>
+</ul>
+<h3 id="the-study">The Study<a class="headerlink" href="#the-study" title="Permanent link">&para;</a></h3>
+<p>The anemone microbiome contributes to the overall health of this complex system and can evolve in tandem with the anemone host. In this data set we are looking at the impact of intrinsic and extrinsic factors on anemone microbiome composition. After three weeks in either sterile or control seawater (environment), anemones were homogenized and DNA was extracted. There are <em>23</em> samples in this data set - <em>5</em> from each anemone treatment combination (2 genotypes x 2 environments) and <em>3</em> DNA extraction blanks as controls. <em>This data is a subset from a larger experiment</em>.</p>
+<p>Dungan AM, van Oppen MJH, and Blackall LL (2021) Short-Term Exposure to Sterile Seawater Reduces Bacterial Community Diversity in the Sea Anemone, <em>Exaiptasia diaphana</em>. <em>Front. Mar. Sci.</em> 7:599314. doi:10.3389/fmars.2020.599314 <a href="https://www.frontiersin.org/articles/10.3389/fmars.2020.599314/full">[Full Text]</a>.</p>
+<h3 id="qiime-2-analysis-platform">QIIME 2 Analysis platform<a class="headerlink" href="#qiime-2-analysis-platform" title="Permanent link">&para;</a></h3>
+<p>Quantitative Insights Into Microbial Ecology 2 (<a href="https://www.nature.com/articles/s41587-019-0209-9">QIIME 2™</a>) is a next-generation microbiome <a href="https://qiime2.org/">bioinformatics platform</a> that is extensible, free, open source, and community developed. It allows researchers to:  </p>
+<ul>
+<li>Automatically track analyses with decentralised data provenance</li>
+<li>Interactively explore data with beautiful visualisations</li>
+<li>Easily share results without QIIME 2 installed</li>
+<li>Plugin-based system — researchers can add in tools as they wish</li>
+</ul>
+<p><br></p>
+<h4 id="viewing-qiime2-visualisations">Viewing QIIME2 visualisations<a class="headerlink" href="#viewing-qiime2-visualisations" title="Permanent link">&para;</a></h4>
+<p>As this workshop is being run on a remote Nectar Instance, you will need to download the visual files (<fn>*.qzv</fn>) to your local computer and view them in <a href="https://view.qiime2.org">QIIME 2 View</a> (q2view).</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>We will be doing this step multiple times throughout this workshop to view visualisation files as they are generated.</p>
+</div>
+<p>The syntax to do this depends on whether you are running the copying command on your local computer, or on the remote computer (Nectar cloud).</p>
+<ol>
+<li>
+<p>When running the command from your local computer, the syntax for copying a file <em>from</em> Nectar is:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>scp ubuntu@your_IP_address:FILENAME /PATH/TO/TARGET/FOLDER/
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Running the command on the remote computer, the syntax for copying a file <em>to</em> your local computer is:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>scp FILENAME username@your_IP_address:/PATH/TO/TARGET/FOLDER/
+</pre></div>
+</td></tr></table></p>
+</li>
+</ol>
+<p><br>
+Alternatively, <strong><em>if you have QIIME2 installed and are running it on your own computer</em></strong>, you can use <code class="codehilite"><span class="n">qiime</span> <span class="n">tools</span> <span class="k">view</span></code> to view the results from the command line. <code class="codehilite"><span class="n">qiime</span> <span class="n">tools</span> <span class="k">view</span></code> opens a browser window with your visualization loaded in it. When you are done, you can close the browser window and press <code class="codehilite"><span class="n">ctrl</span><span class="o">-</span><span class="k">c</span></code> on the keyboard to terminate the command.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">tools</span> <span class="n">view</span> <span class="n">filename</span><span class="o">.</span><span class="n">qzv</span>
+</pre></div>
+</td></tr></table>
+
+<hr />
+<h2 id="section-1-importing-cleaning-and-quality-control-of-the-data">Section 1: Importing, cleaning and quality control of the data<a class="headerlink" href="#section-1-importing-cleaning-and-quality-control-of-the-data" title="Permanent link">&para;</a></h2>
+<h3 id="import-data">Import data<a class="headerlink" href="#import-data" title="Permanent link">&para;</a></h3>
+<p>These samples were sequenced on a single Illumina MiSeq run using v3 (2 × 300 bp) reagents at the Walter and Eliza Hall Institute (WEHI), Melbourne, Australia. Data from WEHI came as paired-end, demultiplexed, unzipped <fn>*.fastq</fn> files with adapters still attached. Following the <a href="https://docs.qiime2.org/2021.2/tutorials/importing/">QIIME2 importing tutorial</a>, this is the Casava One Eight format. The files have been renamed to satisfy the Casava format as <fn>SampleID_FWDXX-REVXX_L001_R[1 or 2]_001.fastq</fn> e.g. CTRLA_Fwd04-Rev25_L001_R1_001.fastq.gz. The files were then zipped (.gzip).</p>
+<p>Here, the data files (two per sample i.e. forward and reverse reads <code class="codehilite"><span class="n">R1</span></code> and <code class="codehilite"><span class="n">R2</span></code> respectively) will be imported and exported as a single QIIME 2 artefact file. These samples are already demultiplexed (i.e. sequences from each sample have been written to separate files), so a metadata file is not initially required.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To check the input syntax for any QIIME2 command, enter the command, followed by <code class="codehilite"><span class="c1">--help</span></code> e.g. <code class="codehilite"><span class="n">qiime</span> <span class="n">tools</span> <span class="kn">import</span> <span class="o">--</span><span class="n">help</span></code></p>
+</div>
+<p>Start by making a new directory <code class="codehilite"><span class="n">analysis</span></code> to store all the output files from this tutorial. In addition, we will create a subdirectory called <code class="codehilite"><span class="n">seqs</span></code> to store the exported sequences.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span>
+mkdir -p analysis/seqs
+</pre></div>
+</td></tr></table>
+
+<p>Run the command to import the raw data located in the directory <code class="codehilite"><span class="n">raw_data</span></code> and export it to a single QIIME 2 artefact file, <code class="codehilite"><span class="n">combined</span><span class="p">.</span><span class="n">qza</span></code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">tools</span> <span class="kn">import</span> \
+<span class="o">--</span><span class="nb">type</span> <span class="s1">&#39;SampleData[PairedEndSequencesWithQuality]&#39;</span> \
+<span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">path</span> <span class="n">raw_data</span> \
+<span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">format</span> <span class="n">CasavaOneEightSingleLanePerSampleDirFmt</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">seqs</span><span class="o">/</span><span class="n">combined</span><span class="o">.</span><span class="n">qza</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="remove-primers">Remove primers<a class="headerlink" href="#remove-primers" title="Permanent link">&para;</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember to ask you sequencing facility if the raw data you get has the primers attached - they may have already been removed.</p>
+</div>
+<p>These sequences still have the primers attached - they need to be removed (using <code class="codehilite"><span class="n">cutadapt</span></code>) before denoising.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">cutadapt</span> <span class="n">trim</span><span class="o">-</span><span class="n">paired</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">demultiplexed</span><span class="o">-</span><span class="n">sequences</span> <span class="n">analysis</span><span class="o">/</span><span class="n">seqs</span><span class="o">/</span><span class="n">combined</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">front</span><span class="o">-</span><span class="n">f</span> <span class="n">AGGATTAGATACCCTGGTA</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">front</span><span class="o">-</span><span class="n">r</span> <span class="n">CRRCACGAGCTGACGAC</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">error</span><span class="o">-</span><span class="n">rate</span> <span class="mf">0.20</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">analysis</span><span class="o">/</span><span class="n">seqs_trimmed</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The primers specified (784f and 1492r for the bacterial 16S rRNA gene) correspond to <em>this</em> specific experiment - they will likely not work for your own data analyses.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The error rate parameter, <code class="codehilite"><span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">error</span><span class="o">-</span><span class="n">rate</span></code>, will likely need to be adjusted for your own sample data to get 100% (or close to it) of reads trimmed.</p>
+</div>
+<h3 id="create-and-interpret-sequence-quality-data">Create and interpret sequence quality data<a class="headerlink" href="#create-and-interpret-sequence-quality-data" title="Permanent link">&para;</a></h3>
+<p>Create a viewable summary file so the data quality can be checked. Viewing the quality plots generated here helps determine trim settings.</p>
+<div class="admonition info">
+<p class="admonition-title"><strong>Things to look for:</strong></p>
+<ol>
+<li>Where does the median quality drop below 30?  </li>
+<li>Do any of the samples have only a few sequences e.g. &lt;1000? If so, you may want to omit them from the analysis later on in R.</li>
+</ol>
+</div>
+<p>Create a subdirectory in <code class="codehilite"><span class="n">analysis</span></code> called <code class="codehilite"><span class="n">visualisations</span></code> to store all files that we will visualise in one place.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir analysis/visualisations
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">demux</span> <span class="n">summarize</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">data</span> <span class="n">analysis</span><span class="o">/</span><span class="n">seqs_trimmed</span><span class="o">/</span><span class="n">trimmed_sequences</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">trimmed_sequences</span><span class="o">.</span><span class="n">qzv</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">trimmed_sequences</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in <a href="https://view.qiime2.org">QIIME 2 View</a> (q2view).</p>
+<details class="example"><summary>Visualisations: Read quality and demux output</summary><p><img alt="fwd_reads_quality_scoresPNG" src="../media/Fwd_reads_quality_scores.png" />
+<img alt="Rev_reads_quality_scoresPNG" src="../media/Rev_reads_quality_scores.png" />
+<img alt="demux_summary" src="../media/demux_summary.png" /></p>
+</details>
+<p><br>
+Alternatively, <em>if you have QIIME2 locally installed and are running it on your own computer</em>, you can view the visualisation from the command-line:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">tools</span> <span class="n">view</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">trimmed_sequences</span><span class="o">.</span><span class="n">qzv</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="denoising-the-data">Denoising the data<a class="headerlink" href="#denoising-the-data" title="Permanent link">&para;</a></h3>
+<p>Trimmed sequences are now quality assessed using the <code class="codehilite"><span class="n">dada2</span></code> <a href="https://pubmed.ncbi.nlm.nih.gov/27214047/">plugin</a> within QIIME2. <code class="codehilite"><span class="n">dada2</span></code> denoises data by modelling and correcting Illumina-sequenced amplicon errors, and infers exact amplicon sequence variants (<strong><em>ASVs</em></strong>), resolving differences of as little as 1 nucleotide. Its workflow consists of filtering, de-replication, reference‐free chimera detection, and paired‐end reads merging, resulting in a feature or <strong><em>ASV</em></strong> table.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step may long time to run (i.e. days), depending on files sizes and computational power.</p>
+<p>Remember to adjust <code class="codehilite"><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="n">len</span><span class="o">-</span><span class="n">f</span></code> and <code class="codehilite"><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="n">len</span><span class="o">-</span><span class="n">r</span></code> values according to your own data.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question: Based on your assessment of the quality plots from the <fn>trimmed_sequences.qzv</fn> file generated in the previous step, what values would you select for <code class="codehilite"><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="n">len</span><span class="o">-</span><span class="n">f</span></code> and <code class="codehilite"><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="n">len</span><span class="o">-</span><span class="n">r</span></code> in the command below?</p>
+<details class="answer"><summary>Answer</summary><p><code class="codehilite"><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="n">len</span><span class="o">-</span><span class="n">f</span> <span class="mi">212</span></code> and <code class="codehilite"><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="n">len</span><span class="o">-</span><span class="n">r</span> <span class="mi">167</span></code></p>
+</details>
+</div>
+<p><em>The specified output directory must not pre-exist.</em>  </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">dada2</span> <span class="n">denoise</span><span class="o">-</span><span class="n">paired</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">demultiplexed</span><span class="o">-</span><span class="n">seqs</span> <span class="n">analysis</span><span class="o">/</span><span class="n">seqs_trimmed</span><span class="o">/</span><span class="n">trimmed_sequences</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="nb">len</span><span class="o">-</span><span class="n">f</span> <span class="n">xx</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">trunc</span><span class="o">-</span><span class="nb">len</span><span class="o">-</span><span class="n">r</span> <span class="n">xx</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">threads</span> <span class="mi">0</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="generate-summary-files">Generate summary files<a class="headerlink" href="#generate-summary-files" title="Permanent link">&para;</a></h3>
+<p>A <a href="https://docs.qiime2.org/2021.4/tutorials/metadata/">metadata file</a> is required which provides the key to gaining biological insight from your data. The file <fn>metadata.tsv</fn> is provided in the home directory of your Nectar instance. This spreadsheet has already been verified using the plugin for Google Sheets, <a href="https://keemei.qiime2.org/">keemei</a>.  </p>
+<div class="admonition info">
+<p class="admonition-title"><strong>Things to look for:</strong></p>
+<ol>
+<li>How many features (<em>ASVs</em>) were generated? Are the communities high or low diversity?</li>
+<li>Do BLAST searches of the representative sequences make sense? Are the features what you would expect e.g. marine or terrestrial?</li>
+<li>Have a large number (e.g. &gt;50%) of sequences been lost during denoising/filtering? If so, the settings might be too stringent.</li>
+</ol>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">feature</span><span class="o">-</span><span class="n">table</span> <span class="n">summarize</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span><span class="o">/</span><span class="n">table</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">sample</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisations: ASVs summary</summary><p><img alt="ASV_overviewPNG" src="../media/ASV_overview.png" />
+<img alt="ASV_detailPNG" src="../media/ASV_detail.png" /></p>
+</details>
+<p><br>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">feature</span><span class="o">-</span><span class="n">table</span> <span class="n">tabulate</span><span class="o">-</span><span class="n">seqs</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">data</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span><span class="o">/</span><span class="n">representative_sequences</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_representative_seqs</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table></p>
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_rep_seqs</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Representative Sequences</summary><p><img alt="rep_seqs" src="../media/rep_seqs.png" /></p>
+</details>
+<p><br>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">metadata</span> <span class="n">tabulate</span> \
+<span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="nb">file</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span><span class="o">/</span><span class="n">denoising_stats</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_denoising_stats</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table></p>
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_denoising_stats</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: <code class="codehilite"><span class="n">dada2</span></code> output</summary><p><img alt="dada2output" src="../media/dada2output.png" /></p>
+</details>
+<hr />
+<h2 id="section-2-taxonomic-analysis">Section 2: Taxonomic Analysis<a class="headerlink" href="#section-2-taxonomic-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="assign-taxonomy">Assign taxonomy<a class="headerlink" href="#assign-taxonomy" title="Permanent link">&para;</a></h3>
+<p>Here we will classify each identical read or <em>Amplicon Sequence Variant (ASV)</em> to the highest resolution based on a database. Common databases for bacteria datasets are <a href="https://greengenes.secondgenome.com/">Greengenes</a>, <a href="https://www.arb-silva.de/">SILVA</a>, <a href="https://rdp.cme.msu.edu/">Ribosomal Database Project</a>, or <a href="https://gtdb.ecogenomic.org/">Genome Taxonomy Database</a>. See <a href="https://www.frontiersin.org/articles/10.3389/fevo.2020.00248/full">Porter and Hajibabaei, 2020</a> for a review of different classifiers for metabarcoding research. The classifier chosen is dependent upon:</p>
+<ol>
+<li>Previously published data in a field</li>
+<li>The target region of interest</li>
+<li>The number of reference sequences for your organism in the database and how recently that database was updated.</li>
+</ol>
+<p>A classifier has already been trained for you for the V5V6 region of the bacterial 16S rRNA gene using the SILVA database. The next step will take a while to run. <em>The output directory cannot previously exist</em>.</p>
+<p>n_jobs = 1  This runs the script using all available cores</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The classifier used here is only appropriate for the specific 16S rRNA region that <em>this</em> data represents. You will need to train your own - no worries, QIIME2 has a tutorial for that.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">feature</span><span class="o">-</span><span class="n">classifier</span> <span class="n">classify</span><span class="o">-</span><span class="n">sklearn</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">classifier</span> <span class="n">silva_132_16s_v5v6_classifier</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">reads</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span><span class="o">/</span><span class="n">representative_sequences</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">jobs</span> <span class="mi">1</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This step often runs out of memory on full datasets. Some options are to change the number of cores you are using (adjust <code class="codehilite"><span class="c1">--p-n-jobs</span></code>) or add <code class="codehilite"><span class="c1">--p-reads-per-batch 10000</span></code> and try again. The QIIME 2 forum has many threads regarding this issue so always check there was well.</p>
+</div>
+<h3 id="generate-a-viewable-summary-file-of-the-taxonomic-assignments">Generate a viewable summary file of the taxonomic assignments.<a class="headerlink" href="#generate-a-viewable-summary-file-of-the-taxonomic-assignments" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">metadata</span> <span class="n">tabulate</span> \
+<span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="nb">file</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="n">classification</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">taxonomy</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Taxonomy</summary><p><img alt="taxonomy" src="../media/taxonomy.png" /></p>
+</details>
+<h3 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h3>
+<p>Filter out reads classified as mitochondria and chloroplast. Unassigned ASVs are retained. Generate a viewable summary file of the new table to see the effect of filtering.</p>
+<p>According to QIIME developer Nicholas Bokulich, low abundance filtering (i.e. removing ASVs containing very few sequences) is not necessary under the ASV model.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">taxa</span> <span class="nb">filter</span><span class="o">-</span><span class="n">table</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span><span class="o">/</span><span class="n">table</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">taxonomy</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="n">classification</span><span class="o">.</span><span class="n">qza</span>  \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">exclude</span> <span class="n">Mitochondria</span><span class="p">,</span><span class="n">Chloroplast</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">filtered</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">feature</span><span class="o">-</span><span class="n">table</span> <span class="n">summarize</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">sample</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: 16s_table_filtered</summary><p><img alt="16s_table_filtered" src="../media/16s_table_filtered.png" /></p>
+</details>
+<hr />
+<h2 id="section-3-build-a-phylogenetic-tree">Section 3: Build a phylogenetic tree<a class="headerlink" href="#section-3-build-a-phylogenetic-tree" title="Permanent link">&para;</a></h2>
+<p>The next step does the following:</p>
+<ol>
+<li>Perform an alignment on the representative sequences.</li>
+<li>Mask highly variable regions of the alignment.</li>
+<li>Generate a phylogenetic tree.</li>
+<li>Apply mid-point rooting to the tree.</li>
+</ol>
+<p>A phylogenetic tree is necessary for any analyses that incorporates information on the relative relatedness of community members, by incorporating phylogenetic distances between observed organisms in the computation. This would include any beta-diversity analyses and visualisations from a weighted or unweighted Unifrac distance matrix.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir analysis/tree
+</pre></div>
+</td></tr></table>
+
+<p>Use one thread only (which is the default action) so that identical results can be produced if rerun.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">phylogeny</span> <span class="n">align</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">tree</span><span class="o">-</span><span class="n">mafft</span><span class="o">-</span><span class="n">fasttree</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">sequences</span> <span class="n">analysis</span><span class="o">/</span><span class="n">dada2out</span><span class="o">/</span><span class="n">representative_sequences</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">alignment</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="n">aligned_16s_representative_seqs</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">masked</span><span class="o">-</span><span class="n">alignment</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="n">masked_aligned_16s_representative_seqs</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">tree</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="mi">16</span><span class="n">s_unrooted_tree</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">rooted</span><span class="o">-</span><span class="n">tree</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="mi">16</span><span class="n">s_rooted_tree</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">threads</span> <span class="mi">1</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<hr />
+<h2 id="section-4-basic-visualisations-and-statistics">Section 4: Basic visualisations and statistics<a class="headerlink" href="#section-4-basic-visualisations-and-statistics" title="Permanent link">&para;</a></h2>
+<h3 id="rarefaction-curves">Rarefaction curves<a class="headerlink" href="#rarefaction-curves" title="Permanent link">&para;</a></h3>
+<p>Generate rarefaction curves to determine whether the samples have been sequenced deeply enough to capture all the community members. The max depth setting will depend on the number of sequences in your samples.</p>
+<div class="admonition info">
+<p class="admonition-title"><strong>Things to look for:</strong></p>
+<ol>
+<li>Do the curves for each sample plateau? If they don’t, the samples haven’t been sequenced deeply enough to capture the full diversity of the bacterial communities, which is shown on the y-axis.</li>
+<li>At what sequencing depth (x-axis) do your curves plateau? This value will be important for downstream analyses, particularly for alpha diversity analyses.</li>
+</ol>
+</div>
+<p>Make a directory for downstream analysis results.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir analysis/downstream
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The value that you provide for &ndash;p-max-depth should be determined by reviewing the “Frequency per sample” information presented in the  <fn>16s_table_filtered.qzv</fn> file that was created above. In general, choosing a value that is somewhere around the median frequency seems to work well, but you may want to increase that value if the lines in the resulting rarefaction plot don’t appear to be leveling out, or decrease that value if you seem to be losing many of your samples due to low total frequencies closer to the minimum sampling depth than the maximum sampling depth.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">diversity</span> <span class="n">alpha</span><span class="o">-</span><span class="n">rarefaction</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">phylogeny</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="mi">16</span><span class="n">s_rooted_tree</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="nb">max</span><span class="o">-</span><span class="n">depth</span> <span class="mi">9062</span> \
+<span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_alpha_rarefaction</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="mi">16</span><span class="n">s_alpha_rarefaction</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Rarefaction</summary><p><img alt="rarefaction" src="../media/rarefaction.png" /></p>
+</details>
+<h3 id="asv-relative-abundance-bar-charts">ASV relative abundance bar charts<a class="headerlink" href="#asv-relative-abundance-bar-charts" title="Permanent link">&para;</a></h3>
+<p>Create bar charts to compare the relative abundance of ASVs across samples.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">taxa</span> <span class="n">barplot</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">taxonomy</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="n">classification</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+<span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">barchart</span><span class="o">.</span><span class="n">qzv</span> \
+<span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">barchart</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view). Try selecting different taxonomic levels and metadata-based sample sorting.</p>
+<details class="example"><summary>Visualisations: Taxonomy Barplots</summary><p><img alt="barplot1" src="../media/barplot_level1.png" /></p>
+<p><img alt="barplot2" src="../media/barplot_level3.png" /></p>
+<p><img alt="barplot3" src="../media/barplot_level5.png" /></p>
+</details>
+<h3 id="alpha-and-beta-diversity-analysis">Alpha and beta diversity analysis<a class="headerlink" href="#alpha-and-beta-diversity-analysis" title="Permanent link">&para;</a></h3>
+<p>The following is taken directly from the <a href="https://docs.qiime2.org/2021.2/tutorials/moving-pictures/">Moving Pictures tutorial</a> and adapted for this data set. QIIME 2’s diversity analyses are available through the <code class="codehilite"><span class="n">q2</span><span class="o">-</span><span class="n">diversity</span></code> plugin, which supports computing alpha- and beta- diversity metrics, applying related statistical tests, and generating interactive visualisations. We’ll first apply the core-metrics-phylogenetic method, which rarefies a FeatureTable[Frequency] to a user-specified depth, computes several alpha- and beta- diversity metrics, and generates principle coordinates analysis (PCoA) plots using Emperor for each of the beta diversity metrics.</p>
+<p>The metrics computed by default are:</p>
+<ul>
+<li>Alpha diversity (operate on a single sample (i.e. within sample diversity)).<ul>
+<li>Shannon’s diversity index (a quantitative measure of community richness)</li>
+<li>Observed OTUs (a qualitative measure of community richness)</li>
+<li>Faith’s Phylogenetic Diversity (a qualitative measure of community richness that incorporates phylogenetic relationships between the features)</li>
+<li>Evenness (or Pielou’s Evenness; a measure of community evenness)</li>
+</ul>
+</li>
+<li>Beta diversity (operate on a pair of samples (i.e. between sample diversity)).<ul>
+<li>Jaccard distance (a qualitative measure of community dissimilarity)</li>
+<li>Bray-Curtis distance (a quantitative measure of community dissimilarity)</li>
+<li>unweighted UniFrac distance (a qualitative measure of community dissimilarity that incorporates phylogenetic relationships between the features)</li>
+<li>weighted UniFrac distance (a quantitative measure of community dissimilarity that incorporates phylogenetic relationships between the features)</li>
+</ul>
+</li>
+</ul>
+<p>An important parameter that needs to be provided to this script is <code class="codehilite"><span class="c1">--p-sampling-depth</span></code>, which is the even sampling (i.e. rarefaction) depth that was determined above. As most diversity metrics are sensitive to different sampling depths across different samples, this script will randomly subsample the counts from each sample to the value provided for this parameter. For example, if <code class="codehilite"><span class="c1">--p-sampling-depth 500</span></code> is provided, this step will subsample the counts in each sample without replacement, so that each sample in the resulting table has a total count of 500. If the total count for any sample(s) are smaller than this value, those samples will be excluded from the diversity analysis. Choosing this value is tricky. We recommend making your choice by reviewing the information presented in the <fn>16s_table_filtered.qzv</fn> file that was created above. Choose a value that is as high as possible (so more sequences per sample are retained), while excluding as few samples as possible.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">diversity</span> <span class="n">core</span><span class="o">-</span><span class="n">metrics</span><span class="o">-</span><span class="n">phylogenetic</span> \
+  <span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">phylogeny</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="mi">16</span><span class="n">s_rooted_tree</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">table</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">sampling</span><span class="o">-</span><span class="n">depth</span> <span class="mi">5588</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">analysis</span><span class="o">/</span><span class="n">diversity_metrics</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy the <code class="codehilite"><span class="na">.qzv</span></code> files created from the above command into the <code class="codehilite"><span class="n">visualisations</span></code> subdirectory.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cp analysis/diversity_metrics/*.qzv analysis/visualisations
+</pre></div>
+</td></tr></table>
+
+<p>To view the differences between sample composition using unweighted UniFrac in ordination space, copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">weighted_unifrac_emperor</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisations: Weighted UniFrac Emperor Ordination</summary><p><img alt="weighted_unifrac_emperor1" src="../media/weighted_unifrac_emperor1.png" /></p>
+<p>On q2view, select the &ldquo;Colour&rdquo; tab and the heading &ldquo;Environment&rdquo; in the dropdown menu and then by &ldquo;Genotype&rdquo; in the &ldquo;Shape&rdquo; tab.  </p>
+<p><img alt="weighted_unifrac_emperor2" src="../media/weighted_unifrac_emperor2.png" /></p>
+</details>
+<p>Next, we’ll test for associations between categorical metadata columns and alpha diversity data. We’ll do that here for the Faith Phylogenetic Diversity (a measure of community richness) and evenness metrics.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">diversity</span> <span class="n">alpha</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">significance</span> \
+  <span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">diversity</span> <span class="n">analysis</span><span class="o">/</span><span class="n">diversity_metrics</span><span class="o">/</span><span class="n">faith_pd_vector</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+  <span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">faith</span><span class="o">-</span><span class="n">pd</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">significance</span><span class="o">.</span><span class="n">qzv</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">faith</span><span class="o">-</span><span class="n">pd</span><span class="o">-</span><span class="k">group</span><span class="o">-</span><span class="n">significance</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Faith Phylogenetic Diversity output</summary><p><img alt="faith" src="../media/faith.png" /></p>
+</details>
+<p><br>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">diversity</span> <span class="n">alpha</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">significance</span> \
+  <span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">diversity</span> <span class="n">analysis</span><span class="o">/</span><span class="n">diversity_metrics</span><span class="o">/</span><span class="n">evenness_vector</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+  <span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">evenness</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">significance</span><span class="o">.</span><span class="n">qzv</span>
+</pre></div>
+</td></tr></table></p>
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">evenness</span><span class="o">-</span><span class="k">group</span><span class="o">-</span><span class="n">significance</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Evenness output</summary><p><img alt="evenness" src="../media/evenness.png" /></p>
+</details>
+<p>Finally, we’ll analyse sample composition in the context of categorical metadata using a permutational multivariate analysis of variance (PERMANOVA, first described in Anderson (2001)) test using the beta-group-significance command. The following commands will test whether distances between samples within a group, such as samples from the same genotype, are more similar to each other then they are to samples from the other groups. If you call this command with the <code class="codehilite"><span class="c1">--p-pairwise</span></code> parameter, as we’ll do here, it will also perform pairwise tests that will allow you to determine which specific pairs of groups (e.g., AIMS1 and AIMS4) differ from one another, if any. This command can be slow to run, especially when passing <code class="codehilite"><span class="c1">--p-pairwise</span></code>, since it is based on permutation tests. So, unlike the previous commands, we’ll run beta-group-significance on specific columns of metadata that we’re interested in exploring, rather than all metadata columns to which it is applicable. Here we’ll apply this to our unweighted UniFrac distances, using two sample metadata columns, as follows.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">diversity</span> <span class="n">beta</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">significance</span> \
+  <span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">distance</span><span class="o">-</span><span class="n">matrix</span> <span class="n">analysis</span><span class="o">/</span><span class="n">diversity_metrics</span><span class="o">/</span><span class="n">unweighted_unifrac_distance_matrix</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="n">column</span> <span class="n">Genotype</span> \
+  <span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">unweighted</span><span class="o">-</span><span class="n">unifrac</span><span class="o">-</span><span class="n">genotype</span><span class="o">-</span><span class="n">significance</span><span class="o">.</span><span class="n">qzv</span> \
+  <span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">pairwise</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">unweighted</span><span class="o">-</span><span class="n">unifrac</span><span class="o">-</span><span class="n">genotype</span><span class="o">-</span><span class="n">significance</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Genotype significance output</summary><p><img alt="genotype_sig" src="../media/genotype_sig.png" /></p>
+</details>
+<p><br>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">diversity</span> <span class="n">beta</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">significance</span> \
+  <span class="o">--</span><span class="n">i</span><span class="o">-</span><span class="n">distance</span><span class="o">-</span><span class="n">matrix</span> <span class="n">analysis</span><span class="o">/</span><span class="n">diversity_metrics</span><span class="o">/</span><span class="n">unweighted_unifrac_distance_matrix</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="nb">file</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tsv</span> \
+  <span class="o">--</span><span class="n">m</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="n">column</span> <span class="n">Environment</span> \
+  <span class="o">--</span><span class="n">o</span><span class="o">-</span><span class="n">visualization</span> <span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">unweighted</span><span class="o">-</span><span class="n">unifrac</span><span class="o">-</span><span class="n">environment</span><span class="o">-</span><span class="n">significance</span><span class="o">.</span><span class="n">qzv</span> \
+  <span class="o">--</span><span class="n">p</span><span class="o">-</span><span class="n">pairwise</span>
+</pre></div>
+</td></tr></table></p>
+<p>Copy <code class="codehilite"><span class="n">analysis</span><span class="o">/</span><span class="n">visualisations</span><span class="o">/</span><span class="n">unweighted</span><span class="o">-</span><span class="n">unifrac</span><span class="o">-</span><span class="n">environment</span><span class="o">-</span><span class="n">significance</span><span class="p">.</span><span class="n">qzv</span></code> to your local computer and view in QIIME 2 View (q2view).</p>
+<details class="example"><summary>Visualisation: Environmental significance output</summary><p><img alt="env_sig" src="../media/env_sig.png" /></p>
+</details>
+<hr />
+<h2 id="section-5-exporting-data-for-further-analysis-in-r">Section 5: Exporting data for further analysis in R<a class="headerlink" href="#section-5-exporting-data-for-further-analysis-in-r" title="Permanent link">&para;</a></h2>
+<p>You need to export your ASV table, taxonomy table, and tree file for analyses in R. Many file formats can be accepted.</p>
+<p>Export unrooted tree as <code class="codehilite"><span class="na">.nwk</span></code> format as required for the R package <code class="codehilite"><span class="n">phyloseq</span></code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">tools</span> <span class="n">export</span> \
+  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="mi">16</span><span class="n">s_unrooted_tree</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">export</span>
+</pre></div>
+</td></tr></table>
+
+<p>Create a BIOM table with taxonomy annotations. A FeatureTable[Frequency] artefact will be exported as a BIOM v2.1.0 formatted file.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">tools</span> <span class="n">export</span> \
+  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="mi">16</span><span class="n">s_table_filtered</span><span class="o">.</span><span class="n">qza</span> \
+  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">export</span>
+</pre></div>
+</td></tr></table>
+
+<p>Then export BIOM to TSV</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">biom</span> <span class="n">convert</span> \
+<span class="o">-</span><span class="n">i</span> <span class="n">analysis</span><span class="o">/</span><span class="n">export</span><span class="o">/</span><span class="n">feature</span><span class="o">-</span><span class="n">table</span><span class="o">.</span><span class="n">biom</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">analysis</span><span class="o">/</span><span class="n">export</span><span class="o">/</span><span class="n">feature</span><span class="o">-</span><span class="n">table</span><span class="o">.</span><span class="n">tsv</span> \
+<span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">tsv</span>
+</pre></div>
+</td></tr></table>
+
+<p>Export Taxonomy as TSV</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">qiime</span> <span class="n">tools</span> <span class="n">export</span> \
+<span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">taxonomy</span><span class="o">/</span><span class="n">classification</span><span class="o">.</span><span class="n">qza</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">path</span> <span class="n">analysis</span><span class="o">/</span><span class="n">export</span>
+</pre></div>
+</td></tr></table>
+
+<p>Delete the header lines of the .tsv files</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sed <span class="s1">&#39;1d&#39;</span> analysis/export/taxonomy.tsv &gt; analysis/export/taxonomy_noHeader.tsv
+sed <span class="s1">&#39;1,2d&#39;</span> analysis/export/feature-table.tsv &gt; analysis/export/feature-table_noHeader.tsv
+</pre></div>
+</td></tr></table>
+
+<p>Some packages require your data to be in a consistent order, i.e. the order of your ASVs in the taxonomy table rows to be the same order of ASVs in the columns of your ASV table. It&rsquo;s recommended to clean up your taxonomy file. You can have blank spots where the level of classification was not completely resolved.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
